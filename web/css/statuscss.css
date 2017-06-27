@@ -1,0 +1,499 @@
+/*
+ * Start Bootstrap - Landing Page (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner.png) no-repeat center center;
+    margin-top: 5%;
+    background-size: cover;
+
+}
+
+.intro-message {
+
+
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+.extraClass {
+    height: 130px; 
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+
+
+
+.sidebar {
+
+
+}
+
+.test{
+    margin-top: 3%;
+}
+
+.btncustom:hover{
+    background-color: #c8373b;
+    color: #fff;
+}
+
+
+
+
+
+    .image-player{
+        height: 50%;
+        width: 50%;
+        position: relative;
+        left: 1%;
+    }
+    .image-player-cb{
+        height: 185%;
+        width: 185%;
+        position: relative;
+        left:2%;
+    }
+    .image-player-cb2{
+        height: 91.5%;
+        width: 91.5%;
+        position: relative;
+        left:2%;
+    }
+
+    .image-player-fw{
+        height: 30%;
+        width: 30%;
+        position: relative;
+        left:2%;
+    }
+
+    .image-player-for{
+        height: 63%;
+        width: 63%;
+        position: relative;
+        left: 3%;
+    }
+
+    .image-player-ben{
+        height: 75%;
+        width: 75%;
+        position: relative;
+        left: 3%;
+    }
+
+    .gkname,.cbname,.cbname2,.fwname,.benname,.gkname1{
+        width:60%;
+        border: 1px solid #02509a;
+        margin: 0;
+        text-align: center;
+        background-color: #02509a;
+        color: white;
+        font-weight: bold;
+        height: 20%;
+        padding-top: 0px;
+        font-family: arial;
+        font-size: 65%;
+        opacity: 0.9;
+        filter: alpha(opacity=30);
+
+    }
+    
+
+
+    .cbname{
+        width: 185%;
+    }
+
+    .cbname2{
+        width: 90%;
+    }
+
+    .fwname{
+        width: 35%;
+    }
+
+    .benname{
+        width: 75%;
+    }
+
+    .gkpoint,.cbpoint,.cbpoint2,.fwpoint,.benpoint,.gkpoint{
+        width:60%;
+        margin: 0;
+        text-align:center;
+        font-weight: bold;
+        border: 0px solid #57a3f9;
+        background-color: #57a3f9;
+        height: 13px;
+        padding-bottom: 5px;
+        font-family: arial;
+        margin-bottom: 10px;
+        border-bottom-left-radius:3pt 3pt;
+        border-bottom-right-radius:3pt 3pt;
+        font-size: 75%;
+    }
+    
+
+    .cbpoint{
+        width: 185%;
+    }
+
+    .cbpoint2{
+        width: 90%;
+    }
+
+    .fwpoint{
+        width:35%;
+    }
+
+    .benpoint{
+        width:75%;
+    }
+    .poss{
+        width:75%;
+
+        font-weight: bold;
+        height: 2%;
+        font-size: 75%;
+        font-family:arial;
+        margin-top: -25%;
+
+    }
+
+    .tb-arrow{
+        width: 10%;
+
+    }
+
+    .tb-rank{
+        width: 30%;
+    }
+
+    .tb-name{
+        width: 70%;
+    }
+
+
+.teambox{
+    margin-top: 10%;;
+    width: 100%;
+    height:50px; 
+    border-top:4px solid #050424;
+}
+
+.ranking{
+    width: 100%;
+}
+
+.cleague{
+    width: 100%;
+}
+
+.gleague{
+    width: 100%;
+}
+
+.transfers{
+    width: 100%;
+}
+
+.match:hover{
+    background-color: #c8373b;
+    color: #fff
+}
+
+.trick{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.skor {
+    letter-spacing: 2px;
+    width: 9%; 
+    left:8.05%;
+    background-color:#1d3260;
+    border-radius: 3pt 3pt;
+
+}
+
+.row2{
+    display: flex;
+    background-color: #e8e8e8;
+}
+
+.skorlogol{
+    width: 2%; 
+    left: 1.55%
+}
+
+.skorlogor{
+    width: 2%;
+    left:6%
+}
+
+.form-control{
+    width: 90%;
+    margin-left: 5%;
+
+}
+
+.btn-circle {
+  border: 1px solid #E8E8E8;
+  background-color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-lg {
+  border: 1px solid #E8E8E8;
+  background-color: white;
+  height: 4rem;
+  padding: 8px 10px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 100%;
+}
+
+.space{
+   margin-right: 1%
+}
+
+
+.image-tables{
+    padding-top: 25%;
+    background: url(../img/cover.jpg) no-repeat  ;
+    margin-top: 3%;
+    background-size: cover;
+    color:white;
+}
+
+.prevbutton{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+
+    cursor: pointer;
+    width:40px;
+
+}
+
+.nextbtn{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    float:right;
+    cursor: pointer;
+    width:40px;
+
+
+}
+
+.gkname1{
+        width:70%;
+        border: 1px solid #02509a;
+        margin: 0;
+        text-align: center;
+        background-color: #02509a;
+        color: white;
+        font-weight: bold;
+        height: 20%;
+        padding-top: 0px;
+        font-family: arial;
+        font-size: 100%;
+        opacity: 0.9;
+        filter: alpha(opacity=30);
+
+    }
+    
+ .gkpoint1{
+        width:70%;
+        margin: 0;
+        text-align:center;
+        font-weight: bold;
+        border: 0px solid #57a3f9;
+        background-color: #57a3f9;
+        height: 20px;
+        padding-bottom: 5px;
+        font-family: arial;
+        margin-bottom: 10px;
+        border-bottom-left-radius:3pt 3pt;
+        border-bottom-right-radius:3pt 3pt;
+        font-size: 100%;
+    }
+
+    .image-player{
+        height: 63%;
+        width: 63%;
+        position: relative;
+        left: 1%;
+    }
