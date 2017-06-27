@@ -1,0 +1,224 @@
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner.png) no-repeat center center;
+    margin-top: 5%;
+    background-size: cover;
+
+}
+
+.extraClass {
+    height: 130px; 
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+
+.test{
+    margin-top: 3%;
+}
+
+.btncustom:hover{
+    background-color: #c8373b;
+    color: #fff;
+}
+
+.prevbutton{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+
+    cursor: pointer;
+    width:140px;
+
+}
+
+.nextbtn{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    float:right;
+    cursor: pointer;
+    width:140px;
+
+
+}
+
+.bc-img{
+    background:url(../img/pitch2.jpg) no-repeat  ;
+    background-size:100% 100%;
+    display:contain; 
+
+}
+
+.gkname,.cbname{
+    width:120px;
+    border: 1px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    height: 21px;
+    padding-top: 0px;
+    font-family: arial;
+    font-size: 14px;
+    opacity: 0.9;
+    filter: alpha(opacity=30);
+
+}
+
+
+.gkpoint,.cbpoint{
+    padding: 0px;
+    width:120px;
+    margin: 0;
+    text-align:center;
+    font-weight: bold;
+    border: 0px solid #57a3f9;
+    background-color: #57a3f9;
+    height: 17px;
+    padding-bottom: 5px;
+    font-family: arial;
+    margin-bottom: 10px;
+    border-bottom-left-radius:3pt 3pt;
+    border-bottom-right-radius:3pt 3pt;
+
+}
+
+.fixtures{
+    width: 100%;
+    margin-bottom: 5%;
+    border-top:3px solid #1d3260;
+    border-bottom:1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey
+}
+
+ .image-player{
+        height: 25%;
+        width: 25%;
+        position: relative;
+        left: 15.5px;
+    }
+
+    .image-player-for{
+        height: 40%;
+        width: 40%;
+        position: relative;
+        left: 16.5px;
+    }
+
+    .image-player-cb{
+        height: 93%;
+        width: 93%;
+        position: relative;
+        left: 14px;
+    }
+    
+ .teambox{
+    margin-top: 10%;;
+    width: 100%;
+    height:50px; 
+    border-top:4px solid #050424;
+}
+
+.match:hover{
+    background-color: #c8373b;
+    color: #fff
+}
+
+.skor {
+    letter-spacing: 2px;
+    width: 9%; 
+    left:8.05%;
+    background-color:#1d3260;
+    border-radius: 3pt 3pt;
+
+}
+
+
+
+.row2{
+    display: flex;
+    background-color: #e8e8e8;
+}
+
+
+.skorlogol{
+    width: 2%; 
+    left: 1.55%
+}
+
+.skorlogor{
+    width: 2%;
+    left:6%
+}
+
+
+
+.form-control{
+    width: 90%;
+    margin-left: 5%;
+
+}
+
+.btn-circle {
+  border: 1px solid #E8E8E8;
+  background-color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-lg {
+  border: 1px solid #E8E8E8;
+  background-color: white;
+  height: 4rem;
+  padding: 8px 10px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 100%;
+}
+
+
+
+

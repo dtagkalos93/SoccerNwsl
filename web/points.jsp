@@ -922,7 +922,7 @@
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
                     $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
+                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
@@ -1015,7 +1015,7 @@
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
                     $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
+                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
