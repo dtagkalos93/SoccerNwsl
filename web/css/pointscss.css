@@ -1,0 +1,246 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner2.png) no-repeat center center;
+    margin-top: 5%; 
+    background-size: cover;
+
+}
+
+.extraClass {
+    height: 130px; 
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+
+.test{
+    margin-top: 3%;
+}
+
+
+.btncustom:hover{
+    background-color: #c8373b;
+    color: #fff;
+}
+
+.prevbutton{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+
+    cursor: pointer;
+    width:140px;
+
+}
+
+
+.nextbtn{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    float:right;
+    cursor: pointer;
+    width:140px;
+
+
+}
+
+
+.bc-img{
+    background:url(../img/pitch2.jpg) no-repeat  ;
+    background-size:100% 100%;
+    display:contain; 
+
+}
+
+.gkname,.cbname,.cbname2,.cbname3,.fwname,.benname,.gkname1{
+    width:120px;
+    border: 1px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    height: 21px;
+    padding-top: 0px;
+    font-family: arial;
+    font-size: 14px;
+    opacity: 0.9;
+    filter: alpha(opacity=30);
+
+}
+
+.gkpoint,.cbpoint,.cbpoint2,.cbpoint3,.fwpoint,.benpoint,.gkpoint1{
+    padding: 0px;
+    width:120px;
+    margin: 0;
+    text-align:center;
+    font-weight: bold;
+    border: 0px solid #57a3f9;
+    background-color: #57a3f9;
+    height: 17px;
+    padding-bottom: 5px;
+    font-family: arial;
+    margin-bottom: 10px;
+    border-bottom-left-radius:3pt 3pt;
+    border-bottom-right-radius:3pt 3pt;
+
+}
+
+.pit-img{
+    background:url(../img/bench2.jpg) no-repeat  ;
+    background-size:100% 100%;
+    display:contain; 
+}
+
+
+.tb-arrow{
+    width: 10%;
+
+}
+
+.tb-rank{
+    width: 30%;
+}
+
+.tb-name{
+    width: 70%;
+}
+
+.out-head{
+    width: 50%;
+    float: left;
+    font-family: arial;
+    font-weight: lighter;
+}
+
+.in-head{
+    width: 50%;
+    float: right;
+    font-family: arial;
+    font-weight: lighter;
+}
+
+.players{
+    border-bottom: 1px solid grey;
+
+}
+
+.fixtures{
+    width: 100%;
+    margin-bottom: 5%;
+    border-top:4px solid #1d3260;
+    border-bottom:1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey
+}
+
+.image-player{
+    height: 12%;
+    width: 12%;
+    position: relative;
+    left: 2.5%   ;
+}
+.image-player-for{
+    height: 40%;
+    width: 40%;
+    position: relative;
+    left: 16.5px;
+}
+.image-player-cb{
+    height: 93%;
+    width: 93%;
+    position: relative;
+    left: 14px;
+}
+.image-player-cb2{
+    height: 56%;
+    width: 56%;
+    position: relative;
+    left: 17px;
+}
+.image-player-fw{
+    height:26%;
+    width: 26%;
+    position: relative;
+    left: 16px;
+}
+.image-player-ben{
+    height: 56%;
+    width: 56%;
+    position: relative;
+    left: 14px;
+}
+
+.teambox{
+    width: 100%;
+    height:50px; 
+    border-top:3px solid black;
+    background-color: #ebebe4;
+}
+
+
+.ranking{
+    width: 100%;
+}
+
+.cleague{
+    width: 100%;
+}
+
+.gleague{
+    width: 100%;
+}
+
+.transfers{
+    width: 100%;
+}
+
+.match:hover{
+    background-color: #c8373b;
+    color: #fff
+}
+
+
+
+
+.row2{
+    display: flex;
+    background-color: #e8e8e8;
+}
