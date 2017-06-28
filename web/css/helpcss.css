@@ -40,12 +40,12 @@ h6 {
 
 .rules{
    
-    background-color: #f9f5f5;
+    background-color: #e8e8e8;
     color: black;
     font-family: arial;
     font-weight: lighter;
-    font-size: 19px;
-    padding: 1%;
+    font-size: 15px;
+    padding: 0.7%;
     width:100%;
     text-decoration:none;
     
@@ -62,7 +62,7 @@ h6 {
 
 .rules:hover{
     text-decoration:none;
-    background-color: #ac0f1f;
+    background-color: #bfbdbd;
 }
 
 .rules:active {
@@ -95,9 +95,8 @@ h6 {
     float: left;
     margin-left: 5px;
     margin-right: 1%;
-    margin-top: 0.3%;
     font-weight: lighter;
-    font-size: 15px;
+    font-size: 14px;
   }
   /* Icon when the collapsible content is hidden */
   .cola.collapsed:after {
