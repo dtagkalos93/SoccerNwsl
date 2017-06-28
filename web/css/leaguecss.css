@@ -1,0 +1,197 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px;
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner.png) no-repeat center center;
+    margin-top: 5%;
+    background-size: cover;
+
+}
+
+.extraClass {
+    height: 130px;
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+
+.test{
+    margin-top: 3%;
+}
+
+
+.btncustom:hover{
+    background-color: #92111e;
+    color: #fff;
+}
+
+.btnrenew{
+    background-color:#1d3260;
+    color:white  ;
+    height: 40px;
+    font-size: 13px; 
+    font-weight: lighter; 
+    text-align: center; 
+    font-family:arial;
+    width: 100%
+}
+
+.btnrenew:hover{
+    background-color:#050424;
+    color: #fff;
+}
+
+.league-header{
+    width:100%;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e8e8e8;
+    height:35px;
+    padding-top: 9.5px;
+}
+
+
+tr.border_bottom td {
+    border-bottom:1px solid #ebebe4;
+    text-align: center;
+}
+
+tr.border_bottom th {
+    border-bottom:1px solid #ebebe4;
+    text-align: center;
+}
+
+tr.border_bottom .tb-name{
+    text-align: left;
+    font-size:13px;
+    font-weight:bold;
+    padding-left: 2.05%
+}
+
+tr.border_bottom .tb-name-ls{
+    font-family: arial;
+    font-weight:lighter;
+    padding-left: 2.05%;
+    font-size:15px;
+    text-align: left;
+    color:#d3292e;
+    margin-right:-50%;
+    width:50%;
+
+}
+
+tr.border_bottom .tb-rank{
+
+    font-size:13px;
+    font-weight:bold;
+
+}
+tr.border_bottom .tb-rank-ls{
+    font-family: arial;
+    font-size: 15px;
+    text-align: center;
+    width:15%;
+
+    font-weight:normal;
+
+
+}
+
+
+
+tr.border_bottom .tb-rank2{
+
+    font-size:13px;
+    font-weight:bold;
+
+}
+tr.border_bottom .tb-rank2-ls{
+
+    font-family: arial;
+    font-size: 15px;
+    text-align: center;
+    width:15%;
+    font-weight:normal;
+
+}
+
+tr.border_bottom .options{
+    text-align: left;
+    font-size: 14px;
+}
+
+tr.border_bottom .options i{
+    font-size:14px;
+    width:10%;
+    margin-left:15%;
+    margin-right: 5%
+}
+
+tr.border_bottom .options span{
+    font-size: 14px;
+    color: #d3292e;
+    font-family: arial;
+    font-weight: lighter
+}
+
+@media(min-width:792px) {
+    .btn1{
+        width: 60%;
+    }
+
+    .btn1 button{
+        background-color:#ac0f1f;
+        color:white   ;
+        height: 40px;
+        font-size: 13px;
+        font-weight: lighter;
+        text-align: center;
+        font-family:arial;
+        width: 100%
+
+
+        }
+        .btn1 button:hover{
+            background-color: #84111c;
+
+        }
+
+        .btn2{
+            width: 10%
+        }
+    }
+
+    @media(max-width:792px) {
+        .btn1,.btn2{width: 100%}
+        .btn1 button:hover{
+            background-color: black;
+        }
+       
+    }
+    
+
