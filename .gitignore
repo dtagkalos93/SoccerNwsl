@@ -6,9 +6,15 @@ nbproject/private/private.properties
 *.properties
 nbproject/project.xml
 nbproject/build-impl.xml
+<<<<<<< HEAD
+nbproject/project.properties
+nbproject/genfiles.properties
+nbproject/private/private.properties
+=======
 *.properties
 nbproject/project.xml
 nbproject/build-impl.xml
 *.properties
 nbproject/ant-deploy.xml
 build/web/WEB-INF/classes/com/fantasy/fixtureprev.class
+>>>>>>> 55e77fa75aa7cb654da6580d6aa021f35d258b16
