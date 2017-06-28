@@ -1,0 +1,148 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner.png) no-repeat center center;
+    margin-top: 5%;
+    background-size: cover;
+
+}
+
+.extraClass {
+    height: 130px; 
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+.rules{
+   
+    background-color: #f9f5f5;
+    color: black;
+    font-family: arial;
+    font-weight: lighter;
+    font-size: 19px;
+    padding: 1%;
+    width:100%;
+    text-decoration:none;
+    
+}
+
+
+.rules:link {
+    text-decoration: none;
+}
+
+.rules:visited {
+    text-decoration:none;
+}
+
+.rules:hover{
+    text-decoration:none;
+    background-color: #ac0f1f;
+}
+
+.rules:active {
+    text-decoration:none;
+}
+
+
+.collapse-rule{
+     
+     color: black;
+    font-family: arial;
+    font-weight: normal;
+}
+
+.divider{
+    margin-top: 4%;
+}
+.border-rule{
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    border:1px solid #f9f5f5;
+    border-radius: 3pt;
+    margin-bottom: -3%;
+}
+
+.cola:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+    float: left;
+    margin-left: 5px;
+    margin-right: 1%;
+    margin-top: 0.3%;
+    font-weight: lighter;
+    font-size: 15px;
+  }
+  /* Icon when the collapsible content is hidden */
+  .cola.collapsed:after {
+    content: "\e080";
+  }
+
+.list-rules{
+     color: black;
+    font-family: arial;
+    font-weight: normal;
+    margin-top: -5%;
+    margin-bottom: 7%;
+    padding-left: 6%;
+}
+
+.table-div-chips{
+        padding: 10px;
+        
+}
+
+.table-div{
+        padding: 10px;
+        text-align: center;
+        width: 16%;
+}
+
+.table-div2{
+        padding: 10px;
+        text-align: center;
+        padding-left: 25%;
+}
+
+.table-div-sc{
+        padding: 10px;
+        text-align: left;
+        width: 50%;
+}
+
+.table-div-col1{
+     padding: 10px;
+}
+
+.table-div-col2{
+     padding: 10px;
+     text-align: left;
+     padding-left: 24%;
+     width: 44%;
+}
