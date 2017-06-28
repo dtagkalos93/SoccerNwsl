@@ -9,3 +9,6 @@ nbproject/build-impl.xml
 *.properties
 nbproject/project.xml
 nbproject/build-impl.xml
+*.properties
+nbproject/ant-deploy.xml
+build/web/WEB-INF/classes/com/fantasy/fixtureprev.class
