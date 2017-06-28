@@ -1,3 +1,8 @@
 /nbproject/private/
 /build/
 /dist/
+build/web/WEB-INF/classes/com/fantasy/fixtureprev.class
+nbproject/private/private.properties
+*.properties
+nbproject/project.xml
+nbproject/build-impl.xml
