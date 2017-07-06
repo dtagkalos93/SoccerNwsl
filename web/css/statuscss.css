@@ -44,13 +44,7 @@ h6 {
     color: #fff;
 }
 
-.image-tables{
-    padding-top: 25%;
-    background: url(../img/cover.jpg) no-repeat  ;
-    margin-top: 3%;
-    background-size: cover;
-    color:white;
-}
+
 
 .prevbutton{
     background-color: #ecebeb; 
@@ -122,3 +116,4 @@ h6 {
         position: relative;
         left: 1%;
     }
+    
