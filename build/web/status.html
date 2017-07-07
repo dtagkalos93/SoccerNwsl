@@ -15,6 +15,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/statuscss.css" rel="stylesheet">
         <link href="css/statuscss2.css" rel="stylesheet">
+        <link href="css/statuscss3.css" rel="stylesheet">
 
 
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -172,10 +173,13 @@
                             <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">Highest Points</th>   
                             <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">Average Points</th>
                             <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">Transfers Made</th>
-                            <th  style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black"><a class="trnin" style="colour:white;font-size: 12px" data-toggle="modal" data-target="#TransferIn">Most Transferred In</a>    </th>
-                            <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">Most Transferred Out</th>
+                            <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">
+                                <a class="trnin" style="color:white;font-size: 12px" data-toggle="modal" data-target="#TransferIn">Most Transfered In</a></th>
+                            <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">
+                                <a class="trnin" style="color:white;font-size: 12px" data-toggle="modal" data-target="#TransferOut">Most Transfered Out</a></th>
                             <th style="font-family: arial;text-align: center; font-size: 12px;border-right: 1px solid black">Wildcards Played</th>
-                            <th style="font-family: arial;text-align: center; font-size: 12px">Most Captained</th>
+                            <th style="font-family: arial;text-align: center; font-size: 12px">
+                                <a class="trnin" style="color:white;font-size: 12px" data-toggle="modal" data-target="#MostCaptained">Most Captained</a></th>
                         </tr>
                         <tr>
                             <td style="font-family: arial;text-align: center; font-size: 15px;border-right: 1px solid black ">143</td>
@@ -658,8 +662,8 @@
                         <table class="col-md-12 col-xs-12" style="width:100%; background-color:#1d3260; margin-top: 15%; border-top: 4px solid #ac0f1f">
                             <tr>
                                 <th style="padding-left: 2%; color: white; font-size: 15px;padding-top: 1.7%;padding-bottom: 1.7%"> Latest Injuries and Bans </th>
-                            <th style="font-size: 13px; text-align: right;background-color: #1d3260;font-weight: lighter;padding-top: 1.7%;padding-bottom: 1.7%; padding-right:2%"> <a href="#" style="color: white"> More...
-                                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-left: 7%; margin-top: 2%"></i></a>
+                                <th style="font-size: 13px; text-align: right;background-color: #1d3260;font-weight: lighter;padding-top: 1.7%;padding-bottom: 1.7%; padding-right:2%"> <a href="#" style="color: white"> More
+                                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-left: 15%; margin-top: 3%"></i></a>
                                 </th>
                             </tr> 
                         </table>
@@ -736,7 +740,7 @@
                                 <td style="font-family: arial; font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:bold;text-align: center; border-bottom:1px solid #e8e8e8">BOS</td>
                             </tr>
                         </table>
-                        
+
                     </div>
                 </div>
                 <div class="col-md-12 col-xs-12" style="margin-top: 4%; border: 1px solid #e8e8e8;border-top: 4px solid #ac0f1f;height:280px ">
@@ -868,97 +872,99 @@
                 <!-- Modal content-->
                 <div class="modal-content" >
                     <table class="col-md-12 col-xs-12" style="width:100%; margin-top: 0.5%; border-top: 4px solid #1d3260">
-                            <tr>
-                                <th style="background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.7%;padding-bottom: 1.7%"> Most Transferred In</th>
-                                
-                            </tr>    
-                        </table>
-                        <table class="col-md-12 col-xs-12" style="width:100%; border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8; border-left:1px solid #e8e8e8;background-color: white">
-                            <tr>
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%"></th>
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%;text-align: center;font-size: 13px ">Pos</th> 
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%;padding-left:10%;font-size: 13px ">Player</th>
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%;font-size: 13px ">Club</th>
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%;text-align: center ;font-size: 13px">TRN IN</th>
-                                <th style="background-color: #f9f5f5;padding-top: 1.7%;padding-bottom: 1.7%;text-align: center ;font-size: 13px">Per CPT%</th>
-                            </tr>
-                                                        <tr>
-                                <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=';font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>MID</td>
-                                <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2px">
-                                        <span style="font-size: 15px;font-family: arial; margin-left: -15%">Rapinoe </span>
-                                    </div>
-                                </td>
-                                <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">SEA</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">50%</td>
-                            </tr>
-                            <tr>
-                                <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>MID</td>
-                                <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/skyblue1.png" style="width:31px;height:30px;float:right" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2px">
-                                        <span style="font-size: 15px;font-family: arial; margin-left: -15%">Killion </span>
-                                    </div>
-                                </td>
-                                <td style="font-family: arial ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">NJ</td>
-                                <td style="font-family: arial ;text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">10</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">50%</td>
-                            </tr>
-                            <tr>
-                                <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>MID</td>
-                                <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/thorns1.png" style="width:31px;height:30px;float:right" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2px">
-                                        <span style="font-size: 15px;font-family: arial; margin-left: -15%">Horan </span>
-                                    </div>
-                                </td>
-                                <td style="font-family: arial ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">POR</td>
-                                <td style="font-family: arial ;text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">15</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">50%</td>
-                            </tr>
-                            <tr>
-                                <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>FWD</td>
-                                <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2px">
-                                        <span style="font-size: 15px;font-family: arial; margin-left: -15%">Press</span>
-                                    </div>
-                                </td>
-                                <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">CHI</td>
-                                <td style="font-family: arial;text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">50%</td>
-                            </tr>
-                            <tr>
-                                <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>FWD</td>
-                                <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2px">
-                                        <span style="font-size: 15px;font-family: arial; margin-left: -15%">Marta </span>
-                                    </div>
-                                </td>
-                                <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">ORL</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
-                                <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">50%</td>
-                            </tr>
-                        
-                        </table>
+                        <tr>
+                            <th style="background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.7%;padding-bottom: 1.7%"> Top 5 Most Transfered In
+                                <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-0.5%;margin-right: 3%" >&times;</button></th>
+                        </tr>    
+                    </table>
+                    <table class="col-md-12 col-xs-12" style="width:100%; border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8; border-left:1px solid #e8e8e8;background-color: white">
+                        <tr>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;border-bottom:1px solid white "></th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center;font-size: 13px">Rnk</th> 
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;padding-left:11%;font-size: 13px ">Player</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;font-size: 13px ;text-align: center">Club</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">Pos.</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">In %</th>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Morgan</span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">30%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Marta </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">25%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5; border-right: 1px solid #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Rapinoe </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">SEA</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">23%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Lloyd </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">HOU</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">14%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Press </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">CHI</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">8%</td>
+                        </tr>
+
+                    </table>
 
 
 
@@ -966,7 +972,218 @@
 
             </div>
         </div>
+        <div id="TransferOut" class="modal fade" role="dialog" >
+            <div class="modal-dialog" style="width: 450px">
 
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <table class="col-md-12 col-xs-12" style="width:100%; margin-top: 0.5%; border-top: 4px solid #1d3260">
+                        <tr>
+                            <th style="background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.7%;padding-bottom: 1.7%"> Top 5 Most Transfered Out
+                                <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-0.5%;margin-right: 3%" >&times;</button></th>
+                        </tr>    
+                    </table>
+                    <table class="col-md-12 col-xs-12" style="width:100%; border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8; border-left:1px solid #e8e8e8;background-color: white">
+                        <tr>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;border-bottom:1px solid white "></th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center;font-size: 13px">Rnk</th> 
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;padding-left:11%;font-size: 13px ">Player</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;font-size: 13px ;text-align: center">Club</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">Pos.</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">Out %</th>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Morgan</span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">30%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Marta </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">25%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5; border-right: 1px solid #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Rapinoe </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">SEA</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">23%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Lloyd </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">HOU</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">14%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Press </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">CHI</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">8%</td>
+                        </tr>
+
+                    </table>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <div id="MostCaptained" class="modal fade" role="dialog" >
+            <div class="modal-dialog" style="width: 450px">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <table class="col-md-12 col-xs-12" style="width:100%; margin-top: 0.5%; border-top: 4px solid #1d3260">
+                        <tr>
+                            <th style="background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.7%;padding-bottom: 1.7%"> Top 5 Most Captained
+                                <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-0.5%;margin-right: 3%" >&times;</button></th>
+                        </tr>    
+                    </table>
+                    <table class="col-md-12 col-xs-12" style="width:100%; border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8; border-left:1px solid #e8e8e8;background-color: white">
+                        <tr>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;border-bottom:1px solid white "></th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center;font-size: 13px">Rnk</th> 
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;padding-left:11%;font-size: 13px ">Player</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;font-size: 13px ;text-align: center">Club</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">Pos.</th>
+                            <th style="background-color: #f9f5f5;padding-top: 1.5%;padding-bottom: 1.5%;text-align: center ;font-size: 13px">Sel. %</th>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Morgan</span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">30%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Marta </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">ORL</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">25%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5; border-right: 1px solid #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Rapinoe </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">SEA</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">23%</td>
+                        </tr>
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Lloyd </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">HOU</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">MID</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">14%</td>
+                        </tr>
+
+                        <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 6%; text-align: center; background-color: #f6f6f5 '><span class="glyphicon glyphicon-info-sign"></span></td>
+                            <td style='font-family: arial; font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
+                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
+                                <div class='col-sm-2' style="width:37px;height: 30px">
+                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                </div>
+                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
+                                    <span style="font-size: 15px;font-family: arial; margin-left: -15%">Press </span>
+                                </div>
+                            </td>
+                            <td style="font-family: arial; font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%;text-align: center">CHI</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">FWD</td>
+                            <td style="font-family: arial; text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">8%</td>
+                        </tr>
+
+                    </table>
+
+
+
+                </div>
+
+            </div>
+        </div>
 
 
         <!-- jQuery -->

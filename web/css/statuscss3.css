@@ -1,0 +1,26 @@
+a{
+    color:white;
+    border-bottom:1px dotted white;
+   
+}
+.trnin{
+   text-decoration:none;    
+}
+
+.trnin:link {
+    text-decoration: none;
+}
+
+.trnin:visited {
+    text-decoration:none;
+}
+
+.trnin:hover{
+    color: white;
+    text-decoration:none;
+    cursor: pointer
+}
+
+.trnin:active {
+    text-decoration:none;
+}
