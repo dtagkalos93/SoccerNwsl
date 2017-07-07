@@ -3,3 +3,31 @@
     background-size:100%;
     color:white;
 }
+a{
+    color:white;
+    border-bottom:1px dashed white; 
+}
+.trnin{
+   
+
+    text-decoration:none;
+    
+}
+
+
+.trnin:link {
+    text-decoration: none;
+}
+
+.trnin:visited {
+    text-decoration:none;
+}
+
+.trnin:hover{
+    color: white;
+    text-decoration:underline;
+}
+
+.trnin:active {
+    text-decoration:none;
+}
