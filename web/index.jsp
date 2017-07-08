@@ -105,7 +105,7 @@
             <div class="container topnav">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -186,8 +186,8 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <h1>Fantasy NWSL</h1>
-                            <button type="button" class="btn btn-default" style="width: 172.56px;background-color: #dfdede" data-toggle="modal" data-target="#loginBtn">Login   </button>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#SignBtn"  >Sign Up</button>
+                            <button type="button" class="btn btn-default" style="width: 172.56px;background-color: #dfdede" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#SignBtn" data-backdrop="static" data-keyboard="false"  >Sign Up</button>
 
                         </div>
                     </div>
