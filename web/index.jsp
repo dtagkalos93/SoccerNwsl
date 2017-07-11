@@ -187,7 +187,7 @@
                         <div class="intro-message">
                             <h1>Fantasy NWSL</h1>
                             <button type="button" class="btn btn-default" style="width: 172.56px;background-color: #dfdede" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#SignBtn" data-backdrop="static" data-keyboard="false"  >Sign Up</button>
+                            <a href="signUp.jsp" class="btn btn-default"   >Sign Up</a>
 
                         </div>
                     </div>
