@@ -39,7 +39,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="css/pointscss.css" rel="stylesheet">
+        <link href="css/dreamcss.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -170,6 +170,7 @@
                 <!-- Blog Entries Column -->
                 <div class="col-md-8 test">
                     <div class="row ">
+                        <h3 class="col-md-12 col-xs-12"  style="font-family: arial">Dream Team</h3>
                         <button type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial">
                             Previous
                         </button>
@@ -192,85 +193,46 @@
                                 Next
                             </button>
                         </div>
-                        <div class="col-md-4 hidden-xs" style="border:  18px solid #f9f5f5;" >
+                        <div class="col-md-6 hidden-xs" style="border:  15px    solid #f9f5f5;" >
                             <p style="font-size:18px;font-weight: normal; font-weight: lighter;margin-top: 28px; margin-bottom: 0px" align="center">
-                                Final Points
+                                Total Points
                             </p>
-                            <p style="color:#db1b1b;font-weight:bold;font-family: arial; font-size: 45px" align="center">
+                            <p style="color:#db1b1b;font-weight:bold;font-family: arial; font-size: 45px;    margin: 0px 6px 20px;" align="center">
                                 88
                             </p>
                         </div>
-                        <div class="col-md-4 hidden-xs" style="border:  18px solid #f9f5f5;;background-color: #f9f5f5;" >
-                            <p style="border-bottom: 1.5px solid white;margin-top: 20px;" >
-                                Average Pts
-                                <span style="float:right; font-weight: bold">
-                                    85
-                                </span>
+                       <div class="col-md-6 hidden-xs" style="border:  15px  solid #f9f5f5;" >
+                           <p style="font-size:18px;font-weight: normal; font-weight: lighter; margin-bottom: 0px" align="center">
+                                Top Player
                             </p>
-                            <p style="border-bottom: 1.5px solid white" >
-                                GW Rank
-                                <span style="float:right; font-weight: bold">
-                                    245
-                                </span>
+                            <div class="col-md-6">
+                                <img class="image-player-top " src="img/skyblue1.png"   />
+                            </div>
+                            <div class="col-md-6">
+                                <p style="margin: 0px 6px 4px;margin-top: 11%;" >
+                                Sam Kerr
                             </p>
+                            <p style="margin: 0px 6px 4px;" >
+                                Sky Blue FC
+                            </p>
+                            <p style="margin: 0px 6px 4px;" >
+                                20
+                            </p>
+                            </div>
+                            
                         </div>
-                        <div class="hidden-xs col-md-4" style="border:  18px solid #f9f5f5;background-color: #f9f5f5;" >
-                            <p style="border-bottom: 1.5px solid white;margin-top: 20px;" >
-                                Highest Pts
-                                <span style="float:right; font-weight: bold">
-                                    85
-                                </span>
-                            </p>
-                            <p style="border-bottom: 1.5px solid white" >
-                                Transfers
-                                <span style="float:right; font-weight: bold">
-                                    245
-                                </span>
-                            </p>
-                        </div>
+                        
                         <div class="col-xs-12 hidden-sm hidden-md hidden-lg" style="border:  20px solid #f9f5f5"  >
-                            <p style="font-size:18px;font-weight: normal; font-weight: lighter;margin-top: 28px;margin-bottom: 0; " align="center">
-                                Final Points
-                            </p>
-                            <p style="color:#db1b1b;font-weight:bold;font-family: arial; font-size: 45px" align="center">
-                                88
-                            </p>
+                            
                         </div>
                         <div class="col-xs-6 hidden-sm hidden-md hidden-lg" style="border:  18px solid #f9f5f5;;background-color: #f9f5f5;margin-top:-45px;" >
-                            <col align="right">
-                            <p style="border-bottom: 1.5px solid white;margin-top: 20px;" >
-                                Average Pts
-                                <span style="float:right; font-weight: bold">
-                                    85
-                                </span>
-                            </p>
-                            <p style="border-bottom: 1.5px solid white" >
-                                GW Rank
-                                <span style="float:right; font-weight: bold">
-                                    245
-                                </span>
-                            </p>
+                            <img class="image-player-for " src="img/kansas1.png"  />
+                                <p class="gkname" >Sauerbrunn</p>
+                                <p class="gkpoint">8</p>
                         </div>
-                        <div class="col-xs-6 hidden-sm hidden-md hidden-lg" style="border:  18px solid #f9f5f5;background-color: #f9f5f5;margin-top:-45px;" >
-                            <p style="border-bottom: 1.5px solid white;margin-top: 20px;" >
-                                Highest Pts
-                                <span style="float:right; font-weight: bold">
-                                    85
-                                </span>
-                            </p>
-                            <p style="border-bottom: 1.5px solid white" >
-                                Transfers
-                                <span style="float:right; font-weight: bold">
-                                    245
-                                </span>
-                            </p>
-                        </div>
-                        <div class="col-lg-12 hidden-xs" style="  background-color:#f9f5f5;border-bottom:15px solid #f9f5f5">
-                            <a href="dreamteam.jsp" style="padding-left: 10px;font-size:15px  ">Dream Team
-                                <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img">
+                        
+                       
+                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
                             <div class="col-md-12 col-xs-12" style="left:40.25%" data-toggle="modal" data-target="#players">
 
@@ -437,59 +399,10 @@
                         </div>
 
 
-                        <div class="col-md-12 col-sm-12 col-xs-12 pit-img">
-                            <hr style="border:none;margin-top: 3.5%"/>
-
-                            <div class="col-md-3  col-xs-3   " style="left:4%" data-toggle="modal" data-target="#players">
-                                <img class="image-player-cb2" src="img/couragegk.png"  />
-                                <p class="cbname2" >D'Angelo</p>
-                                <p class="cbpoint2">8</p>
-                                <p class="cbpoint2">GK</p>
-                            </div>
-                            <div class="col-md-3  col-xs-3   " style="left:3%" data-toggle="modal" data-target="#players">
-                                <img class="image-player-cb2" src="img/breakers1.png"  />
-                                <p class="cbname2" >Westphal</p>
-                                <p class="cbpoint2">8</p>
-                                <p class="cbpoint2">1</p>
-                            </div>
-                            <div class="col-md-3  col-xs-3   " style="left:2.25%" data-toggle="modal" data-target="#players">
-                                <img class="image-player-cb2" src="img/pride1.png"  />
-                                <p class="cbname2" >Weatherholt</p>
-                                <p class="cbpoint2">8</p>
-                                <p class="cbpoint2">2</p>
-                            </div>
-                            <div class="col-md-3  col-xs-3   " style="left:1.2%" data-toggle="modal" data-target="#players">
-                                <img class="image-player-cb2" src="img/thorns1.png"  />
-                                <p class="cbname2" >Henry</p>
-                                <p class="cbpoint2">8</p>
-                                <p class="cbpoint2">3</p>
-                            </div>
-
-                        </div>
 
 
 
-                        <div class="col-md-12 col-sm-6 col-xs-12" style="width: 100%;margin-bottom: 5%">
-                            <h3 style="font-family: arial; font-weight: bold;font-size: 18px; ">Automatic Substitutions </h3>
-                            <table style="width: 100%">
-                                <tr>
-                                    <th class="out-head" style="font-size: 15px;font-weight: bold; margin-bottom: 0.75%" >Player Out</th>
-                                    <th class="in-head" style="font-size: 15px;font-weight: bold; margin-bottom: 0.75%"> Player In</th>
-                                </tr>
-                                <tr style="">
-                                    <td class="out-head players ">Leroux</td>
-                                    <td class="in-head players ">Monica</td>
-                                </tr>
-                                <tr style="">
-                                    <td class="out-head players">Spencer</td>
-                                    <td class="out-head players">Daly</td>
-                                </tr>
-
-
-                            </table>
-
-
-                        </div>
+                        
                         <!--Code to retrieve database data for fixture-->
                         <%
                             try {

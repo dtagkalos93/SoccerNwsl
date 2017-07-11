@@ -266,7 +266,7 @@
                             </p>
                         </div>
                         <div class="col-lg-12 hidden-xs" style="  background-color:#f9f5f5;border-bottom:15px solid #f9f5f5">
-                            <a href="#" style="padding-left: 10px;font-size:15px  ">Dream Team
+                            <a href="dreamteam.jsp" style="padding-left: 10px;font-size:15px  ">Dream Team
                                 <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
                         </div>
 

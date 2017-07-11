@@ -47,7 +47,7 @@ h6 {
 
 
 .prevbutton{
-    background-color: #ecebeb; 
+    background-color:#ac0f1f;
     border: none;
     color: black;
     vertical-align: middle;
@@ -59,6 +59,11 @@ h6 {
     cursor: pointer;
     width:40px;
 
+}
+
+.prevbutton:hover{
+    background-color: #c81a2a;
+    text-decoration: none;
 }
 
 .nextbtn{
