@@ -113,7 +113,7 @@
         
         <div class="intro-header2">
 
-                <img src="img/banner2.png" style="visibility: hidden;" />
+                
                 
             <!-- /.container -->
 
@@ -122,46 +122,58 @@
         <div class="container" style="margin-bottom: 3%">
             <div class="row">
 
-                <h1 class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">New Account</h1><br>
+                <h2 class="col-md-12 col-xs-12" style="margin-bottom: 50px;text-align: -webkit-left">Creating a new account</h2><br>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
-                <form class="col-md-12 col-xs-12" action="favteam.jsp">
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
-                        <label class="col-md-3 col-xs-3" for="first" style="font-size: 20px" >First Name:</label>
-                        <div class="col-md-9 col-xs-9"> 
-                        <input type="firstname" class="form-control" id="firstname" style="width:75%">
+                <form class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" action="favteam.jsp">
+                    <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
+                        <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px" >First Name
+                            <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle"> 
+                        <input type="firstname" class="form-control" id="firstname" style="width:75%;border-radius: 0; border-bottom:1px solid #ac0f1f;padding: 3.5%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
-                        <label class="col-md-3 col-xs-3" for="last" style="font-size: 20px" >Last Name:</label>
-                        <div class="col-md-9 col-xs-9"> 
-                        <input type="lastname" class="form-control" id="lastname" style="width:75%">
+                    <div class="form-group" style="padding-bottom: 4%">
+                        <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px" >Last Name
+                         <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle"> 
+                        <input type="lastname" class="form-control" id="lastname" style="width:75%;border-radius: 0; border-bottom:1px solid #ac0f1f;padding: 3.5%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
-                        <label class="col-md-3 col-xs-3" for="email" style="font-size: 20px" >Email Address:</label>
-                        <div class="col-md-9 col-xs-9"> 
-                        <input type="email" class="form-control" id="email" style="width:75%">
+                    <div class="form-group" style="padding-bottom: 4%">
+                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px" >Email Address
+                         <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle"> 
+                        <input type="email" class="form-control" id="email" style="width:75%;border-radius: 0; border-bottom:1px solid #ac0f1f;padding: 3.5%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
-                        <label class="col-md-3 col-xs-3" for="pwd" style="font-size: 20px" >Password:</label>
-                        <div class="col-md-9 col-xs-9"> 
-                        <input type="password" class="form-control" id="pwd" style="width:75%">
+                    <div class="form-group" style=" padding-bottom: 4%">
+                        <label class="col-md-4 col-xs-4" for="pwd" align="right" style="font-size: 17px" >Password
+                         <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle"> 
+                        <input type="password" class="form-control" id="pwd" style="width:75%;border-radius: 0; border-bottom:1px solid #ac0f1f;padding: 3.5%">
                         </div>
                     </div>
-                    <div  style="margin-left: 20%;padding-bottom: 4%">
-                        <label class="col-md-3 col-xs-3" for="gender" style="font-size: 20px"> Gender:</label>
-                        <div class="col-md-9 col-xs-9"> 
+                    <div  style="padding-bottom: 5.25%">
+                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px"> Gender
+                         <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%"> 
                         <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
                         <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                         <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
                         </div>
                     </div>
-                    <div   style="margin-left: 20%;">
-                        <label class="col-md-3 col-xs-3"  style="font-size: 20px"> Select you country:</label>
-                        <div class="col-md-6 col-xs-6"  style=""> 
-                            <input type="text" id="country" >
+                    <div   style="padding-bottom: 4%">
+                        <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px"> Select your country
+                         <span class="rqr"> *Required</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="left" style="font-size: 15px; margin-left: 6%;padding-top: 0.5%"> 
+                            <input type="text" id="country" style="width: 172%;;border-radius: 1px; border-bottom:1px solid #ac0f1f;border-top: none;border-right: none;border-left: none">
 
                         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                         <script src="js/countrySelect.min.js"></script>
@@ -171,13 +183,14 @@
                         </div>
                     </div>
                     
+                </form>
 
-
-                    <div class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" >Submit</button>
-                    </div>
-       
-            </form>
+                    <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
+                        <button class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 22%;padding:0.8%; appearance: button" >
+                                Next <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
+                        </button>
+                    
+         
 
 
                 </div>

@@ -174,3 +174,45 @@ p.copyright {
     background-position:bottom left;
     padding-left:30px;
 }
+
+.prevbutton{
+    background-color:#3B5998;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px
+}
+
+.prevbutton:hover{
+    background-color: #050424;
+    text-decoration: none;
+}
+
+.nextbutton{
+    background-color:#55ACEE;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px
+}
+
+.nextbutton:hover{
+    background-color: #050424;
+    text-decoration: none;
+}
+
+.fa-facebook{
+    color:white;
+    margin-right: 3%;
+    text-decoration: none;
+    
+}
+
+.fa-twitter{
+    color:white;
+    margin-right: 3%;
+    text-decoration: none;
+    
+}

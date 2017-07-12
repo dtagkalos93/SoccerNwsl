@@ -192,237 +192,177 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.intro-header -->
-
-        <!-- Page Content -->
-
-        <a  name="services"></a>
-        <div class="content-section-a">
-
-            <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Pick your squad<br></h2>
-                        <p class="lead">Select your best IX and beat the best in order to be the best.</p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/ipad.png" alt="">
+                    <div class="col-lg-12" style="margin-top:-15%">
+                        <button class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 20%; appearance: button;padding:0.4%" >
+                           <a class="fa fa-facebook" style="font-size:27px" ></a> Login with Facebook 
+                        </button>
+                        <button class="nextbutton btncustom  " style="margin-left: 1%;color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 20%;padding:0.4%; appearance: button" >
+                            <a class="fa fa-twitter" style="font-size:27px"></a>Login with Twitter
+                        </button>
+
                     </div>
                 </div>
-
             </div>
-            <!-- /.container -->
 
         </div>
-        <!-- /.content-section-a -->
-
-        <div class="content-section-b">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Create and join leagues</h2>
-                        <p class="lead">Join standard leagues or you create your own to compete against your friends. </p>
-                    </div>
-                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                        <img class="img-responsive" src="img/dog.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.content-section-b -->
-
-        <div class="content-section-a">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Squad Restrictions</h2>
-                        <p class="lead">You get a $100 million budget to create your own team with 2 additional free transfers every week.</p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/phones.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.content-section-a -->
-        <!--
-        <a  name="contact"></a>
-        <div class="banner">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2>Connect to Start Bootstrap:</h2>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
         <!-- /.container -->
 
     </div>
-    <!-- /.banner -->
+    <!-- /.intro-header -->
 
-    <!-- Footer -->
-    <!--
-    <footer>
+    <!-- Page Content -->
+
+    <a  name="services"></a>
+    <div class="content-section-a">
+
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Pick your squad<br></h2>
+                    <p class="lead">Select your best IX and beat the best in order to be the best.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/ipad.png" alt="">
                 </div>
             </div>
+
         </div>
-    </footer>
-    -->
-    <!-- Login Modal -->
+        <!-- /.container -->
 
-    <div id="loginBtn" class="modal fade" role="dialog" >
-        <div class="modal-dialog" style="width: 450px">
+    </div>
+    <!-- /.content-section-a -->
 
-            <!-- Modal content-->
-            <div class="modal-content" >
-                <h1 align="center" style="margin-bottom: 50px">Login</h1><br>
-                <div id="ajaxLoginResponse" style="color: red;"></div>
+    <div class="content-section-b">
 
-                <form>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="email" >Email address:</label>
-                        <input type="email" class="form-control" id="email" style="width:75%">
-                    </div>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="pwd" >Password:</label>
-                        <input type="password" class="form-control" id="pwd" style="width:75%">
-                    </div>
-                    <div class="checkbox" style="margin-left: 20%">
-                        <label ><input type="checkbox"> Remember me</label>
-                    </div>
-                    <div align="center" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" >Submit</button>
-                    </div>
-                </form>
+        <div class="container">
 
-
-
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Create and join leagues</h2>
+                    <p class="lead">Join standard leagues or you create your own to compete against your friends. </p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/dog.png" alt="">
+                </div>
             </div>
 
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Squad Restrictions</h2>
+                    <p class="lead">You get a $100 million budget to create your own team with 2 additional free transfers every week.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+    <!--
+    <a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect to Start Bootstrap:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.banner -->
+
+<!-- Footer -->
+<!--
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+            </div>
         </div>
     </div>
+</footer>
+-->
+<!-- Login Modal -->
 
-    <!-- Sign Modal -->
+<div id="loginBtn" class="modal fade" role="dialog" >
+    <div class="modal-dialog" style="width: 450px">
 
-    <div id="SignBtn" class="modal fade" role="dialog" >
-        <div class="modal-dialog" style="width: 450px">
+        <!-- Modal content-->
+        <div class="modal-content" >
+            <h1 align="center" style="margin-bottom: 50px">Login</h1><br>
+            <div id="ajaxLoginResponse" style="color: red;"></div>
 
-            <!-- Modal content-->
-            <div class="modal-content" >
-                <h1 align="center" style="margin-bottom: 50px">Sign Up</h1><br>
-                <div id="ajaxLoginResponse" style="color: red;"></div>
-
-                <form>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="email" >First Name:</label>
-                        <input type="email" class="form-control" id="email" style="width:75%">
-                    </div>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="pwd" >Last Name:</label>
-                        <input type="password" class="form-control" id="pwd" style="width:75%">
-                    </div>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="pwd" >Email Address:</label>
-                        <input type="password" class="form-control" id="pwd" style="width:75%">
-                    </div>
-                    <div class="form-group" style="margin-left: 20%">
-                        <label for="pwd" >Password:</label>
-                        <input type="password" class="form-control" id="pwd" style="width:75%">
-                    </div>
-                    <div align="center" style="margin-left: 5%">
-                        <label for="gender"> Gender:</label>
-                        <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
-                        <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
-                        <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified  
-                    </div>
-                    <div style="margin-left: 20%;margin-top: 20px">
-                        <input type="text" id="country">
-
-                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                        <script src="js/countrySelect.min.js"></script>
-                        <script>
-                            $("#country").countrySelect();
-                        </script>
-                    </div>
-                    <div style="margin-left: 20%;margin-top: 20px;">
-                        <select name="team" id="filesB" style='position:relative;z-index:100'>
-                            <option style="" value="" data-class="selectteam">Select your Team </option>
-                            <option class="team" value="boston" data-class="boston" >Boston Breakers</option>
-                            <option class="team" value="chicago" data-class="chicago"  >Chicago Red Stars</option>
-                            <option class="team" value="kansas" data-class="kansas" >FC Kansas City</option>
-                            <option class="team" value="houston" data-class="houston" >Houston Dash</option>
-                            <option class="team" value="courage" data-class="courage" >North Carolina Courage</option>
-                            <option class="team" value="orlando" data-class="orlando"  >Orlando Pride</option>
-                            <option class="team" value="portland" data-class="portland" >Portland Thorns FC</option>
-                            <option class="team" value="seattle" data-class="seattle"  >Seattle Reign</option>
-                            <option class="team" value="sky" data-class="sky" >Sky Blue FC</option>
-                            <option class="team" value="spirit" data-class="spirit" >Washington Spirit</option>
-                        </select>
-                    </div>
-
-
-                    <div align="center" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" >Submit</button>
-                    </div>
-            </div>
+            <form>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="email" >Email address:</label>
+                    <input type="email" class="form-control" id="email" style="width:75%">
+                </div>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="pwd" >Password:</label>
+                    <input type="password" class="form-control" id="pwd" style="width:75%">
+                </div>
+                <div class="checkbox" style="margin-left: 20%">
+                    <label ><input type="checkbox"> Remember me</label>
+                </div>
+                <div align="center" style="margin-bottom: 50px">
+                    <button type="submit" class="btn btn-default" >Submit</button>
+                </div>
             </form>
 
 
@@ -430,6 +370,78 @@
         </div>
 
     </div>
+</div>
+
+<!-- Sign Modal -->
+
+<div id="SignBtn" class="modal fade" role="dialog" >
+    <div class="modal-dialog" style="width: 450px">
+
+        <!-- Modal content-->
+        <div class="modal-content" >
+            <h1 align="center" style="margin-bottom: 50px">Sign Up</h1><br>
+            <div id="ajaxLoginResponse" style="color: red;"></div>
+
+            <form>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="email" >First Name:</label>
+                    <input type="email" class="form-control" id="email" style="width:75%">
+                </div>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="pwd" >Last Name:</label>
+                    <input type="password" class="form-control" id="pwd" style="width:75%">
+                </div>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="pwd" >Email Address:</label>
+                    <input type="password" class="form-control" id="pwd" style="width:75%">
+                </div>
+                <div class="form-group" style="margin-left: 20%">
+                    <label for="pwd" >Password:</label>
+                    <input type="password" class="form-control" id="pwd" style="width:75%">
+                </div>
+                <div align="center" style="margin-left: 5%">
+                    <label for="gender"> Gender:</label>
+                    <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
+                    <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
+                    <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified  
+                </div>
+                <div style="margin-left: 20%;margin-top: 20px">
+                    <input type="text" id="country">
+
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                    <script src="js/countrySelect.min.js"></script>
+                    <script>
+                        $("#country").countrySelect();
+                    </script>
+                </div>
+                <div style="margin-left: 20%;margin-top: 20px;">
+                    <select name="team" id="filesB" style='position:relative;z-index:100'>
+                        <option style="" value="" data-class="selectteam">Select your Team </option>
+                        <option class="team" value="boston" data-class="boston" >Boston Breakers</option>
+                        <option class="team" value="chicago" data-class="chicago"  >Chicago Red Stars</option>
+                        <option class="team" value="kansas" data-class="kansas" >FC Kansas City</option>
+                        <option class="team" value="houston" data-class="houston" >Houston Dash</option>
+                        <option class="team" value="courage" data-class="courage" >North Carolina Courage</option>
+                        <option class="team" value="orlando" data-class="orlando"  >Orlando Pride</option>
+                        <option class="team" value="portland" data-class="portland" >Portland Thorns FC</option>
+                        <option class="team" value="seattle" data-class="seattle"  >Seattle Reign</option>
+                        <option class="team" value="sky" data-class="sky" >Sky Blue FC</option>
+                        <option class="team" value="spirit" data-class="spirit" >Washington Spirit</option>
+                    </select>
+                </div>
+
+
+                <div align="center" style="margin-bottom: 50px">
+                    <button type="submit" class="btn btn-default" >Submit</button>
+                </div>
+        </div>
+        </form>
+
+
+
+    </div>
+
+</div>
 </div>
 
 
