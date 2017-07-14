@@ -8,6 +8,10 @@
         <servlet-name>fixture</servlet-name>
         <servlet-class>com.fantasy.fixture</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sign</servlet-name>
+        <servlet-class>com.fantasy.sign</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -16,10 +20,13 @@
         <servlet-name>fixture</servlet-name>
         <url-pattern>/fixture</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sign</servlet-name>
+        <url-pattern>/sign</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-
 </web-app>

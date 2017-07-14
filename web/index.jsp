@@ -99,6 +99,16 @@
     </head>
 
     <body>
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=1909875375949016";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -194,9 +204,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12" style="margin-top:-15%">
-                        <button class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 20%; appearance: button;padding:0.4%" >
-                           <a class="fa fa-facebook" style="font-size:27px" ></a> Login with Facebook 
-                        </button>
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
                         <button class="nextbutton btncustom  " style="margin-left: 1%;color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 20%;padding:0.4%; appearance: button" >
                             <a class="fa fa-twitter" style="font-size:27px"></a>Login with Twitter
                         </button>
@@ -411,7 +419,7 @@
                     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                     <script src="js/countrySelect.min.js"></script>
                     <script>
-                        $("#country").countrySelect();
+    $("#country").countrySelect();
                     </script>
                 </div>
                 <div style="margin-left: 20%;margin-top: 20px;">
@@ -455,41 +463,41 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-                            $(function () {
-                                $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-                                    _renderItem: function (ul, item) {
-                                        var li = $("<li>"),
-                                                wrapper = $("<div>", {text: item.label});
+    $(function () {
+        $.widget("custom.iconselectmenu", $.ui.selectmenu, {
+            _renderItem: function (ul, item) {
+                var li = $("<li>"),
+                        wrapper = $("<div>", {text: item.label});
 
-                                        if (item.disabled) {
-                                            li.addClass("ui-state-disabled");
-                                        }
+                if (item.disabled) {
+                    li.addClass("ui-state-disabled");
+                }
 
-                                        $("<span>", {
-                                            style: item.element.attr("data-style"),
-                                            "class": "ui-icon " + item.element.attr("data-class")
-                                        })
-                                                .appendTo(wrapper);
+                $("<span>", {
+                    style: item.element.attr("data-style"),
+                    "class": "ui-icon " + item.element.attr("data-class")
+                })
+                        .appendTo(wrapper);
 
-                                        return li.append(wrapper).appendTo(ul);
-                                    }
-                                });
+                return li.append(wrapper).appendTo(ul);
+            }
+        });
 
-                                $("#filesA")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons");
+        $("#filesA")
+                .iconselectmenu()
+                .iconselectmenu("menuWidget")
+                .addClass("ui-menu-icons");
 
-                                $("#filesB")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons customicons");
+        $("#filesB")
+                .iconselectmenu()
+                .iconselectmenu("menuWidget")
+                .addClass("ui-menu-icons customicons");
 
-                                $("#people")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons avatar");
-                            });
+        $("#people")
+                .iconselectmenu()
+                .iconselectmenu("menuWidget")
+                .addClass("ui-menu-icons avatar");
+    });
 </script>
 
 </body>

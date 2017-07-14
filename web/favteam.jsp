@@ -122,7 +122,7 @@
         <div class="container" style="margin-bottom: 3%">
             <div class="row">
 
-                <h1 class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">New Account</h1><br>
+                <h1 class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">Favourite Team</h1><br>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form class="col-md-12 col-xs-12" action="favteam.jsp">
