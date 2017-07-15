@@ -83,12 +83,16 @@ public class sign extends HttpServlet {
         }
         String email=request.getParameter("email");
         //sunartihsh gia gia elegxo email..
-        //boolean check=emailExist(email);
+        dbCredentials exist=new dbCredentials();
+        boolean check=exist.emailExist(email);
         System.out.println(email);
         if(email.equals("")){
 
             request.setAttribute("erroremail","email");
 
+        }
+        if(check){
+            request.setAttribute("erroremail","exist");
         }
         String password=request.getParameter("pwd");
         System.out.println(password);
@@ -109,9 +113,9 @@ public class sign extends HttpServlet {
         String country=request.getParameter("country");
         
         
-        if(firstName.equals("") || lastName.equals("") || email.equals("") || gender==null || password.equals("")     ){
+        if(firstName.equals("") || lastName.equals("") || email.equals("") || gender==null || password.equals("") || check    ){
             
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("signError.jsp");
             rd.forward(request,response);
         }
         

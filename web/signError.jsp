@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
     <head>
@@ -124,50 +124,129 @@
 
                 <h2 class="col-md-12 col-xs-12" style="margin-bottom: 50px;text-align: -webkit-left">Creating a new account</h2><br>
 
+                <%
+                    boolean errorfirst = false;
+                    boolean errorLast = false;
+                    boolean errorEmail = false;
+                    boolean errorPWD = false;
+                    boolean errorGender = false;
+                    String emailStr = "";
+                    String emailmargin="";
 
+                    if (request.getAttribute("errorfirst") != null) {
+                        errorfirst = true;
+                    }
+                    if (request.getAttribute("errorlast") != null) {
+                        errorLast = true;
+                    }
+                    if (request.getAttribute("erroremail") != null) {
+                        emailStr = request.getAttribute("erroremail").toString();
+                        errorEmail = true;
+                    }
+                    if (request.getAttribute("errorpwd") != null) {
+                        errorPWD = true;
+                    }
+                    if (request.getAttribute("errorgender") != null) {
+                        errorGender = true;
+                    }
+                %>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
                     <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
-
+                        <%if (!errorfirst) {  %>
+                        
                         <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%" >First Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
+                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
 
-                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
 
                         </div>
+                        <%} else { %> 
+                        <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%" >First Name
+                            <span style="font-size: 18px"> *</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle" style=""> 
+                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <div class="z-fieldError">
+                                <span  >This field is required.</span>
+                            </div>
+                        </div>
 
+                        <%}%>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
+                        <%if (!errorLast) { emailmargin="-33.5";%>
+                        
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
 
                         </div>
+                        <%} else { emailmargin="0";%>
+                        <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
+                            <span style="font-size: 18px"> *</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle" > 
+                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <div class="z-fieldError">
+                                <span >This field is required.</span>
+                            </div>
+                        </div>
+                        <%}%>
                     </div>
-                    <div class="form-group"  style="padding-bottom: 4%">
-                        <label class="col-md-4 col-xs-4" for="emial" align="right" style="font-size: 17px;padding:1%" >Email  Address
+                    <div class="form-group"  style="padding-bottom: 4%;">
+                        <%if (!errorEmail) {%>
+                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%" >Email  Address
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
                             <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
+                        <%} else { %>
+                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding: 1%   " >Email
+                            <span style="font-size: 18px"> *</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle" style="padding-bottom: 1%"> 
+                            <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <div class="z-fieldError">
+                                <%if (emailStr.equals("email")) {%>
+                                <span  >This field is required.</span>
+                                <%} else if (emailStr.equals("exist")) {%>
+                                <span  >This email already exist.</span><%
+                                }%>
+                            </div>
+                        </div>  
+                        <%}%>
                     </div>
                     <div class="form-group" style=" padding-bottom: 4%">
+                        <%if (!errorPWD) {%>
                         <label class="col-md-4 col-xs-4" for="pwd" align="right" style="font-size: 17px;padding:1%" >Password
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
                             <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
-
+                        <%} else{%>
+                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%" >Password
+                            <span style="font-size: 18px"> *</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle" style="padding-bottom: 1%"> 
+                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <div class="z-fieldError">
+                                <span  >This field is required.</span>
+     
+                            </div>
+                        </div>
+                        <%}%>
                     </div>
                     <div  style="padding-bottom: 5.25%">
+                        <%if (!errorGender) {%>
                         <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%"> Gender
                             <span style="font-size: 18px"> *</span>
                         </label>
@@ -176,6 +255,19 @@
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
                         </div>
+                        <%} else {%>
+                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%"> Gender
+                            <span style="font-size: 18px"> *</span>
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%;padding-bottom: 1%"> 
+                            <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px; background-color: #ce3535;"> Male
+                            <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
+                            <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
+                            <div class="z-fieldError">
+                                <span class="z-fieldError_wrapper" >This field is required.</span>
+                            </div>
+                        </div>
+                        <%}%>
                     </div>
                     <div   style="padding-bottom: 4%">
                         <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;padding:1%"> Select your country
@@ -222,3 +314,4 @@
     </body>
 
 </html>
+
