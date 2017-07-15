@@ -64,56 +64,58 @@ public class sign extends HttpServlet {
         String firstName=request.getParameter("firstname");
         System.out.println(firstName);
         if(firstName.equals("")){
-            errorMessage="Please Give First Name!";
-            System.out.println(errorMessage);
-            request.setAttribute("error","firstname");
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
-            rd.forward(request,response);
+    
+            request.setAttribute("errorfirst","firstname");
+            
+        }
+        else{
+            request.setAttribute("firstname",firstName);
         }
         String lastName=request.getParameter("lastname");
         System.out.println(lastName);
         if(lastName.equals("")){
-            errorMessage="Please Give Last Name!";
-            request.setAttribute("error","lastname");
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
-            rd.forward(request,response);
+
+            request.setAttribute("errorlast","lastname");
+
+        }
+        else{
+            request.setAttribute("lastname",lastName);
         }
         String email=request.getParameter("email");
         //sunartihsh gia gia elegxo email..
         //boolean check=emailExist(email);
         System.out.println(email);
         if(email.equals("")){
-            errorMessage="Please Give email!";
-            request.setAttribute("error","email");
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
-            rd.forward(request,response);
+
+            request.setAttribute("erroremail","email");
+
         }
         String password=request.getParameter("pwd");
         System.out.println(password);
         if(password.equals("")){
-            errorMessage="Please Give password!";
-            request.setAttribute("error","pwd");
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
-            rd.forward(request,response);
+
+            request.setAttribute("errorpwd","pwd");
+
         }
+        
+
         String gender=request.getParameter("gender");
         System.out.println(gender);
-        if(gender.equals("")){
-            errorMessage="Please Give gender!";
-            request.setAttribute("error","gender");
-            RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
-            rd.forward(request,response);
+        if(gender == null){
+
+            request.setAttribute("errorgender","gender");
+
         }
         String country=request.getParameter("country");
-        System.out.println(country);
-        if(country.equals("")){
-            errorMessage="Please Give country!";
-            request.setAttribute("error","country");
+        
+        
+        if(firstName.equals("") || lastName.equals("") || email.equals("") || gender==null || password.equals("")     ){
+            
             RequestDispatcher rd = request.getRequestDispatcher("signUp.jsp");
             rd.forward(request,response);
         }
-        request.setAttribute("firstname",firstName);
-        request.setAttribute("lastname",lastName);
+        
+        
         request.setAttribute("email",email);
         request.setAttribute("password",password);
         request.setAttribute("gender", gender);

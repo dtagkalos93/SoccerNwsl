@@ -124,27 +124,29 @@
 
                 <h2 class="col-md-12 col-xs-12" style="margin-bottom: 50px;text-align: -webkit-left">Creating a new account</h2><br>
 
-                <%boolean errorfirst = false;
+                <%
+                    boolean errorfirst = false;
                     boolean errorLast = false;
                     boolean errorEmail = false;
                     boolean errorPWD = false;
                     boolean errorGender = false;
-                    boolean errorCTR = false;
-                    String errorStr = (String) request.getAttribute("error");
 
-                    if (errorStr != null && errorStr.equals("firstname")) {
+                    if (request.getAttribute("errorfirst") != null) {
                         errorfirst = true;
-                    } else if (errorStr != null && errorStr.equals("lastname")) {
+                    }
+                    if (request.getAttribute("errorlast") != null) {
                         errorLast = true;
-                    } else if (errorStr != null && errorStr.equals("email")) {
+                    }
+                    if (request.getAttribute("erroremail") != null) {
                         errorEmail = true;
-                    } else if (errorStr != null && errorStr.equals("pwd")) {
+                    }
+                    if (request.getAttribute("errorpwd") != null) {
                         errorPWD = true;
-                    } else if (errorStr != null && errorStr.equals("gender")) {
+                    }
+                    if (request.getAttribute("errorgender") != null) {
                         errorGender = true;
-                    } else if (errorStr != null && errorStr.equals("country")) {
-                        errorCTR = true;
-                    }%>
+                    }
+                %>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
@@ -154,57 +156,68 @@
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <% if (!errorEmail && !errorPWD && !errorGender) {
+                            %>  
+                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <%} else {%>
+                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <%}%>
+
                         </div>
-                        <%} else {%>
+                        <%}else {%> 
                         <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%" >First Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" style=""> 
-                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border:1px solid #ce3535;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
                             <div class="z-fieldError">
-                                <span class="z-fieldError_wrapper" >This field is required.</span>
+                                <span  >This field is required.</span>
                             </div>
                         </div>
 
                         <%}%>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
-                        <%if (!errorfirst) {%>
+                        <%if (!errorLast) {%>
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                             <% if (!errorEmail && !errorPWD && !errorGender) {
+                            %>  
+                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <%} else {%>
+                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <%}%>
                         </div>
                         <%} else {%>
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border:1px solid #ce3535;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
                             <div class="z-fieldError">
-                                <span class="z-fieldError_wrapper" >This field is required.</span>
+                                <span >This field is required.</span>
                             </div>
                         </div>
                         <%}%>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
-                        <%if (!errorfirst) {%>
+                        <%if (!errorEmail) {%>
                         <label class="col-md-4 col-xs-4" for="emial" align="right" style="font-size: 17px;padding:1%" >Email  Address
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="email" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
                         <%} else {%>
                         <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%" >Email  Address
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="text" class="form-control" name="email" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border:1px solid #ce3535;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
                             <div class="z-fieldError">
-                                <span class="z-fieldError_wrapper" >This field is required.</span>
+                                <span >This field is required.</span>
                             </div>
                         </div>
                         <%}%>
@@ -215,14 +228,17 @@
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:18px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
                         <%} else {%>
-                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;color:red" >Password
+                        <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%" >Password
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" style="padding-bottom: 1%"> 
-                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:18px;font-weight: lighter;width:100%;border-radius: 0; border-bottom:1px solid #ce3535;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                             <div class="z-fieldError">
+                                <span  >This field is required.</span>
+                            </div>
                         </div>
                         <%}%>
                     </div>
@@ -237,23 +253,25 @@
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
                         </div>
                         <%} else {%>
-                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;color:red"> Gender
+                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%"> Gender
                             <span style="font-size: 18px"> *</span>
                         </label>
-                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%;color: red;padding-bottom: 1%"> 
-                            <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
+                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%;padding-bottom: 1%"> 
+                            <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px; background-color: #ce3535;"> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
+                            <div class="z-fieldError">
+                                <span class="z-fieldError_wrapper" >This field is required.</span>
+                            </div>
                         </div>
                         <%}%>
                     </div>
                     <div   style="padding-bottom: 4%">
-                        <%if (!errorCTR) {%>
                         <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;padding:1%"> Select your country
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="left" style="font-size: 15px; margin-left: 6%;padding-top: 0.5%"> 
-                            <input type="text" id="country" name="country" style="width: 172%;;border-radius: 1px; border-bottom:2px solid #1d3260;border-top: none;border-right: none;border-left: none">
+                            <input type="text" id="country" name="country" style="width: 172%;;border-radius: 1px; border-bottom:1px solid #1d3260;border-top: none;border-right: none;border-left: none">
 
                             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                             <script src="js/countrySelect.min.js"></script>
@@ -261,20 +279,6 @@
                                 $("#country").countrySelect();
                             </script>
                         </div>
-                        <%} else {%>
-                        <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;color:red"> Select your country
-                            <span style="font-size: 18px"> *</span>
-                        </label>
-                        <div class="col-md-6 col-xs-6" align="left" style="font-size: 15px; margin-left: 6%;padding-top: 0.5%;color:red;padding-bottom: 1%"> 
-                            <input type="text" id="country" name="country" style="width: 172%;;border-radius: 1px; border-bottom:1px solid #ce3535;border-top: none;border-right: none;border-left: none">
-
-                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                            <script src="js/countrySelect.min.js"></script>
-                            <script>
-                                $("#country").countrySelect();
-                            </script>
-                        </div>
-                        <%}%>
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
 

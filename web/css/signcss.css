@@ -198,3 +198,7 @@ p.copyright {
     text-align: left;
     margin-left: 12.5%
 }
+
+.z-fieldError_wrapper{
+    margin-left: -12%;
+}
