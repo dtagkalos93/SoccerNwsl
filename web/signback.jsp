@@ -22,72 +22,7 @@
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         
-         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-        <style>
-            .ui-front{z-index:0 !important; } 
-            .ui-selectmenu-open {
-                z-index:9999 !important;
-                width: 17em;
-            }
-
-            /* select with custom icons */
-            .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
-                padding: 0.5em 0 0.5em 5em;
-            }
-            .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
-                height: 40px;
-                width: 50px;
-                top: 0.1em;
-            }
-            .ui-selectmenu-button.ui-button {
-                width: 17em;
-            }
-            .ui-icon.selectteam {
-                background: none;
-            }
-            .ui-icon.boston {
-                background: url("img/Boston_Breakers1.png") 0 0 no-repeat;
-            }
-            .ui-icon.chicago {
-                background: url("img/ChicagoRedStars1.png") 0 0 no-repeat;
-            }
-            .ui-icon.kansas {
-                background: url("img/kansasCity2.png") 0 0 no-repeat;
-            }
-            .ui-icon.kansas {
-                background: url("img/kansasCity2.png") 0 0 no-repeat;
-            }
-            .ui-icon.houston {
-                background: url("img/Houston_Dash2.png") 0 0 no-repeat;
-            }
-            .ui-icon.courage {
-                background: url("img/North_Carolina_Courage1.png") 0 0 no-repeat;
-            }
-            .ui-icon.orlando {
-                background: url("img/OrlandoPride2.png") 0 0 no-repeat;
-            }
-            .ui-icon.portland {
-                background: url("img/Portland1.png") 0 0 no-repeat;
-            }
-            .ui-icon.seattle {
-                background: url("img/SeattleReignFC2.png") 0 0 no-repeat;
-            }
-            .ui-icon.sky {
-                background: url("img/Sky_Blue_FC1.png") 0 0 no-repeat;
-            }
-            .ui-icon.spirit {
-                background: url("img/spirit.png") 0 0 no-repeat;
-            }
-            /* select with CSS avatar icons */
-            option.avatar {
-                background-repeat: no-repeat !important;
-                padding-left: 20px;
-            }
-            .avatar .ui-icon {
-                background-position: left top;
-            }
-        </style>
 
        
 
@@ -192,29 +127,29 @@
                 <h1 class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">Favourite Team</h1><br>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
-                <form class="col-md-12 col-xs-12" method="POST" action="confirmation">
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none" >
+                <form class="col-md-12 col-xs-12" action="confirmation" method="POST">
+                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;" >
                         <label class="col-md-3 col-xs-3" for="first" style="font-size: 20px" >First Name:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <input type="firstname" value="<%=request.getAttribute("firstname") %>" class="form-control" name="firstname" style="width:75%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
+                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;">
                         <label class="col-md-3 col-xs-3" for="last" style="font-size: 20px" >Last Name:</label>
                         <div class="col-md-9 col-xs-9"> 
                         <input type="lastname"  value="<%=request.getAttribute("lastname") %>" class="form-control" name="lastname" style="width:75%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
+                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
                         <label class="col-md-3 col-xs-3" for="email" style="font-size: 20px" >Email Address:</label>
                         <div class="col-md-9 col-xs-9"> 
                         <input type="email" value="<%=request.getAttribute("email") %>"  class="form-control" name="email" style="width:75%">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
+                    <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
                         <label class="col-md-3 col-xs-3" for="pwd" style="font-size: 20px" >Password:</label>
                         <div class="col-md-9 col-xs-9"> 
-                        <input type="text" value="<%=request.getAttribute("password") %>"  class="form-control" name="pwd" style="width:75%">
+                        <input type="password" value="<%=request.getAttribute("pwd") %>"  class="form-control" name="pwd" style="width:75%">
                         </div>
                     </div>
                     <div  style="margin-left: 20%;padding-bottom: 4%;display: none">
@@ -225,12 +160,12 @@
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px" checked> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
-                            <%}else if(gender.equals("female")){ 
+                            }else if(gender.equals("female")){ 
                             %>
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px" checked> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
-                            <%}else if(gender.equals("other")){ 
+                            }else if(gender.equals("other")){ 
                             %>
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px" > Female
@@ -238,27 +173,21 @@
                             <% } %>
                         </div>
                     </div>
+                    <div   style="margin-left: 20%;;display: none">
+                        <label class="col-md-3 col-xs-3"  style="font-size: 20px"> Select you country:</label>
+                        <div class="col-md-6 col-xs-6"  style=""> 
+                            <input type="text" id="country" >
 
-		<div style="margin-left: 20%;margin-top: 20px;padding-bottom: 2%;">
-                        <select name="team" id="filesB" style='position:relative;z-index:100'>
-                            <option style="" value="" data-class="selectteam">Select your Team </option>
-                            <option name="team" value="boston" data-class="boston" >Boston Breakers</option>
-                            <option name="team" value="chicago" data-class="chicago"  >Chicago Red Stars</option>
-                            <option name="team" value="kansas" data-class="kansas" >FC Kansas City</option>
-                            <option name="team" value="houston" data-class="houston" >Houston Dash</option>
-                            <option name="team" value="courage" data-class="courage" >North Carolina Courage</option>
-                            <option name="team" value="orlando" data-class="orlando"  >Orlando Pride</option>
-                            <option name="team" value="portland" data-class="portland" >Portland Thorns FC</option>
-                            <option name="team" value="seattle" data-class="seattle"  >Seattle Reign</option>
-                            <option name="team" value="sky" data-class="sky" >Sky Blue FC</option>
-                            <option name="team" value="spirit" data-class="spirit" >Washington Spirit</option>
-                        </select>
+                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                        <script src="js/countrySelect.min.js"></script>
+                        <script>
+                            $("#country").countrySelect();
+                        </script>
+                        </div>
                     </div>
-                            <input name="country" value="<%=request.getAttribute("country")%>"  class="form-control"  style="display:none">
-                    <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" style="width: 43.4%;" onclick="goBack()" >Back</button>
-                    </div>
-                    <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
+                    
+		
+                    <div class="col-md-12 col-xs-12" align="left" style="margin-bottom: 50px">
                         <button type="submit" class="btn btn-default" >Confirmation</button>
                     </div>
        
@@ -267,64 +196,3 @@
 
                 </div>
         </div>
-
-
-
-
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-                            $(function () {
-                                $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-                                    _renderItem: function (ul, item) {
-                                        var li = $("<li>"),
-                                                wrapper = $("<div>", {text: item.label});
-
-                                        if (item.disabled) {
-                                            li.addClass("ui-state-disabled");
-                                        }
-
-                                        $("<span>", {
-                                            style: item.element.attr("data-style"),
-                                            "class": "ui-icon " + item.element.attr("data-class")
-                                        })
-                                                .appendTo(wrapper);
-
-                                        return li.append(wrapper).appendTo(ul);
-                                    }
-                                });
-
-                                $("#filesA")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons");
-
-                                $("#filesB")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons customicons");
-
-                                $("#people")
-                                        .iconselectmenu()
-                                        .iconselectmenu("menuWidget")
-                                        .addClass("ui-menu-icons avatar");
-                            });
-</script>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
-
-
-
-</body>
-
-</html>

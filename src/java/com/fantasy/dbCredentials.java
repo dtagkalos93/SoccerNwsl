@@ -16,7 +16,7 @@ import java.sql.Statement;
  */
 public class dbCredentials {
     
-    boolean emailExist(String email){
+    public boolean emailExist(String email){
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
@@ -59,4 +59,38 @@ public class dbCredentials {
         return exist;
     }
     
+    public void addUser(String firstname,String lastname,String email,String pwd,String gender,String country,String team){
+        String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+        String dbName = "fantasy";
+        String userId = "root";
+        String password = "";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        
+        try {
+
+            // Load the database driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Get a Connection to the database
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+            Statement stmt = connection.createStatement();
+             String query = "INSERT into user(firstname,lastname,email, password,gender,country,team) values('"+firstname+"','"+lastname+"','"+email+"','"+pwd+"','"+gender+"','"+country+"','"+team+"')";
+             System.out.println(query);
+           int records = stmt.executeUpdate(query);
+
+  
+
+
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Exception is ;" + e);
+
+        }
+    }
 }

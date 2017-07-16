@@ -124,8 +124,17 @@ public class sign extends HttpServlet {
         request.setAttribute("password",password);
         request.setAttribute("gender", gender);
         request.setAttribute("country",country);
-        RequestDispatcher rd = request.getRequestDispatcher("favteam.jsp");
+        
+        if(request.getAttribute("back")!=null){
+            System.out.println("HEREEEEEEE");
+            RequestDispatcher rd = request.getRequestDispatcher("signback.jsp");
+            rd.forward(request,response);
+        }
+        else {
+            RequestDispatcher rd = request.getRequestDispatcher("favteam.jsp");
         rd.forward(request,response);
+        }
+        
     }
 
     /**

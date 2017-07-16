@@ -1,4 +1,30 @@
+<%@page import="java.text.ParseException"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.lang.String"%>
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
+<%@ page import="java.sql.*" %>
+<%
+    String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+    String dbName = "fantasy";
+    String userId = "root";
+    String password = "";
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+%>
+
+
+<!DOCTYPE html>
+
+
 <html lang="en">
 
     <head>
@@ -181,7 +207,7 @@
                             <hr style="border:none;margin-top: 6.5%"/>
                             <div class="col-md-6 col-xs-6" style="left:29%">
                                 <img class="image-player" src="img/subsgk.png"/>
-                                <p class="gkname" >Kompeyer</p>
+                                <p class="gkname" >Kopmeyer</p>
                                 <p class="gkpoint">8</p>
                             </div>
                             <div class="col-md-6 col-xs-6" style="float: left;left: 1.3%">
@@ -264,675 +290,252 @@
                         <button type="button" class="prevbutton btncustom col-md-12 " style="margin-left: 25%;height: 33px; font-size: 15px;text-align: center; font-family:arial;width: 50%;margin-bottom: 2%;margin-top: 2%" >
                             Make Transfers
                         </button>
-                        <div class="col-md-12 col-sm-6 col-xs-12 fixtures">
-                            <h4 style="font-family: arial; font-weight: bold;font-size: 13px;text-align: center; ">Gameweek 9 - 17 June 04:00PM ET</h4>
-                            <button type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-left: -2%;padding-top: 0.6%">
+                        
+                            <%
+                            try {
+                                String strThatDay = "2017/04/11";
+                                SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+                                Date d = null;
+                                try {
+                                    d = formatter.parse(strThatDay);//catch exception
+                                } catch (ParseException e) {
+                                    // TODO Auto-generated catch block
+                                    e.printStackTrace();
+                                }
+
+                                Calendar thatDay = Calendar.getInstance();
+                                thatDay.setTime(d);
+                                Calendar today = Calendar.getInstance();
+                                today.getTime();
+                                long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
+                                long days = diff / (24 * 60 * 60 * 1000);
+                                int weeks = ((int) days) / 7;
+                                connection = DriverManager.getConnection(connectionUrl, userId, password);
+                                statement = connection.createStatement();
+                                if (weeks + 1 == 9 || weeks + 1 == 10) {
+                                    weeks = 9;
+                                } else if (weeks + 1 == 16 || weeks + 1 == 17) {
+                                    weeks = 15;
+                                } else if (weeks + 1 == 23 || weeks + 1 == 24) {
+                                    weeks = 21;
+                                }
+                                String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
+                                int i = 1;
+                                String game = "game" + i;
+                                String date = null;
+                                String badge = null;
+                                resultSet = statement.executeQuery(sql);
+
+                        %>
+
+                        <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
+                            <h4 style="font-family: arial; font-weight: bold;font-size: 13px;text-align: center; ">Gameweek <%=weeks %> </h4>
+                            <button id="prev" value="<%="Gameweek " + (weeks - 1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-left: -2%;padding-top: 0.7%">
                                 Previous
                             </button>
                             <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: lighter; font-family:arial;font-size:17px;left:7.35%; margin-top: -0.5%" align="center">
                                 <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
                             </h5>
-                            <button type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-right:-2.1%;padding-top: 0.6%">
+                            <button id="next" value="<%="Gameweek " + (weeks + 1)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-right:-2.1%;padding-top: 0.7%">
                                 Next
                             </button>
-                            <div class="" >
-                                <h6 class="col-sm-12" style="font-family: arial; font-weight: lighter;font-size: 14px;text-align: center;width: 104%; left:-2.05%;margin-bottom: 1%;padding-bottom:0.5%;margin-top: 0 ">Saturday 17 June</h6>
-                                <a data-toggle="collapse" href="#collapse1" style="color:black ">
-                                    <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
-                                        <div class="row">
-                                            <div class="col-md-4  col-xs-4 match  " style="left: 5.7%">
-                                                <h6 style="float: right;font-size:17px">Orlando Pride</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogol">
-                                                <img class="match" style="" src="img/OrlandoPride2.png">
-                                            </div>
-                                            <div class="col-md-2  col-xs-2  skor ">
-                                                <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter">5-0</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogor">
-                                                <img class="match" style="float: left" src="img/Houston_Dash2.png">
-                                            </div>
-                                            <div class="col-md-4  col-xs-4 match  " style="width: 30%;left: 10.2%">
-                                                <h6 style="font-size: 17px">Houston Dash</h6>
-                                            </div>
+                            <% while (resultSet.next()) {
+                                    if (!resultSet.getString("date").equals(date)) {
+
+                            %>    
+                            <h6 class="col-sm-12" style="font-family: arial; font-weight: lighter;font-size: 14px;text-align: center;width: 104%; left:-2.05%;margin-bottom: -0.5%;margin-top: -2%; "><%=resultSet.getString("date")%></h6>
+                            <% date = resultSet.getString("date");
+                                }
+                            %>
+                            <a data-toggle="collapse" style="color:black " href="#<%=game%>" >
+                                <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
+                                    <div class="row">
+                                        <div class="col-md-4  col-xs-4 match  " style="left: 3.5%">
+                                            <h6 style="float: right;font-size:17px"><%=resultSet.getString("home")%></h6>
                                         </div>
-                                    </div>
-                                </a>
-                                <div id="collapse1" class="col-sm-12 collapse ">
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
+                                        <%if (resultSet.getString("home").equals("Houston Dash")) {
+                                                badge = "Houston_Dash2.png";
+                                            } else if (resultSet.getString("home").equals("Chicago Red Stars")) {
+                                                badge = "ChicagoRedStars1.png";
+                                            } else if (resultSet.getString("home").equals("Portland Thorns FC")) {
+                                                badge = "Portland1.png";
+                                            } else if (resultSet.getString("home").equals("Orlando Pride")) {
+                                                badge = "OrlandoPride2.png";
+                                            } else if (resultSet.getString("home").equals("Washington Spirit")) {
+                                                badge = "spirit.png";
+                                            } else if (resultSet.getString("home").equals("North Carolina Courage")) {
+                                                badge = "North_Carolina_Courage1.png";
+                                            } else if (resultSet.getString("home").equals("Seattle Reign FC")) {
+                                                badge = "SeattleReignFC2.png";
+                                            } else if (resultSet.getString("home").equals("Sky Blue FC")) {
+                                                badge = "Sky_Blue_FC1.png";
+                                            } else if (resultSet.getString("home").equals("FC Kansas City")) {
+                                                badge = "kansasCity2.png";
+                                            } else if (resultSet.getString("home").equals("Boston Breakers")) {
+                                                badge = "Boston_Breakers1.png";
+                                            }
+                                        %>
+
+
+                                        <img  class="col-md-1 col-xs-1 " style="width:initial; "  src="img/<%=badge%>" />
+                                        <div class="col-md-2  col-xs-2  skor "style="    letter-spacing: 0.5px;
+                                             width: 15%; 
+                                             left:-3.3%;
+                                             background-color:#1d3260;
+                                             border-radius: 3pt">
+                                            <h6 style=" width: 100%;text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter"><%=resultSet.getString("time")%></h6>
                                         </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top:0.47% " >Saves</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
+
+                                        <%if (resultSet.getString("away").equals("Houston Dash")) {
+                                                badge = "Houston_Dash2.png";
+                                            } else if (resultSet.getString("away").equals("Chicago Red Stars")) {
+                                                badge = "ChicagoRedStars1.png";
+                                            } else if (resultSet.getString("away").equals("Portland Thorns FC")) {
+                                                badge = "Portland1.png";
+                                            } else if (resultSet.getString("away").equals("Orlando Pride")) {
+                                                badge = "OrlandoPride2.png";
+                                            } else if (resultSet.getString("away").equals("Washington Spirit")) {
+                                                badge = "spirit.png";
+                                            } else if (resultSet.getString("away").equals("North Carolina Courage")) {
+                                                badge = "North_Carolina_Courage1.png";
+                                            } else if (resultSet.getString("away").equals("Seattle Reign FC")) {
+                                                badge = "SeattleReignFC2.png";
+                                            } else if (resultSet.getString("away").equals("Sky Blue FC")) {
+                                                badge = "Sky_Blue_FC1.png";
+                                            } else if (resultSet.getString("away").equals("FC Kansas City")) {
+                                                badge = "kansasCity2.png";
+                                            } else if (resultSet.getString("away").equals("Boston Breakers")) {
+                                                badge = "Boston_Breakers1.png";
+                                            }
+                                        %>
+                                        <img class="col-md-1 col-xs-1 "   style="width: initial;margin-left: -6%; " src="img/<%=badge%>" />
+
+                                        <div class="col-md-4  col-xs-4 match  " style="width: 30%;    left: -4%;">
+                                            <h6 style="font-size: 17px"><%=resultSet.getString("away")%></h6>
                                         </div>
                                     </div>
                                 </div>
-                                <a data-toggle="collapse" href="#collapse2" style="color:black ">
-                                    <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
-                                        <div class="row">
-                                            <div class="col-md-4  col-xs-4 match  " style="left: 5.7%">
-                                                <h6 style="float: right;font-size:17px">FC Kansas City</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogol">
-                                                <img class="match" style="" src="img/kansasCity2.png">
-                                            </div>
-                                            <div class="col-md-2  col-xs-2  skor ">
-                                                <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter">1-1</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogor">
-                                                <img class="match" style="" src="img/SeattleReignFC2.png">
-                                            </div>
-                                            <div class="col-md-4  col-xs-4 match  " style="width: 30%;left: 10.2%">
-                                                <h6 style="text-align:left; font-size: 17px">Seattle Reign</h6>
-                                            </div>
-                                        </div>
+                            </a>
+                            <div class= "col-sm-12 collapse " id="<%=game%>" >
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div id="collapse2" class="col-sm-12 collapse ">
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Saves</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <a data-toggle="collapse" href="#collapse3" style="color:black ">
-                                    <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
-                                        <div class="row">
-                                            <div class="col-md-4  col-xs-4 match  " style="left: 5.7%">
-                                                <h6 style="float: right;font-size:17px">Chicago Red Stars</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogol">
-                                                <img class="match" style="" src="img/ChicagoRedStars1.png">
-                                            </div>
-                                            <div class="col-md-2  col-xs-2  skor ">
-                                                <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter">1-1</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogor">
-                                                <img class="match" style="" src="img/Washington_Spirit1.png">
-                                            </div>
-                                            <div class="col-md-4  col-xs-4 match  " style="width: 30%;left: 10.2%">
-                                                <h6 style="text-align:left; font-size: 17px">Washington Spirit</h6>
-                                            </div>
-                                        </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div id="collapse3" class="col-sm-12 collapse ">
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Saves</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <a data-toggle="collapse" href="#collapse4" style="color:black ">
-                                    <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
-                                        <div class="row">
-                                            <div class="col-md-4  col-xs-4 match  " style="left: 5.7%">
-                                                <h6 style="float: right;font-size:17px">North Carolina Courage</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogol">
-                                                <img class="match" style="" src="img/North_Carolina_Courage1.png">
-                                            </div>
-                                            <div class="col-md-2  col-xs-2  skor ">
-                                                <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter">1-1</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogor">
-                                                <img class="match" style="" src="img/Boston_Breakers1.png">
-                                            </div>
-                                            <div class="col-md-4  col-xs-4 match  " style="width: 30%;left: 10.2%">
-                                                <h6 style="text-align:left; font-size: 17px">Boston Breakers</h6>
-                                            </div>
-                                        </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div id="collapse4" class="col-sm-12 collapse ">
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Saves</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <a data-toggle="collapse" href="#collapse5" style="color:black ">
-                                    <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
-                                        <div class="row">
-                                            <div class="col-md-4  col-xs-4 match  " style="left: 5.7%">
-                                                <h6 style="float: right;font-size:17px">Portland Thorns FC</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogol">
-                                                <img class="match" style="" src="img/Portland1.png">
-                                            </div>
-                                            <div class="col-md-2  col-xs-2  skor ">
-                                                <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter">1-1</h6>
-                                            </div>
-                                            <div class="col-md-1 col-xs-1 skorlogor">
-                                                <img class="match" style="" src="img/Sky_Blue_FC1.png">
-                                            </div>
-                                            <div class="col-md-4  col-xs-4 match " style="width: 30%;left: 10.2%">
-                                                <h6 style="text-align:left; font-size: 17px">Sky Blue FC</h6>
-                                            </div>
-                                        </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div id="collapse5" class="col-sm-12 collapse ">
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Goal Scored</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Assists</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Yellow cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Red cards</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Saves</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                        <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
-                                    </div>
-                                    <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;float:right">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                                <li>Milk</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                            <ul style="list-style: none;margin-left: -12.6%">
-                                                <li>Coffee</li>
-                                                <li>Tea</li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
                                     </div>
                                 </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top:0.47% " >Saves</h6>
+                                </div>
+                                <div class="row2" style="width: 100%" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Bonus</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;margin-bottom: 2%" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
                             </div>
+                            <%
+                                        i++;
+                                        game = "game" + i;
+                                    }
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            %>
                         </div>
                     </div>
                 </div>
@@ -1513,6 +1116,192 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+        
+         <script>
+            $(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var prev = $('#prev').val();
+                $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    $("#somediv").html("");
+                    var $h4 = $("<h4>");
+                    $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+                    $h4.text(responseText[0]+"-"+responseText[3]).appendTo("#somediv");
+
+                    var $buttonprev = $("<button>");
+                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
+                    $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
+                    $buttonprev.text("Previous").insertAfter($h4);
+                    if (responseText[1] == "Gameweek 0") {
+                        $buttonprev.css('visibility', 'hidden');
+                    }
+
+                    var $h5 = $("<h5>");
+                    $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
+                    $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+                    $h5.text("Fixtures").insertAfter($buttonprev);
+                    var $img = $("<img>");
+                    $img.attr({src: "img/nwsllogo.png"});
+                    $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
+                    $img.prependTo($h5);
+                    var $buttonnext = $("<button>");
+                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
+                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
+                    $buttonnext.text("Next").insertAfter($h5);
+                    if (responseText[2] == "Gameweek 23") {
+                        $buttonnext.css('visibility', 'hidden');
+                    }
+                   for (i =responseText.length ; i >=3; i = i - 6) {
+
+                        var $h6 = $("<h6>");
+                        $h6.attr({class: "col-sm-12"});
+                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left":"-2.05%","margin-bottom": "1%","margin-top": "2.5%"});
+                        $h6.text(responseText[i]).insertAfter($buttonnext);
+                        if(i+6>0){
+                            if(responseText[i]==responseText[i-6]){
+                                $h6.css({"display":"none"});
+                            }
+                        }
+                        var $div = $("<div>");
+                        $div.attr({'class': "match col-sm-12"});
+                        $div.css({"width": "104.3%", "left": "-2.1%"});
+                        $div.insertAfter($h6);
+                        var $divrow = $("<div>");
+                        $divrow.attr({'class': "row"});
+                        $divrow.appendTo($div);
+                        var $divh6 = $("<div>");
+                        $divh6.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $divh6.css({"left": "3.7%"});
+                        $divh6.appendTo($divrow);
+                        var $h6home = $("<h6>");
+                        $h6home.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $h6home.css({"margin-left":"2.5%","font-size":"17px","width": "230px","text-align":"right"});
+                        $h6home.text(responseText[i+1]).appendTo($divh6);
+                        var $imghome = $("<img>");
+                        $imghome.attr({src: "img/"+responseText[i+2],'class':"col-md-1 col-xs-1"});
+                        $imghome.css({ "width": "initial ","margin-left": "-1%","margin-right": "2%"});
+                        $imghome.appendTo($divrow);
+                        var $divtime=$("<div>");
+                        $divtime.attr({"class":"col-md-2  col-xs-2  skor "});
+                        $divtime.css({"letter-spacing": "0.5px","width": "15%","left":"-4.3%","background-color":"#1d3260","border-radius":" 3pt"});
+                        $divtime.appendTo($divrow);
+                        var $time=$("<h6>");
+                        $time.css({"width": "100%","text-align": "center","color":"white","font-family": "arial", "font-size": "16px", "font-weight":"lighter"});
+                        $time.text(responseText[i+3]).appendTo($divtime);
+                        var $imgaway = $("<img>");
+                        $imgaway.attr({src: "img/"+responseText[i+5],'class':"col-md-1 col-xs-1"});
+                        $imgaway.css({ "width": "initial ","margin-left": "-7%"});
+                        $imgaway.appendTo($divrow);
+                        var $divh6a = $("<div>");
+                        $divh6a.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $divh6a.css({"left": "-7%","width":"30%"});
+                        $divh6a.appendTo($divrow);
+                        var $h6away = $("<h6>");
+                        $h6away.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $h6away.css({"font-size":"17px","width": "230px"});
+                        $h6away.text(responseText[i+4]).appendTo($divh6a);
+                        
+                        if(i>=responseText.length){
+                            $divrow.css({"display":"none"});
+                            $h6.css({"display":"none"});
+                        }
+                        
+                    }
+
+                });
+            });
+        </script>
+
+        <script>
+            $(document).on("click", "#next", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var prev = $('#next').val();
+                $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    $("#somediv").html("");
+                    var $h4 = $("<h4>");
+                    $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+                    $h4.text(responseText[0]+"-"+responseText[3]).appendTo("#somediv");
+
+                    var $buttonprev = $("<button>");
+                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
+                    $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
+                    $buttonprev.text("Previous").insertAfter($h4);
+                    if (responseText[1] == "Gameweek 0") {
+                        $buttonprev.css('visibility', 'hidden');
+                    }
+
+                    var $h5 = $("<h5>");
+                    $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
+                    $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+                    $h5.text("Fixtures").insertAfter($buttonprev);
+                    var $img = $("<img>");
+                    $img.attr({src: "img/nwsllogo.png"});
+                    $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
+                    $img.prependTo($h5);
+                    var $buttonnext = $("<button>");
+                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
+                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
+                    $buttonnext.text("Next").insertAfter($h5);
+                    if (responseText[2] == "Gameweek 23") {
+                        $buttonnext.css('visibility', 'hidden');
+                    }
+                   for (i =responseText.length ; i >=3; i = i - 6) {
+
+                        var $h6 = $("<h6>");
+                        $h6.attr({class: "col-sm-12"});
+                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left":"-2.05%","margin-bottom": "1%","margin-top": "2.5%"});
+                        $h6.text(responseText[i]).insertAfter($buttonnext);
+                        if(i+6>0){
+                            if(responseText[i]==responseText[i-6]){
+                                $h6.css({"display":"none"});
+                            }
+                        }
+                        var $div = $("<div>");
+                        $div.attr({'class': "match col-sm-12"});
+                        $div.css({"width": "104.3%", "left": "-2.1%"});
+                        $div.insertAfter($h6);
+                        var $divrow = $("<div>");
+                        $divrow.attr({'class': "row"});
+                        $divrow.appendTo($div);
+                        var $divh6 = $("<div>");
+                        $divh6.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $divh6.css({"left": "3.7%"});
+                        $divh6.appendTo($divrow);
+                        var $h6home = $("<h6>");
+                        $h6home.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $h6home.css({"margin-left":"2.5%","font-size":"17px","width": "230px","text-align":"right"});
+                        $h6home.text(responseText[i+1]).appendTo($divh6);
+                        var $imghome = $("<img>");
+                        $imghome.attr({src: "img/"+responseText[i+2],'class':"col-md-1 col-xs-1"});
+                        $imghome.css({ "width": "initial ","margin-left": "-1%","margin-right": "2%"});
+                        $imghome.appendTo($divrow);
+                        var $divtime=$("<div>");
+                        $divtime.attr({"class":"col-md-2  col-xs-2  skor "});
+                        $divtime.css({"letter-spacing": "0.5px","width": "15%","left":"-4.3%","background-color":"#1d3260","border-radius":" 3pt"});
+                        $divtime.appendTo($divrow);
+                        var $time=$("<h6>");
+                        $time.css({"width": "100%","text-align": "center","color":"white","font-family": "arial", "font-size": "16px", "font-weight":"lighter"});
+                        $time.text(responseText[i+3]).appendTo($divtime);
+                        var $imgaway = $("<img>");
+                        $imgaway.attr({src: "img/"+responseText[i+5],'class':"col-md-1 col-xs-1"});
+                        $imgaway.css({ "width": "initial ","margin-left": "-7%"});
+                        $imgaway.appendTo($divrow);
+                        var $divh6a = $("<div>");
+                        $divh6a.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $divh6a.css({"left": "-7%","width":"30%"});
+                        $divh6a.appendTo($divrow);
+                        var $h6away = $("<h6>");
+                        $h6away.attr({'class': "col-md-4  col-xs-4 match  "});
+                        $h6away.css({"font-size":"17px","width": "230px"});
+                        $h6away.text(responseText[i+4]).appendTo($divh6a);
+                        
+                        if(i>=responseText.length){
+                            $divrow.css({"display":"none"});
+                            $h6.css({"display":"none"});
+                        }
+                        
+                    }
+
+                });
+            });
+        </script>
 
     </body>
 

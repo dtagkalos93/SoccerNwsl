@@ -12,6 +12,10 @@
         <servlet-name>sign</servlet-name>
         <servlet-class>com.fantasy.sign</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>confirmation</servlet-name>
+        <servlet-class>com.fantasy.confirmation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>sign</servlet-name>
         <url-pattern>/sign</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>confirmation</servlet-name>
+        <url-pattern>/confirmation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
