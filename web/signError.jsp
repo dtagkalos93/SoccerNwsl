@@ -153,14 +153,14 @@
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
-                    <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
+                    <div class="form-group"  style="padding-bottom: 5%;margin-top: 2%">
                         <%if (!errorfirst) {  %>
                         
                         <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%" >First Name
                             <span style="font-size: 18px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
 
 
                         </div>
@@ -177,7 +177,7 @@
 
                         <%}%>
                     </div>
-                    <div class="form-group"  style="padding-bottom: 4%">
+                    <div class="form-group"  style="padding-bottom: 5%">
                         <%if (!errorLast) { emailmargin="-33.5";%>
                         
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
@@ -185,7 +185,7 @@
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:2px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
 
                         </div>
                         <%} else { emailmargin="0";%>
@@ -200,7 +200,7 @@
                         </div>
                         <%}%>
                     </div>
-                    <div class="form-group"  style="padding-bottom: 4%;">
+                    <div class="form-group"  style="padding-bottom: 5%;">
                         <%if (!errorEmail) {%>
                         <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%" >Email  Address
                             <span style="font-size: 18px"> *</span>
@@ -212,7 +212,7 @@
                         <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding: 1%   " >Email
                             <span style="font-size: 18px"> *</span>
                         </label>
-                        <div class="col-md-6 col-xs-6" align="middle" style="padding-bottom: 1%"> 
+                        <div class="col-md-6 col-xs-6" align="middle" style=""> 
                             <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
                             <div class="z-fieldError">
                                 <%if (emailStr.equals("email")) {%>
@@ -224,7 +224,7 @@
                         </div>  
                         <%}%>
                     </div>
-                    <div class="form-group" style=" padding-bottom: 4%">
+                    <div class="form-group" style=" padding-bottom: 5%">
                         <%if (!errorPWD) {%>
                         <label class="col-md-4 col-xs-4" for="pwd" align="right" style="font-size: 17px;padding:1%" >Password
                             <span style="font-size: 18px"> *</span>
@@ -245,7 +245,7 @@
                         </div>
                         <%}%>
                     </div>
-                    <div  style="padding-bottom: 5.25%">
+                    <div  style="padding-bottom: 6.25%">
                         <%if (!errorGender) {%>
                         <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%"> Gender
                             <span style="font-size: 18px"> *</span>
@@ -269,7 +269,7 @@
                         </div>
                         <%}%>
                     </div>
-                    <div   style="padding-bottom: 4%">
+                    <div   style="padding-bottom:5%">
                         <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;padding:1%"> Select your country
                             <span style="font-size: 18px"> *</span>
                         </label>
