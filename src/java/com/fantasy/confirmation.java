@@ -90,7 +90,7 @@ public class confirmation extends HttpServlet {
             request.setAttribute("time", fixture.gettimeList());
             request.setAttribute("away", fixture.getawayList());
             request.setAttribute("awaybadge", fixture.getawaybadgeList());
-            RequestDispatcher rd = request.getRequestDispatcher("sqaudSelection.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
             rd.forward(request, response);
         }
     }

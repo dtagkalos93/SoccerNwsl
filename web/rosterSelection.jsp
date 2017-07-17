@@ -16,7 +16,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="css/sqaudcss.css" rel="stylesheet">
+        <link href="css/rostercss.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -113,7 +113,7 @@
 
                 <ul class="nav nav-tabs extraClassul">
                     <li  ><a href="status.html">Home</a></li>
-                    <li  class="hidden-xs active"><a href="">Squad Selection</a></li>
+                    <li  class="hidden-xs active"><a href="">Roster Selection</a></li>
                     <li  class="hidden-xs"><a href="fixture">Fixtures</a></li>
                     <li class="hidden-xs"><a href="help.html">Help</a></li>
                     <li class="hidden-xs"><a href="#">Sign Out</a></li>
@@ -141,7 +141,7 @@
                 <!-- Blog Entries Column -->
                 <div class="col-md-8 test">
                     <div class="row ">
-                        <h3 class="col-md-12 col-xs-12"  style="font-family: arial">Squad Selection</h3>
+                        <h3 class="col-md-12 col-xs-12"  style="font-family: arial">Roster Selection</h3>
 
                         <h5 class="col-md-12 col-xs-12" style="font-family: arial;font-weight:lighter; " >
                             Select a maximum of 4 players from a single team or 'Auto Pick' if you're short of time.
