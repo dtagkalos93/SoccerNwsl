@@ -1,4 +1,54 @@
 <!DOCTYPE html>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+            //allow access only if session exists
+            String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+             String dbName = "fantasy";
+            String userId = "root";
+            String password = "";
+            String email = null;
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+//            if (session.getAttribute("user") == null) {
+//                response.sendRedirect("index.jsp");
+//            } else {
+//                user = (String) session.getAttribute("user");
+//            }
+            String emailName = null;
+            String sessionID = null;
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("email")) {
+                        emailName = cookie.getValue();
+                        email = cookie.getValue();
+                        Class.forName("com.mysql.jdbc.Driver");
+
+            // Get a Connection to the database
+                         connection = DriverManager.getConnection(connectionUrl, userId, password);
+                        String sql = "SELECT * FROM user where email='" + email + "'";
+                        Statement s = connection.createStatement();
+
+                        s.executeQuery(sql);
+
+                        resultSet = s.getResultSet();
+                        if (resultSet.next()) {
+                            RequestDispatcher rd = request.getRequestDispatcher("points.jsp");
+                            rd.forward(request, response);
+                        }
+                    }
+                    if (cookie.getName().equals("JSESSIONID")) {
+                        sessionID = cookie.getValue();
+                    }
+                }
+            }
+        %>
+
 <html lang="en">
 
     <head>
@@ -356,17 +406,17 @@
             <h1 align="center" style="margin-bottom: 50px">Login</h1><br>
             <div id="ajaxLoginResponse" style="color: red;"></div>
 
-            <form>
+            <form method="POST" action="login">
                 <div class="form-group" style="margin-left: 20%">
                     <label for="email" >Email address:</label>
-                    <input type="email" class="form-control" id="email" style="width:75%">
+                    <input type="email" class="form-control" name="email" style="width:75%">
                 </div>
                 <div class="form-group" style="margin-left: 20%">
                     <label for="pwd" >Password:</label>
-                    <input type="password" class="form-control" id="pwd" style="width:75%">
+                    <input type="password" class="form-control" name="pwd" style="width:75%">
                 </div>
                 <div class="checkbox" style="margin-left: 20%">
-                    <label ><input type="checkbox"> Remember me</label>
+                    <label ><input type="checkbox" name="checkbox"> Remember me</label>
                 </div>
                 <div align="center" style="margin-bottom: 50px">
                     <button type="submit" class="btn btn-default" >Submit</button>
