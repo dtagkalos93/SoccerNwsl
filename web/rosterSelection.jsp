@@ -112,7 +112,7 @@
             <div class="container extraClass  ">
 
                 <ul class="nav nav-tabs extraClassul">
-                    <li  ><a href="status.html">Home</a></li>
+                    <li  ><a href="home.html">Home</a></li>
                     <li  class="hidden-xs active"><a href="">Roster Selection</a></li>
                     <li  class="hidden-xs"><a href="fixture">Fixtures</a></li>
                     <li class="hidden-xs"><a href="help.html">Help</a></li>
@@ -242,7 +242,7 @@
                                 <p class="gkname" >Forward</p>
                             </div>
                         </div>
-                        <a  class="prevbutton btncustom col-md-12 " style="margin-left: 25%;height: 33px; font-size: 15px;text-align: center; font-family:arial;width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
+                        <a href="enterRoster.html"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%;height: 33px; font-size: 15px;text-align: center; font-family:arial;width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
                             Enter Roster
                         </a>
                         <%

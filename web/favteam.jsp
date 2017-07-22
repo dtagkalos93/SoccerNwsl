@@ -255,12 +255,14 @@
                         </select>
                     </div>
                             <input name="country" value="<%=request.getAttribute("country")%>"  class="form-control"  style="display:none">
-                    <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" style="width: 43.4%;" onclick="goBack()" >Back</button>
-                    </div>
-                    <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                        <button type="submit" class="btn btn-default" >Confirmation</button>
-                    </div>
+                            <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
+                                <button type="submit" class=" prevbutton2 btncustom   " style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" onclick="goBack()" >
+                                    <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
+                            </div>
+                            <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
+                                <button type="submit" class="prevbutton btncustom" style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" >
+                                    <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
+                            </div>
        
             </form>
 

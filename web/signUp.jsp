@@ -193,9 +193,9 @@
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
 
-                        <input type="submit" value="Next" class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 22%;padding:0.8%; appearance: button"> 
+                        <button type="submit" value="Next" class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 22%;padding:0.8%; appearance: button"> Next
                         <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
-
+                        </button>
 
 
 

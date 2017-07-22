@@ -1,0 +1,169 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.intro-header2 {
+    padding-top: 5%;
+    background: url(../img/banner2.png) no-repeat center center;
+    margin-top: 5%; 
+    background-size: cover;
+
+}
+
+.extraClass {
+    height: 130px; 
+    position: relative;
+}
+
+.extraClassul {
+    position: absolute;
+    bottom: 0;
+    font-family: arial;
+}
+
+
+.btncustom:hover{
+    background-color: #c8373b;
+    color: #fff;
+}
+
+
+
+.prevbutton{
+    background-color:#ac0f1f;
+    border: none;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+
+    cursor: pointer;
+    width:40px;
+
+}
+
+.prevbutton:hover{
+    background-color: #c81a2a;
+    text-decoration: none;
+}
+
+.nextbtn{
+    background-color: #ecebeb; 
+    border: none;
+    color: black;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    float:right;
+    cursor: pointer;
+    width:40px;
+
+
+}
+
+.gkname1{
+    width:70%;
+    border: 1px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    height: 20%;
+    padding-top: 0px;
+    font-family: arial;
+    font-size: 100%;
+    opacity: 0.9;
+    filter: alpha(opacity=30);
+
+}
+
+.gkpoint1{
+    width:70%;
+    margin: 0;
+    text-align:center;
+    font-weight: bold;
+    border: 0px solid #57a3f9;
+    background-color: #57a3f9;
+    height: 20px;
+    padding-bottom: 5px;
+    font-family: arial;
+    margin-bottom: 10px;
+    border-bottom-left-radius:3pt 3pt;
+    border-bottom-right-radius:3pt 3pt;
+    font-size: 100%;
+}
+
+.image-player{
+    height: 63%;
+    width: 63%;
+    position: relative;
+    left: 1%;
+}
+
+
+a{
+    color:white;
+    border-bottom:1px dotted white;
+
+}
+.trnin{
+    text-decoration:none;    
+}
+
+.trnin:link {
+    text-decoration: none;
+}
+
+.trnin:visited {
+    text-decoration:none;
+}
+
+.trnin:hover{
+    color: white;
+    text-decoration:none;
+    cursor: pointer
+}
+
+.trnin:active {
+    text-decoration:none;
+}
+
+.image-tables{
+    background: url(../img/banner-status.png) no-repeat;
+    background-size:100%;
+    color:white;
+}
+
+.section-heading{
+    font-family: arial;
+    font-size:20px;
+}
+
+.lead{
+   font-family: arial;
+    font-size:15px; 
+}
+
+

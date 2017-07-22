@@ -203,3 +203,32 @@ p.copyright {
     margin-left: -12%;
 }
 
+.prevbutton{
+    background-color:#1d3260;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+}
+
+.prevbutton:hover{
+    background-color: #050424;
+    text-decoration: none;
+}
+
+.prevbutton2{
+    background-color:#ac0f1f;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+}
+
+.prevbutton2:hover{
+    background-color:#84111c;
+    text-decoration: none;
+}
+
+
