@@ -102,6 +102,8 @@ h6 {
   .cola.collapsed:after {
     content: "\e080";
   }
+  
+  
 
 .list-rules{
      color: black;
