@@ -7,6 +7,8 @@ package com.fantasy;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,47 @@ import javax.servlet.http.HttpServletResponse;
  * @author Mitsos
  */
 public class confirmation extends HttpServlet {
+
+    private List gknameList = new ArrayList();
+    private List gkjerseyList = new ArrayList();
+    private List gkteamList = new ArrayList();
+    private List gkpriceList = new ArrayList();
+    private List gkscoreList = new ArrayList();
+    private List sortgknameList = new ArrayList();
+    private List sortgkjerseyList = new ArrayList();
+    private List sortgkteamList = new ArrayList();
+    private List sortgkpriceList = new ArrayList();
+    private List sortgkscoreList = new ArrayList();
+    private List defnameList = new ArrayList();
+    private List defjerseyList = new ArrayList();
+    private List defteamList = new ArrayList();
+    private List defpriceList = new ArrayList();
+    private List defscoreList = new ArrayList();
+    private List sortdefnameList = new ArrayList();
+    private List sortdefjerseyList = new ArrayList();
+    private List sortdefteamList = new ArrayList();
+    private List sortdefpriceList = new ArrayList();
+    private List sortdefscoreList = new ArrayList();
+    private List midnameList = new ArrayList();
+    private List midjerseyList = new ArrayList();
+    private List midteamList = new ArrayList();
+    private List midpriceList = new ArrayList();
+    private List midscoreList = new ArrayList();
+    private List sortmidnameList = new ArrayList();
+    private List sortmidjerseyList = new ArrayList();
+    private List sortmidteamList = new ArrayList();
+    private List sortmidpriceList = new ArrayList();
+    private List sortmidscoreList = new ArrayList();
+    private List fwdnameList = new ArrayList();
+    private List fwdjerseyList = new ArrayList();
+    private List fwdteamList = new ArrayList();
+    private List fwdpriceList = new ArrayList();
+    private List fwdscoreList = new ArrayList();
+    private List sortfwdnameList = new ArrayList();
+    private List sortfwdjerseyList = new ArrayList();
+    private List sortfwdteamList = new ArrayList();
+    private List sortfwdpriceList = new ArrayList();
+    private List sortfwdscoreList = new ArrayList();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -90,6 +133,39 @@ public class confirmation extends HttpServlet {
             request.setAttribute("time", fixture.gettimeList());
             request.setAttribute("away", fixture.getawayList());
             request.setAttribute("awaybadge", fixture.getawaybadgeList());
+            players gk = new players();
+            gk.players("Goalkeeper");
+            gknameList = gk.getnameList();
+            gkteamList = gk.getteamList();
+            gkjerseyList = gk.getjerseyList();
+            gkpriceList = gk.getpriceList();
+            gkscoreList = gk.getpointList();
+            findmax(request, 2, "gk");
+            players def = new players();
+            def.players("Defender");
+            defnameList = def.getnameList();
+            defteamList = def.getteamList();
+            defjerseyList = def.getjerseyList();
+            defpriceList = def.getpriceList();
+            defscoreList = def.getpointList();
+            findmax(request, 3, "def");
+            players mid = new players();
+            mid.players("Midfielder");
+            midnameList = mid.getnameList();
+            midteamList = mid.getteamList();
+            midjerseyList = mid.getjerseyList();
+            midpriceList = mid.getpriceList();
+            midscoreList = mid.getpointList();
+            findmax(request, 10, "mid");
+            players fwd = new players();
+            fwd.players("Forward");
+            fwdnameList = fwd.getnameList();
+            fwdteamList = fwd.getteamList();
+            fwdjerseyList = fwd.getjerseyList();
+            fwdpriceList = fwd.getpriceList();
+            fwdscoreList = fwd.getpointList();
+            findmax(request, 8, "fwd");
+
             RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
             rd.forward(request, response);
         }
@@ -105,4 +181,129 @@ public class confirmation extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private void findmax(HttpServletRequest request, int no, String position) {
+        System.out.println("findMAX");
+        int k = 1;
+        while (k <= no) {
+            System.out.println("ger");
+
+            if (position.equals("def")) {
+                int max = Integer.parseInt(defscoreList.get(1).toString());
+                int pos = 1;
+
+                for (int i = 2; i < defscoreList.size(); i++) {
+                    if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
+                        System.out.println(Integer.parseInt(defscoreList.get(i).toString()) + "and max: " + max);
+                        max = Integer.parseInt(defscoreList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                sortdefnameList.add(defnameList.get(pos));
+                defnameList.remove(pos);
+                sortdefjerseyList.add(defjerseyList.get(pos));
+                defjerseyList.remove(pos);
+                sortdefteamList.add(defteamList.get(pos));
+                defteamList.remove(pos);
+                sortdefpriceList.add(defpriceList.get(pos));
+                defpriceList.remove(pos);
+                sortdefscoreList.add(defscoreList.get(pos));
+                defscoreList.remove(pos);
+            } else if (position.equals("gk")) {
+                int max = Integer.parseInt(gkscoreList.get(1).toString());
+                int pos = 1;
+
+                for (int i = 2; i < gkscoreList.size(); i++) {
+                    if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
+                        System.out.println(Integer.parseInt(gkscoreList.get(i).toString()) + "and max: " + max);
+                        max = Integer.parseInt(gkscoreList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                sortgknameList.add(gknameList.get(pos));
+                gknameList.remove(pos);
+                sortgkjerseyList.add(gkjerseyList.get(pos));
+                gkjerseyList.remove(pos);
+                sortgkteamList.add(gkteamList.get(pos));
+                gkteamList.remove(pos);
+                sortgkpriceList.add(gkpriceList.get(pos));
+                gkpriceList.remove(pos);
+                sortgkscoreList.add(gkscoreList.get(pos));
+                gkscoreList.remove(pos);
+            } else if (position.equals("mid")) {
+                int max = Integer.parseInt(midscoreList.get(1).toString());
+                int pos = 1;
+
+                for (int i = 2; i < midscoreList.size(); i++) {
+                    if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
+                        
+                        max = Integer.parseInt(midscoreList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                System.out.println(Integer.parseInt(midscoreList.get(pos).toString()) + "and pos: " + pos);
+                
+                sortmidnameList.add(midnameList.get(pos));
+                midnameList.remove(pos);
+                sortmidjerseyList.add(midjerseyList.get(pos));
+                midjerseyList.remove(pos);
+                sortmidteamList.add(midteamList.get(pos));
+                midteamList.remove(pos);
+                sortmidpriceList.add(midpriceList.get(pos));
+                midpriceList.remove(pos);
+                sortmidscoreList.add(midscoreList.get(pos));
+                midscoreList.remove(pos);
+                
+            } else if (position.equals("fwd")) {
+                int max = Integer.parseInt(fwdscoreList.get(1).toString());
+                int pos = 1;
+
+                for (int i = 2; i < fwdscoreList.size(); i++) {
+                    if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
+                        System.out.println(Integer.parseInt(fwdscoreList.get(i).toString()) + "and max: " + max);
+                        max = Integer.parseInt(fwdscoreList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                
+                sortfwdnameList.add(fwdnameList.get(pos));
+                fwdnameList.remove(pos);
+                sortfwdjerseyList.add(fwdjerseyList.get(pos));
+                fwdjerseyList.remove(pos);
+                sortfwdteamList.add(fwdteamList.get(pos));
+                fwdteamList.remove(pos);
+                sortfwdpriceList.add(fwdpriceList.get(pos));
+                fwdpriceList.remove(pos);
+                sortfwdscoreList.add(fwdscoreList.get(pos));
+                fwdscoreList.remove(pos);
+            }
+
+            k++;
+        }
+        if (position.equals("def")) {
+            request.setAttribute("namedef", sortdefnameList);
+            request.setAttribute("badgedef", sortdefjerseyList);
+            request.setAttribute("teamdef", sortdefteamList);
+            request.setAttribute("pricedef", sortdefpriceList);
+            request.setAttribute("scoredef", sortdefscoreList);
+        } else if (position.equals("gk")) {
+            request.setAttribute("namegk", sortgknameList);
+            request.setAttribute("badgegk", sortgkjerseyList);
+            request.setAttribute("teamgk", sortgkteamList);
+            request.setAttribute("pricegk", sortgkpriceList);
+            request.setAttribute("scoregk", sortgkscoreList);
+        } else if (position.equals("mid")) {
+            request.setAttribute("namemid", sortmidnameList);
+            request.setAttribute("badgemid", sortmidjerseyList);
+            request.setAttribute("teammid", sortmidteamList);
+            request.setAttribute("pricemid", sortmidpriceList);
+            request.setAttribute("scoremid", sortmidscoreList);
+        } else if (position.equals("fwd")) {
+            request.setAttribute("namefwd", sortfwdnameList);
+            request.setAttribute("badgefwd", sortfwdjerseyList);
+            request.setAttribute("teamfwd", sortfwdteamList);
+            request.setAttribute("pricefwd", sortfwdpriceList);
+            request.setAttribute("scorefwd", sortfwdscoreList);
+        }
+
+    }
 }

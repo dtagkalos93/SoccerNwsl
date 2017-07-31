@@ -427,6 +427,29 @@
                         </div>
                     </div>
                 </div>
+                <% 
+                    ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
+                    ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
+                    ArrayList<String> gkprice = (ArrayList<String>) request.getAttribute("pricegk");
+                    ArrayList<String> gkscore = (ArrayList<String>) request.getAttribute("scoregk");
+                    ArrayList<String> gk = (ArrayList<String>) request.getAttribute("badgegk");
+                    ArrayList<String> defname = (ArrayList<String>) request.getAttribute("namedef");
+                    ArrayList<String> defteam = (ArrayList<String>) request.getAttribute("teamdef");
+                    ArrayList<String> defprice = (ArrayList<String>) request.getAttribute("pricedef");
+                    ArrayList<String> defscore = (ArrayList<String>) request.getAttribute("scoredef");
+                    ArrayList<String> def = (ArrayList<String>) request.getAttribute("badgedef");
+                    ArrayList<String> midname = (ArrayList<String>) request.getAttribute("namemid");
+                    ArrayList<String> midteam = (ArrayList<String>) request.getAttribute("teammid");
+                    ArrayList<String> midprice = (ArrayList<String>) request.getAttribute("pricemid");
+                    ArrayList<String> midscore = (ArrayList<String>) request.getAttribute("scoremid");
+                    ArrayList<String> mid = (ArrayList<String>) request.getAttribute("badgemid");
+                    ArrayList<String> fwdname = (ArrayList<String>) request.getAttribute("namefwd");
+                    ArrayList<String> fwdteam = (ArrayList<String>) request.getAttribute("teamfwd");
+                    ArrayList<String> fwdprice = (ArrayList<String>) request.getAttribute("pricefwd");
+                    ArrayList<String> fwdscore = (ArrayList<String>) request.getAttribute("scorefwd");
+                    ArrayList<String> fwd = (ArrayList<String>) request.getAttribute("badgefwd");
+                %>            
+                            
                 <div class="col-md-4 sidebar" style=" ">
                     <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                         <div class="teambox">
@@ -527,29 +550,29 @@
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Harris</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=gkname.get(0 )%></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=gkteam.get(0 )%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">150</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%= gkprice.get(0)%></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%= gkscore.get(0) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; font:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Harris</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=gkteam.get(1 )%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">150</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%= gkprice.get(1)%></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%= gkscore.get(1) %></td>
                                 </tr>
                             </table>
                             <table style="width:100%; background-color: #f9f5f5">
@@ -563,43 +586,43 @@
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(0 )%></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(0 )%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(0 )%></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(0 )%></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(1 )%></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(1 )%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(1 )%></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(1 )%></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(2 )%></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(2 )%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(2 )%></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(2)%></td>
                                 </tr>
                             </table>
                             <table style="width:100%; background-color: #f9f5f5">
@@ -613,141 +636,141 @@
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(0) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(0) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(0) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(0) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(0) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(1) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(1) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(1) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(1) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(1) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(2) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(2) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(2) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(2) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(2) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(3) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(3) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(3) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(3) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(3) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(4) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(4) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(4) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(4) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(4) %></td>
+                                </tr>
+                                                                <tr>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=mid.get(5) %>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(5) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(5) %></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(5) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(5) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(6) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(6) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(6) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(6) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(6) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(7) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(7) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(7) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(7) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(7) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(8) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(8) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(8) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(8) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(8) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=mid.get(9) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(9) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(9) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(9) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(9) %></td>
                                 </tr>
                                
                             </table>
@@ -762,113 +785,113 @@
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(0) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(0) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(0) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weigh:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight: lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(0) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(0) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(1) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(1) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(1) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(1) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(2) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(2) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(2) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(2) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(2) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(3) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(3) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(3) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(3) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(3) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(4) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(4) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(4) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(4) %></td>
                                 </tr>
                                 <tr>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=fwd.get(5) %>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter ">ORL</span>
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(5) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(5) %></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(5) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(5) %></td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=fwd.get(6) %>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(6) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(6) %></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(6) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(6) %></td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=fwd.get(7) %>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(7) %></span><hr style="border:none;margin-top: -34%">
+                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(7) %></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(7) %></td>
+                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(7) %></td>
                                 </tr>
                             </table>
                         </div>
