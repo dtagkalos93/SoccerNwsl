@@ -61,6 +61,7 @@ public class confirmation extends HttpServlet {
     private List sortfwdteamList = new ArrayList();
     private List sortfwdpriceList = new ArrayList();
     private List sortfwdscoreList = new ArrayList();
+    private int totalPlayers;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -71,10 +72,7 @@ public class confirmation extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
+  
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -102,6 +100,7 @@ public class confirmation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        totalPlayers=0;
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
         String email = request.getParameter("email");
@@ -136,6 +135,7 @@ public class confirmation extends HttpServlet {
             players gk = new players();
             gk.players("Goalkeeper");
             gknameList = gk.getnameList();
+            totalPlayers=totalPlayers+gknameList.size();
             gkteamList = gk.getteamList();
             gkjerseyList = gk.getjerseyList();
             gkpriceList = gk.getpriceList();
@@ -144,27 +144,31 @@ public class confirmation extends HttpServlet {
             players def = new players();
             def.players("Defender");
             defnameList = def.getnameList();
+            totalPlayers=totalPlayers+defnameList.size();
             defteamList = def.getteamList();
             defjerseyList = def.getjerseyList();
             defpriceList = def.getpriceList();
             defscoreList = def.getpointList();
-            findmax(request, 3, "def");
+            findmax(request, 8, "def");
             players mid = new players();
             mid.players("Midfielder");
             midnameList = mid.getnameList();
+            totalPlayers=totalPlayers+midnameList.size();
             midteamList = mid.getteamList();
             midjerseyList = mid.getjerseyList();
             midpriceList = mid.getpriceList();
             midscoreList = mid.getpointList();
-            findmax(request, 10, "mid");
+            findmax(request, 5, "mid");
             players fwd = new players();
             fwd.players("Forward");
             fwdnameList = fwd.getnameList();
+            totalPlayers=totalPlayers+fwdnameList.size();
             fwdteamList = fwd.getteamList();
             fwdjerseyList = fwd.getjerseyList();
             fwdpriceList = fwd.getpriceList();
             fwdscoreList = fwd.getpointList();
-            findmax(request, 8, "fwd");
+            findmax(request, 5, "fwd");
+            request.setAttribute("total",totalPlayers+"");
 
             RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
             rd.forward(request, response);
@@ -188,10 +192,10 @@ public class confirmation extends HttpServlet {
             System.out.println("ger");
 
             if (position.equals("def")) {
-                int max = Integer.parseInt(defscoreList.get(1).toString());
-                int pos = 1;
+                int max = Integer.parseInt(defscoreList.get(0).toString());
+                int pos = 0;
 
-                for (int i = 2; i < defscoreList.size(); i++) {
+                for (int i = 1; i < defscoreList.size(); i++) {
                     if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
                         System.out.println(Integer.parseInt(defscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(defscoreList.get(i).toString());
@@ -199,6 +203,7 @@ public class confirmation extends HttpServlet {
                     }
                 }
                 sortdefnameList.add(defnameList.get(pos));
+                
                 defnameList.remove(pos);
                 sortdefjerseyList.add(defjerseyList.get(pos));
                 defjerseyList.remove(pos);
@@ -209,10 +214,10 @@ public class confirmation extends HttpServlet {
                 sortdefscoreList.add(defscoreList.get(pos));
                 defscoreList.remove(pos);
             } else if (position.equals("gk")) {
-                int max = Integer.parseInt(gkscoreList.get(1).toString());
-                int pos = 1;
-
-                for (int i = 2; i < gkscoreList.size(); i++) {
+                int max = Integer.parseInt(gkscoreList.get(0).toString());
+                int pos = 0;
+                System.out.println(gknameList.get(0).toString());
+                for (int i = 1; i < gkscoreList.size(); i++) {
                     if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
                         System.out.println(Integer.parseInt(gkscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(gkscoreList.get(i).toString());
@@ -220,6 +225,7 @@ public class confirmation extends HttpServlet {
                     }
                 }
                 sortgknameList.add(gknameList.get(pos));
+                
                 gknameList.remove(pos);
                 sortgkjerseyList.add(gkjerseyList.get(pos));
                 gkjerseyList.remove(pos);
@@ -230,10 +236,10 @@ public class confirmation extends HttpServlet {
                 sortgkscoreList.add(gkscoreList.get(pos));
                 gkscoreList.remove(pos);
             } else if (position.equals("mid")) {
-                int max = Integer.parseInt(midscoreList.get(1).toString());
-                int pos = 1;
+                int max = Integer.parseInt(midscoreList.get(0).toString());
+                int pos = 0;
 
-                for (int i = 2; i < midscoreList.size(); i++) {
+                for (int i = 1; i < midscoreList.size(); i++) {
                     if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
                         
                         max = Integer.parseInt(midscoreList.get(i).toString());
@@ -243,6 +249,7 @@ public class confirmation extends HttpServlet {
                 System.out.println(Integer.parseInt(midscoreList.get(pos).toString()) + "and pos: " + pos);
                 
                 sortmidnameList.add(midnameList.get(pos));
+                
                 midnameList.remove(pos);
                 sortmidjerseyList.add(midjerseyList.get(pos));
                 midjerseyList.remove(pos);
@@ -254,10 +261,10 @@ public class confirmation extends HttpServlet {
                 midscoreList.remove(pos);
                 
             } else if (position.equals("fwd")) {
-                int max = Integer.parseInt(fwdscoreList.get(1).toString());
-                int pos = 1;
+                int max = Integer.parseInt(fwdscoreList.get(0).toString());
+                int pos = 0;
 
-                for (int i = 2; i < fwdscoreList.size(); i++) {
+                for (int i = 1; i < fwdscoreList.size(); i++) {
                     if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
                         System.out.println(Integer.parseInt(fwdscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(fwdscoreList.get(i).toString());
@@ -266,6 +273,7 @@ public class confirmation extends HttpServlet {
                 }
                 
                 sortfwdnameList.add(fwdnameList.get(pos));
+                
                 fwdnameList.remove(pos);
                 sortfwdjerseyList.add(fwdjerseyList.get(pos));
                 fwdjerseyList.remove(pos);

@@ -116,7 +116,7 @@
                     <li  class="hidden-xs active"><a href="">Roster Selection</a></li>
                     <li  class="hidden-xs"><a href="fixture">Fixtures</a></li>
                     <li class="hidden-xs"><a href="help.html">Help</a></li>
-                    <li class="hidden-xs"><a href="#">Sign Out</a></li>
+                    <li class="hidden-xs"><a href="playersData">Sign Out</a></li>
                     <li class="dropdown hidden-sm hidden-md hidden-lg">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                             <span class="caret"></span></a>
@@ -427,7 +427,7 @@
                         </div>
                     </div>
                 </div>
-                <% 
+                <%
                     ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
                     ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
                     ArrayList<String> gkprice = (ArrayList<String>) request.getAttribute("pricegk");
@@ -449,7 +449,7 @@
                     ArrayList<String> fwdscore = (ArrayList<String>) request.getAttribute("scorefwd");
                     ArrayList<String> fwd = (ArrayList<String>) request.getAttribute("badgefwd");
                 %>            
-                            
+
                 <div class="col-md-4 sidebar" style=" ">
                     <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                         <div class="teambox">
@@ -458,16 +458,16 @@
                         <div>
                             <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%">View</h5>
                             <div>
-                                <select class="form-control"  data-size="5">
+                                <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers(this.value)" >
                                     <optgroup label="Global">
-                                        <option>All players</option>
+                                        <option value="all">All players</option>
                                         <option>Watchlist</option>
                                     </optgroup>
                                     <optgroup label="By Position">
-                                        <option>Goalkeepers</option>
-                                        <option>Defenders</option>
-                                        <option>Midfielders</option>
-                                        <option>Forwards</option>
+                                        <option value="Goalkeeper">Goalkeepers</option>
+                                        <option value="Defender">Defenders</option>
+                                        <option value="Midfielder">Midfielders</option>
+                                        <option value="Forward">Forwards</option>
                                     </optgroup>
                                     <optgroup label="By Team">
                                         <option>Boston Breakers</option>
@@ -536,371 +536,500 @@
                             <input class="form-control" type="text">
                         </div>
                         <div>
-                            <h6 class="text-center" style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%"><span style="color:red;font-weight: bold;">200</span> players shown</h6>
+                            <h6 class="text-center" style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%"><span style="color:red;font-weight: bold;" id ="total"><%=request.getAttribute("total")%></span> players shown</h6>
                         </div>
                         <div>
-                            <table style="width:100%; background-color: #f9f5f5">
+                            <table style="width:100%; background-color: #f9f5f5" id='gk'>
                                 <tr>
                                     <th style="background-color: yellow"></th>
                                     <th style="background-color: yellow">GOALKEEPERS</th> 
-                                    <th style="background-color: yellow">$</th>
-                                    <th style="background-color: yellow">TS</th>
+                                    <th style="background-color: yellow; text-align: center">$</th>
+                                    <th style="background-color: yellow; text-align: center">TS</th>
                                 </tr>
-                                <tr>
+                                <tr id='gk1'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
+                                            <img id="gkimage1" src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=gkname.get(0 )%></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=gkteam.get(0 )%></span>
+                                            <span id="gkname1" style="font-size: 14px;font-family: arial; " ><%=gkname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="gkteam1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%= gkprice.get(0)%></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%= gkscore.get(0) %></td>
+                                    <td id="gkprice1" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(0)%></td>
+                                    <td id="gkscore1" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(0)%></td>
                                 </tr>
-                                <tr>
+                                <tr id='gk2'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
+                                            <img id="gkimage2" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=gkteam.get(1 )%></span>
+                                            <span id="gkname2" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="gkteam2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%= gkprice.get(1)%></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%= gkscore.get(1) %></td>
+                                    <td id="gkprice2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
+                                    <td id="gkscore2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
                                 </tr>
+                                <%
+                                    String gkstr;
+                                    String gkimagestr;
+                                    String gknamestr;
+                                    String gkteamstr;
+                                    String gkpricestr;
+                                    String gkscorestr;
+
+                                    for (int i = 3; i <= 20; i++) {
+                                        gkstr = "gk" + i;
+                                        gkimagestr = "gkimage" + i;
+                                        gknamestr = "gkname" + i;
+                                        gkteamstr = "gkteam" + i;
+                                        gkpricestr = "gkprice" + i;
+                                        gkscorestr = "gkscore" + i;
+
+                                %>
+                                <tr id='<%=gkstr%>' style='display:none'>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="<%=gkimagestr%>" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=gknamestr%>" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="<%=gkteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="<%=gkpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
+                                    <td id="<%=gkscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
+                                </tr>
+
+                                <%
+                                    }%>
                             </table>
-                            <table style="width:100%; background-color: #f9f5f5">
+                            <table style="width:100%; background-color: #f9f5f5" id='def'>
                                 <tr>
                                     <th style="background-color:#00ff87 "></th>
                                     <th style="background-color:#00ff87">DEFENDERS</th> 
-                                    <th style="background-color:#00ff87">$</th>
-                                    <th style="background-color:#00ff87">TS</th>
+                                    <th style="background-color:#00ff87; text-align: center">$</th>
+                                    <th style="background-color:#00ff87; text-align: center">TS</th>
                                 </tr>
-                                <tr>
+                                <tr id="def1" style=''>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div  class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef1" src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(0 )%></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(0 )%></span>
+                                            <span id="namedef1" style="font-size: 14px;font-family: arial; "><%=defname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(0 )%></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(0 )%></td>
+                                    <td id="pricedef1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(0)%></td>
+                                    <td id="scoredef1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(0)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="def2" style=''>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagedef2" src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(1 )%></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(1 )%></span>
+                                            <span id="namedef2" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(1 )%></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(1 )%></td>
+                                    <td id="pricedef2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(1)%></td>
+                                    <td id="scoredef2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(1)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="def3" style=''>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagedef3" src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=defname.get(2 )%></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=defteam.get(2 )%></span>
+                                            <span id="namedef3" style="font-size: 14px;font-family: arial; "><%=defname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=defprice.get(2 )%></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=defscore.get(2)%></td>
+                                    <td id="pricedef3" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(2)%></td>
+                                    <td id="scoredef3" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(2)%></td>
                                 </tr>
+                                <tr id="def4" style=''>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef4" src="img/<%=def.get(3)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef4" style="font-size: 14px;font-family: arial; "><%=defname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(3)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricedef4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(3)%></td>
+                                    <td id="scoredef4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  "><%=defscore.get(3)%></td>
+                                </tr>
+                                <tr id="def5" style=''>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef5" src="img/<%=def.get(4)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef5" style="font-size: 14px;font-family: arial; "><%=defname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(4)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricedef5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(4)%></td>
+                                    <td id="scoredef5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(4)%></td>
+                                </tr>
+                                <tr id="def6" style=''>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef6" src="img/<%=def.get(5)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef6" style="font-size: 14px;font-family: arial; "><%=defname.get(5)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(5)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricedef6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(5)%></td>
+                                    <td id="scoredef6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(5)%></td>
+                                </tr>
+                                <tr id="def7" style=''>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef7" src="img/<%=def.get(6)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef7" style="font-size: 14px;font-family: arial; "><%=defname.get(6)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef7" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(6)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricedef7" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(6)%></td>
+                                    <td id="scoredef7" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(6)%></td>
+                                </tr>
+                                <tr id="def8" >
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="imagedef8" src="img/<%=def.get(7)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef8" style="font-size: 14px;font-family: arial; "><%=defname.get(7)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamdef8" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(7)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricedef8" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(7)%></td>
+                                    <td id="scoredef8" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(7)%></td>
+                                </tr>
+                                <%
+                                    String defstr;
+                                    String defimagestr;
+                                    String defnamestr;
+                                    String defteamstr;
+                                    String defpricestr;
+                                    String defscorestr;
+
+                                    for (int i = 9; i <= 20; i++) {
+                                        defstr = "def" + i;
+                                        defimagestr = "imagedef" + i;
+                                        defnamestr = "namedef" + i;
+                                        defteamstr = "teamdef" + i;
+                                        defpricestr = "pricedef" + i;
+                                        defscorestr = "scoredef" + i;
+
+                                %>
+                                <tr id='<%=defstr%>' style='display:none'>
+                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="<%=defimagestr%>" src="img/<%=def.get(1)%> " style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=defnamestr%>" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="<%=defteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="<%=defpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= defprice.get(1)%></td>
+                                    <td id="<%=defscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= defscore.get(1)%></td>
+                                </tr>
+
+                                <%
+                                    }%>
                             </table>
-                            <table style="width:100%; background-color: #f9f5f5">
+                            <table style="width:100%; background-color: #f9f5f5" id='mid'>
                                 <tr>
                                     <th style="background-color:#04f5ff "></th>
                                     <th style="background-color:#04f5ff">MIDFIELDERS</th> 
-                                    <th style="background-color:#04f5ff">$</th>
-                                    <th style="background-color:#04f5ff">TS</th>
+                                    <th style="background-color:#04f5ff; text-align: center">$</th>
+                                    <th style="background-color:#04f5ff; text-align: center">TS</th>
                                 </tr>
-                                <tr>
+                                <tr id='mid1'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(0) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid1" src="img/<%=mid.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(0) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(0) %></span>
+                                            <span id="namemid1" style="font-size: 14px;font-family: arial; "><%=midname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(0) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(0) %></td>
+                                    <td id="pricemid1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(0)%></td>
+                                    <td id="scoremid1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(0)%></td>
                                 </tr>
-                                <tr>
+                                <tr id='mid2'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(1) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid2" src="img/<%=mid.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(1) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(1) %></span>
+                                            <span id="namemid2" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(1) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(1) %></td>
+                                    <td id="pricemid2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(1)%></td>
+                                    <td id="scoremid2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(1)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="mid3">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(2) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid3" src="img/<%=mid.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(2) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(2) %></span>
+                                            <span id="namemid3" style="font-size: 14px;font-family: arial; "><%=midname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(2) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(2) %></td>
+                                    <td id="pricemid3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(2)%></td>
+                                    <td id="scoremid3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(2)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="mid4">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(3) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid4" src="img/<%=mid.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(3) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(3) %></span>
+                                            <span id="namemid4" style="font-size: 14px;font-family: arial; "><%=midname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(3)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(3) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(3) %></td>
+                                    <td id="pricemid4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(3)%></td>
+                                    <td id="scoremid4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(3)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="mid5">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(4) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid5" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(4) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(4) %></span>
+                                            <span id="namemid5" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(4) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(4) %></td>
-                                </tr>
-                                                                <tr>
+                                    <td id="pricemid5" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
+                                    <td id="scoremid5" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
+                                </tr >
+                                <tr id="mid6" style="display:none">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(5) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagemid6" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(5) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(5) %></span>
+                                            <span id="namemid6" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teammid6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(5) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(5) %></td>
+                                    <td id="pricemid6" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
+                                    <td id="scoremid6" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
                                 </tr>
-                                <tr>
+                                <%
+                                    String midstr;
+                                    String midimagestr;
+                                    String midnamestr;
+                                    String midteamstr;
+                                    String midpricestr;
+                                    String midscorestr;
+
+                                    for (int i = 6; i <= 20; i++) {
+                                        midstr = "mid" + i;
+                                        midimagestr = "imagemid" + i;
+                                        midnamestr = "namemid" + i;
+                                        midteamstr = "teammid" + i;
+                                        midpricestr = "pricemid" + i;
+                                        midscorestr = "scoremid" + i;
+
+                                %>
+                                <tr id='<%=midstr%>' style='display:none'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(6) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="<%=midimagestr%>" src="img/<%=mid.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(6) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(6) %></span>
+                                            <span id="<%=midnamestr%>" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="<%=midteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(6) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(6) %></td>
+                                    <td id="<%=midpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= midprice.get(1)%></td>
+                                    <td id="<%=midscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= midscore.get(1)%></td>
                                 </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(7) %>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(7) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(7) %></span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(7) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(7) %></td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(8) %>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(8) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(8) %></span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(8) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(8) %></td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=mid.get(9) %>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=midname.get(9) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=midteam.get(9) %></span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=midprice.get(9) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=midscore.get(9) %></td>
-                                </tr>
-                               
+
+                                <%
+                                    }%>
+
+
                             </table>
-                            <table style="width:100%; background-color: #f9f5f5">
+                            <table style="width:100%; background-color: #f9f5f5" id='fwd'>
                                 <tr>
                                     <th style="background-color:#e90052 "></th>
                                     <th style="background-color:#e90052">FORWARDS</th> 
-                                    <th style="background-color:#e90052">$</th>
-                                    <th style="background-color:#e90052">TS</th>
+                                    <th style="background-color:#e90052; text-align: center">$</th>
+                                    <th style="background-color:#e90052; text-align: center">TS</th>
                                 </tr>
-                                <tr>
+                                <tr id="fwd1">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(0) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd1" src="img/<%=fwd.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(0) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(0) %></span>
+                                            <span id="namefwd1" style="font-size: 14px;font-family: arial; "><%=fwdname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(0) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(0) %></td>
+                                    <td id="pricefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(0)%></td>
+                                    <td id="scorefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(0)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="fwd2">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(1) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd2" src="img/<%=fwd.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(1) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1) %></span>
+                                            <span id="namefwd2" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(1) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(1) %></td>
+                                    <td id="pricefwd2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(1)%></td>
+                                    <td id="scorefwd2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(1)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="fwd3">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(2) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd3" src="img/<%=fwd.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(2) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(2) %></span>
+                                            <span id="namefwd3" style="font-size: 14px;font-family: arial; "><%=fwdname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(2) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(2) %></td>
+                                    <td id="pricefwd3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(2)%></td>
+                                    <td id="scorefwd3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(2)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="fwd4">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(3) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd4" src="img/<%=fwd.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(3) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(3) %></span>
+                                            <span id="namefwd4" style="font-size: 14px;font-family: arial; "><%=fwdname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(3)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(3) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(3) %></td>
+                                    <td id="pricefwd4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(3)%></td>
+                                    <td id="scorefwd4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(3)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="fwd5">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(4) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd5" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(4) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4) %></span>
+                                            <span id="namefwd5" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(4) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(4) %></td>
+                                    <td id="pricefwd5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
+                                    <td id="scorefwd5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
-                                <tr>
+                                <tr id="fwd6" style="display:none">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(5) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="imagefwd6" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(5) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(5) %></span>
+                                            <span id="namefwd6" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="teamfwd6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(5) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(5) %></td>
+                                    <td id="pricefwd6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
+                                    <td id="scorefwd6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
-                                <tr>
+                                <%
+                                    String fwdstr;
+                                    String fwdimagestr;
+                                    String fwdnamestr;
+                                    String fwdteamstr;
+                                    String fwdpricestr;
+                                    String fwdscorestr;
+
+                                    for (int i = 6; i <= 20; i++) {
+                                        fwdstr = "fwd" + i;
+                                        fwdimagestr = "imagefwd" + i;
+                                        fwdnamestr = "namefwd" + i;
+                                        fwdteamstr = "teamfwd" + i;
+                                        fwdpricestr = "pricefwd" + i;
+                                        fwdscorestr = "scorefwd" + i;
+
+                                %>
+                                <tr id='<%=fwdstr%>' style='display:none'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
+                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(6) %>" style="width:31px;height:30px;float:right" />
+                                            <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(6) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(6) %></span>
+                                            <span id="<%=fwdnamestr%>" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                            <span id="<%=fwdteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(6) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(6) %></td>
+                                    <td id="<%=fwdpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= fwdprice.get(1)%></td>
+                                    <td id="<%=fwdscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= fwdscore.get(1)%></td>
                                 </tr>
-                                <tr>
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=fwd.get(7) %>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: arial; "><%=fwdname.get(7) %></span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: arial; font-weight: lighter "><%=fwdteam.get(7) %></span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$<%=fwdprice.get(7) %></td>
-                                    <td style="font-family: arial; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     "><%=fwdscore.get(7) %></td>
-                                </tr>
+
+                                <%
+                                    }%>
+
                             </table>
                         </div>
                         <div class="col-md-12" style="width:100%">
-                            <button type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:5%;margin-right:2% "><i class="glyphicon glyphicon-backward"></i></button>
-                            <button type="button" class="btn btn-default btn-circle btn-lg  col-md-2 col-xs-2" style="width:4rem"><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                            <h6 class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%">Page <span style="font-weight: lighter" >1</span> of 3  </h6>
-                            <button type="button" class="btn btn-default btn-circle btn-lg col-md-2 col-xs-2" style="width:4rem;left:10%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                            <button type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:5%;margin-right:2%;float: right"><i class="glyphicon glyphicon-forward"></i></button>
+                            <button id="start" value="1" type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;margin-right:2%; padding-right: 0.8% " disabled><i class="glyphicon glyphicon-backward"></i></button>
+                            <button id="prevPlayers" value="1" type="button" class="btn btn-default btn-circle btn-lg  col-md-2 col-xs-2" style="width:4rem" disabled><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
+                            <h6 class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%; font-size: 13px">Page <span id="page" style="font-weight: lighter" >1</span> of 11  </h6>
+                            <button  id="nextPlayers" value="2"  type="button" class="btn btn-default btn-circle btn-lg col-md-2 col-xs-2" style="width:4rem;left:12%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
+                            <button id="end" value="11" type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%"><i class="glyphicon glyphicon-forward"></i></button>
+                            <button id="startSelect" value="1" type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;margin-right:2%; padding-right: 0.8%;display:none " disabled><i class="glyphicon glyphicon-backward"></i></button>
+                            <button id="prevPlayersSelect" value="1" type="button" class="btn btn-default btn-circle btn-lg  col-md-2 col-xs-2" style="width:4rem;display:none;" disabled><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
+                            <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%; font-size: 13px;display:none;">Page <span style="font-weight: lighter" >1</span> of 11  </h6>
+                            <button  id="nextPlayersSelect" value="2"  type="button" class="btn btn-default btn-circle btn-lg col-md-2 col-xs-2" style="width:4rem;left:12%;display:none;"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
+                            <button id="endSelect" value="11" type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%;display:none;"><i class="glyphicon glyphicon-forward"></i></button>
                         </div>
 
                     </div>
@@ -916,96 +1045,94 @@
         <script src="js/bootstrap.min.js"></script>
 
         <script>
-            $(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-                var prev = $('#prev').val();
-                $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-                    $("#somediv").html("");
-                    var $h4 = $("<h4>");
-                    $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
-                    $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
+                                    $(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                                        var prev = $('#prev').val();
+                                        $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                                            $("#somediv").html("");
+                                            var $h4 = $("<h4>");
+                                            $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+                                            $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
+                                            var $buttonprev = $("<button>");
+                                            $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
+                                            $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
+                                            $buttonprev.text("Previous").insertAfter($h4);
+                                            if (responseText[1] == "Gameweek 0") {
+                                                $buttonprev.css('visibility', 'hidden');
+                                            }
 
-                    var $buttonprev = $("<button>");
-                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-                    $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
-                    $buttonprev.text("Previous").insertAfter($h4);
-                    if (responseText[1] == "Gameweek 0") {
-                        $buttonprev.css('visibility', 'hidden');
-                    }
+                                            var $h5 = $("<h5>");
+                                            $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
+                                            $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+                                            $h5.text("Fixtures").insertAfter($buttonprev);
+                                            var $img = $("<img>");
+                                            $img.attr({src: "img/nwsllogo.png"});
+                                            $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
+                                            $img.prependTo($h5);
+                                            var $buttonnext = $("<button>");
+                                            $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
+                                            $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
+                                            $buttonnext.text("Next").insertAfter($h5);
+                                            if (responseText[2] == "Gameweek 23") {
+                                                $buttonnext.css('visibility', 'hidden');
+                                            }
+                                            for (i = responseText.length; i >= 3; i = i - 6) {
 
-                    var $h5 = $("<h5>");
-                    $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-                    $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
-                    $h5.text("Fixtures").insertAfter($buttonprev);
-                    var $img = $("<img>");
-                    $img.attr({src: "img/nwsllogo.png"});
-                    $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
-                    $img.prependTo($h5);
-                    var $buttonnext = $("<button>");
-                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
-                    $buttonnext.text("Next").insertAfter($h5);
-                    if (responseText[2] == "Gameweek 23") {
-                        $buttonnext.css('visibility', 'hidden');
-                    }
-                    for (i = responseText.length; i >= 3; i = i - 6) {
+                                                var $h6 = $("<h6>");
+                                                $h6.attr({class: "col-sm-12"});
+                                                $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+                                                $h6.text(responseText[i]).insertAfter($buttonnext);
+                                                if (i + 6 > 0) {
+                                                    if (responseText[i] == responseText[i - 6]) {
+                                                        $h6.css({"display": "none"});
+                                                    }
+                                                }
+                                                var $div = $("<div>");
+                                                $div.attr({'class': "match col-sm-12"});
+                                                $div.css({"width": "104.3%", "left": "-2.1%"});
+                                                $div.insertAfter($h6);
+                                                var $divrow = $("<div>");
+                                                $divrow.attr({'class': "row"});
+                                                $divrow.appendTo($div);
+                                                var $divh6 = $("<div>");
+                                                $divh6.attr({'class': "col-md-4  col-xs-4   "});
+                                                $divh6.css({"left": "3.7%"});
+                                                $divh6.appendTo($divrow);
+                                                var $h6home = $("<h6>");
+                                                $h6home.attr({'class': "col-md-4  col-xs-4   "});
+                                                $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
+                                                $h6home.text(responseText[i + 1]).appendTo($divh6);
+                                                var $imghome = $("<img>");
+                                                $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
+                                                $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
+                                                $imghome.appendTo($divrow);
+                                                var $divtime = $("<div>");
+                                                $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
+                                                $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
+                                                $divtime.appendTo($divrow);
+                                                var $time = $("<h6>");
+                                                $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "arial", "font-size": "16px", "font-weight": "lighter"});
+                                                $time.text(responseText[i + 3]).appendTo($divtime);
+                                                var $imgaway = $("<img>");
+                                                $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
+                                                $imgaway.css({"width": "initial ", "margin-left": "-7%"});
+                                                $imgaway.appendTo($divrow);
+                                                var $divh6a = $("<div>");
+                                                $divh6a.attr({'class': "col-md-4  col-xs-4   "});
+                                                $divh6a.css({"left": "-7%", "width": "30%"});
+                                                $divh6a.appendTo($divrow);
+                                                var $h6away = $("<h6>");
+                                                $h6away.attr({'class': "col-md-4  col-xs-4   "});
+                                                $h6away.css({"font-size": "17px", "width": "230px", "text-align": "left"});
+                                                $h6away.text(responseText[i + 4]).appendTo($divh6a);
+                                                if (i >= responseText.length) {
+                                                    $divrow.css({"display": "none"});
+                                                    $h6.css({"display": "none"});
+                                                }
 
-                        var $h6 = $("<h6>");
-                        $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
-                        $h6.text(responseText[i]).insertAfter($buttonnext);
-                        if (i + 6 > 0) {
-                            if (responseText[i] == responseText[i - 6]) {
-                                $h6.css({"display": "none"});
-                            }
-                        }
-                        var $div = $("<div>");
-                        $div.attr({'class': "match col-sm-12"});
-                        $div.css({"width": "104.3%", "left": "-2.1%"});
-                        $div.insertAfter($h6);
-                        var $divrow = $("<div>");
-                        $divrow.attr({'class': "row"});
-                        $divrow.appendTo($div);
-                        var $divh6 = $("<div>");
-                        $divh6.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6.css({"left": "3.7%"});
-                        $divh6.appendTo($divrow);
-                        var $h6home = $("<h6>");
-                        $h6home.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
-                        $h6home.text(responseText[i + 1]).appendTo($divh6);
-                        var $imghome = $("<img>");
-                        $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
-                        $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
-                        $imghome.appendTo($divrow);
-                        var $divtime = $("<div>");
-                        $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
-                        $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
-                        $divtime.appendTo($divrow);
-                        var $time = $("<h6>");
-                        $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "arial", "font-size": "16px", "font-weight": "lighter"});
-                        $time.text(responseText[i + 3]).appendTo($divtime);
-                        var $imgaway = $("<img>");
-                        $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
-                        $imgaway.css({"width": "initial ", "margin-left": "-7%"});
-                        $imgaway.appendTo($divrow);
-                        var $divh6a = $("<div>");
-                        $divh6a.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6a.css({"left": "-7%", "width": "30%"});
-                        $divh6a.appendTo($divrow);
-                        var $h6away = $("<h6>");
-                        $h6away.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6away.css({"font-size": "17px", "width": "230px", "text-align": "left"});
-                        $h6away.text(responseText[i + 4]).appendTo($divh6a);
+                                            }
 
-                        if (i >= responseText.length) {
-                            $divrow.css({"display": "none"});
-                            $h6.css({"display": "none"});
-                        }
-
-                    }
-
-                });
-            });
+                                        });
+                                    });
         </script>
 
         <script>
@@ -1016,7 +1143,6 @@
                     var $h4 = $("<h4>");
                     $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
                     $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
-
                     var $buttonprev = $("<button>");
                     $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
                     $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
@@ -1089,7 +1215,6 @@
                         $h6away.attr({'class': "col-md-4  col-xs-4   "});
                         $h6away.css({"font-size": "17px", "width": "230px"});
                         $h6away.text(responseText[i + 4]).appendTo($divh6a);
-
                         if (i >= responseText.length) {
                             $divrow.css({"display": "none"});
                             $h6.css({"display": "none"});
@@ -1101,6 +1226,549 @@
             });
         </script>
 
+
+        <script>
+            $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var page = $('#nextPlayers').val();
+                $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    document.getElementById("nextPlayers").value = responseText[1];
+                    document.getElementById("prevPlayers").value = responseText[0];
+                    document.getElementById("page").innerHTML = responseText[1] - 1;
+                    if (responseText[1] == 12) {
+                        document.getElementById("nextPlayers").disabled = true;
+                        document.getElementById("end").disabled = true;
+                    }
+                    if (responseText[1] == 3) {
+                        document.getElementById("prevPlayers").disabled = false;
+                        document.getElementById("start").disabled = false;
+                    }
+                    document.getElementById("gkname1").innerHTML = responseText[2];
+                    document.getElementById("gkimage1").src = "img/" + responseText[3];
+                    document.getElementById("gkteam1").innerHTML = responseText[4];
+                    document.getElementById("gkprice1").innerHTML = "$" + responseText[5];
+                    document.getElementById("gkscore1").innerHTML = responseText[6];
+                    document.getElementById("gkname2").innerHTML = responseText[7];
+                    document.getElementById("gkimage2").src = "img/" + responseText[8];
+                    document.getElementById("gkteam2").innerHTML = responseText[9];
+                    document.getElementById("gkprice2").innerHTML = "$" + responseText[10];
+                    document.getElementById("gkscore2").innerHTML = responseText[11];
+                    if (responseText[1] - 1 == 1) {
+                        var length = 8;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "";
+                        document.getElementById("def8").style.display = "";
+                    } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
+                        var length = 7;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "";
+                        document.getElementById("def8").style.display = "none";
+                    } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length = 6;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "none";
+                        document.getElementById("def8").style.display = "none";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length = 5;
+                        document.getElementById("def6").style.display = "none";
+                        document.getElementById("def7").style.display = "none";
+                        document.getElementById("def8").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = 12; i < (length * 5) + 12; i = i + 5) {
+                        console.log(responseText[i] + " " + k);
+                        document.getElementById("namedef" + k).innerHTML = responseText[i];
+                        document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+
+                    if (responseText[1] - 1 == 1) {
+                        var length2 = 5;
+                        document.getElementById("mid3").style.display = "";
+                        document.getElementById("mid4").style.display = "";
+                        document.getElementById("mid5").style.display = "";
+                        document.getElementById("mid6").style.display = "none";
+                    } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3 || responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length2 = 6;
+                        document.getElementById("mid3").style.display = "";
+                        document.getElementById("mid4").style.display = "";
+                        document.getElementById("mid5").style.display = "";
+                        document.getElementById("mid6").style.display = "";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length2 = 2;
+                        document.getElementById("mid3").style.display = "none";
+                        document.getElementById("mid4").style.display = "none";
+                        document.getElementById("mid5").style.display = "none";
+                        document.getElementById("mid6").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = (length * 5) + 12; i < (length2 * 5) + (length * 5) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namemid" + k).innerHTML = responseText[i];
+                        document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+
+                    if (responseText[1] - 1 == 1 || responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
+                        var length3 = 5;
+                        document.getElementById("fwd3").style.display = "";
+                        document.getElementById("fwd4").style.display = "";
+                        document.getElementById("fwd5").style.display = "";
+                        document.getElementById("fwd6").style.display = "none";
+                    } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length3 = 6;
+                        document.getElementById("fwd3").style.display = "";
+                        document.getElementById("fwd4").style.display = "";
+                        document.getElementById("fwd5").style.display = "";
+                        document.getElementById("fwd6").style.display = "";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length3 = 2;
+                        document.getElementById("fwd3").style.display = "none";
+                        document.getElementById("fwd4").style.display = "none";
+                        document.getElementById("fwd5").style.display = "none";
+                        document.getElementById("fwd6").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = (length * 5) + (length2 * 5) + 12; i < (length3 * 5) + (length2 * 5) + (length * 5) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namefwd" + k).innerHTML = responseText[i];
+                        document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).on("click", "#end", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var page = $('#end').val();
+                $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    document.getElementById("page").innerHTML = 11;
+                    if (responseText[1] == 12) {
+                        document.getElementById("nextPlayers").disabled = true;
+                        document.getElementById("end").disabled = true;
+                        document.getElementById("prevPlayers").value = 10;
+                        document.getElementById("prevPlayers").disabled = false;
+                        document.getElementById("start").disabled = false;
+                    }
+
+                    document.getElementById("gkname1").innerHTML = responseText[2];
+                    document.getElementById("gkimage1").src = "img/" + responseText[3];
+                    document.getElementById("gkteam1").innerHTML = responseText[4];
+                    document.getElementById("gkprice1").innerHTML = responseText[5];
+                    document.getElementById("gkscore1").innerHTML = responseText[6];
+                    document.getElementById("gkname2").innerHTML = responseText[7];
+                    document.getElementById("gkimage2").src = "img/" + responseText[8];
+                    document.getElementById("gkteam2").innerHTML = responseText[9];
+                    document.getElementById("gkprice2").innerHTML = responseText[10];
+                    document.getElementById("gkscore2").innerHTML = responseText[11];
+                    document.getElementById("def6").style.display = "none";
+                    document.getElementById("def7").style.display = "none";
+                    document.getElementById("def8").style.display = "none";
+                    var k = 1;
+                    for (i = 12; i < (5 * 5) + 12; i = i + 5) {
+                        console.log(responseText[i] + " " + k);
+                        document.getElementById("namedef" + k).innerHTML = responseText[i];
+                        document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                    var length2 = 2;
+                    document.getElementById("mid3").style.display = "none";
+                    document.getElementById("mid4").style.display = "none";
+                    document.getElementById("mid5").style.display = "none";
+                    document.getElementById("mid6").style.display = "none";
+                    var k = 1;
+                    for (i = (5 * 5) + 12; i < (length2 * 5) + (5 * 5) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namemid" + k).innerHTML = responseText[i];
+                        document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                    var length3 = 2;
+                    document.getElementById("fwd3").style.display = "none";
+                    document.getElementById("fwd4").style.display = "none";
+                    document.getElementById("fwd5").style.display = "none";
+                    document.getElementById("fwd6").style.display = "none";
+                    var k = 1;
+                    for (i = (5 * 2) + (5 * 5) + 12; i < (length3 * 5) + (5 * 5) + (5 * 2) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namefwd" + k).innerHTML = responseText[i];
+                        document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+
+                });
+            });
+        </script>
+        <script>
+            $(document).on("click", "#start", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var page = $('#start').val();
+                $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    document.getElementById("page").innerHTML = 1;
+                    if (responseText[0] == 0) {
+                        document.getElementById("prevPlayers").disabled = true;
+                        document.getElementById("start").disabled = true;
+                        document.getElementById("nextPlayers").value = 2;
+                        document.getElementById("nextPlayers").disabled = false;
+                        document.getElementById("end").disabled = false;
+                    }
+
+                    document.getElementById("gkname1").innerHTML = responseText[2];
+                    document.getElementById("gkimage1").src = "img/" + responseText[3];
+                    document.getElementById("gkteam1").innerHTML = responseText[4];
+                    document.getElementById("gkprice1").innerHTML = responseText[5];
+                    document.getElementById("gkscore1").innerHTML = responseText[6];
+                    document.getElementById("gkname2").innerHTML = responseText[7];
+                    document.getElementById("gkimage2").src = "img/" + responseText[8];
+                    document.getElementById("gkteam2").innerHTML = responseText[9];
+                    document.getElementById("gkprice2").innerHTML = responseText[10];
+                    document.getElementById("gkscore2").innerHTML = responseText[11];
+                    document.getElementById("def6").style.display = "";
+                    document.getElementById("def7").style.display = "";
+                    document.getElementById("def8").style.display = "";
+                    var k = 1;
+                    for (i = 12; i < (5 * 8) + 12; i = i + 5) {
+                        console.log(responseText[i] + " " + k);
+                        document.getElementById("namedef" + k).innerHTML = responseText[i];
+                        document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                    var length2 = 5;
+                    document.getElementById("mid3").style.display = "";
+                    document.getElementById("mid4").style.display = "";
+                    document.getElementById("mid5").style.display = "";
+                    document.getElementById("mid6").style.display = "none";
+                    var k = 1;
+                    for (i = (5 * 8) + 12; i < (length2 * 5) + (5 * 8) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namemid" + k).innerHTML = responseText[i];
+                        document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                    var length3 = 5;
+                    document.getElementById("fwd3").style.display = "";
+                    document.getElementById("fwd4").style.display = "";
+                    document.getElementById("fwd5").style.display = "";
+                    document.getElementById("fwd6").style.display = "none";
+                    var k = 1;
+                    for (i = (5 * 8) + (5 * 5) + 12; i < (length3 * 5) + (5 * 5) + (5 * 8) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namefwd" + k).innerHTML = responseText[i];
+                        document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                var page = $('#prevPlayers').val();
+                $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                    document.getElementById("prevPlayers").value = responseText[0];
+                    document.getElementById("nextPlayers").value = responseText[1];
+                    document.getElementById("page").innerHTML = responseText[1] - 1;
+                    if (responseText[0] == 0) {
+                        document.getElementById("prevPlayers").value = 1;
+                        document.getElementById("prevPlayers").disabled = true;
+                        document.getElementById("start").disabled = true;
+                    }
+                    if (responseText[1] == 11) {
+                        document.getElementById("nextPlayers").disabled = false;
+                        document.getElementById("end").disabled = false;
+                    }
+                    document.getElementById("gkname1").innerHTML = responseText[2];
+                    document.getElementById("gkimage1").src = "img/" + responseText[3];
+                    document.getElementById("gkteam1").innerHTML = responseText[4];
+                    document.getElementById("gkprice1").innerHTML = responseText[5];
+                    document.getElementById("gkscore1").innerHTML = responseText[6];
+                    document.getElementById("gkname2").innerHTML = responseText[7];
+                    document.getElementById("gkimage2").src = "img/" + responseText[8];
+                    document.getElementById("gkteam2").innerHTML = responseText[9];
+                    document.getElementById("gkprice2").innerHTML = responseText[10];
+                    document.getElementById("gkscore2").innerHTML = responseText[11];
+                    if (responseText[1] - 1 == 1) {
+                        var length = 8;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "";
+                        document.getElementById("def8").style.display = "";
+                    } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
+                        var length = 7;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "";
+                        document.getElementById("def8").style.display = "none";
+                    } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length = 6;
+                        document.getElementById("def6").style.display = "";
+                        document.getElementById("def7").style.display = "none";
+                        document.getElementById("def8").style.display = "none";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length = 5;
+                        document.getElementById("def6").style.display = "none";
+                        document.getElementById("def7").style.display = "none";
+                        document.getElementById("def8").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = 12; i < (length * 5) + 12; i = i + 5) {
+                        console.log(responseText[i] + " " + k);
+                        document.getElementById("namedef" + k).innerHTML = responseText[i];
+                        document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+
+                    if (responseText[1] - 1 == 1) {
+                        var length2 = 5;
+                        document.getElementById("mid3").style.display = "";
+                        document.getElementById("mid4").style.display = "";
+                        document.getElementById("mid5").style.display = "";
+                        document.getElementById("mid6").style.display = "none";
+                    } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3 || responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length2 = 6;
+                        document.getElementById("mid3").style.display = "";
+                        document.getElementById("mid4").style.display = "";
+                        document.getElementById("mid5").style.display = "";
+                        document.getElementById("mid6").style.display = "";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length2 = 2;
+                        document.getElementById("mid3").style.display = "none";
+                        document.getElementById("mid4").style.display = "none";
+                        document.getElementById("mid5").style.display = "none";
+                        document.getElementById("mid6").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = (length * 5) + 12; i < (length2 * 5) + (length * 5) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namemid" + k).innerHTML = responseText[i];
+                        document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+
+                    if (responseText[1] - 1 == 1 || responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
+                        var length3 = 5;
+                        document.getElementById("fwd3").style.display = "";
+                        document.getElementById("fwd4").style.display = "";
+                        document.getElementById("fwd5").style.display = "";
+                        document.getElementById("fwd6").style.display = "none";
+                    } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+                        var length3 = 6;
+                        document.getElementById("fwd3").style.display = "";
+                        document.getElementById("fwd4").style.display = "";
+                        document.getElementById("fwd5").style.display = "";
+                        document.getElementById("fwd6").style.display = "";
+                    } else if (responseText[1] - 1 == 11) {
+                        var length3 = 2;
+                        document.getElementById("fwd3").style.display = "none";
+                        document.getElementById("fwd4").style.display = "none";
+                        document.getElementById("fwd5").style.display = "none";
+                        document.getElementById("fwd6").style.display = "none";
+                    }
+                    var k = 1;
+                    for (i = (length * 5) + (length2 * 5) + 12; i < (length3 * 5) + (length2 * 5) + (length * 5) + 12; i = i + 5) {
+                        console.log(responseText.length + " " + i);
+                        document.getElementById("namefwd" + k).innerHTML = responseText[i];
+                        document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
+                        document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
+                        document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
+                        document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                        k = k + 1;
+                    }
+                });
+            });
+        </script>
+
+
+        <script type="text/javascript">
+            function showPlayers(str) {
+                var xhttp;
+                if (str == "all") {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var data = xhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            document.getElementById("total").innerHTML = (jsonResponse.length / 5);
+                            document.getElementById("gk").style.display = "";
+                            document.getElementById("def").style.display = "";
+                            document.getElementById("mid").style.display = "";
+                            document.getElementById("fwd").style.display = "";
+
+                            for (i = 1; i < 21; i++) {
+                                console.log(i + "i");
+                                if (i >= 3) {
+                                    document.getElementById("gk" + i).style.display = "none";
+                                }
+                                if (i >= 6) {
+                                    
+                                    document.getElementById("mid" + i).style.display = "none";
+                                    document.getElementById("fwd" + i).style.display = "none";
+
+                                }
+                                if (i >= 9) {
+                                    document.getElementById("def" + i).style.display = "none";
+
+                                }
+                            }
+                            var gk = 1;
+                            var def=1;
+                            var mid=1;
+                            var fwd= 1;
+                            for (k = 0; k < jsonResponse.length; k = k + 5) {
+                                if (k <= 5) {
+                                    
+                                    document.getElementById("gkname" + i).innerHTML = jsonResponse[k];
+                                    document.getElementById("gkimage" + i).src = "img/" + jsonResponse[k + 1];
+                                    document.getElementById("gkteam" + i).innerHTML = jsonResponse[k + 2];
+                                    document.getElementById("gkprice" + i).innerHTML = "$" + jsonResponse[k + 3];
+                                    document.getElementById("gkscore" + i).innerHTML = jsonResponse[k + 4];
+                                    gk++;
+                                    
+                                } else if ( k <= 45) {
+                                    console.log(jsonResponse[k]);
+                                    document.getElementById("namedef" + i).innerHTML = jsonResponse[k];
+                                    document.getElementById("imagedef" + i).src = "img/" + jsonResponse[k + 1];
+                                    document.getElementById("teamdef" + i).innerHTML = jsonResponse[k + 2];
+                                    document.getElementById("pricedef" + i).innerHTML = "$" + jsonResponse[k + 3];
+                                    document.getElementById("scoredef" + i).innerHTML = jsonResponse[k + 4];
+                                    def++;
+                                } else if ( k <= 70) {
+                                    
+                                    document.getElementById("namemid" + i).innerHTML = jsonResponse[k];
+                                    document.getElementById("imagemid" + i).src = "img/" + jsonResponse[k + 1];
+                                    document.getElementById("teammid" + i).innerHTML = jsonResponse[k + 2];
+                                    document.getElementById("pricemid" + i).innerHTML = "$" + jsonResponse[k + 3];
+                                    document.getElementById("scoremid" + i).innerHTML = jsonResponse[k + 4];
+                                    mid++;
+                                } else {
+                                    
+                                    document.getElementById("namefwd" + i).innerHTML = jsonResponse[k];
+                                    document.getElementById("imagefwd" + i).src = "img/" + jsonResponse[k + 1];
+                                    document.getElementById("teamfwd" + i).innerHTML = jsonResponse[k + 2];
+                                    document.getElementById("pricefwd" + i).innerHTML = "$" + jsonResponse[i + 3];
+                                    document.getElementById("scorefwd" + i).innerHTML = jsonResponse[k + 4];
+                                    fwd++;
+                                }
+                                
+                                
+                            }
+                        }
+                    };
+                    xhttp.open("GET", "allPlayers?pos=" + str, true);
+                    xhttp.send();
+                } else if (str == "Goalkeeper" || str == "Defender" || str == "Midfielder" || str == "Forward") {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var data = xhttp.responseText;
+                            var jsonResponse = JSON.parse(data);
+                            document.getElementById("total").innerHTML = (jsonResponse.length / 5);
+                            if (str == "Goalkeeper") {
+                                document.getElementById("gk").style.display = "";
+                                document.getElementById("def").style.display = "none";
+                                document.getElementById("mid").style.display = "none";
+                                document.getElementById("fwd").style.display = "none";
+                                var k = 1;
+                                for (i = 0; i < 100; i = i + 5) {
+
+                                    document.getElementById("gk" + k).style.display = "";
+                                    document.getElementById("gkname" + k).innerHTML = jsonResponse[i];
+                                    document.getElementById("gkimage" + k).src = "img/" + jsonResponse[i + 1];
+                                    document.getElementById("gkteam" + k).innerHTML = jsonResponse[i + 2];
+                                    document.getElementById("gkprice" + k).innerHTML = "$" + jsonResponse[i + 3];
+                                    document.getElementById("gkscore" + k).innerHTML = jsonResponse[i + 4];
+
+                                    console.log(i + "" + " -" + k);
+                                    k = k + 1;
+                                }
+                            } else if (str == "Defender") {
+
+                                document.getElementById("gk").style.display = "none";
+                                document.getElementById("def").style.display = "";
+                                document.getElementById("mid").style.display = "none";
+                                document.getElementById("fwd").style.display = "none";
+                                var k = 1;
+                                for (i = 0; i < 100; i = i + 5) {
+
+                                    console.log(i + "" + " -" + k + "length" + jsonResponse.length);
+                                    document.getElementById("def" + k).style.display = "";
+                                    document.getElementById("namedef" + k).innerHTML = jsonResponse[i];
+                                    document.getElementById("imagedef" + k).src = "img/" + jsonResponse[i + 1];
+                                    document.getElementById("teamdef" + k).innerHTML = jsonResponse[i + 2];
+                                    document.getElementById("pricedef" + k).innerHTML = "$" + jsonResponse[i + 3];
+                                    document.getElementById("scoredef" + k).innerHTML = jsonResponse[i + 4];
+                                    k = k + 1;
+                                }
+                            } else if (str == "Midfielder") {
+                                document.getElementById("gk").style.display = "none";
+                                document.getElementById("def").style.display = "none";
+                                document.getElementById("mid").style.display = "";
+                                document.getElementById("fwd").style.display = "none";
+                                var k = 1;
+                                for (i = 0; i < 100; i = i + 5) {
+
+                                    console.log(i + "" + " -" + k);
+                                    document.getElementById("mid" + k).style.display = "";
+                                    document.getElementById("namemid" + k).innerHTML = jsonResponse[i];
+                                    document.getElementById("imagemid" + k).src = "img/" + jsonResponse[i + 1];
+                                    document.getElementById("teammid" + k).innerHTML = jsonResponse[i + 2];
+                                    document.getElementById("pricemid" + k).innerHTML = "$" + jsonResponse[i + 3];
+                                    document.getElementById("scoremid" + k).innerHTML = jsonResponse[i + 4];
+                                    k = k + 1;
+                                }
+                            } else if (str == "Forward") {
+                                document.getElementById("gk").style.display = "none";
+                                document.getElementById("def").style.display = "none";
+                                document.getElementById("mid").style.display = "none";
+                                document.getElementById("fwd").style.display = "";
+                                var k = 1;
+                                for (i = 0; i < 100; i = i + 5) {
+
+                                    console.log(i + "" + " -" + k);
+                                    document.getElementById("fwd" + k).style.display = "";
+                                    document.getElementById("namefwd" + k).innerHTML = jsonResponse[i];
+                                    document.getElementById("imagefwd" + k).src = "img/" + jsonResponse[i + 1];
+                                    document.getElementById("teamfwd" + k).innerHTML = jsonResponse[i + 2];
+                                    document.getElementById("pricefwd" + k).innerHTML = "$" + jsonResponse[i + 3];
+                                    document.getElementById("scorefwd" + k).innerHTML = jsonResponse[i + 4];
+                                    k = k + 1;
+                                }
+                            }
+                        }
+                    };
+                    xhttp.open("GET", "playersSelection?pos=" + str, true);
+                    xhttp.send();
+                }
+            }
+        </script>
     </body>
 
 </html>

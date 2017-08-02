@@ -67,6 +67,19 @@ public class fixtureData {
             long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
             long days = diff / (24 * 60 * 60 * 1000);
             int weeks = ((int) days) / 7;
+            if(weeks==10){
+                weeks=9;
+            }
+            if(weeks==10){
+                weeks=9;
+            }
+            else if(weeks==16 || weeks == 17){
+                weeks=15;
+            }
+            else if(weeks==23 || weeks ==24 ){
+                weeks = 21;
+            }
+            
 
             //Select the data from the database
             String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
