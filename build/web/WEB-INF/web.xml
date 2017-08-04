@@ -24,6 +24,18 @@
         <servlet-name>signout</servlet-name>
         <servlet-class>com.fantasy.signout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>playersData</servlet-name>
+        <servlet-class>com.fantasy.playersData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>playersSelection</servlet-name>
+        <servlet-class>com.fantasy.playersSelection</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>allPlayers</servlet-name>
+        <servlet-class>com.fantasy.allPlayers</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>signout</servlet-name>
         <url-pattern>/signout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>playersData</servlet-name>
+        <url-pattern>/playersData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>playersSelection</servlet-name>
+        <url-pattern>/playersSelection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>allPlayers</servlet-name>
+        <url-pattern>/allPlayers</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
