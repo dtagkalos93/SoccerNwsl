@@ -31,6 +31,11 @@ public class playersSelection extends HttpServlet {
     private List<String> jerseylist;
     private List<String> scorelist;
     private List<String> pricelist;
+    private List<String> sortednamelist;
+    private List<String> sortedteamlist;
+    private List<String> sortedjerseylist;
+    private List<String> sortedscorelist;
+    private List<String> sortedpricelist;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -60,8 +65,18 @@ public class playersSelection extends HttpServlet {
         jerseylist = new ArrayList<>();
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
+        sortednamelist = new ArrayList<>();
+        sortedteamlist = new ArrayList<>();
+        sortedjerseylist = new ArrayList<>();
+        sortedscorelist = new ArrayList<>();
+        sortedpricelist = new ArrayList<>();
 
         String position = request.getParameter("pos");
+        String[] parts = position.split("-");
+        position = parts[0];
+        int page = Integer.parseInt(parts[1]);
+        list.add((page - 1) + "");
+        list.add((page + 1) + "");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
@@ -83,6 +98,7 @@ public class playersSelection extends HttpServlet {
 
             s.executeQuery(sql);
             int i = 0;
+            int total;
             resultSet = s.getResultSet();
             while (resultSet.next()) {
 
@@ -159,7 +175,21 @@ public class playersSelection extends HttpServlet {
                 }
 
                 pricelist.add(resultSet.getString("price"));
-                scorelist.add(resultSet.getString("totalScore"));
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
+
+                    System.out.println(gw);
+                    if (gw.equals("")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
+                }
+
+                scorelist.add(total + "");
 
                 i++;
             }
@@ -172,7 +202,27 @@ public class playersSelection extends HttpServlet {
 
         }
         int k = 1;
-        int no = scorelist.size();
+        int no;
+        int pageNo;
+        int missing = 0;
+        if (scorelist.size() % 20 == 0) {
+            list.add(scorelist.size() / 20 + "");
+            list.add(scorelist.size()+"");
+            pageNo = scorelist.size() / 20;
+            no = page * 20;
+
+        } else {
+            list.add((scorelist.size() / 20 + 1) + "");
+            list.add(scorelist.size()+"");
+            pageNo = (scorelist.size() / 20) + 1;
+            if (pageNo == page) {
+                no = ((page - 1) * 20) + scorelist.size() % 20;
+                missing = scorelist.size() % 20;
+            } else {
+                no = page * 20;
+            }
+        }
+
         while (k <= no) {
 
             int max = Integer.parseInt(scorelist.get(0).toString());
@@ -185,19 +235,47 @@ public class playersSelection extends HttpServlet {
                     pos = i;
                 }
             }
+            if (missing == 0) {
+                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6
+                        || k == no - 7 || k == no - 8 || k == no - 9 || k == no - 10 || k == no - 11 || k == no - 12 || k == no - 13
+                        || k == no - 14 || k == no - 15 || k == no - 16 || k == no - 17 || k == no - 18 || k == no - 19) {
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                }
 
-            list.add(namelist.get(pos));
-            namelist.remove(pos);
-            list.add(jerseylist.get(pos));
-            jerseylist.remove(pos);
-            list.add(teamlist.get(pos));
-            teamlist.remove(pos);
-            list.add(pricelist.get(pos));
-            pricelist.remove(pos);
-            list.add(scorelist.get(pos));
-            scorelist.remove(pos);
+            } else {
+                sortednamelist.add(namelist.get(pos));
+                sortedjerseylist.add(jerseylist.get(pos));
+                sortedteamlist.add(teamlist.get(pos));
+                sortedpricelist.add(pricelist.get(pos));
+                sortedscorelist.add(scorelist.get(pos));
+            }
 
             k++;
+        }
+        
+        if(missing!=0){
+            for(int i=sortednamelist.size()-missing-1;i<sortednamelist.size();i++){
+                list.add(sortednamelist.get(i));
+                list.add(sortedjerseylist.get(i));
+                list.add(sortedteamlist.get(i));
+                list.add(sortedpricelist.get(i));
+                list.add(sortedscorelist.get(i));
+            }
         }
         String json = new Gson().toJson(list);
         System.out.println(json);

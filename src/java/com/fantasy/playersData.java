@@ -32,6 +32,7 @@ public class playersData extends HttpServlet {
     private List<String> jerseylist;
     private List<String> scorelist;
     private List<String> pricelist;
+    private int total;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -61,7 +62,6 @@ public class playersData extends HttpServlet {
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
         String text = request.getParameter("page");
-
 
         int fixNo = Integer.parseInt(text);
         String prevBtnvalue = (fixNo - 1) + "";
@@ -140,6 +140,7 @@ public class playersData extends HttpServlet {
         String sql = "SELECT * FROM players where position='Goalkeeper'";
         ResultSet resultSet = null;
         String badge = null;
+
         Statement s = connection.createStatement();
 
         s.executeQuery(sql);
@@ -185,7 +186,21 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakersgk.png");
             }
             pricelist.add(resultSet.getString("price"));
-            scorelist.add(resultSet.getString("totalScore"));
+            total = 0;
+            for (int j = 1; j <= 22; j++) {
+                //total=total+Integer.parseInt();
+                String gw = resultSet.getString("GW" + j);
+
+                System.out.println(gw);
+                if (gw.equals("")) {
+                    total = total + 0;
+                } else {
+                    total = total + Integer.parseInt(gw);
+                }
+
+            }
+
+            scorelist.add(total + "");
 
             i++;
         }
@@ -244,7 +259,21 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            scorelist.add(resultSet.getString("totalScore"));
+            total = 0;
+            for (int j = 1; j <= 22; j++) {
+                //total=total+Integer.parseInt();
+                String gw = resultSet.getString("GW" + j);
+
+                System.out.println(gw);
+                if (gw.equals("")) {
+                    total = total + 0;
+                } else {
+                    total = total + Integer.parseInt(gw);
+                }
+
+            }
+
+            scorelist.add(total + "");
 
             i++;
         }
@@ -314,7 +343,21 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            scorelist.add(resultSet.getString("totalScore"));
+            total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
+
+                    System.out.println(gw);
+                    if (gw.equals("")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
+                }
+
+                scorelist.add(total + "");
 
             i++;
         }
@@ -382,7 +425,21 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            scorelist.add(resultSet.getString("totalScore"));
+            total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
+
+                    System.out.println(gw);
+                    if (gw.equals("")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
+                }
+
+                scorelist.add(total + "");
 
             i++;
         }
@@ -564,7 +621,7 @@ public class playersData extends HttpServlet {
                 scorelist.remove(pos);
             } else if (noperpage == 6) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
- 
+
                     list.add(namelist.get(pos));
                     namelist.remove(pos);
                     list.add(jerseylist.get(pos));

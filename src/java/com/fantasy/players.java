@@ -23,6 +23,7 @@ public class players {
     private List pointList;
     private List jerseyList;
     
+    
     public void players(String pos) {
         
         nameList = new ArrayList();
@@ -39,7 +40,7 @@ public class players {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
+        int total;
         
         String badge = null;
         try {
@@ -169,14 +170,29 @@ public class players {
                     price = "0.0";
                 }
                 priceList.add(price);
+                total=0;
+                for(int j=1;j<=22;j++){
+                    //total=total+Integer.parseInt();
+                    String gw=resultSet.getString("GW"+j);
+                    
+                    System.out.println(gw);
+                    if(gw.equals("")){
+                        total=total+0;
+                    }
+                    else{
+                        total=total+Integer.parseInt(gw);
+                    }
+                    
+                    
+                }
+               
+                pointList.add(total+"");
                 
-                pointList.add(resultSet.getString("totalScore"));
-
 
                 i++;
 
             }
-
+            
 
            
 

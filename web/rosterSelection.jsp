@@ -552,8 +552,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage1" src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="gkname1" style="font-size: 14px;font-family: arial; " ><%=gkname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="gkname1" style="font-size: 14px;font-family: arial; " ><%=gkname.get(0)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="gkteam1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(0)%></span>
                                         </div>
                                     </td>
@@ -566,8 +566,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage2" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="gkname2" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="gkname2" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="gkteam2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -597,8 +597,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=gkimagestr%>" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="<%=gknamestr%>" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=gknamestr%>" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="<%=gkteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -622,8 +622,8 @@
                                         <div  class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef1" src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef1" style="font-size: 14px;font-family: arial; "><%=defname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef1" style="font-size: 14px;font-family: arial; "><%=defname.get(0)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(0)%></span>
                                         </div>
                                     </td>
@@ -636,8 +636,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef2" src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef2" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef2" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -650,8 +650,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef3" src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef3" style="font-size: 14px;font-family: arial; "><%=defname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef3" style="font-size: 14px;font-family: arial; "><%=defname.get(2)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(2)%></span>
                                         </div>
                                     </td>
@@ -664,8 +664,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef4" src="img/<%=def.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef4" style="font-size: 14px;font-family: arial; "><%=defname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef4" style="font-size: 14px;font-family: arial; "><%=defname.get(3)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(3)%></span>
                                         </div>
                                     </td>
@@ -678,8 +678,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef5" src="img/<%=def.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef5" style="font-size: 14px;font-family: arial; "><%=defname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef5" style="font-size: 14px;font-family: arial; "><%=defname.get(4)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(4)%></span>
                                         </div>
                                     </td>
@@ -692,8 +692,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef6" src="img/<%=def.get(5)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef6" style="font-size: 14px;font-family: arial; "><%=defname.get(5)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef6" style="font-size: 14px;font-family: arial; "><%=defname.get(5)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(5)%></span>
                                         </div>
                                     </td>
@@ -706,8 +706,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef7" src="img/<%=def.get(6)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef7" style="font-size: 14px;font-family: arial; "><%=defname.get(6)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef7" style="font-size: 14px;font-family: arial; "><%=defname.get(6)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef7" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(6)%></span>
                                         </div>
                                     </td>
@@ -720,8 +720,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef8" src="img/<%=def.get(7)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namedef8" style="font-size: 14px;font-family: arial; "><%=defname.get(7)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namedef8" style="font-size: 14px;font-family: arial; "><%=defname.get(7)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamdef8" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(7)%></span>
                                         </div>
                                     </td>
@@ -751,8 +751,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=defimagestr%>" src="img/<%=def.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="<%=defnamestr%>" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=defnamestr%>" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="<%=defteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -776,8 +776,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid1" src="img/<%=mid.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid1" style="font-size: 14px;font-family: arial; "><%=midname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid1" style="font-size: 14px;font-family: arial; "><%=midname.get(0)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(0)%></span>
                                         </div>
                                     </td>
@@ -790,8 +790,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid2" src="img/<%=mid.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid2" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid2" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -804,8 +804,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid3" src="img/<%=mid.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid3" style="font-size: 14px;font-family: arial; "><%=midname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid3" style="font-size: 14px;font-family: arial; "><%=midname.get(2)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(2)%></span>
                                         </div>
                                     </td>
@@ -818,8 +818,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid4" src="img/<%=mid.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid4" style="font-size: 14px;font-family: arial; "><%=midname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid4" style="font-size: 14px;font-family: arial; "><%=midname.get(3)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(3)%></span>
                                         </div>
                                     </td>
@@ -832,8 +832,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid5" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid5" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid5" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
@@ -846,8 +846,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid6" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namemid6" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namemid6" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teammid6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
@@ -877,8 +877,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=midimagestr%>" src="img/<%=mid.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="<%=midnamestr%>" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=midnamestr%>" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="<%=midteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -904,8 +904,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd1" src="img/<%=fwd.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd1" style="font-size: 14px;font-family: arial; "><%=fwdname.get(0)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd1" style="font-size: 14px;font-family: arial; "><%=fwdname.get(0)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(0)%></span>
                                         </div>
                                     </td>
@@ -918,8 +918,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd2" src="img/<%=fwd.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd2" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd2" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -932,8 +932,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd3" src="img/<%=fwd.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd3" style="font-size: 14px;font-family: arial; "><%=fwdname.get(2)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd3" style="font-size: 14px;font-family: arial; "><%=fwdname.get(2)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(2)%></span>
                                         </div>
                                     </td>
@@ -946,8 +946,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd4" src="img/<%=fwd.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd4" style="font-size: 14px;font-family: arial; "><%=fwdname.get(3)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd4" style="font-size: 14px;font-family: arial; "><%=fwdname.get(3)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(3)%></span>
                                         </div>
                                     </td>
@@ -960,8 +960,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd5" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd5" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd5" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
@@ -974,8 +974,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd6" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="namefwd6" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="namefwd6" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="teamfwd6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
@@ -1005,8 +1005,8 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span id="<%=fwdnamestr%>" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -34%">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
+                                            <span id="<%=fwdnamestr%>" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -16%">
                                             <span id="<%=fwdteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
@@ -1029,7 +1029,7 @@
                             <button id="prevPlayersSelect" value="1" type="button" class="btn btn-default btn-circle btn-lg  col-md-2 col-xs-2" style="width:4rem;display:none;" disabled><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
                             <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%; font-size: 13px;display:none;">Page <span style="font-weight: lighter" >1</span> of 11  </h6>
                             <button  id="nextPlayersSelect" value="2"  type="button" class="btn btn-default btn-circle btn-lg col-md-2 col-xs-2" style="width:4rem;left:12%;display:none;"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                            <button id="endSelect" value="11" type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%;display:none;"><i class="glyphicon glyphicon-forward"></i></button>
+                            <button id="endSelect"  type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%;display:none;"><i class="glyphicon glyphicon-forward"></i></button>
                         </div>
 
                     </div>
@@ -1690,14 +1690,27 @@
                         if (this.readyState == 4 && this.status == 200) {
                             var data = xhttp.responseText;
                             var jsonResponse = JSON.parse(data);
-                            document.getElementById("total").innerHTML = (jsonResponse.length / 5);
+                            
                             if (str == "Goalkeeper") {
                                 document.getElementById("gk").style.display = "";
                                 document.getElementById("def").style.display = "none";
                                 document.getElementById("mid").style.display = "none";
                                 document.getElementById("fwd").style.display = "none";
+                                document.getElementById("start").style.display = "none";
+                                document.getElementById("prevPlayers").style.display = "none";
+                                document.getElementById("nextPlayers").style.display = "none";
+                                document.getElementById("end").style.display = "none";
+                                document.getElementById("startSelect").style.display = "";
+                                document.getElementById("startSelect").value="Goalkeeper-1";
+                                document.getElementById("prevPlayersSelect").style.display = "";
+                                document.getElementById("prevPlayersSelect").value="Goalkeeper-"+jsonResponse[0];
+                                document.getElementById("nextPlayersSelect").style.display = "";
+                                document.getElementById("nextPlayersSelect").value="Goalkeeper-"+jsonResponse[1];
+                                document.getElementById("endSelect").style.display = "";
+                                 document.getElementById("endSelect").value="Goalkeeper-"+jsonResponse[2];
+                                document.getElementById("total").innerHTML = jsonResponse[3];
                                 var k = 1;
-                                for (i = 0; i < 100; i = i + 5) {
+                                for (i = 4; i < jsonResponse.length; i = i + 5) {
 
                                     document.getElementById("gk" + k).style.display = "";
                                     document.getElementById("gkname" + k).innerHTML = jsonResponse[i];
@@ -1715,8 +1728,21 @@
                                 document.getElementById("def").style.display = "";
                                 document.getElementById("mid").style.display = "none";
                                 document.getElementById("fwd").style.display = "none";
+                                                                document.getElementById("start").style.display = "none";
+                                document.getElementById("prevPlayers").style.display = "none";
+                                document.getElementById("nextPlayers").style.display = "none";
+                                document.getElementById("end").style.display = "none";
+                                document.getElementById("startSelect").style.display = "";
+                                document.getElementById("startSelect").value="Defender-1";
+                                document.getElementById("prevPlayersSelect").style.display = "";
+                                document.getElementById("prevPlayersSelect").value="Defender-"+jsonResponse[0];
+                                document.getElementById("nextPlayersSelect").style.display = "";
+                                document.getElementById("nextPlayersSelect").value="Defender-"+jsonResponse[1];
+                                document.getElementById("endSelect").style.display = "";
+                                 document.getElementById("endSelect").value="Defender-"+jsonResponse[2];
+                                document.getElementById("total").innerHTML = jsonResponse[3];
                                 var k = 1;
-                                for (i = 0; i < 100; i = i + 5) {
+                                for (i = 4; i < jsonResponse.length; i = i + 5) {
 
                                     console.log(i + "" + " -" + k + "length" + jsonResponse.length);
                                     document.getElementById("def" + k).style.display = "";
@@ -1732,8 +1758,21 @@
                                 document.getElementById("def").style.display = "none";
                                 document.getElementById("mid").style.display = "";
                                 document.getElementById("fwd").style.display = "none";
+                                 document.getElementById("start").style.display = "none";
+                                document.getElementById("prevPlayers").style.display = "none";
+                                document.getElementById("nextPlayers").style.display = "none";
+                                document.getElementById("end").style.display = "none";
+                                document.getElementById("startSelect").style.display = "";
+                                document.getElementById("startSelect").value="Midfielder-1";
+                                document.getElementById("prevPlayersSelect").style.display = "";
+                                document.getElementById("prevPlayersSelect").value="Midfielder-"+jsonResponse[0];
+                                document.getElementById("nextPlayersSelect").style.display = "";
+                                document.getElementById("nextPlayersSelect").value="Midfielder-"+jsonResponse[1];
+                                document.getElementById("endSelect").style.display = "";
+                                 document.getElementById("endSelect").value="Midfielder-"+jsonResponse[2];
+                                document.getElementById("total").innerHTML = jsonResponse[3];
                                 var k = 1;
-                                for (i = 0; i < 100; i = i + 5) {
+                                for (i = 4; i < jsonResponse.length; i = i + 5) {
 
                                     console.log(i + "" + " -" + k);
                                     document.getElementById("mid" + k).style.display = "";
@@ -1749,8 +1788,21 @@
                                 document.getElementById("def").style.display = "none";
                                 document.getElementById("mid").style.display = "none";
                                 document.getElementById("fwd").style.display = "";
+                                document.getElementById("start").style.display = "none";
+                                document.getElementById("prevPlayers").style.display = "none";
+                                document.getElementById("nextPlayers").style.display = "none";
+                                document.getElementById("end").style.display = "none";
+                                document.getElementById("startSelect").style.display = "";
+                                document.getElementById("startSelect").value="Forward-1";
+                                document.getElementById("prevPlayersSelect").style.display = "";
+                                document.getElementById("prevPlayersSelect").value="Forward-"+jsonResponse[0];
+                                document.getElementById("nextPlayersSelect").style.display = "";
+                                document.getElementById("nextPlayersSelect").value="Forward-"+jsonResponse[1];
+                                document.getElementById("endSelect").style.display = "";
+                                 document.getElementById("endSelect").value="Forward-"+jsonResponse[2];
+                                document.getElementById("total").innerHTML = jsonResponse[3];
                                 var k = 1;
-                                for (i = 0; i < 100; i = i + 5) {
+                                for (i = 4; i < jsonResponse.length; i = i + 5) {
 
                                     console.log(i + "" + " -" + k);
                                     document.getElementById("fwd" + k).style.display = "";
@@ -1764,7 +1816,7 @@
                             }
                         }
                     };
-                    xhttp.open("GET", "playersSelection?pos=" + str, true);
+                        xhttp.open("GET", "playersSelection?pos=" + str+"-"+1, true);
                     xhttp.send();
                 }
             }
