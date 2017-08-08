@@ -72,6 +72,7 @@ public class playersSelection extends HttpServlet {
         sortedpricelist = new ArrayList<>();
 
         String position = request.getParameter("pos");
+        System.out.println(position);
         String[] parts = position.split("-");
         position = parts[0];
         int page = Integer.parseInt(parts[1]);
@@ -180,7 +181,6 @@ public class playersSelection extends HttpServlet {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    System.out.println(gw);
                     if (gw.equals("")) {
                         total = total + 0;
                     } else {
@@ -207,17 +207,18 @@ public class playersSelection extends HttpServlet {
         int missing = 0;
         if (scorelist.size() % 20 == 0) {
             list.add(scorelist.size() / 20 + "");
-            list.add(scorelist.size()+"");
+            list.add(scorelist.size() + "");
             pageNo = scorelist.size() / 20;
             no = page * 20;
 
         } else {
             list.add((scorelist.size() / 20 + 1) + "");
-            list.add(scorelist.size()+"");
+            list.add(scorelist.size() + "");
             pageNo = (scorelist.size() / 20) + 1;
             if (pageNo == page) {
                 no = ((page - 1) * 20) + scorelist.size() % 20;
                 missing = scorelist.size() % 20;
+                System.out.println("missing players" + missing + "number of players find: " + no);
             } else {
                 no = page * 20;
             }
@@ -259,17 +260,22 @@ public class playersSelection extends HttpServlet {
 
             } else {
                 sortednamelist.add(namelist.get(pos));
+                namelist.remove(pos);
                 sortedjerseylist.add(jerseylist.get(pos));
+                jerseylist.remove(pos);
                 sortedteamlist.add(teamlist.get(pos));
+                teamlist.remove(pos);
                 sortedpricelist.add(pricelist.get(pos));
+                pricelist.remove(pos);
                 sortedscorelist.add(scorelist.get(pos));
+                scorelist.remove(pos);
             }
 
             k++;
         }
-        
-        if(missing!=0){
-            for(int i=sortednamelist.size()-missing-1;i<sortednamelist.size();i++){
+
+        if (missing != 0) {
+            for (int i = sortednamelist.size() - missing    ; i < sortednamelist.size(); i++) {
                 list.add(sortednamelist.get(i));
                 list.add(sortedjerseylist.get(i));
                 list.add(sortedteamlist.get(i));

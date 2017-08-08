@@ -42,7 +42,7 @@ public class allPlayers extends HttpServlet {
     private List<String> fwdteamList = new ArrayList();
     private List<String> fwdpriceList = new ArrayList();
     private List<String> fwdscoreList = new ArrayList();
-
+    private int totalPlayers;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -86,20 +86,20 @@ public class allPlayers extends HttpServlet {
         fwdteamList = new ArrayList<>();
         fwdpriceList = new ArrayList<>();
         fwdscoreList = new ArrayList<>();
+        totalPlayers=0;
         players gk = new players();
         gk.players("Goalkeeper");
         gknameList = gk.getnameList();
-
+        totalPlayers=totalPlayers+gknameList.size();
         gkteamList = gk.getteamList();
         gkjerseyList = gk.getjerseyList();
         gkpriceList = gk.getpriceList();
         gkscoreList = gk.getpointList();
         findmax( 2, "gk");
-        System.out.println("DEF!");
         players def = new players();
         def.players("Defender");
         defnameList = def.getnameList();
-
+        totalPlayers=totalPlayers+defnameList.size();
         defteamList = def.getteamList();
         defjerseyList = def.getjerseyList();
         defpriceList = def.getpriceList();
@@ -108,7 +108,7 @@ public class allPlayers extends HttpServlet {
         players mid = new players();
         mid.players("Midfielder");
         midnameList = mid.getnameList();
-
+        totalPlayers=totalPlayers+midnameList.size();
         midteamList = mid.getteamList();
         midjerseyList = mid.getjerseyList();
         midpriceList = mid.getpriceList();
@@ -117,12 +117,13 @@ public class allPlayers extends HttpServlet {
         players fwd = new players();
         fwd.players("Forward");
         fwdnameList = fwd.getnameList();
-
+        totalPlayers=totalPlayers+fwdnameList.size();
         fwdteamList = fwd.getteamList();
         fwdjerseyList = fwd.getjerseyList();
         fwdpriceList = fwd.getpriceList();
         fwdscoreList = fwd.getpointList();
         findmax( 5, "fwd");
+        list.add(totalPlayers+"");
         String json = new Gson().toJson(list);
         System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
