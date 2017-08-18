@@ -67,9 +67,7 @@ public class fixtureData {
             long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
             long days = diff / (24 * 60 * 60 * 1000);
             int weeks = ((int) days) / 7;
-            if(weeks==10){
-                weeks=9;
-            }
+
             if(weeks==10){
                 weeks=9;
             }
@@ -78,6 +76,9 @@ public class fixtureData {
             }
             else if(weeks==23 || weeks ==24 ){
                 weeks = 21;
+            }
+            else if(weeks>10){
+                weeks=weeks-1;
             }
             
 
