@@ -458,7 +458,7 @@
                         <div>
                             <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%">View</h5>
                             <div>
-                                <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers(this.value)" >
+                                <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers()" >
                                     <optgroup label="Global">
                                         <option value="all">All players</option>
                                         <option>Watchlist</option>
@@ -489,21 +489,23 @@
                         <div>
                             <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top:6%">Sorted by</h5>
                             <div>
-                                <select class="form-control"  data-size="5">
-                                    <option>Total score</option>
-                                    <option>Round score</option> <option>Price</option>
+                                <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                    <option value="score">Total score</option>
+                                    <option value="gw">Round score</option> 
+                                    <option value="price">Price</option>
                                     <option>Teams selected by %</option>
-                                    <option>Minutes played</option>
-                                    <option>Goal scored</option><option>Assists</option>
-                                    <option>Clean sheets</option>
-                                    <option>Own goals</option>
-                                    <option>Goals conceded</option>
-                                    <option>Penalties saved</option>
-                                    <option>Penalties missed</option>
-                                    <option>Yellow cards</option>
-                                    <option>Red cards</option>
+                                    <option value="minutes">Minutes played</option>
+                                    <option value="goalScored">Goal scored</option>
+                                    <option value="assist">Assists</option>
+                                    <option value="cleanSheet">Clean sheets</option>
+                                    <option value="ownGoal">Own goals</option>
+                                    <option value="goalConceded">Goals conceded</option>
+                                    <option value="penaltySaved">Penalties saved</option>
+                                    <option value="penaltyMissed">Penalties missed</option>
+                                    <option value="yellowCard">Yellow cards</option>
+                                    <option value="redCard">Red cards</option>
                                     <option>Bonus</option> 
-                                    <option>Saves</option>
+                                    <option value="saves">Saves</option>
                                 </select>
                             </div>
                         </div>
@@ -545,7 +547,7 @@
                                     <th style="background-color: yellow"></th>
                                     <th style="background-color: yellow">GOALKEEPERS</th> 
                                     <th style="background-color: yellow; text-align: center">$</th>
-                                    <th style="background-color: yellow; text-align: center">TS</th>
+                                    <th id="catGK" style="background-color: yellow; text-align: center">TS</th>
                                 </tr>
                                 <tr id='gk1'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
@@ -615,7 +617,7 @@
                                     <th style="background-color:#00ff87 "></th>
                                     <th style="background-color:#00ff87">DEFENDERS</th> 
                                     <th style="background-color:#00ff87; text-align: center">$</th>
-                                    <th style="background-color:#00ff87; text-align: center">TS</th>
+                                    <th id="catDEF" style="background-color:#00ff87; text-align: center">TS</th>
                                 </tr>
                                 <tr id="def1" style=''>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
@@ -769,7 +771,7 @@
                                     <th style="background-color:#04f5ff "></th>
                                     <th style="background-color:#04f5ff">MIDFIELDERS</th> 
                                     <th style="background-color:#04f5ff; text-align: center">$</th>
-                                    <th style="background-color:#04f5ff; text-align: center">TS</th>
+                                    <th id="catMID" style="background-color:#04f5ff; text-align: center">TS</th>
                                 </tr>
                                 <tr id='mid1'>
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
@@ -897,7 +899,7 @@
                                     <th style="background-color:#e90052 "></th>
                                     <th style="background-color:#e90052">FORWARDS</th> 
                                     <th style="background-color:#e90052; text-align: center">$</th>
-                                    <th style="background-color:#e90052; text-align: center">TS</th>
+                                    <th id="catFWD" style="background-color:#e90052; text-align: center">TS</th>
                                 </tr>
                                 <tr id="fwd1">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>

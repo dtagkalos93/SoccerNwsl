@@ -62,6 +62,7 @@ public class playersData extends HttpServlet {
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
         String text = request.getParameter("page");
+        String category = request.getParameter("cat");
 
         int fixNo = Integer.parseInt(text);
         String prevBtnvalue = (fixNo - 1) + "";
@@ -85,7 +86,7 @@ public class playersData extends HttpServlet {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            goalkeepers(connection, fixNo);
+            goalkeepers(connection, fixNo, category);
 
             namelist = new ArrayList<>();
             teamlist = new ArrayList<>();
@@ -93,7 +94,7 @@ public class playersData extends HttpServlet {
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
 
-            defenders(connection, fixNo);
+            defenders(connection, fixNo, category);
 
             namelist = new ArrayList<>();
             teamlist = new ArrayList<>();
@@ -101,14 +102,14 @@ public class playersData extends HttpServlet {
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
 
-            midfielders(connection, fixNo);
+            midfielders(connection, fixNo, category);
             namelist = new ArrayList<>();
             teamlist = new ArrayList<>();
             jerseylist = new ArrayList<>();
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
 
-            forwards(connection, fixNo);
+            forwards(connection, fixNo, category);
 
         } catch (Exception e) {
 
@@ -122,21 +123,7 @@ public class playersData extends HttpServlet {
         response.getWriter().write(json);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-
-    public void goalkeepers(Connection connection, int no) throws SQLException {
+    public void goalkeepers(Connection connection, int no, String category) throws SQLException {
         String sql = "SELECT * FROM players where position='Goalkeeper'";
         ResultSet resultSet = null;
         String badge = null;
@@ -186,21 +173,24 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakersgk.png");
             }
             pricelist.add(resultSet.getString("price"));
-            total = 0;
-            for (int j = 1; j <= 22; j++) {
-                //total=total+Integer.parseInt();
-                String gw = resultSet.getString("GW" + j);
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
-                if (gw.equals("")) {
-                    total = total + 0;
-                } else {
-                    total = total + Integer.parseInt(gw);
+                    if (gw.equals("")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
                 }
+                scorelist.add(total + "");
+            } else {
+                scorelist.add(resultSet.getString(category));
 
             }
-
-            scorelist.add(total + "");
 
             i++;
         }
@@ -211,7 +201,7 @@ public class playersData extends HttpServlet {
 
     }
 
-    public void defenders(Connection connection, int no) throws SQLException {
+    public void defenders(Connection connection, int no, String category) throws SQLException {
         String sql = "SELECT * FROM players where position='Defender'";
         ResultSet resultSet = null;
         String badge = null;
@@ -259,21 +249,24 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            total = 0;
-            for (int j = 1; j <= 22; j++) {
-                //total=total+Integer.parseInt();
-                String gw = resultSet.getString("GW" + j);
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
-                if (gw.equals("")) {
-                    total = total + 0;
-                } else {
-                    total = total + Integer.parseInt(gw);
+                    if (gw.equals("")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
                 }
+                scorelist.add(total + "");
+            } else {
+                scorelist.add(resultSet.getString(category));
 
             }
-
-            scorelist.add(total + "");
 
             i++;
         }
@@ -295,7 +288,7 @@ public class playersData extends HttpServlet {
 
     }
 
-    public void midfielders(Connection connection, int no) throws SQLException {
+    public void midfielders(Connection connection, int no, String category) throws SQLException {
         String sql = "SELECT * FROM players where position='Midfielder'";
         ResultSet resultSet = null;
         String badge = null;
@@ -343,12 +336,12 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            total = 0;
+            if (category.equals("score")) {
+                total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    System.out.println(gw);
                     if (gw.equals("")) {
                         total = total + 0;
                     } else {
@@ -356,8 +349,11 @@ public class playersData extends HttpServlet {
                     }
 
                 }
-
                 scorelist.add(total + "");
+            } else {
+                scorelist.add(resultSet.getString(category));
+
+            }
 
             i++;
         }
@@ -377,7 +373,7 @@ public class playersData extends HttpServlet {
 
     }
 
-    public void forwards(Connection connection, int no) throws SQLException {
+    public void forwards(Connection connection, int no, String category) throws SQLException {
         String sql = "SELECT * FROM players where position='Forward'";
         ResultSet resultSet = null;
         String badge = null;
@@ -425,12 +421,12 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakers1.png");
             }
             pricelist.add(resultSet.getString("price"));
-            total = 0;
+            if (category.equals("score")) {
+                total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    System.out.println(gw);
                     if (gw.equals("")) {
                         total = total + 0;
                     } else {
@@ -438,8 +434,11 @@ public class playersData extends HttpServlet {
                     }
 
                 }
-
                 scorelist.add(total + "");
+            } else {
+                scorelist.add(resultSet.getString(category));
+
+            }
 
             i++;
         }

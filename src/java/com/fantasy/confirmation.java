@@ -133,7 +133,7 @@ public class confirmation extends HttpServlet {
             request.setAttribute("away", fixture.getawayList());
             request.setAttribute("awaybadge", fixture.getawaybadgeList());
             players gk = new players();
-            gk.players("Goalkeeper");
+            gk.players("Goalkeeper","score");
             gknameList = gk.getnameList();
             totalPlayers=totalPlayers+gknameList.size();
             gkteamList = gk.getteamList();
@@ -142,7 +142,7 @@ public class confirmation extends HttpServlet {
             gkscoreList = gk.getpointList();
             findmax(request, 2, "gk");
             players def = new players();
-            def.players("Defender");
+            def.players("Defender","score");
             defnameList = def.getnameList();
             totalPlayers=totalPlayers+defnameList.size();
             defteamList = def.getteamList();
@@ -151,7 +151,7 @@ public class confirmation extends HttpServlet {
             defscoreList = def.getpointList();
             findmax(request, 8, "def");
             players mid = new players();
-            mid.players("Midfielder");
+            mid.players("Midfielder","score");
             midnameList = mid.getnameList();
             totalPlayers=totalPlayers+midnameList.size();
             midteamList = mid.getteamList();
@@ -160,7 +160,7 @@ public class confirmation extends HttpServlet {
             midscoreList = mid.getpointList();
             findmax(request, 5, "mid");
             players fwd = new players();
-            fwd.players("Forward");
+            fwd.players("Forward","score");
             fwdnameList = fwd.getnameList();
             totalPlayers=totalPlayers+fwdnameList.size();
             fwdteamList = fwd.getteamList();

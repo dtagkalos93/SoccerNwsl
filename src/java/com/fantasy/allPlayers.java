@@ -65,6 +65,7 @@ public class allPlayers extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("allPlayers");
+        String category = request.getParameter("cat");
         list=new ArrayList<>();
         gknameList = new ArrayList<>();
         gkjerseyList = new ArrayList<>();
@@ -88,7 +89,7 @@ public class allPlayers extends HttpServlet {
         fwdscoreList = new ArrayList<>();
         totalPlayers=0;
         players gk = new players();
-        gk.players("Goalkeeper");
+        gk.players("Goalkeeper",category);
         gknameList = gk.getnameList();
         totalPlayers=totalPlayers+gknameList.size();
         gkteamList = gk.getteamList();
@@ -97,7 +98,7 @@ public class allPlayers extends HttpServlet {
         gkscoreList = gk.getpointList();
         findmax( 2, "gk");
         players def = new players();
-        def.players("Defender");
+        def.players("Defender",category);
         defnameList = def.getnameList();
         totalPlayers=totalPlayers+defnameList.size();
         defteamList = def.getteamList();
@@ -106,7 +107,7 @@ public class allPlayers extends HttpServlet {
         defscoreList = def.getpointList();
         findmax( 8, "def");
         players mid = new players();
-        mid.players("Midfielder");
+        mid.players("Midfielder",category);
         midnameList = mid.getnameList();
         totalPlayers=totalPlayers+midnameList.size();
         midteamList = mid.getteamList();
@@ -115,7 +116,7 @@ public class allPlayers extends HttpServlet {
         midscoreList = mid.getpointList();
         findmax( 5, "mid");
         players fwd = new players();
-        fwd.players("Forward");
+        fwd.players("Forward",category);
         fwdnameList = fwd.getnameList();
         totalPlayers=totalPlayers+fwdnameList.size();
         fwdteamList = fwd.getteamList();
@@ -171,9 +172,7 @@ public class allPlayers extends HttpServlet {
                         pos = i;
                     }
                 }
-                System.out.println(gknameList.get(pos) + "and pos: " + pos);
                 list.add(gknameList.get(pos));
-                System.out.println(list.get(0).toString());
                 gknameList.remove(pos);
                 list.add(gkjerseyList.get(pos));
                 gkjerseyList.remove(pos);

@@ -183,7 +183,8 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
 
 $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#nextPlayers').val();
-    $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersData", {page: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         document.getElementById("nextPlayers").value = responseText[1];
         document.getElementById("prevPlayers").value = responseText[0];
         document.getElementById("page").innerHTML = responseText[1] - 1;
@@ -302,7 +303,8 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
 $(document).on("click", "#end", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#end').val();
-    $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersData", {page: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         document.getElementById("page").innerHTML = 11;
         if (responseText[1] == 12) {
             document.getElementById("nextPlayers").disabled = true;
@@ -372,7 +374,8 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
 $(document).on("click", "#start", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#start').val();
-    $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersData", {page: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         document.getElementById("page").innerHTML = 1;
         if (responseText[0] == 0) {
             document.getElementById("prevPlayers").disabled = true;
@@ -441,7 +444,8 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
 $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#prevPlayers').val();
-    $.get("playersData", {page: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersData", {page: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         document.getElementById("prevPlayers").value = responseText[0];
         document.getElementById("nextPlayers").value = responseText[1];
         document.getElementById("page").innerHTML = responseText[1] - 1;
@@ -560,14 +564,101 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
 
 
-function showPlayers(str) {
+function showPlayers() {
     var xhttp;
-    if (str == "all") {
+    var selectionPl=document.getElementById('selectPlayers').value;
+    var selectCat=document.getElementById('categorySelection').value;
+    console.log("Select players "+ selectCat + "Select Category " + selectionPl);
+    
+    if (selectionPl == "all") {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var data = xhttp.responseText;
                 var jsonResponse = JSON.parse(data);
+                if(selectCat=='score'){
+                    document.getElementById("catGK").innerHTML ="TS";
+                    document.getElementById("catDEF").innerHTML ="TS";
+                    document.getElementById("catMID").innerHTML ="TS";
+                    document.getElementById("catFWD").innerHTML ="TS";
+                }
+                else if(selectCat=='minutes'){
+                    document.getElementById("catGK").innerHTML ="MP";
+                    document.getElementById("catDEF").innerHTML ="MP";
+                    document.getElementById("catMID").innerHTML ="MP";
+                    document.getElementById("catFWD").innerHTML ="MP";
+                }
+                else if(selectCat=='goalScored'){
+                    document.getElementById("catGK").innerHTML ="GS";
+                    document.getElementById("catDEF").innerHTML ="GS";
+                    document.getElementById("catMID").innerHTML ="GS";
+                    document.getElementById("catFWD").innerHTML ="GS";
+                }
+                else if(selectCat=='assist'){
+                    document.getElementById("catGK").innerHTML ="A";
+                    document.getElementById("catDEF").innerHTML ="A";
+                    document.getElementById("catMID").innerHTML ="A";
+                    document.getElementById("catFWD").innerHTML ="A";
+                }
+                else if(selectCat=='cleanSheet'){
+                    document.getElementById("catGK").innerHTML ="CS";
+                    document.getElementById("catDEF").innerHTML ="CS";
+                    document.getElementById("catMID").innerHTML ="CS";
+                    document.getElementById("catFWD").innerHTML ="CS";
+                }
+                else if(selectCat=='cleanSheet'){
+                    document.getElementById("catGK").innerHTML ="CS";
+                    document.getElementById("catDEF").innerHTML ="CS";
+                    document.getElementById("catMID").innerHTML ="CS";
+                    document.getElementById("catFWD").innerHTML ="CS";
+                }
+                else if(selectCat=='ownGoal'){
+                    document.getElementById("catGK").innerHTML ="OG";
+                    document.getElementById("catDEF").innerHTML ="OG";
+                    document.getElementById("catMID").innerHTML ="OG";
+                    document.getElementById("catFWD").innerHTML ="OG";
+                }
+                
+                else if(selectCat=='goalConceded'){
+                    document.getElementById("catGK").innerHTML ="GC";
+                    document.getElementById("catDEF").innerHTML ="GC";
+                    document.getElementById("catMID").innerHTML ="GC";
+                    document.getElementById("catFWD").innerHTML ="GC";
+                }
+                else if(selectCat=='penaltySaved'){
+                    document.getElementById("catGK").innerHTML ="PS";
+                    document.getElementById("catDEF").innerHTML ="PS";
+                    document.getElementById("catMID").innerHTML ="PS";
+                    document.getElementById("catFWD").innerHTML ="PS";
+                }
+                 else if(selectCat=='penaltyMissed'){
+                    document.getElementById("catGK").innerHTML ="PM";
+                    document.getElementById("catDEF").innerHTML ="PM";
+                    document.getElementById("catMID").innerHTML ="PM";
+                    document.getElementById("catFWD").innerHTML ="PM";
+                }
+                else if(selectCat=='yellowCard'){
+                    document.getElementById("catGK").innerHTML ="YC";
+                    document.getElementById("catDEF").innerHTML ="YC";
+                    document.getElementById("catMID").innerHTML ="YC";
+                    document.getElementById("catFWD").innerHTML ="YC";
+                }
+                 else if(selectCat=='redCard'){
+                    document.getElementById("catGK").innerHTML ="RC";
+                    document.getElementById("catDEF").innerHTML ="RC";
+                    document.getElementById("catMID").innerHTML ="RC";
+                    document.getElementById("catFWD").innerHTML ="RC";
+                }
+                else if(selectCat=='saves'){
+                    document.getElementById("catGK").innerHTML ="S";
+                    document.getElementById("catDEF").innerHTML ="S";
+                    document.getElementById("catMID").innerHTML ="S";
+                    document.getElementById("catFWD").innerHTML ="S";
+                }
+                
+                
+                
+                
                 document.getElementById("total").innerHTML = jsonResponse[jsonResponse.length - 1];
                 document.getElementById("gk").style.display = "";
                 document.getElementById("def").style.display = "";
@@ -651,16 +742,95 @@ function showPlayers(str) {
                 }
             }
         };
-        xhttp.open("GET", "allPlayers?pos=" + str, true);
+        xhttp.open("GET", "allPlayers?pos=" + selectionPl+"&cat="+selectCat, true);
         xhttp.send();
-    } else if (str == "Goalkeeper" || str == "Defender" || str == "Midfielder" || str == "Forward") {
+    } else if (selectionPl == "Goalkeeper" || selectionPl == "Defender" || selectionPl == "Midfielder" || selectionPl == "Forward") {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var data = xhttp.responseText;
                 var jsonResponse = JSON.parse(data);
+                                if(selectCat=='score'){
+                    document.getElementById("catGK").innerHTML ="TS";
+                    document.getElementById("catDEF").innerHTML ="TS";
+                    document.getElementById("catMID").innerHTML ="TS";
+                    document.getElementById("catFWD").innerHTML ="TS";
+                }
+                else if(selectCat=='minutes'){
+                    document.getElementById("catGK").innerHTML ="MP";
+                    document.getElementById("catDEF").innerHTML ="MP";
+                    document.getElementById("catMID").innerHTML ="MP";
+                    document.getElementById("catFWD").innerHTML ="MP";
+                }
+                else if(selectCat=='goalScored'){
+                    document.getElementById("catGK").innerHTML ="GS";
+                    document.getElementById("catDEF").innerHTML ="GS";
+                    document.getElementById("catMID").innerHTML ="GS";
+                    document.getElementById("catFWD").innerHTML ="GS";
+                }
+                else if(selectCat=='assist'){
+                    document.getElementById("catGK").innerHTML ="A";
+                    document.getElementById("catDEF").innerHTML ="A";
+                    document.getElementById("catMID").innerHTML ="A";
+                    document.getElementById("catFWD").innerHTML ="A";
+                }
+                else if(selectCat=='cleanSheet'){
+                    document.getElementById("catGK").innerHTML ="CS";
+                    document.getElementById("catDEF").innerHTML ="CS";
+                    document.getElementById("catMID").innerHTML ="CS";
+                    document.getElementById("catFWD").innerHTML ="CS";
+                }
+                else if(selectCat=='cleanSheet'){
+                    document.getElementById("catGK").innerHTML ="CS";
+                    document.getElementById("catDEF").innerHTML ="CS";
+                    document.getElementById("catMID").innerHTML ="CS";
+                    document.getElementById("catFWD").innerHTML ="CS";
+                }
+                else if(selectCat=='ownGoal'){
+                    document.getElementById("catGK").innerHTML ="OG";
+                    document.getElementById("catDEF").innerHTML ="OG";
+                    document.getElementById("catMID").innerHTML ="OG";
+                    document.getElementById("catFWD").innerHTML ="OG";
+                }
+                
+                else if(selectCat=='goalConceded'){
+                    document.getElementById("catGK").innerHTML ="GC";
+                    document.getElementById("catDEF").innerHTML ="GC";
+                    document.getElementById("catMID").innerHTML ="GC";
+                    document.getElementById("catFWD").innerHTML ="GC";
+                }
+                else if(selectCat=='penaltySaved'){
+                    document.getElementById("catGK").innerHTML ="PS";
+                    document.getElementById("catDEF").innerHTML ="PS";
+                    document.getElementById("catMID").innerHTML ="PS";
+                    document.getElementById("catFWD").innerHTML ="PS";
+                }
+                 else if(selectCat=='penaltyMissed'){
+                    document.getElementById("catGK").innerHTML ="PM";
+                    document.getElementById("catDEF").innerHTML ="PM";
+                    document.getElementById("catMID").innerHTML ="PM";
+                    document.getElementById("catFWD").innerHTML ="PM";
+                }
+                else if(selectCat=='yellowCard'){
+                    document.getElementById("catGK").innerHTML ="YC";
+                    document.getElementById("catDEF").innerHTML ="YC";
+                    document.getElementById("catMID").innerHTML ="YC";
+                    document.getElementById("catFWD").innerHTML ="YC";
+                }
+                 else if(selectCat=='redCard'){
+                    document.getElementById("catGK").innerHTML ="RC";
+                    document.getElementById("catDEF").innerHTML ="RC";
+                    document.getElementById("catMID").innerHTML ="RC";
+                    document.getElementById("catFWD").innerHTML ="RC";
+                }
+                else if(selectCat=='saves'){
+                    document.getElementById("catGK").innerHTML ="S";
+                    document.getElementById("catDEF").innerHTML ="S";
+                    document.getElementById("catMID").innerHTML ="S";
+                    document.getElementById("catFWD").innerHTML ="S";
+                }
 
-                if (str == "Goalkeeper") {
+                if (selectionPl == "Goalkeeper") {
                     document.getElementById("gk").style.display = "";
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "none";
@@ -699,7 +869,7 @@ function showPlayers(str) {
 
                         k = k + 1;
                     }
-                } else if (str == "Defender") {
+                } else if (selectionPl == "Defender") {
 
                     document.getElementById("gk").style.display = "none";
                     document.getElementById("def").style.display = "";
@@ -738,7 +908,7 @@ function showPlayers(str) {
                         document.getElementById("scoredef" + k).innerHTML = jsonResponse[i + 4];
                         k = k + 1;
                     }
-                } else if (str == "Midfielder") {
+                } else if (selectionPl == "Midfielder") {
                     document.getElementById("gk").style.display = "none";
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "";
@@ -776,7 +946,7 @@ function showPlayers(str) {
                         document.getElementById("scoremid" + k).innerHTML = jsonResponse[i + 4];
                         k = k + 1;
                     }
-                } else if (str == "Forward") {
+                } else if (selectionPl == "Forward") {
                     document.getElementById("gk").style.display = "none";
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "none";
@@ -817,16 +987,18 @@ function showPlayers(str) {
                 }
             }
         };
-        xhttp.open("GET", "playersSelection?pos=" + str + "-" + 1, true);
+        xhttp.open("GET", "playersSelection?pos=" + selectionPl + "-" + 1+"&cat="+selectCat, true);
         xhttp.send();
-    } else if (str == "Boston Breakers" || str == "Chicago Red Stars" || str == "FC Kansas City" || str == "Houston Dash" ||
-            str == "North Carolina Courage" || str == "Orlando Pride" || str == "Portland Thorns FC" || str == "Seattle Reign FC" ||
-            str == "Sky Blue FC" || str == "Washington Spirit") {
+    } else if (selectionPl == "Boston Breakers" || selectionPl == "Chicago Red Stars" || selectionPl == "FC Kansas City" || selectionPl == "Houston Dash" ||
+            selectionPl == "North Carolina Courage" || selectionPl == "Orlando Pride" || selectionPl == "Portland Thorns FC" || selectionPl == "Seattle Reign FC" ||
+            selectionPl == "Sky Blue FC" || selectionPl == "Washington Spirit") {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var data = xhttp.responseText;
                 var jsonResponse = JSON.parse(data);
+                
+                
 
                 document.getElementById("gk").style.display = "";
                 document.getElementById("def").style.display = "";
@@ -903,7 +1075,7 @@ function showPlayers(str) {
                 }
             }
         };
-        xhttp.open("GET", "playersSelectionTeam?team=" + str, true);
+        xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl, true);
         xhttp.send();
     }
 }
@@ -913,7 +1085,8 @@ function showPlayers(str) {
 
 $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#nextPlayersSelect').val();
-    $.get("playersSelection", {pos: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersSelection", {pos: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         var parts = page.split("-");
 
         if (parts[0] == "Goalkeeper") {
@@ -1030,7 +1203,8 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
 
 $(document).on("click", "#endSelect", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#endSelect').val();
-    $.get("playersSelection", {pos: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersSelection", {pos: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
 
 
 
@@ -1155,7 +1329,8 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
 
 $(document).on("click", "#startSelect", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#startSelect').val();
-    $.get("playersSelection", {pos: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersSelection", {pos: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
 
 
         var parts = page.split("-");
@@ -1281,7 +1456,8 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
 
 $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var page = $('#prevPlayersSelect').val();
-    $.get("playersSelection", {pos: page}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+    var selectCat=document.getElementById('categorySelection').value;
+    $.get("playersSelection", {pos: page,cat:selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         var parts = page.split("-");
 
         if (parts[0] == "Goalkeeper") {

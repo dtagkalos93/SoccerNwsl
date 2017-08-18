@@ -17,20 +17,20 @@ import java.util.List;
  * @author Mitsos
  */
 public class players {
-    private List nameList ;
-    private List teamList ;
-    private List priceList ;
+
+    private List nameList;
+    private List teamList;
+    private List priceList;
     private List pointList;
     private List jerseyList;
-    
-    
-    public void players(String pos) {
-        
+
+    public void players(String pos, String category) {
+
         nameList = new ArrayList();
         teamList = new ArrayList();
-        priceList= new ArrayList();
-        pointList=new ArrayList();
-        jerseyList=new ArrayList();
+        priceList = new ArrayList();
+        pointList = new ArrayList();
+        jerseyList = new ArrayList();
         System.out.println("players");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -41,7 +41,7 @@ public class players {
         Statement statement = null;
         ResultSet resultSet = null;
         int total;
-        
+
         String badge = null;
         try {
 
@@ -50,11 +50,10 @@ public class players {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            
 
             int i = 1;
             //Select the data from the database
-            String sql = "SELECT * FROM players where position='"+pos+"'";
+            String sql = "SELECT * FROM players where position='" + pos + "'";
             System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
@@ -62,139 +61,118 @@ public class players {
             resultSet = s.getResultSet();
 
             while (resultSet.next()) {
-                System.out.println(i+"");
-                nameList.add( resultSet.getString("name"));
-                
+                System.out.println(i + "");
+                nameList.add(resultSet.getString("name"));
+
                 if (resultSet.getString("team").equals("Houston Dash")) {
                     teamList.add("HOU");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("houstongk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("dash1.png");
                     }
-                    
-
 
                 } else if (resultSet.getString("team").equals("Chicago Red Stars")) {
                     teamList.add("CHI");
-                     if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("chicagogk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("stars1.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("Portland Thorns FC")) {
                     teamList.add("POR");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("thornsgk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("thorns1.png");
                     }
 
                 } else if (resultSet.getString("team").equals("Orlando Pride")) {
                     teamList.add("ORL");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("orlandogk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("pride1.png");
                     }
-                    
- 
+
                 } else if (resultSet.getString("team").equals("Washington Spirit")) {
                     teamList.add("WAS");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("spiritgk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("spirit1.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("North Carolina Courage")) {
                     teamList.add("NC");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("couragegk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("courage.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("Seattle Reign FC")) {
                     teamList.add("SEA");
-                    if(pos.equals("Goalkeeper")){
-                        jerseyList.add("reigngk.png");
-                    }
-                    else{
+                    if (pos.equals("Goalkeeper")) {
+                        jerseyList.add("seattlegk.png");
+                    } else {
                         jerseyList.add("reign1.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("Sky Blue FC")) {
                     teamList.add("NJ");
-                    if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("skybluegk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("skyblue1.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("FC Kansas City")) {
                     teamList.add("KC");
-                     if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("kansasgk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("kansas1.png");
                     }
-                    
 
                 } else if (resultSet.getString("team").equals("Boston Breakers")) {
                     teamList.add("BOS");
-                     if(pos.equals("Goalkeeper")){
+                    if (pos.equals("Goalkeeper")) {
                         jerseyList.add("breakersgk.png");
-                    }
-                    else{
+                    } else {
                         jerseyList.add("breakers1.png");
                     }
-                    
+
                 }
                 String price = resultSet.getString("price");
                 if (price == null) {
                     price = "0.0";
                 }
                 priceList.add(price);
-                total=0;
-                for(int j=1;j<=22;j++){
-                    //total=total+Integer.parseInt();
-                    String gw=resultSet.getString("GW"+j);
-                    
-                    System.out.println(gw);
-                    if(gw.equals("")){
-                        total=total+0;
-                    }
-                    else{
-                        total=total+Integer.parseInt(gw);
-                    }
-                    
-                    
-                }
-               
-                pointList.add(total+"");
-                
+                if (category.equals("score")) {
+                    total = 0;
+                    for (int j = 1; j <= 22; j++) {
+                        //total=total+Integer.parseInt();
+                        String gw = resultSet.getString("GW" + j);
 
+                        System.out.println(gw);
+                        if (gw.equals("")) {
+                            total = total + 0;
+                        } else {
+                            total = total + Integer.parseInt(gw);
+                        }
+
+                    }
+
+                    pointList.add(total + "");
+
+                } else {
+                    pointList.add(resultSet.getString(category));
+                }
                 i++;
 
             }
-            
-
-           
 
             resultSet.close();
 
@@ -223,10 +201,9 @@ public class players {
     public List getpointList() {
         return pointList;
     }
-    
+
     public List getjerseyList() {
         return jerseyList;
     }
 
-    
 }

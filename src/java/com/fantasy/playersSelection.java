@@ -72,6 +72,7 @@ public class playersSelection extends HttpServlet {
         sortedpricelist = new ArrayList<>();
 
         String position = request.getParameter("pos");
+        String category = request.getParameter("cat");
         System.out.println(position);
         String[] parts = position.split("-");
         position = parts[0];
@@ -176,20 +177,24 @@ public class playersSelection extends HttpServlet {
                 }
 
                 pricelist.add(resultSet.getString("price"));
-                total = 0;
-                for (int j = 1; j <= 22; j++) {
-                    //total=total+Integer.parseInt();
-                    String gw = resultSet.getString("GW" + j);
+                if (category.equals("score")) {
+                    total = 0;
+                    for (int j = 1; j <= 22; j++) {
+                        //total=total+Integer.parseInt();
+                        String gw = resultSet.getString("GW" + j);
 
-                    if (gw.equals("")) {
-                        total = total + 0;
-                    } else {
-                        total = total + Integer.parseInt(gw);
+                        if (gw.equals("")) {
+                            total = total + 0;
+                        } else {
+                            total = total + Integer.parseInt(gw);
+                        }
+                        
                     }
+                    scorelist.add(total + "");
+                } else {
+                    scorelist.add(resultSet.getString(category));
 
                 }
-
-                scorelist.add(total + "");
 
                 i++;
             }
@@ -275,7 +280,7 @@ public class playersSelection extends HttpServlet {
         }
 
         if (missing != 0) {
-            for (int i = sortednamelist.size() - missing    ; i < sortednamelist.size(); i++) {
+            for (int i = sortednamelist.size() - missing; i < sortednamelist.size(); i++) {
                 list.add(sortednamelist.get(i));
                 list.add(sortedjerseylist.get(i));
                 list.add(sortedteamlist.get(i));
