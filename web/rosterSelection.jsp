@@ -173,11 +173,11 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img">
+                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div class="col-md-6 col-xs-6" style="left:29%">
-                                <img class="image-player" src="img/subsgk.png"/>
-                                <p class="gkname" >Goalkeeper</p>
+                            <div class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
+                               <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
+                                <p class="gkname" id="namegk1" >Goalkeeper</p>
                             </div>
                             <div class="col-md-6 col-xs-6" style="float: left;left: 1.3%">
                                 <img class="image-player" src="img/subsgk.png" />
@@ -549,7 +549,7 @@
                                     <th style="background-color: yellow; text-align: center">$</th>
                                     <th id="catGK" style="background-color: yellow; text-align: center">TS</th>
                                 </tr>
-                                <tr id='gk1'>
+                                <tr id='gk1' data-toggle="modal" onclick="openModal(1)">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
@@ -1039,7 +1039,36 @@
                 </div>
             </div>
         </div>
+                                    
+                                    
+                                    
+               <!--players modal -->
+        <div id="players" class="modal fade" role="dialog" >
+            <div class="modal-dialog" style="width: 450px">
 
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
+                        <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
+                        <h4 class="modal-title" style="color: white;text-align:left;font-family: arial;font-weight: bold; margin-top:-4% "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="width: 100px;height: 50px;margin-left:47%; padding-bottom: 1%"/></h4>
+
+                    </div>
+                    <!-- Modal content-->
+                    <div class="modal-body">
+                        <p style="display:none" id="playersName"></p>
+                        <p style="display:none" id="playerImage"></p>
+                        <p style="display:none" id="playerPrice"></p>
+                        <p style="display:none" id="playerNo"></p>
+                        <button onclick="addPlayer(document.getElementById('playerNo').textContent)" type="button" class="prevbutton btncustom  " style="width: 100%;background-color: red;color:white;font-family: arial;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                            Add Player 
+                        </button> 
+                        <button type="button" class="prevbutton btncustom  " style="width: 100%;font-family: arial;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                            View Information
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>

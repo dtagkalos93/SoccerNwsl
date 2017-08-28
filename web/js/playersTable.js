@@ -1577,3 +1577,43 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
         }
     });
 });
+
+
+
+function changeGK()
+{
+    
+    document.getElementById('selectPlayers').options[2].selected="true";
+    showPlayers();
+   
+}
+
+function openModal(i){
+    var name=document.getElementById("gkname"+i).textContent;
+    var price=document.getElementById("gkprice"+i).textContent;
+    var image=document.getElementById("gkimage"+i).src;
+    image=image.split("/")[5];
+
+    
+    console.log(image);
+    
+    document.getElementById("modalTitle").innerHTML=name+" "+price;
+    document.getElementById("playersName").innerHTML=name;
+    document.getElementById("playerNo").innerHTML=i;
+    document.getElementById("playerPrice").innerHTML=price;
+    document.getElementById("playerImage").innerHTML=image;
+    $('#players').modal({show: 'true'}); 
+}
+
+function addPlayer(i){
+    var name=document.getElementById("playersName").textContent;
+    var image=document.getElementById("playerImage").textContent;
+    document.getElementById("imagegk"+i).src="img/"+image;
+    document.getElementById("namegk"+i).innerHTML=name;
+    
+
+   $('#players').modal('hide');
+}
+
+
+
