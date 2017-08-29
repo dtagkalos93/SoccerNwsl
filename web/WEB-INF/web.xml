@@ -40,6 +40,10 @@
         <servlet-name>playersSelectionTeam</servlet-name>
         <servlet-class>com.fantasy.playersSelectionTeam</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>findPosition</servlet-name>
+        <servlet-class>com.fantasy.findPosition</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>playersSelectionTeam</servlet-name>
         <url-pattern>/playersSelectionTeam</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findPosition</servlet-name>
+        <url-pattern>/findPosition</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

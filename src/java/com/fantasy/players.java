@@ -61,7 +61,6 @@ public class players {
             resultSet = s.getResultSet();
 
             while (resultSet.next()) {
-                System.out.println(i + "");
                 nameList.add(resultSet.getString("name"));
 
                 if (resultSet.getString("team").equals("Houston Dash")) {
@@ -156,7 +155,6 @@ public class players {
                         //total=total+Integer.parseInt();
                         String gw = resultSet.getString("GW" + j);
 
-                        System.out.println(gw);
                         if (gw.equals("")) {
                             total = total + 0;
                         } else {

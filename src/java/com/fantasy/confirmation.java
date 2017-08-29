@@ -186,10 +186,8 @@ public class confirmation extends HttpServlet {
     }// </editor-fold>
 
     private void findmax(HttpServletRequest request, int no, String position) {
-        System.out.println("findMAX");
         int k = 1;
         while (k <= no) {
-            System.out.println("ger");
 
             if (position.equals("def")) {
                 int max = Integer.parseInt(defscoreList.get(0).toString());
@@ -197,7 +195,6 @@ public class confirmation extends HttpServlet {
 
                 for (int i = 1; i < defscoreList.size(); i++) {
                     if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
-                        System.out.println(Integer.parseInt(defscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(defscoreList.get(i).toString());
                         pos = i;
                     }
@@ -216,10 +213,8 @@ public class confirmation extends HttpServlet {
             } else if (position.equals("gk")) {
                 int max = Integer.parseInt(gkscoreList.get(0).toString());
                 int pos = 0;
-                System.out.println(gknameList.get(0).toString());
                 for (int i = 1; i < gkscoreList.size(); i++) {
                     if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
-                        System.out.println(Integer.parseInt(gkscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(gkscoreList.get(i).toString());
                         pos = i;
                     }
@@ -246,7 +241,6 @@ public class confirmation extends HttpServlet {
                         pos = i;
                     }
                 }
-                System.out.println(Integer.parseInt(midscoreList.get(pos).toString()) + "and pos: " + pos);
                 
                 sortmidnameList.add(midnameList.get(pos));
                 
@@ -266,7 +260,6 @@ public class confirmation extends HttpServlet {
 
                 for (int i = 1; i < fwdscoreList.size(); i++) {
                     if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
-                        System.out.println(Integer.parseInt(fwdscoreList.get(i).toString()) + "and max: " + max);
                         max = Integer.parseInt(fwdscoreList.get(i).toString());
                         pos = i;
                     }
