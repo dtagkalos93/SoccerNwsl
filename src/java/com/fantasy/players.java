@@ -155,7 +155,7 @@ public class players {
                         //total=total+Integer.parseInt();
                         String gw = resultSet.getString("GW" + j);
 
-                        if (gw.equals("")) {
+                        if (gw.equals("") || gw.equals("-")) {
                             total = total + 0;
                         } else {
                             total = total + Integer.parseInt(gw);

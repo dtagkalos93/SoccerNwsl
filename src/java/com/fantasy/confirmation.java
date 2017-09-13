@@ -188,7 +188,6 @@ public class confirmation extends HttpServlet {
     private void findmax(HttpServletRequest request, int no, String position) {
         int k = 1;
         while (k <= no) {
-
             if (position.equals("def")) {
                 int max = Integer.parseInt(defscoreList.get(0).toString());
                 int pos = 0;
@@ -231,6 +230,7 @@ public class confirmation extends HttpServlet {
                 sortgkscoreList.add(gkscoreList.get(pos));
                 gkscoreList.remove(pos);
             } else if (position.equals("mid")) {
+                System.out.println("Name of player: "+ midnameList.get(0).toString());
                 int max = Integer.parseInt(midscoreList.get(0).toString());
                 int pos = 0;
 

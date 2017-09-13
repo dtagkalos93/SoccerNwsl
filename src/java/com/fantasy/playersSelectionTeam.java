@@ -201,7 +201,7 @@ public class playersSelectionTeam extends HttpServlet {
                 String gw = resultSet.getString("GW" + j);
 
                 System.out.println(gw);
-                if (gw.equals("")) {
+                if (gw.equals("")|| gw.equals("-")) {
                     total = total + 0;
                 } else {
                     total = total + Integer.parseInt(gw);
