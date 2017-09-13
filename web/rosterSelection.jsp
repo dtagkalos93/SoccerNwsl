@@ -158,13 +158,13 @@
                                     <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 13px; text-align: center; font-family:arial;left: -4%">
                                         Auto Pick 
                                     </button> 
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 13px; text-align: center; font-family:arial;float: right">
+                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 13px; text-align: center; font-family:arial;float: right" onclick="reset()">
                                         Reset 
                                     </button> 
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 25%;flex: 1;margin-top: 1%;font-family:arial;border-right: 1px solid #ebebe4; border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-family: arial;font-weight:bold; font-size:14px ">Player Selected</h6>
-                                    <h4 style="text-align: center;font-family: arial;font-weight:bold; font-size:22px; color:green;">15/15</h4>
+                                    <h4 id="allPlayers" style="text-align: center;font-family: arial;font-weight:bold; font-size:22px; color:#d4213c;"><span id="totalPlayers">0</span>/15</h4>
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 25%;flex: 1;margin-top: 1%;font-family:arial">
                                     <h6 style="text-align: center;font-family: arial;font-weight:bold; font-size:14px ">Money Remaining</h6>
@@ -917,7 +917,7 @@
                                     <td id="pricefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(0)%></td>
                                     <td id="scorefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(0)%></td>
                                 </tr>
-                                <tr id="fwd2" onclick="openModalFWD(<2)">
+                                <tr id="fwd2" onclick="openModalFWD(2)">
                                     <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">

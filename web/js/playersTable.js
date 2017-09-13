@@ -1597,6 +1597,7 @@ function openModalGK(i) {
 
 
 
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -1625,7 +1626,7 @@ function openModalDEF(i) {
     image = image.split("/")[5];
 
 
-    
+
 
 
 
@@ -1657,7 +1658,7 @@ function openModalMID(i) {
     image = image.split("/")[5];
 
 
-    
+
 
 
 
@@ -1689,7 +1690,7 @@ function openModalFWD(i) {
     image = image.split("/")[5];
 
 
-    
+
 
 
 
@@ -1715,79 +1716,129 @@ function openModalFWD(i) {
 
 
 function addPlayer() {
+
+    var players = document.getElementById("totalPlayers").textContent;
+
+
+    document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
+    if(document.getElementById("totalPlayers").innerHTML=='15'){
+        
+        document.getElementById("allPlayers").style.color='green';
+        document.getElementById("totalPlayers").style.color='green';
+    }
+    console.log("PLAYERS " + players);
     if (document.getElementById("playerPosition").textContent == 'Goalkeeper') {
         var name = document.getElementById("playersName").textContent;
         var image = document.getElementById("playerImage").textContent;
-       
-        for (i = 1; i <=2; i++) {
-            if(document.getElementById("namegk" + i).innerHTML=='Goalkeeper' ){
+
+        for (i = 1; i <= 2; i++) {
+            if (document.getElementById("namegk" + i).innerHTML == 'Goalkeeper') {
                 break;
             }
         }
-        if(i<=2){
-            document.getElementById("gk"+document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
-            document.getElementById("gk"+document.getElementById("playerNo").textContent).style.opacity='0.6';
+        if (i <= 2) {
+            document.getElementById("gk" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
+            document.getElementById("gk" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("imagegk" + i).src = "img/" + image;
             document.getElementById("namegk" + i).innerHTML = name;
         }
-        
-    }
-    else if (document.getElementById("playerPosition").textContent == 'Defender') {
+
+    } else if (document.getElementById("playerPosition").textContent == 'Defender') {
         var name = document.getElementById("playersName").textContent;
         var image = document.getElementById("playerImage").textContent;
-        
-        for (i = 1; i <=5; i++) {
-            if(document.getElementById("defname" + i).innerHTML=='Defender' ){
+
+        for (i = 1; i <= 5; i++) {
+            if (document.getElementById("defname" + i).innerHTML == 'Defender') {
                 break;
             }
         }
-        if(i<=5){
-            document.getElementById("def"+document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
-            document.getElementById("def"+document.getElementById("playerNo").textContent).style.opacity='0.6';
+        if (i <= 5) {
+            document.getElementById("def" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
+            document.getElementById("def" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("defimage" + i).src = "img/" + image;
             document.getElementById("defname" + i).innerHTML = name;
         }
-        
-    }
-    else if (document.getElementById("playerPosition").textContent == 'Midfielder') {
+
+    } else if (document.getElementById("playerPosition").textContent == 'Midfielder') {
         var name = document.getElementById("playersName").textContent;
         var image = document.getElementById("playerImage").textContent;
-        document.getElementById("mid"+document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
-        document.getElementById("mid"+document.getElementById("playerNo").textContent).style.opacity='0.6';
-        for (i = 1; i <=5; i++) {
-            if(document.getElementById("midname" + i).innerHTML=='Midfielder' ){
+        document.getElementById("mid" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
+        document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
+        for (i = 1; i <= 5; i++) {
+            if (document.getElementById("midname" + i).innerHTML == 'Midfielder') {
                 break;
             }
         }
-        if(i<=5){
-            document.getElementById("mid"+document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
-            document.getElementById("mid"+document.getElementById("playerNo").textContent).style.opacity='0.6';
+        if (i <= 5) {
+            document.getElementById("mid" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
+            document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("midimage" + i).src = "img/" + image;
             document.getElementById("midname" + i).innerHTML = name;
         }
-        
-    }
-     else if (document.getElementById("playerPosition").textContent == 'Forward') {
+
+    } else if (document.getElementById("playerPosition").textContent == 'Forward') {
         var name = document.getElementById("playersName").textContent;
         var image = document.getElementById("playerImage").textContent;
-        
-        for (i = 1; i <=3; i++) {
-            if(document.getElementById("fwdname" + i).innerHTML=='Forward' ){
+
+        for (i = 1; i <= 3; i++) {
+            if (document.getElementById("fwdname" + i).innerHTML == 'Forward') {
                 break;
             }
         }
-        if(i<=3){
-            document.getElementById("fwd"+document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
-            document.getElementById("fwd"+document.getElementById("playerNo").textContent).style.opacity='0.6';
+        if (i <= 3) {
+            document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
+            document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("fwdimage" + i).src = "img/" + image;
             document.getElementById("fwdname" + i).innerHTML = name;
         }
-        
+
     }
 
 
     $('#players').modal('hide');
 }
 
+
+function reset() {
+    document.getElementById("totalPlayers").innerHTML ='0';
+    document.getElementById("allPlayers").style.color='#d4213c';
+    document.getElementById("totalPlayers").style.color='#d4213c';
+    for (i = 1; i <= 2; i++) {
+        document.getElementById("imagegk" + i).src = "img/" + 'subsgk.png';
+        document.getElementById("namegk" + i).innerHTML = 'Goalkeeper';
+    }
+    for (i = 1; i <= 20; i++) {
+        
+        document.getElementById("gk" + i).style.pointerEvents = 'auto';
+        document.getElementById("gk" + i).style.opacity = '1';
+    }
+    for (i = 1; i <= 5; i++) {
+        document.getElementById("defimage" + i).src = "img/" + 'subs.png';
+        document.getElementById("defname" + i).innerHTML = 'Defender';
+    }
+    for (i = 1; i <= 20; i++) {
+        
+        document.getElementById("def" + i).style.pointerEvents = 'auto';
+        document.getElementById("def" + i).style.opacity = '1';
+    }
+    for (i = 1; i <= 5; i++) {
+        document.getElementById("midimage" + i).src = "img/" + 'subs.png';
+        document.getElementById("midname" + i).innerHTML = 'Midfielder';
+    }
+    for (i = 1; i <= 20; i++) {
+        
+        document.getElementById("mid" + i).style.pointerEvents = 'auto';
+        document.getElementById("mid" + i).style.opacity = '1';
+    }
+    for (i = 1; i <= 3; i++) {
+        document.getElementById("fwdimage" + i).src = "img/" + 'subs.png';
+        document.getElementById("fwdname" + i).innerHTML = 'Forward';
+    }
+    for (i = 1; i <= 20; i++) {
+        
+        document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+        document.getElementById("fwd" + i).style.opacity = '1';
+    }
+}
 
 
