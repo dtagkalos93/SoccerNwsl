@@ -150,6 +150,7 @@ public class players {
                 }
                 priceList.add(price);
                 if (category.equals("score")) {
+                    System.out.println("here if" );
                     total = 0;
                     for (int j = 1; j <= 22; j++) {
                         //total=total+Integer.parseInt();
@@ -166,8 +167,22 @@ public class players {
                     pointList.add(total + "");
 
                 } else {
-                    pointList.add(resultSet.getString(category));
+                    String point=resultSet.getString(category);
+                    System.out.println(point+" porintsfdsaf "+ nameList.get(i-1));
+                    
+                    if (point.equals("")){
+                        System.out.println("gdfdfd");
+                        point="0";
+                        pointList.add(point);
+                    }
+                    else{
+                        pointList.add(point);
+                    }
+                        
+
+                    
                 }
+               
                 i++;
 
             }

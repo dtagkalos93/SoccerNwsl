@@ -84,6 +84,7 @@ public class playersSelectionTeam extends HttpServlet {
         fwdscoreList = new ArrayList<>();
 
         String team = request.getParameter("team");
+        String category = request.getParameter("cat");
         System.out.println(team);
 
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
@@ -102,18 +103,18 @@ public class playersSelectionTeam extends HttpServlet {
             connection = DriverManager.getConnection(connectionUrl, userId, password);
 
             //Select the data from the database
-            gk(connection, team);
+            gk(connection, team, category);
             list.add(gknameList.size() + "");
-            def(connection, team);
+            def(connection, team, category);
             list.add(defnameList.size() + "");
-            mid(connection, team);
+            mid(connection, team, category);
             list.add(midnameList.size() + "");
-            fwd(connection, team);
+            fwd(connection, team, category);
             list.add(fwdnameList.size() + "");
-            findMax("gk",gknameList.size());
-            findMax("def",defnameList.size());
-            findMax("mid",midnameList.size() );
-            findMax("fwd",fwdnameList.size());
+            findMax("gk", gknameList.size());
+            findMax("def", defnameList.size());
+            findMax("mid", midnameList.size());
+            findMax("fwd", fwdnameList.size());
 
         } catch (Exception e) {
 
@@ -129,7 +130,7 @@ public class playersSelectionTeam extends HttpServlet {
 
     }
 
-    public void gk(Connection connection, String team) throws SQLException {
+    public void gk(Connection connection, String team, String category) throws SQLException {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Goalkeeper'";
@@ -201,20 +202,37 @@ public class playersSelectionTeam extends HttpServlet {
                 String gw = resultSet.getString("GW" + j);
 
                 System.out.println(gw);
-                if (gw.equals("")|| gw.equals("-")) {
+                if (gw.equals("") || gw.equals("-")) {
                     total = total + 0;
                 } else {
                     total = total + Integer.parseInt(gw);
                 }
 
             }
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-            gkscoreList.add(total + "");
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
+                }
+                gkscoreList.add(total + "");
+            } else {
+                gkscoreList.add(resultSet.getString(category));
+
+            }
+
         }
 
     }
 
-    public void def(Connection connection, String team) throws SQLException {
+    public void def(Connection connection, String team, String category) throws SQLException {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Defender'";
@@ -280,26 +298,30 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             defpriceList.add(price);
-            total = 0;
-            for (int j = 1; j <= 22; j++) {
-                //total=total+Integer.parseInt();
-                String gw = resultSet.getString("GW" + j);
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
-                if (gw.equals("")) {
-                    total = total + 0;
-                } else {
-                    total = total + Integer.parseInt(gw);
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
                 }
+                defscoreList.add(total + "");
+            } else {
+                defscoreList.add(resultSet.getString(category));
 
             }
 
-            defscoreList.add(total + "");
         }
 
     }
 
-    public void mid(Connection connection, String team) throws SQLException {
+    public void mid(Connection connection, String team, String category) throws SQLException {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Midfielder'";
@@ -365,26 +387,30 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             midpriceList.add(price);
-            total = 0;
-            for (int j = 1; j <= 22; j++) {
-                //total=total+Integer.parseInt();
-                String gw = resultSet.getString("GW" + j);
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
-                if (gw.equals("")) {
-                    total = total + 0;
-                } else {
-                    total = total + Integer.parseInt(gw);
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
                 }
+                midscoreList.add(total + "");
+            } else {
+                midscoreList.add(resultSet.getString(category));
 
             }
 
-            midscoreList.add(total + "");
         }
 
     }
 
-    public void fwd(Connection connection, String team) throws SQLException {
+    public void fwd(Connection connection, String team, String category) throws SQLException {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Forward'";
@@ -450,125 +476,129 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             fwdpriceList.add(price);
-            total = 0;
-            for (int j = 1; j <= 22; j++) {
-                //total=total+Integer.parseInt();
-                String gw = resultSet.getString("GW" + j);
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
-                if (gw.equals("")) {
-                    total = total + 0;
-                } else {
-                    total = total + Integer.parseInt(gw);
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+
                 }
+                fwdscoreList.add(total + "");
+            } else {
+                fwdscoreList.add(resultSet.getString(category));
 
             }
 
-            fwdscoreList.add(total + "");
         }
 
     }
 
-    public void findMax(String position,int no) {
-        
-                int k = 1;
+    public void findMax(String position, int no) {
+
+        int k = 1;
         while (k <= no) {
-        if (position.equals("def")) {
-            int max = Integer.parseInt(defscoreList.get(0).toString());
-            int pos = 0;
+            if (position.equals("def")) {
+                int max = Integer.parseInt(defscoreList.get(0).toString());
+                int pos = 0;
 
-            for (int i = 1; i < defscoreList.size(); i++) {
-                if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
+                for (int i = 1; i < defscoreList.size(); i++) {
+                    if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
 
-                    max = Integer.parseInt(defscoreList.get(i).toString());
-                    pos = i;
+                        max = Integer.parseInt(defscoreList.get(i).toString());
+                        pos = i;
+                    }
                 }
-            }
-            list.add(defnameList.get(pos));
+                list.add(defnameList.get(pos));
 
-            defnameList.remove(pos);
-            list.add(defjerseyList.get(pos));
-            defjerseyList.remove(pos);
-            list.add(defteamList.get(pos));
-            defteamList.remove(pos);
-            list.add(defpriceList.get(pos));
-            defpriceList.remove(pos);
-            list.add(defscoreList.get(pos));
-            defscoreList.remove(pos);
-        } else if (position.equals("gk")) {
-            int max = Integer.parseInt(gkscoreList.get(0).toString());
-            int pos = 0;
+                defnameList.remove(pos);
+                list.add(defjerseyList.get(pos));
+                defjerseyList.remove(pos);
+                list.add(defteamList.get(pos));
+                defteamList.remove(pos);
+                list.add(defpriceList.get(pos));
+                defpriceList.remove(pos);
+                list.add(defscoreList.get(pos));
+                defscoreList.remove(pos);
+            } else if (position.equals("gk")) {
+                int max = Integer.parseInt(gkscoreList.get(0).toString());
+                int pos = 0;
 
-            for (int i = 1; i < gkscoreList.size(); i++) {
-                
-                if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
+                for (int i = 1; i < gkscoreList.size(); i++) {
 
-                    max = Integer.parseInt(gkscoreList.get(i).toString());
-                    pos = i;
+                    if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
+
+                        max = Integer.parseInt(gkscoreList.get(i).toString());
+                        pos = i;
+                    }
                 }
-            }
-            System.out.println(gknameList.get(pos) + "and pos: " + pos);
-            list.add(gknameList.get(pos));
-            System.out.println(list.get(0).toString());
-            gknameList.remove(pos);
-            list.add(gkjerseyList.get(pos));
-            gkjerseyList.remove(pos);
-            list.add(gkteamList.get(pos));
-            gkteamList.remove(pos);
-            list.add(gkpriceList.get(pos));
-            gkpriceList.remove(pos);
-            list.add(gkscoreList.get(pos));
-            gkscoreList.remove(pos);
-        } else if (position.equals("mid")) {
+                System.out.println(gknameList.get(pos) + "and pos: " + pos);
+                list.add(gknameList.get(pos));
+                System.out.println(list.get(0).toString());
+                gknameList.remove(pos);
+                list.add(gkjerseyList.get(pos));
+                gkjerseyList.remove(pos);
+                list.add(gkteamList.get(pos));
+                gkteamList.remove(pos);
+                list.add(gkpriceList.get(pos));
+                gkpriceList.remove(pos);
+                list.add(gkscoreList.get(pos));
+                gkscoreList.remove(pos);
+            } else if (position.equals("mid")) {
 
-            int max = Integer.parseInt(midscoreList.get(0).toString());
-            int pos = 0;
+                int max = Integer.parseInt(midscoreList.get(0).toString());
+                int pos = 0;
 
-            for (int i = 1; i < midscoreList.size(); i++) {
-                if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
+                for (int i = 1; i < midscoreList.size(); i++) {
+                    if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
 
-                    max = Integer.parseInt(midscoreList.get(i).toString());
-                    pos = i;
+                        max = Integer.parseInt(midscoreList.get(i).toString());
+                        pos = i;
+                    }
                 }
-            }
 
-            list.add(midnameList.get(pos));
+                list.add(midnameList.get(pos));
 
-            midnameList.remove(pos);
-            list.add(midjerseyList.get(pos));
-            midjerseyList.remove(pos);
-            list.add(midteamList.get(pos));
-            midteamList.remove(pos);
-            list.add(midpriceList.get(pos));
-            midpriceList.remove(pos);
-            list.add(midscoreList.get(pos));
-            midscoreList.remove(pos);
+                midnameList.remove(pos);
+                list.add(midjerseyList.get(pos));
+                midjerseyList.remove(pos);
+                list.add(midteamList.get(pos));
+                midteamList.remove(pos);
+                list.add(midpriceList.get(pos));
+                midpriceList.remove(pos);
+                list.add(midscoreList.get(pos));
+                midscoreList.remove(pos);
 
-        } else if (position.equals("fwd")) {
-            int max = Integer.parseInt(fwdscoreList.get(0).toString());
-            int pos = 0;
+            } else if (position.equals("fwd")) {
+                int max = Integer.parseInt(fwdscoreList.get(0).toString());
+                int pos = 0;
 
-            for (int i = 1; i < fwdscoreList.size(); i++) {
-                if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
+                for (int i = 1; i < fwdscoreList.size(); i++) {
+                    if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
 
-                    max = Integer.parseInt(fwdscoreList.get(i).toString());
-                    pos = i;
+                        max = Integer.parseInt(fwdscoreList.get(i).toString());
+                        pos = i;
+                    }
                 }
+
+                list.add(fwdnameList.get(pos));
+
+                fwdnameList.remove(pos);
+                list.add(fwdjerseyList.get(pos));
+                fwdjerseyList.remove(pos);
+                list.add(fwdteamList.get(pos));
+                fwdteamList.remove(pos);
+                list.add(fwdpriceList.get(pos));
+                fwdpriceList.remove(pos);
+                list.add(fwdscoreList.get(pos));
+                fwdscoreList.remove(pos);
             }
-
-            list.add(fwdnameList.get(pos));
-
-            fwdnameList.remove(pos);
-            list.add(fwdjerseyList.get(pos));
-            fwdjerseyList.remove(pos);
-            list.add(fwdteamList.get(pos));
-            fwdteamList.remove(pos);
-            list.add(fwdpriceList.get(pos));
-            fwdpriceList.remove(pos);
-            list.add(fwdscoreList.get(pos));
-            fwdscoreList.remove(pos);
-        }
-        k++;
+            k++;
         }
 
     }

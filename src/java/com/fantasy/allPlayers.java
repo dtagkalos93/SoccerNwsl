@@ -108,7 +108,9 @@ public class allPlayers extends HttpServlet {
         findmax( 8, "def");
         players mid = new players();
         mid.players("Midfielder",category);
+        
         midnameList = mid.getnameList();
+        System.out.println("Mid number"+midnameList.size());
         totalPlayers=totalPlayers+midnameList.size();
         midteamList = mid.getteamList();
         midjerseyList = mid.getjerseyList();
@@ -134,15 +136,17 @@ public class allPlayers extends HttpServlet {
     }
 
     private void findmax( int no, String position) {
-        int k = 1;
+        int k = 1;  
         while (k <= no) {
 
 
             if (position.equals("def")) {
+                
                 int max = Integer.parseInt(defscoreList.get(0).toString());
                 int pos = 0;
-
+                System.out.println(defscoreList.size()+"no");
                 for (int i = 1; i < defscoreList.size(); i++) {
+                    
                     if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
                        
                         max = Integer.parseInt(defscoreList.get(i).toString());
@@ -165,7 +169,7 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
                
                 for (int i = 1; i < gkscoreList.size(); i++) {
-                    ;
+                    System.out.println("testgk"+gknameList.get(i));
                     if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
                        
                         max = Integer.parseInt(gkscoreList.get(i).toString());
@@ -188,6 +192,7 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < midscoreList.size(); i++) {
+                    System.out.println("testmid"+midnameList.get(i));
                     if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
 
                         max = Integer.parseInt(midscoreList.get(i).toString());
@@ -213,6 +218,7 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < fwdscoreList.size(); i++) {
+                    System.out.println("testfwd"+fwdnameList.get(i));
                     if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
                         
                         max = Integer.parseInt(fwdscoreList.get(i).toString());

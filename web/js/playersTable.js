@@ -971,9 +971,72 @@ function showPlayers() {
             if (this.readyState == 4 && this.status == 200) {
                 var data = xhttp.responseText;
                 var jsonResponse = JSON.parse(data);
-
-
-
+                if (selectCat == 'score') {
+                    document.getElementById("catGK").innerHTML = "TS";
+                    document.getElementById("catDEF").innerHTML = "TS";
+                    document.getElementById("catMID").innerHTML = "TS";
+                    document.getElementById("catFWD").innerHTML = "TS";
+                } else if (selectCat == 'minutes') {
+                    document.getElementById("catGK").innerHTML = "MP";
+                    document.getElementById("catDEF").innerHTML = "MP";
+                    document.getElementById("catMID").innerHTML = "MP";
+                    document.getElementById("catFWD").innerHTML = "MP";
+                } else if (selectCat == 'goalScored') {
+                    document.getElementById("catGK").innerHTML = "GS";
+                    document.getElementById("catDEF").innerHTML = "GS";
+                    document.getElementById("catMID").innerHTML = "GS";
+                    document.getElementById("catFWD").innerHTML = "GS";
+                } else if (selectCat == 'assist') {
+                    document.getElementById("catGK").innerHTML = "A";
+                    document.getElementById("catDEF").innerHTML = "A";
+                    document.getElementById("catMID").innerHTML = "A";
+                    document.getElementById("catFWD").innerHTML = "A";
+                } else if (selectCat == 'cleanSheet') {
+                    document.getElementById("catGK").innerHTML = "CS";
+                    document.getElementById("catDEF").innerHTML = "CS";
+                    document.getElementById("catMID").innerHTML = "CS";
+                    document.getElementById("catFWD").innerHTML = "CS";
+                } else if (selectCat == 'cleanSheet') {
+                    document.getElementById("catGK").innerHTML = "CS";
+                    document.getElementById("catDEF").innerHTML = "CS";
+                    document.getElementById("catMID").innerHTML = "CS";
+                    document.getElementById("catFWD").innerHTML = "CS";
+                } else if (selectCat == 'ownGoal') {
+                    document.getElementById("catGK").innerHTML = "OG";
+                    document.getElementById("catDEF").innerHTML = "OG";
+                    document.getElementById("catMID").innerHTML = "OG";
+                    document.getElementById("catFWD").innerHTML = "OG";
+                } else if (selectCat == 'goalConceded') {
+                    document.getElementById("catGK").innerHTML = "GC";
+                    document.getElementById("catDEF").innerHTML = "GC";
+                    document.getElementById("catMID").innerHTML = "GC";
+                    document.getElementById("catFWD").innerHTML = "GC";
+                } else if (selectCat == 'penaltySaved') {
+                    document.getElementById("catGK").innerHTML = "PS";
+                    document.getElementById("catDEF").innerHTML = "PS";
+                    document.getElementById("catMID").innerHTML = "PS";
+                    document.getElementById("catFWD").innerHTML = "PS";
+                } else if (selectCat == 'penaltyMissed') {
+                    document.getElementById("catGK").innerHTML = "PM";
+                    document.getElementById("catDEF").innerHTML = "PM";
+                    document.getElementById("catMID").innerHTML = "PM";
+                    document.getElementById("catFWD").innerHTML = "PM";
+                } else if (selectCat == 'yellowCard') {
+                    document.getElementById("catGK").innerHTML = "YC";
+                    document.getElementById("catDEF").innerHTML = "YC";
+                    document.getElementById("catMID").innerHTML = "YC";
+                    document.getElementById("catFWD").innerHTML = "YC";
+                } else if (selectCat == 'redCard') {
+                    document.getElementById("catGK").innerHTML = "RC";
+                    document.getElementById("catDEF").innerHTML = "RC";
+                    document.getElementById("catMID").innerHTML = "RC";
+                    document.getElementById("catFWD").innerHTML = "RC";
+                } else if (selectCat == 'saves') {
+                    document.getElementById("catGK").innerHTML = "S";
+                    document.getElementById("catDEF").innerHTML = "S";
+                    document.getElementById("catMID").innerHTML = "S";
+                    document.getElementById("catFWD").innerHTML = "S";
+                }
                 document.getElementById("gk").style.display = "";
                 document.getElementById("def").style.display = "";
                 document.getElementById("mid").style.display = "";
@@ -1049,7 +1112,7 @@ function showPlayers() {
                 }
             }
         };
-        xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl, true);
+        xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl+"&cat=" + selectCat, true);
         xhttp.send();
     }
 }
@@ -1718,7 +1781,8 @@ function openModalFWD(i) {
 function addPlayer() {
 
     var players = document.getElementById("totalPlayers").textContent;
-
+    document.getElementById("checkbox").style.display="";
+    document.getElementById("playername").innerHTML=document.getElementById("playersName").textContent;
 
     document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
     if(document.getElementById("totalPlayers").innerHTML=='15'){
@@ -1742,6 +1806,7 @@ function addPlayer() {
             document.getElementById("imagegk" + i).src = "img/" + image;
             document.getElementById("namegk" + i).innerHTML = name;
         }
+        
 
     } else if (document.getElementById("playerPosition").textContent == 'Defender') {
         var name = document.getElementById("playersName").textContent;
@@ -1803,6 +1868,7 @@ function reset() {
     document.getElementById("totalPlayers").innerHTML ='0';
     document.getElementById("allPlayers").style.color='#d4213c';
     document.getElementById("totalPlayers").style.color='#d4213c';
+    
     for (i = 1; i <= 2; i++) {
         document.getElementById("imagegk" + i).src = "img/" + 'subsgk.png';
         document.getElementById("namegk" + i).innerHTML = 'Goalkeeper';
