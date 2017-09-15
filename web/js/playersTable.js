@@ -3,11 +3,11 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
     $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         $("#somediv").html("");
         var $h4 = $("<h4>");
-        $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+        $h4.css({ "font-weight": "bold", "font-size": "15px", "text-align": "center"});
         $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
         var $buttonprev = $("<button>");
         $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-        $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
+        $buttonprev.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
         $buttonprev.text("Previous").insertAfter($h4);
         if (responseText[1] == "Gameweek 0") {
             $buttonprev.css('visibility', 'hidden');
@@ -15,7 +15,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
 
         var $h5 = $("<h5>");
         $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-        $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+        $h5.css({'text-align': "center", 'font-weight': "bold", 'font-size': "17px", "left": "8.5%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
         $h5.text("Fixtures").insertAfter($buttonprev);
         var $img = $("<img>");
         $img.attr({src: "img/nwsllogo.png"});
@@ -23,7 +23,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
         $img.prependTo($h5);
         var $buttonnext = $("<button>");
         $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-        $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
+        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2.1%", "padding": "1%", "left": "2.2%"});
         $buttonnext.text("Next").insertAfter($h5);
         if (responseText[2] == "Gameweek 23") {
             $buttonnext.css('visibility', 'hidden');
@@ -32,7 +32,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
 
             var $h6 = $("<h6>");
             $h6.attr({class: "col-sm-12"});
-            $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+            $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-size': "15px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
             $h6.text(responseText[i]).insertAfter($buttonnext);
             if (i + 6 > 0) {
                 if (responseText[i] == responseText[i - 6]) {
@@ -63,7 +63,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
             $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
             $divtime.appendTo($divrow);
             var $time = $("<h6>");
-            $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "arial", "font-size": "16px", "font-weight": "lighter"});
+            $time.css({"width": "100%", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
             $time.text(responseText[i + 3]).appendTo($divtime);
             var $imgaway = $("<img>");
             $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
@@ -94,11 +94,11 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
     $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         $("#somediv").html("");
         var $h4 = $("<h4>");
-        $h4.css({"font-family": "arial", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+        $h4.css({ "font-weight": "bold", "font-size": "15px", "text-align": "center"});
         $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
         var $buttonprev = $("<button>");
         $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-        $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2%", "padding-top": "0.6%"});
+         $buttonprev.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
         $buttonprev.text("Previous").insertAfter($h4);
         if (responseText[1] == "Gameweek 0") {
             $buttonprev.css('visibility', 'hidden');
@@ -106,7 +106,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
 
         var $h5 = $("<h5>");
         $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-        $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+        $h5.css({'text-align': "center", 'font-weight': "bold", 'font-size': "17px", "left": "8.5%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
         $h5.text("Fixtures").insertAfter($buttonprev);
         var $img = $("<img>");
         $img.attr({src: "img/nwsllogo.png"});
@@ -114,7 +114,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
         $img.prependTo($h5);
         var $buttonnext = $("<button>");
         $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-        $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "arial", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.2%"});
+        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2.1%", "padding": "1%", "left": "2.2%"});
         $buttonnext.text("Next").insertAfter($h5);
         if (responseText[2] == "Gameweek 23") {
             $buttonnext.css('visibility', 'hidden');
@@ -123,7 +123,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
 
             var $h6 = $("<h6>");
             $h6.attr({class: "col-sm-12"});
-            $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "arial", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+            $h6.css({'text-align': "center", 'font-weight': "lighter",  'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
             $h6.text(responseText[i]).insertAfter($buttonnext);
             if (i + 6 > 0) {
                 if (responseText[i] == responseText[i - 6]) {
@@ -154,7 +154,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
             $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
             $divtime.appendTo($divrow);
             var $time = $("<h6>");
-            $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "arial", "font-size": "16px", "font-weight": "lighter"});
+            $time.css({"width": "100%", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
             $time.text(responseText[i + 3]).appendTo($divtime);
             var $imgaway = $("<img>");
             $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
