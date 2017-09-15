@@ -175,8 +175,8 @@
                         <div class="col-sm-12  " class="col-md-12 col-xs-12" style="border: 1px solid #d4213c; background-color:#ea344f;width:96%;margin-left: 2%;margin-bottom: 1%; display: none " id='errorbox'> 
                             <h5  style="text-align: center">More than 4 players selected from <span id="team"></span>.</h5>
                         </div>
-                        <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#6ba96b;width:96%;margin-left: 2%; margin-bottom: 1%; display: none "id='checkbox'> 
-                            <h5  style="text-align: center"> <span id="playername"></span> has been added to your squad.</h5>
+                        <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; width:96%;margin-left: 2%; margin-bottom: 1%; display: none "id='checkbox'> 
+                            <h5  style="text-align: center; font-weight: lighter;font-family: arial;margin-top: 5px;margin-bottom: 5px"> <span id="playername" style="font-weight:bold;font-family: arial"></span> has been added to your squad.</h5>
                         </div>
 
 
