@@ -143,40 +143,40 @@
                     <div class="row ">
                         <h3 class="col-md-12 col-xs-12"  style="font-family: arial">Roster Selection</h3>
 
-                        <h5 class="col-md-12 col-xs-12" style="font-family: arial;font-weight:lighter; " >
+                        <h5 class="col-md-12 col-xs-12" style="font-size: 14px; font-weight:lighter; " >
                             Select a maximum of 4 players from a single team or 'Auto Pick' if you're short of time.
                         </h5>
                         <div  class="col-sm-12  ">
-                            <div class="col-sm-12" style="width: 100%;height:10% ;background-color:#050424;margin-top: 1%">
-                                <h6 style="color:white;font-family: arial;font-size:13px;text-align:center;vertical-align:middle; font-weight:lighter" >Gameweek 3 Deadline:
-                                    <span style="color:#d4213c; font-family: arial;font-size:19px; font-weight: bolder" >17 Jun 02:30PM ET </span>
+                            <div class="col-sm-12" style="width: 100%;background-color:#050424">
+                                <h6 style="color:white;font-size:14px;text-align:center; font-weight:lighter;margin-top: 8px;margin-bottom: 8px" >Gameweek 3 Deadline:
+                                    <span style="color:#d4213c; font-size:19px; font-weight: bolder" >17 Jun 02:30PM ET </span>
                                 </h6>
                             </div>
 
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%" >
                                 <div class="col-md-6  col-xs-6" style="width: 50%;margin-top: 3%;margin-bottom:3%">
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 13px; text-align: center; font-family:arial;left: -4%">
+                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;left: -4%">
                                         Auto Pick 
                                     </button> 
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 13px; text-align: center; font-family:arial;float: right" onclick="reset()">
+                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;float: right" onclick="reset()">
                                         Reset 
                                     </button> 
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 25%;flex: 1;margin-top: 1%;font-family:arial;border-right: 1px solid #ebebe4; border-left: 1px solid #ebebe4">
-                                    <h6 style="text-align: center;font-family: arial;font-weight:bold; font-size:14px ">Player Selected</h6>
-                                    <h4 id="allPlayers" style="text-align: center;font-family: arial;font-weight:bold; font-size:22px; color:#d4213c;"><span id="totalPlayers">0</span>/15</h4>
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px ">Player Selected</h6>
+                                    <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#d4213c;"><span id="totalPlayers">0</span>/15</h4>
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 25%;flex: 1;margin-top: 1%;font-family:arial">
-                                    <h6 style="text-align: center;font-family: arial;font-weight:bold; font-size:14px ">Money Remaining</h6>
-                                    <h4 style="text-align: center;font-family: arial;font-weight:bold;color:green; font-size:22px ">$0.0</h4>
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px ">Money Remaining</h6>
+                                    <h4 style="text-align: center;font-weight:bold;color:green; font-size:20px ">$0.0</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12  " class="col-md-12 col-xs-12" style="border: 1px solid #d4213c; background-color:#ea344f;width:96%;margin-left: 2%;margin-bottom: 1%; display: none " id='errorbox'> 
-                            <h5  style="text-align: center">More than 4 players selected from <span id="team"></span>.</h5>
+                        <div class="col-sm-12  " class="col-md-12 col-xs-12" style="border: 1px solid #d4213c; background-color:#ea344f; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none " id='errorbox'> 
+                            <h5  style="text-align: center; font-size: 14px">More than 4 players selected from <span id="team"></span>.</h5>
                         </div>
-                        <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; width:96%;margin-left: 2%; margin-bottom: 1%; display: none "id='checkbox'> 
-                            <h5  style="text-align: center; font-weight: lighter;font-family: arial;margin-top: 5px;margin-bottom: 5px"> <span id="playername" style="font-weight:bold;font-family: arial"></span> has been added to your squad.</h5>
+                        <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
+                            <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span> has been added to your squad.</h5>
                         </div>
 
 
@@ -252,7 +252,7 @@
                                 <p id="fwdname3" class="gkname" >Forward</p>
                             </div>
                         </div>
-                        <a href="enterRoster.html"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%;height: 33px; font-size: 15px;text-align: center; font-family:arial;width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
+                        <a href="enterRoster.html"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
                             Enter Roster
                         </a>
                         <%
@@ -269,17 +269,17 @@
 
 
                         <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
-                            <h4 style="font-family: arial; font-weight: bold;font-size: 13px;text-align: center; "><%=posts.get(0) + " - " + date.get(0)%></h4>
+                            <h4 style="font-weight: bold;font-size: 15px;text-align: center; "><%=posts.get(0) + " - " + date.get(0)%></h4>
 
-                            <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-left: -2%;padding-top: 0.6%">
+                            <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; margin-left: -2%;padding: 1%">
                                 Previous
                             </button>
 
 
-                            <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: lighter; font-family:arial;font-size:17px;left:7.35%; margin-top: -0.5%;margin-bottom: -2%" align="center">
+                            <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: bold; font-size:17px;left:8.5%; margin-top: -0.5%;margin-bottom: -2%" align="center">
                                 <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
                             </h5>
-                            <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:arial;margin-right:-2.1%;padding-top: 0.6%">
+                            <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; margin-right:-2.1%;padding: 1%">
                                 Next
                             </button>
 
@@ -291,7 +291,7 @@
 
 
                             %>
-                            <h6 class="col-sm-12" style="font-family: arial; font-weight: lighter;font-size: 14px;text-align: center;width: 104%; left:-2.05%;margin-bottom: 1%;margin-top:2.5% "><%=date.get(i)%></h6>
+                            <h6 class="col-sm-12" style="font-weight: lighter;font-size: 15px;text-align: center;width: 104%; left:-2.05%;margin-bottom: 1%;margin-top:2.5% "><%=date.get(i)%></h6>
                             <%
                                     dateSTR = date.get(i);
 
@@ -311,7 +311,7 @@
                                              left:0.8%;
                                              background-color:#1d3260;
                                              border-radius: 3pt">
-                                            <h6 style="text-align: center;color:white;font-family: arial; font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <h6 style="text-align: center;color:white; font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
                                         </div>
                                         <div class="col-md-1 col-xs-1 ">
                                             <img class="" style="margin-left:-46%" src="img/<%=awaybadge.get(i)%>">
@@ -463,10 +463,10 @@
                 <div class="col-md-4 sidebar" style=" ">
                     <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                         <div class="teambox">
-                            <h3 style="font-family: arial;font-size: 19px; margin-left:5%; margin-top: 8%; line-height: 10px; font-weight: bold">Player Selection</h3>
+                            <h3 style="font-size: 19px; margin-left:5%; margin-top: 8%; line-height: 10px; font-weight: bold">Player Selection</h3>
                         </div>
                         <div>
-                            <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%">View</h5>
+                            <h5 style="font-size: 16px; margin-left:5%; font-weight:lighter; margin-top: 5%">View</h5>
                             <div>
                                 <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers()" >
                                     <optgroup label="Global">
@@ -497,7 +497,7 @@
                             </div>
                         </div>
                         <div>
-                            <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top:6%">Sorted by</h5>
+                            <h5 style="font-size: 16px; margin-left:5%;  font-weight:lighter; margin-top:5%">Sorted by</h5>
                             <div>
                                 <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
                                     <option value="score">Total score</option>
@@ -520,7 +520,7 @@
                             </div>
                         </div>
                         <div>
-                            <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%">With a maximum price of</h5>
+                            <h5 style="font-size: 16px; margin-left:5%; font-weight:lighter; margin-top: 5%">With a maximum price of</h5>
                             <div>
                                 <select class="form-control"  data-size="5">
                                     <option>Unlimited</option>
@@ -543,13 +543,13 @@
                             </div>
                         </div>   
                         <div>
-                            <h5 style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%">Search Player List</h5>
+                            <h5 style="font-size: 16px; margin-left:5%; font-weight:lighter; margin-top: 5%">Search Player List</h5>
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="text">
                         </div>
                         <div>
-                            <h6 class="text-center" style="font-family: arial;font-size: 16px; margin-left:5%; line-height: 10px; font-weight:lighter; margin-top: 6%"><span style="color:red;font-weight: bold;" id ="total"><%=request.getAttribute("total")%></span> players shown</h6>
+                            <h6 class="text-center" style="font-size: 16px; line-height: 10px; font-weight:lighter; margin-top: 6%"><span style="color:red;font-weight: bold;" id ="total"><%=request.getAttribute("total")%></span> players shown</h6>
                         </div>
                         <div>
                             <table style="width:100%; background-color: #f9f5f5" id='gk'>
