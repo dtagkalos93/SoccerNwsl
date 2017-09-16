@@ -173,7 +173,7 @@ public class playersSelectionTeam extends HttpServlet {
             } else if (team.equals("Seattle Reign FC")) {
                 gkteamList.add("SEA");
 
-                gkjerseyList.add("reigngk.png");
+                gkjerseyList.add("seattlegk.png");
 
             } else if (team.equals("Sky Blue FC")) {
                 gkteamList.add("NJ");
@@ -224,7 +224,13 @@ public class playersSelectionTeam extends HttpServlet {
                 }
                 gkscoreList.add(total + "");
             } else {
-                gkscoreList.add(resultSet.getString(category));
+                String score= resultSet.getString(category);
+                if (score.equals ("") || score.equals("-")) {
+                    gkscoreList.add("0");
+                }
+                else {
+                    gkscoreList.add(score);
+                }
 
             }
 
@@ -313,10 +319,14 @@ public class playersSelectionTeam extends HttpServlet {
                 }
                 defscoreList.add(total + "");
             } else {
-                defscoreList.add(resultSet.getString(category));
-
+                String score= resultSet.getString(category);
+                if (score.equals ("") || score.equals("-")) {
+                    defscoreList.add("0");
+                }
+                else {
+                    defscoreList.add(score);
+                }
             }
-
         }
 
     }
@@ -402,10 +412,14 @@ public class playersSelectionTeam extends HttpServlet {
                 }
                 midscoreList.add(total + "");
             } else {
-                midscoreList.add(resultSet.getString(category));
-
+                String score= resultSet.getString(category);
+                if (score.equals ("") || score.equals("-")) {
+                    midscoreList.add("0");
+                }
+                else {
+                    midscoreList.add(score);
+                }
             }
-
         }
 
     }
@@ -491,7 +505,13 @@ public class playersSelectionTeam extends HttpServlet {
                 }
                 fwdscoreList.add(total + "");
             } else {
-                fwdscoreList.add(resultSet.getString(category));
+                String score= resultSet.getString(category);
+                if (score.equals ("") || score.equals("-")) {
+                    fwdscoreList.add("0");
+                }
+                else {
+                    fwdscoreList.add(score);
+                }
 
             }
 

@@ -188,12 +188,16 @@ public class playersSelection extends HttpServlet {
                         } else {
                             total = total + Integer.parseInt(gw);
                         }
-                        
+
                     }
                     scorelist.add(total + "");
                 } else {
-                    scorelist.add(resultSet.getString(category));
-
+                    String score = resultSet.getString(category);
+                    if (score.equals("") || score.equals("-")) {
+                        scorelist.add("0");
+                    } else {
+                        scorelist.add(score);
+                    }
                 }
 
                 i++;

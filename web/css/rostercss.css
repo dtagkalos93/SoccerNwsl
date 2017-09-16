@@ -85,16 +85,15 @@ h6 {
 
 .gkname,.cbname{
     width:120px;
+    border: 2px solid #02509a;
     margin: 0;
     text-align: center;
     background-color: #02509a;
     color: white;
     font-weight: bold;
-    padding-top: 0;
+    padding-top: 0px;
     font-size: 14px;
     opacity: 0.9;
-    filter: alpha(opacity=30);
-
 }
 
 

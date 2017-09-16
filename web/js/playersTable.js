@@ -23,7 +23,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
         $img.prependTo($h5);
         var $buttonnext = $("<button>");
         $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2.1%", "padding": "1%", "left": "2.2%"});
+        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "left": "2.1%"});
         $buttonnext.text("Next").insertAfter($h5);
         if (responseText[2] == "Gameweek 23") {
             $buttonnext.css('visibility', 'hidden');
@@ -48,30 +48,30 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
             $divrow.appendTo($div);
             var $divh6 = $("<div>");
             $divh6.attr({'class': "col-md-4  col-xs-4   "});
-            $divh6.css({"left": "3.7%"});
+            $divh6.css({"left": "4.95%"});
             $divh6.appendTo($divrow);
             var $h6home = $("<h6>");
             $h6home.attr({'class': "col-md-4  col-xs-4   "});
-            $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
+            $h6home.css({"left": "5%", "font-size": "17px", "width": "230px", "text-align": "right"});
             $h6home.text(responseText[i + 1]).appendTo($divh6);
             var $imghome = $("<img>");
             $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
-            $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
+            $imghome.css({"width": "initial ", "margin-left": "-0.1%", "margin-right": "1.1%"});
             $imghome.appendTo($divrow);
             var $divtime = $("<div>");
             $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
-            $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
+            $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-3.8%", "background-color": "#1d3260", "border-radius": " 3pt"});
             $divtime.appendTo($divrow);
             var $time = $("<h6>");
             $time.css({"width": "100%", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
             $time.text(responseText[i + 3]).appendTo($divtime);
             var $imgaway = $("<img>");
             $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
-            $imgaway.css({"width": "initial ", "margin-left": "-7%"});
+            $imgaway.css({"width": "initial ", "margin-left": "-6.6%"});
             $imgaway.appendTo($divrow);
             var $divh6a = $("<div>");
             $divh6a.attr({'class': "col-md-4  col-xs-4   "});
-            $divh6a.css({"left": "-7%", "width": "30%"});
+            $divh6a.css({"left": "-6.35%", "width": "30%"});
             $divh6a.appendTo($divrow);
             var $h6away = $("<h6>");
             $h6away.attr({'class': "col-md-4  col-xs-4   "});
@@ -123,7 +123,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
 
             var $h6 = $("<h6>");
             $h6.attr({class: "col-sm-12"});
-            $h6.css({'text-align': "center", 'font-weight': "lighter",  'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+            $h6.css({'text-align': "center", 'font-weight': "lighter",  'font-size': "15px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
             $h6.text(responseText[i]).insertAfter($buttonnext);
             if (i + 6 > 0) {
                 if (responseText[i] == responseText[i - 6]) {
@@ -139,30 +139,30 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
             $divrow.appendTo($div);
             var $divh6 = $("<div>");
             $divh6.attr({'class': "col-md-4  col-xs-4   "});
-            $divh6.css({"left": "3.7%"});
+            $divh6.css({"left": "4.95%"});
             $divh6.appendTo($divrow);
             var $h6home = $("<h6>");
             $h6home.attr({'class': "col-md-4  col-xs-4   "});
-            $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
+            $h6home.css({"margin-left": "5%", "font-size": "17px", "width": "230px", "text-align": "right"});
             $h6home.text(responseText[i + 1]).appendTo($divh6);
             var $imghome = $("<img>");
             $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
-            $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
+            $imghome.css({"width": "initial ", "margin-right": "1.1%", "margin-left": "-0.1%"});
             $imghome.appendTo($divrow);
             var $divtime = $("<div>");
             $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
-            $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
+            $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-3.8%", "background-color": "#1d3260", "border-radius": " 3pt"});
             $divtime.appendTo($divrow);
             var $time = $("<h6>");
             $time.css({"width": "100%", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
             $time.text(responseText[i + 3]).appendTo($divtime);
             var $imgaway = $("<img>");
             $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
-            $imgaway.css({"width": "initial ", "margin-left": "-7%"});
+            $imgaway.css({"width": "initial ", "margin-left": "-6.6%"});
             $imgaway.appendTo($divrow);
             var $divh6a = $("<div>");
             $divh6a.attr({'class': "col-md-4  col-xs-4   "});
-            $divh6a.css({"left": "-7%", "width": "30%"});
+            $divh6a.css({"left": "-6.35%", "width": "30%"});
             $divh6a.appendTo($divrow);
             var $h6away = $("<h6>");
             $h6away.attr({'class': "col-md-4  col-xs-4   "});
@@ -762,11 +762,6 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "CS";
                     document.getElementById("catMID").innerHTML = "CS";
                     document.getElementById("catFWD").innerHTML = "CS";
-                } else if (selectCat == 'cleanSheet') {
-                    document.getElementById("catGK").innerHTML = "CS";
-                    document.getElementById("catDEF").innerHTML = "CS";
-                    document.getElementById("catMID").innerHTML = "CS";
-                    document.getElementById("catFWD").innerHTML = "CS";
                 } else if (selectCat == 'ownGoal') {
                     document.getElementById("catGK").innerHTML = "OG";
                     document.getElementById("catDEF").innerHTML = "OG";
@@ -991,11 +986,6 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "A";
                     document.getElementById("catMID").innerHTML = "A";
                     document.getElementById("catFWD").innerHTML = "A";
-                } else if (selectCat == 'cleanSheet') {
-                    document.getElementById("catGK").innerHTML = "CS";
-                    document.getElementById("catDEF").innerHTML = "CS";
-                    document.getElementById("catMID").innerHTML = "CS";
-                    document.getElementById("catFWD").innerHTML = "CS";
                 } else if (selectCat == 'cleanSheet') {
                     document.getElementById("catGK").innerHTML = "CS";
                     document.getElementById("catDEF").innerHTML = "CS";

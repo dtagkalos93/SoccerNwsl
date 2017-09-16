@@ -178,11 +178,6 @@
                         <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                             <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span> has been added to your squad.</h5>
                         </div>
-
-
-
-
-
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
                             <div class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
@@ -270,12 +265,9 @@
 
                         <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
                             <h4 style="font-weight: bold;font-size: 15px;text-align: center; "><%=posts.get(0) + " - " + date.get(0)%></h4>
-
                             <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; margin-left: -2%;padding: 1%">
                                 Previous
                             </button>
-
-
                             <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: bold; font-size:17px;left:8.5%; margin-top: -0.5%;margin-bottom: -2%" align="center">
                                 <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
                             </h5>
@@ -300,17 +292,13 @@
                             <a data-toggle="collapse" href="#<%=game%>" style="color:black ">
                                 <div class="match col-sm-12 " style="width: 104.3%;left:-2.1%" >
                                     <div class="row">
-                                        <div class="col-md-4  col-xs-4 " style="left: 3.82%; text-align: right">
+                                        <div class="col-md-4  col-xs-4 " style="left: 4.5%; text-align: right">
                                             <h6 style="float: right;font-size:17px"><%=home.get(i)%></h6>
                                         </div>
                                         <div class="col-md-1 col-xs-1 ">
-                                            <img style="margin-left:-22%" src="img/<%=homebadge.get(i)%>">
+                                            <img style="margin-left:-2%" src="img/<%=homebadge.get(i)%>">
                                         </div>
-                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;
-                                             width: 15%; 
-                                             left:0.8%;
-                                             background-color:#1d3260;
-                                             border-radius: 3pt">
+                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 15%; left:0.8%; background-color:#1d3260; border-radius: 3pt">
                                             <h6 style="text-align: center;color:white; font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
                                         </div>
                                         <div class="col-md-1 col-xs-1 ">
@@ -487,7 +475,7 @@
                                         <option value="North Carolina Courage">North Carolina Courage</option>
                                         <option value="Orlando Pride">Orlando Pride</option>
                                         <option value="Portland Thorns FC">Portland Thorns FC</option>
-                                        <option value="Seattle Reign">Seattle Reign</option>
+                                        <option value="Seattle Reign FC">Seattle Reign FC</option>
                                         <option value="Sky Blue FC">Sky Blue FC</option> 
                                         <option value="Washington Spirit">Washington Spirit</option> 
 
@@ -555,37 +543,37 @@
                             <table style="width:100%; background-color: #f9f5f5" id='gk'>
                                 <tr>
                                     <th style="background-color: yellow"></th>
-                                    <th style="background-color: yellow">GOALKEEPERS</th> 
-                                    <th style="background-color: yellow; text-align: center">$</th>
-                                    <th id="catGK" style="background-color: yellow; text-align: center">TS</th>
+                                    <th style="background-color: yellow; font-family: arial">GOALKEEPERS</th> 
+                                    <th style="background-color: yellow; text-align: center; font-family: arial">$</th>
+                                    <th id="catGK" style="background-color: yellow; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id='gk1' data-toggle="modal" style='cursor:pointer' onclick="openModalGK(1)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage1" src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="gkname1" style="font-size: 14px;font-family: arial; " ><%=gkname.get(0)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="gkteam1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(0)%></span>
+                                            <span class='underline' id="gkname1" style="font-size: 15px " ><%=gkname.get(0)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="gkteam1" style="font-size: 12px; font-weight: lighter "><%=gkteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td id="gkprice1" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(0)%></td>
-                                    <td id="gkscore1" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(0)%></td>
+                                    <td id="gkprice1" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(0)%></td>
+                                    <td id="gkscore1" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(0)%></td>
                                 </tr>
                                 <tr id='gk2' style='cursor:pointer' onclick="openModalGK(2)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage2" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="gkname2" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="gkteam2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
+                                            <span class='underline' id="gkname2" style="font-size: 15px; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="gkteam2" style="font-size: 12px; font-weight: lighter "><%=gkteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="gkprice2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
-                                    <td id="gkscore2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
+                                    <td id="gkprice2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
+                                    <td id="gkscore2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
                                 </tr>
                                 <%
                                     String gkstr;
@@ -606,18 +594,18 @@
 
                                 %>
                                 <tr id='<%=gkstr%>' style='display:none;cursor:pointer' onclick="openModalGK(<%=i%>)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=gkimagestr%>" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span  class='underline'id="<%=gknamestr%>" style="font-size: 14px;font-family: arial; "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="<%=gkteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=gkteam.get(1)%></span>
+                                            <span  class='underline'id="<%=gknamestr%>" style="font-size: 15px "><%=gkname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="<%=gkteamstr%>" style="font-size: 12px; font-weight: lighter "><%=gkteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="<%=gkpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
-                                    <td id="<%=gkscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
+                                    <td id="<%=gkpricestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= gkprice.get(1)%></td>
+                                    <td id="<%=gkscorestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(1)%></td>
                                 </tr>
 
                                 <%
@@ -626,121 +614,121 @@
                             <table style="width:100%; background-color: #f9f5f5" id='def'>
                                 <tr>
                                     <th style="background-color:#00ff87 "></th>
-                                    <th style="background-color:#00ff87">DEFENDERS</th> 
-                                    <th style="background-color:#00ff87; text-align: center">$</th>
-                                    <th id="catDEF" style="background-color:#00ff87; text-align: center">TS</th>
+                                    <th style="background-color:#00ff87; font-family: arial">DEFENDERS</th> 
+                                    <th style="background-color:#00ff87; text-align: center; font-family: arial">$</th>
+                                    <th id="catDEF" style="background-color:#00ff87; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id="def1" style='cursor:pointer' onclick="openModalDEF(1)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div  class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef1" src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef1" style="font-size: 14px;font-family: arial; "><%=defname.get(0)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(0)%></span>
+                                            <span class='underline' id="namedef1" style="font-size: 15px; "><%=defname.get(0)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef1" style="font-size: 12px; font-weight: lighter "><%=defteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(0)%></td>
-                                    <td id="scoredef1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(0)%></td>
+                                    <td id="pricedef1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(0)%></td>
+                                    <td id="scoredef1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(0)%></td>
                                 </tr>
                                 <tr id="def2" style='cursor:pointer'onclick="openModalDEF(2)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef2" src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef2" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
+                                            <span class='underline' id="namedef2" style="font-size: 15px; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef2" style="font-size: 12px; font-weight: lighter "><%=defteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(1)%></td>
-                                    <td id="scoredef2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(1)%></td>
+                                    <td id="pricedef2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(1)%></td>
+                                    <td id="scoredef2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(1)%></td>
                                 </tr>
                                 <tr id="def3" style='cursor:pointer' onclick="openModalDEF(3)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef3" src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef3" style="font-size: 14px;font-family: arial; "><%=defname.get(2)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(2)%></span>
+                                            <span class='underline' id="namedef3" style="font-size: 15px; "><%=defname.get(2)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef3" style="font-size: 12px; font-weight: lighter "><%=defteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef3" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(2)%></td>
-                                    <td id="scoredef3" style="font-family: arial;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(2)%></td>
+                                    <td id="pricedef3" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(2)%></td>
+                                    <td id="scoredef3" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(2)%></td>
                                 </tr>
                                 <tr id="def4" style='cursor:pointer' onclick="openModalDEF(4)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef4" src="img/<%=def.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef4" style="font-size: 14px;font-family: arial; "><%=defname.get(3)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(3)%></span>
+                                            <span class='underline' id="namedef4" style="font-size: 15px; "><%=defname.get(3)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef4" style="font-size: 12px; font-weight: lighter "><%=defteam.get(3)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(3)%></td>
-                                    <td id="scoredef4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  "><%=defscore.get(3)%></td>
+                                    <td id="pricedef4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(3)%></td>
+                                    <td id="scoredef4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  "><%=defscore.get(3)%></td>
                                 </tr>
                                 <tr id="def5" style='cursor:pointer' onclick="openModalDEF(5)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef5" src="img/<%=def.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef5" style="font-size: 14px;font-family: arial; "><%=defname.get(4)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(4)%></span>
+                                            <span class='underline' id="namedef5" style="font-size: 15px; "><%=defname.get(4)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef5" style="font-size: 12px; font-weight: lighter "><%=defteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(4)%></td>
-                                    <td id="scoredef5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(4)%></td>
+                                    <td id="pricedef5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(4)%></td>
+                                    <td id="scoredef5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(4)%></td>
                                 </tr>
                                 <tr id="def6" style='cursor:pointer' onclick="openModalDEF(6)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef6" src="img/<%=def.get(5)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef6" style="font-size: 14px;font-family: arial; "><%=defname.get(5)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(5)%></span>
+                                            <span class='underline' id="namedef6" style="font-size: 15px; "><%=defname.get(5)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef6" style="font-size: 12px; font-weight: lighter "><%=defteam.get(5)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(5)%></td>
-                                    <td id="scoredef6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(5)%></td>
+                                    <td id="pricedef6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(5)%></td>
+                                    <td id="scoredef6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(5)%></td>
                                 </tr>
                                 <tr id="def7" style='cursor:pointer' onclick="openModalDEF(7)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef7" src="img/<%=def.get(6)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef7" style="font-size: 14px;font-family: arial; "><%=defname.get(6)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef7" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(6)%></span>
+                                            <span class='underline' id="namedef7" style="font-size: 15px; "><%=defname.get(6)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef7" style="font-size: 12px; font-weight: lighter "><%=defteam.get(6)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef7" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(6)%></td>
-                                    <td id="scoredef7" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(6)%></td>
+                                    <td id="pricedef7" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(6)%></td>
+                                    <td id="scoredef7" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(6)%></td>
                                 </tr>
                                 <tr id="def8" style='cursor:pointer' onclick="openModalDEF(8)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef8" src="img/<%=def.get(7)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namedef8" style="font-size: 14px;font-family: arial; "><%=defname.get(7)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamdef8" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(7)%></span>
+                                            <span class='underline' id="namedef8" style="font-size: 15px; "><%=defname.get(7)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamdef8" style="font-size: 12px; font-weight: lighter "><%=defteam.get(7)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricedef8" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(7)%></td>
-                                    <td id="scoredef8" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(7)%></td>
+                                    <td id="pricedef8" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=defprice.get(7)%></td>
+                                    <td id="scoredef8" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(7)%></td>
                                 </tr>
                                 <%
                                     String defstr;
@@ -760,18 +748,18 @@
 
                                 %>
                                 <tr id='<%=defstr%>' style='display:none;cursor:pointer' onclick="openModalDEF(<%=i%>)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=defimagestr%>" src="img/<%=def.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="<%=defnamestr%>" style="font-size: 14px;font-family: arial; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="<%=defteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=defteam.get(1)%></span>
+                                            <span class='underline' id="<%=defnamestr%>" style="font-size: 15px; "><%=defname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="<%=defteamstr%>" style="font-size: 12px; font-weight: lighter "><%=defteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="<%=defpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= defprice.get(1)%></td>
-                                    <td id="<%=defscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= defscore.get(1)%></td>
+                                    <td id="<%=defpricestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= defprice.get(1)%></td>
+                                    <td id="<%=defscorestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= defscore.get(1)%></td>
                                 </tr>
 
                                 <%
@@ -780,93 +768,93 @@
                             <table style="width:100%; background-color: #f9f5f5" id='mid'>
                                 <tr>
                                     <th style="background-color:#04f5ff "></th>
-                                    <th style="background-color:#04f5ff">MIDFIELDERS</th> 
-                                    <th style="background-color:#04f5ff; text-align: center">$</th>
-                                    <th id="catMID" style="background-color:#04f5ff; text-align: center">TS</th>
+                                    <th style="background-color:#04f5ff; font-family: arial">MIDFIELDERS</th> 
+                                    <th style="background-color:#04f5ff; text-align: center; font-family: arial">$</th>
+                                    <th id="catMID" style="background-color:#04f5ff; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id='mid1' style='cursor:pointer'  onclick="openModalMID(1)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid1" src="img/<%=mid.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid1" style="font-size: 14px;font-family: arial; "><%=midname.get(0)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(0)%></span>
+                                            <span class='underline' id="namemid1" style="font-size: 15px; "><%=midname.get(0)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid1" style="font-size: 12px; font-weight: lighter "><%=midteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(0)%></td>
-                                    <td id="scoremid1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(0)%></td>
+                                    <td id="pricemid1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(0)%></td>
+                                    <td id="scoremid1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(0)%></td>
                                 </tr>
                                 <tr id='mid2' style='cursor:pointer' onclick="openModalMID(2)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid2" src="img/<%=mid.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid2" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
+                                            <span class='underline' id="namemid2" style="font-size: 15px; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid2" style="font-size: 12px; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(1)%></td>
-                                    <td id="scoremid2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(1)%></td>
+                                    <td id="pricemid2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(1)%></td>
+                                    <td id="scoremid2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(1)%></td>
                                 </tr>
                                 <tr id="mid3" style='cursor:pointer' onclick="openModalMID(3)" >
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid3" src="img/<%=mid.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid3" style="font-size: 14px;font-family: arial; "><%=midname.get(2)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(2)%></span>
+                                            <span class='underline' id="namemid3" style="font-size: 15px; "><%=midname.get(2)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid3" style="font-size: 12px; font-weight: lighter "><%=midteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(2)%></td>
-                                    <td id="scoremid3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(2)%></td>
+                                    <td id="pricemid3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(2)%></td>
+                                    <td id="scoremid3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(2)%></td>
                                 </tr>
                                 <tr id="mid4" style='cursor:pointer' onclick="openModalMID(4)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid4" src="img/<%=mid.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid4" style="font-size: 14px;font-family: arial; "><%=midname.get(3)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(3)%></span>
+                                            <span class='underline' id="namemid4" style="font-size: 15px; "><%=midname.get(3)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid4" style="font-size: 12px; font-weight: lighter "><%=midteam.get(3)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(3)%></td>
-                                    <td id="scoremid4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(3)%></td>
+                                    <td id="pricemid4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(3)%></td>
+                                    <td id="scoremid4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(3)%></td>
                                 </tr>
                                 <tr id="mid5" style='cursor:pointer' onclick="openModalMID(5)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid5" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid5" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
+                                            <span class='underline' id="namemid5" style="font-size: 15px; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid5" style="font-size: 12px; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid5" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
-                                    <td id="scoremid5" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
+                                    <td id="pricemid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
+                                    <td id="scoremid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
                                 </tr >
                                 <tr id="mid6" style='cursor:pointer' style="display:none" onclick="openModalMID(6)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid6" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid6" style="font-size: 14px;font-family: arial; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teammid6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(4)%></span>
+                                            <span class='underline' id="namemid6" style="font-size: 15px; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teammid6" style="font-size: 12px; font-weight: lighter "><%=midteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricemid6" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
-                                    <td id="scoremid6" style="font-family: arial ;text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
+                                    <td id="pricemid6" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
+                                    <td id="scoremid6" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
                                 </tr>
                                 <%
                                     String midstr;
@@ -886,18 +874,18 @@
 
                                 %>
                                 <tr id='<%=midstr%>' style='display:none;cursor:pointer' onclick="openModalMID(<%=i%>)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=midimagestr%>" src="img/<%=mid.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="<%=midnamestr%>" style="font-size: 14px;font-family: arial; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="<%=midteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=midteam.get(1)%></span>
+                                            <span class='underline' id="<%=midnamestr%>" style="font-size: 15px; "><%=midname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="<%=midteamstr%>" style="font-size: 12px; font-weight: lighter "><%=midteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="<%=midpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= midprice.get(1)%></td>
-                                    <td id="<%=midscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= midscore.get(1)%></td>
+                                    <td id="<%=midpricestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= midprice.get(1)%></td>
+                                    <td id="<%=midscorestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= midscore.get(1)%></td>
                                 </tr>
 
                                 <%
@@ -908,93 +896,93 @@
                             <table style="width:100%; background-color: #f9f5f5" id='fwd'>
                                 <tr>
                                     <th style="background-color:#e90052 "></th>
-                                    <th style="background-color:#e90052">FORWARDS</th> 
-                                    <th style="background-color:#e90052; text-align: center">$</th>
-                                    <th id="catFWD" style="background-color:#e90052; text-align: center">TS</th>
+                                    <th style="background-color:#e90052; font-family: arial">FORWARDS</th> 
+                                    <th style="background-color:#e90052; text-align: center; font-family: arial">$</th>
+                                    <th id="catFWD" style="background-color:#e90052; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id="fwd1" style='cursor:pointer' onclick="openModalFWD(1)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd1" src="img/<%=fwd.get(0)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd1" style="font-size: 14px;font-family: arial; "><%=fwdname.get(0)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd1" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(0)%></span>
+                                            <span class='underline' id="namefwd1" style="font-size: 15px; "><%=fwdname.get(0)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd1" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(0)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(0)%></td>
-                                    <td id="scorefwd1" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(0)%></td>
+                                    <td id="pricefwd1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(0)%></td>
+                                    <td id="scorefwd1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(0)%></td>
                                 </tr>
                                 <tr id="fwd2" style='cursor:pointer' onclick="openModalFWD(2)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd2" src="img/<%=fwd.get(1)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd2" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd2" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
+                                            <span class='underline' id="namefwd2" style="font-size: 15px; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd2" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(1)%></td>
-                                    <td id="scorefwd2" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(1)%></td>
+                                    <td id="pricefwd2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(1)%></td>
+                                    <td id="scorefwd2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(1)%></td>
                                 </tr>
                                 <tr id="fwd3" style='cursor:pointer' onclick="openModalFWD(3)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd3" src="img/<%=fwd.get(2)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd3" style="font-size: 14px;font-family: arial; "><%=fwdname.get(2)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd3" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(2)%></span>
+                                            <span class='underline' id="namefwd3" style="font-size: 15px; "><%=fwdname.get(2)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd3" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(2)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(2)%></td>
-                                    <td id="scorefwd3" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(2)%></td>
+                                    <td id="pricefwd3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(2)%></td>
+                                    <td id="scorefwd3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(2)%></td>
                                 </tr>
                                 <tr id="fwd4" style='cursor:pointer' onclick="openModalFWD(4)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd4" src="img/<%=fwd.get(3)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd4" style="font-size: 14px;font-family: arial; "><%=fwdname.get(3)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd4" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(3)%></span>
+                                            <span class='underline' id="namefwd4" style="font-size: 15px; "><%=fwdname.get(3)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd4" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(3)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(3)%></td>
-                                    <td id="scorefwd4" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(3)%></td>
+                                    <td id="pricefwd4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(3)%></td>
+                                    <td id="scorefwd4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(3)%></td>
                                 </tr>
                                 <tr id="fwd5" style='cursor:pointer' onclick="openModalFWD(5)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd5" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd5" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd5" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
+                                            <span class='underline' id="namefwd5" style="font-size: 15px; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd5" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
-                                    <td id="scorefwd5" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
+                                    <td id="pricefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
+                                    <td id="scorefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
                                 <tr id="fwd6" style='cursor:pointer' style="display:none" onclick="openModalFWD(6)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd6" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd6" style="font-size: 14px;font-family: arial; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="teamfwd6" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(4)%></span>
+                                            <span class='underline' id="namefwd6" style="font-size: 15px; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="teamfwd6" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                         </div>
                                     </td>
-                                    <td id="pricefwd6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
-                                    <td id="scorefwd6" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
+                                    <td id="pricefwd6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
+                                    <td id="scorefwd6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
                                 <%
                                     String fwdstr;
@@ -1014,18 +1002,18 @@
 
                                 %>
                                 <tr id='<%=fwdstr%>' style='display:none;cursor:pointer' onclick="openModalFWD(<%=i%>)">
-                                    <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: arial; text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="width:31px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="<%=fwdnamestr%>" style="font-size: 14px;font-family: arial; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -16%">
-                                            <span id="<%=fwdteamstr%>" style="font-size: 12px;font-family: arial; font-weight: lighter "><%=fwdteam.get(1)%></span>
+                                            <span class='underline' id="<%=fwdnamestr%>" style="font-size: 15px; "><%=fwdname.get(1)%></span><hr style="border:none;margin-top: -17%">
+                                            <span id="<%=fwdteamstr%>" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                         </div>
                                     </td>
-                                    <td id="<%=fwdpricestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= fwdprice.get(1)%></td>
-                                    <td id="<%=fwdscorestr%>" style="font-family: arial; text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= fwdscore.get(1)%></td>
+                                    <td id="<%=fwdpricestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%= fwdprice.get(1)%></td>
+                                    <td id="<%=fwdscorestr%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= fwdscore.get(1)%></td>
                                 </tr>
 
                                 <%
@@ -1033,15 +1021,15 @@
 
                             </table>
                         </div>
-                        <div class="col-md-12" style="width:100%">
+                        <div class="col-md-12" style="width:100%; margin-bottom: 2%">
                             <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn" style="width:10%;margin-top:4.5%;margin-right:2%; padding-right: 0.8% " disabled><i class="glyphicon glyphicon-backward"></i></button>
                             <button id="prevPlayers" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="width:4rem" disabled><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                            <h6 id="pageTitle" class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%; font-size: 13px">Page <span id="page" style="font-weight: lighter" >1</span> of 11  </h6>
+                            <h6 id="pageTitle" class="col-md-6 col-xs-6" style="width: 40%;font-weight: lighter;left:10.5%;margin-top: 7%; font-size: 14px">Page <span id="page" style="font-weight: bold" >1</span> of 11  </h6>
                             <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="width:4rem;left:12%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
                             <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%"><i class="glyphicon glyphicon-forward"></i></button>
                             <button id="startSelect" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn" style="width:10%;margin-top:4.5%;margin-right:2%; padding-right: 0.8%;display:none " disabled><i class="glyphicon glyphicon-backward"></i></button>
                             <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="width:4rem;display:none;" disabled><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                            <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="width: 40%;font-family: arial;font-weight: lighter;left:10%;margin-top: 7%; font-size: 13px;display:none;">Page <span id="pageNo" style="font-weight: lighter" >1</span> of <span id="totalPage">11</span>  </h6>
+                            <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="width: 40%;font-weight: lighter;left:10.5%;margin-top: 7%; font-size: 14px;display:none;">Page <span id="pageNo" style="font-weight: bold" >1</span> of <span id="totalPage">11</span>  </h6>
                             <button  id="nextPlayersSelect" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="width:4rem;left:12%;display:none;"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
                             <button id="endSelect"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn" style="width:10%;margin-top:4.5%;float: right;padding-left: 1.5%;display:none;"><i class="glyphicon glyphicon-forward"></i></button>
                         </div>
@@ -1061,7 +1049,7 @@
                 <div class="modal-content" >
                     <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
                         <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
-                        <h4 class="modal-title" style="color: white;text-align:left;font-family: arial;font-weight: bold; margin-top:-4% "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="width: 100px;height: 50px;margin-left:27%; padding-bottom: 1%"/></h4>
+                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
 
                     </div>
                     <!-- Modal content-->
@@ -1071,10 +1059,10 @@
                         <p style="display:none" id="playerPrice"></p>
                         <p style="display:none" id="playerNo"></p>
                         <p style="display:none" id="playerPosition"></p>
-                        <button onclick="addPlayer()" type="button" class="prevbutton btncustom  " style="width: 100%;background-color: red;color:white;font-family: arial;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                        <button onclick="addPlayer()" type="button" class="prevbutton btncustom  " style="width: 100%;background-color: red;color:white;font-size: 14px;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
                             Add Player 
                         </button> 
-                        <button type="button" class="prevbutton btncustom  " style="width: 100%;font-family: arial;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                        <button type="button" class="prevbutton btncustom  " style="width: 100%;font-size: 14px;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
                             View Information
                         </button>
                     </div>
