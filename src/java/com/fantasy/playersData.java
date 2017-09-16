@@ -179,7 +179,7 @@ public class playersData extends HttpServlet {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    if (gw.equals("")) {
+                    if (gw.equals("") || gw.equals("-")) {
                         total = total + 0;
                     } else {
                         total = total + Integer.parseInt(gw);
@@ -188,7 +188,13 @@ public class playersData extends HttpServlet {
                 }
                 scorelist.add(total + "");
             } else {
-                scorelist.add(resultSet.getString(category));
+                String score = resultSet.getString(category);
+                 if (score.equals("") || score.equals("-")) {
+                        scorelist.add("0");
+                    } else {
+                        scorelist.add(score);
+                    }
+                
 
             }
 
@@ -255,7 +261,7 @@ public class playersData extends HttpServlet {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    if (gw.equals("")) {
+                    if (gw.equals("") || gw.equals("-")) {
                         total = total + 0;
                     } else {
                         total = total + Integer.parseInt(gw);
@@ -264,7 +270,12 @@ public class playersData extends HttpServlet {
                 }
                 scorelist.add(total + "");
             } else {
-                scorelist.add(resultSet.getString(category));
+                 String score = resultSet.getString(category);
+                 if (score.equals("") || score.equals("-")) {
+                        scorelist.add("0");
+                    } else {
+                        scorelist.add(score);
+                    }
 
             }
 
@@ -342,7 +353,7 @@ public class playersData extends HttpServlet {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    if (gw.equals("")) {
+                    if (gw.equals("") || gw.equals("-")) {
                         total = total + 0;
                     } else {
                         total = total + Integer.parseInt(gw);
@@ -351,7 +362,12 @@ public class playersData extends HttpServlet {
                 }
                 scorelist.add(total + "");
             } else {
-                scorelist.add(resultSet.getString(category));
+                 String score = resultSet.getString(category);
+                 if (score.equals("") || score.equals("-")) {
+                        scorelist.add("0");
+                    } else {
+                        scorelist.add(score);
+                    }
 
             }
 
@@ -427,7 +443,7 @@ public class playersData extends HttpServlet {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
-                    if (gw.equals("")) {
+                    if (gw.equals("") || gw.equals("-")) {
                         total = total + 0;
                     } else {
                         total = total + Integer.parseInt(gw);
@@ -436,7 +452,12 @@ public class playersData extends HttpServlet {
                 }
                 scorelist.add(total + "");
             } else {
-                scorelist.add(resultSet.getString(category));
+                String score = resultSet.getString(category);
+                 if (score.equals("") || score.equals("-")) {
+                        scorelist.add("0");
+                    } else {
+                        scorelist.add(score);
+                    }
 
             }
 

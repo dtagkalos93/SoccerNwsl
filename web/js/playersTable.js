@@ -568,7 +568,7 @@ function showPlayers() {
     var xhttp;
     var selectionPl = document.getElementById('selectPlayers').value;
     var selectCat = document.getElementById('categorySelection').value;
-    console.log("Select players " + selectCat + "Select Category " + selectionPl);
+    console.log("Select players " + selectCat + " Select Category " + selectionPl);
 
     if (selectionPl == "all") {
         xhttp = new XMLHttpRequest();
@@ -648,17 +648,50 @@ function showPlayers() {
 
                 document.getElementById("total").innerHTML = jsonResponse[jsonResponse.length - 1];
                 document.getElementById("gk").style.display = "";
+                for(i=1;i<=20;i++){
+                    if(i<=2){
+                        document.getElementById("gk"+i).style.display = "";
+                    }
+                    else{
+                        document.getElementById("gk"+i).style.display = "none";
+                    }
+                }
                 document.getElementById("def").style.display = "";
+                for(i=1;i<=20;i++){
+                    if(i<=8){
+                        document.getElementById("def"+i).style.display = "";
+                    }
+                    else{
+                        document.getElementById("def"+i).style.display = "none";
+                    }
+                }
                 document.getElementById("mid").style.display = "";
+                for(i=1;i<=20;i++){
+                    if(i<=6){
+                        document.getElementById("mid"+i).style.display = "";
+                    }
+                    else{
+                        document.getElementById("mid"+i).style.display = "none";
+                    }
+                }
                 document.getElementById("fwd").style.display = "";
+                for(i=1;i<=20;i++){
+                    if(i<=5){
+                        document.getElementById("fwd"+i).style.display = "";
+                    }
+                    else{
+                        document.getElementById("fwd"+i).style.display = "none";
+                    }
+                }
                 document.getElementById("start").style.display = "";
                 document.getElementById("start").disabled = true;
                 document.getElementById("prevPlayers").style.display = "";
-                document.getElementById("prevPlayers").disable = true;
+                document.getElementById("prevPlayers").disabled = true;
                 document.getElementById("nextPlayers").style.display = "";
-                document.getElementById("nextPlayers").disable = false;
+                document.getElementById("nextPlayers").disabled = false;
                 document.getElementById("nextPlayers").value = 2;
                 document.getElementById("end").style.display = "";
+                document.getElementById("end").disabled=false;
                 document.getElementById("pageTitle").style.display = "";
                 document.getElementById("page").innerHTML = 1;
                 document.getElementById("pageSelect").style.display = "none";
@@ -688,7 +721,7 @@ function showPlayers() {
                 var def = 1;
                 var mid = 1;
                 var fwd = 1;
-                console.log("Json Response: " + jsonResponse.length + "GK:" + jsonResponse[0]);
+                
                 for (k = 0; k < jsonResponse.length - 1; k = k + 5) {
                     if (k <= 5) {
 

@@ -74,20 +74,7 @@ public class confirmation extends HttpServlet {
      */
   
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
+   
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -175,16 +162,7 @@ public class confirmation extends HttpServlet {
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+ 
     private void findmax(HttpServletRequest request, int no, String position) {
         int k = 1;
         while (k <= no) {
@@ -293,12 +271,18 @@ public class confirmation extends HttpServlet {
             request.setAttribute("pricegk", sortgkpriceList);
             request.setAttribute("scoregk", sortgkscoreList);
         } else if (position.equals("mid")) {
+            for (int i = 0; i < sortmidnameList.size(); i++) {
+                    System.out.println(sortmidnameList.get(i).toString()+ " ");
+                }
             request.setAttribute("namemid", sortmidnameList);
             request.setAttribute("badgemid", sortmidjerseyList);
             request.setAttribute("teammid", sortmidteamList);
             request.setAttribute("pricemid", sortmidpriceList);
             request.setAttribute("scoremid", sortmidscoreList);
         } else if (position.equals("fwd")) {
+             for (int i = 0; i < sortmidnameList.size(); i++) {
+                    System.out.println(sortfwdnameList.get(i).toString()+ " ");
+                }
             request.setAttribute("namefwd", sortfwdnameList);
             request.setAttribute("badgefwd", sortfwdjerseyList);
             request.setAttribute("teamfwd", sortfwdteamList);

@@ -842,20 +842,7 @@
                                     <td id="pricemid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
                                     <td id="scoremid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
                                 </tr >
-                                <tr id="mid6" style='cursor:pointer' style="display:none" onclick="openModalMID(6)">
-                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img id="imagemid6" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namemid6" style="font-size: 15px; "><%=midname.get(4)%></span><hr style="border:none;margin-top: -17%">
-                                            <span id="teammid6" style="font-size: 12px; font-weight: lighter "><%=midteam.get(4)%></span>
-                                        </div>
-                                    </td>
-                                    <td id="pricemid6" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
-                                    <td id="scoremid6" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
-                                </tr>
+                                
                                 <%
                                     String midstr;
                                     String midimagestr;
@@ -970,20 +957,7 @@
                                     <td id="pricefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
                                     <td id="scorefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
-                                <tr id="fwd6" style='cursor:pointer' style="display:none" onclick="openModalFWD(6)">
-                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img id="imagefwd6" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span class='underline' id="namefwd6" style="font-size: 15px; "><%=fwdname.get(4)%></span><hr style="border:none;margin-top: -17%">
-                                            <span id="teamfwd6" style="font-size: 12px; font-weight: lighter "><%=fwdteam.get(4)%></span>
-                                        </div>
-                                    </td>
-                                    <td id="pricefwd6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
-                                    <td id="scorefwd6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
-                                </tr>
+                                
                                 <%
                                     String fwdstr;
                                     String fwdimagestr;
