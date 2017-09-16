@@ -3,11 +3,11 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
     $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         $("#somediv").html("");
         var $h4 = $("<h4>");
-        $h4.css({ "font-weight": "bold", "font-size": "15px", "text-align": "center"});
+        $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center"});
         $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
         var $buttonprev = $("<button>");
         $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-        $buttonprev.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
+        $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
         $buttonprev.text("Previous").insertAfter($h4);
         if (responseText[1] == "Gameweek 0") {
             $buttonprev.css('visibility', 'hidden');
@@ -23,7 +23,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
         $img.prependTo($h5);
         var $buttonnext = $("<button>");
         $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "left": "2.1%"});
+        $buttonnext.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "left": "2.1%"});
         $buttonnext.text("Next").insertAfter($h5);
         if (responseText[2] == "Gameweek 23") {
             $buttonnext.css('visibility', 'hidden');
@@ -94,11 +94,11 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
     $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         $("#somediv").html("");
         var $h4 = $("<h4>");
-        $h4.css({ "font-weight": "bold", "font-size": "15px", "text-align": "center"});
+        $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center"});
         $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
         var $buttonprev = $("<button>");
         $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-         $buttonprev.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
+        $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2%", "padding": "1%"});
         $buttonprev.text("Previous").insertAfter($h4);
         if (responseText[1] == "Gameweek 0") {
             $buttonprev.css('visibility', 'hidden');
@@ -114,7 +114,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
         $img.prependTo($h5);
         var $buttonnext = $("<button>");
         $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-        $buttonnext.css({ "font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2.1%", "padding": "1%", "left": "2.2%"});
+        $buttonnext.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "margin-left": "-2.1%", "padding": "1%", "left": "2.2%"});
         $buttonnext.text("Next").insertAfter($h5);
         if (responseText[2] == "Gameweek 23") {
             $buttonnext.css('visibility', 'hidden');
@@ -123,7 +123,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
 
             var $h6 = $("<h6>");
             $h6.attr({class: "col-sm-12"});
-            $h6.css({'text-align': "center", 'font-weight': "lighter",  'font-size': "15px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+            $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-size': "15px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
             $h6.text(responseText[i]).insertAfter($buttonnext);
             if (i + 6 > 0) {
                 if (responseText[i] == responseText[i - 6]) {
@@ -201,11 +201,31 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
         document.getElementById("gkteam1").innerHTML = responseText[4];
         document.getElementById("gkprice1").innerHTML = "$" + responseText[5];
         document.getElementById("gkscore1").innerHTML = responseText[6];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname1").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk1").style.pointerEvents = 'none';
+                document.getElementById("gk1").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk1").style.pointerEvents = 'auto';
+                document.getElementById("gk1").style.opacity = '1';
+            }
+        }
         document.getElementById("gkname2").innerHTML = responseText[7];
         document.getElementById("gkimage2").src = "img/" + responseText[8];
         document.getElementById("gkteam2").innerHTML = responseText[9];
         document.getElementById("gkprice2").innerHTML = "$" + responseText[10];
         document.getElementById("gkscore2").innerHTML = responseText[11];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname2").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk2").style.pointerEvents = 'none';
+                document.getElementById("gk2").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk2").style.pointerEvents = 'auto';
+                document.getElementById("gk2").style.opacity = '1';
+            }
+        }
         if (responseText[1] - 1 == 1) {
             var length = 8;
             document.getElementById("def6").style.display = "";
@@ -235,6 +255,17 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                    document.getElementById("def" + k).style.pointerEvents = 'none';
+                    document.getElementById("def" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("def" + k).style.pointerEvents = 'auto';
+                    document.getElementById("def" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
 
@@ -265,6 +296,17 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                    document.getElementById("mid" + k).style.pointerEvents = 'none';
+                    document.getElementById("mid" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                    document.getElementById("mid" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
 
@@ -295,6 +337,17 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                    document.getElementById("fwd" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                    document.getElementById("fwd" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
     });
@@ -319,11 +372,33 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
         document.getElementById("gkteam1").innerHTML = responseText[4];
         document.getElementById("gkprice1").innerHTML = responseText[5];
         document.getElementById("gkscore1").innerHTML = responseText[6];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname1").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk1").style.pointerEvents = 'none';
+                document.getElementById("gk1").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk1").style.pointerEvents = 'auto';
+                document.getElementById("gk1").style.opacity = '1';
+            }
+
+        }
         document.getElementById("gkname2").innerHTML = responseText[7];
         document.getElementById("gkimage2").src = "img/" + responseText[8];
         document.getElementById("gkteam2").innerHTML = responseText[9];
         document.getElementById("gkprice2").innerHTML = responseText[10];
         document.getElementById("gkscore2").innerHTML = responseText[11];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname2").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk2").style.pointerEvents = 'none';
+                document.getElementById("gk2").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk2").style.pointerEvents = 'auto';
+                document.getElementById("gk2").style.opacity = '1';
+            }
+
+        }
         document.getElementById("def6").style.display = "none";
         document.getElementById("def7").style.display = "none";
         document.getElementById("def8").style.display = "none";
@@ -335,6 +410,17 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                    document.getElementById("def" + k).style.pointerEvents = 'none';
+                    document.getElementById("def" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("def" + k).style.pointerEvents = 'auto';
+                    document.getElementById("def" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
         var length2 = 2;
@@ -350,6 +436,17 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                    document.getElementById("mid" + k).style.pointerEvents = 'none';
+                    document.getElementById("mid" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                    document.getElementById("mid" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
         var length3 = 2;
@@ -365,6 +462,17 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                    document.getElementById("fwd" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                    document.getElementById("fwd" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
 
@@ -390,11 +498,33 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
         document.getElementById("gkteam1").innerHTML = responseText[4];
         document.getElementById("gkprice1").innerHTML = responseText[5];
         document.getElementById("gkscore1").innerHTML = responseText[6];
+        for (i = 1; i <= 2; i++) {
+            if (document.getElementById("gkname1").innerHTML == document.getElementById("namegk" + i).innerHTML) {
+                document.getElementById("gk1").style.pointerEvents = 'none';
+                document.getElementById("gk1").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk1").style.pointerEvents = 'auto';
+                document.getElementById("gk1").style.opacity = '1';
+            }
+
+        }
         document.getElementById("gkname2").innerHTML = responseText[7];
         document.getElementById("gkimage2").src = "img/" + responseText[8];
         document.getElementById("gkteam2").innerHTML = responseText[9];
         document.getElementById("gkprice2").innerHTML = responseText[10];
         document.getElementById("gkscore2").innerHTML = responseText[11];
+        for (i = 1; i <= 2; i++) {
+            if (document.getElementById("gkname2").innerHTML == document.getElementById("namegk" + i).innerHTML) {
+                document.getElementById("gk2").style.pointerEvents = 'none';
+                document.getElementById("gk2").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk2").style.pointerEvents = 'auto';
+                document.getElementById("gk2").style.opacity = '1';
+            }
+
+        }
         document.getElementById("def6").style.display = "";
         document.getElementById("def7").style.display = "";
         document.getElementById("def8").style.display = "";
@@ -406,6 +536,17 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                    document.getElementById("def" + k).style.pointerEvents = 'none';
+                    document.getElementById("def" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("def" + k).style.pointerEvents = 'auto';
+                    document.getElementById("def" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
         var length2 = 5;
@@ -421,6 +562,17 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                    document.getElementById("mid" + k).style.pointerEvents = 'none';
+                    document.getElementById("mid" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                    document.getElementById("mid" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
         var length3 = 5;
@@ -436,6 +588,17 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                    document.getElementById("fwd" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                    document.getElementById("fwd" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
     });
@@ -463,11 +626,33 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
         document.getElementById("gkteam1").innerHTML = responseText[4];
         document.getElementById("gkprice1").innerHTML = responseText[5];
         document.getElementById("gkscore1").innerHTML = responseText[6];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname1").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk1").style.pointerEvents = 'none';
+                document.getElementById("gk1").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk1").style.pointerEvents = 'auto';
+                document.getElementById("gk1").style.opacity = '1';
+            }
+
+        }
         document.getElementById("gkname2").innerHTML = responseText[7];
         document.getElementById("gkimage2").src = "img/" + responseText[8];
         document.getElementById("gkteam2").innerHTML = responseText[9];
         document.getElementById("gkprice2").innerHTML = responseText[10];
         document.getElementById("gkscore2").innerHTML = responseText[11];
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname2").innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                document.getElementById("gk2").style.pointerEvents = 'none';
+                document.getElementById("gk2").style.opacity = '0.6';
+                break;
+            } else {
+                document.getElementById("gk2").style.pointerEvents = 'auto';
+                document.getElementById("gk2").style.opacity = '1';
+            }
+
+        }
         if (responseText[1] - 1 == 1) {
             var length = 8;
             document.getElementById("def6").style.display = "";
@@ -497,6 +682,17 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                    document.getElementById("def" + k).style.pointerEvents = 'none';
+                    document.getElementById("def" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("def" + k).style.pointerEvents = 'auto';
+                    document.getElementById("def" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
 
@@ -527,6 +723,17 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                    document.getElementById("mid" + k).style.pointerEvents = 'none';
+                    document.getElementById("mid" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                    document.getElementById("mid" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
 
@@ -557,6 +764,17 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
             document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
             document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                    document.getElementById("fwd" + k).style.opacity = '0.6';
+                    break;
+                } else {
+                    document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                    document.getElementById("fwd" + k).style.opacity = '1';
+                }
+
+            }
             k = k + 1;
         }
     });
@@ -648,39 +866,35 @@ function showPlayers() {
 
                 document.getElementById("total").innerHTML = jsonResponse[jsonResponse.length - 1];
                 document.getElementById("gk").style.display = "";
-                for(i=1;i<=20;i++){
-                    if(i<=2){
-                        document.getElementById("gk"+i).style.display = "";
-                    }
-                    else{
-                        document.getElementById("gk"+i).style.display = "none";
+                for (i = 1; i <= 20; i++) {
+                    if (i <= 2) {
+                        document.getElementById("gk" + i).style.display = "";
+                    } else {
+                        document.getElementById("gk" + i).style.display = "none";
                     }
                 }
                 document.getElementById("def").style.display = "";
-                for(i=1;i<=20;i++){
-                    if(i<=8){
-                        document.getElementById("def"+i).style.display = "";
-                    }
-                    else{
-                        document.getElementById("def"+i).style.display = "none";
+                for (i = 1; i <= 20; i++) {
+                    if (i <= 8) {
+                        document.getElementById("def" + i).style.display = "";
+                    } else {
+                        document.getElementById("def" + i).style.display = "none";
                     }
                 }
                 document.getElementById("mid").style.display = "";
-                for(i=1;i<=20;i++){
-                    if(i<=6){
-                        document.getElementById("mid"+i).style.display = "";
-                    }
-                    else{
-                        document.getElementById("mid"+i).style.display = "none";
+                for (i = 1; i <= 20; i++) {
+                    if (i <= 6) {
+                        document.getElementById("mid" + i).style.display = "";
+                    } else {
+                        document.getElementById("mid" + i).style.display = "none";
                     }
                 }
                 document.getElementById("fwd").style.display = "";
-                for(i=1;i<=20;i++){
-                    if(i<=5){
-                        document.getElementById("fwd"+i).style.display = "";
-                    }
-                    else{
-                        document.getElementById("fwd"+i).style.display = "none";
+                for (i = 1; i <= 20; i++) {
+                    if (i <= 5) {
+                        document.getElementById("fwd" + i).style.display = "";
+                    } else {
+                        document.getElementById("fwd" + i).style.display = "none";
                     }
                 }
                 document.getElementById("start").style.display = "";
@@ -691,7 +905,7 @@ function showPlayers() {
                 document.getElementById("nextPlayers").disabled = false;
                 document.getElementById("nextPlayers").value = 2;
                 document.getElementById("end").style.display = "";
-                document.getElementById("end").disabled=false;
+                document.getElementById("end").disabled = false;
                 document.getElementById("pageTitle").style.display = "";
                 document.getElementById("page").innerHTML = 1;
                 document.getElementById("pageSelect").style.display = "none";
@@ -721,7 +935,7 @@ function showPlayers() {
                 var def = 1;
                 var mid = 1;
                 var fwd = 1;
-                
+
                 for (k = 0; k < jsonResponse.length - 1; k = k + 5) {
                     if (k <= 5) {
 
@@ -730,6 +944,16 @@ function showPlayers() {
                         document.getElementById("gkteam" + gk).innerHTML = jsonResponse[k + 2];
                         document.getElementById("gkprice" + gk).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("gkscore" + gk).innerHTML = jsonResponse[k + 4];
+                        for (j = 1; j <= 2; j++) {
+                            if (document.getElementById("gkname" + gk).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                                document.getElementById("gk" + gk).style.pointerEvents = 'none';
+                                document.getElementById("gk" + gk).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("gk" + gk).style.pointerEvents = 'auto';
+                                document.getElementById("gk" + gk).style.opacity = '1';
+                            }
+                        }
                         gk++;
 
                     } else if (k <= 45) {
@@ -739,6 +963,16 @@ function showPlayers() {
                         document.getElementById("teamdef" + def).innerHTML = jsonResponse[k + 2];
                         document.getElementById("pricedef" + def).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scoredef" + def).innerHTML = jsonResponse[k + 4];
+                        for (j = 1; j <= 5; j++) {
+                            if (document.getElementById("namedef" + def).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                                document.getElementById("def" + def).style.pointerEvents = 'none';
+                                document.getElementById("def" + def).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("def" + def).style.pointerEvents = 'auto';
+                                document.getElementById("def" + def).style.opacity = '1';
+                            }
+                        }
                         def++;
                     } else if (k <= 70) {
 
@@ -747,14 +981,34 @@ function showPlayers() {
                         document.getElementById("teammid" + mid).innerHTML = jsonResponse[k + 2];
                         document.getElementById("pricemid" + mid).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scoremid" + mid).innerHTML = jsonResponse[k + 4];
+                        for (j = 1; j <= 5; j++) {
+                            if (document.getElementById("namemid" + mid).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                                document.getElementById("mid" + mid).style.pointerEvents = 'none';
+                                document.getElementById("mid" + mid).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("mid" + mid).style.pointerEvents = 'auto';
+                                document.getElementById("mid" + mid).style.opacity = '1';
+                            }
+                        }
                         mid++;
                     } else {
 
                         document.getElementById("namefwd" + fwd).innerHTML = jsonResponse[k];
                         document.getElementById("imagefwd" + fwd).src = "img/" + jsonResponse[k + 1];
                         document.getElementById("teamfwd" + fwd).innerHTML = jsonResponse[k + 2];
-                        document.getElementById("pricefwd" + fwd).innerHTML = "$" + jsonResponse[i + 3];
+                        document.getElementById("pricefwd" + fwd).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scorefwd" + fwd).innerHTML = jsonResponse[k + 4];
+                        for (j = 1; j <= 3; j++) {
+                            if (document.getElementById("namefwd" + fwd).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                                document.getElementById("fwd" + fwd).style.pointerEvents = 'none';
+                                document.getElementById("fwd" + fwd).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("fwd" + fwd).style.pointerEvents = 'auto';
+                                document.getElementById("fwd" + fwd).style.opacity = '1';
+                            }
+                        }
                         fwd++;
                     }
 
@@ -867,7 +1121,16 @@ function showPlayers() {
                         document.getElementById("gkteam" + k).innerHTML = jsonResponse[i + 2];
                         document.getElementById("gkprice" + k).innerHTML = "$" + jsonResponse[i + 3];
                         document.getElementById("gkscore" + k).innerHTML = jsonResponse[i + 4];
-
+                        for (j = 1; j <= 2; j++) {
+                            if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                                document.getElementById("gk" + k).style.pointerEvents = 'none';
+                                document.getElementById("gk" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                                document.getElementById("gk" + k).style.opacity = '1';
+                            }
+                        }
 
                         k = k + 1;
                     }
@@ -908,6 +1171,16 @@ function showPlayers() {
                         document.getElementById("teamdef" + k).innerHTML = jsonResponse[i + 2];
                         document.getElementById("pricedef" + k).innerHTML = "$" + jsonResponse[i + 3];
                         document.getElementById("scoredef" + k).innerHTML = jsonResponse[i + 4];
+                        for (j = 1; j <= 5; j++) {
+                            if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                                document.getElementById("def" + k).style.pointerEvents = 'none';
+                                document.getElementById("def" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("def" + k).style.pointerEvents = 'auto';
+                                document.getElementById("def" + k).style.opacity = '1';
+                            }
+                        }
                         k = k + 1;
                     }
                 } else if (selectionPl == "Midfielder") {
@@ -946,6 +1219,16 @@ function showPlayers() {
                         document.getElementById("teammid" + k).innerHTML = jsonResponse[i + 2];
                         document.getElementById("pricemid" + k).innerHTML = "$" + jsonResponse[i + 3];
                         document.getElementById("scoremid" + k).innerHTML = jsonResponse[i + 4];
+                        for (j = 1; j <= 5; j++) {
+                            if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                                document.getElementById("mid" + k).style.pointerEvents = 'none';
+                                document.getElementById("mid" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                                document.getElementById("mid" + k).style.opacity = '1';
+                            }
+                        }
                         k = k + 1;
                     }
                 } else if (selectionPl == "Forward") {
@@ -984,6 +1267,16 @@ function showPlayers() {
                         document.getElementById("teamfwd" + k).innerHTML = jsonResponse[i + 2];
                         document.getElementById("pricefwd" + k).innerHTML = "$" + jsonResponse[i + 3];
                         document.getElementById("scorefwd" + k).innerHTML = jsonResponse[i + 4];
+                        for (j = 1; j <= 3; j++) {
+                            if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                                document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                                document.getElementById("fwd" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                                document.getElementById("fwd" + k).style.opacity = '1';
+                            }
+                        }
                         k = k + 1;
                     }
                 }
@@ -1084,7 +1377,16 @@ function showPlayers() {
                     document.getElementById("gkteam" + k).innerHTML = jsonResponse[i + 2];
                     document.getElementById("gkprice" + k).innerHTML = "$" + jsonResponse[i + 3];
                     document.getElementById("gkscore" + k).innerHTML = jsonResponse[i + 4];
-
+                    for (j = 1; j <= 2; j++) {
+                            if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                                document.getElementById("gk" + k).style.pointerEvents = 'none';
+                                document.getElementById("gk" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                                document.getElementById("gk" + k).style.opacity = '1';
+                            }
+                        }
 
                     k = k + 1;
                 }
@@ -1100,6 +1402,16 @@ function showPlayers() {
                     document.getElementById("teamdef" + k).innerHTML = jsonResponse[i + 2];
                     document.getElementById("pricedef" + k).innerHTML = "$" + jsonResponse[i + 3];
                     document.getElementById("scoredef" + k).innerHTML = jsonResponse[i + 4];
+                    for (j = 1; j <= 5; j++) {
+                        if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                            document.getElementById("def" + k).style.pointerEvents = 'none';
+                            document.getElementById("def" + k).style.opacity = '0.6';
+                            break;
+                        } else {
+                            document.getElementById("def" + k).style.pointerEvents = 'auto';
+                            document.getElementById("def" + k).style.opacity = '1';
+                        }
+                    }
                     k = k + 1;
                 }
                 for (i = k; k <= 20; k++) {
@@ -1114,6 +1426,16 @@ function showPlayers() {
                     document.getElementById("teammid" + k).innerHTML = jsonResponse[i + 2];
                     document.getElementById("pricemid" + k).innerHTML = "$" + jsonResponse[i + 3];
                     document.getElementById("scoremid" + k).innerHTML = jsonResponse[i + 4];
+                    for (j = 1; j <= 5; j++) {
+                            if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                                document.getElementById("mid" + k).style.pointerEvents = 'none';
+                                document.getElementById("mid" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                                document.getElementById("mid" + k).style.opacity = '1';
+                            }
+                        }
                     k = k + 1;
                 }
                 for (i = k; k <= 20; k++) {
@@ -1128,6 +1450,16 @@ function showPlayers() {
                     document.getElementById("teamfwd" + k).innerHTML = jsonResponse[i + 2];
                     document.getElementById("pricefwd" + k).innerHTML = "$" + jsonResponse[i + 3];
                     document.getElementById("scorefwd" + k).innerHTML = jsonResponse[i + 4];
+                    for (j = 1; j <= 3; j++) {
+                            if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                                document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                                document.getElementById("fwd" + k).style.opacity = '0.6';
+                                break;
+                            } else {
+                                document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                                document.getElementById("fwd" + k).style.opacity = '1';
+                            }
+                        }
                     k = k + 1;
                 }
                 for (i = k; k <= 20; k++) {
@@ -1135,7 +1467,7 @@ function showPlayers() {
                 }
             }
         };
-        xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl+"&cat=" + selectCat, true);
+        xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl + "&cat=" + selectCat, true);
         xhttp.send();
     }
 }
@@ -1170,6 +1502,17 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("gkteam" + k).innerHTML = responseText[i + 2];
                 document.getElementById("gkprice" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("gkscore" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 2; j++) {
+                    if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                        document.getElementById("gk" + k).style.pointerEvents = 'none';
+                        document.getElementById("gk" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                        document.getElementById("gk" + k).style.opacity = '1';
+                    }
+
+                }
 
 
                 k = k + 1;
@@ -1198,6 +1541,17 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                        document.getElementById("def" + k).style.pointerEvents = 'none';
+                        document.getElementById("def" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("def" + k).style.pointerEvents = 'auto';
+                        document.getElementById("def" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1224,6 +1578,17 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                        document.getElementById("mid" + k).style.pointerEvents = 'none';
+                        document.getElementById("mid" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                        document.getElementById("mid" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1250,6 +1615,17 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 3; j++) {
+                    if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                        document.getElementById("fwd" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                        document.getElementById("fwd" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1296,6 +1672,17 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
                 document.getElementById("gkteam" + k).innerHTML = responseText[i + 2];
                 document.getElementById("gkprice" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("gkscore" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 2; j++) {
+                    if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                        document.getElementById("gk" + k).style.pointerEvents = 'none';
+                        document.getElementById("gk" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                        document.getElementById("gk" + k).style.opacity = '1';
+                    }
+
+                }
 
                 k = k + 1;
             }
@@ -1323,6 +1710,17 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
                 document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                        document.getElementById("def" + k).style.pointerEvents = 'none';
+                        document.getElementById("def" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("def" + k).style.pointerEvents = 'auto';
+                        document.getElementById("def" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1349,6 +1747,17 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
                 document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                        document.getElementById("mid" + k).style.pointerEvents = 'none';
+                        document.getElementById("mid" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                        document.getElementById("mid" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1375,6 +1784,17 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
                 document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 3; j++) {
+                    if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                        document.getElementById("fwd" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                        document.getElementById("fwd" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1421,6 +1841,17 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
                 document.getElementById("gkteam" + k).innerHTML = responseText[i + 2];
                 document.getElementById("gkprice" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("gkscore" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 2; j++) {
+                    if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                        document.getElementById("gk" + k).style.pointerEvents = 'none';
+                        document.getElementById("gk" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                        document.getElementById("gk" + k).style.opacity = '1';
+                    }
+
+                }
 
 
                 k = k + 1;
@@ -1449,6 +1880,17 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
                 document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                        document.getElementById("def" + k).style.pointerEvents = 'none';
+                        document.getElementById("def" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("def" + k).style.pointerEvents = 'auto';
+                        document.getElementById("def" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1475,6 +1917,17 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
                 document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                        document.getElementById("mid" + k).style.pointerEvents = 'none';
+                        document.getElementById("mid" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                        document.getElementById("mid" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1502,6 +1955,17 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
                 document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 3; j++) {
+                    if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                        document.getElementById("fwd" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                        document.getElementById("fwd" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1544,6 +2008,17 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("gkteam" + k).innerHTML = responseText[i + 2];
                 document.getElementById("gkprice" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("gkscore" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 2; j++) {
+                    if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
+                        document.getElementById("gk" + k).style.pointerEvents = 'none';
+                        document.getElementById("gk" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                        document.getElementById("gk" + k).style.opacity = '1';
+                    }
+
+                }
 
                 k = k + 1;
             }
@@ -1573,6 +2048,17 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teamdef" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricedef" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoredef" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namedef" + k).innerHTML == document.getElementById("defname" + j).innerHTML) {
+                        document.getElementById("def" + k).style.pointerEvents = 'none';
+                        document.getElementById("def" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("def" + k).style.pointerEvents = 'auto';
+                        document.getElementById("def" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1601,6 +2087,17 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teammid" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricemid" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scoremid" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 5; j++) {
+                    if (document.getElementById("namemid" + k).innerHTML == document.getElementById("midname" + j).innerHTML) {
+                        document.getElementById("mid" + k).style.pointerEvents = 'none';
+                        document.getElementById("mid" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                        document.getElementById("mid" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1629,6 +2126,17 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("teamfwd" + k).innerHTML = responseText[i + 2];
                 document.getElementById("pricefwd" + k).innerHTML = "$" + responseText[i + 3];
                 document.getElementById("scorefwd" + k).innerHTML = responseText[i + 4];
+                for (j = 1; j <= 3; j++) {
+                    if (document.getElementById("namefwd" + k).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'none';
+                        document.getElementById("fwd" + k).style.opacity = '0.6';
+                        break;
+                    } else {
+                        document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                        document.getElementById("fwd" + k).style.opacity = '1';
+                    }
+
+                }
                 k = k + 1;
             }
             for (i = k; k <= 20; k++) {
@@ -1676,6 +2184,7 @@ function openModalGK(i) {
     var name = document.getElementById("gkname" + i).textContent;
     var price = document.getElementById("gkprice" + i).textContent;
     var image = document.getElementById("gkimage" + i).src;
+    var team = document.getElementById("gkteam"+i).textContent;
     image = image.split("/")[5];
 
 
@@ -1697,6 +2206,8 @@ function openModalGK(i) {
             document.getElementById("playerPrice").innerHTML = price;
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            
+            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
         }
     };
@@ -1709,6 +2220,7 @@ function openModalDEF(i) {
     var name = document.getElementById("namedef" + i).textContent;
     var price = document.getElementById("pricedef" + i).textContent;
     var image = document.getElementById("imagedef" + i).src;
+    var team = document.getElementById("teamdef"+i).textContent;
     image = image.split("/")[5];
 
 
@@ -1729,6 +2241,7 @@ function openModalDEF(i) {
             document.getElementById("playerPrice").innerHTML = price;
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
         }
     };
@@ -1741,6 +2254,7 @@ function openModalMID(i) {
     var name = document.getElementById("namemid" + i).textContent;
     var price = document.getElementById("pricemid" + i).textContent;
     var image = document.getElementById("imagemid" + i).src;
+    var team = document.getElementById("teammid"+i).textContent;
     image = image.split("/")[5];
 
 
@@ -1761,6 +2275,7 @@ function openModalMID(i) {
             document.getElementById("playerPrice").innerHTML = price;
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
         }
     };
@@ -1773,6 +2288,7 @@ function openModalFWD(i) {
     var name = document.getElementById("namefwd" + i).textContent;
     var price = document.getElementById("pricefwd" + i).textContent;
     var image = document.getElementById("imagefwd" + i).src;
+    var team = document.getElementById("teamfwd"+i).textContent;
     image = image.split("/")[5];
 
 
@@ -1793,6 +2309,7 @@ function openModalFWD(i) {
             document.getElementById("playerPrice").innerHTML = price;
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
         }
     };
@@ -1804,20 +2321,33 @@ function openModalFWD(i) {
 function addPlayer() {
 
     var players = document.getElementById("totalPlayers").textContent;
-    document.getElementById("checkbox").style.display="";
-    document.getElementById("playername").innerHTML=document.getElementById("playersName").textContent;
+    document.getElementById("checkbox").style.display = "";
+    document.getElementById("playername").innerHTML = document.getElementById("playersName").textContent;
 
     document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
-    if(document.getElementById("totalPlayers").innerHTML=='15'){
-        
-        document.getElementById("allPlayers").style.color='green';
-        document.getElementById("totalPlayers").style.color='green';
+    var counter=1;
+        for(i=1; i<=15; i++){
+            if(document.getElementById("playerTeam").textContent==document.getElementById("team"+i).textContent){
+                counter=eval(counter)+1;
+                console.log("team: " +  counter);
+            }
+            if(counter>4){
+                console.log("here!!");
+                 document.getElementById("errorbox").style.display = '';
+                 document.getElementById("team").innerHTML=document.getElementById("playerTeam").textContent;
+            }
+        }
+    if (document.getElementById("totalPlayers").innerHTML == '15') {
+
+        document.getElementById("allPlayers").style.color = 'green';
+        document.getElementById("totalPlayers").style.color = 'green';
     }
     console.log("PLAYERS " + players);
     if (document.getElementById("playerPosition").textContent == 'Goalkeeper') {
         var name = document.getElementById("playersName").textContent;
         var image = document.getElementById("playerImage").textContent;
-
+        
+        
         for (i = 1; i <= 2; i++) {
             if (document.getElementById("namegk" + i).innerHTML == 'Goalkeeper') {
                 break;
@@ -1828,8 +2358,11 @@ function addPlayer() {
             document.getElementById("gk" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("imagegk" + i).src = "img/" + image;
             document.getElementById("namegk" + i).innerHTML = name;
+            document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
+            document.getElementById("selGK" + i).setAttribute('onclick','removeModalGK(i)');
+            
         }
-        
+
 
     } else if (document.getElementById("playerPosition").textContent == 'Defender') {
         var name = document.getElementById("playersName").textContent;
@@ -1841,10 +2374,13 @@ function addPlayer() {
             }
         }
         if (i <= 5) {
+            
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("defimage" + i).src = "img/" + image;
             document.getElementById("defname" + i).innerHTML = name;
+            document.getElementById("team" + (i+2)).innerHTML = document.getElementById("playerTeam").textContent;
+            document.getElementById("selDEF" + i).setAttribute('onclick','removeModalDEF(i)');
         }
 
     } else if (document.getElementById("playerPosition").textContent == 'Midfielder') {
@@ -1862,6 +2398,8 @@ function addPlayer() {
             document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("midimage" + i).src = "img/" + image;
             document.getElementById("midname" + i).innerHTML = name;
+            
+            document.getElementById("team" + (i+7)).innerHTML = document.getElementById("playerTeam").textContent;
         }
 
     } else if (document.getElementById("playerPosition").textContent == 'Forward') {
@@ -1878,6 +2416,7 @@ function addPlayer() {
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("fwdimage" + i).src = "img/" + image;
             document.getElementById("fwdname" + i).innerHTML = name;
+            document.getElementById("team" + (i+12)).innerHTML = document.getElementById("playerTeam").textContent;
         }
 
     }
@@ -1888,16 +2427,22 @@ function addPlayer() {
 
 
 function reset() {
-    document.getElementById("totalPlayers").innerHTML ='0';
-    document.getElementById("allPlayers").style.color='#d4213c';
-    document.getElementById("totalPlayers").style.color='#d4213c';
-    
+    document.getElementById("totalPlayers").innerHTML = '0';
+    document.getElementById("allPlayers").style.color = '#d4213c';
+    document.getElementById("totalPlayers").style.color = '#d4213c';
+    document.getElementById("errorbox").style.display = 'none';
+    document.getElementById("checkbox").style.display = "none";
+    for(i=1; i<=15; i++){
+         document.getElementById("team" + i).innerHTML = '';
+    }
+
     for (i = 1; i <= 2; i++) {
         document.getElementById("imagegk" + i).src = "img/" + 'subsgk.png';
         document.getElementById("namegk" + i).innerHTML = 'Goalkeeper';
+        
     }
     for (i = 1; i <= 20; i++) {
-        
+
         document.getElementById("gk" + i).style.pointerEvents = 'auto';
         document.getElementById("gk" + i).style.opacity = '1';
     }
@@ -1906,7 +2451,7 @@ function reset() {
         document.getElementById("defname" + i).innerHTML = 'Defender';
     }
     for (i = 1; i <= 20; i++) {
-        
+
         document.getElementById("def" + i).style.pointerEvents = 'auto';
         document.getElementById("def" + i).style.opacity = '1';
     }
@@ -1915,7 +2460,7 @@ function reset() {
         document.getElementById("midname" + i).innerHTML = 'Midfielder';
     }
     for (i = 1; i <= 20; i++) {
-        
+
         document.getElementById("mid" + i).style.pointerEvents = 'auto';
         document.getElementById("mid" + i).style.opacity = '1';
     }
@@ -1924,10 +2469,44 @@ function reset() {
         document.getElementById("fwdname" + i).innerHTML = 'Forward';
     }
     for (i = 1; i <= 20; i++) {
-        
+
         document.getElementById("fwd" + i).style.pointerEvents = 'auto';
         document.getElementById("fwd" + i).style.opacity = '1';
     }
 }
 
+function removeModalGK(i) {
+    console.log(i);
+    var name = document.getElementById("namegk" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse[0]);
+            document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            $('#removePlayer').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
 
+function removeModalDEF(i) {
+    console.log(i);
+    var name = document.getElementById("defname" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse[0]);
+            document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            $('#removePlayer').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}

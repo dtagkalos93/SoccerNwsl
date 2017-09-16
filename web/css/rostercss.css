@@ -49,6 +49,7 @@ h6 {
     color: #fff;
 }
 
+
 .prevbutton{
     background-color: #ecebeb; 
     border: none;
@@ -232,4 +233,50 @@ h6 {
 
 .underline:hover {
     text-decoration: underline
+}
+
+.modal-dialog{
+   position: absolute;
+   left: 50%;
+   /* now you must set a margin left under zero - value is a half width your window */
+   margin-left: -348px;
+   /* this same situation is with height - example */
+   height: 500px;
+   top: 60%;
+   margin-top: -250px;
+} 
+
+.addbutton{
+    width: 100%;
+    background-color: #c8373b;
+    color:white;
+    font-size: 14px;
+    text-align: center;
+    font-weight:lighter;
+    margin-bottom: 2%;
+    height: 30px; 
+    border: 1px solid #ac0f1f;
+    border-radius: 3pt;
+}
+
+.addbutton:hover{
+    background-color: #84111c;
+}
+
+.infobutton{
+    width: 100%;
+    background-color: #ecebeb;
+    font-size: 14px;
+    text-align: center;
+    font-weight:lighter;
+    margin-bottom: 2%;
+    height: 30px; 
+    border: 1px solid #ecebeb;
+    border-radius: 3pt;
+   
+}
+
+.infobutton:hover{
+    background-color: #a5a4a4;
+     color:white;
 }

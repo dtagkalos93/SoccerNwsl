@@ -180,71 +180,86 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
+                            <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
                                 <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
                                 <p class="gkname" id="namegk1" >Goalkeeper</p>
+                                <p style="display: none" id="team1"></p>
                             </div>
-                            <div class="col-md-6 col-xs-6" style="float: left;left: 1.3%" onclick="changeGK()">
+                            <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 1.3%" onclick="changeGK()">
                                 <img class="image-player" id="imagegk2" src="img/subsgk.png" />
                                 <p class="gkname" id="namegk2" >Goalkeeper</p>
+                                <p style="display: none" id="team2"></p>
                             </div>
 
                             <hr style="border:none;margin-top: 26.5%">
-                            <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" onclick="changeDEF()">
+                            <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                                 <p id="defname1" class="cbname" >Defender</p>
+                                <p style="display: none" id="team3"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeDEF()">
+                            <div id="selDEF2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage2" src="img/subs.png" />
                                 <p id="defname2" class="cbname" >Defender</p>
+                                <p style="display: none" id="team4"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeDEF()">
+                            <div id="selDEF3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
                                 <p id="defname3" class="cbname" >Defender</p>
+                                <p style="display: none" id="team5"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeDEF()">
+                            <div id="selDEF4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
                                 <p id="defname4" class="cbname" >Defender</p>
+                                <p style="display: none" id="team6"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="left:4.7%" onclick="changeDEF()" >
+                            <div id="selDEF5" class="col-md-2 col-xs-2" style="left:4.7%" onclick="changeDEF()" >
                                 <img class="image-player-cb" id="defimage5" src="img/subs.png" />
                                 <p id="defname5" class="cbname" >Defender</p>
+                                <p style="display: none" id="team7"></p>
                             </div>
 
                             <hr style="border:none;margin-top: 46.5%">                          
                             <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                                 <p id="midname1" class="cbname" >Midfielder</p>
+                                <p style="display: none" id="team8"></p>
                             </div>                            
                             <div class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                                 <p id="midname2" class="cbname" >Midfielder</p>
+                                <p style="display: none" id="team9"></p>
                             </div>
                             <div class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                                 <p id="midname3" class="cbname" >Midfielder</p>
+                                <p style="display: none" id="team10"></p>
                             </div>
                             <div class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                                 <p id="midname4" class="cbname" >Midfielder</p>
+                                <p style="display: none" id="team11"></p>
                             </div>
                             <div class="col-md-2 col-xs-2" style="left: 5%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
                                 <p id="midname5" class="cbname" >Midfielder</p>
+                                <p style="display: none" id="team12"></p>
                             </div>                            
 
                             <hr style="border:none;margin-top: 66.5%">                          
                             <div class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
                                 <p id="fwdname1" class="gkname" >Forward</p>
+                                <p style="display: none" id="team13"></p>
                             </div>
                             <div class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
                                 <p id="fwdname2" class="gkname" >Forward</p>
+                                <p style="display: none" id="team14"></p>
                             </div>
                             <div class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                                 <p id="fwdname3" class="gkname" >Forward</p>
+                                <p style="display: none" id="team15"></p>
                             </div>
                         </div>
                         <a href="enterRoster.html"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
@@ -1016,7 +1031,7 @@
 
 
         <!--players modal -->
-        <div id="players" class="modal fade" role="dialog" >
+        <div id="players" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" >
             <div class="modal-dialog" style="width: 450px">
 
                 <!-- Modal content-->
@@ -1033,10 +1048,35 @@
                         <p style="display:none" id="playerPrice"></p>
                         <p style="display:none" id="playerNo"></p>
                         <p style="display:none" id="playerPosition"></p>
-                        <button onclick="addPlayer()" type="button" class="prevbutton btncustom  " style="width: 100%;background-color: red;color:white;font-size: 14px;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                        <p style="display:none" id="playerTeam"></p>
+                        <button onclick="addPlayer()" type="button" class="addbutton   " >
                             Add Player 
                         </button> 
-                        <button type="button" class="prevbutton btncustom  " style="width: 100%;font-size: 14px;text-align: center;font-weight:lighter;margin-bottom: 2%;height: 30px; border-radius: 3pt">
+                        <button type="button" class="infobutton " style="">
+                            View Information
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="removePlayer" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" >
+            <div class="modal-dialog" style="width: 450px">
+
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
+                        <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
+                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="playersTitle"></span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
+
+                    </div>
+                    <!-- Modal content-->
+                    <div class="modal-body">
+                       
+                        <button onclick="removePlayer()" type="button" class="addbutton   " >
+                            Remove Player
+                        </button> 
+                        <button type="button" class="infobutton " style="">
                             View Information
                         </button>
                     </div>
