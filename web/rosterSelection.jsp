@@ -548,8 +548,13 @@
                         <div>
                             <h5 style="font-size: 16px; margin-left:5%; font-weight:lighter; margin-top: 5%">Search Player List</h5>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text">
+                        <div class="wrap">
+                            <div class="search">
+                                <input type="text" class="searchTerm" id="searchBOX" placeholder="Search">
+                                <button type="submit" class="searchButton" onclick="search()">
+                                    <i class="fa fa-search" ></i>
+                                </button>
+                            </div>
                         </div>
                         <div>
                             <h6 class="text-center" style="font-size: 16px; line-height: 10px; font-weight:lighter; margin-top: 6%"><span style="color:red;font-weight: bold;" id ="total"><%=request.getAttribute("total")%></span> players shown</h6>
@@ -857,7 +862,7 @@
                                     <td id="pricemid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=midprice.get(4)%></td>
                                     <td id="scoremid5" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(4)%></td>
                                 </tr >
-                                
+
                                 <%
                                     String midstr;
                                     String midimagestr;
@@ -972,7 +977,7 @@
                                     <td id="pricefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  ">$<%=fwdprice.get(4)%></td>
                                     <td id="scorefwd5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(4)%></td>
                                 </tr>
-                                
+
                                 <%
                                     String fwdstr;
                                     String fwdimagestr;
@@ -1009,6 +1014,48 @@
                                     }%>
 
                             </table>
+                            <table id="search" style="width:100%; background-color: #f9f5f5;display: none">
+                                <tr>
+                                    <th style="background-color:#02509a "></th>
+                                    <th style="background-color:#02509a; font-family: arial; color: white">PLAYERS</th> 
+                                    <th style="background-color:#02509a; text-align: center; font-family: arial; color: white">$</th>
+                                    <th id="catsrch" style="background-color:#02509a; text-align: center; font-family: arial; color: white">TS</th>
+                                </tr>
+                                <%  
+                                    String srchimage = "srchimage";
+                                    String srchname = "srchname";
+                                    String srchteam = "srchteam";
+                                    String srchpos = "srchpos";
+                                    String srchprice = "srchprice";
+                                    String srchscore = "srchscore";
+                                    String search="search";
+                                for (int i = 1; i <= 25; i++) {
+                                    srchimage = "srchimage" + i;
+                                    srchname = "srchname" + i;
+                                    srchteam = "srchteam" + i;
+                                    srchpos = "srchpos" + i;
+                                    srchprice = "srchprice" + i;
+                                    srchscore = "srchscore" + i;
+                                    search="search"+i;
+                                %>
+                                <tr id="<%=search%>" style='display: none;cursor:pointer' onclick="">
+                                    <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td  style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div  class='col-sm-2' style="width:37px;height: 30px">
+                                            <img id="<%=srchimage%>"  style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px">
+                                            <span id="<%=srchname%>" style="font-size: 15px"></span><hr style="border:none;margin-top: -17%">
+                                            <span id="<%=srchteam%>" style="font-size: 12px; font-weight: lighter "></span>
+                                            <span id="<%=srchpos%>" style="font-size: 12px;font-weight:lighter; padding-left: 10% "></span>
+                                        </div>
+                                    </td>
+                                    <td id="<%=srchprice%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%">$</td>
+                                    <td id="<%=srchscore%>" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%"></td>
+                                </tr>
+                                <% }
+                                %>
+                            </table>        
                         </div>
                         <div class="col-md-12" style="width:100%; margin-bottom: 2%">
                             <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn" style="width:10%;margin-top:4.5%;margin-right:2%; padding-right: 0.8% " disabled><i class="glyphicon glyphicon-backward"></i></button>
@@ -1031,7 +1078,7 @@
 
 
         <!--players modal -->
-        <div id="players" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div id="players" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
             <div class="modal-dialog" style="width: 450px">
 
                 <!-- Modal content-->
@@ -1059,8 +1106,8 @@
                 </div>
             </div>
         </div>
-        
-        <div id="removePlayer" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" >
+
+        <div id="removePlayer" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
             <div class="modal-dialog" style="width: 450px">
 
                 <!-- Modal content-->
@@ -1072,7 +1119,7 @@
                     </div>
                     <!-- Modal content-->
                     <div class="modal-body">
-                       
+
                         <button onclick="removePlayer()" type="button" class="addbutton   " >
                             Remove Player
                         </button> 

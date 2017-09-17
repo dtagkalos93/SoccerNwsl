@@ -280,3 +280,40 @@ h6 {
     background-color: #a5a4a4;
      color:white;
 }
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  width: 99%;
+  border: 2px solid #025a93;
+  padding: 5px;
+  border-radius: 5px;
+  color: #555;
+}
+
+.searchTerm:focus{
+  color: #555;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -31px;
+  width: 40px;
+  height: 32px;
+  border: 0px solid #025a93;
+  background: #025a93;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 80%;
+  margin-left: 5%;
+}

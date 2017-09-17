@@ -44,6 +44,10 @@
         <servlet-name>findPosition</servlet-name>
         <servlet-class>com.fantasy.findPosition</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>searchBox</servlet-name>
+        <servlet-class>com.fantasy.searchBox</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>findPosition</servlet-name>
         <url-pattern>/findPosition</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchBox</servlet-name>
+        <url-pattern>/searchBox</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

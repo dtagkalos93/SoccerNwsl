@@ -106,7 +106,7 @@ public class confirmation extends HttpServlet {
             rd.forward(request, response);
         } else {
 
-            System.out.println(password + "here");
+            
 
             dbCredentials exist = new dbCredentials();
             exist.addUser(firstName, lastName, email, password, gender, country, team);
@@ -208,7 +208,7 @@ public class confirmation extends HttpServlet {
                 sortgkscoreList.add(gkscoreList.get(pos));
                 gkscoreList.remove(pos);
             } else if (position.equals("mid")) {
-                System.out.println("Name of player: "+ midnameList.get(0).toString());
+                
                 int max = Integer.parseInt(midscoreList.get(0).toString());
                 int pos = 0;
 
@@ -271,18 +271,14 @@ public class confirmation extends HttpServlet {
             request.setAttribute("pricegk", sortgkpriceList);
             request.setAttribute("scoregk", sortgkscoreList);
         } else if (position.equals("mid")) {
-            for (int i = 0; i < sortmidnameList.size(); i++) {
-                    System.out.println(sortmidnameList.get(i).toString()+ " ");
-                }
+            
             request.setAttribute("namemid", sortmidnameList);
             request.setAttribute("badgemid", sortmidjerseyList);
             request.setAttribute("teammid", sortmidteamList);
             request.setAttribute("pricemid", sortmidpriceList);
             request.setAttribute("scoremid", sortmidscoreList);
         } else if (position.equals("fwd")) {
-             for (int i = 0; i < sortmidnameList.size(); i++) {
-                    System.out.println(sortfwdnameList.get(i).toString()+ " ");
-                }
+             
             request.setAttribute("namefwd", sortfwdnameList);
             request.setAttribute("badgefwd", sortfwdjerseyList);
             request.setAttribute("teamfwd", sortfwdteamList);
