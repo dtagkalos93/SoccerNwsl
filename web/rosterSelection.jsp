@@ -219,44 +219,44 @@
                             </div>
 
                             <hr style="border:none;margin-top: 46.5%">                          
-                            <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
+                            <div id="selMID1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                                 <p id="midname1" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team8"></p>
                             </div>                            
-                            <div class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeMID()">
+                            <div id="selMID2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                                 <p id="midname2" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team9"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeMID()">
+                            <div id="selMID3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                                 <p id="midname3" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team10"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeMID()">
+                            <div id="selMID4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                                 <p id="midname4" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team11"></p>
                             </div>
-                            <div class="col-md-2 col-xs-2" style="left: 5%" onclick="changeMID()">
+                            <div id="selMID5" class="col-md-2 col-xs-2" style="left: 5%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
                                 <p id="midname5" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team12"></p>
                             </div>                            
 
                             <hr style="border:none;margin-top: 66.5%">                          
-                            <div class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
+                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
                                 <p id="fwdname1" class="gkname" >Forward</p>
                                 <p style="display: none" id="team13"></p>
                             </div>
-                            <div class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
+                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
                                 <p id="fwdname2" class="gkname" >Forward</p>
                                 <p style="display: none" id="team14"></p>
                             </div>
-                            <div class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
+                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                                 <p id="fwdname3" class="gkname" >Forward</p>
                                 <p style="display: none" id="team15"></p>

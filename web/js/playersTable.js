@@ -2374,7 +2374,6 @@ function addPlayer() {
             }
         }
         if (i <= 5) {
-            
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("defimage" + i).src = "img/" + image;
@@ -2398,8 +2397,8 @@ function addPlayer() {
             document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("midimage" + i).src = "img/" + image;
             document.getElementById("midname" + i).innerHTML = name;
-            
             document.getElementById("team" + (i+7)).innerHTML = document.getElementById("playerTeam").textContent;
+            document.getElementById("selMID" + i).setAttribute('onclick','removeModalDEF(i)');
         }
 
     } else if (document.getElementById("playerPosition").textContent == 'Forward') {
@@ -2417,6 +2416,7 @@ function addPlayer() {
             document.getElementById("fwdimage" + i).src = "img/" + image;
             document.getElementById("fwdname" + i).innerHTML = name;
             document.getElementById("team" + (i+12)).innerHTML = document.getElementById("playerTeam").textContent;
+            document.getElementById("selFWD" + i).setAttribute('onclick','removeModalDEF(i)');
         }
 
     }
@@ -2496,6 +2496,42 @@ function removeModalGK(i) {
 function removeModalDEF(i) {
     console.log(i);
     var name = document.getElementById("defname" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse[0]);
+            document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            $('#removePlayer').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function removeModalDEF(i) {
+    console.log(i);
+    var name = document.getElementById("midname" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse[0]);
+            document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            $('#removePlayer').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function removeModalDEF(i) {
+    console.log(i);
+    var name = document.getElementById("fwdname" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
