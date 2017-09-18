@@ -287,7 +287,7 @@ h6 {
 }
 
 .searchTerm {
-  width: 99%;
+  width: 103%;
   border: 2px solid #025a93;
   padding: 5px;
   border-radius: 5px;
@@ -300,16 +300,17 @@ h6 {
 
 .searchButton {
   position: absolute;  
-  right: -31px;
-  width: 40px;
-  height: 32px;
+  margin-top: -12%;
+  right: -36px;
+  width: 34px;
+  height: 34px;
   border: 0px solid #025a93;
   background: #025a93;
   text-align: center;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /*Resize the wrap to see the search bar change!*/

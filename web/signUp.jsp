@@ -136,9 +136,7 @@
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
                             <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
-
                         </div>
-
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
@@ -196,29 +194,15 @@
                         <button type="submit" value="Next" class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 22%;padding:0.8%; appearance: button"> Next
                         <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
                         </button>
-
-
-
-
-
                     </div>
                 </form>
-
-
             </div>
-
-
-
-
-
+            
             <!-- jQuery -->
             <script src="js/jquery.js"></script>
 
             <!-- Bootstrap Core JavaScript -->
             <script src="js/bootstrap.min.js"></script>
-
-
-
     </body>
 
 </html>

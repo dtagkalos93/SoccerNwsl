@@ -21,10 +21,10 @@
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-        
 
 
-       
+
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -112,11 +112,11 @@
             </div>
             <!-- /.container -->
         </nav>
-        
+
         <div class="intro-header2">
 
-                <img src="img/banner2.png" style="visibility: hidden;width: 25%;height: 25%" />
-                
+            <img src="img/banner2.png" style="visibility: hidden;width: 25%;height: 25%" />
+
             <!-- /.container -->
 
         </div>
@@ -131,32 +131,32 @@
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;" >
                         <label class="col-md-3 col-xs-3" for="first" style="font-size: 20px" >First Name:</label>
                         <div class="col-md-9 col-xs-9"> 
-                            <input type="firstname" value="<%=request.getAttribute("firstname") %>" class="form-control" name="firstname" style="width:75%">
+                            <input type="firstname" value="<%=request.getAttribute("firstname")%>" class="form-control" name="firstname" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;">
                         <label class="col-md-3 col-xs-3" for="last" style="font-size: 20px" >Last Name:</label>
                         <div class="col-md-9 col-xs-9"> 
-                        <input type="lastname"  value="<%=request.getAttribute("lastname") %>" class="form-control" name="lastname" style="width:75%">
+                            <input type="lastname"  value="<%=request.getAttribute("lastname")%>" class="form-control" name="lastname" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
                         <label class="col-md-3 col-xs-3" for="email" style="font-size: 20px" >Email Address:</label>
                         <div class="col-md-9 col-xs-9"> 
-                        <input type="email" value="<%=request.getAttribute("email") %>"  class="form-control" name="email" style="width:75%">
+                            <input type="email" value="<%=request.getAttribute("email")%>"  class="form-control" name="email" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%">
                         <label class="col-md-3 col-xs-3" for="pwd" style="font-size: 20px" >Password:</label>
                         <div class="col-md-9 col-xs-9"> 
-                        <input type="password" value="<%=request.getAttribute("pwd") %>"  class="form-control" name="pwd" style="width:75%">
+                            <input type="password" value="<%=request.getAttribute("pwd")%>"  class="form-control" name="pwd" style="width:75%">
                         </div>
                     </div>
                     <div  style="margin-left: 20%;padding-bottom: 4%;display: none">
                         <label class="col-md-3 col-xs-3" for="gender" style="font-size: 20px"> Gender:</label>
                         <div class="col-md-9 col-xs-9"> 
-                            <%String gender=request.getAttribute("gender").toString();
-                                if (gender.equals("male")){%>
+                            <%String gender = request.getAttribute("gender").toString();
+                                if (gender.equals("male")) {%>
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px" checked> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
@@ -170,7 +170,7 @@
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px" > Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px" checked> Unspecified 
-                            <% } %>
+                            <% }%>
                         </div>
                     </div>
                     <div   style="margin-left: 20%;;display: none">
@@ -178,21 +178,16 @@
                         <div class="col-md-6 col-xs-6"  style=""> 
                             <input type="text" id="country" >
 
-                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                        <script src="js/countrySelect.min.js"></script>
-                        <script>
-                            $("#country").countrySelect();
-                        </script>
+                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                            <script src="js/countrySelect.min.js"></script>
+                            <script>
+                                $("#country").countrySelect();
+                            </script>
                         </div>
                     </div>
-                    
-		
                     <div class="col-md-12 col-xs-12" align="left" style="margin-bottom: 50px">
                         <button type="submit" class="btn btn-default" >Confirmation</button>
                     </div>
-       
-            </form>
-
-
-                </div>
+                </form>
+            </div>
         </div>
