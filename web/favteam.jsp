@@ -183,35 +183,35 @@
                                     <a name="team" value="boston" data-class="boston" class="list-group-item boston" style="padding: 1%;width: 105%;">
                                         <h4 style="margin-left: 5%">Boston Breakers
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/Boston_Breakers1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/Boston_Breakers1.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%;">
                                         <h4 style="margin-left: 5%">Chicago Red Stars 
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/ChicagoRedStars1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/ChicagoRedStars1.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;">
                                         <h4 style="margin-left: 5%">FC Kansas
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/kansasCity2.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/kansasCity2.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%;">
                                         <h4 style="margin-left: 5%">Houston Dash
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/Houston_Dash2.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/Houston_Dash2.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%;">
                                         <h4 style="margin-left: 5%">North Caroline Courage
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/North_Carolina_Courage1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/North_Carolina_Courage1.png"/>
                                             </span>
                                         </h4>
                                     </a>
@@ -222,35 +222,35 @@
                                     <a name="team" value="orlando" data-class="orlando" class="list-group-item orlando" style="padding: 1%;width: 105%">
                                         <h4 style="margin-left: 5%">Orlando Pride
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/OrlandoPride2.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/OrlandoPride2.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="portland" data-class="portland" class="list-group-item portland" style="padding: 1%;width: 105%">
                                         <h4 style="margin-left: 5%">Portland Thorns FC
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/Portland1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/Portland1.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%">
-                                    <h4 style="margin-left: 5%">Seattle Reign FC
+                                        <h4 style="margin-left: 5%">Seattle Reign FC
                                         <span>
-                                            <img style="float: right; margin-top: -3%" src="img/SeattleReignFC2.png"/>
+                                            <img style="float: right; margin-top: -4%" src="img/SeattleReignFC2.png"/>
                                         </span>
-                                    </h4>
+                                        </h4>
                                     </a>
                                     <a name="team" value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%">
                                         <h4 style="margin-left: 5%">Sky Blue FC
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/Sky_Blue_FC1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/Sky_Blue_FC1.png"/>
                                             </span>
                                         </h4>
                                     </a>
                                     <a name="team" value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%">
                                         <h4 style="margin-left: 5%">Washington Spirit
                                             <span>
-                                                <img style="float: right; margin-top: -3%" src="img/spirit.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/spirit.png"/>
                                             </span>
                                         </h4>
                                     </a>
