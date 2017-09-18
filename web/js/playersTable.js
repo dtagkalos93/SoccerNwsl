@@ -787,10 +787,10 @@ function showPlayers() {
     var selectionPl = document.getElementById('selectPlayers').value;
     var selectCat = document.getElementById('categorySelection').value;
     console.log("Select players " + selectCat + " Select Category " + selectionPl);
-    if($('#searchBOX').val()!=""){
-        search();
+    if ($('#searchBOX').val() != "") {
+        $('#searchBOX').val('');
     }
-    else if (selectionPl == "all") {
+    if (selectionPl == "all") {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -801,6 +801,7 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "TS";
                     document.getElementById("catMID").innerHTML = "TS";
                     document.getElementById("catFWD").innerHTML = "TS";
+
                 } else if (selectCat == 'minutes') {
                     document.getElementById("catGK").innerHTML = "MP";
                     document.getElementById("catDEF").innerHTML = "MP";
@@ -2325,7 +2326,11 @@ function addPlayer() {
 
     var players = document.getElementById("totalPlayers").textContent;
     document.getElementById("checkbox").style.display = "";
+    document.getElementById("checkbox").style.backgroundColor = "#92c992";
+    document.getElementById("checkbox").style.border = "1px solid green";
     document.getElementById("playername").innerHTML = document.getElementById("playersName").textContent;
+    document.getElementById("message").innerHTML = " has been added to your squad."
+
 
     document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
     var counter = 1;
@@ -2338,6 +2343,7 @@ function addPlayer() {
             console.log("here!!");
             document.getElementById("errorbox").style.display = '';
             document.getElementById("team").innerHTML = document.getElementById("playerTeam").textContent;
+            break;
         }
     }
     if (document.getElementById("totalPlayers").innerHTML == '15') {
@@ -2362,7 +2368,7 @@ function addPlayer() {
             document.getElementById("imagegk" + i).src = "img/" + image;
             document.getElementById("namegk" + i).innerHTML = name;
             document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
-            document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(i)');
+            document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
 
         }
 
@@ -2382,7 +2388,7 @@ function addPlayer() {
             document.getElementById("defimage" + i).src = "img/" + image;
             document.getElementById("defname" + i).innerHTML = name;
             document.getElementById("team" + (i + 2)).innerHTML = document.getElementById("playerTeam").textContent;
-            document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(i)');
+            document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
         }
 
     } else if (document.getElementById("playerPosition").textContent == 'Midfielder') {
@@ -2401,7 +2407,7 @@ function addPlayer() {
             document.getElementById("midimage" + i).src = "img/" + image;
             document.getElementById("midname" + i).innerHTML = name;
             document.getElementById("team" + (i + 7)).innerHTML = document.getElementById("playerTeam").textContent;
-            document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(i)');
+            document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
         }
 
     } else if (document.getElementById("playerPosition").textContent == 'Forward') {
@@ -2414,12 +2420,14 @@ function addPlayer() {
             }
         }
         if (i <= 3) {
+            console.log("selFWD " + i);
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("fwdimage" + i).src = "img/" + image;
             document.getElementById("fwdname" + i).innerHTML = name;
             document.getElementById("team" + (i + 12)).innerHTML = document.getElementById("playerTeam").textContent;
-            document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(i)');
+            document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
+
         }
 
     }
@@ -2481,6 +2489,7 @@ function reset() {
 function removeModalGK(i) {
     console.log(i);
     var name = document.getElementById("namegk" + i).textContent;
+    var team = document.getElementById("gkteam" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2489,6 +2498,10 @@ function removeModalGK(i) {
             var jsonResponse = JSON.parse(data);
             console.log(jsonResponse[0]);
             document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            document.getElementById("rmvplayersName").innerHTML = name;
+            document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("rmvplayerNo").innerHTML = i;
+            document.getElementById("rmvplayerTeam").innerHTML = team;
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -2499,6 +2512,7 @@ function removeModalGK(i) {
 function removeModalDEF(i) {
     console.log(i);
     var name = document.getElementById("defname" + i).textContent;
+    var team = document.getElementById("teamdef" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2507,6 +2521,10 @@ function removeModalDEF(i) {
             var jsonResponse = JSON.parse(data);
             console.log(jsonResponse[0]);
             document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            document.getElementById("rmvplayersName").innerHTML = name;
+            document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("rmvplayerNo").innerHTML = i;
+            document.getElementById("rmvplayerTeam").innerHTML = team;
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -2517,6 +2535,7 @@ function removeModalDEF(i) {
 function removeModalMID(i) {
     console.log(i);
     var name = document.getElementById("midname" + i).textContent;
+    var team = document.getElementById("teammid" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2525,6 +2544,10 @@ function removeModalMID(i) {
             var jsonResponse = JSON.parse(data);
             console.log(jsonResponse[0]);
             document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            document.getElementById("rmvplayersName").innerHTML = name;
+            document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("rmvplayerNo").innerHTML = i;
+            document.getElementById("rmvplayerTeam").innerHTML = team;
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -2535,6 +2558,7 @@ function removeModalMID(i) {
 function removeModalFWD(i) {
     console.log(i);
     var name = document.getElementById("fwdname" + i).textContent;
+    var team = document.getElementById("teamfwd" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2543,6 +2567,10 @@ function removeModalFWD(i) {
             var jsonResponse = JSON.parse(data);
             console.log(jsonResponse[0]);
             document.getElementById("playersTitle").innerHTML = jsonResponse[0];
+            document.getElementById("rmvplayersName").innerHTML = name;
+            document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("rmvplayerNo").innerHTML = i;
+            document.getElementById("rmvplayerTeam").innerHTML = team;
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -2568,7 +2596,7 @@ function search() {
     document.getElementById("prevPlayersSelect").style.display = "none";
     document.getElementById("nextPlayersSelect").style.display = "none";
     document.getElementById("endSelect").style.display = "none";
-    
+
 
 
     var selectCat = document.getElementById('categorySelection').value;
@@ -2580,37 +2608,37 @@ function search() {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var k = 1;
-           if (selectCat == 'score') {
-                    document.getElementById("catsrch").innerHTML = "TS";    
-                } else if (selectCat == 'minutes') {
-                    document.getElementById("catsrch").innerHTML = "MP";
-                } else if (selectCat == 'goalScored') {
-                    document.getElementById("catsrch").innerHTML = "GS";
-                } else if (selectCat == 'assist') {
-                    document.getElementById("catsrch").innerHTML = "A";
-                } else if (selectCat == 'cleanSheet') {
-                    document.getElementById("catsrch").innerHTML = "CS";
-                } else if (selectCat == 'ownGoal') {
-                    document.getElementById("catsrch").innerHTML = "OG";
-                } else if (selectCat == 'goalConceded') {
-                    document.getElementById("catsrch").innerHTML = "GC";
-                } else if (selectCat == 'penaltySaved') {
-                    document.getElementById("catsrch").innerHTML = "PS";
-                } else if (selectCat == 'penaltyMissed') {
-                    document.getElementById("catsrch").innerHTML = "PM";
-                } else if (selectCat == 'yellowCard') {
-                    document.getElementById("catsrch").innerHTML = "YC";
-                } else if (selectCat == 'redCard') {
-                    document.getElementById("catsrch").innerHTML = "RC";
-                } else if (selectCat == 'saves') {
-                    document.getElementById("catsrch").innerHTML = "S";
-                }
+            if (selectCat == 'score') {
+                document.getElementById("catsrch").innerHTML = "TS";
+            } else if (selectCat == 'minutes') {
+                document.getElementById("catsrch").innerHTML = "MP";
+            } else if (selectCat == 'goalScored') {
+                document.getElementById("catsrch").innerHTML = "GS";
+            } else if (selectCat == 'assist') {
+                document.getElementById("catsrch").innerHTML = "A";
+            } else if (selectCat == 'cleanSheet') {
+                document.getElementById("catsrch").innerHTML = "CS";
+            } else if (selectCat == 'ownGoal') {
+                document.getElementById("catsrch").innerHTML = "OG";
+            } else if (selectCat == 'goalConceded') {
+                document.getElementById("catsrch").innerHTML = "GC";
+            } else if (selectCat == 'penaltySaved') {
+                document.getElementById("catsrch").innerHTML = "PS";
+            } else if (selectCat == 'penaltyMissed') {
+                document.getElementById("catsrch").innerHTML = "PM";
+            } else if (selectCat == 'yellowCard') {
+                document.getElementById("catsrch").innerHTML = "YC";
+            } else if (selectCat == 'redCard') {
+                document.getElementById("catsrch").innerHTML = "RC";
+            } else if (selectCat == 'saves') {
+                document.getElementById("catsrch").innerHTML = "S";
+            }
             document.getElementById("total").innerHTML = (jsonResponse.length / 6);
 
             for (i = 0; i < jsonResponse.length; i = i + 6) {
                 if (k > 25)
                     break;
-                
+
                 document.getElementById("search" + k).style.display = "";
                 document.getElementById("srchname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("srchpos" + k).innerHTML = jsonResponse[i + 1];
@@ -2626,9 +2654,159 @@ function search() {
             }
         }
     };
-    xhttp.open("GET", "searchBox?name=" + name+"&cat="+selectCat, true);
+    xhttp.open("GET", "searchBox?name=" + name + "&cat=" + selectCat, true);
     xhttp.send();
 
 
 
+}
+
+
+function searchModal(i) {
+    var name = document.getElementById("srchname" + i).textContent;
+    var price = document.getElementById("srchprice" + i).textContent;
+    var image = document.getElementById("srchimage" + i).src;
+    var team = document.getElementById("srchteam" + i).textContent;
+    image = image.split("/")[5];
+
+
+
+
+
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " " + price;
+            document.getElementById("playersName").innerHTML = name;
+            document.getElementById("playerNo").innerHTML = i;
+            document.getElementById("playerPrice").innerHTML = price;
+            document.getElementById("playerImage").innerHTML = image;
+            document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
+            $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function removePlayer() {
+    var players = document.getElementById("totalPlayers").textContent;
+    document.getElementById("checkbox").style.display = "";
+    document.getElementById("checkbox").style.backgroundColor = "#ea344f";
+    document.getElementById("checkbox").style.border = "1px solid #d4213c";
+    document.getElementById("playername").innerHTML = document.getElementById("rmvplayersName").textContent;
+    document.getElementById("message").innerHTML = " remove from the squad."
+
+    document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
+    var counter = 0;
+    for (i = 1; i <= 15; i++) {
+        for (j = eval(i) + 1; j <= 15; j++) {
+            if (document.getElementById("team" + j).textContent == document.getElementById("team" + i).textContent && document.getElementById("team" + i).textContent != "") {
+                counter = eval(counter) + 1;
+                console.log("Counter    : " + counter);
+                break;
+            }
+            
+        }
+        
+
+    }
+    if (counter <= 4) {
+        console.log("here!!" + counter);
+        document.getElementById("errorbox").style.display = 'none';
+
+        }
+    
+    if ((eval(counter) - 1) <= 4) {
+        console.log("here!!" + counter);
+        document.getElementById("errorbox").style.display = 'none';
+
+    } else {
+        document.getElementById("errorbox").style.display = '';
+        document.getElementById("team").innerHTML = document.getElementById("playerTeam").textContent;
+    }
+    if (counter <= 4) {
+        document.getElementById("errorbox").style.display = 'none';
+    }
+    if (document.getElementById("totalPlayers").innerHTML != '15') {
+
+        document.getElementById("allPlayers").style.color = '#d4213c';
+        document.getElementById("totalPlayers").style.color = '#d4213c';
+    }
+    console.log("PLAYERS " + players);
+    if (document.getElementById("rmvplayerPosition").textContent == 'Goalkeeper') {
+        var name = document.getElementById("rmvplayersName").textContent;
+
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkname" + i).textContent == name) {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+                break;
+            }
+        }
+        console.log("playersNO " + document.getElementById("rmvplayerNo").textContent);
+        document.getElementById("imagegk" + document.getElementById("rmvplayerNo").textContent).src = "img/" + 'subsgk.png';
+        document.getElementById("namegk" + document.getElementById("rmvplayerNo").textContent).innerHTML = 'Goalkeeper';
+        document.getElementById("team" + (document.getElementById("rmvplayerNo").textContent)).innerHTML = ' ';
+        document.getElementById("selGK" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeGK()');
+
+
+
+    } else if (document.getElementById("rmvplayerPosition").textContent == 'Defender') {
+        var name = document.getElementById("rmvplayersName").textContent;
+
+        for (k = 1; k <= 20; k++) {
+            if (document.getElementById("defname" + k).textContent == name) {
+                document.getElementById("def" + k).style.pointerEvents = 'auto';
+                document.getElementById("def" + k).style.opacity = '1';
+                break;
+            }
+        }
+
+        document.getElementById("defimage" + document.getElementById("rmvplayerNo").textContent).src = "img/" + 'subs.png';
+        document.getElementById("defname" + document.getElementById("rmvplayerNo").textContent).innerHTML = 'Defender';
+        document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 2)).innerHTML = ' ';
+        document.getElementById("selDEF" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeDEF()');
+
+
+    } else if (document.getElementById("rmvplayerPosition").textContent == 'Midfielder') {
+        var name = document.getElementById("rmvplayersName").textContent;
+
+        for (k = 1; k <= 20; k++) {
+            if (document.getElementById("midname" + k).textContent == name) {
+                document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                document.getElementById("mid" + k).style.opacity = '1';
+                break;
+            }
+        }
+        document.getElementById("midimage" + document.getElementById("rmvplayerNo").textContent).src = "img/" + 'subs.png';
+        document.getElementById("midname" + document.getElementById("rmvplayerNo").textContent).innerHTML = 'Midfielder';
+        document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 7)).innerHTML = ' ';
+        document.getElementById("selMID" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeMID()');
+
+
+    } else if (document.getElementById("rmvplayerPosition").textContent == 'Forward') {
+        var name = document.getElementById("rmvplayersName").textContent;
+
+        for (k = 1; k <= 20; k++) {
+            if (document.getElementById("fwdname" + k).textContent == name) {
+                document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + k).style.opacity = '1';
+                break;
+            }
+        }
+        document.getElementById("fwdimage" + document.getElementById("rmvplayerNo").textContent).src = "img/" + "subs.png";
+        document.getElementById("fwdname" + document.getElementById("rmvplayerNo").textContent).innerHTML = 'Forward';
+        document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 12)).innerHTML = ' ';
+        document.getElementById("selFWD" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeFWD()');
+    }
+
+
+    $('#removePlayer').modal('hide');
 }

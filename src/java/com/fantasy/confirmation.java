@@ -95,6 +95,7 @@ public class confirmation extends HttpServlet {
         String gender = request.getParameter("gender");
         String country = request.getParameter("country");
         String team = request.getParameter("team");
+        System.out.println(team);
         if (team.equals("")) {
             request.setAttribute("firstname", firstName);
             request.setAttribute("lastname", lastName);

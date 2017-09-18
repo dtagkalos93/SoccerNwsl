@@ -176,7 +176,7 @@
                             <h5  style="text-align: center; font-size: 14px">More than 4 players selected from <span id="team"></span>.</h5>
                         </div>
                         <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
-                            <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span> has been added to your squad.</h5>
+                            <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
@@ -251,12 +251,12 @@
                                 <p id="fwdname1" class="gkname" >Forward</p>
                                 <p style="display: none" id="team13"></p>
                             </div>
-                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
+                            <div id="selFWD2" class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
                                 <p id="fwdname2" class="gkname" >Forward</p>
                                 <p style="display: none" id="team14"></p>
                             </div>
-                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
+                            <div id="selFWD3" class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                                 <p id="fwdname3" class="gkname" >Forward</p>
                                 <p style="display: none" id="team15"></p>
@@ -1038,7 +1038,7 @@
                                     srchscore = "srchscore" + i;
                                     search="search"+i;
                                 %>
-                                <tr id="<%=search%>" style='display: none;cursor:pointer' onclick="">
+                                <tr id="<%=search%>" style='display: none;cursor:pointer' onclick="searchModal(<%=i%>)">
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
                                     <td  style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div  class='col-sm-2' style="width:37px;height: 30px">
@@ -1119,6 +1119,11 @@
                     </div>
                     <!-- Modal content-->
                     <div class="modal-body">
+                        <p style="display:none" id="rmvplayersName"></p>
+                        <p style="display:none" id="rmvplayerNo"></p>
+                        <p style="display:none" id="rmvplayerPosition"></p>
+                        <p style="display:none" id="rmvplayerTeam"></p>
+                        
 
                         <button onclick="removePlayer()" type="button" class="addbutton   " >
                             Remove Player
