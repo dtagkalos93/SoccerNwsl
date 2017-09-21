@@ -54,13 +54,21 @@ public class findPosition extends HttpServlet {
 
             // Load the database driver
             Class.forName("com.mysql.jdbc.Driver");
-
+            String sql="";
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-
+            if(name.contains("'")){
+                String[] nameSTR=name.split("'");
+                
+                 sql = "SELECT position,fullname FROM players where name='" + nameSTR[0]+"\\'"+nameSTR[1] + "'";
+                System.out.println("here with the '"+sql+"part1="+nameSTR[0]+ "part2=" + nameSTR[1]);
+            }
+            else{
+                 sql = "SELECT position,fullname FROM players where name='" + name + "'";
+            }
             int i = 1;
             //Select the data from the database
-            String sql = "SELECT position,fullname FROM players where name='" + name + "'";
+            
             System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);

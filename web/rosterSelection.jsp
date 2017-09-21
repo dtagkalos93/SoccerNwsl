@@ -173,8 +173,10 @@
                             </div>
                         </div>
                         <div class="col-sm-12  " class="col-md-12 col-xs-12" style="border: 1px solid #d4213c; background-color:#ea344f; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none " id='errorbox'> 
-                            <h5  style="text-align: center; font-size: 14px">More than 4 players selected from <span id="team"></span>.</h5>
-                        </div>
+                            <h5  id="teamError" style="text-align: center; font-size: 14px">More than 4 players selected from <span id="team"></span>.</h5>
+                            <h5  id="posError" style="text-align: center; font-size: 14px;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
+                            <h5  id="enterError" style="text-align: center; font-size: 14px;display: none">Please complete your Team!</h5>
+                            </div>
                         <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                             <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                         </div>
@@ -262,7 +264,7 @@
                                 <p style="display: none" id="team15"></p>
                             </div>
                         </div>
-                        <a href="enterRoster.html"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
+                        <a id="enterTeam"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
                             Enter Roster
                         </a>
                         <%
