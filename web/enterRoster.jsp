@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,6 +124,22 @@
 
 
                 <!-- Blog Entries Column -->
+                
+                                <%
+                    ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
+                    ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
+                    ArrayList<String> gkjersey = (ArrayList<String>) request.getAttribute("jerseygk");
+                    ArrayList<String> defname = (ArrayList<String>) request.getAttribute("namedef");
+                    ArrayList<String> defteam = (ArrayList<String>) request.getAttribute("teamdef");
+                    ArrayList<String> defjersey = (ArrayList<String>) request.getAttribute("jerseydef");
+                    ArrayList<String> midname = (ArrayList<String>) request.getAttribute("namemid");
+                    ArrayList<String> midteam = (ArrayList<String>) request.getAttribute("teammid");
+                    ArrayList<String> midjersey = (ArrayList<String>) request.getAttribute("jerseymid");
+                    ArrayList<String> fwdname = (ArrayList<String>) request.getAttribute("namefwd");
+                    ArrayList<String> fwdteam = (ArrayList<String>) request.getAttribute("teamfwd");
+                    ArrayList<String> fwdjersey = (ArrayList<String>) request.getAttribute("jerseyfwd");
+
+                %>   
 
                 <h3 class="col-md-12 col-xs-12" style="font-family: arial; margin-top: 4.7%">Roster Review</h3>
 
@@ -143,195 +160,195 @@
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=gkjersey.get(0)%>" style="width:31px;height:30px;float:right" /> 
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Harris </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=gkname.get(0)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">ORL</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=gkteam.get(0)%></td>
                             <td style="text-align:center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">10</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=gkjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Harris </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=gkname.get(1)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">ORL</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%"><%=gkteam.get(1)%></td>
                             <td style="text-align:center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">10</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/breakers1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=defjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Westphal</span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=defname.get(0)%></span>
                                 </div>
                             </td>
                             <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">BOS</td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">10</td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(0)%></td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=defjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Ertz </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=defname.get(1)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">CHI</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(1)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">11</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=defjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Krieger</span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=defname.get(2)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">ORL</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(2)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">12</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/kansas1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=defjersey.get(3)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Sauerbrunn</span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=defname.get(3)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">KC</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(3)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">15</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/kansas1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=defjersey.get(4)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Sauerbrunn</span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=defname.get(4)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">KC</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%"><%=defteam.get(4)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f; width: 12.5%">15</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/courage.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=midjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">S. Mewis </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(0)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">NC</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=midteam.get(0)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=midjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Rapinoe </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(1)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">SEA</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=midteam.get(1)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/skyblue1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=midjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Killion </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(2)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">NJ</td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">10</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=midteam.get(2)%></td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/thorns1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=midjersey.get(3)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Horan </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(3)%> </span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">POR</td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">15</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=midteam.get(3)%></td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
-                            <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>MID</td>
+                            <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/thorns1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=midjersey.get(4)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Horan </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(4)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">POR</td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">15</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%"><%=midteam.get(4)%></td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f; width: 12.5%">15</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=fwdjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Press</span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(0)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">CHI</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=fwdteam.get(0)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=fwdjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Marta </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(1)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">ORL</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=fwdteam.get(1)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <img src="img/<%=fwdjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
                                 <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%">Marta </span>
+                                    <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(2)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">ORL</td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=fwdteam.get(2)%></td>
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                     </table>

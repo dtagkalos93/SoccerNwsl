@@ -2914,14 +2914,10 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
             document.getElementById("enterError").style.display = '';
         }
         else{
-            if(i==1){
+
                 counter=eval(counter)+1;
-                 enterTeam=enterTeam+document.getElementById("namegk" + i).textContent+",";
-            }
-            else{
-                counter=eval(counter)+1;
-                 enterTeam=enterTeam+"gk"+i+":"+document.getElementById("namegk" + i).textContent+",";
-            }
+                 enterTeam=enterTeam+document.getElementById("namegk" + i).textContent+"-"+document.getElementById("team" + (i)).textContent+",";
+            
                
            
         }
@@ -2935,7 +2931,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
         }
         else{
             counter=eval(counter)+1;
-                enterTeam=enterTeam+"def"+i+":"+document.getElementById("defname" + i).textContent+",";
+                enterTeam=enterTeam+document.getElementById("defname" + i).textContent+"-"+document.getElementById("team" + (i+2)).textContent+",";
            
         }
     }
@@ -2948,7 +2944,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
         }
         else{
             counter=eval(counter)+1;
-                enterTeam=enterTeam+"mid"+i+":"+document.getElementById("midname" + i).textContent+",";
+                enterTeam=enterTeam+document.getElementById("midname" + i).textContent+"-"+document.getElementById("team" + (i+7)).textContent+",";
            
         }
     }
@@ -2962,11 +2958,11 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
         else{
             if(i==3){
                 counter=eval(counter)+1;
-                enterTeam=enterTeam+"fwd"+i+":"+document.getElementById("fwdname" + i).textContent;
+                enterTeam=enterTeam+document.getElementById("fwdname" + i).textContent+"-"+document.getElementById("team" + (i+12)).textContent;
             }
             else{
                 counter=eval(counter)+1;
-                enterTeam=enterTeam+"fwd"+i+":"+document.getElementById("fwdname" + i).textContent+",";
+                enterTeam=enterTeam+document.getElementById("fwdname" + i).textContent+"-"+document.getElementById("team" + (i+12)).textContent+",";
             }
                 
            
@@ -2974,10 +2970,53 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
     }
     console.log(enterTeam+"");
     if(counter==15){
-        $.get("enterTeam", {gk1:enterTeam}, function (){
-             window.location ="enterRoster.html";
-        });
+        window.location ="enterTeam?name=" + enterTeam;
+//        $.get("enterTeam", {gk1:enterTeam}, function (){
+//             window.location ="enterRoster.html";
+//        });
     }
     
     
 });
+
+function autopick() {
+        var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            var k=1;
+            for(i=0;i<6;i=i+3){
+                document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i+1];
+                document.getElementById("namegk" + k).innerHTML = jsonResponse[i];
+                document.getElementById("team" + k).innerHTML = jsonResponse[i+2];
+                k++;
+            }
+            var k=1;
+            for(i=6;i<21;i=i+3){
+                document.getElementById("defimage" + k).src = "img/" + jsonResponse[i+1];
+                document.getElementById("defname" + k).innerHTML = jsonResponse[i];
+                document.getElementById("team" + (k+2)).innerHTML = jsonResponse[i+2];
+                k++;
+            }
+            var k=1;
+            for(i=21;i<36;i=i+3){
+                document.getElementById("midimage" + k).src = "img/" + jsonResponse[i+1];
+                document.getElementById("midname" + k).innerHTML = jsonResponse[i];
+                document.getElementById("team" + (k+7)).innerHTML = jsonResponse[i+2];
+                k++;
+            }
+            var k=1;
+            for(i=36;i<45;i=i+3){
+                document.getElementById("fwdimage" + k).src = "img/" + jsonResponse[i+1];
+                document.getElementById("fwdname" + k).innerHTML = jsonResponse[i];
+                document.getElementById("team" + (k+12)).innerHTML = jsonResponse[i+2];
+                k++;
+            }
+            
+        }
+    };
+    xhttp.open("GET", "autopick", true);
+    xhttp.send();
+}

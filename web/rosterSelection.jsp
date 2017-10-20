@@ -155,7 +155,7 @@
 
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%" >
                                 <div class="col-md-6  col-xs-6" style="width: 50%;margin-top: 3%;margin-bottom:3%">
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;left: -4%">
+                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;left: -4%" onclick="autopick()">
                                         Auto Pick 
                                     </button> 
                                     <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;float: right" onclick="reset()">
