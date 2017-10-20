@@ -100,7 +100,8 @@ public class fixture extends HttpServlet {
             else if(weeks>10){
                 weeks=weeks-1;
             }
-            
+            if (weeks >= 22 )
+                weeks = 22;
             //Select the data from the database
             String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
             dataList.add("Gameweek " + weeks);

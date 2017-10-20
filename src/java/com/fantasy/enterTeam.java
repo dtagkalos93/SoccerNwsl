@@ -34,13 +34,10 @@ public class enterTeam extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("EnterRoster");
-       RequestDispatcher dispatcher = request.getRequestDispatcher("enterRoster.html");
-
-        if (dispatcher != null) {
-
-            dispatcher.forward(request, response);
-
-        }   
+        
+     RequestDispatcher rd = request.getRequestDispatcher("/enterRoster.html");
+            rd.forward(request, response);
+        
     }
 
    

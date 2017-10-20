@@ -79,7 +79,6 @@ h6 {
 
 .bc-img{
     background:url(../img/pitch2.jpg) no-repeat  ;
-    background-size:100% 100%;
     padding-bottom: 3%;
 
 }
@@ -125,21 +124,18 @@ h6 {
 }
 
  .image-player{
-        height: 25%;
-        width: 25%;
+        width: 26%;
         position: relative;
-        left: 15.5px;
+        left: 15px;
     }
 
     .image-player-for{
-        height: 40%;
         width: 40%;
         position: relative;
         left: 17px;
     }
 
     .image-player-cb{
-        height: 93%;
         width: 93%;
         position: relative;
         left: 17px;

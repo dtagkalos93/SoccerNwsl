@@ -99,6 +99,7 @@ public class searchBox extends HttpServlet {
             resultSet = s.getResultSet();
             while (resultSet.next()) {
                 namelist.add(resultSet.getString("name"));
+                
                 if (resultSet.getString("position").equals("Goalkeeper")) {
                     poslist.add("GK");
                     pos = "Goalkeeper";
@@ -242,7 +243,7 @@ public class searchBox extends HttpServlet {
         int k = 1;
         int no = scorelist.size();
         System.out.println("="+no);
-        while (k < no) {
+        while (k <=no) {
 
             int max = Integer.parseInt(scorelist.get(0).toString());
             int pos = 0;
@@ -254,6 +255,7 @@ public class searchBox extends HttpServlet {
                     pos = i;
                 }
             }
+            System.out.println("name" +namelist.get(pos));
             list.add(namelist.get(pos));
             namelist.remove(pos);
             list.add(poslist.get(pos));

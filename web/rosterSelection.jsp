@@ -187,13 +187,13 @@
                                 <p class="gkname" id="namegk1" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
                             </div>
-                            <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 1.3%" onclick="changeGK()">
+                            <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 2.3%" onclick="changeGK()">
                                 <img class="image-player" id="imagegk2" src="img/subsgk.png" />
                                 <p class="gkname" id="namegk2" >Goalkeeper</p>
                                 <p style="display: none" id="team2"></p>
                             </div>
 
-                            <hr style="border:none;margin-top: 26.5%">
+                            <hr style="border:none;margin-top: 20.5%">
                             <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                                 <p id="defname1" class="cbname" >Defender</p>
@@ -220,7 +220,7 @@
                                 <p style="display: none" id="team7"></p>
                             </div>
 
-                            <hr style="border:none;margin-top: 46.5%">                          
+                            <hr style="border:none;margin-top: 20.5%">                          
                             <div id="selMID1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                                 <p id="midname1" class="cbname" >Midfielder</p>
@@ -247,7 +247,7 @@
                                 <p style="display: none" id="team12"></p>
                             </div>                            
 
-                            <hr style="border:none;margin-top: 66.5%">                          
+                            <hr style="border:none;margin-top: 20.5%">                          
                             <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
                                 <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
                                 <p id="fwdname1" class="gkname" >Forward</p>
@@ -288,11 +288,15 @@
                             <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: bold; font-size:17px;left:8.5%; margin-top: -0.5%;margin-bottom: -2%" align="center">
                                 <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
                             </h5>
+                                <%
+                                    if(!posts.get(2).equals("Gameweek 23")){
+                                        %>
                             <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; margin-right:-2.1%;padding: 1%">
                                 Next
                             </button>
 
                             <%
+                                }
                                 for (int i = 0; i < date.size(); i++) {
                                     String game = "game" + i;
 
@@ -1087,7 +1091,7 @@
                 <div class="modal-content" >
                     <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
                         <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
-                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
+                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4.5%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
 
                     </div>
                     <!-- Modal content-->

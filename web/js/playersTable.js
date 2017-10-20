@@ -2669,7 +2669,9 @@ function removeModalFWD(i) {
 
 
 function search() {
-    
+    var selectCat = document.getElementById('categorySelection').value;
+    var name = $('#searchBOX').val();
+    if (name.length > 0){
     document.getElementById("gk").style.display = "none";
     document.getElementById("def").style.display = "none";
     document.getElementById("mid").style.display = "none";
@@ -2685,11 +2687,10 @@ function search() {
     document.getElementById("prevPlayersSelect").style.display = "none";
     document.getElementById("nextPlayersSelect").style.display = "none";
     document.getElementById("endSelect").style.display = "none";
+    
 
 
-
-    var selectCat = document.getElementById('categorySelection').value;
-    var name = $('#searchBOX').val();
+    
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2745,7 +2746,10 @@ function search() {
     };
     xhttp.open("GET", "searchBox?name=" + name + "&cat=" + selectCat, true);
     xhttp.send();
-
+    }
+    else {
+        showPlayers();
+    }
 
 
 }
@@ -2792,6 +2796,7 @@ function removePlayer() {
     document.getElementById("playername").innerHTML = document.getElementById("rmvplayersName").textContent;
     document.getElementById("message").innerHTML = " remove from the squad."
     document.getElementById("enterError").style.display = 'none';
+    document.getElementById("teamError").style.display = 'none';
 
     document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
     var counter = 0;
@@ -2969,7 +2974,9 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
     }
     console.log(enterTeam+"");
     if(counter==15){
-        $.get("enterTeam", {gk1:enterTeam}, function (){});
+        $.get("enterTeam", {gk1:enterTeam}, function (){
+             window.location ="enterRoster.html";
+        });
     }
     
     
