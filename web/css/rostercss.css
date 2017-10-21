@@ -94,6 +94,9 @@ h6 {
     padding-top: 0px;
     font-size: 14px;
     opacity: 0.9;
+     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 

@@ -124,8 +124,8 @@
 
 
                 <!-- Blog Entries Column -->
-                
-                                <%
+
+                <%
                     ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
                     ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
                     ArrayList<String> gkjersey = (ArrayList<String>) request.getAttribute("jerseygk");
@@ -162,7 +162,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=gkjersey.get(0)%>" style="width:31px;height:30px;float:right" /> 
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=gkname.get(0)%> </span>
                                 </div>
                             </td>
@@ -175,7 +175,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=gkjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=gkname.get(1)%> </span>
                                 </div>
                             </td>
@@ -188,7 +188,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=defjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(0)%></span>
                                 </div>
                             </td>
@@ -201,7 +201,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=defjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(1)%></span>
                                 </div>
                             </td>
@@ -214,7 +214,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=defjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(2)%></span>
                                 </div>
                             </td>
@@ -227,7 +227,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=defjersey.get(3)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(3)%></span>
                                 </div>
                             </td>
@@ -240,7 +240,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=defjersey.get(4)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(4)%></span>
                                 </div>
                             </td>
@@ -253,7 +253,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=midjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=midname.get(0)%> </span>
                                 </div>
                             </td>
@@ -266,7 +266,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=midjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=midname.get(1)%> </span>
                                 </div>
                             </td>
@@ -279,7 +279,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=midjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=midname.get(2)%> </span>
                                 </div>
                             </td>
@@ -292,7 +292,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=midjersey.get(3)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=midname.get(3)%> </span>
                                 </div>
                             </td>
@@ -300,17 +300,17 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
-                            <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>DEF</td>
-                            <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
+                            <td style='font-size: 13px; border-bottom:1px solid #ac0f1f;text-align: center; width: 15%'>MID</td>
+                            <td style="font-weight: lighter ;font-size:15px;border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=midjersey.get(4)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
-                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(4)%></span>
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
+                                    <span style="font-size: 14px; margin-left: -15%"><%=midname.get(4)%> </span>
                                 </div>
                             </td>
                             <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%"><%=midteam.get(4)%></td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f; width: 12.5%">15</td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">13</td>
                         </tr>
                         <tr>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
@@ -318,7 +318,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=fwdjersey.get(0)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(0)%></span>
                                 </div>
                             </td>
@@ -331,7 +331,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=fwdjersey.get(1)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(1)%></span>
                                 </div>
                             </td>
@@ -344,7 +344,7 @@
                                 <div class='col-sm-2' style="width:37px;height: 30px">
                                     <img src="img/<%=fwdjersey.get(2)%>" style="width:31px;height:30px;float:right" />
                                 </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 4px">
+                                <div class='col-sm-10' style="width:80%;height: 30px;right: 3px; padding-top: 4px">
                                     <span style="font-size: 14px; margin-left: -15%"><%=fwdname.get(2)%></span>
                                 </div>
                             </td>
@@ -353,387 +353,465 @@
                         </tr>
                     </table>
                 </div>
-        <div class="col-md-6 col-xs-6">
-            <h4 class="col-md-12 col-xs-12" style="margin-top: 0.3%; border-top: 4px solid #1d3260; background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.1%;padding-bottom: 1.3%">Selected Players by Team</h4>
-            <div  class="col-md-12 col-xs-12 border-rule">
-                <a class="cola2 collapsed col-md-12 col-xs-12 rules" data-toggle="collapse" href="#boston" style="color:black " >
-                    <span ><img src="img/Boston_Breakers1.png" style="width:42px;height:25px" /></span>Boston Breakers (1/15)
-                </a>
-                <div id="boston" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;' >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/breakers1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Westphal</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">DEF</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
+                <%
+                    ArrayList<String> bosname = (ArrayList<String>) request.getAttribute("namebos");
+                    ArrayList<String> bospos = (ArrayList<String>) request.getAttribute("posbos");
+                    ArrayList<String> bosjersey = (ArrayList<String>) request.getAttribute("jerseybos");
+                    ArrayList<String> chiname = (ArrayList<String>) request.getAttribute("namechi");
+                    ArrayList<String> chipos = (ArrayList<String>) request.getAttribute("poschi");
+                    ArrayList<String> chijersey = (ArrayList<String>) request.getAttribute("jerseychi");
+                    ArrayList<String> kcname = (ArrayList<String>) request.getAttribute("namekc");
+                    ArrayList<String> kcpos = (ArrayList<String>) request.getAttribute("poskc");
+                    ArrayList<String> kcjersey = (ArrayList<String>) request.getAttribute("jerseykc");
+                    ArrayList<String> houname = (ArrayList<String>) request.getAttribute("namehou");
+                    ArrayList<String> houpos = (ArrayList<String>) request.getAttribute("poshou");
+                    ArrayList<String> houjersey = (ArrayList<String>) request.getAttribute("jerseyhou");
+                    ArrayList<String> ncname = (ArrayList<String>) request.getAttribute("namenc");
+                    ArrayList<String> ncpos = (ArrayList<String>) request.getAttribute("posnc");
+                    ArrayList<String> ncjersey = (ArrayList<String>) request.getAttribute("jerseync");
+                    ArrayList<String> orlname = (ArrayList<String>) request.getAttribute("nameorl");
+                    ArrayList<String> orlpos = (ArrayList<String>) request.getAttribute("posorl");
+                    ArrayList<String> orljersey = (ArrayList<String>) request.getAttribute("jerseyorl");
+                    ArrayList<String> porname = (ArrayList<String>) request.getAttribute("namepor");
+                    ArrayList<String> porpos = (ArrayList<String>) request.getAttribute("pospor");
+                    ArrayList<String> porjersey = (ArrayList<String>) request.getAttribute("jerseypor");
+                    ArrayList<String> seaname = (ArrayList<String>) request.getAttribute("namesea");
+                    ArrayList<String> seapos = (ArrayList<String>) request.getAttribute("possea");
+                    ArrayList<String> seajersey = (ArrayList<String>) request.getAttribute("jerseysea");
+                    ArrayList<String> njname = (ArrayList<String>) request.getAttribute("namenj");
+                    ArrayList<String> njpos = (ArrayList<String>) request.getAttribute("posnj");
+                    ArrayList<String> njjersey = (ArrayList<String>) request.getAttribute("jerseynj");
+                    ArrayList<String> wasname = (ArrayList<String>) request.getAttribute("namewas");
+                    ArrayList<String> waspos = (ArrayList<String>) request.getAttribute("poswas");
+                    ArrayList<String> wasjersey = (ArrayList<String>) request.getAttribute("jerseywas");
+                %>
+                <div class="col-md-5 col-xs-5">
+                    <h4 class="col-md-12 col-xs-12" style="margin-top: 0.3%; border-top: 4px solid #1d3260; background-color: #ac0f1f; padding-left: 2%; color: white; font-size: 15px;padding-top: 1.1%;padding-bottom: 1.3%">Selected Players by Team</h4>
+                    <div  class="col-md-12 col-xs-12 border-rule">
+                        <a class="cola2 collapsed col-md-12 col-xs-12 rules" data-toggle="collapse" href="#boston" style="color:black " >
+                            <span ><img src="img/Boston_Breakers1.png" style="width:42px;height:25px" /></span>Boston Breakers (<%=bosname.size()%>/15)
+                        </a>
+                        <div id="boston" class="panel-collapse collapse" style="">
+                            <%
+                                if (bosname.size() != 0) {
 
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < bosname.size(); i++) {
 
-                    </table>
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=bosjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=bosname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=bospos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#chi" style="color:black " >
+                            <span ><img src="img/ChicagoRedStars1.png" style="width:42px;height:25px" /></span>Chicago Red Stars (<%=chiname.size()%>/15)
+                        </a>
+                        <div id="chi" class="panel-collapse collapse" style="">
+                            <%
+                                if (chiname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < chiname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=chijersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=chiname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=chipos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#kc" style="color:black " >
+                            <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>FC Kansas City (1/15)
+                        </a>
+                        <div id="kc" class="panel-collapse collapse" style="">
+                            <%
+                                if (kcname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < kcname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=kcjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=kcname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=kcpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#hou" style="color:black " >
+                            <span ><img src="img/Houston_Dash2.png" style="width:42px;height:25px" /></span>Houston Dash (<%=houname.size()%>/15)
+                        </a>
+                        <div id="hou" class="panel-collapse collapse" style="">
+                            <%
+                                if (houname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < houname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=houname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=houpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#nc" style="color:black " >
+                            <span ><img src="img/North_Carolina_Courage1.png" style="width:42px;height:25px" /></span>North Carolina Courage (<%=ncname.size()%>/15)
+                        </a>
+                        <div id="nc" class="panel-collapse collapse" style="">
+                            <%
+                                if (ncname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < ncname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=ncjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=ncname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=ncpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#orl" style="color:black " >
+                            <span ><img src="img/OrlandoPride2.png" style="width:42px;height:25px" /></span>Orlando Pride (<%=orlname.size()%>/15)
+                        </a>
+                        <div id="orl" class="panel-collapse collapse" style="">
+                            <%
+                                if (orlname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < orlname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=orljersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=orlname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=orlpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#por" style="color:black " >
+                            <span ><img src="img/Portland1.png" style="width:42px;height:25px" /></span>Portland Thorns (<%=houname.size()%>/15)
+                        </a>
+                        <div id="por" class="panel-collapse collapse" style="">
+                            <%
+                                if (houname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < houname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=houname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=houpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#sea" style="color:black " >
+                            <span ><img src="img/SeattleReignFC2.png" style="width:42px;height:25px" /></span>Seattle Reign FC (<%=seaname.size()%>/15)
+                        </a>
+                        <div id="sea" class="panel-collapse collapse" style="">
+                            <%
+                                if (seaname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < seaname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=seajersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=seaname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=seapos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#nj" style="color:black " >
+                            <span ><img src="img/Sky_Blue_FC1.png" style="width:42px;height:25px" /></span>Sky Blue FC (<%=njname.size()%>/15)
+                        </a>
+                        <div id="nj" class="panel-collapse collapse" style="">
+                            <%
+                                if (njname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < njname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=njjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=njname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=njpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
+                    <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#was" style="color:black " >
+                            <span ><img src="img/spirit.png" style="width:42px;height:25px" /></span>Washington Spirit (<%=wasname.size()%>/15)
+                        </a>
+                        <div id="was" class="panel-collapse collapse" style="">
+                            <%
+                                if (wasname.size() != 0) {
+
+                            %>
+                            <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
+                                <tr style='border-right:  '>
+                                    <th style="font-size: 13px;background-color: #1d3260;padding: 0.5%; padding-left: 9%; width: 40%;color: white">Player</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
+                                    <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
+                                </tr>
+                                <%                                    for (int i = 0; i < wasname.size(); i++) {
+
+                                %>
+                                <tr style=' border-bottom:1px solid #e8e8e8;' >
+                                    <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
+                                        <div class='col-sm-2' style="width:37px;height: 30px">
+                                            <img src="img/<%=wasjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=wasname.get(i)%></span>
+                                        </div>
+                                    </td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=waspos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
+                                </tr>
+                                <%  }
+                                %>
+                            </table>
+                            <%
+                                }
+                            %>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#chi" style="color:black " >
-                    <span ><img src="img/ChicagoRedStars1.png" style="width:42px;height:25px" /></span>Chicago Red Stars (2/15)
-                </a>
-                <div id="chi" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;' >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Colaprico</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
 
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Press</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
+                <form class="col-md-12 col-xs-12" style="margin-top: 2%" >
+                    <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
+
+                        <label class="col-md-4 col-xs-4" for="first"  style="font-size: 17px;padding:1%;text-align: right" >Enter Team Name
+
+                        </label>
+                        <div class="col-md-6 col-xs-6" align="middle"> 
+
+                            <input type="text" class="form-control" name="team" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+
+                        </div>
 
 
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#kc" style="color:black " >
-                    <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>FC Kansas City (1/15)
-                </a>
-                <div id="kc" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/kansas1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Averbuch</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
 
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#hou" style="color:black " >
-                    <span ><img src="img/Houston_Dash2.png" style="width:42px;height:25px" /></span>Houston Dash (1/15)
-                </a>
-                <div id="hou" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Poliana</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">DEF</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#nc" style="color:black " >
-                    <span ><img src="img/North_Carolina_Courage1.png" style="width:42px;height:25px" /></span>North Carolina Courage (2/15)
-                </a>
-                <div id="nc" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/courage.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2%">
-                                    <span style="font-size: 14px;font-family: arial; ">Smith</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">DEF</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;' >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/courage.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">L. Williams</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">FWD</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#orl" style="color:black " >
-                    <span ><img src="img/OrlandoPride2.png" style="width:42px;height:25px" /></span>Orlando Pride (2/15)
-                </a>
-                <div id="orl" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Harris</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">GK</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Krieger</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">DEF</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#por" style="color:black " >
-                    <span ><img src="img/Portland1.png" style="width:42px;height:25px" /></span>Portland Thorns (3/15)
-                </a>
-                <div id="por" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/thornsgk.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Franch</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">GK</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/thorns1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Sonnett</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">DEF</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px; padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/thorns1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Heath</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#sea" style="color:black " >
-                    <span ><img src="img/SeattleReignFC2.png" style="width:42px;height:25px" /></span>Seattle Reign FC (0/15)
-                </a>
-                <div id="sea" class="panel-collapse collapse" style="">
-
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#nj" style="color:black " >
-                    <span ><img src="img/Sky_Blue_FC1.png" style="width:42px;height:25px" /></span>Sky Blue FC (1/15)
-                </a>
-                <div id="nj" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr >
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/skyblue1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2%">
-                                    <span style="font-size: 14px;font-family: arial; ">Killion</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-
-                    </table>
-                </div>
-            </div>
-            <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#was" style="color:black " >
-                    <span ><img src="img/spirit.png" style="width:42px;height:25px" /></span>Washington Spirit (2/15)
-                </a>
-                <div id="was" class="panel-collapse collapse" style="">
-                    <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
-                        <tr style='border-right:  '>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b;padding: 1.2%; padding-left: 2%; width: 35%;color: white">Player</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">POS</th>
-                            <th style="font-family: arial;font-size: 13px;background-color: #c8373b; width: 11.7%;color: white">Cost</th>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/spirit1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">K. Mewis</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">MID</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                        <tr style=' border-bottom:1px solid #e8e8e8;'>
-                            <td style="font-family: arial; font-weight: lighter ;font-size:15px;  padding-left:2.5%; padding-top: 0.5%; padding-bottom: 0.5%">
-                                <div class='col-sm-2' style="width:37px;height: 30px">
-                                    <img src="img/spirit1.png" style="width:31px;height:30px;float:right" />
-                                </div>
-                                <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;padding-top: 2% ">
-                                    <span style="font-size: 14px;font-family: arial; ">Pugh</span>
-                                </div>
-                            </td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">FWD</td>
-                            <td style="font-family: arial; font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter; ">$6.4</td>
-                        </tr>
-                    </table>
-                </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
+                        <button type="submit" class=" prevbutton2 btncustom   " style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" onclick="goBack()" >
+                            <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
+                    </div>
+                    <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
+                        <button type="submit" class="prevbutton btncustom" style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" >
+                            <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <form class="col-md-12 col-xs-12" style="margin-top: 2%" >
-            <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
-
-                <label class="col-md-4 col-xs-4" for="first"  style="font-size: 17px;padding:1%;text-align: right" >Enter Team Name
-
-                </label>
-                <div class="col-md-6 col-xs-6" align="middle"> 
-
-                    <input type="text" class="form-control" name="team" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
-
-                </div>
-
-
-
-            </div>
-            <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                <button type="submit" class=" prevbutton2 btncustom   " style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" onclick="goBack()" >
-                    <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
-            </div>
-            <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                <button type="submit" class="prevbutton btncustom" style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" >
-                    <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
-            </div>
-        </form>
-    </div>
-</div>
 
 
 
 
 
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+        <script>
+                            function goBack() {
+                                window.history.back();
+                            }
+        </script>
 
-<script>
-                    function goBack() {
-                        window.history.back();
-                    }
-</script>
-
-</body>
+    </body>
 
 </html>

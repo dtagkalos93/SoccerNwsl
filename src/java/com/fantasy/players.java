@@ -23,6 +23,8 @@ public class players {
     private List priceList;
     private List pointList;
     private List jerseyList;
+    private List injuryList;
+    
 
     public void players(String pos, String category) {
 
@@ -31,6 +33,7 @@ public class players {
         priceList = new ArrayList();
         pointList = new ArrayList();
         jerseyList = new ArrayList();
+        injuryList = new ArrayList ();
         System.out.println("players");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -179,7 +182,8 @@ public class players {
 
                     
                 }
-               
+                injuryList.add(resultSet.getString("injury"));
+                
                 i++;
 
             }
@@ -214,6 +218,9 @@ public class players {
 
     public List getjerseyList() {
         return jerseyList;
+    }
+    public List getinjuryList() {
+        return injuryList;
     }
 
 }

@@ -176,7 +176,7 @@
                             <h5  id="teamError" style="text-align: center; font-size: 14px">More than 4 players selected from <span id="team"></span>.</h5>
                             <h5  id="posError" style="text-align: center; font-size: 14px;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
                             <h5  id="enterError" style="text-align: center; font-size: 14px;display: none">Please complete your Team!</h5>
-                            </div>
+                        </div>
                         <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                             <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                         </div>
@@ -288,9 +288,9 @@
                             <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: bold; font-size:17px;left:8.5%; margin-top: -0.5%;margin-bottom: -2%" align="center">
                                 <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
                             </h5>
-                                <%
-                                    if(!posts.get(2).equals("Gameweek 23")){
-                                        %>
+                            <%
+                                if (!posts.get(2).equals("Gameweek 23")) {
+                            %>
                             <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; margin-right:-2.1%;padding: 1%">
                                 Next
                             </button>
@@ -451,22 +451,26 @@
                     ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
                     ArrayList<String> gkprice = (ArrayList<String>) request.getAttribute("pricegk");
                     ArrayList<String> gkscore = (ArrayList<String>) request.getAttribute("scoregk");
+                    ArrayList<String> gkinjury = (ArrayList<String>) request.getAttribute("injurygk");
                     ArrayList<String> gk = (ArrayList<String>) request.getAttribute("badgegk");
                     ArrayList<String> defname = (ArrayList<String>) request.getAttribute("namedef");
                     ArrayList<String> defteam = (ArrayList<String>) request.getAttribute("teamdef");
                     ArrayList<String> defprice = (ArrayList<String>) request.getAttribute("pricedef");
                     ArrayList<String> defscore = (ArrayList<String>) request.getAttribute("scoredef");
+                    ArrayList<String> definjury = (ArrayList<String>) request.getAttribute("injurydef");
                     ArrayList<String> def = (ArrayList<String>) request.getAttribute("badgedef");
                     ArrayList<String> midname = (ArrayList<String>) request.getAttribute("namemid");
                     ArrayList<String> midteam = (ArrayList<String>) request.getAttribute("teammid");
                     ArrayList<String> midprice = (ArrayList<String>) request.getAttribute("pricemid");
                     ArrayList<String> midscore = (ArrayList<String>) request.getAttribute("scoremid");
                     ArrayList<String> mid = (ArrayList<String>) request.getAttribute("badgemid");
+                    ArrayList<String> midinjury = (ArrayList<String>) request.getAttribute("injurymid");
                     ArrayList<String> fwdname = (ArrayList<String>) request.getAttribute("namefwd");
                     ArrayList<String> fwdteam = (ArrayList<String>) request.getAttribute("teamfwd");
                     ArrayList<String> fwdprice = (ArrayList<String>) request.getAttribute("pricefwd");
                     ArrayList<String> fwdscore = (ArrayList<String>) request.getAttribute("scorefwd");
                     ArrayList<String> fwd = (ArrayList<String>) request.getAttribute("badgefwd");
+                    ArrayList<String> fwdinjury = (ArrayList<String>) request.getAttribute("injuryfwd");
                 %>            
 
                 <div class="col-md-4 sidebar" style=" ">
@@ -574,7 +578,15 @@
                                     <th id="catGK" style="background-color: yellow; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id='gk1' data-toggle="modal" style='cursor:pointer' onclick="openModalGK(1)">
+                                    <%
+                                        if (gkinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (gkinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
+                                    
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage1" src="img/<%=gk.get(0)%> " style="width:31px;height:30px;float:right" />
@@ -588,7 +600,14 @@
                                     <td id="gkscore1" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%= gkscore.get(0)%></td>
                                 </tr>
                                 <tr id='gk2' style='cursor:pointer' onclick="openModalGK(2)">
+                                    <%
+                                        if (gkinjury.get(1).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (gkinjury.get(1).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="gkimage2" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
@@ -620,7 +639,14 @@
 
                                 %>
                                 <tr id='<%=gkstr%>' style='display:none;cursor:pointer' onclick="openModalGK(<%=i%>)">
+                                    <%
+                                        if (gkinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (gkinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=gkimagestr%>" src="img/<%=gk.get(1)%> " style="width:31px;height:30px;float:right" />
@@ -645,7 +671,14 @@
                                     <th id="catDEF" style="background-color:#00ff87; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id="def1" style='cursor:pointer' onclick="openModalDEF(1)">
+                                    <%
+                                        if (definjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div  class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef1" src="img/<%=def.get(0)%>" style="width:31px;height:30px;float:right" />
@@ -659,7 +692,14 @@
                                     <td id="scoredef1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(0)%></td>
                                 </tr>
                                 <tr id="def2" style='cursor:pointer'onclick="openModalDEF(2)">
+                                     <%
+                                        if (definjury.get(1).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(1).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef2" src="img/<%=def.get(1)%>" style="width:31px;height:30px;float:right" />
@@ -673,7 +713,14 @@
                                     <td id="scoredef2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(1)%></td>
                                 </tr>
                                 <tr id="def3" style='cursor:pointer' onclick="openModalDEF(3)">
+                                     <%
+                                        if (definjury.get(2).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(2).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef3" src="img/<%=def.get(2)%>" style="width:31px;height:30px;float:right" />
@@ -687,7 +734,14 @@
                                     <td id="scoredef3" style="text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(2)%></td>
                                 </tr>
                                 <tr id="def4" style='cursor:pointer' onclick="openModalDEF(4)">
+                                     <%
+                                        if (definjury.get(3).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(3).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef4" src="img/<%=def.get(3)%>" style="width:31px;height:30px;float:right" />
@@ -701,7 +755,14 @@
                                     <td id="scoredef4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%  "><%=defscore.get(3)%></td>
                                 </tr>
                                 <tr id="def5" style='cursor:pointer' onclick="openModalDEF(5)">
+                                     <%
+                                        if (definjury.get(4).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(4).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef5" src="img/<%=def.get(4)%>" style="width:31px;height:30px;float:right" />
@@ -715,7 +776,14 @@
                                     <td id="scoredef5" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(4)%></td>
                                 </tr>
                                 <tr id="def6" style='cursor:pointer' onclick="openModalDEF(6)">
+                                     <%
+                                        if (definjury.get(5).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(5).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef6" src="img/<%=def.get(5)%>" style="width:31px;height:30px;float:right" />
@@ -729,7 +797,14 @@
                                     <td id="scoredef6" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(5)%></td>
                                 </tr>
                                 <tr id="def7" style='cursor:pointer' onclick="openModalDEF(7)">
+                                     <%
+                                        if (definjury.get(6).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(6).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef7" src="img/<%=def.get(6)%>" style="width:31px;height:30px;float:right" />
@@ -743,7 +818,14 @@
                                     <td id="scoredef7" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=defscore.get(6)%></td>
                                 </tr>
                                 <tr id="def8" style='cursor:pointer' onclick="openModalDEF(8)">
+                                     <%
+                                        if (definjury.get(7).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(7).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagedef8" src="img/<%=def.get(7)%>" style="width:31px;height:30px;float:right" />
@@ -774,7 +856,14 @@
 
                                 %>
                                 <tr id='<%=defstr%>' style='display:none;cursor:pointer' onclick="openModalDEF(<%=i%>)">
+                                     <%
+                                        if (definjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (definjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=defimagestr%>" src="img/<%=def.get(1)%> " style="width:31px;height:30px;float:right" />
@@ -799,7 +888,14 @@
                                     <th id="catMID" style="background-color:#04f5ff; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id='mid1' style='cursor:pointer'  onclick="openModalMID(1)">
+                                                                         <%
+                                        if (midinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid1" src="img/<%=mid.get(0)%>" style="width:31px;height:30px;float:right" />
@@ -813,7 +909,14 @@
                                     <td id="scoremid1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(0)%></td>
                                 </tr>
                                 <tr id='mid2' style='cursor:pointer' onclick="openModalMID(2)">
+                                    <%
+                                        if (midinjury.get(1).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(1).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid2" src="img/<%=mid.get(1)%>" style="width:31px;height:30px;float:right" />
@@ -827,7 +930,14 @@
                                     <td id="scoremid2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(1)%></td>
                                 </tr>
                                 <tr id="mid3" style='cursor:pointer' onclick="openModalMID(3)" >
+                                    <%
+                                        if (midinjury.get(2).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(2).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid3" src="img/<%=mid.get(2)%>" style="width:31px;height:30px;float:right" />
@@ -841,7 +951,14 @@
                                     <td id="scoremid3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(2)%></td>
                                 </tr>
                                 <tr id="mid4" style='cursor:pointer' onclick="openModalMID(4)">
+                                    <%
+                                        if (midinjury.get(3).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(3).equals("OUT")) { 
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid4" src="img/<%=mid.get(3)%>" style="width:31px;height:30px;float:right" />
@@ -855,7 +972,14 @@
                                     <td id="scoremid4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=midscore.get(3)%></td>
                                 </tr>
                                 <tr id="mid5" style='cursor:pointer' onclick="openModalMID(5)">
+                                    <%
+                                        if (midinjury.get(4).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(4).equals("OUT")) { 
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style="text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagemid5" src="img/<%=mid.get(4)%>" style="width:31px;height:30px;float:right" />
@@ -887,7 +1011,14 @@
 
                                 %>
                                 <tr id='<%=midstr%>' style='display:none;cursor:pointer' onclick="openModalMID(<%=i%>)">
+                                    <%
+                                        if (midinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=midimagestr%>" src="img/<%=mid.get(1)%> " style="width:31px;height:30px;float:right" />
@@ -914,7 +1045,14 @@
                                     <th id="catFWD" style="background-color:#e90052; text-align: center; font-family: arial">TS</th>
                                 </tr>
                                 <tr id="fwd1" style='cursor:pointer' onclick="openModalFWD(1)">
+                                    <%
+                                        if (fwdinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd1" src="img/<%=fwd.get(0)%>" style="width:31px;height:30px;float:right" />
@@ -928,7 +1066,14 @@
                                     <td id="scorefwd1" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(0)%></td>
                                 </tr>
                                 <tr id="fwd2" style='cursor:pointer' onclick="openModalFWD(2)">
+                                    <%
+                                        if (fwdinjury.get(1).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(1).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd2" src="img/<%=fwd.get(1)%>" style="width:31px;height:30px;float:right" />
@@ -942,7 +1087,14 @@
                                     <td id="scorefwd2" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(1)%></td>
                                 </tr>
                                 <tr id="fwd3" style='cursor:pointer' onclick="openModalFWD(3)">
+                                    <%
+                                        if (fwdinjury.get(2).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(2).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd3" src="img/<%=fwd.get(2)%>" style="width:31px;height:30px;float:right" />
@@ -956,7 +1108,14 @@
                                     <td id="scorefwd3" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(2)%></td>
                                 </tr>
                                 <tr id="fwd4" style='cursor:pointer' onclick="openModalFWD(4)">
+                                    <%
+                                        if (fwdinjury.get(3).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(3).equals("OUT")) { 
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd4" src="img/<%=fwd.get(3)%>" style="width:31px;height:30px;float:right" />
@@ -970,7 +1129,14 @@
                                     <td id="scorefwd4" style=" text-align: center ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 15.5%     "><%=fwdscore.get(3)%></td>
                                 </tr>
                                 <tr id="fwd5" style='cursor:pointer' onclick="openModalFWD(5)">
+                                    <%
+                                        if (fwdinjury.get(4).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(4).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="imagefwd5" src="img/<%=fwd.get(4)%>" style="width:31px;height:30px;float:right" />
@@ -1002,7 +1168,14 @@
 
                                 %>
                                 <tr id='<%=fwdstr%>' style='display:none;cursor:pointer' onclick="openModalFWD(<%=i%>)">
+                                    <%
+                                        if (fwdinjury.get(0).equals("NO")) { %>
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(0).equals("OUT")) {
+                                        %>
+                                    <td style='border-bottom:1px solid #e8e8e8; background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
                                     <td style=" text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="width:31px;height:30px;float:right" />
@@ -1027,22 +1200,22 @@
                                     <th style="background-color:#02509a; text-align: center; font-family: arial; color: white">$</th>
                                     <th id="catsrch" style="background-color:#02509a; text-align: center; font-family: arial; color: white">TS</th>
                                 </tr>
-                                <%  
+                                <%
                                     String srchimage = "srchimage";
                                     String srchname = "srchname";
                                     String srchteam = "srchteam";
                                     String srchpos = "srchpos";
                                     String srchprice = "srchprice";
                                     String srchscore = "srchscore";
-                                    String search="search";
-                                for (int i = 1; i <= 25; i++) {
-                                    srchimage = "srchimage" + i;
-                                    srchname = "srchname" + i;
-                                    srchteam = "srchteam" + i;
-                                    srchpos = "srchpos" + i;
-                                    srchprice = "srchprice" + i;
-                                    srchscore = "srchscore" + i;
-                                    search="search"+i;
+                                    String search = "search";
+                                    for (int i = 1; i <= 25; i++) {
+                                        srchimage = "srchimage" + i;
+                                        srchname = "srchname" + i;
+                                        srchteam = "srchteam" + i;
+                                        srchpos = "srchpos" + i;
+                                        srchprice = "srchprice" + i;
+                                        srchscore = "srchscore" + i;
+                                        search = "search" + i;
                                 %>
                                 <tr id="<%=search%>" style='display: none;cursor:pointer' onclick="searchModal(<%=i%>)">
                                     <td style=' font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
@@ -1129,7 +1302,7 @@
                         <p style="display:none" id="rmvplayerNo"></p>
                         <p style="display:none" id="rmvplayerPosition"></p>
                         <p style="display:none" id="rmvplayerTeam"></p>
-                        
+
 
                         <button onclick="removePlayer()" type="button" class="addbutton   " >
                             Remove Player
