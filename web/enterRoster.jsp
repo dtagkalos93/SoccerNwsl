@@ -151,12 +151,14 @@
                     </table>
                     <table class="col-md-12 col-xs-12" style="width:100%; border-bottom:1px solid #e8e8e8;border-right:1px solid #e8e8e8; border-left:1px solid #e8e8e8">
                         <tr>
+                            <th style="background-color: #f9f5f5;padding-top: 1%;padding-bottom: 1%"></th>
                             <th style="background-color: #f9f5f5;padding-top: 1%;padding-bottom: 1%;text-align: center;font-size: 13px ">Pos</th> 
                             <th style="background-color: #f9f5f5;padding-top: 1%;padding-bottom: 1%;padding-left:10%;font-size: 13px ">Player</th>
                             <th style="background-color: #f9f5f5;padding-top: 1%;padding-bottom: 1%;font-size: 13px ">Club</th>
                             <th style="background-color: #f9f5f5;padding-top: 1%;padding-bottom: 1%;text-align: center ;font-size: 13px">Price</th>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -170,6 +172,7 @@
                             <td style="text-align:center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">10</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #ac0f1f;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;border-right-style: inset'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -183,6 +186,7 @@
                             <td style="text-align:center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">10</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -196,6 +200,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(0)%></td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -209,6 +214,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">11</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -222,6 +228,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">12</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -235,6 +242,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">15</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #ac0f1f;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;border-right-style: inset'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #ac0f1f;text-align: center; width: 15%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -248,6 +256,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f; width: 12.5%">15</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -261,6 +270,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -274,6 +284,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -287,6 +298,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -300,6 +312,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #ac0f1f;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;border-right-style: inset'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom:1px solid #ac0f1f;text-align: center; width: 15%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;border-bottom:1px solid #ac0f1f; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -313,6 +326,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #ac0f1f;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -326,6 +340,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -339,6 +354,7 @@
                             <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">13</td>
                         </tr>
                         <tr>
+                            <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8'><span class="glyphicon glyphicon-info-sign"></span></td>
                             <td style='font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center; width: 15%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                 <div class='col-sm-2' style="width:37px;height: 30px">
@@ -410,7 +426,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=bosjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=bosname.get(i)%></span>
                                         </div>
                                     </td>
@@ -448,7 +464,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=chijersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=chiname.get(i)%></span>
                                         </div>
                                     </td>
@@ -465,7 +481,7 @@
                     </div>
                     <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
                         <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#kc" style="color:black " >
-                            <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>FC Kansas City (1/15)
+                            <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>FC Kansas City (<%=kcname.size()%>/15)
                         </a>
                         <div id="kc" class="panel-collapse collapse" style="">
                             <%
@@ -486,7 +502,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=kcjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=kcname.get(i)%></span>
                                         </div>
                                     </td>
@@ -524,7 +540,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=houname.get(i)%></span>
                                         </div>
                                     </td>
@@ -562,7 +578,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=ncjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=ncname.get(i)%></span>
                                         </div>
                                     </td>
@@ -600,7 +616,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=orljersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=orlname.get(i)%></span>
                                         </div>
                                     </td>
@@ -616,11 +632,11 @@
                     </div>
                     <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
                         <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#por" style="color:black " >
-                            <span ><img src="img/Portland1.png" style="width:42px;height:25px" /></span>Portland Thorns (<%=houname.size()%>/15)
+                            <span ><img src="img/Portland1.png" style="width:42px;height:25px" /></span>Portland Thorns (<%=porname.size()%>/15)
                         </a>
                         <div id="por" class="panel-collapse collapse" style="">
                             <%
-                                if (houname.size() != 0) {
+                                if (porname.size() != 0) {
 
                             %>
                             <table class="col-md-12 col-xs-12" style="width:100%;width: 100%">
@@ -629,19 +645,19 @@
                                     <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
                                     <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
                                 </tr>
-                                <%                                    for (int i = 0; i < houname.size(); i++) {
+                                <%                                    for (int i = 0; i < porname.size(); i++) {
 
                                 %>
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style=" font-weight: lighter ;font-size:15px;  padding-left:3.5%; padding-top: 0.5%; padding-bottom: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px;float:right" />
+                                            <img src="img/<%=porjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
-                                            <span style="font-size: 14px"><%=houname.get(i)%></span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
+                                            <span style="font-size: 14px"><%=porname.get(i)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=houpos.get(i)%></td>
+                                    <td style="font-weight:lighter ;font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center "><%=porpos.get(i)%></td>
                                     <td style="font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:lighter;text-align: center ">$6.4</td>
                                 </tr>
                                 <%  }
@@ -675,7 +691,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=seajersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=seaname.get(i)%></span>
                                         </div>
                                     </td>
@@ -713,7 +729,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=njjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=njname.get(i)%></span>
                                         </div>
                                     </td>
@@ -751,7 +767,7 @@
                                         <div class='col-sm-2' style="width:37px;height: 30px">
                                             <img src="img/<%=wasjersey.get(i)%>" style="width:31px;height:30px;float:right" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 25px;padding-top: 2% ">
+                                        <div class='col-sm-10' style="width:80%;height: 30px;right: 25px;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=wasname.get(i)%></span>
                                         </div>
                                     </td>
