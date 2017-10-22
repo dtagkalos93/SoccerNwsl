@@ -32,21 +32,25 @@ public class playersSelectionTeam extends HttpServlet {
     private List<String> gkteamList = new ArrayList();
     private List<String> gkpriceList = new ArrayList();
     private List<String> gkscoreList = new ArrayList();
+    private List<String> gkinjuryList = new ArrayList();
     private List<String> defnameList = new ArrayList();
     private List<String> defjerseyList = new ArrayList();
     private List<String> defteamList = new ArrayList();
     private List<String> defpriceList = new ArrayList();
     private List<String> defscoreList = new ArrayList();
+    private List<String> definjuryList = new ArrayList();
     private List<String> midnameList = new ArrayList();
     private List<String> midjerseyList = new ArrayList();
     private List<String> midteamList = new ArrayList();
     private List<String> midpriceList = new ArrayList();
     private List<String> midscoreList = new ArrayList();
+    private List<String> midinjuryList = new ArrayList();
     private List<String> fwdnameList = new ArrayList();
     private List<String> fwdjerseyList = new ArrayList();
     private List<String> fwdteamList = new ArrayList();
     private List<String> fwdpriceList = new ArrayList();
     private List<String> fwdscoreList = new ArrayList();
+    private List<String> fwdinjuryList = new ArrayList();
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -67,22 +71,26 @@ public class playersSelectionTeam extends HttpServlet {
         gkteamList = new ArrayList<>();
         gkpriceList = new ArrayList<>();
         gkscoreList = new ArrayList<>();
+        gkinjuryList = new ArrayList<>();
         defnameList = new ArrayList<>();
         defjerseyList = new ArrayList<>();
         defteamList = new ArrayList<>();
         defpriceList = new ArrayList<>();
         defscoreList = new ArrayList<>();
+        definjuryList = new ArrayList<>();
         midnameList = new ArrayList<>();
         midjerseyList = new ArrayList<>();
         midteamList = new ArrayList<>();
         midpriceList = new ArrayList<>();
         midscoreList = new ArrayList<>();
+        midinjuryList = new ArrayList<>();
         fwdnameList = new ArrayList<>();
         fwdjerseyList = new ArrayList<>();
         fwdteamList = new ArrayList<>();
         fwdpriceList = new ArrayList<>();
         fwdscoreList = new ArrayList<>();
-
+        fwdinjuryList = new ArrayList<>();
+        
         String team = request.getParameter("team");
         String category = request.getParameter("cat");
         System.out.println(team);
@@ -231,9 +239,9 @@ public class playersSelectionTeam extends HttpServlet {
                 else {
                     gkscoreList.add(score);
                 }
-
+                
             }
-
+            gkinjuryList.add(resultSet.getString("injury"));
         }
 
     }
@@ -327,6 +335,7 @@ public class playersSelectionTeam extends HttpServlet {
                     defscoreList.add(score);
                 }
             }
+            definjuryList.add(resultSet.getString("injury"));
         }
 
     }
@@ -420,6 +429,7 @@ public class playersSelectionTeam extends HttpServlet {
                     midscoreList.add(score);
                 }
             }
+            midinjuryList.add(resultSet.getString("injury"));
         }
 
     }
@@ -514,7 +524,7 @@ public class playersSelectionTeam extends HttpServlet {
                 }
 
             }
-
+            fwdinjuryList.add(resultSet.getString("injury"));
         }
 
     }
@@ -545,6 +555,8 @@ public class playersSelectionTeam extends HttpServlet {
                 defpriceList.remove(pos);
                 list.add(defscoreList.get(pos));
                 defscoreList.remove(pos);
+                list.add(definjuryList.get(pos));
+                definjuryList.remove(pos);
             } else if (position.equals("gk")) {
                 int max = Integer.parseInt(gkscoreList.get(0).toString());
                 int pos = 0;
@@ -569,6 +581,8 @@ public class playersSelectionTeam extends HttpServlet {
                 gkpriceList.remove(pos);
                 list.add(gkscoreList.get(pos));
                 gkscoreList.remove(pos);
+                list.add(gkinjuryList.get(pos));
+                gkinjuryList.remove(pos);
             } else if (position.equals("mid")) {
 
                 int max = Integer.parseInt(midscoreList.get(0).toString());
@@ -593,6 +607,8 @@ public class playersSelectionTeam extends HttpServlet {
                 midpriceList.remove(pos);
                 list.add(midscoreList.get(pos));
                 midscoreList.remove(pos);
+                list.add(midinjuryList.get(pos));
+                midinjuryList.remove(pos);
 
             } else if (position.equals("fwd")) {
                 int max = Integer.parseInt(fwdscoreList.get(0).toString());
@@ -617,6 +633,8 @@ public class playersSelectionTeam extends HttpServlet {
                 fwdpriceList.remove(pos);
                 list.add(fwdscoreList.get(pos));
                 fwdscoreList.remove(pos);
+                list.add(fwdinjuryList.get(pos));
+                fwdinjuryList.remove(pos);
             }
             k++;
         }

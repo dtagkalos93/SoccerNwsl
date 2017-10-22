@@ -32,6 +32,7 @@ public class playersData extends HttpServlet {
     private List<String> jerseylist;
     private List<String> scorelist;
     private List<String> pricelist;
+    private List<String> injurylist;
     private int total;
 
     /**
@@ -61,6 +62,7 @@ public class playersData extends HttpServlet {
         jerseylist = new ArrayList<>();
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
+        injurylist = new ArrayList<>();
         String text = request.getParameter("page");
         String category = request.getParameter("cat");
 
@@ -93,6 +95,7 @@ public class playersData extends HttpServlet {
             jerseylist = new ArrayList<>();
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
+            injurylist = new ArrayList<>();
 
             defenders(connection, fixNo, category);
 
@@ -101,6 +104,7 @@ public class playersData extends HttpServlet {
             jerseylist = new ArrayList<>();
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
+            injurylist = new ArrayList<>();
 
             midfielders(connection, fixNo, category);
             namelist = new ArrayList<>();
@@ -108,7 +112,9 @@ public class playersData extends HttpServlet {
             jerseylist = new ArrayList<>();
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
-
+            injurylist = new ArrayList<>();
+        
+            
             forwards(connection, fixNo, category);
 
         } catch (Exception e) {
@@ -118,6 +124,7 @@ public class playersData extends HttpServlet {
         }
 
         String json = new Gson().toJson(list);
+        System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);
@@ -137,7 +144,7 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
-
+            injurylist.add(resultSet.getString("injury"));  
             String team = resultSet.getString("team");
 
             if (team.equals("Houston Dash")) {
@@ -220,8 +227,10 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
-            String team = resultSet.getString("team");
+            injurylist.add(resultSet.getString("injury"));  
 
+            String team = resultSet.getString("team");
+            
             if (team.equals("Houston Dash")) {
                 teamlist.add("HOU");
                 jerseylist.add("dash1.png");
@@ -312,6 +321,8 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
+                        injurylist.add(resultSet.getString("injury"));  
+
             String team = resultSet.getString("team");
 
             if (team.equals("Houston Dash")) {
@@ -402,6 +413,8 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
+                        injurylist.add(resultSet.getString("injury"));  
+
             String team = resultSet.getString("team");
 
             if (team.equals("Houston Dash")) {
@@ -506,12 +519,15 @@ public class playersData extends HttpServlet {
                 pricelist.remove(pos);
                 list.add(scorelist.get(pos));
                 scorelist.remove(pos);
+                list.add(injurylist.get(pos));
+                injurylist.remove(pos);
             } else {
                 namelist.remove(pos);
                 jerseylist.remove(pos);
                 teamlist.remove(pos);
                 pricelist.remove(pos);
                 scorelist.remove(pos);
+                injurylist.remove(pos);
             }
             k++;
         }
@@ -545,6 +561,8 @@ public class playersData extends HttpServlet {
                 pricelist.remove(pos);
                 list.add(scorelist.get(pos));
                 scorelist.remove(pos);
+                list.add(injurylist.get(pos));
+                injurylist.remove(pos);
             } else if (noperpage == 7) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6) {
 
@@ -558,12 +576,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
+
                 }
             } else if (noperpage == 6) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
@@ -578,12 +600,15 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
                 }
             } else if (noperpage == 5) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
@@ -598,12 +623,15 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
                 }
             }
 
@@ -639,6 +667,8 @@ public class playersData extends HttpServlet {
                 pricelist.remove(pos);
                 list.add(scorelist.get(pos));
                 scorelist.remove(pos);
+                list.add(injurylist.get(pos));
+                injurylist.remove(pos);
             } else if (noperpage == 6) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
 
@@ -652,12 +682,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
+
                 }
             } else if (noperpage == 2) {
                 if (k == no || k == no - 1) {
@@ -672,12 +706,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
+
                 }
             }
             k++;
@@ -698,7 +736,7 @@ public class playersData extends HttpServlet {
                     pos = i;
                 }
             }
-
+            System.out.println(namelist.get(pos));
             if (noperpage == 5) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
 
@@ -712,12 +750,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
+
                 }
             } else if (noperpage == 6) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
@@ -732,12 +774,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
+
                 }
             } else if (noperpage == 2) {
                 if (k == no || k == no - 1) {
@@ -752,12 +798,16 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
-                    scorelist.remove(pos);
+                    scorelist.remove(pos);                    
+                    injurylist.remove(pos);
+
                 }
             }
             k++;

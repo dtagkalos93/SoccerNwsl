@@ -31,6 +31,8 @@ public class playersSelection extends HttpServlet {
     private List<String> jerseylist;
     private List<String> scorelist;
     private List<String> pricelist;
+    private List<String> injurylist;
+    private List<String> sortedinjurylist;
     private List<String> sortednamelist;
     private List<String> sortedteamlist;
     private List<String> sortedjerseylist;
@@ -65,11 +67,13 @@ public class playersSelection extends HttpServlet {
         jerseylist = new ArrayList<>();
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
+        injurylist= new ArrayList<>();
         sortednamelist = new ArrayList<>();
         sortedteamlist = new ArrayList<>();
         sortedjerseylist = new ArrayList<>();
         sortedscorelist = new ArrayList<>();
         sortedpricelist = new ArrayList<>();
+        sortedinjurylist= new ArrayList<>();
 
         String position = request.getParameter("pos");
         String category = request.getParameter("cat");
@@ -199,7 +203,7 @@ public class playersSelection extends HttpServlet {
                         scorelist.add(score);
                     }
                 }
-
+                injurylist.add(resultSet.getString("injury"));
                 i++;
             }
             resultSet.close();
@@ -259,12 +263,15 @@ public class playersSelection extends HttpServlet {
                     pricelist.remove(pos);
                     list.add(scorelist.get(pos));
                     scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
                 } else {
                     namelist.remove(pos);
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
                     scorelist.remove(pos);
+                    injurylist.remove(pos);
                 }
 
             } else {
@@ -278,6 +285,8 @@ public class playersSelection extends HttpServlet {
                 pricelist.remove(pos);
                 sortedscorelist.add(scorelist.get(pos));
                 scorelist.remove(pos);
+                sortedinjurylist.add(injurylist.get(pos));
+                injurylist.remove(pos);
             }
 
             k++;
@@ -290,6 +299,7 @@ public class playersSelection extends HttpServlet {
                 list.add(sortedteamlist.get(i));
                 list.add(sortedpricelist.get(i));
                 list.add(sortedscorelist.get(i));
+                list.add(sortedinjurylist.get(i));
             }
         }
         String json = new Gson().toJson(list);
