@@ -1301,14 +1301,30 @@ function showPlayers() {
                 var mid = 1;
                 var fwd = 1;
 
-                for (k = 0; k < jsonResponse.length - 1; k = k + 5) {
-                    if (k <= 5) {
+                for (k = 0; k < jsonResponse.length - 1; k = k + 6) {
+                    if (k <= 6) {
 
                         document.getElementById("gkname" + gk).innerHTML = jsonResponse[k];
                         document.getElementById("gkimage" + gk).src = "img/" + jsonResponse[k + 1];
                         document.getElementById("gkteam" + gk).innerHTML = jsonResponse[k + 2];
                         document.getElementById("gkprice" + gk).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("gkscore" + gk).innerHTML = jsonResponse[k + 4];
+                        if (jsonResponse[k + 5] == "OUT") {
+
+                            document.getElementById("gkinjury" + gk).classList = '';
+                            document.getElementById("gkinjury" + gk).classList.add('glyphicon');
+                            document.getElementById("gkinjury" + gk).classList.add('glyphicon-alert');
+                            document.getElementById("gkinjury" + gk).classList.add('fa-lg');
+                            document.getElementById("gkinjury" + gk).style.color = '#c0020d';
+
+                        } else {
+                            document.getElementById("gkinjury" + gk).classList = '';
+                            document.getElementById("gkinjury" + gk).classList.add('glyphicon');
+                            document.getElementById("gkinjury" + gk).classList.add('glyphicon-info-sign');
+                            document.getElementById("gkinjury" + gk).style.color = '';
+
+
+                        }
                         for (j = 1; j <= 2; j++) {
                             if (document.getElementById("gkname" + gk).innerHTML == document.getElementById("namegk" + j).innerHTML) {
                                 document.getElementById("gk" + gk).style.pointerEvents = 'none';
@@ -1321,13 +1337,29 @@ function showPlayers() {
                         }
                         gk++;
 
-                    } else if (k <= 45) {
+                    } else if (k <= 54) {
 
                         document.getElementById("namedef" + def).innerHTML = jsonResponse[k];
                         document.getElementById("imagedef" + def).src = "img/" + jsonResponse[k + 1];
                         document.getElementById("teamdef" + def).innerHTML = jsonResponse[k + 2];
                         document.getElementById("pricedef" + def).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scoredef" + def).innerHTML = jsonResponse[k + 4];
+                        if (jsonResponse[k + 5] == "OUT") {
+
+                            document.getElementById("definjury" + def).classList = '';
+                            document.getElementById("definjury" + def).classList.add('glyphicon');
+                            document.getElementById("definjury" + def).classList.add('glyphicon-alert');
+                            document.getElementById("definjury" + def).classList.add('fa-lg');
+                            document.getElementById("definjury" + def).style.color = '#c0020d';
+
+                        } else {
+                            document.getElementById("definjury" + def).classList = '';
+                            document.getElementById("definjury" + def).classList.add('glyphicon');
+                            document.getElementById("definjury" + def).classList.add('glyphicon-info-sign');
+                            document.getElementById("definjury" + def).style.color = '';
+
+
+                        }
                         for (j = 1; j <= 5; j++) {
                             if (document.getElementById("namedef" + def).innerHTML == document.getElementById("defname" + j).innerHTML) {
                                 document.getElementById("def" + def).style.pointerEvents = 'none';
@@ -1339,13 +1371,29 @@ function showPlayers() {
                             }
                         }
                         def++;
-                    } else if (k <= 70) {
+                    } else if (k <= 84) {
 
                         document.getElementById("namemid" + mid).innerHTML = jsonResponse[k];
                         document.getElementById("imagemid" + mid).src = "img/" + jsonResponse[k + 1];
                         document.getElementById("teammid" + mid).innerHTML = jsonResponse[k + 2];
                         document.getElementById("pricemid" + mid).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scoremid" + mid).innerHTML = jsonResponse[k + 4];
+                        if (jsonResponse[k + 5] == "OUT") {
+
+                            document.getElementById("midinjury" + mid).classList = '';
+                            document.getElementById("midinjury" + mid).classList.add('glyphicon');
+                            document.getElementById("midinjury" + mid).classList.add('glyphicon-alert');
+                            document.getElementById("midinjury" + mid).classList.add('fa-lg');
+                            document.getElementById("midinjury" + mid).style.color = '#c0020d';
+
+                        } else {
+                            document.getElementById("midinjury" + mid).classList = '';
+                            document.getElementById("midinjury" + mid).classList.add('glyphicon');
+                            document.getElementById("midinjury" + mid).classList.add('glyphicon-info-sign');
+                            document.getElementById("midinjury" + mid).style.color = '';
+
+
+                        }
                         for (j = 1; j <= 5; j++) {
                             if (document.getElementById("namemid" + mid).innerHTML == document.getElementById("midname" + j).innerHTML) {
                                 document.getElementById("mid" + mid).style.pointerEvents = 'none';
@@ -1364,6 +1412,22 @@ function showPlayers() {
                         document.getElementById("teamfwd" + fwd).innerHTML = jsonResponse[k + 2];
                         document.getElementById("pricefwd" + fwd).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("scorefwd" + fwd).innerHTML = jsonResponse[k + 4];
+                        if (jsonResponse[k + 5] == "OUT") {
+
+                            document.getElementById("fwdinjury" + fwd).classList = '';
+                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon');
+                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-alert');
+                            document.getElementById("fwdinjury" + fwd).classList.add('fa-lg');
+                            document.getElementById("fwdinjury" + fwd).style.color = '#c0020d';
+
+                        } else {
+                            document.getElementById("fwdinjury" + fwd).classList = '';
+                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon');
+                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-info-sign');
+                            document.getElementById("fwdinjury" + fwd).style.color = '';
+
+
+                        }
                         for (j = 1; j <= 3; j++) {
                             if (document.getElementById("namefwd" + fwd).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
                                 document.getElementById("fwd" + fwd).style.pointerEvents = 'none';
@@ -3513,12 +3577,12 @@ function search() {
                 } else if (selectCat == 'saves') {
                     document.getElementById("catsrch").innerHTML = "S";
                 }
-                document.getElementById("total").innerHTML = (jsonResponse.length / 6);
+                document.getElementById("total").innerHTML = (jsonResponse.length / 7);
 
-                for (i = 0; i < jsonResponse.length; i = i + 6) {
+                for (i = 0; i < jsonResponse.length; i = i + 7) {
                     if (k > 25)
                         break;
-
+                    
                     document.getElementById("search" + k).style.display = "";
                     document.getElementById("srchname" + k).innerHTML = jsonResponse[i];
                     document.getElementById("srchpos" + k).innerHTML = jsonResponse[i + 1];
@@ -3526,6 +3590,25 @@ function search() {
                     document.getElementById("srchteam" + k).innerHTML = jsonResponse[i + 3];
                     document.getElementById("srchprice" + k).innerHTML = "$" + jsonResponse[i + 4];
                     document.getElementById("srchscore" + k).innerHTML = jsonResponse[i + 5];
+                    if (jsonResponse[i + 6] == "OUT") {
+
+                        if (document.getElementById("srchinjury" + k).classList.contains('glyphicon-info-sign')) {
+                            document.getElementById("srchinjury" + k).classList.remove('glyphicon-info-sign');
+                            document.getElementById("srchinjury" + k).classList.add('glyphicon-alert');
+                            document.getElementById("srchinjury" + k).classList.add('fa-lg');
+                            document.getElementById("srchinjury" + k).style.color = '#c0020d';
+                        }
+
+                    } else {
+                        if (document.getElementById("srchinjury" + k).classList.contains('glyphicon-alert')) {
+                            document.getElementById("srchinjury" + k).classList.remove('glyphicon-alert');
+                            document.getElementById("srchinjury" + k).classList.remove('fa-lg');
+                            document.getElementById("srchinjury" + k).classList.add('glyphicon-info-sign');
+                            document.getElementById("srchinjury" + k).style.color = '';
+                        }
+
+                    }
+                    
                     k = k + 1;
                 }
 

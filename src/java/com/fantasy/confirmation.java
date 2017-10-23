@@ -128,6 +128,18 @@ public class confirmation extends HttpServlet {
             request.setAttribute("time", fixture.gettimeList());
             request.setAttribute("away", fixture.getawayList());
             request.setAttribute("awaybadge", fixture.getawaybadgeList());
+            
+             request.setAttribute("homegoal", fixture.getgoalhomeList());
+            request.setAttribute("awaygoal", fixture.getgoalawayList());
+            request.setAttribute("homeassist", fixture.getassisthomeList());
+            request.setAttribute("awayassist", fixture.getassistawayList());
+            request.setAttribute("homeyellow", fixture.getyellowhomeList());
+            request.setAttribute("awayyellow", fixture.getyellowawayList());
+            request.setAttribute("homered", fixture.getredhomeList());
+            request.setAttribute("awayred", fixture.getredawayList());
+            request.setAttribute("homesave", fixture.getsavehomeList());
+            request.setAttribute("awaysave", fixture.getsaveawayList());
+            
             players gk = new players();
             gk.players("Goalkeeper","score");
             gknameList = gk.getnameList();

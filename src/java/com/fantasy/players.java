@@ -65,7 +65,7 @@ public class players {
 
             while (resultSet.next()) {
                 nameList.add(resultSet.getString("name"));
-
+                injuryList.add(resultSet.getString("injury"));
                 if (resultSet.getString("team").equals("Houston Dash")) {
                     teamList.add("HOU");
                     if (pos.equals("Goalkeeper")) {
@@ -182,7 +182,7 @@ public class players {
 
                     
                 }
-                injuryList.add(resultSet.getString("injury"));
+                
                 
                 i++;
 

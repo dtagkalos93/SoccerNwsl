@@ -8,6 +8,7 @@ package com.fantasy;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,6 +32,16 @@ public class fixtureData {
     private List timeList = new ArrayList();
     private List awayList = new ArrayList();
     private List awaybadgeList = new ArrayList();
+    private List goalhomeList = new ArrayList();
+    private List goalawayList = new ArrayList();
+    private List assisthomeList = new ArrayList();
+    private List assistawayList = new ArrayList();
+    private List yellowhomeList = new ArrayList();
+    private List yellowawayList = new ArrayList();
+    private List redhomeList = new ArrayList();
+    private List redawayList = new ArrayList();
+    private List savehomeList = new ArrayList();
+    private List saveawayList = new ArrayList();
 
     public void fixture() {
         
@@ -148,16 +161,18 @@ public class fixtureData {
                 awaybadgeList.add(badge);
 
             }
-
             resultSet.close();
 
             s.close();
-
+            fixtureDetails(weeks,connection);
+            
+            
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
 
         }
+        
     }
 
     public List getdataList (){
@@ -180,5 +195,94 @@ public class fixtureData {
     }
     public List getawaybadgeList (){
         return awaybadgeList;
+    }
+    
+    public void fixtureDetails(int weeks,Connection connection){
+        List fixture = new ArrayList();
+        try {
+            String sql = "SELECT * FROM  gw"+weeks;
+            
+            Statement s = connection.createStatement();
+
+            s.executeQuery(sql);
+
+            ResultSet resultSet = s.getResultSet();
+
+            while (resultSet.next()) {
+                fixture.add(resultSet.getString("fixture"));
+            }
+            resultSet.close();
+
+            s.close();
+            for(int i=0;i<fixture.size();i++){
+            sql = "SELECT * FROM  "+fixture.get(i);
+            s = connection.createStatement();
+
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+
+            while (resultSet.next()) {
+               goalhomeList.add(resultSet.getString("homegoal"));
+               goalawayList.add(resultSet.getString("awaygoal"));
+               assisthomeList.add(resultSet.getString("homeassist"));
+                assistawayList.add(resultSet.getString("awayassist"));
+                yellowhomeList.add(resultSet.getString("homeyellow"));
+                yellowawayList.add(resultSet.getString("awayyellow"));
+                redhomeList.add(resultSet.getString("homered"));
+                redawayList.add(resultSet.getString("homered"));
+                savehomeList.add(resultSet.getString("homesave"));
+                saveawayList.add(resultSet.getString("awaysave"));
+            }
+            goalhomeList.add("new");
+               goalawayList.add("new");
+               assisthomeList.add("new");
+                assistawayList.add("new");
+                yellowhomeList.add("new");
+                yellowawayList.add("new");
+                redhomeList.add("new");
+                redawayList.add("new");
+                savehomeList.add("new");
+                saveawayList.add("new");
+            }
+            resultSet.close();
+
+            s.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(fixtureData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    public List getgoalhomeList (){
+        return goalhomeList;
+    }
+    public List getgoalawayList () {
+        return goalawayList;
+    }
+    public List getassisthomeList (){
+        return assisthomeList;
+    }
+    public List getassistawayList(){
+        return assistawayList;
+    }
+    public List getyellowhomeList (){
+        return yellowhomeList;
+    }
+    public List getyellowawayList (){
+        return yellowawayList;
+    }
+    public List getredhomeList (){
+        return redhomeList;
+    }
+    
+    public List getredawayList (){
+        return redawayList;
+    }
+    public List getsavehomeList (){
+        return savehomeList;
+    }
+    public List getsaveawayList (){
+        return saveawayList;
     }
 }

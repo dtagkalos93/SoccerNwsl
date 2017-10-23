@@ -32,12 +32,14 @@ public class searchBox extends HttpServlet {
     private List<String> scorelist;
     private List<String> pricelist;
     private List<String> poslist;
+    private List<String> injurylist;
     private List<String> sortednamelist;
     private List<String> sortedteamlist;
     private List<String> sortedjerseylist;
     private List<String> sortedscorelist;
     private List<String> sortedpricelist;
     private List<String> sortedposlist;
+    private List<String> sortedinjurylist;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,6 +67,7 @@ public class searchBox extends HttpServlet {
         scorelist = new ArrayList<>();
         pricelist = new ArrayList<>();
         poslist = new ArrayList<>();
+        injurylist = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -99,7 +102,7 @@ public class searchBox extends HttpServlet {
             resultSet = s.getResultSet();
             while (resultSet.next()) {
                 namelist.add(resultSet.getString("name"));
-                
+                injurylist.add(resultSet.getString("injury"));
                 if (resultSet.getString("position").equals("Goalkeeper")) {
                     poslist.add("GK");
                     pos = "Goalkeeper";
@@ -268,6 +271,8 @@ public class searchBox extends HttpServlet {
             pricelist.remove(pos);
             list.add(scorelist.get(pos));
             scorelist.remove(pos);
+            list.add(injurylist.get(pos));
+            injurylist.remove(pos);
             k++;    
         }
         String json = new Gson().toJson(list);
