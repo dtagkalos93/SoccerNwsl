@@ -139,6 +139,12 @@ public class confirmation extends HttpServlet {
             request.setAttribute("awayred", fixture.getredawayList());
             request.setAttribute("homesave", fixture.getsavehomeList());
             request.setAttribute("awaysave", fixture.getsaveawayList());
+            request.setAttribute("homeown", fixture.getownhomeList());
+            request.setAttribute("awayown", fixture.getownawayList());
+            request.setAttribute("homepkmissed", fixture.getpkmissedhomeList());
+            request.setAttribute("awaypkmissed", fixture.getpkmissedawayList());
+            request.setAttribute("homepksaved", fixture.getpksavedhomeList());
+            request.setAttribute("awaypksaved", fixture.getpksavedawayList());
             
             players gk = new players();
             gk.players("Goalkeeper","score");
