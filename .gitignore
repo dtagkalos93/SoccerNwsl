@@ -18,3 +18,4 @@ nbproject/build-impl.xml
 nbproject/ant-deploy.xml
 build/web/WEB-INF/classes/com/fantasy/fixtureprev.class
 >>>>>>> 55e77fa75aa7cb654da6580d6aa021f35d258b16
+build/web/WEB-INF/web.xml

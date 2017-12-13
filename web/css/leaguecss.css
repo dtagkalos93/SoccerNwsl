@@ -19,6 +19,22 @@ h6 {
     font-size: 14px;
 }
 
+.nav-tabs>li>a{
+    margin-right: 3px;
+    line-height: 1.42857143;
+    border: 1px solid #476eb500;
+    border-radius: 3px 3px 0 0;
+    background-color: #c8373b;
+    color: #ffffff;
+}
+
+.nav-tabs>li>a:hover{
+    
+    border-color: #9e2e31;
+    background-color: #9e2e31;
+}
+
+
 .intro-header2 {
     padding-top: 5%;
     background: url(../img/banner.png) no-repeat center center;
@@ -27,8 +43,14 @@ h6 {
 
 }
 
+.navbar-right {
+    float: right!important;
+    margin-right: 50px;
+    margin-top: 6px;
+}
+
 .extraClass {
-    height: 130px;
+    height: 130px; 
     position: relative;
 }
 
@@ -37,7 +59,6 @@ h6 {
     bottom: 0;
     font-family: arial;
 }
-
 
 .test{
     margin-top: 3%;
@@ -53,11 +74,11 @@ h6 {
     background-color:#1d3260;
     color:white  ;
     height: 40px;
-    font-size: 13px; 
     font-weight: lighter; 
-    text-align: center; 
-    font-family:arial;
-    width: 100%
+    text-align: center;
+    width: 100%;
+    border: 1px solid #1d3260;
+    border-radius: 3px;
 }
 
 .btnrenew:hover{
@@ -94,7 +115,6 @@ tr.border_bottom .tb-name{
 }
 
 tr.border_bottom .tb-name-ls{
-    font-family: arial;
     font-weight:lighter;
     padding-left: 2.05%;
     font-size:15px;
@@ -112,7 +132,6 @@ tr.border_bottom .tb-rank{
 
 }
 tr.border_bottom .tb-rank-ls{
-    font-family: arial;
     font-size: 15px;
     text-align: center;
     width:15%;
@@ -131,8 +150,6 @@ tr.border_bottom .tb-rank2{
 
 }
 tr.border_bottom .tb-rank2-ls{
-
-    font-family: arial;
     font-size: 15px;
     text-align: center;
     width:15%;
@@ -155,7 +172,6 @@ tr.border_bottom .options i{
 tr.border_bottom .options span{
     font-size: 14px;
     color: #d3292e;
-    font-family: arial;
     font-weight: lighter
 }
 
@@ -168,11 +184,11 @@ tr.border_bottom .options span{
         background-color:#ac0f1f;
         color:white   ;
         height: 40px;
-        font-size: 13px;
         font-weight: lighter;
         text-align: center;
-        font-family:arial;
-        width: 100%
+        width: 100%;
+        border: 1px solid #ac0f1f;
+        border-radius: 3px;
 
 
         }

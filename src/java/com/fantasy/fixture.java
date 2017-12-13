@@ -105,8 +105,8 @@ public class fixture extends HttpServlet {
             //Select the data from the database
             String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
             dataList.add("Gameweek " + weeks);
-            dataList.add("Gameweek " + (weeks-1));
-            dataList.add("Gameweek " + (weeks+1));
+            dataList.add("Gameweek " + (weeks - 1));
+            dataList.add("Gameweek " + (weeks + 1));
             Statement s = connection.createStatement();
 
             s.executeQuery(sql);

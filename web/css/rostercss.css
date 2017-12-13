@@ -17,8 +17,24 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
+
+.nav-tabs>li>a{
+    margin-right: 3px;
+    line-height: 1.42857143;
+    border: 1px solid #476eb500;
+    border-radius: 3px 3px 0 0;
+    background-color: #c8373b;
+    color: #ffffff;
+}
+
+.nav-tabs>li>a:hover{
+    
+    border-color: #9e2e31;
+    background-color: #9e2e31;
+}
+
 
 .intro-header2 {
     padding-top: 5%;
@@ -26,6 +42,12 @@ h6 {
     margin-top: 5%;
     background-size: cover;
 
+}
+
+.navbar-right {
+    float: right!important;
+    margin-right: 50px;
+    margin-top: 6px;
 }
 
 .extraClass {
@@ -79,7 +101,7 @@ h6 {
 
 .bc-img{
     background:url(../img/pitch2.jpg) no-repeat  ;
-    padding-bottom: 3%;
+    padding-bottom: 7%;
 
 }
 
@@ -121,9 +143,11 @@ h6 {
     width: 100%;
     margin-bottom: 5%;
     border-top:3px solid #1d3260;
-    border-bottom:1px solid grey;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey
+    border-bottom:1px solid #e8e4e4;
+    border-left: 1px solid #e8e4e4;
+    border-right: 1px solid #e8e4e4;
+    padding-left: 0;
+    padding-right: 0;
 }
 
  .image-player{
@@ -166,7 +190,6 @@ h6 {
 }
 
 
-
 .row2{
     display: flex;
     background-color: #e8e8e8;
@@ -188,7 +211,14 @@ h6 {
 .form-control{
     width: 90%;
     margin-left: 5%;
-
+    padding: 5px 12px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #5a5858;
+    border-radius: 0px;
+    border: 1px solid #aba8a8;
+    border-bottom: 1px solid #ac1f23;
+    color: #000000;
 }
 
 .btn-circle {
@@ -286,28 +316,30 @@ h6 {
 }
 
 .searchTerm {
-  width: 103%;
-  border: 2px solid #025a93;
-  padding: 5px;
-  border-radius: 5px;
-  color: #555;
+    width: 112%;
+    border: 1px solid #1d3260;
+    padding: 5px 16px;
+    color: #555;
+    background-color: #ecebeb;
+    font-size: 15px;
+    font-weight: lighter;
 }
 
+
 .searchTerm:focus{
-  color: #555;
+   background-color: white
 }
 
 .searchButton {
   position: absolute;  
-  margin-top: -12%;
+  margin-top: -11%;
   right: -36px;
   width: 34px;
-  height: 34px;
-  border: 0px solid #025a93;
-  background: #025a93;
+  height: 32px;
+  border: 0px solid #1d3260;
+  background: #1d3260;
   text-align: center;
   color: #fff;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 17px;
 }
@@ -316,4 +348,9 @@ h6 {
 .wrap{
   width: 80%;
   margin-left: 5%;
+}
+
+.ol, ul{
+    margin-top: 0;
+    margin-bottom: 0;
 }

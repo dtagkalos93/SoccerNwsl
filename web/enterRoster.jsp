@@ -196,8 +196,8 @@
                                     <span style="font-size: 14px; margin-left: -15%"><%=defname.get(0)%></span>
                                 </div>
                             </td>
-                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">BOS</td>
-                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(0)%></td>
+                            <td style="font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%"><%=defteam.get(0)%></td>
+                            <td style="text-align: center ;font-size:13px; font-weight: bold; border-bottom:1px solid #e8e8e8;width: 12.5%">12</td>
                         </tr>
                         <tr>
                             <td style='font-family: arial; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid #e8e8e8;width: 10%; text-align: center; border-right: 1px solid #e8e8e8;'><span class="glyphicon glyphicon-info-sign"></span></td>

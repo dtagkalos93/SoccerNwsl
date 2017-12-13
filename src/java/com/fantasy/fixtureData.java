@@ -165,8 +165,7 @@ public class fixtureData {
 
             s.close();
             fixtureDetails(weeks,connection);
-            
-            
+             
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
@@ -275,7 +274,6 @@ public class fixtureData {
     public List getredhomeList (){
         return redhomeList;
     }
-    
     public List getredawayList (){
         return redawayList;
     }
