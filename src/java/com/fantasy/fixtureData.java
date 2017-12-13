@@ -171,7 +171,9 @@ public class fixtureData {
 
             s.close();
             fixtureDetails(weeks,connection);
-             
+             for ( int k=0;k<homeList.size();k++){
+                 System.out.println(homeList.get(k));
+             }
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);

@@ -159,7 +159,7 @@
                                         Auto Pick 
                                     </button> 
                                 </div>
-                                    <div class="col-md-3  col-xs-3" style="margin-top: 3%">
+                                <div class="col-md-3  col-xs-3" style="margin-top: 3%">
                                     <button type="button" class="prevbutton btncustom col-sm-6 " style="height: 33px; font-size: 14px; text-align: center;float: right" onclick="reset()">
                                         Reset 
                                     </button> 
@@ -295,8 +295,6 @@
                             ArrayList<String> homepksaved = (ArrayList<String>) request.getAttribute("homepksaved");
                             ArrayList<String> awaypksaved = (ArrayList<String>) request.getAttribute("awaypksaved");
 
-                            
-
                             String dateSTR = null;
 
                         %>
@@ -332,33 +330,28 @@
 
                                 }
                             %>
-                        <a data-toggle="collapse" href="#<%=game%>" style="color:black">
-                            <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
-                                <div class="row" style="">
-                                    <div class="col-md-4  col-xs-4 " style="left: 5.9%">
-                                        <h6 style="float: right;font-size:17px"><%=home.get(i)%></h6>
-                                    </div>
-                                    <div class="col-md-1 col-xs-1 ">
-                                        <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
-                                    </div>
-                                    <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                        <h6 style="text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
-                                    </div>
-                                    <div class="col-md-1 col-xs-1 ">
-                                        <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
-                                    </div>
-                                    <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
-                                        <h6 style="font-size: 17px"><%=away.get(i)%></h6>
+                            <a data-toggle="collapse" href="#<%=game%>" style="color:black">
+                                <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
+                                    <div class="row" style="">
+                                        <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <h6 style="float: right;font-size:17px"><%=home.get(i)%></h6>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1 ">
+                                            <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                        </div>
+                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
+                                            <h6 style="text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1 ">
+                                            <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                        </div>
+                                        <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
+                                            <h6 style="font-size: 17px"><%=away.get(i)%></h6>
+                                        </div>
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-                        </a>
-                        <div id="<%=game%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
-=======
                             </a>
                             <div id="<%=game%>" class="col-sm-12 collapse " style="    margin-bottom: 2%;margin-top: -1%;">
->>>>>>> 74af3cddf115d1a05480c75b984594e12f94bb4a
                                 <% String display;
                                     if (homegoal.get(0).equals(awaygoal.get(0))) {
                                         display = "display:none";
@@ -368,337 +361,321 @@
                                 <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260<%=display%> ">
                                     <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
                                 </div>
-<<<<<<< HEAD
                                 <div class="row2" style="width: 100%;<%=display%> " >
                                     <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                         <ul style="list-style: none;float:right">
-=======
-                                <div class="row2" style="width: 100%;<%=display%>; " >
+                                            <div class="row2" style="width: 100%;<%=display%>; " >
 
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
->>>>>>> 74af3cddf115d1a05480c75b984594e12f94bb4a
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            int j = 0;
+                                                            while (!homegoal.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=homegoal.get(j)%></li>
+                                                            <%
+                                                                    homegoal.remove(j);
+                                                                }
+                                                                homegoal.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awaygoal.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=awaygoal.get(j)%></li> 
+                                                            <%
+                                                                    awaygoal.remove(j);
+                                                                }
+                                                                awaygoal.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                             <%
-                                                int j = 0;
-                                                while (!homegoal.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homegoal.get(j)%></li>
-                                                <%
-                                                        homegoal.remove(j);
-                                                    }
-                                                    homegoal.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaygoal.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaygoal.get(j)%></li> 
-                                                <%
-                                                        awaygoal.remove(j);
-                                                    }
-                                                    awaygoal.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeown.get(0).equals(awayown.get(0))) {
-                                        display = "display:none";
-                                            } else {
-                                                display = "";
-                                            }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homeown.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homeown.get(j)%></li> 
-                                                <%
-                                                        homeown.remove(j);
-                                                    }
-                                                    homeown.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayown.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awayown.get(j)%></li> 
-                                                <%
-                                                        awayown.remove(j);
-                                                    }
-                                                    awayown.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeassist.get(0).equals(awayassist.get(0))) {
-                                        display = "display:none";
+                                                if (homeown.get(0).equals(awayown.get(0))) {
+                                                    display = "display:none";
                                     } else {
                                         display = "";
                                     }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homeassist.get(j).equals("new")) {
-                                            %>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            while (!homeown.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=homeassist.get(j)%></li> 
-                                                <%
-                                                        homeassist.remove(j);
-                                                    }
-                                                    homeassist.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayassist.get(j).equals("new")) {
-                                            %>
+                                                        <li><%=homeown.get(j)%></li> 
+                                                            <%
+                                                                    homeown.remove(j);
+                                                                }
+                                                                homeown.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awayown.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=awayassist.get(j)%></li> 
-                                                <%
-                                                        awayassist.remove(j);
-                                                    }
-                                                    awayassist.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeyellow.get(0).equals(awayyellow.get(0))) {
-                                        display = "display:none";
+                                                        <li><%=awayown.get(j)%></li> 
+                                                            <%
+                                                                    awayown.remove(j);
+                                                                }
+                                                                awayown.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <%
+                                                if (homeassist.get(0).equals(awayassist.get(0))) {
+                                                    display = "display:none";
+                                                } else {
+                                                    display = "";
+                                                }%>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            while (!homeassist.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=homeassist.get(j)%></li> 
+                                                            <%
+                                                                    homeassist.remove(j);
+                                                                }
+                                                                homeassist.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awayassist.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=awayassist.get(j)%></li> 
+                                                            <%
+                                                                    awayassist.remove(j);
+                                                                }
+                                                                awayassist.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <%
+                                                if (homeyellow.get(0).equals(awayyellow.get(0))) {
+                                                    display = "display:none";
+                                                } else {
+                                                    display = "";
+                                                }%>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            while (!homeyellow.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=homeyellow.get(j)%></li> 
+                                                            <%
+                                                                    homeyellow.remove(j);
+                                                                }
+                                                                homeyellow.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awayyellow.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=awayyellow.get(j)%></li> 
+                                                            <%
+                                                                    awayyellow.remove(j);
+                                                                }
+                                                                awayyellow.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <%
+                                                if (homered.get(0).equals(awayred.get(0))) {
+                                                    display = "display:none";
+                                                } else {
+                                                    display = "";
+                                                }%>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%>  ">
+                                                <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%> " >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            while (!homered.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=homered.get(j)%></li> 
+                                                            <%
+                                                                    homered.remove(j);
+                                                                }
+                                                                homered.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awayred.get(j).equals("new")) {
+                                                        %>
+
+                                                        <li><%=awayred.get(j)%></li> 
+                                                            <%
+                                                                    awayred.remove(j);
+                                                                }
+                                                                awayred.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <%
+                                                if (homepkmissed.get(0).equals(awaypkmissed.get(0))) {
+                                                    display = "display:none";
                                     } else {
                                         display = "";
                                     }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homeyellow.get(j).equals("new")) {
-                                            %>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            while (!homepkmissed.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=homeyellow.get(j)%></li> 
-                                                <%
-                                                        homeyellow.remove(j);
-                                                    }
-                                                    homeyellow.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayyellow.get(j).equals("new")) {
-                                            %>
+                                                        <li><%=homepkmissed.get(j)%></li> 
+                                                            <%
+                                                                    homepkmissed.remove(j);
+                                                                }
+                                                                homepkmissed.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awaypkmissed.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=awayyellow.get(j)%></li> 
-                                                <%
-                                                        awayyellow.remove(j);
-                                                    }
-                                                    awayyellow.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homered.get(0).equals(awayred.get(0))) {
-                                        display = "display:none";
+                                                        <li><%=awaypkmissed.get(j)%></li> 
+                                                            <%
+                                                                    awaypkmissed.remove(j);
+                                                                }
+                                                                awaypkmissed.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <%
+                                                if (homepksaved.get(0).equals(awaypksaved.get(0))) {
+                                                    display = "display:none";
                                     } else {
                                         display = "";
                                     }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%>  ">
-                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%> " >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homered.get(j).equals("new")) {
-                                            %>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            while (!homepksaved.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=homered.get(j)%></li> 
-                                                <%
-                                                        homered.remove(j);
-                                                    }
-                                                    homered.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayred.get(j).equals("new")) {
-                                            %>
+                                                        <li><%=homepksaved.get(j)%></li> 
+                                                            <%
+                                                                    homepksaved.remove(j);
+                                                                }
+                                                                homepksaved.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
 
-                                            <li><%=awayred.get(j)%></li> 
-                                                <%
-                                                        awayred.remove(j);
-                                                    }
-                                                    awayred.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homepkmissed.get(0).equals(awaypkmissed.get(0))) {
-                                        display = "display:none";
-                                            } else {
-                                                display = "";
-                                            }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homepkmissed.get(j).equals("new")) {
-                                            %>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awaypksaved.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=homepkmissed.get(j)%></li> 
-                                                <%
-                                                        homepkmissed.remove(j);
-                                                    }
-                                                    homepkmissed.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
+                                                        <li><%=awaypksaved.get(j)%></li> 
+                                                            <%
+                                                                    awaypksaved.remove(j);
+                                                                }
+                                                                awaypksaved.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                             <%
-                                                while (!awaypkmissed.get(j).equals("new")) {
-                                            %>
+                                                if (homesave.get(0).equals(awaysave.get(0))) {
+                                                    display = "display:none";
+                                                } else {
+                                                    display = "";
+                                                }%>
+                                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
+                                                <h6 style="color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                            </div>
+                                            <div class="row2" style="width: 100%;<%=display%>" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            while (!homesave.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=awaypkmissed.get(j)%></li> 
-                                                <%
-                                                        awaypkmissed.remove(j);
-                                                    }
-                                                    awaypkmissed.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homepksaved.get(0).equals(awaypksaved.get(0))) {
-                                        display = "display:none";
-                                            } else {
-                                                display = "";
-                                            }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-family: arial;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homepksaved.get(j).equals("new")) {
-                                            %>
+                                                        <li><%=homesave.get(j)%></li> 
+                                                            <%
+                                                                    homesave.remove(j);
+                                                                }
+                                                                homesave.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            while (!awaysave.get(j).equals("new")) {
+                                                        %>
 
-                                            <li><%=homepksaved.get(j)%></li> 
-                                                <%
-                                                        homepksaved.remove(j);
-                                                    }
-                                                    homepksaved.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                       
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family:arial;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaypksaved.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaypksaved.get(j)%></li> 
-                                                <%
-                                                        awaypksaved.remove(j);
-                                                    }
-                                                    awaypksaved.remove(0);
-                                                %>
-                                        </ul>
+                                                        <li><%=awaysave.get(j)%></li> 
+                                                            <%
+                                                                    awaysave.remove(j);
+                                                                }
+                                                                awaysave.remove(0);
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
-                                <%
-                                    if (homesave.get(0).equals(awaysave.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homesave.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homesave.get(j)%></li> 
-                                                <%
-                                                        homesave.remove(j);
-                                                    }
-                                                    homesave.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaysave.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaysave.get(j)%></li> 
-                                                <%
-                                                        awaysave.remove(j);
-                                                    }
-                                                    awaysave.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--<div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Bonus</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <li>Coffee</li>
-                                            <li>Tea</li>
-                                            <li>Milk</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <li>Coffee</li>
-                                            <li>Tea</li>
-                                        </ul>
-                                    </div>
-                                </div>-->
                             </div>
+
+
+
                             <% }%>
 
                         </div>
