@@ -42,6 +42,12 @@ public class fixtureData {
     private List redawayList = new ArrayList();
     private List savehomeList = new ArrayList();
     private List saveawayList = new ArrayList();
+     private List ownhomeList = new ArrayList();
+    private List ownawayList = new ArrayList();
+     private List pkmissedhomeList = new ArrayList();
+    private List pkmissedawayList = new ArrayList();
+     private List pksavedhomeList = new ArrayList();
+    private List pksavedawayList = new ArrayList();
 
     public void fixture() {
         
@@ -232,6 +238,13 @@ public class fixtureData {
                 redawayList.add(resultSet.getString("homered"));
                 savehomeList.add(resultSet.getString("homesave"));
                 saveawayList.add(resultSet.getString("awaysave"));
+                ownhomeList.add(resultSet.getString("homeown"));
+                System.out.println("Own: " + resultSet.getString("homeown"));
+                ownawayList.add(resultSet.getString("awayown"));
+                pkmissedhomeList.add(resultSet.getString("homepkmissed"));
+                pkmissedawayList.add(resultSet.getString("awaypkmissed"));
+                pksavedhomeList.add(resultSet.getString("homepksaved"));
+                pksavedawayList.add(resultSet.getString("awaypksaved"));
             }
             goalhomeList.add("new");
                goalawayList.add("new");
@@ -243,6 +256,12 @@ public class fixtureData {
                 redawayList.add("new");
                 savehomeList.add("new");
                 saveawayList.add("new");
+                ownhomeList.add("new");
+                ownawayList.add("new");
+                pkmissedhomeList.add("new");
+                pkmissedawayList.add("new");
+                pksavedhomeList.add("new");
+                pksavedawayList.add("new");
             }
             resultSet.close();
 
@@ -282,5 +301,26 @@ public class fixtureData {
     }
     public List getsaveawayList (){
         return saveawayList;
+    }
+    
+    public List getownhomeList (){
+        return ownhomeList;
+    }
+    public List getownawayList (){
+        return ownawayList;
+    }
+    
+    public List getpkmissedhomeList (){
+        return pkmissedhomeList;
+    }
+    public List getpkmissedawayList (){
+        return pkmissedawayList;
+    }
+    
+    public List getpksavedhomeList (){
+        return pksavedhomeList;
+    }
+    public List getpksavedawayList (){
+        return pksavedawayList;
     }
 }
