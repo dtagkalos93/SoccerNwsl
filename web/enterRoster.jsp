@@ -418,7 +418,8 @@
                                     <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
                                     <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
                                 </tr>
-                                <%                                    for (int i = 0; i < bosname.size(); i++) {
+                                <%      
+                                    for (int i = 0; i < bosname.size(); i++) {
 
                                 %>
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
@@ -494,7 +495,8 @@
                                     <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
                                     <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
                                 </tr>
-                                <%                                    for (int i = 0; i < kcname.size(); i++) {
+                                <%  
+                                    for (int i = 0; i < kcname.size(); i++) {
 
                                 %>
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
@@ -532,7 +534,8 @@
                                     <th style="font-size: 13px;background-color: #1d3260; width: 10%;color: white;text-align: center">Pos</th>
                                     <th style="font-size: 13px;background-color: #1d3260; width: 14%;color: white;text-align: center">Price</th>
                                 </tr>
-                                <%                                    for (int i = 0; i < houname.size(); i++) {
+                                <%  
+                                    for (int i = 0; i < houname.size(); i++) {
 
                                 %>
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >

@@ -21,48 +21,48 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class enterTeam extends HttpServlet {
 
-    private List gknameList = new ArrayList();
-    private List gkjerseyList = new ArrayList();
-    private List gkteamList = new ArrayList();
-    private List defnameList = new ArrayList();
-    private List defjerseyList = new ArrayList();
-    private List defteamList = new ArrayList();
-    private List midnameList = new ArrayList();
-    private List midjerseyList = new ArrayList();
-    private List midteamList = new ArrayList();
-    private List fwdnameList = new ArrayList();
-    private List fwdjerseyList = new ArrayList();
-    private List fwdteamList = new ArrayList();
-    private List bosnameList = new ArrayList();
-    private List bosjerseyList = new ArrayList();
-    private List bosposList = new ArrayList();
-    private List chinameList = new ArrayList();
-    private List chijerseyList = new ArrayList();
-    private List chiposList = new ArrayList();
-    private List kcnameList = new ArrayList();
-    private List kcjerseyList = new ArrayList();
-    private List kcposList = new ArrayList();
-    private List hounameList = new ArrayList();
-    private List houjerseyList = new ArrayList();
-    private List houposList = new ArrayList();
-    private List ncnameList = new ArrayList();
-    private List ncjerseyList = new ArrayList();
-    private List ncposList = new ArrayList();
-    private List orlnameList = new ArrayList();
-    private List orljerseyList = new ArrayList();
-    private List orlposList = new ArrayList();
-    private List pornameList = new ArrayList();
-    private List porjerseyList = new ArrayList();
-    private List porposList = new ArrayList();
-    private List seanameList = new ArrayList();
-    private List seajerseyList = new ArrayList();
-    private List seaposList = new ArrayList();
-    private List njnameList = new ArrayList();
-    private List njjerseyList = new ArrayList();
-    private List njposList = new ArrayList();
-    private List wasnameList = new ArrayList();
-    private List wasjerseyList = new ArrayList();
-    private List wasposList = new ArrayList();
+    private List gknameList;
+    private List gkjerseyList;
+    private List gkteamList;
+    private List defnameList;
+    private List defjerseyList;
+    private List defteamList;
+    private List midnameList;
+    private List midjerseyList;
+    private List midteamList;
+    private List fwdnameList;
+    private List fwdjerseyList;
+    private List fwdteamList;
+    private List bosnameList;
+    private List bosjerseyList;
+    private List bosposList;
+    private List chinameList;
+    private List chijerseyList;
+    private List chiposList;
+    private List kcnameList;
+    private List kcjerseyList;
+    private List kcposList;
+    private List hounameList;
+    private List houjerseyList;
+    private List houposList;
+    private List ncnameList;
+    private List ncjerseyList;
+    private List ncposList;
+    private List orlnameList;
+    private List orljerseyList;
+    private List orlposList;
+    private List pornameList;
+    private List porjerseyList;
+    private List porposList;
+    private List seanameList;
+    private List seajerseyList;
+    private List seaposList;
+    private List njnameList;
+    private List njjerseyList;
+    private List njposList;
+    private List wasnameList;
+    private List wasjerseyList;
+    private List wasposList;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -76,6 +76,48 @@ public class enterTeam extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        gknameList = new ArrayList();
+        gkjerseyList = new ArrayList();
+        gkteamList = new ArrayList();
+        defnameList = new ArrayList();
+        defjerseyList = new ArrayList();
+        defteamList = new ArrayList();
+        midnameList = new ArrayList();
+        midjerseyList = new ArrayList();
+        midteamList = new ArrayList();
+        fwdnameList = new ArrayList();
+        fwdjerseyList = new ArrayList();
+        fwdteamList = new ArrayList();
+        bosnameList = new ArrayList();
+        bosjerseyList = new ArrayList();
+        bosposList = new ArrayList();
+        chinameList = new ArrayList();
+        chijerseyList = new ArrayList();
+        chiposList = new ArrayList();
+        kcnameList = new ArrayList();
+        kcjerseyList = new ArrayList();
+        kcposList = new ArrayList();
+        hounameList = new ArrayList();
+        houjerseyList = new ArrayList();
+        houposList = new ArrayList();
+        ncnameList = new ArrayList();
+        ncjerseyList = new ArrayList();
+        ncposList = new ArrayList();
+        orlnameList = new ArrayList();
+        orljerseyList = new ArrayList();
+        orlposList = new ArrayList();
+        pornameList = new ArrayList();
+        porjerseyList = new ArrayList();
+        porposList = new ArrayList();
+        seanameList = new ArrayList();
+        seajerseyList = new ArrayList();
+        seaposList = new ArrayList();
+        njnameList = new ArrayList();
+        njjerseyList = new ArrayList();
+        njposList = new ArrayList();
+        wasnameList = new ArrayList();
+        wasjerseyList = new ArrayList();
+        wasposList = new ArrayList();
         System.out.println("EnterRoster");
         System.out.println(request.getParameter("name"));
         String players = request.getParameter("name");
@@ -277,7 +319,7 @@ public class enterTeam extends HttpServlet {
                 midteamList.add(playersTeam[1]);
             } else {
                 playersTeam = playersArray[i].split("-");
-                                if (playersTeam[1].equals("HOU")) {
+                if (playersTeam[1].equals("HOU")) {
                     hounameList.add(playersTeam[0]);
                     houjerseyList.add("dash1.png");
                     houposList.add("FWD");
