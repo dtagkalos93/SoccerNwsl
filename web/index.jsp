@@ -302,7 +302,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Create and join leagues</h2>
-                    <p class="lead">Join standard leagues or you create your own to compete against your friends. </p>
+                    <p class="lead">Join standard leagues or create your own to compete against your friends. </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/dog.png" alt="">
