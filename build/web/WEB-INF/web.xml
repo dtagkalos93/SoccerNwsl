@@ -52,6 +52,10 @@
         <servlet-name>enterTeam</servlet-name>
         <servlet-class>com.fantasy.enterTeam</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>autopick</servlet-name>
+        <servlet-class>com.fantasy.autopick</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>enterTeam</servlet-name>
         <url-pattern>/enterTeam</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>autopick</servlet-name>
+        <url-pattern>/autopick</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
