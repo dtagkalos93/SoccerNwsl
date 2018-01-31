@@ -45,25 +45,15 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl.png" style="width:141.7px;height:125px; margin-top: -17px" />
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width:119px;height:105px; padding: 0" />
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="http://bostonbreakerssoccer.com"  target="_blank">
-                                <img  src="img/Boston_Breakers.png" style="width:56.9px;height:45px;margin-right:-8px" 	 />
-                            </a>
-                        </li>
-                        <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
                                 <img  src="img/ChicagoRedStars.png" style="width:38.9px;height:45px;margin-right:-8px" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.fckansascity.com/"  target="_blank">
-                                <img  src="img/kansasCity.png" style="width:57.8px;height:45px;margin-right:-8px" />
                             </a>
                         </li>
                         <li>
@@ -94,6 +84,11 @@
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
                                 <img  src="img/Sky_Blue_FC.png" style="width:36.2px;height:45px;margin-right:-8px" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
+                                <img  src="img/UtahRoyals.png" style="width:46px;height:45px;margin-right:-8px" />
                             </a>
                         </li>
                         <li>

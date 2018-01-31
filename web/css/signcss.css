@@ -31,11 +31,10 @@ h6 {
 }
 
 .intro-header2 {
-    padding-top: 15%;
+    padding-top: 7%;
     background: url(../img/banner2.png) no-repeat center center;
     margin-top: 5%; 
     background-size: cover;
-
 }
 
 .intro-message {

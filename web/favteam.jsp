@@ -51,25 +51,15 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl.png" style="width:141.7px;height:125px; margin-top: -17px" ></img>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width:119px;height:105px; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="http://bostonbreakerssoccer.com"  target="_blank">
-                                <img  src="img/Boston_Breakers.png" style="width:56.9px;height:45px;margin-right:-8px" 	 />
-                            </a>
-                        </li>
-                        <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
                                 <img  src="img/ChicagoRedStars.png" style="width:38.9px;height:45px;margin-right:-8px" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.fckansascity.com/"  target="_blank">
-                                <img  src="img/kansasCity.png" style="width:57.8px;height:45px;margin-right:-8px" />
                             </a>
                         </li>
                         <li>
@@ -101,6 +91,11 @@
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
                                 <img  src="img/Sky_Blue_FC.png" style="width:36.2px;height:45px;margin-right:-8px" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
+                                <img  src="img/UtahRoyals.png" style="width:46px;height:45px;margin-right:-8px" />
                             </a>
                         </li>
                         <li>
@@ -180,74 +175,67 @@
                         <div class="row">
                             <div class="col-md-3" style="margin-left: 24%">
                                 <div class="list-group" >
-                                    <a  value="boston" data-class="boston" class="list-group-item boston" style="padding: 1%;width: 105%;" id="fanteam1" onclick="fanTeam(1)">
-                                        <h4 style="margin-left: 5%">Boston Breakers
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/Boston_Breakers1.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                    <a  value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%;" id="fanteam2" onclick="fanTeam(2)">
+                                    <a  value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%;" id="fanteam1" onclick="fanTeam(1)">
                                         <h4 style="margin-left: 5%">Chicago Red Stars 
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/ChicagoRedStars1.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;" id="fanteam3" onclick="fanTeam(3)">
-                                        <h4 style="margin-left: 5%">FC Kansas
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/kansasCity2.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                    <a  value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%;" id="fanteam4" onclick="fanTeam(4)">
+                                    <a  value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%;" id="fanteam2" onclick="fanTeam(2)">
                                         <h4 style="margin-left: 5%">Houston Dash
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/Houston_Dash2.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%;" id="fanteam5" onclick="fanTeam(5)">
+                                    <a  value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%;" id="fanteam3" onclick="fanTeam(3)">
                                         <h4 style="margin-left: 5%">North Caroline Courage
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/North_Carolina_Courage1.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="list-group">
-                                    <a  value="orlando" data-class="orlando" class="list-group-item orlando" style="padding: 1%;width: 105%" id="fanteam6" onclick="fanTeam(6)">
+                                    <a  value="orlando" data-class="orlando" class="list-group-item orlando" style="padding: 1%;width: 105%" id="fanteam4" onclick="fanTeam(4)">
                                         <h4 style="margin-left: 5%">Orlando Pride
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/OrlandoPride2.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="portland" data-class="portland" class="list-group-item portland" style="padding: 1%;width: 105%" id="fanteam7" onclick="fanTeam(7)">
+                                    <a  value="portland" data-class="portland" class="list-group-item portland" style="padding: 1%;width: 105%" id="fanteam5" onclick="fanTeam(5)">
                                         <h4 style="margin-left: 5%">Portland Thorns FC
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/Portland1.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%" id="fanteam8" onclick="fanTeam(8)">
+                                </div>
+                            </div>
+                            <div class="col-md-3" style="padding: 2%">
+                                <div class="list-group">
+                                    <a  value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%" id="fanteam6" onclick="fanTeam(6)">
                                         <h4 style="margin-left: 5%">Seattle Reign FC
                                         <span>
                                             <img style="float: right; margin-top: -4%" src="img/SeattleReignFC2.png"/>
                                         </span>
                                         </h4>
                                     </a>
-                                    <a value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%" id="fanteam9" onclick="fanTeam(9)">
+                                    <a value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%" id="fanteam7" onclick="fanTeam(7)">
                                         <h4 style="margin-left: 5%">Sky Blue FC
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/Sky_Blue_FC1.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%" id="fanteam10" onclick="fanTeam(10)">
+                                    <a  value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
+                                        <h4 style="margin-left: 5%">Utah Royals FC
+                                            <span>
+                                                <img style="float: right; margin-top: -4%" src="img/UtahRoyals2.png"/>
+                                            </span>
+                                        </h4>
+                                    </a>
+                                    <a value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%" id="fanteam9" onclick="fanTeam(9)">
                                         <h4 style="margin-left: 5%">Washington Spirit
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/spirit.png"/>

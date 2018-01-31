@@ -20,11 +20,20 @@ h6 {
 }
 
 .intro-header2 {
-    padding-top: 5%;
-    background: url(../img/banner.png) no-repeat center center;
+    padding-top: 7%;
+    background: url(../img/banner2.png) no-repeat center center;
     margin-top: 5%;
     background-size: cover;
 
+}
+
+.nav-tabs>li>a{
+    margin-right: 3px;
+    line-height: 1.42857143;
+    border: 1px solid #476eb500;
+    border-radius: 3px 3px 0 0;
+    background-color: #c8373b;
+    color: #ffffff;
 }
 
 .extraClass {
