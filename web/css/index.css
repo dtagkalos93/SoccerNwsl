@@ -28,21 +28,20 @@ h6 {
 .lead {
     font-size: 18px;
     font-weight: 400;
+    margin: 0
 }
 
 .intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
-    background-size: cover;
+    background: url(../img/banner.png) no-repeat;
+    background-size: contain;
 }
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 12%;
+    margin-bottom: 8%;
 }
 
 .intro-message > h1 {
@@ -93,8 +92,7 @@ h6 {
 }
 
 .content-section-a {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: white;
 }
 
 .content-section-b {
@@ -104,13 +102,14 @@ h6 {
 }
 
 .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-top: 0px
 }
 
 .section-heading-spacer {
     float: left;
     width: 200px;
-    border-top: 3px solid #e7e7e7;
+    border-top: 3px solid white;
 }
 
 .banner {
@@ -175,44 +174,83 @@ p.copyright {
     padding-left:30px;
 }
 
-.prevbutton{
-    background-color:#3B5998;
+.loginbutton{
+    background-color:#c1868d;
     border: none;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    border-radius: 2px
+    border-radius: 3px;
 }
 
-.prevbutton:hover{
-    background-color: #050424;
+.loginbutton:hover{
+    background-color: #ba5e68;
     text-decoration: none;
 }
 
-.nextbutton{
-    background-color:#55ACEE;
+.signupbutton{
+    background-color:#303663;
     border: none;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    border-radius: 2px
+    border-radius: 3px;
+    margin-left: 1%;
 }
 
-.nextbutton:hover{
-    background-color: #050424;
+.signupbutton:hover{
+    background-color: #1b2046;
     text-decoration: none;
 }
 
-.fa-facebook{
-    color:white;
-    margin-right: 3%;
-    text-decoration: none;
-    
+
+.modal-header{
+    background: url(../img/banner.png) no-repeat;
+    background-size: cover;
+    padding: 10px;
 }
 
-.fa-twitter{
-    color:white;
-    margin-right: 3%;
+.modal-title{
+    font-family: Century Gothic;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+button.close{
+    font-size: 25px;    
+    font-weight: lighter;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    opacity: 1;
+    color: white;
+}
+
+.close:hover{
+    color: #aba9a9;
+}
+
+.submitbutton{
+    background-color:#303663;
+    border: none;
     text-decoration: none;
-    
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 1%;
+}
+
+.submitbutton:hover{
+    background-color: #1b2046;
+    text-decoration: none;
+}
+
+.form-control{
+    font-family:arial;
+    font-size:17px;
+    font-weight: lighter;
+    width:75%;
+    border-radius: 0; 
+    border-bottom:1px solid #1d3260;
+    padding: 3.5%;
 }

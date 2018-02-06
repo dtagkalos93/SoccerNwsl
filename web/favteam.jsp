@@ -51,7 +51,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width:119px;height:105px; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,48 +59,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width:38.9px;height:45px;margin-right:-8px" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width:43px;height:45px;margin-right:-8px" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width:35.8px;height:45px;margin-right:-8px" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
-                        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width:32px;height:45px;margin-right:-8px" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width:36.2px;height:45px;margin-right:-8px" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width:46px;height:45px;margin-right:-8px" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width:48.6px;height:45px;margin-right:-8px" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -110,47 +109,46 @@
             <!-- /.container -->
         </nav>
 
-        <div class="intro-header2">
+        <!-- Header -->
+        <div class="intro-header">
+            <div class="container">
 
-            <img src="img/banner2.png" style="visibility: hidden;width: 25%;height: 25%" />
-
-            <!-- /.container -->
-
-        </div>
-
-        <div class="container" style="margin-bottom: 3%">
-            <div class="row">
-
-                <h1 class="col-md-12 col-xs-12" align="center" style="margin-bottom: 50px">Favourite Team</h1><br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h2 style="font-family: Century Gothic; font-weight: lighter;color: #f8f8f8; text-align: left">Choose your favorite team</h2>
+                        </div>
+                    </div>
+                </div>
                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form class="col-md-12 col-xs-12" method="POST" action="confirmation">
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none" >
-                        <label class="col-md-3 col-xs-3" for="first" style="font-size: 20px" >First Name:</label>
+                        <label class="col-md-3 col-xs-3" for="first" style="font-size: 17px; font-family: Century Gothic" >First Name:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <input type="firstname" value="<%=request.getAttribute("firstname")%>" class="form-control" name="firstname" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
-                        <label class="col-md-3 col-xs-3" for="last" style="font-size: 20px" >Last Name:</label>
+                        <label class="col-md-3 col-xs-3" for="last" style="font-size: 17px; font-family: Century Gothic" >Last Name:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <input type="lastname"  value="<%=request.getAttribute("lastname")%>" class="form-control" name="lastname" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
-                        <label class="col-md-3 col-xs-3" for="email" style="font-size: 20px" >Email Address:</label>
+                        <label class="col-md-3 col-xs-3" for="email" style="font-size: 17px; font-family: Century Gothic" >Email Address:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <input type="email" value="<%=request.getAttribute("email")%>"  class="form-control" name="email" style="width:75%">
                         </div>
                     </div>
                     <div class="form-group" style="margin-left: 20%;padding-bottom: 4%;display: none">
-                        <label class="col-md-3 col-xs-3" for="pwd" style="font-size: 20px" >Password:</label>
+                        <label class="col-md-3 col-xs-3" for="pwd" style="font-size: 17px; font-family: Century Gothic" >Password:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <input type="text" value="<%=request.getAttribute("password")%>"  class="form-control" name="pwd" style="width:75%">
                         </div>
                     </div>
                     <div  style="margin-left: 20%;padding-bottom: 4%;display: none">
-                        <label class="col-md-3 col-xs-3" for="gender" style="font-size: 20px"> Gender:</label>
+                        <label class="col-md-3 col-xs-3" for="gender" style="font-size: 17px; font-family: Century Gothic"> Gender:</label>
                         <div class="col-md-9 col-xs-9"> 
                             <%String gender = request.getAttribute("gender").toString();
                                 if (gender.equals("male")) {%>
@@ -213,53 +211,50 @@
                                 </div>
                             </div>
                             <div class="col-md-3" style="padding: 2%">
-                                <div class="list-group">
-                                    <a  value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%" id="fanteam6" onclick="fanTeam(6)">
-                                        <h4 style="margin-left: 5%">Seattle Reign FC
-                                        <span>
-                                            <img style="float: right; margin-top: -4%" src="img/SeattleReignFC2.png"/>
-                                        </span>
-                                        </h4>
-                                    </a>
-                                    <a value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%" id="fanteam7" onclick="fanTeam(7)">
-                                        <h4 style="margin-left: 5%">Sky Blue FC
+                                    <div class="list-group">
+                                        <a  value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%" id="fanteam6" onclick="fanTeam(6)">
+                                            <h4 style="margin-left: 5%">Seattle Reign FC
                                             <span>
-                                                <img style="float: right; margin-top: -4%" src="img/Sky_Blue_FC1.png"/>
+                                                <img style="float: right; margin-top: -4%" src="img/SeattleReignFC2.png"/>
                                             </span>
-                                        </h4>
-                                    </a>
-                                    <a  value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
-                                        <h4 style="margin-left: 5%">Utah Royals FC
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/UtahRoyals2.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                    <a value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%" id="fanteam9" onclick="fanTeam(9)">
-                                        <h4 style="margin-left: 5%">Washington Spirit
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/spirit.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                </div>
+                                            </h4>
+                                        </a>
+                                        <a value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%" id="fanteam7" onclick="fanTeam(7)">
+                                            <h4 style="margin-left: 5%">Sky Blue FC
+                                                <span>
+                                                    <img style="float: right; margin-top: -4%" src="img/Sky_Blue_FC1.png"/>
+                                                </span>
+                                            </h4>
+                                        </a>
+                                        <a  value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
+                                            <h4 style="margin-left: 5%">Utah Royals FC
+                                                <span>
+                                                    <img style="float: right; margin-top: -4%" src="img/UtahRoyals2.png"/>
+                                                </span>
+                                            </h4>
+                                        </a>
+                                        <a value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%" id="fanteam9" onclick="fanTeam(9)">
+                                            <h4 style="margin-left: 5%">Washington Spirit
+                                                <span>
+                                                    <img style="float: right; margin-top: -4%" src="img/spirit.png"/>
+                                                </span>
+                                            </h4>
+                                        </a>
+                                    </div>
                                 </div>
                                 <input name="country" value="<%=request.getAttribute("country")%>"  class="form-control"  style="display:none">
                                 <input name="team" id='favteam'   class="form-control"  style="display:none">
                                 <div>
-                                <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                                    <button type="submit" class=" prevbutton2 btncustom   " style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" onclick="goBack()" >
-                                        <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
-                                </div>
-                                <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                                    <button type="submit" class="prevbutton btncustom" style="font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;padding: 1.5%;width:34%" >
-                                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
-                                </div>
+                                    <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
+                                        <button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onclick="goBack()" >
+                                            <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
+                                        <button type="submit" class="prevbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
+                                            <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
+                                    </div>
 
                                 </div>
-
-
-                            
                         </div>
 
 

@@ -27,6 +27,8 @@ h6 {
     border-radius: 3px 3px 0 0;
     background-color: #c8373b;
     color: #ffffff;
+    font-family: Century Gothic;
+    font-size: 15px;
 }
 
 .nav-tabs>li>a:hover{
@@ -106,6 +108,7 @@ h6 {
 }
 
 .gkname,.cbname{
+    font-family: Century Gothic;
     width:120px;
     border: 2px solid #02509a;
     margin: 0;
@@ -116,13 +119,14 @@ h6 {
     padding-top: 0px;
     font-size: 14px;
     opacity: 0.9;
-     overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 
 .gkpoint,.cbpoint{
+    font-family: Century Gothic;
     padding: 0px;
     width:120px;
     margin: 0;
@@ -212,13 +216,14 @@ h6 {
     width: 90%;
     margin-left: 5%;
     padding: 5px 12px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: lighter;
     color: #5a5858;
     border-radius: 0px;
     border: 1px solid #aba8a8;
     border-bottom: 1px solid #ac1f23;
     color: #000000;
+    font-family: Century Gothic;
 }
 
 .btn-circle {
@@ -316,12 +321,13 @@ h6 {
 }
 
 .searchTerm {
+    font-family: Century Gothic;
     width: 112%;
     border: 1px solid #1d3260;
     padding: 5px 16px;
     color: #555;
     background-color: #ecebeb;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: lighter;
 }
 

@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width:119px;height:105px; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,48 +55,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width:38.9px;height:45px;margin-right:-8px" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width:43px;height:45px;margin-right:-8px" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width:35.8px;height:45px;margin-right:-8px" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
-                        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width:32px;height:45px;margin-right:-8px" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width:36.2px;height:45px;margin-right:-8px" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width:46px;height:45px;margin-right:-8px" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width:48.6px;height:45px;margin-right:-8px" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -106,75 +105,72 @@
             <!-- /.container -->
         </nav>
 
-        <div class="intro-header2">
+        <!-- Header -->
+        <div class="intro-header">
+            <div class="container">
 
-
-
-            <!-- /.container -->
-
-        </div>
-
-        <div class="container" style="margin-bottom: 3%">
-            <div class="row">
-
-                <h2 class="col-md-12 col-xs-12" style="margin-bottom: 50px;text-align: -webkit-left">Creating a new account</h2><br>
-
-
-                <div  id="ajaxLoginResponse" style="color: red;"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h2 style="font-family: Century Gothic; font-weight: lighter;color: #f8f8f8; text-align: left">Creating a new account</h2>
+                        </div>
+                    </div>
+                </div>
+                 <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
                     <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
 
-                        <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%" >First Name
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >First Name
+                            <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="firstname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
-                        <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%" >Last Name
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" for="last" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >Last Name
+                            <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="lastname" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
 
                         </div>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
-                        <label class="col-md-4 col-xs-4" for="emial" align="right" style="font-size: 17px;padding:1%" >Email  Address
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" for="emial" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >Email  Address
+                            <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="email" class="form-control" name="email" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
                     </div>
                     <div class="form-group" style=" padding-bottom: 4%">
-                        <label class="col-md-4 col-xs-4" for="pwd" align="right" style="font-size: 17px;padding:1%" >Password
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" for="pwd" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >Password
+                            <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="password" class="form-control" name="pwd" style="font-family:arial;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
 
                     </div>
                     <div  style="padding-bottom: 5.25%">
-                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%"> Gender
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" for="gender" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic"> Gender
+                            <span style="font-size: 17px"> *</span>
                         </label>
-                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%"> 
+                        <div class="col-md-6 col-xs-6" align="left" style="margin-left: 5%;padding-top: 1%; font-family: Century Gothic;font-weight: lighter"> 
                             <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
                             <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
                             <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified 
                         </div>
                     </div>
                     <div   style="padding-bottom: 4%">
-                        <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;padding:1%"> Select your country
-                            <span style="font-size: 18px"> *</span>
+                        <label class="col-md-4 col-xs-4" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic"> Select your country
+                            <span style="font-size: 17px"> *</span>
                         </label>
-                        <div class="col-md-6 col-xs-6" align="left" style="font-size: 15px; margin-left: 6%;padding-top: 0.5%"> 
+                        <div class="col-md-6 col-xs-6" align="left" style="font-size: 15px;font-weight: lighter; margin-left: 6%;padding-top: 0.5%; font-family: Century Gothic"> 
                             <input type="text" id="country" name="country" style="width: 172%;;border-radius: 1px; border-bottom:1px solid #1d3260;border-top: none;border-right: none;border-left: none">
 
                             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -186,13 +182,16 @@
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
 
-                        <button type="submit" value="Next" class="prevbutton btncustom  " style="color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 22%;padding:0.8%; appearance: button"> Next
-                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
+                        <button type="submit" value="Next" class="nextbuttonaccount btncustom  " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 20%; padding: 0.9%"> 
+                            <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Next
                         </button>
                     </div>
                 </form>
             </div>
-            
+</div>
+        
+                        <!-- /.container -->
+
             <!-- jQuery -->
             <script src="js/jquery.js"></script>
 

@@ -172,7 +172,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width:119px;height:105px; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -180,48 +180,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width:38.9px;height:45px;margin-right:-8px" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width:43px;height:45px;margin-right:-8px" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width:35.8px;height:45px;margin-right:-8px" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
-                        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width:45px;height:45px;margin-right:-8px" />
+                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width:32px;height:45px;margin-right:-8px" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width:36.2px;height:45px;margin-right:-8px" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width:46px;height:45px;margin-right:-8px" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width:48.6px;height:45px;margin-right:-8px" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -240,19 +239,25 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <h1>Fantasy NWSL</h1>
-                            <button type="button" class="btn btn-default" style="width: 172.56px;background-color: #dfdede" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
-                            <a href="signUp.jsp" class="btn btn-default"   >Sign Up</a>
+                            <h1 style="font-family: Century Gothic; padding-bottom: 2%; font-weight: lighter">NWSL Fantasy League</h1>
+                            <button type="button" class="loginbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
+                            <a href="signUp.jsp" class="signupbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 19%;padding:0.7%"  >Sign Up</a>
 
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12" style="margin-top:-15%">
-                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                        <button class="nextbutton btncustom  " style="margin-left: 1%;color:white; font-size: 13px; font-weight: lighter; text-align: center; font-family:arial;width: 20%;padding:0.4%; appearance: button" >
-                            <a class="fa fa-twitter" style="font-size:27px"></a>Login with Twitter
-                        </button>
+                    <div class="col-lg-12" style="margin-top: -5%">
+                        <div>
+                        <h4 style="color:white; font-family: Century Gothic; margin-top: 0; text-shadow: 2px 2px 3px rgba(0,0,0,0.6); font-weight: lighter">or Login with
+                        <!--<div class="fb-login-button" size="medium" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+                        <a class="btn btn-social-icon btn-facebook" style="background-color: #3B5998; padding: 3px 14px; font-size: 23px; border-radius: 7px; margin-top: 0; margin-left: 0.5%;">
+                            <span class="fa fa-facebook" style="color:white"></span>
+                        </a>
+                        <a class="btn btn-social-icon btn-twitter" style="background-color: #55ACEE; padding: 3px 10px; font-size: 23px; border-radius: 7px; margin-top: 0;margin-left: 0.5%;">
+                            <span class="fa fa-twitter" style="color:white"></span>
+                        </a>
+                        </h4>
 
                     </div>
                 </div>
@@ -261,7 +266,6 @@
         </div>
         <!-- /.container -->
 
-    </div>
     <!-- /.intro-header -->
 
     <!-- Page Content -->
@@ -271,15 +275,34 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Pick your squad<br></h2>
-                    <p class="lead">Select your best IX and beat the best in order to be the best.</p>
+                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Pick your roster<br></h2>
+                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">Select your best IX and beat the best in order to be the best.</p>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                    </div>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
+                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin:0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Create and join leagues<br></h2>
+                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">Join standard leagues or create your own to compete against your friends and family.</p>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                    </div>
                 </div>
+                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold; font-family: Century Gothic">Roster Restrictions<br></h2>
+                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">With $100 million budget and 2 additional free transfers every week you have the chance to create your own super team.</p>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                    </div>
+                </div>
+                
             </div>
 
         </div>
@@ -287,7 +310,7 @@
 
     </div>
     <!-- /.content-section-a -->
-
+    <!--
     <div class="content-section-b">
 
         <div class="container">
@@ -307,9 +330,8 @@
         </div>
         <!-- /.container -->
 
-    </div>
     <!-- /.content-section-b -->
-
+    <!--
     <div class="content-section-a">
 
         <div class="container">
@@ -326,10 +348,10 @@
                 </div>
             </div>
 
-        </div>
+        </div> 
+    </div> -->
         <!-- /.container -->
 
-    </div>
     <!-- /.content-section-a -->
     <!--
     <a  name="contact"></a>
@@ -397,24 +419,28 @@
     <div class="modal-dialog" style="width: 450px">
 
         <!-- Modal content-->
-        <div class="modal-content" >
-            <h1 align="center" style="margin-bottom: 50px">Login</h1><br>
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            
             <div id="ajaxLoginResponse" style="color: red;"></div>
 
-            <form method="POST" action="login">
+            <form method="POST" action="login" style="margin-top: 8%;">
                 <div class="form-group" style="margin-left: 20%">
-                    <label for="email" >Email address:</label>
-                    <input type="email" class="form-control" name="email" style="width:75%">
+                    <label for="email" style="font-size: 16px;font-family: Century Gothic;">Email address:</label>
+                    <input type="email" class="form-control" name="email" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                 </div>
                 <div class="form-group" style="margin-left: 20%">
-                    <label for="pwd" >Password:</label>
-                    <input type="password" class="form-control" name="pwd" style="width:75%">
+                    <label for="pwd" style="font-size: 16px;font-family: Century Gothic;">Password: </label>
+                    <input type="password" class="form-control" name="pwd" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                 </div>
-                <div class="checkbox" style="margin-left: 20%">
-                    <label ><input type="checkbox" name="checkbox"> Remember me</label>
+                <div class="checkbox" style="margin-left: 20%; margin-bottom: 6%">
+                    <label style="font-family: Century Gothic"><input type="checkbox" name="checkbox" > Remember me</label>
                 </div>
-                <div align="center" style="margin-bottom: 50px">
-                    <button type="submit" class="btn btn-default" >Submit</button>
+                <div align="center" style="margin-bottom: 8%">
+                    <button type="submit" class="submitbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 35%;padding:1.5%" >Submit</button>
                 </div>
             </form>
 
