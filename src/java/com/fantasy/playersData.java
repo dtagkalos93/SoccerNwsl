@@ -113,8 +113,7 @@ public class playersData extends HttpServlet {
             scorelist = new ArrayList<>();
             pricelist = new ArrayList<>();
             injurylist = new ArrayList<>();
-        
-            
+
             forwards(connection, fixNo, category);
 
         } catch (Exception e) {
@@ -144,7 +143,7 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
-            injurylist.add(resultSet.getString("injury"));  
+            injurylist.add(resultSet.getString("injury"));
             String team = resultSet.getString("team");
 
             if (team.equals("Houston Dash")) {
@@ -180,7 +179,7 @@ public class playersData extends HttpServlet {
                 jerseylist.add("breakersgk.png");
             }
             pricelist.add(resultSet.getString("price"));
-            if (category.equals("score")) {
+            if (category.equals("score") || category.equals("price")) {
                 total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
@@ -196,12 +195,11 @@ public class playersData extends HttpServlet {
                 scorelist.add(total + "");
             } else {
                 String score = resultSet.getString(category);
-                 if (score.equals("") || score.equals("-")) {
-                        scorelist.add("0");
-                    } else {
-                        scorelist.add(score);
-                    }
-                
+                if (score.equals("") || score.equals("-")) {
+                    scorelist.add("0");
+                } else {
+                    scorelist.add(score);
+                }
 
             }
 
@@ -210,7 +208,7 @@ public class playersData extends HttpServlet {
         resultSet.close();
         s.close();
         int number = no * 2;
-        findMaxgk(number);
+        findMaxgk(number, category);
 
     }
 
@@ -227,10 +225,10 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
-            injurylist.add(resultSet.getString("injury"));  
+            injurylist.add(resultSet.getString("injury"));
 
             String team = resultSet.getString("team");
-            
+
             if (team.equals("Houston Dash")) {
                 teamlist.add("HOU");
                 jerseylist.add("dash1.png");
@@ -279,12 +277,12 @@ public class playersData extends HttpServlet {
                 }
                 scorelist.add(total + "");
             } else {
-                 String score = resultSet.getString(category);
-                 if (score.equals("") || score.equals("-")) {
-                        scorelist.add("0");
-                    } else {
-                        scorelist.add(score);
-                    }
+                String score = resultSet.getString(category);
+                if (score.equals("") || score.equals("-")) {
+                    scorelist.add("0");
+                } else {
+                    scorelist.add(score);
+                }
 
             }
 
@@ -294,16 +292,16 @@ public class playersData extends HttpServlet {
         s.close();
         if (no == 1) {
             int number = no * 8;
-            findMaxdef(number, 8);
+            findMaxdef(number, 8, category);
         } else if (no == 2 || no == 3) {
             int number = ((no - 1) * 7) + 8;
-            findMaxdef(number, 7);
+            findMaxdef(number, 7, category);
         } else if (no == 4 || no == 5 || no == 6 || no == 7 || no == 8 || no == 9 || no == 10) {
             int number = ((no - 3) * 6) + 22;
-            findMaxdef(number, 6);
+            findMaxdef(number, 6, category);
         } else {
             int number = ((no - 10) * 5) + 64;
-            findMaxdef(number, 5);
+            findMaxdef(number, 5, category);
         }
 
     }
@@ -321,99 +319,7 @@ public class playersData extends HttpServlet {
 
             //Add records into data list
             namelist.add(resultSet.getString("name"));
-                        injurylist.add(resultSet.getString("injury"));  
-
-            String team = resultSet.getString("team");
-
-            if (team.equals("Houston Dash")) {
-                teamlist.add("HOU");
-                jerseylist.add("dash1.png");
-
-            } else if (team.equals("Chicago Red Stars")) {
-                teamlist.add("CHI");
-                jerseylist.add("stars1.png");
-            } else if (team.equals("Portland Thorns FC")) {
-                teamlist.add("POR");
-                jerseylist.add("thorns1.png");
-            } else if (team.equals("Orlando Pride")) {
-                teamlist.add("ORL");
-                jerseylist.add("pride1.png");
-            } else if (team.equals("Washington Spirit")) {
-                teamlist.add("WAS");
-                jerseylist.add("spirit1.png");
-            } else if (team.equals("North Carolina Courage")) {
-                teamlist.add("NC");
-                jerseylist.add("courage.png");
-            } else if (team.equals("Seattle Reign FC")) {
-                teamlist.add("SEA");
-                jerseylist.add("reign1.png");
-            } else if (team.equals("Sky Blue FC")) {
-                teamlist.add("NJ");
-                jerseylist.add("skyblue1.png");
-            } else if (team.equals("FC Kansas City")) {
-                teamlist.add("KC");
-                jerseylist.add("kansas1.png");
-            } else if (team.equals("Boston Breakers")) {
-                teamlist.add("BOS");
-                jerseylist.add("breakers1.png");
-            }
-            pricelist.add(resultSet.getString("price"));
-            if (category.equals("score")) {
-                total = 0;
-                for (int j = 1; j <= 22; j++) {
-                    //total=total+Integer.parseInt();
-                    String gw = resultSet.getString("GW" + j);
-
-                    if (gw.equals("") || gw.equals("-")) {
-                        total = total + 0;
-                    } else {
-                        total = total + Integer.parseInt(gw);
-                    }
-
-                }
-                scorelist.add(total + "");
-            } else {
-                 String score = resultSet.getString(category);
-                 if (score.equals("") || score.equals("-")) {
-                        scorelist.add("0");
-                    } else {
-                        scorelist.add(score);
-                    }
-
-            }
-
-            i++;
-        }
-        resultSet.close();
-        s.close();
-        if (no == 1) {
-            int number = no * 5;
-            findMaxmid(number, 5);
-        } else if (no == 2 || no == 3 || no == 4 || no == 5 || no == 6 || no == 7 || no == 8 || no == 9 || no == 10) {
-            int number = ((no - 1) * 6) + 5;
-            findMaxmid(number, 6);
-        } else {
-
-            int number = ((no - 10) * 2) + 59;
-            findMaxmid(number, 2);
-        }
-
-    }
-
-    public void forwards(Connection connection, int no, String category) throws SQLException {
-        String sql = "SELECT * FROM players where position='Forward'";
-        ResultSet resultSet = null;
-        String badge = null;
-        Statement s = connection.createStatement();
-
-        s.executeQuery(sql);
-        int i = 0;
-        resultSet = s.getResultSet();
-        while (resultSet.next()) {
-
-            //Add records into data list
-            namelist.add(resultSet.getString("name"));
-                        injurylist.add(resultSet.getString("injury"));  
+            injurylist.add(resultSet.getString("injury"));
 
             String team = resultSet.getString("team");
 
@@ -466,11 +372,103 @@ public class playersData extends HttpServlet {
                 scorelist.add(total + "");
             } else {
                 String score = resultSet.getString(category);
-                 if (score.equals("") || score.equals("-")) {
-                        scorelist.add("0");
+                if (score.equals("") || score.equals("-")) {
+                    scorelist.add("0");
+                } else {
+                    scorelist.add(score);
+                }
+
+            }
+
+            i++;
+        }
+        resultSet.close();
+        s.close();
+        if (no == 1) {
+            int number = no * 5;
+            findMaxmid(number, 5, category);
+        } else if (no == 2 || no == 3 || no == 4 || no == 5 || no == 6 || no == 7 || no == 8 || no == 9 || no == 10) {
+            int number = ((no - 1) * 6) + 5;
+            findMaxmid(number, 6, category);
+        } else {
+
+            int number = ((no - 10) * 2) + 59;
+            findMaxmid(number, 2, category);
+        }
+
+    }
+
+    public void forwards(Connection connection, int no, String category) throws SQLException {
+        String sql = "SELECT * FROM players where position='Forward'";
+        ResultSet resultSet = null;
+        String badge = null;
+        Statement s = connection.createStatement();
+
+        s.executeQuery(sql);
+        int i = 0;
+        resultSet = s.getResultSet();
+        while (resultSet.next()) {
+
+            //Add records into data list
+            namelist.add(resultSet.getString("name"));
+            injurylist.add(resultSet.getString("injury"));
+
+            String team = resultSet.getString("team");
+
+            if (team.equals("Houston Dash")) {
+                teamlist.add("HOU");
+                jerseylist.add("dash1.png");
+
+            } else if (team.equals("Chicago Red Stars")) {
+                teamlist.add("CHI");
+                jerseylist.add("stars1.png");
+            } else if (team.equals("Portland Thorns FC")) {
+                teamlist.add("POR");
+                jerseylist.add("thorns1.png");
+            } else if (team.equals("Orlando Pride")) {
+                teamlist.add("ORL");
+                jerseylist.add("pride1.png");
+            } else if (team.equals("Washington Spirit")) {
+                teamlist.add("WAS");
+                jerseylist.add("spirit1.png");
+            } else if (team.equals("North Carolina Courage")) {
+                teamlist.add("NC");
+                jerseylist.add("courage.png");
+            } else if (team.equals("Seattle Reign FC")) {
+                teamlist.add("SEA");
+                jerseylist.add("reign1.png");
+            } else if (team.equals("Sky Blue FC")) {
+                teamlist.add("NJ");
+                jerseylist.add("skyblue1.png");
+            } else if (team.equals("FC Kansas City")) {
+                teamlist.add("KC");
+                jerseylist.add("kansas1.png");
+            } else if (team.equals("Boston Breakers")) {
+                teamlist.add("BOS");
+                jerseylist.add("breakers1.png");
+            }
+            pricelist.add(resultSet.getString("price"));
+            if (category.equals("score")) {
+                total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
+
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
                     } else {
-                        scorelist.add(score);
+                        total = total + Integer.parseInt(gw);
                     }
+
+                }
+                scorelist.add(total + "");
+            } else {
+                String score = resultSet.getString(category);
+                if (score.equals("") || score.equals("-")) {
+                    scorelist.add("0");
+                } else {
+                    scorelist.add(score);
+                }
 
             }
 
@@ -480,91 +478,35 @@ public class playersData extends HttpServlet {
         s.close();
         if (no == 1 || no == 2 || no == 3) {
             int number = no * 5;
-            findMaxfwd(number, 5);
+            findMaxfwd(number, 5, category);
         } else if (no == 4 || no == 5 || no == 6 || no == 7 || no == 8 || no == 9 || no == 10) {
             int number = ((no - 3) * 6) + 15;
-            findMaxfwd(number, 6);
+            findMaxfwd(number, 6, category);
         } else {
             int number = ((no - 10) * 2) + 57;
-            findMaxfwd(number, 2);
+            findMaxfwd(number, 2, category);
         }
 
     }
 
-    public void findMaxgk(int no) {
-        int k = 1;
+    public void findMaxgk(int no, String cat) {
+        if (cat.equals("price")) {
+            int k = 1;
 
-        while (k <= no) {
+            while (k <= no) {
 
-            int max = Integer.parseInt(scorelist.get(0).toString());
-            int pos = 0;
+                double max = Double.parseDouble(pricelist.get(0).toString());
+                int pos = 0;
 
-            for (int i = 1; i < scorelist.size(); i++) {
-                if (Integer.parseInt(scorelist.get(i).toString()) > max) {
+                for (int i = 1; i < pricelist.size(); i++) {
+                    if (Double.parseDouble(pricelist.get(i).toString()) > max) {
 
-                    max = Integer.parseInt(scorelist.get(i).toString());
-                    pos = i;
-                }
-            }
-
-            if (k == no - 1 || k == no) {
-
-                list.add(namelist.get(pos));
-                namelist.remove(pos);
-                list.add(jerseylist.get(pos));
-                jerseylist.remove(pos);
-                list.add(teamlist.get(pos));
-                teamlist.remove(pos);
-                list.add(pricelist.get(pos));
-                pricelist.remove(pos);
-                list.add(scorelist.get(pos));
-                scorelist.remove(pos);
-                list.add(injurylist.get(pos));
-                injurylist.remove(pos);
-            } else {
-                namelist.remove(pos);
-                jerseylist.remove(pos);
-                teamlist.remove(pos);
-                pricelist.remove(pos);
-                scorelist.remove(pos);
-                injurylist.remove(pos);
-            }
-            k++;
-        }
-
-    }
-
-    public void findMaxdef(int no, int noperpage) {
-        int k = 1;
-
-        while (k <= no) {
-            int max = Integer.parseInt(scorelist.get(0).toString());
-            int pos = 0;
-
-            for (int i = 1; i < scorelist.size(); i++) {
-                if (Integer.parseInt(scorelist.get(i).toString()) > max) {
-
-                    max = Integer.parseInt(scorelist.get(i).toString());
-                    pos = i;
+                        max = Double.parseDouble(pricelist.get(i).toString());
+                        pos = i;
+                    }
                 }
 
-            }
-            if (noperpage == 8) {
-
-                list.add(namelist.get(pos));
-                namelist.remove(pos);
-                list.add(jerseylist.get(pos));
-                jerseylist.remove(pos);
-                list.add(teamlist.get(pos));
-                teamlist.remove(pos);
-                list.add(pricelist.get(pos));
-                pricelist.remove(pos);
-                list.add(scorelist.get(pos));
-                scorelist.remove(pos);
-                list.add(injurylist.get(pos));
-                injurylist.remove(pos);
-            } else if (noperpage == 7) {
-                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6) {
+                if (k == no - 1 || k == no) {
 
                     list.add(namelist.get(pos));
                     namelist.remove(pos);
@@ -585,8 +527,295 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     scorelist.remove(pos);
                     injurylist.remove(pos);
+                }
+                k++;
+            }
+        } else {
+            int k = 1;
+
+            while (k <= no) {
+
+                int max = Integer.parseInt(scorelist.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < scorelist.size(); i++) {
+                    if (Integer.parseInt(scorelist.get(i).toString()) > max) {
+
+                        max = Integer.parseInt(scorelist.get(i).toString());
+                        pos = i;
+                    }
+                }
+
+                if (k == no - 1 || k == no) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                    injurylist.remove(pos);
+                }
+                k++;
+            }
+        }
+
+    }
+
+    public void findMaxdef(int no, int noperpage, String cat) {
+        if (cat.equals("price")) {
+            int k = 1;
+
+            while (k <= no) {
+                double max = Double.parseDouble(pricelist.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < pricelist.size(); i++) {
+                    if (Double.parseDouble(pricelist.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(pricelist.get(i).toString());
+                        pos = i;
+                    }
 
                 }
+                if (noperpage == 8) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else if (noperpage == 7) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+
+                    }
+                } else if (noperpage == 6) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+                    }
+                } else if (noperpage == 5) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+                    }
+                }
+
+                k++;
+            }
+        } else {
+            int k = 1;
+
+            while (k <= no) {
+                int max = Integer.parseInt(scorelist.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < scorelist.size(); i++) {
+                    if (Integer.parseInt(scorelist.get(i).toString()) > max) {
+
+                        max = Integer.parseInt(scorelist.get(i).toString());
+                        pos = i;
+                    }
+
+                }
+                if (noperpage == 8) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else if (noperpage == 7) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+
+                    }
+                } else if (noperpage == 6) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+                    }
+                } else if (noperpage == 5) {
+                    if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
+
+                        list.add(namelist.get(pos));
+                        namelist.remove(pos);
+                        list.add(jerseylist.get(pos));
+                        jerseylist.remove(pos);
+                        list.add(teamlist.get(pos));
+                        teamlist.remove(pos);
+                        list.add(pricelist.get(pos));
+                        pricelist.remove(pos);
+                        list.add(scorelist.get(pos));
+                        scorelist.remove(pos);
+                        list.add(injurylist.get(pos));
+                        injurylist.remove(pos);
+                    } else {
+                        namelist.remove(pos);
+                        jerseylist.remove(pos);
+                        teamlist.remove(pos);
+                        pricelist.remove(pos);
+                        scorelist.remove(pos);
+                        injurylist.remove(pos);
+                    }
+                }
+
+                k++;
+            }
+        }
+
+    }
+
+    public void findMaxmid(int no, int noperpage,String cat) {
+        if(cat.equals("price")){
+            int k = 1;
+
+        while (k <= no) {
+            double max = Double.parseDouble(pricelist.get(0).toString());
+            int pos = 0;
+
+            for (int i = 1; i < pricelist.size(); i++) {
+                if (Double.parseDouble(pricelist.get(i).toString()) > max) {
+
+                    max = Double.parseDouble(pricelist.get(i).toString());
+                    pos = i;
+                }
+
+            }
+
+            if (noperpage == 5) {
+
+                list.add(namelist.get(pos));
+                namelist.remove(pos);
+                list.add(jerseylist.get(pos));
+                jerseylist.remove(pos);
+                list.add(teamlist.get(pos));
+                teamlist.remove(pos);
+                list.add(pricelist.get(pos));
+                pricelist.remove(pos);
+                list.add(scorelist.get(pos));
+                scorelist.remove(pos);
+                list.add(injurylist.get(pos));
+                injurylist.remove(pos);
             } else if (noperpage == 6) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
 
@@ -609,9 +838,10 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     scorelist.remove(pos);
                     injurylist.remove(pos);
+
                 }
-            } else if (noperpage == 5) {
-                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
+            } else if (noperpage == 2) {
+                if (k == no || k == no - 1) {
 
                     list.add(namelist.get(pos));
                     namelist.remove(pos);
@@ -632,15 +862,14 @@ public class playersData extends HttpServlet {
                     pricelist.remove(pos);
                     scorelist.remove(pos);
                     injurylist.remove(pos);
+
                 }
             }
-
             k++;
+        }   
         }
-    }
-
-    public void findMaxmid(int no, int noperpage) {
-        int k = 1;
+        else{
+            int k = 1;
 
         while (k <= no) {
             int max = Integer.parseInt(scorelist.get(0).toString());
@@ -720,10 +949,104 @@ public class playersData extends HttpServlet {
             }
             k++;
         }
+        }
+        
     }
 
-    public void findMaxfwd(int no, int noperpage) {
-        int k = 1;
+    public void findMaxfwd(int no, int noperpage,String cat) {
+        if(cat.equals("price")){
+             int k = 1;
+
+        while (k <= no) {
+            double max = Double.parseDouble(pricelist.get(0).toString());
+            int pos = 0;
+
+            for (int i = 1; i < pricelist.size(); i++) {
+                if (Double.parseDouble(pricelist.get(i).toString()) > max) {
+
+                    max = Double.parseDouble(pricelist.get(i).toString());
+                    pos = i;
+                }
+            }
+            System.out.println(namelist.get(pos));
+            if (noperpage == 5) {
+                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                    injurylist.remove(pos);
+
+                }
+            } else if (noperpage == 6) {
+                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                    injurylist.remove(pos);
+
+                }
+            } else if (noperpage == 2) {
+                if (k == no || k == no - 1) {
+
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                    injurylist.remove(pos);
+
+                }
+            }
+            k++;
+        }
+        }
+        else{
+         int k = 1;
 
         while (k <= no) {
             int max = Integer.parseInt(scorelist.get(0).toString());
@@ -805,12 +1128,14 @@ public class playersData extends HttpServlet {
                     jerseylist.remove(pos);
                     teamlist.remove(pos);
                     pricelist.remove(pos);
-                    scorelist.remove(pos);                    
+                    scorelist.remove(pos);
                     injurylist.remove(pos);
 
                 }
             }
             k++;
         }
-    }
+    }   
+        }
+        
 }

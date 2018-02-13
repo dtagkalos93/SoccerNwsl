@@ -119,10 +119,10 @@ public class playersSelectionTeam extends HttpServlet {
             list.add(midnameList.size() + "");
             fwd(connection, team, category);
             list.add(fwdnameList.size() + "");
-            findMax("gk", gknameList.size());
-            findMax("def", defnameList.size());
-            findMax("mid", midnameList.size());
-            findMax("fwd", fwdnameList.size());
+            findMax("gk", gknameList.size(),category);
+            findMax("def", defnameList.size(),category);
+            findMax("mid", midnameList.size(),category);
+            findMax("fwd", fwdnameList.size(),category);
 
         } catch (Exception e) {
 
@@ -217,7 +217,7 @@ public class playersSelectionTeam extends HttpServlet {
                 }
 
             }
-            if (category.equals("score")) {
+            if (category.equals("score") || category.equals("price")) {
                 total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
@@ -312,7 +312,7 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             defpriceList.add(price);
-            if (category.equals("score")) {
+            if (category.equals("score") || category.equals("price")) {
                 total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
@@ -406,7 +406,7 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             midpriceList.add(price);
-            if (category.equals("score")) {
+            if (category.equals("score") || category.equals("price")) {
                 total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
@@ -500,7 +500,7 @@ public class playersSelectionTeam extends HttpServlet {
                 price = "0.0";
             }
             fwdpriceList.add(price);
-            if (category.equals("score")) {
+            if (category.equals("score") || category.equals("price")) {
                 total = 0;
                 for (int j = 1; j <= 22; j++) {
                     //total=total+Integer.parseInt();
@@ -529,9 +529,117 @@ public class playersSelectionTeam extends HttpServlet {
 
     }
 
-    public void findMax(String position, int no) {
+    public void findMax(String position, int no,String cat) {
+        if(cat.equals("price")){
+                    int k = 1;
+        while (k <= no) {
+            if (position.equals("def")) {
+                double max = Double.parseDouble(defpriceList.get(0).toString());
+                int pos = 0;
 
-        int k = 1;
+                for (int i = 1; i < defpriceList.size(); i++) {
+                    if (Double.parseDouble(defpriceList.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(defpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                list.add(defnameList.get(pos));
+
+                defnameList.remove(pos);
+                list.add(defjerseyList.get(pos));
+                defjerseyList.remove(pos);
+                list.add(defteamList.get(pos));
+                defteamList.remove(pos);
+                list.add(defpriceList.get(pos));
+                defpriceList.remove(pos);
+                list.add(defscoreList.get(pos));
+                defscoreList.remove(pos);
+                list.add(definjuryList.get(pos));
+                definjuryList.remove(pos);
+            } else if (position.equals("gk")) {
+                double max = Double.parseDouble(gkpriceList.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < gkpriceList.size(); i++) {
+                    if (Double.parseDouble(gkpriceList.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(gkpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                System.out.println(gknameList.get(pos) + "and pos: " + pos);
+                list.add(gknameList.get(pos));
+                System.out.println(list.get(0).toString());
+                gknameList.remove(pos);
+                list.add(gkjerseyList.get(pos));
+                gkjerseyList.remove(pos);
+                list.add(gkteamList.get(pos));
+                gkteamList.remove(pos);
+                list.add(gkpriceList.get(pos));
+                gkpriceList.remove(pos);
+                list.add(gkscoreList.get(pos));
+                gkscoreList.remove(pos);
+                list.add(gkinjuryList.get(pos));
+                gkinjuryList.remove(pos);
+            } else if (position.equals("mid")) {
+
+                double max = Double.parseDouble(midpriceList.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < midpriceList.size(); i++) {
+                    if (Double.parseDouble(midpriceList.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(midpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+
+                list.add(midnameList.get(pos));
+
+                midnameList.remove(pos);
+                list.add(midjerseyList.get(pos));
+                midjerseyList.remove(pos);
+                list.add(midteamList.get(pos));
+                midteamList.remove(pos);
+                list.add(midpriceList.get(pos));
+                midpriceList.remove(pos);
+                list.add(midscoreList.get(pos));
+                midscoreList.remove(pos);
+                list.add(midinjuryList.get(pos));
+                midinjuryList.remove(pos);
+
+            } else if (position.equals("fwd")) {
+                double max = Double.parseDouble(fwdpriceList.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < fwdpriceList.size(); i++) {
+                    if (Double.parseDouble(fwdpriceList.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(fwdpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+
+                list.add(fwdnameList.get(pos));
+
+                fwdnameList.remove(pos);
+                list.add(fwdjerseyList.get(pos));
+                fwdjerseyList.remove(pos);
+                list.add(fwdteamList.get(pos));
+                fwdteamList.remove(pos);
+                list.add(fwdpriceList.get(pos));
+                fwdpriceList.remove(pos);
+                list.add(fwdscoreList.get(pos));
+                fwdscoreList.remove(pos);
+                list.add(fwdinjuryList.get(pos));
+                fwdinjuryList.remove(pos);
+            }
+            k++;
+        }   
+        }
+        else{
+                    int k = 1;
         while (k <= no) {
             if (position.equals("def")) {
                 int max = Integer.parseInt(defscoreList.get(0).toString());
@@ -638,6 +746,8 @@ public class playersSelectionTeam extends HttpServlet {
             }
             k++;
         }
+        }
+
 
     }
 

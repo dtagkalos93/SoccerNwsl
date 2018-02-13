@@ -181,7 +181,7 @@ public class playersSelection extends HttpServlet {
                 }
 
                 pricelist.add(resultSet.getString("price"));
-                if (category.equals("score")) {
+                if (category.equals("score") || category.equals("price")) {
                     total = 0;
                     for (int j = 1; j <= 22; j++) {
                         //total=total+Integer.parseInt();
@@ -236,8 +236,75 @@ public class playersSelection extends HttpServlet {
                 no = page * 20;
             }
         }
+        if(category.equals("price")){
+            while (k <= no) {
 
-        while (k <= no) {
+            double max = Double.parseDouble(pricelist.get(0).toString());
+            int pos = 0;
+
+            for (int i = 1; i < pricelist.size(); i++) {
+                if (Double.parseDouble(pricelist.get(i).toString()) > max) {
+
+                    max = Double.parseDouble(pricelist.get(i).toString());
+                    pos = i;
+                }
+            }
+            if (missing == 0) {
+                if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5 || k == no - 6
+                        || k == no - 7 || k == no - 8 || k == no - 9 || k == no - 10 || k == no - 11 || k == no - 12 || k == no - 13
+                        || k == no - 14 || k == no - 15 || k == no - 16 || k == no - 17 || k == no - 18 || k == no - 19) {
+                    list.add(namelist.get(pos));
+                    namelist.remove(pos);
+                    list.add(jerseylist.get(pos));
+                    jerseylist.remove(pos);
+                    list.add(teamlist.get(pos));
+                    teamlist.remove(pos);
+                    list.add(pricelist.get(pos));
+                    pricelist.remove(pos);
+                    list.add(scorelist.get(pos));
+                    scorelist.remove(pos);
+                    list.add(injurylist.get(pos));
+                    injurylist.remove(pos);
+                } else {
+                    namelist.remove(pos);
+                    jerseylist.remove(pos);
+                    teamlist.remove(pos);
+                    pricelist.remove(pos);
+                    scorelist.remove(pos);
+                    injurylist.remove(pos);
+                }
+
+            } else {
+                sortednamelist.add(namelist.get(pos));
+                namelist.remove(pos);
+                sortedjerseylist.add(jerseylist.get(pos));
+                jerseylist.remove(pos);
+                sortedteamlist.add(teamlist.get(pos));
+                teamlist.remove(pos);
+                sortedpricelist.add(pricelist.get(pos));
+                pricelist.remove(pos);
+                sortedscorelist.add(scorelist.get(pos));
+                scorelist.remove(pos);
+                sortedinjurylist.add(injurylist.get(pos));
+                injurylist.remove(pos);
+            }
+
+            k++;
+        }
+
+        if (missing != 0) {
+            for (int i = sortednamelist.size() - missing; i < sortednamelist.size(); i++) {
+                list.add(sortednamelist.get(i));
+                list.add(sortedjerseylist.get(i));
+                list.add(sortedteamlist.get(i));
+                list.add(sortedpricelist.get(i));
+                list.add(sortedscorelist.get(i));
+                list.add(sortedinjurylist.get(i));
+            }
+        }
+        }
+        else{
+            while (k <= no) {
 
             int max = Integer.parseInt(scorelist.get(0).toString());
             int pos = 0;
@@ -302,6 +369,8 @@ public class playersSelection extends HttpServlet {
                 list.add(sortedinjurylist.get(i));
             }
         }
+        }
+        
         String json = new Gson().toJson(list);
         System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.

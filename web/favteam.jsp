@@ -116,7 +116,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <h2 style="font-family: Century Gothic; font-weight: lighter;color: #f8f8f8; text-align: left">Choose your favorite team</h2>
+                            <h2 style="font-family: Century Gothic;font-size: 32px;font-weight: lighter;color: #f8f8f8; text-align: left">Choose your favorite team</h2>
                         </div>
                     </div>
                 </div>
@@ -246,9 +246,11 @@
                                 <input name="team" id='favteam'   class="form-control"  style="display:none">
                                 <div>
                                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                                        <button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onclick="goBack()" >
+                                        <a href="signUp.jsp">Back</a>
+                                        <!--<button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onclick="goBack()" >
                                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
-                                    </div>
+                                        -->
+                                        </div>
                                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
                                         <button type="submit" class="prevbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
                                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
@@ -306,13 +308,6 @@
                                         });
                         </script>
 
-                        <script>
-                            function goBack() {
-                                window.history.back();
-                            }
-                        </script>
-
-                        
                         <script>
                             function fanTeam(i) {
                                 

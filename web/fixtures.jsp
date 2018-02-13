@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" >
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -135,7 +135,7 @@
         </div>
         <!-- /.intro-header -->
 
-        <div class="container" style="margin-bottom:15%">
+        <div class="container" style="margin-bottom:5%">
             <div class="row">
                 <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Fixtures </h3>
 
@@ -162,7 +162,7 @@
                 %>
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8" style="margin-top: 3%">
+                <div class="col-md-8" style="margin-top: 10px">
                     <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
                         <h4 style="font-family: Century Gothic;font-weight: bold;font-size: 15px;text-align: center;padding-bottom: 1% "><%=posts.get(0) + " - " + date.get(0)%></h4>
                         <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 15px; font-weight: bold; text-align: center;padding: 1%">

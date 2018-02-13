@@ -112,7 +112,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <h2 style="font-family: Century Gothic; font-weight: lighter;color: #f8f8f8; text-align: left">Creating a new account</h2>
+                            <h2 style="font-family: Century Gothic;font-size: 32px;font-weight: lighter;color: #f8f8f8; text-align: left">Creating a new account</h2>
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,12 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px;
+    font-size: 14px; 
+}
+
+.navbar-right{
+     float:right!important;
+     margin-top:30px;
 }
 
 .nav-tabs>li>a{
@@ -38,6 +43,7 @@ h6 {
 }
 
 
+
 .intro-header2 {
     padding-top: 7%;
     background: url(../img/banner2.png) no-repeat center center;
@@ -46,11 +52,6 @@ h6 {
 
 }
 
-.navbar-right{
-    float:right!important;
-    margin-right:50px;
-    margin-top:35px
-}
 
 .extraClass {
     height: 130px; 
@@ -71,21 +72,23 @@ h6 {
 .btncustom:hover{
     background-color: #c8373b;
     color: #fff;
+    text-decoration: none;
 }
 
+.enterteam:hover{
+    background-color: #84111c;
+    color: #fff;
+    text-decoration: none;
+}
 
 .prevbutton{
     background-color: #ecebeb; 
     border: none;
-    color: black;
     vertical-align: middle;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
     cursor: pointer;
     width:140px;
-
 }
 
 .nextbtn{
@@ -101,10 +104,21 @@ h6 {
     width:140px;
 }
 
+.enterteam{
+    background-color: #ac0f1f; 
+    border: none;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
 .bc-img{
     background:url(../img/pitch2.jpg) no-repeat  ;
     padding-bottom: 7%;
-
 }
 
 .gkname,.cbname{
@@ -154,24 +168,24 @@ h6 {
     padding-right: 0;
 }
 
- .image-player{
+.image-player{
         width: 26%;
         position: relative;
         left: 15px;
-    }
+}
 
-    .image-player-for{
-        width: 40%;
-        position: relative;
-        left: 17px;
-    }
-
-    .image-player-cb{
+.image-player-cb{
         width: 93%;
         position: relative;
         left: 17px;
-    }
-    
+}
+
+.image-player-for{
+        width: 40%;
+        position: relative;
+        left: 17px;
+}
+
  .teambox{
     margin-top: 10%;;
     width: 100%;
@@ -209,8 +223,6 @@ h6 {
     width: 2%;
     left:6%
 }
-
-
 
 .form-control{
     width: 90%;
@@ -307,7 +319,6 @@ h6 {
     height: 30px; 
     border: 1px solid #ecebeb;
     border-radius: 3pt;
-   
 }
 
 .infobutton:hover{
@@ -330,7 +341,6 @@ h6 {
     font-size: 14px;
     font-weight: lighter;
 }
-
 
 .searchTerm:focus{
    background-color: white

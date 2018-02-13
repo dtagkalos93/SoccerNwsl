@@ -20,18 +20,9 @@ h6 {
     font-size: 14px; 
 }
 
-.intro-header2 {
-    padding-top: 7%;
-    background: url(../img/banner2.png) no-repeat center center;
-    margin-top: 5%;
-    background-size: cover;
-
-}
-
 .navbar-right{
-    float:right!important;
-    margin-right:50px;
-    margin-top:35px
+     float:right!important;
+     margin-top:30px;
 }
 
 .nav-tabs>li>a{
@@ -41,12 +32,23 @@ h6 {
     border-radius: 3px 3px 0 0;
     background-color: #c8373b;
     color: #ffffff;
+    font-family: Century Gothic;
+    font-size: 15px;
 }
 
 .nav-tabs>li>a:hover{
     
     border-color: #9e2e31;
     background-color: #9e2e31;
+}
+
+
+
+.intro-header2 {
+    padding-top: 7%;
+    background: url(../img/banner2.png) no-repeat center center;
+    margin-top: 5%; 
+    background-size: cover;
 }
 
 .extraClass {
@@ -79,10 +81,8 @@ h6 {
     text-decoration: none;
     display: inline-block;
     font-size: 13px;
-
     cursor: pointer;
     width:140px;
-
 }
 
 .nextbtn{
@@ -103,26 +103,24 @@ h6 {
 
 .bc-img{
     background:url(../img/pitch2.jpg) no-repeat  ;
-    background-size:100% 100%;
-    padding-bottom: 3%;
-
+    padding-bottom: 7%;
 }
 
 .gkname,.cbname{
+    font-family: Century Gothic;
     width:120px;
-    border: 1px solid #02509a;
+    border: 2px solid #02509a;
     margin: 0;
     text-align: center;
     background-color: #02509a;
     color: white;
     font-weight: bold;
-    height: 21px;
     padding-top: 0px;
-    font-family: arial;
     font-size: 14px;
     opacity: 0.9;
-    filter: alpha(opacity=30);
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -152,26 +150,23 @@ h6 {
     border-right: 1px solid grey
 }
 
- .image-player{
-        height: 25%;
-        width: 25%;
+.image-player{
+        width: 26%;
         position: relative;
-        left: 15.5px;
-    }
+        left: 15px;
+}
 
-    .image-player-for{
-        height: 40%;
-        width: 40%;
-        position: relative;
-        left: 16.5px;
-    }
-
-    .image-player-cb{
-        height: 93%;
+.image-player-cb{
         width: 93%;
         position: relative;
-        left: 14px;
-    }
+        left: 17px;
+}
+
+.image-player-for{
+        width: 40%;
+        position: relative;
+        left: 17px;
+}
     
  .teambox{
     margin-top: 10%;;
@@ -212,12 +207,57 @@ h6 {
     left:6%
 }
 
-
-
 .form-control{
     width: 90%;
     margin-left: 5%;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #5a5858;
+    border-radius: 0px;
+    border: 1px solid #aba8a8;
+    border-bottom: 1px solid #ac1f23;
+    color: #000000;
+    font-family: Century Gothic;
+}
 
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+    font-family: Century Gothic;
+    width: 112%;
+    border: 1px solid #1d3260;
+    padding: 5px 16px;
+    color: #555;
+    background-color: #ecebeb;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.searchTerm:focus{
+   background-color: white
+}
+
+.searchButton {
+  position: absolute;  
+  margin-top: -11%;
+  right: -36px;
+  width: 34px;
+  height: 32px;
+  border: 0px solid #1d3260;
+  background: #1d3260;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.wrap{
+  width: 80%;
+  margin-left: 5%;
 }
 
 .btn-circle {

@@ -106,7 +106,7 @@ public class allPlayers extends HttpServlet {
         gkpriceList = gk.getpriceList();
         gkscoreList = gk.getpointList();
         gkinjuryList = gk.getinjuryList();
-        findmax( 2, "gk");
+        findmax( 2, "gk",category);
         players def = new players();
         def.players("Defender",category);
         defnameList = def.getnameList();
@@ -116,7 +116,7 @@ public class allPlayers extends HttpServlet {
         defpriceList = def.getpriceList();
         defscoreList = def.getpointList();
         definjuryList = def.getinjuryList();
-        findmax( 8, "def");
+        findmax( 8, "def",category);
         players mid = new players();
         mid.players("Midfielder",category);
         
@@ -128,7 +128,7 @@ public class allPlayers extends HttpServlet {
         midpriceList = mid.getpriceList();
         midscoreList = mid.getpointList();
         midinjuryList = mid.getinjuryList();
-        findmax( 5, "mid");
+        findmax( 5, "mid",category);
         players fwd = new players();
         fwd.players("Forward",category);
         fwdnameList = fwd.getnameList();
@@ -138,7 +138,7 @@ public class allPlayers extends HttpServlet {
         fwdpriceList = fwd.getpriceList();
         fwdscoreList = fwd.getpointList();
         fwdinjuryList = fwd.getinjuryList();
-        findmax( 5, "fwd");
+        findmax( 5, "fwd",category);
         list.add(totalPlayers+"");
         String json = new Gson().toJson(list);
         System.out.println(json);
@@ -148,9 +148,124 @@ public class allPlayers extends HttpServlet {
 
     }
 
-    private void findmax( int no, String position) {
+    private void findmax( int no, String position,String category) {
         int k = 1;  
-        while (k <= no) {
+        System.out.println(category);
+        if(category.equals("price")){
+            while (k <= no) {
+
+
+            if (position.equals("def")) {
+                
+                double max = Double.parseDouble(defpriceList.get(0).toString());
+                int pos = 0;
+                System.out.println(defpriceList.size()+"no");
+                for (int i = 1; i < defpriceList.size(); i++) {
+                    
+                    if ( Double.parseDouble(defpriceList.get(i).toString()) > max) {
+                       
+                        max =  Double.parseDouble(defpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                list.add(defnameList.get(pos));
+
+                defnameList.remove(pos);
+                list.add(defjerseyList.get(pos));
+                defjerseyList.remove(pos);
+                list.add(defteamList.get(pos));
+                defteamList.remove(pos);
+                list.add(defpriceList.get(pos));
+                defpriceList.remove(pos);
+                list.add(defscoreList.get(pos));
+                defscoreList.remove(pos);
+                list.add(definjuryList.get(pos));
+                definjuryList.remove(pos);
+            } else if (position.equals("gk")) {
+                double max =  Double.parseDouble(gkpriceList.get(0).toString());
+                int pos = 0;
+               
+                for (int i = 1; i < gkpriceList.size(); i++) {
+                    System.out.println("testgk"+gknameList.get(i));
+                    if ( Double.parseDouble(gkpriceList.get(i).toString()) > max) {
+                       
+                        max =  Double.parseDouble(gkpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                list.add(gknameList.get(pos));
+                gknameList.remove(pos);
+                list.add(gkjerseyList.get(pos));
+                gkjerseyList.remove(pos);
+                list.add(gkteamList.get(pos));
+                gkteamList.remove(pos);
+                list.add(gkpriceList.get(pos));
+                gkpriceList.remove(pos);
+                list.add(gkscoreList.get(pos));
+                gkscoreList.remove(pos);
+                list.add(gkinjuryList.get(pos));
+                gkinjuryList.remove(pos);
+            } else if (position.equals("mid")) {
+                
+                double max =  Double.parseDouble(midpriceList.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < midpriceList.size(); i++) {
+                    System.out.println("testmid"+midnameList.get(i));
+                    if (Double.parseDouble(midpriceList.get(i).toString()) > max) {
+
+                        max = Double.parseDouble(midpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+                
+
+                list.add(midnameList.get(pos));
+
+                midnameList.remove(pos);
+                list.add(midjerseyList.get(pos));
+                midjerseyList.remove(pos);
+                list.add(midteamList.get(pos));
+                midteamList.remove(pos);
+                list.add(midpriceList.get(pos));
+                midpriceList.remove(pos);
+                list.add(midscoreList.get(pos));
+                midscoreList.remove(pos);
+                list.add(midinjuryList.get(pos));
+                midinjuryList.remove(pos);
+            } else if (position.equals("fwd")) {
+                double max = Double.parseDouble(fwdpriceList.get(0).toString());
+                int pos = 0;
+
+                for (int i = 1; i < fwdpriceList.size(); i++) {
+                    System.out.println("testfwd"+fwdnameList.get(i));
+                    if (Double.parseDouble(fwdpriceList.get(i).toString()) > max) {
+                        
+                        max = Double.parseDouble(fwdpriceList.get(i).toString());
+                        pos = i;
+                    }
+                }
+
+                list.add(fwdnameList.get(pos));
+
+                fwdnameList.remove(pos);
+                list.add(fwdjerseyList.get(pos));
+                fwdjerseyList.remove(pos);
+                list.add(fwdteamList.get(pos));
+                fwdteamList.remove(pos);
+                list.add(fwdpriceList.get(pos));
+                fwdpriceList.remove(pos);
+                list.add(fwdscoreList.get(pos));
+                fwdscoreList.remove(pos);
+                list.add(fwdinjuryList.get(pos));
+                fwdinjuryList.remove(pos);
+            }
+
+            k++;
+        }
+        }
+        else{
+            while (k <= no) {
 
 
             if (position.equals("def")) {
@@ -261,6 +376,8 @@ public class allPlayers extends HttpServlet {
 
             k++;
         }
+        }
+        
 
     }
 

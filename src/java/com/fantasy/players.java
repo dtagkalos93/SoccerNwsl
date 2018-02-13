@@ -152,7 +152,7 @@ public class players {
                     price = "0.0";
                 }
                 priceList.add(price);
-                if (category.equals("score")) {
+                if (category.equals("score") || category.equals("price")) {
                     total = 0;
                     for (int j = 1; j <= 22; j++) {
                         //total=total+Integer.parseInt();

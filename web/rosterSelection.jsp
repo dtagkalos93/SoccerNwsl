@@ -44,8 +44,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
-                    </a>
+                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" >                   </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -147,7 +146,6 @@
                                     <strong style="color:#d4213c; font-size:19px;font-family: Century Gothic" >17 Jun 02:30PM ET </strong>
                                 </h6>
                             </div>
-
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
                                 <div class="col-md-3  col-xs-3" style="margin-top: 3%">
                                     <button type="button" class="prevbutton btncustom col-sm-6 " style="padding: 4.5%; font-size: 15px; text-align: center;font-family: Century Gothic" onclick="autopick()">
@@ -165,7 +163,7 @@
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Money Remaining</h6>
-                                    <h4 style="text-align: center;font-weight:bold;color:green; font-size:20px;font-family: Century Gothic ">$ 0.0</h4>
+                                    <h4 id="dollar" style="text-align: center;font-weight:bold;color:green; font-size:20px;font-family: Century Gothic ">$<span id="remainPrice">100.0</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +259,7 @@
                                 <p style="display: none" id="team15"></p>
                             </div>
                         </div>
-                        <a id="enterTeam"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
+                        <a id="enterTeam"  class="enterteam btncustom col-md-12 " style="color: white;font-size: 15px;font-family: Century Gothic;width: 32%;margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
                             Enter Roster
                         </a>
                         <%
@@ -272,7 +270,6 @@
                             ArrayList<String> time = (ArrayList<String>) request.getAttribute("time");
                             ArrayList<String> away = (ArrayList<String>) request.getAttribute("away");
                             ArrayList<String> awaybadge = (ArrayList<String>) request.getAttribute("awaybadge");
-
                             ArrayList<String> homegoal = (ArrayList<String>) request.getAttribute("homegoal");
                             ArrayList<String> awaygoal = (ArrayList<String>) request.getAttribute("awaygoal");
                             ArrayList<String> homeassist = (ArrayList<String>) request.getAttribute("homeassist");
@@ -960,7 +957,6 @@
                     </div>
                 </div>
 
-
                 <%
                     ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
                     ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
@@ -988,7 +984,7 @@
                     ArrayList<String> fwdinjury = (ArrayList<String>) request.getAttribute("injuryfwd");
                 %>            
 
-                <div class="col-md-4 sidebar" style=" ">
+                <div class="col-md-4 sidebar">
                     <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                         <div class="teambox">
                             <h3 style="font-family: Century Gothic;font-size: 19px; margin-left:5%; margin-top: 8%; line-height: 10px; font-weight: bold">Player Selection</h3>

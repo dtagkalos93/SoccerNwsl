@@ -20,12 +20,55 @@ h6 {
     font-size: 14px; 
 }
 
-.intro-header2 {
-    padding-top: 5%;
-    background: url(../img/banner.png) no-repeat center center;
-    margin-top: 5%;
+.intro-header {
+    background: url(../img/banner.png) no-repeat;
     background-size: cover;
+    height: 230px
+}
 
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+}
+
+.intro-message > h2 {
+    margin-top: -6%;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
 }
 
 .extraClass {
@@ -36,7 +79,14 @@ h6 {
 .extraClassul {
     position: absolute;
     bottom: 0;
-    font-family: arial;
+    font-family: Century Gothic;
+}
+
+.table-header-pl{
+    background: url(../img/bannermodal.png) no-repeat; 
+    background-size: cover;
+    width:100%; 
+    margin-top: 0.5%; 
 }
 
 .form-control{
@@ -75,9 +125,9 @@ h6 {
 
 .rules{
    
-    background-color: #e8e8e8;
+    background-color: #f1eded;
     color: black;
-    font-family: arial;
+    font-family: Century Gothic;
     font-weight: bold;
     font-size: 15px;
     padding: 0.7%;
@@ -97,7 +147,7 @@ h6 {
 
 .rules:hover{
     text-decoration:none;
-    background-color: #bfbdbd;
+    background-color: #e4e2e2;
 }
 
 .rules:active {
@@ -108,7 +158,7 @@ h6 {
 .collapse-rule{
      
      color: black;
-    font-family: arial;
+    font-family: Century Gothic;
     font-weight: normal;
 }
 
@@ -116,8 +166,8 @@ h6 {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
-    border:1px solid #e8e8e8;
-    border-radius: 3pt;
+    border:1px solid #f1eded;
+    border-radius: 1pt;
     margin-bottom: -3%;
 }
 

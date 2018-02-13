@@ -1126,6 +1126,7 @@ function showPlayers() {
                         document.getElementById("gkteam" + gk).innerHTML = jsonResponse[k + 2];
                         document.getElementById("gkprice" + gk).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("gkscore" + gk).innerHTML = jsonResponse[k + 4];
+                        
                         if (jsonResponse[k + 5] == "OUT") {
 
                             document.getElementById("gkinjury" + gk).classList = '';
@@ -2979,6 +2980,8 @@ function openModalFWD(i) {
 function addPlayer() {
 
     var players = document.getElementById("totalPlayers").textContent;
+    var playerPrice= document.getElementById("playerPrice").textContent;
+    var remainPrice = document.getElementById("remainPrice").textContent;
     document.getElementById("checkbox").style.display = "";
     document.getElementById("checkbox").style.backgroundColor = "#92c992";
     document.getElementById("checkbox").style.border = "1px solid green";
@@ -2986,14 +2989,18 @@ function addPlayer() {
     document.getElementById("message").innerHTML = " has been added to your squad."
     document.getElementById("errorbox").style.display = 'none';
     document.getElementById("enterError").style.display = 'none';
-
-
+    document.getElementById("remainPrice").innerHTML=(((eval(remainPrice)*10)-(eval(playerPrice.split("$")[1])*10))/10).toFixed(1);
+    if(document.getElementById("remainPrice").textContent<0.0){
+        console.log("I am here!");
+        document.getElementById("remainPrice").style.color = '#d4213c';
+        document.getElementById("dollar").style.color = '#d4213c';
+    }
     document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
     var counter = 1;
     for (i = 1; i <= 15; i++) {
         if (document.getElementById("playerTeam").textContent == document.getElementById("team" + i).textContent) {
             counter = eval(counter) + 1;
-
+            
         }
         if (counter > 4) {
 
@@ -3185,6 +3192,7 @@ function reset() {
     document.getElementById("totalPlayers").innerHTML = '0';
     document.getElementById("allPlayers").style.color = '#d4213c';
     document.getElementById("totalPlayers").style.color = '#d4213c';
+    document.getElementById("remainPrice").innerHTML= "100.0";
     document.getElementById("errorbox").style.display = 'none';
     document.getElementById("checkbox").style.display = "none";
     for (i = 1; i <= 15; i++) {
@@ -3486,7 +3494,14 @@ function removePlayer() {
     document.getElementById("message").innerHTML = " remove from the squad."
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("teamError").style.display = 'none';
-
+    var playerPrice= document.getElementById("playerPrice").textContent;
+    var remainPrice = document.getElementById("remainPrice").textContent;
+    document.getElementById("remainPrice").innerHTML=(((eval(remainPrice)*10)+(eval(playerPrice.split("$")[1])*10))/10).toFixed(1);
+    if(document.getElementById("remainPrice").textContent>0.0){
+        console.log("I am here!");
+        document.getElementById("remainPrice").style.color = 'green';
+        document.getElementById("dollar").style.color = 'green';
+    }
     document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
     var counter = 0;
     for (i = 1; i <= 15; i++) {
