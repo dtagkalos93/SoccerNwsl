@@ -1784,11 +1784,9 @@
             <div class="modal-dialog" style="width: 450px">
 
                 <!-- Modal content-->
-                <div class="modal-content" >
-                    <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
-                        <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
-                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="modalTitle">Ashlyn Harris $6.5</span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4.5%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
-
+                <div class="modal-content" style="margin-top: 20%;">
+                    <div class="modal-header">
+                        <h4 style="font-family:Century Gothic; color: white; font-size: 15px; padding: 0.5%;padding-left: 2%"><span id="modalTitle"></span><button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white;padding-right: 1%" >&times;</button></h4>
                     </div>
                     <!-- Modal content-->
                     <div class="modal-body">
@@ -1814,10 +1812,8 @@
 
                 <!-- Modal content-->
                 <div class="modal-content" >
-                    <div class="modal-header" style="background-color:#1d3260;height: 40px;" >
-                        <button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white; margin-top:-2%" >&times;</button>
-                        <h4 class="modal-title" style="color: white;text-align:left;font-weight: bold; margin-top:-1.7%; font-size:17px "><span id="playersTitle"></span><img src="img/nwsllogo1.png" style="float: right;width: 90px;height: 50px;margin-top: -4%;margin-right: 2.5%; padding-bottom: 1%"/></h4>
-
+                    <div class="modal-header" >
+                        <h4 style="font-family:Century Gothic; color: white; font-size: 15px; padding: 0.5%;padding-left: 2%"><span id="playersTitle"></span><button type="button" class="close" data-dismiss="modal" style="opacity: 1; color:white;padding-right: 1%" >&times;</button></h4>
                     </div>
                     <!-- Modal content-->
                     <div class="modal-body">
@@ -1837,7 +1833,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
 

@@ -281,6 +281,12 @@ h6 {
     text-decoration: underline
 }
 
+.modal-header{
+    background: url(../img/bannermodal1.png) no-repeat; 
+    background-size: cover;
+    width:100%; 
+}
+
 .modal-dialog{
    position: absolute;
    left: 50%;

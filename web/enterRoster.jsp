@@ -127,6 +127,8 @@
                     ArrayList<String> fwdteam = (ArrayList<String>) request.getAttribute("teamfwd");
                     ArrayList<String> fwdjersey = (ArrayList<String>) request.getAttribute("jerseyfwd");
                     ArrayList<String> fwdprice = (ArrayList<String>) request.getAttribute("pricefwd");
+                    String remain = (String) request.getAttribute("remain");
+                    String value = (String) request.getAttribute("value");                    
 
                 %>   
 
@@ -375,7 +377,22 @@
                             <td style="font-size: 13px; font-weight: bold;text-align: center;width: 12.5%"><%=fwdteam.get(2)%></td>
                             <td style="font-size: 13px; font-weight: bold;text-align: center;width: 12.5%">$<%=fwdprice.get(2)%></td>
                         </tr>
+                        
                     </table>
+                        <table class="col-md-12 col-xs-12" style="width:100%; margin-top:5%; border:1px solid #e8e8e8;border-top: 2px solid #ac0f1f">
+                            <tr style='font-family: Century Gothic;border-bottom: 1px solid #e8e8e8'>
+                           
+                            <td style='font-size: 16px; font-weight: lighter;text-align: center; width: 50%;padding: 1%;'>Roster Value</td>
+                            
+                            <td style="font-size: 15px; text-align: center;width: 17%">$<%=value%> </td>
+                        </tr>
+                        <tr style='font-family: Century Gothic;border-bottom: 1px solid #e8e8e8'>
+                            
+                            <td style='font-size: 16px; font-weight: lighter;text-align: center; width: 50%;padding: 1%;'>Money Remaining</td>
+                            
+                            <td style="font-size: 15px; text-align: center;width: 17%">$<%=remain%></td>
+                        </tr>
+                        </table>
                 </div>
                 <%
                     ArrayList<String> bosname = (ArrayList<String>) request.getAttribute("namebos");
@@ -819,9 +836,9 @@
                         </button>
                     </div>
                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                        <button type="submit" class="prevbutton btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center; padding: 1.5%;width:34%" >
+                        <a id="confirmation" type="submit" class="prevbutton btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center; padding: 1.5%;width:34%" >
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation
-                        </button>
+                        </a>
                     </div>
                 </form>
             </div>
@@ -838,7 +855,14 @@
                                 window.history.back();
                             }
         </script>
+        <%                     
+            String players = (String) request.getAttribute("players");
 
+            %>
+            <div style="display:none" id="playersAtt"><%=players%>
+        </div>
+        
+        <script src="js/confirmation.js"></script>
     </body>
 
 </html>
