@@ -172,11 +172,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <!--  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
@@ -239,24 +239,26 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <h1 style="font-family: Century Gothic; padding-bottom: 2%; font-weight: lighter">NWSL Fantasy League</h1>
-                            <button type="button" class="loginbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
-                            <a href="signUp.jsp" class="signupbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 19%;padding:0.7%"  >Sign Up</a>
+                            <h1 style="font-family: Century Gothic;font-weight: lighter;padding-bottom: 2%">NWSL Fantasy League</h1>
+                            <button type="button" class="loginbutton btncustom" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
+                            <a href="signUp.jsp" class="signupbutton btncustom" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%"  >Sign Up</a>
 
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12" style="margin-top: -5%">
+                    <div class="col-lg-12" style="margin-top: -6%">
                         <div>
-                        <h4 style="color:white; font-family: Century Gothic; margin-top: 0; text-shadow: 2px 2px 3px rgba(0,0,0,0.6); font-weight: lighter">or Login with
+                        <h4 style="color:white; font-family: Century Gothic; margin-top: 0;font-weight: lighter;margin-right: 1%;word-spacing: 2px">or Login with
                         <!--<div class="fb-login-button" size="medium" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
-                        <a class="btn btn-social-icon btn-facebook" style="background-color: #3B5998; padding: 3px 14px; font-size: 23px; border-radius: 7px; margin-top: 0; margin-left: 0.5%;">
+                        <!--<a class="btn btn-social-icon btn-facebook" style="background-color: #676d77; padding: 3px 13px; font-size: 23px; border-radius: 50%; margin-top: 0; margin-left: 0.5%;">
                             <span class="fa fa-facebook" style="color:white"></span>
-                        </a>
-                        <a class="btn btn-social-icon btn-twitter" style="background-color: #55ACEE; padding: 3px 10px; font-size: 23px; border-radius: 7px; margin-top: 0;margin-left: 0.5%;">
+                        </a>-->
+                        <a class="facebookBtn smGlobalBtn" href="#" ></a>
+                        <!--<a class="btn btn-social-icon btn-twitter" style="background-color: #676d77; padding: 3px 8px; font-size: 23px; border-radius: 50%; margin-top: 0;margin-left: 0.5%;">
                             <span class="fa fa-twitter" style="color:white"></span>
-                        </a>
+                        </a>-->
+                        <a class="twitterBtn smGlobalBtn" href="#" ></a>
                         </h4>
 
                     </div>
@@ -424,9 +426,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Login</h4>
             </div>
-            
             <div id="ajaxLoginResponse" style="color: red;"></div>
-
             <form method="POST" action="login" style="margin-top: 8%;">
                 <div class="form-group" style="margin-left: 20%">
                     <label for="email" style="font-size: 16px;font-family: Century Gothic;">Email address:</label>
@@ -440,14 +440,10 @@
                     <label style="font-family: Century Gothic"><input type="checkbox" name="checkbox" > Remember me</label>
                 </div>
                 <div align="center" style="margin-bottom: 8%">
-                    <button type="submit" class="submitbutton btncustom" style="color:white; font-size: 18px; font-weight: lighter; text-align: center; width: 35%;padding:1.5%" >Submit</button>
+                    <button type="submit" class="submitbutton btncustom" style="font-size: 18px;text-align: center; width: 35%;padding:1.5%" >Submit</button>
                 </div>
             </form>
-
-
-
         </div>
-
     </div>
 </div>
 

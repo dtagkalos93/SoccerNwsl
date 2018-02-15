@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.fantasy;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.google.gson.Gson;
@@ -16,6 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,11 +28,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author Mitsos-Laptop
  */
 public class autopick extends HttpServlet {
-    private List<String> list=new ArrayList<>();
+
+    private List<String> list = new ArrayList<>();
     private List<String> nameList = new ArrayList();
     private List<String> jerseyList = new ArrayList();
     private List<String> teamList = new ArrayList();
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -64,17 +66,15 @@ public class autopick extends HttpServlet {
             nameList = new ArrayList<>();
             teamList = new ArrayList<>();
             jerseyList = new ArrayList<>();
-            
 
             defenders(connection);
 
-            
             nameList = new ArrayList<>();
             teamList = new ArrayList<>();
             jerseyList = new ArrayList<>();
 
             midfielders(connection);
-           
+
             nameList = new ArrayList<>();
             teamList = new ArrayList<>();
             jerseyList = new ArrayList<>();
@@ -86,20 +86,18 @@ public class autopick extends HttpServlet {
             System.out.println("Exception is ;" + e);
 
         }
-        
+
         String json = new Gson().toJson(list);
         System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);
     }
-    
-    
+
     public void goalkeepers(Connection connection) throws SQLException {
         String sql = "SELECT * FROM players where position='Goalkeeper'";
         ResultSet resultSet = null;
         String badge = null;
-        System.out.println("I am here!!! "+ sql);
         Statement s = connection.createStatement();
 
         s.executeQuery(sql);
@@ -145,23 +143,22 @@ public class autopick extends HttpServlet {
                 jerseyList.add("breakersgk.png");
             }
 
-
             i++;
         }
         resultSet.close();
         s.close();
         int randomNum;
-        i=1;
-        while(i<=2){
-            randomNum=ThreadLocalRandom.current().nextInt(0, nameList.size());
-            System.out.println("Random Number "+ randomNum + " " + nameList.get(randomNum) + " " + jerseyList.get(randomNum) + " " + teamList.get(randomNum));
+        i = 1;
+        while (i <= 2) {
+            Random rand = new Random();
+
+            randomNum = rand.nextInt((nameList.size() - 1) + 1);
             list.add(nameList.get(randomNum));
             nameList.remove(randomNum);
             list.add(jerseyList.get(randomNum));
             jerseyList.remove(randomNum);
             list.add(teamList.get(randomNum));
             teamList.remove(randomNum);
-            System.out.println(i);
             i++;
         }
 
@@ -215,14 +212,15 @@ public class autopick extends HttpServlet {
                 jerseyList.add("breakers1.png");
             }
 
-
             i++;
         }
         resultSet.close();
         s.close();
         int randomNum;
-        for(int j=1;j<=5;j++){
-            randomNum=ThreadLocalRandom.current().nextInt(0, nameList.size());
+        for (int j = 1; j <= 5; j++) {
+            Random rand = new Random();
+
+            randomNum = rand.nextInt((nameList.size() - 1) + 1);
             list.add(nameList.get(randomNum));
             nameList.remove(randomNum);
             list.add(jerseyList.get(randomNum));
@@ -230,7 +228,6 @@ public class autopick extends HttpServlet {
             list.add(teamList.get(randomNum));
             teamList.remove(randomNum);
         }
- 
 
     }
 
@@ -281,15 +278,16 @@ public class autopick extends HttpServlet {
                 teamList.add("BOS");
                 jerseyList.add("breakers1.png");
             }
- 
 
             i++;
         }
         resultSet.close();
         s.close();
         int randomNum;
-        for(int j=1;j<=5;j++){
-            randomNum=ThreadLocalRandom.current().nextInt(0, nameList.size());
+        for (int j = 1; j <= 5; j++) {
+            Random rand = new Random();
+
+            randomNum = rand.nextInt((nameList.size() - 1) + 1);
             list.add(nameList.get(randomNum));
             nameList.remove(randomNum);
             list.add(jerseyList.get(randomNum));
@@ -297,7 +295,6 @@ public class autopick extends HttpServlet {
             list.add(teamList.get(randomNum));
             teamList.remove(randomNum);
         }
-       
 
     }
 
@@ -348,15 +345,16 @@ public class autopick extends HttpServlet {
                 teamList.add("BOS");
                 jerseyList.add("breakers1.png");
             }
-   
 
             i++;
         }
         resultSet.close();
         s.close();
-       int randomNum;
-        for(int j=1;j<=3;j++){
-            randomNum=ThreadLocalRandom.current().nextInt(0, nameList.size());
+        int randomNum;
+        for (int j = 1; j <= 3; j++) {
+            Random rand = new Random();
+
+            randomNum = rand.nextInt((nameList.size() - 1) + 1);
             list.add(nameList.get(randomNum));
             nameList.remove(randomNum);
             list.add(jerseyList.get(randomNum));

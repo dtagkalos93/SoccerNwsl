@@ -58,7 +58,7 @@
     </servlet>
     <servlet>
         <servlet-name>confirmationTeam</servlet-name>
-        <servlet-class>confirmationTeam</servlet-class>
+        <servlet-class>com.fantasy.confirmationTeam</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>

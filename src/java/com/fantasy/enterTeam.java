@@ -156,8 +156,8 @@ public class enterTeam extends HttpServlet {
         wasposList = new ArrayList();
         waspriceList = new ArrayList();
         System.out.println("EnterRoster");
-        System.out.println(request.getParameter("name"));
         String players = request.getParameter("name");
+        System.out.println(players);
         String playersAtt=players;
         String[] playersArray = players.split(",");
         String[] playersTeam;
@@ -511,52 +511,52 @@ public class enterTeam extends HttpServlet {
         request.setAttribute("jerseybos", bosjerseyList);
         request.setAttribute("posbos", bosposList);
         request.setAttribute("pricebos", bospriceList);
-
+System.out.println("bos Size " + bospriceList.size());
         request.setAttribute("namechi", chinameList);
         request.setAttribute("jerseychi", chijerseyList);
         request.setAttribute("poschi", chiposList);
         request.setAttribute("pricechi", chipriceList);
-
+System.out.println("chi Size " + chipriceList.size());
         request.setAttribute("namekc", kcnameList);
         request.setAttribute("jerseykc", kcjerseyList);
         request.setAttribute("poskc", kcposList);
         request.setAttribute("pricekc", kcpriceList);
-
+System.out.println("kc Size " + kcpriceList.size());
         request.setAttribute("namehou", hounameList);
         request.setAttribute("jerseyhou", houjerseyList);
         request.setAttribute("poshou", houposList);
         request.setAttribute("pricehou", houpriceList);
-
+System.out.println("hou Size " + houpriceList.size());
         request.setAttribute("namenc", ncnameList);
         request.setAttribute("jerseync", ncjerseyList);
         request.setAttribute("posnc", ncposList);
         request.setAttribute("pricenc", ncpriceList);
-
+System.out.println("nc Size " + ncpriceList.size());
         request.setAttribute("nameorl", orlnameList);
         request.setAttribute("jerseyorl", orljerseyList);
         request.setAttribute("posorl", orlposList);
         request.setAttribute("priceorl", orlpriceList);
-
+System.out.println("orl Size " + orlpriceList.size());
         request.setAttribute("namepor", pornameList);
         request.setAttribute("jerseypor", porjerseyList);
         request.setAttribute("pospor", porposList);
         request.setAttribute("pricepor", porpriceList);
-
+System.out.println("por Size " + porpriceList.size());
         request.setAttribute("namesea", seanameList);
         request.setAttribute("jerseysea", seajerseyList);
         request.setAttribute("possea", seaposList);
         request.setAttribute("pricesea", seapriceList);
-
+System.out.println("sea Size " + seapriceList.size());
         request.setAttribute("namenj", njnameList);
         request.setAttribute("jerseynj", njjerseyList);
         request.setAttribute("posnj", njposList);
         request.setAttribute("pricenj", njpriceList);
-
+System.out.println("nj Size " + njpriceList.size());
         request.setAttribute("namewas", wasnameList);
         request.setAttribute("jerseywas", wasjerseyList);
         request.setAttribute("poswas", wasposList);
         request.setAttribute("pricewas", waspriceList);
-
+        System.out.println("Was Size " + waspriceList.size());
         RequestDispatcher rd = request.getRequestDispatcher("enterRoster.jsp");
         rd.forward(request, response);
 
@@ -581,7 +581,6 @@ public class enterTeam extends HttpServlet {
             }
                 
             String sql = "SELECT price FROM players where name='" + name + "'";
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -589,6 +588,9 @@ public class enterTeam extends HttpServlet {
 
             if (resultSet.next()) {
                 return resultSet.getString("price");
+            }
+            else{
+                return "0.0";
             }
 
         } catch (ClassNotFoundException ex) {

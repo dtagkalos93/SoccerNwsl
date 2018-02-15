@@ -1,4 +1,3 @@
-
 body,
 html {
     width: 100%;
@@ -60,45 +59,48 @@ h6 {
     color: #fff;
     background-color: #c8373b;
 }
-    
-.intro-header2 {
-/*    padding-top: 7%;
-    background: url(../img/banner2.png) no-repeat center center;
-    margin-top: 5%; 
-    background-size: cover;*/
 
+.wrap{
+  width: 80%;
+  margin-left: 5%;
+}
+
+.ol, ul{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .top-gap{
     margin-top: 2%;
 }
 
+
 .btncustom:hover{
     background-color: #c8373b;
     color: #fff;
-    text-decoration: none;
-}
-
-.enterteam:hover{
-    background-color: #84111c;
-    color: #fff;
-    text-decoration: none;
 }
 
 .prevbutton{
     background-color: #ecebeb; 
     border: none;
+    color: black;
     vertical-align: middle;
     text-align: center;
     text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+
     cursor: pointer;
     width:140px;
+
 }
+
 
 .nextbtn{
     background-color: #ecebeb; 
     border: none;
     color: black;
+
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -106,6 +108,8 @@ h6 {
     float:right;
     cursor: pointer;
     width:140px;
+
+
 }
 
 .enterteam{
@@ -189,7 +193,39 @@ h6 {
         left: 17px;
 }
 
- .teambox{
+.pit-img{
+    background:url(../img/bench2.jpg) no-repeat  ;
+ }
+ 
+.cbname2{
+    width:120px;
+    border: 1px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    height: 21px;
+    padding-top: 0px;
+    font-family: arial;
+    font-size: 14px;
+    opacity: 0.9;
+    filter: alpha(opacity=30);
+
+}
+
+.fixtures{
+    width: 100%;
+    margin-bottom: 5%;
+    border-top:3px solid #1d3260;
+    border-bottom:1px solid #e8e4e4;
+    border-left: 1px solid #e8e4e4;
+    border-right: 1px solid #e8e4e4;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.teambox{
     margin-top: 10%;;
     width: 100%;
     height:50px; 
@@ -210,172 +246,26 @@ h6 {
 
 }
 
-
-.row2{
-    display: flex;
-    background-color: #e8e8e8;
-}
-
-
-.skorlogol{
-    width: 2%; 
-    left: 1.55%
-}
-
-.skorlogor{
-    width: 2%;
-    left:6%
-}
-
-.form-control{
-    width: 90%;
-    margin-left: 5%;
-    padding: 5px 12px;
-    font-size: 14px;
-    font-weight: lighter;
-    color: #5a5858;
-    border-radius: 0px;
-    border: 1px solid #aba8a8;
-    border-bottom: 1px solid #ac1f23;
-    color: #000000;
-    font-family: Century Gothic;
-}
-
-.btn-circle {
-  border: 1px solid #E8E8E8;
-  background-color: white;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 100%;
-}
-
-.smallbtn:hover {
-    
-    background-color: #ecebeb;
-}
-
-.smallbtn:disabled{
-     background-color: white;
-}
-
-.btn-circle.btn-lg {
-  border: 1px solid #E8E8E8;
-  background-color: white;
-  height: 4rem;
-  padding: 8px 10px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 100%;
-}
-
-
-.lgbtn:hover {
-    
-    background-color: #ecebeb;
-}
-
-.lgbtn:disabled{
-     background-color: white;
-}
-
-.underline:hover {
-    text-decoration: underline
-}
-
-.modal-header{
-    background: url(../img/bannermodal1.png) no-repeat; 
-    background-size: cover;
-    width:100%; 
-}
-
-.modal-dialog{
-   position: absolute;
-   left: 50%;
-   /* now you must set a margin left under zero - value is a half width your window */
-   margin-left: -348px;
-   /* this same situation is with height - example */
-   height: 500px;
-   top: 60%;
-   margin-top: -250px;
-} 
-
-.addbutton{
+.teambox{
     width: 100%;
-    background-color: #c8373b;
-    color:white;
-    font-size: 14px;
-    text-align: center;
-    font-weight:lighter;
-    margin-bottom: 2%;
-    height: 30px; 
-    border: 1px solid #ac0f1f;
-    border-radius: 3pt;
+    height:50px; 
+    border-top:3px solid black;
+    background-color: #ebebe4;
 }
 
-.addbutton:hover{
-    background-color: #84111c;
-}
 
-.infobutton{
+.ranking{
     width: 100%;
-    background-color: #ecebeb;
-    font-size: 14px;
-    text-align: center;
-    font-weight:lighter;
-    margin-bottom: 2%;
-    height: 30px; 
-    border: 1px solid #ecebeb;
-    border-radius: 3pt;
 }
 
-.infobutton:hover{
-    background-color: #a5a4a4;
-     color:white;
+.cleague{
+    width: 100%;
 }
 
-.search {
-  width: 100%;
-  position: relative
+.gleague{
+    width: 100%;
 }
 
-.searchTerm {
-    font-family: Century Gothic;
-    width: 112%;
-    border: 1px solid #1d3260;
-    padding: 5px 16px;
-    color: #555;
-    background-color: #ecebeb;
-    font-size: 14px;
-    font-weight: lighter;
-}
-
-.searchTerm:focus{
-   background-color: white
-}
-
-.searchButton {
-  position: absolute;  
-  margin-top: -11%;
-  right: -36px;
-  width: 34px;
-  height: 32px;
-  border: 0px solid #1d3260;
-  background: #1d3260;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 80%;
-  margin-left: 5%;
-}
-
-.ol, ul{
-    margin-top: 0;
-    margin-bottom: 0;
+.transfers{
+    width: 100%;
 }

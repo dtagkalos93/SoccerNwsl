@@ -1126,7 +1126,7 @@ function showPlayers() {
                         document.getElementById("gkteam" + gk).innerHTML = jsonResponse[k + 2];
                         document.getElementById("gkprice" + gk).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("gkscore" + gk).innerHTML = jsonResponse[k + 4];
-                        
+
                         if (jsonResponse[k + 5] == "OUT") {
 
                             document.getElementById("gkinjury" + gk).classList = '';
@@ -2980,7 +2980,7 @@ function openModalFWD(i) {
 function addPlayer() {
 
     var players = document.getElementById("totalPlayers").textContent;
-    var playerPrice= document.getElementById("playerPrice").textContent;
+    var playerPrice = document.getElementById("playerPrice").textContent;
     var remainPrice = document.getElementById("remainPrice").textContent;
     document.getElementById("checkbox").style.display = "";
     document.getElementById("checkbox").style.backgroundColor = "#92c992";
@@ -2989,8 +2989,8 @@ function addPlayer() {
     document.getElementById("message").innerHTML = " has been added to your squad."
     document.getElementById("errorbox").style.display = 'none';
     document.getElementById("enterError").style.display = 'none';
-    document.getElementById("remainPrice").innerHTML=(((eval(remainPrice)*10)-(eval(playerPrice.split("$")[1])*10))/10).toFixed(1);
-    if(document.getElementById("remainPrice").textContent<0.0){
+    document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
+    if (document.getElementById("remainPrice").textContent < 0.0) {
         console.log("I am here!");
         document.getElementById("remainPrice").style.color = '#d4213c';
         document.getElementById("dollar").style.color = '#d4213c';
@@ -3000,7 +3000,7 @@ function addPlayer() {
     for (i = 1; i <= 15; i++) {
         if (document.getElementById("playerTeam").textContent == document.getElementById("team" + i).textContent) {
             counter = eval(counter) + 1;
-            
+
         }
         if (counter > 4) {
 
@@ -3039,6 +3039,7 @@ function addPlayer() {
                 document.getElementById("namegk" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("namegk" + i).style.border = "2px solid #c0020d";
             }
+            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent;
             document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
 
@@ -3082,6 +3083,8 @@ function addPlayer() {
                 document.getElementById("defname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("defname" + i).style.border = "2px solid #c0020d";
             }
+            document.getElementById("defprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
+
             document.getElementById("team" + (i + 2)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
         } else {
@@ -3122,6 +3125,8 @@ function addPlayer() {
                 document.getElementById("midname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("midname" + i).style.border = "2px solid #c0020d";
             }
+            document.getElementById("midprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
+
             document.getElementById("team" + (i + 7)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
         } else {
@@ -3162,6 +3167,8 @@ function addPlayer() {
                 document.getElementById("fwdname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("fwdname" + i).style.border = "2px solid #c0020d";
             }
+            document.getElementById("fwdprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
+
             document.getElementById("team" + (i + 12)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
 
@@ -3192,7 +3199,7 @@ function reset() {
     document.getElementById("totalPlayers").innerHTML = '0';
     document.getElementById("allPlayers").style.color = '#d4213c';
     document.getElementById("totalPlayers").style.color = '#d4213c';
-    document.getElementById("remainPrice").innerHTML= "100.0";
+    document.getElementById("remainPrice").innerHTML = "100.0";
     document.getElementById("errorbox").style.display = 'none';
     document.getElementById("checkbox").style.display = "none";
     for (i = 1; i <= 15; i++) {
@@ -3494,10 +3501,8 @@ function removePlayer() {
     document.getElementById("message").innerHTML = " remove from the squad."
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("teamError").style.display = 'none';
-    var playerPrice= document.getElementById("playerPrice").textContent;
-    var remainPrice = document.getElementById("remainPrice").textContent;
-    document.getElementById("remainPrice").innerHTML=(((eval(remainPrice)*10)+(eval(playerPrice.split("$")[1])*10))/10).toFixed(1);
-    if(document.getElementById("remainPrice").textContent>0.0){
+
+    if (document.getElementById("remainPrice").textContent > 0.0) {
         console.log("I am here!");
         document.getElementById("remainPrice").style.color = 'green';
         document.getElementById("dollar").style.color = 'green';
@@ -3550,7 +3555,10 @@ function removePlayer() {
         document.getElementById("namegk" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (document.getElementById("rmvplayerNo").textContent)).innerHTML = ' ';
         document.getElementById("selGK" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeGK()');
-
+        var playerPrice = document.getElementById("pricegk" + document.getElementById("rmvplayerNo").textContent).textContent;
+        console.log(playerPrice);
+        var remainPrice = document.getElementById("remainPrice").textContent;
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
 
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Defender') {
@@ -3570,7 +3578,10 @@ function removePlayer() {
         document.getElementById("defname" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 2)).innerHTML = ' ';
         document.getElementById("selDEF" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeDEF()');
-
+        var playerPrice = document.getElementById("defprice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        console.log(playerPrice);
+        var remainPrice = document.getElementById("remainPrice").textContent;
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Midfielder') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3588,7 +3599,10 @@ function removePlayer() {
         document.getElementById("midname" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 7)).innerHTML = ' ';
         document.getElementById("selMID" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeMID()');
-
+        var playerPrice = document.getElementById("midprice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        console.log(playerPrice);
+        var remainPrice = document.getElementById("remainPrice").textContent;
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Forward') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3606,6 +3620,10 @@ function removePlayer() {
         document.getElementById("fwdname" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 12)).innerHTML = ' ';
         document.getElementById("selFWD" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeFWD()');
+        var playerPrice = document.getElementById("fwdorice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        console.log(playerPrice);
+        var remainPrice = document.getElementById("remainPrice").textContent;
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
     }
 
 
@@ -3695,7 +3713,7 @@ function autopick() {
             var jsonResponse = JSON.parse(data);
             var k = 1;
             document.getElementById("allPlayers").style.color = 'green';
-            document.getElementById("totalPlayers").style.color = 'green';  
+            document.getElementById("totalPlayers").style.color = 'green';
             document.getElementById("totalPlayers").innerHTML = '15';
             for (i = 0; i < 6; i = i + 3) {
                 document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i + 1];
@@ -3795,7 +3813,7 @@ $(document).on("click", "#prev", function () { // When HTML DOM "click" event is
             document.getElementById(day + "game" + i + "id").style.display = "";
             i = i + 1;
         }
-                    console.log(i);
+        console.log(i);
 
         for (i; i < 5; i++) {
             document.getElementById(day + "game" + i + "id").style.display = "none";
@@ -3866,7 +3884,7 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
             document.getElementById(day + "game" + i + "id").style.display = "";
             i = i + 1;
         }
-                    console.log(i);
+        console.log(i);
 
         for (i; i < 5; i++) {
             document.getElementById(day + "game" + i + "id").style.display = "none";

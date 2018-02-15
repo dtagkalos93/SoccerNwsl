@@ -248,7 +248,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%;border-bottom: 1px solid #ac0f1f'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%;border-bottom: 1px solid #ac0f1f">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(4)%>" style="width:31px;height:30px;border-bottom: 1px solid #ac0f1f" />
+                                    <img src="img/<%=defjersey.get(4)%>" style="width:31px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(4)%></span>
@@ -585,7 +585,7 @@
                                             <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
-                                            <span style="font-size: 14px"><%=bosname.get(i)%></span>
+                                            <span style="font-size: 14px"><%=houname.get(i)%></span>
                                         </div>
                                     </td>
                                     <td style="font-weight:lighter ;text-align: center;font-size: 13px;padding: 0.5%"><%=houpos.get(i)%></td>
@@ -827,7 +827,7 @@
                         <label class="col-md-4 col-xs-4" for="first"  style="font-family:Century Gothic;font-size: 17px;padding:1%;text-align: right" >Enter Team Name
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="team" style="font-family:Century Gothic;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input id="teamName" type="text" class="form-control" name="team" style="font-family:Century Gothic;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">

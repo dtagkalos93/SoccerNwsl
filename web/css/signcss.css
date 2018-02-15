@@ -22,7 +22,9 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    background-color: #222427;
+    border: none;
+    height: 75px;
 }
 
 .lead {
@@ -177,8 +179,7 @@ p.copyright {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    border-radius: 3px;
-    margin-left: 1%;
+    border-radius: 1px;
 }
 
 .nextbuttonaccount:hover{    

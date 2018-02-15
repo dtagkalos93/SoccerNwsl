@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).on("click", "#enterTeam", function () {
-    var enterTeam=document.getElementById("playersAtt").textContent;
+$(document).on("click", "#confirmation", function () {
+        var team=document.getElementById("teamName").value;
+        var roster= document.getElementById("playersAtt").textContent;
         
     
-        window.location = "confirmationTeam?name=" + enterTeam;
+        window.location = "confirmationTeam?team="+team+"&roster="+roster ;
 //        $.get("enterTeam", {gk1:enterTeam}, function (){
 //             window.location ="enterRoster.html";
 //        });

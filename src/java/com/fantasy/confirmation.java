@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -115,7 +116,10 @@ public class confirmation extends HttpServlet {
             rd.forward(request, response);
         } else {
 
-            
+            HttpSession session = request.getSession(true);
+
+            //set a string session attribute
+            session.setAttribute("email", email);
 
             dbCredentials exist = new dbCredentials();
             exist.addUser(firstName, lastName, email, password, gender, country, team);

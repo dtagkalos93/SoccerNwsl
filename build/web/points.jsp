@@ -127,9 +127,8 @@
         </nav>
 
 
-        <div class="intro-header2">
+        <div class="">
             <div class="container extraClass  ">
-
                 <ul class="nav nav-tabs extraClassul">
                     <li  ><a href="status.html">Status</a></li>
                     <li class="active"><a href="points.jsp">Points</a></li>

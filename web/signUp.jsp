@@ -47,11 +47,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!---<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
 
-                        <button type="submit" value="Next" class="nextbuttonaccount btncustom  " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 20%; padding: 0.9%"> 
+                        <button type="submit" value="Next" class="nextbuttonaccount btncustom  " style="font-family: Century Gothic;color: white; font-size: 15px;text-align: center; width: 20%; padding: 0.7%"> 
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Next
                         </button>
                     </div>

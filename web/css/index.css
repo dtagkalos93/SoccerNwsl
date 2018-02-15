@@ -22,13 +22,9 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
-}
-
-.lead {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0
+    background-color: #222427;
+    border: none;
+    height: 75px;
 }
 
 .intro-header {
@@ -84,11 +80,83 @@ h6 {
     }
 }
 
-.network-name {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+.loginbutton{
+    background-color:#ac0f1f;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 1px;
+}
+
+.loginbutton:hover{
+    background-color: #fff;
+    color: #ac0f1f;
+    text-decoration: none;
+}
+
+.signupbutton{
+    background-color:#ac0f1f;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 1px;
+    margin-left: 1%;
+}
+
+.signupbutton:hover{
+    background-color: #303663;
+    border-color: #303663;
+    color: #fff;
+    text-decoration: none;
+}
+
+.smGlobalBtn {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.9em;
+    -webkit-border-radius:27px;
+}
+
+.facebookBtn{
+    background: #676d77;
+}
+
+.facebookBtn:before{ 
+    font-family: "FontAwesome";
+    content: "\f09a";
+}
+
+.facebookBtn:hover{
+    color: #fff;
+    background: #222427;
+    text-decoration: none;
+}
+
+.twitterBtn{
+    background: #676d77;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099";     
+}
+
+.twitterBtn:hover{
+      color: #fff;
+      background: #222427;
+      text-decoration: none;
 }
 
 .content-section-a {
@@ -112,60 +180,10 @@ h6 {
     border-top: 3px solid white;
 }
 
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;
-}
-
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
-
-.banner ul {
-    margin-bottom: 0;
-}
-
-.banner-social-buttons {
-    float: right;
-    margin-top: 0;
-}
-
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-}
-
-footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-p.copyright {
-    margin: 15px 0 0;
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0
 }
 
 .team{
@@ -174,38 +192,8 @@ p.copyright {
     padding-left:30px;
 }
 
-.loginbutton{
-    background-color:#c1868d;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.loginbutton:hover{
-    background-color: #ba5e68;
-    text-decoration: none;
-}
-
-.signupbutton{
-    background-color:#303663;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-left: 1%;
-}
-
-.signupbutton:hover{
-    background-color: #1b2046;
-    text-decoration: none;
-}
-
-
 .modal-header{
-    background: url(../img/banner0.png) no-repeat;
+    background: url(../img/modal-submit.png) no-repeat;
     background-size: cover;
     padding: 10px;
 }
@@ -215,34 +203,41 @@ p.copyright {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     color: white;
     text-align: center;
-    font-size: 24px;
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+.submitbutton{
+    background-color:#303663;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #303663;
+    border-radius: 1px;
+    margin-left: 1%;
+}
+
+.submitbutton:hover{
+    background-color: #24294a;
+    color: #fff;
+    border: 1px solid #24294a;
+    text-decoration: none;
 }
 
 button.close{
-    font-size: 25px;    
+    font-size: 23px;    
     font-weight: lighter;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    background-color: #9d6f76;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 2px;
     opacity: 1;
     color: white;
 }
 
 .close:hover{
-    color: #aba9a9;
-}
-
-.submitbutton{
-    background-color:#303663;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-    margin-left: 1%;
-}
-
-.submitbutton:hover{
-    background-color: #1b2046;
-    text-decoration: none;
+    box-shadow: 0 1px 8px 1px rgba(252, 249, 249, 0.52);
 }
 
 .form-control{
