@@ -120,7 +120,9 @@ public class confirmation extends HttpServlet {
 
             //set a string session attribute
             session.setAttribute("email", email);
-
+            session.setAttribute("fullname", firstName+" "+lastName);
+            session.setAttribute("teamBadge", team);
+            System.out.println("====>"+team);
             dbCredentials exist = new dbCredentials();
             exist.addUser(firstName, lastName, email, password, gender, country, team);
             fixtureData fixture = new fixtureData();

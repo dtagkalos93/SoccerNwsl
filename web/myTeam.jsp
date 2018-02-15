@@ -1081,18 +1081,40 @@
                     <div class="col-md-4 sidebar" style="padding-right: 0 ">
                         <div class="threadbox" >
                             <h1 style="font-family:arial;font-weight:bold;font-size: 20px">
-                                John Doe
+                                <%=session.getAttribute("fullname").toString()%>
                             </h1>
                         </div>
                         <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;">
                             <div class="teambox">
-                                <h1 style="font-family: arial;font-size: 19px;text-align: center; vertical-align: middle; line-height: 10px; font-weight: bold">Black Mambas</h1>
+                                <h1 style="font-family: arial;font-size: 19px;text-align: center; vertical-align: middle; line-height: 10px; font-weight: bold"><%=session.getAttribute("teamName").toString()%></h1>
                             </div>
                             <div>
                                 <h5 style="margin-left:5%;font-family: arial; font-weight: bold;font-size: 15px">Favorite Team</h5>
+                                <%
+                                    String team = session.getAttribute("teamBadge").toString();
+                                    String badge = null;
+                                    if (team.equals("houston")) {
+                                        badge = "Houston_Dash.png";
+                                    } else if (team.equals("chicago")) {
+                                        badge = "ChicagoRedStars.png";
+                                    } else if (team.equals("portland")) {
+                                        badge = "Portland.png";
+                                    } else if (team.equals("orlando")) {
+                                        badge = "OrlandoPride.png";
+                                    } else if (team.equals("spirit")) {
+                                        badge = "Washington_Spirit.png";
+                                    } else if (team.equals("courage")) {
+                                        badge = "North_Carolina_Courage.png";
+                                    } else if (team.equals("seattle")) {
+                                        badge = "SeattleReignFC.png";
+                                    } else if (team.equals("sky")) {
+                                        badge = "Sky_Blue_FC.png";
+                                    } else if (team.equals("kansas")) {
+                                        badge = "kansasCity.png";
+                                    } 
+                                %>
 
-
-                                <img style="margin-top:-2%; margin-left: 33.25%" width="37%" height="37%" src="img/OrlandoPride.png"/>
+                                <img style="margin-top:-2%; margin-left: 33.25%" width="37%" height="37%" src="img/<%=badge%>"/>
 
 
                             </div>

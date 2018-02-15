@@ -47,6 +47,7 @@ public class confirmationTeam extends HttpServlet {
         String email=session.getAttribute("email").toString();
         String roster=request.getParameter("roster");
         String team=request.getParameter("team");
+        session.setAttribute("teamName", team);
         String[] playersArray = roster.split(",");
         String[] playersTeam=new String[playersArray.length];
         for(int i =0;i<playersTeam.length;i++){
