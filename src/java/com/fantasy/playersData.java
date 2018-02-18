@@ -968,7 +968,6 @@ public class playersData extends HttpServlet {
                     pos = i;
                 }
             }
-            System.out.println(namelist.get(pos));
             if (noperpage == 5) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
 
@@ -1059,7 +1058,6 @@ public class playersData extends HttpServlet {
                     pos = i;
                 }
             }
-            System.out.println(namelist.get(pos));
             if (noperpage == 5) {
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4) {
 

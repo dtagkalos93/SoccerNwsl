@@ -171,9 +171,7 @@ public class fixtureData {
 
             s.close();
             fixtureDetails(weeks,connection);
-             for ( int k=0;k<homeList.size();k++){
-                 System.out.println(homeList.get(k));
-             }
+
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
@@ -241,7 +239,6 @@ public class fixtureData {
                 savehomeList.add(resultSet.getString("homesave"));
                 saveawayList.add(resultSet.getString("awaysave"));
                 ownhomeList.add(resultSet.getString("homeown"));
-                System.out.println("Own: " + resultSet.getString("homeown"));
                 ownawayList.add(resultSet.getString("awayown"));
                 pkmissedhomeList.add(resultSet.getString("homepkmissed"));
                 pkmissedawayList.add(resultSet.getString("awaypkmissed"));

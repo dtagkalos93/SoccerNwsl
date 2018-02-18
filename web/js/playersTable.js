@@ -3695,6 +3695,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
     }
     console.log(enterTeam + "");
     if (counter == 15) {
+        backTeam();
         window.location = "enterTeam?name=" + enterTeam;
 //        $.get("enterTeam", {gk1:enterTeam}, function (){
 //             window.location ="enterRoster.html";
@@ -3891,3 +3892,128 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
         }
     });
 });
+
+function backTeamButton() {
+    if (localStorage.getItem('firstLoad')) {
+        for (i = 1; i <= 2; i++) {
+            document.getElementById("namegk" + i).innerHTML = localStorage.getItem('namegk' + i);
+            document.getElementById("pricegk" + i).innerHTML = localStorage.getItem('pricegk' + i);
+            document.getElementById("team" + i).innerHTML = localStorage.getItem('team' + i);
+            var color = localStorage.getItem('colorgk' + i);
+            if (color == "rgb(192, 2, 13)") {
+                document.getElementById("namegk" + i).style.backgroundColor = color;
+                document.getElementById("namegk" + i).style.border =localStorage.getItem('bordergk' + i) ;
+            }
+            document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
+            document.getElementById("imagegk" + i).src = "img/" + localStorage.getItem('imagegk' + i);
+            for(j=1;j<=2;j++){
+                if(document.getElementById("namegk" + i).textContent==document.getElementById("gkname" + j).textContent){
+                    document.getElementById("gk" + j).style.opacity = '0.6';
+                    document.getElementById("gk" + j).style.pointerEvents = 'none';
+                }
+            }
+        }
+        for (i = 1; i <= 5; i++) {
+            document.getElementById("defname" + i).innerHTML = localStorage.getItem('defname' + i);
+            document.getElementById("defprice" + i).innerHTML = localStorage.getItem('defprice' + i);
+            document.getElementById("team" + (i+2)).innerHTML = localStorage.getItem('team' + (i+2));
+            var color = localStorage.getItem('defcolor' + i);
+            if (color == "rgb(192, 2, 13)") {
+                document.getElementById("defname" + i).style.backgroundColor = color;
+                document.getElementById("defname" + i).style.border =localStorage.getItem('defborder' + i) ;
+            }
+            document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
+            document.getElementById("defimage" + i).src = "img/" + localStorage.getItem('defimage' + i);
+            for(j=1;j<=8;j++){
+                if(document.getElementById("defname" + i).textContent==document.getElementById("namedef" + j).textContent){
+                    document.getElementById("def" + j).style.opacity = '0.6';
+                    document.getElementById("def" + j).style.pointerEvents = 'none';
+                }
+            }
+        }
+        for (i = 1; i <= 5; i++) {
+            document.getElementById("midname" + i).innerHTML = localStorage.getItem('midname' + i);
+            document.getElementById("midprice" + i).innerHTML = localStorage.getItem('midprice' + i);
+            document.getElementById("team" + (i+7)).innerHTML = localStorage.getItem('team' + (i+7));
+            var color = localStorage.getItem('midcolor' + i);
+            if (color == "rgb(192, 2, 13)") {
+                document.getElementById("midname" + i).style.backgroundColor = color;
+                document.getElementById("midname" + i).style.border =localStorage.getItem('midborder' + i) ;
+            }
+            document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
+            document.getElementById("midimage" + i).src = "img/" + localStorage.getItem('midimage' + i);
+            for(j=1;j<=5;j++){
+                if(document.getElementById("midname" + i).textContent==document.getElementById("namemid" + j).textContent){
+                    document.getElementById("mid" + j).style.opacity = '0.6';
+                    document.getElementById("mid" + j).style.pointerEvents = 'none';
+                }
+            }
+        }
+        for (i = 1; i <= 3; i++) {
+            document.getElementById("fwdname" + i).innerHTML = localStorage.getItem('fwdname' + i);
+            document.getElementById("fwdprice" + i).innerHTML = localStorage.getItem('fwdprice' + i);
+            document.getElementById("team" + (i+12)).innerHTML = localStorage.getItem('team' + (i+12));
+            var color = localStorage.getItem('fwdcolor' + i);
+            if (color == "rgb(192, 2, 13)") {
+                document.getElementById("fwdname" + i).style.backgroundColor = color;
+                document.getElementById("fwdname" + i).style.border =localStorage.getItem('fwdborder' + i) ;
+            }
+            document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
+            document.getElementById("fwdimage" + i).src = "img/" + localStorage.getItem('fwdimage' + i);
+            for(j=1;j<=5;j++){
+                if(document.getElementById("fwdname" + i).textContent==document.getElementById("namefwd" + j).textContent){
+                    document.getElementById("fwd" + j).style.opacity = '0.6';
+                    document.getElementById("fwd" + j).style.pointerEvents = 'none';
+                }
+            }
+        }
+        document.getElementById("allPlayers").style.color = 'green';
+        document.getElementById("totalPlayers").style.color = 'green';
+        document.getElementById("totalPlayers").innerHTML = '15';
+        document.getElementById("remainPrice").innerHTML = localStorage.getItem('remainBugdet');
+        localStorage.removeItem('firstLoad');
+
+    }
+
+
+
+
+}
+
+function backTeam() {
+    for (i = 1; i <= 2; i++) {
+        localStorage.setItem('namegk' + i, document.getElementById("namegk" + i).textContent);
+        localStorage.setItem('pricegk' + i, document.getElementById("pricegk" + i).textContent);
+        localStorage.setItem('team' + i, document.getElementById("team" + i).textContent);
+        localStorage.setItem('colorgk' + i, document.getElementById("namegk" + i).style.backgroundColor);
+        localStorage.setItem('bordergk' + i, document.getElementById("namegk" + i).style.border);
+        localStorage.setItem('imagegk' + i, document.getElementById("imagegk" + i).src.split("/")[5]);
+    }
+    for (i = 1; i <= 5; i++) {
+        localStorage.setItem('defname' + i, document.getElementById("defname" + i).textContent);
+        localStorage.setItem('defprice' + i, document.getElementById("defprice" + i).textContent);
+        localStorage.setItem('team' + (i+2), document.getElementById("team" + (i+2)).textContent);
+        localStorage.setItem('defcolor' + i, document.getElementById("defname" + i).style.backgroundColor);
+        localStorage.setItem('defborder' + i, document.getElementById("defname" + i).style.border);
+        localStorage.setItem('defimage' + i, document.getElementById("defimage" + i).src.split("/")[5]);
+    }
+    for (i = 1; i <= 5; i++) {
+        localStorage.setItem('midname' + i, document.getElementById("midname" + i).textContent);
+        localStorage.setItem('midprice' + i, document.getElementById("midprice" + i).textContent);
+        localStorage.setItem('team' + (i+7), document.getElementById("team" + (i+7)).textContent);
+        localStorage.setItem('midcolor' + i, document.getElementById("midname" + i).style.backgroundColor);
+        localStorage.setItem('midborder' + i, document.getElementById("midname" + i).style.border);
+        localStorage.setItem('midimage' + i, document.getElementById("midimage" + i).src.split("/")[5]);
+    }
+    for (i = 1; i <= 3; i++) {
+        console.log(i+ " 0??00 " +  document.getElementById("fwdprice" + i).textContent);
+        localStorage.setItem('fwdname' + i, document.getElementById("fwdname" + i).textContent);
+        localStorage.setItem('fwdprice' + i, document.getElementById("fwdprice" + i).textContent);
+        localStorage.setItem('team' + (i+12), document.getElementById("team" + (i+12)).textContent);
+        localStorage.setItem('fwdcolor' + i, document.getElementById("fwdname" + i).style.backgroundColor);
+        localStorage.setItem('fwdborder' + i, document.getElementById("fwdname" + i).style.border);
+        localStorage.setItem('fwdimage' + i, document.getElementById("fwdimage" + i).src.split("/")[5]);
+    }
+    localStorage.setItem('remainBugdet', document.getElementById("remainPrice").textContent);
+    localStorage.setItem('firstLoad', true);
+}

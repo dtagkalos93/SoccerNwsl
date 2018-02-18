@@ -93,7 +93,6 @@ public class playersSelectionTeam extends HttpServlet {
         
         String team = request.getParameter("team");
         String category = request.getParameter("cat");
-        System.out.println(team);
 
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -209,7 +208,6 @@ public class playersSelectionTeam extends HttpServlet {
                 //total=total+Integer.parseInt();
                 String gw = resultSet.getString("GW" + j);
 
-                System.out.println(gw);
                 if (gw.equals("") || gw.equals("-")) {
                     total = total + 0;
                 } else {
@@ -568,9 +566,7 @@ public class playersSelectionTeam extends HttpServlet {
                         pos = i;
                     }
                 }
-                System.out.println(gknameList.get(pos) + "and pos: " + pos);
                 list.add(gknameList.get(pos));
-                System.out.println(list.get(0).toString());
                 gknameList.remove(pos);
                 list.add(gkjerseyList.get(pos));
                 gkjerseyList.remove(pos);
@@ -677,9 +673,7 @@ public class playersSelectionTeam extends HttpServlet {
                         pos = i;
                     }
                 }
-                System.out.println(gknameList.get(pos) + "and pos: " + pos);
                 list.add(gknameList.get(pos));
-                System.out.println(list.get(0).toString());
                 gknameList.remove(pos);
                 list.add(gkjerseyList.get(pos));
                 gkjerseyList.remove(pos);

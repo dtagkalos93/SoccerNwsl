@@ -246,10 +246,10 @@
                                 <input name="team" id='favteam'   class="form-control"  style="display:none">
                                 <div>
                                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                                        <a href="signUp.jsp">Back</a>
-                                        <!--<button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onclick="goBack()" >
+                                        
+                                       <button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
                                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
-                                        -->
+                                        
                                         </div>
                                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
                                         <button type="submit" class="prevbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >

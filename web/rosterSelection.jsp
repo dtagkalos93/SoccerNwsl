@@ -30,7 +30,7 @@
         <![endif]-->
 
     </head>
-    <body>
+    <body onload="backTeamButton()">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -303,7 +303,7 @@
                                     <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                                     <p id="fwdname3" class="gkname" >Forward</p>
                                     <p style="display: none" id="team15"></p>
-                                    <p style="display: none" id="fwdprice3  "></p>
+                                    <p style="display: none" id="fwdprice3"></p>
 
                                 </div>
                             </div>

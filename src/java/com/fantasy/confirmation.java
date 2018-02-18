@@ -122,7 +122,6 @@ public class confirmation extends HttpServlet {
             session.setAttribute("email", email);
             session.setAttribute("fullname", firstName+" "+lastName);
             session.setAttribute("teamBadge", team);
-            System.out.println("====>"+team);
             dbCredentials exist = new dbCredentials();
             exist.addUser(firstName, lastName, email, password, gender, country, team);
             fixtureData fixture = new fixtureData();
@@ -225,7 +224,6 @@ public class confirmation extends HttpServlet {
                 sortdefscoreList.add(defscoreList.get(pos));
                 defscoreList.remove(pos);
                 sortdefinjuryList.add(definjuryList.get(pos));
-                System.out.println("OUT "+ definjuryList.get(pos));
                 definjuryList.remove(pos);
             } else if (position.equals("gk")) {
                 int max = Integer.parseInt(gkscoreList.get(0).toString());

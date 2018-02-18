@@ -1,6 +1,19 @@
+<%@page import="com.fantasy.rosterPlayer"%>
 <%@page import="com.fantasy.fixtureData"%>
 <%@page import="java.util.ArrayList"%>
+<%
+    String teamemail = session.getAttribute("email").toString();
+    rosterPlayer players = new rosterPlayer(teamemail);
+    String goalkeeper = players.getGoalkeeper();
+    String defence = players.getDefence();
+    String midfielder = players.getMidfielder();
+    String forward = players.getForward();
+    String defenceNO = players.getDefenceNO();
+    String midfielderNO = players.getMidfielderNO();
+    String forwardNO = players.getForwardNO();
+    String bench = players.getbench();
 
+%>
 
 <html lang="en">
 
@@ -30,10 +43,11 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script type="text/javascript" src="./javascript.js"></script>
+
+
+
     </head>
-    <body>
+    <body onload="goalkeeper('<%=goalkeeper%>');defence('<%=defence%>','<%=defenceNO%>')">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
@@ -236,20 +250,14 @@
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                                 <hr style="border:none;margin-top: 6.5%"/>
-                                <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%" >
-                                    <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
-                                    <p class="gkname" id="namegk1" >Goalkeeper</p>
+                                <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%"  >
+                                    <img class="image-player" id="gkimage" src="img/subsgk.png"/>
+                                    <p class="gkname" id="gkname" >Goalkeeper</p>
                                     <p style="display: none" id="team1"></p>
                                     <p style="display: none" id="pricegk1"></p>
 
                                 </div>
-                                <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 2.3%" >
-                                    <img class="image-player" id="imagegk2" src="img/subsgk.png" />
-                                    <p class="gkname" id="namegk2" >Goalkeeper</p>
-                                    <p style="display: none" id="team2"></p>
-                                    <p style="display: none" id="pricegk2"></p>
 
-                                </div>
 
                                 <hr style="border:none;margin-top: 21%">
                                 <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" >
@@ -1111,7 +1119,7 @@
                                         badge = "Sky_Blue_FC.png";
                                     } else if (team.equals("kansas")) {
                                         badge = "kansasCity.png";
-                                    } 
+                                    }
                                 %>
 
                                 <img style="margin-top:-2%; margin-left: 33.25%" width="37%" height="37%" src="img/<%=badge%>"/>
@@ -1223,7 +1231,14 @@
                 </div>
             </div>
         </div>
+        <script src="js/jquery.js"></script>
 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>                      
+        <script src="js/myTeamjs.js" >
+       
+
+        </script>
     </body>
 
 </html>

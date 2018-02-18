@@ -121,7 +121,6 @@ public class allPlayers extends HttpServlet {
         mid.players("Midfielder",category);
         
         midnameList = mid.getnameList();
-        System.out.println("Mid number"+midnameList.size());
         totalPlayers=totalPlayers+midnameList.size();
         midteamList = mid.getteamList();
         midjerseyList = mid.getjerseyList();
@@ -150,7 +149,6 @@ public class allPlayers extends HttpServlet {
 
     private void findmax( int no, String position,String category) {
         int k = 1;  
-        System.out.println(category);
         if(category.equals("price")){
             while (k <= no) {
 
@@ -159,7 +157,6 @@ public class allPlayers extends HttpServlet {
                 
                 double max = Double.parseDouble(defpriceList.get(0).toString());
                 int pos = 0;
-                System.out.println(defpriceList.size()+"no");
                 for (int i = 1; i < defpriceList.size(); i++) {
                     
                     if ( Double.parseDouble(defpriceList.get(i).toString()) > max) {
@@ -186,7 +183,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
                
                 for (int i = 1; i < gkpriceList.size(); i++) {
-                    System.out.println("testgk"+gknameList.get(i));
                     if ( Double.parseDouble(gkpriceList.get(i).toString()) > max) {
                        
                         max =  Double.parseDouble(gkpriceList.get(i).toString());
@@ -211,7 +207,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < midpriceList.size(); i++) {
-                    System.out.println("testmid"+midnameList.get(i));
                     if (Double.parseDouble(midpriceList.get(i).toString()) > max) {
 
                         max = Double.parseDouble(midpriceList.get(i).toString());
@@ -238,7 +233,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < fwdpriceList.size(); i++) {
-                    System.out.println("testfwd"+fwdnameList.get(i));
                     if (Double.parseDouble(fwdpriceList.get(i).toString()) > max) {
                         
                         max = Double.parseDouble(fwdpriceList.get(i).toString());
@@ -272,7 +266,6 @@ public class allPlayers extends HttpServlet {
                 
                 int max = Integer.parseInt(defscoreList.get(0).toString());
                 int pos = 0;
-                System.out.println(defscoreList.size()+"no");
                 for (int i = 1; i < defscoreList.size(); i++) {
                     
                     if (Integer.parseInt(defscoreList.get(i).toString()) > max) {
@@ -299,7 +292,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
                
                 for (int i = 1; i < gkscoreList.size(); i++) {
-                    System.out.println("testgk"+gknameList.get(i));
                     if (Integer.parseInt(gkscoreList.get(i).toString()) > max) {
                        
                         max = Integer.parseInt(gkscoreList.get(i).toString());
@@ -324,7 +316,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < midscoreList.size(); i++) {
-                    System.out.println("testmid"+midnameList.get(i));
                     if (Integer.parseInt(midscoreList.get(i).toString()) > max) {
 
                         max = Integer.parseInt(midscoreList.get(i).toString());
@@ -351,7 +342,6 @@ public class allPlayers extends HttpServlet {
                 int pos = 0;
 
                 for (int i = 1; i < fwdscoreList.size(); i++) {
-                    System.out.println("testfwd"+fwdnameList.get(i));
                     if (Integer.parseInt(fwdscoreList.get(i).toString()) > max) {
                         
                         max = Integer.parseInt(fwdscoreList.get(i).toString());

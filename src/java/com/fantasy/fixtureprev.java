@@ -59,7 +59,6 @@ public class fixtureprev extends HttpServlet {
     String text =request.getParameter("previous");
     String[] parts = text.split(" ");
    
-    System.out.println(parts.length + parts[1]);
     
     int fixNo=Integer.parseInt(parts[1]);
     String prevBtnvalue="Gameweek "+(fixNo-1);

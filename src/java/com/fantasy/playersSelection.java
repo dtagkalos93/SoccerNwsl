@@ -77,7 +77,6 @@ public class playersSelection extends HttpServlet {
 
         String position = request.getParameter("pos");
         String category = request.getParameter("cat");
-        System.out.println(position);
         String[] parts = position.split("-");
         position = parts[0];
         int page = Integer.parseInt(parts[1]);
@@ -231,7 +230,6 @@ public class playersSelection extends HttpServlet {
             if (pageNo == page) {
                 no = ((page - 1) * 20) + scorelist.size() % 20;
                 missing = scorelist.size() % 20;
-                System.out.println("missing players" + missing + "number of players find: " + no);
             } else {
                 no = page * 20;
             }

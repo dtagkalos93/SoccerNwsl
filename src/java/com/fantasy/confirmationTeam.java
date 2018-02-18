@@ -5,7 +5,6 @@ package com.fantasy;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -29,8 +28,6 @@ import javax.servlet.http.HttpSession;
  */
 public class confirmationTeam extends HttpServlet {
 
-
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -44,16 +41,13 @@ public class confirmationTeam extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        String email=session.getAttribute("email").toString();
-        String roster=request.getParameter("roster");
-        String team=request.getParameter("team");
+        String email = session.getAttribute("email").toString();
+        String roster = request.getParameter("roster");
+        String team = request.getParameter("team");
         session.setAttribute("teamName", team);
         String[] playersArray = roster.split(",");
-        String[] playersTeam=new String[playersArray.length];
-        for(int i =0;i<playersTeam.length;i++){
-            playersTeam[i]=playersArray[i].split("-")[0];
-        }
         
+
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
@@ -62,44 +56,56 @@ public class confirmationTeam extends HttpServlet {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        
+
         try {
             // Load the database driver
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            
-                
-            String sql = " insert into teams (email, nameTeam, gk1, gk2, def1,def2,def3,def4,def5,mid1,mid2,mid3,mid4,mid5,fwd1,fwd2,fwd3)"
-        + " values (?, ?, ?, ?, ?,?, ?, ?, ?, ?,?,?,?,?,?,?,?)";
+
+            String sql = " insert into teams (email, nameTeam, gk,def,mid,fwd,bench,formation)"
+                    + " values (?, ?, ?, ?, ?,?, ?,? )";
             PreparedStatement preparedStmt = connection.prepareStatement(sql);
-            preparedStmt.setString (1, email);
-            preparedStmt.setString (2, team);
-            int k=3;
-            for(int i=0;i<playersTeam.length;i++){
-                preparedStmt.setString (k, playersTeam[i]);
-                k++;
+            preparedStmt.setString(1, email);
+            preparedStmt.setString(2, team);
+            preparedStmt.setString(3, playersArray[0] + "-Goalkeeper");
+            String bench = playersArray[1] + "-Goalkeeper,";
+            String defence = "";
+            for (int i = 2; i <= 5; i++) {
+                defence = defence + playersArray[i] + "-Defence,";
+            }
+            preparedStmt.setString(4, defence);
+            bench = bench + playersArray[6] + "-Defence,";
+            String midfielder = "";
+            for (int i = 7; i <= 10; i++) {
+                midfielder = midfielder + playersArray[i] + "-Midfielder,";
             }
 
-      // execute the preparedstatement
-      preparedStmt.execute();
+            preparedStmt.setString(5, midfielder);
+            bench = bench + playersArray[11] + "-Midfielder,";
+            String forward = "";
+            for (int i = 12; i <= 13; i++) {
+                forward = forward + playersArray[i] + "-Forward,";
+            }
 
-            
+            preparedStmt.setString(6, forward);
+            bench = bench + playersArray[14] + "-Forward,";
+            preparedStmt.setString(7, bench);
+            preparedStmt.setString(8, "4-4-2");
+
+            // execute the preparedstatement
+            preparedStmt.execute();
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(enterTeam.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(enterTeam.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        System.out.println("Email "+ email);
-        System.out.println("team "+ team);
-        System.out.println("roster "+ roster);
-        
+
+
+
         RequestDispatcher rd = request.getRequestDispatcher("myTeam.jsp");
         rd.forward(request, response);
 
     }
-
-   
 
 }

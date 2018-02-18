@@ -61,7 +61,6 @@ public class findPosition extends HttpServlet {
                 String[] nameSTR=name.split("'");
                 
                  sql = "SELECT position,fullname FROM players where name='" + nameSTR[0]+"\\'"+nameSTR[1] + "'";
-                System.out.println("here with the '"+sql+"part1="+nameSTR[0]+ "part2=" + nameSTR[1]);
             }
             else{
                  sql = "SELECT position,fullname FROM players where name='" + name + "'";

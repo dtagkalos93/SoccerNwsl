@@ -62,7 +62,6 @@ public class sign extends HttpServlet {
          response.setContentType("text/html;charset=UTF-8");
         String errorMessage;
         String firstName=request.getParameter("firstname");
-        System.out.println(firstName);
         if(firstName.equals("")){
     
             request.setAttribute("errorfirst","firstname");
@@ -72,7 +71,6 @@ public class sign extends HttpServlet {
             request.setAttribute("firstname",firstName);
         }
         String lastName=request.getParameter("lastname");
-        System.out.println(lastName);
         if(lastName.equals("")){
 
             request.setAttribute("errorlast","lastname");
@@ -85,7 +83,6 @@ public class sign extends HttpServlet {
         //sunartihsh gia gia elegxo email..
         dbCredentials exist=new dbCredentials();
         boolean check=exist.emailExist(email);
-        System.out.println(email);
         if(email.equals("")){
 
             request.setAttribute("erroremail","email");
@@ -95,7 +92,6 @@ public class sign extends HttpServlet {
             request.setAttribute("erroremail","exist");
         }
         String password=request.getParameter("pwd");
-        System.out.println(password);
         if(password.equals("")){
 
             request.setAttribute("errorpwd","pwd");
@@ -104,7 +100,6 @@ public class sign extends HttpServlet {
         
 
         String gender=request.getParameter("gender");
-        System.out.println(gender);
         if(gender == null){
 
             request.setAttribute("errorgender","gender");
@@ -126,7 +121,6 @@ public class sign extends HttpServlet {
         request.setAttribute("country",country);
         
         if(request.getAttribute("back")!=null){
-            System.out.println("HEREEEEEEE");
             RequestDispatcher rd = request.getRequestDispatcher("signback.jsp");
             rd.forward(request,response);
         }

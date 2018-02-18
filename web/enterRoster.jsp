@@ -831,12 +831,12 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                        <button onclick="goBack()" type="back" class=" prevbutton2 btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center;padding: 1.5%;width:34%" >
+                        <button onClick="history.go(-1); return false;" type="back" class=" prevbutton2 btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center;padding: 1.5%;width:34%" >
                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back
                         </button>
                     </div>
                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                        <a id="confirmation" type="submit" class="prevbutton btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center; padding: 1.5%;width:34%" >
+                        <a onClick="localStorage.removeItem('firstLoad');" id="confirmation" type="submit" class="prevbutton btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center; padding: 1.5%;width:34%" >
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation
                         </a>
                     </div>
