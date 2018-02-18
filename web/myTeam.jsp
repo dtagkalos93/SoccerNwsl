@@ -47,7 +47,11 @@
 
 
     </head>
-    <body onload="goalkeeper('<%=goalkeeper%>');defence('<%=defence%>','<%=defenceNO%>')">
+    <body onload="goalkeeper('<%=goalkeeper%>');
+        defence('<%=defence%>','<%=defenceNO%>');
+        midfielder('<%=midfielder%>','<%=midfielderNO%>');
+        forward('<%=forward%>','<%=forwardNO%>'); 
+              bench('<%=bench%>');">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
@@ -361,26 +365,26 @@
                                 <hr style="border:none;margin-top: 3.5%"/>
 
                                 <div class="col-md-3  col-xs-3   " style="left:4%" data-toggle="modal" data-target="#players">
-                                    <img class="image-player-for" src="img/couragegk.png"  />
-                                    <p class="cbname" >D'Angelo</p>
+                                    <img id="benimage1" class="image-player-for" src="img/couragegk.png"  />
+                                    <p id="benname1"  class="cbname" >D'Angelo</p>
                                     <p class="cbname">8</p>
                                     <p class="cbname">GK</p>
                                 </div>
                                 <div class="col-md-3  col-xs-3   " style="left:3%" data-toggle="modal" data-target="#players">
-                                    <img class="image-player-for" src="img/breakers1.png"  />
-                                    <p class="cbname" >Westphal</p>
+                                    <img id="benimage2" class="image-player-for" src="img/breakers1.png"  />
+                                    <p id="benname2"  class="cbname" >Westphal</p>
                                     <p class="cbname">8</p>
                                     <p class="cbname">1</p>
                                 </div>
                                 <div class="col-md-3  col-xs-3   " style="left:2.25%" data-toggle="modal" data-target="#players">
-                                    <img class="image-player-for" src="img/pride1.png"  />
-                                    <p class="cbname" >Weatherholt</p>
+                                    <img id="benimage3" class="image-player-for" src="img/pride1.png"  />
+                                    <p id="benname3"  class="cbname" >Weatherholt</p>
                                     <p class="cbname">8</p>
                                     <p class="cbname">2</p>
                                 </div>
                                 <div class="col-md-3  col-xs-3   " style="left:1.2%" data-toggle="modal" data-target="#players">
-                                    <img class="image-player-for" src="img/thorns1.png"  />
-                                    <p class="cbname" >Henry</p>
+                                    <img id="benimage4" class="image-player-for" src="img/thorns1.png"  />
+                                    <p id="benname4"  class="cbname" >Henry</p>
                                     <p class="cbname">8</p>
                                     <p class="cbname">3</p>
                                 </div>
