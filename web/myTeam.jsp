@@ -152,7 +152,7 @@
                 <!-- Blog Entries Column -->
                 <div class="col-md-9 top-gap">
                     <div class="row ">
-                        <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Pick Team</h3>
+                        <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">My Team</h3>
                         <div  class="col-md-12">
                             <div class="col-md-12" style="margin-top: 2%;margin-bottom: 2%;width: 100%;background-color:#050424">
                                 <h6 style="color:white;font-size:14px;text-align:center; font-weight:lighter;margin-top: 8px;margin-bottom: 8px;font-family: Century Gothic" >Gameweek 3 Deadline:
