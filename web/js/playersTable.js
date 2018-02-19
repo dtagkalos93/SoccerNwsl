@@ -2984,7 +2984,7 @@ function addPlayer() {
     var remainPrice = document.getElementById("remainPrice").textContent;
     document.getElementById("checkbox").style.display = "";
     document.getElementById("checkbox").style.backgroundColor = "#92c992";
-    document.getElementById("checkbox").style.border = "1px solid green";
+    document.getElementById("checkbox").style.border = "1px solid #28b528";
     document.getElementById("playername").innerHTML = document.getElementById("playersName").textContent;
     document.getElementById("message").innerHTML = " has been added to your squad."
     document.getElementById("errorbox").style.display = 'none';
@@ -3014,8 +3014,8 @@ function addPlayer() {
     }
     if (document.getElementById("totalPlayers").innerHTML == '15') {
 
-        document.getElementById("allPlayers").style.color = 'green';
-        document.getElementById("totalPlayers").style.color = 'green';
+        document.getElementById("allPlayers").style.color = '#28b528';
+        document.getElementById("totalPlayers").style.color = '#28b528';
     }
     if (document.getElementById("playerPosition").textContent == 'Goalkeeper') {
         var name = document.getElementById("playersName").textContent;
@@ -3504,8 +3504,8 @@ function removePlayer() {
 
     if (document.getElementById("remainPrice").textContent > 0.0) {
         console.log("I am here!");
-        document.getElementById("remainPrice").style.color = 'green';
-        document.getElementById("dollar").style.color = 'green';
+        document.getElementById("remainPrice").style.color = '#28b528';
+        document.getElementById("dollar").style.color = '#28b528';
     }
     document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
     var counter = 0;
@@ -3713,8 +3713,8 @@ function autopick() {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var k = 1;
-            document.getElementById("allPlayers").style.color = 'green';
-            document.getElementById("totalPlayers").style.color = 'green';
+            document.getElementById("allPlayers").style.color = '#28b528';
+            document.getElementById("totalPlayers").style.color = '#28b528';
             document.getElementById("totalPlayers").innerHTML = '15';
             for (i = 0; i < 6; i = i + 3) {
                 document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i + 1];
@@ -3967,8 +3967,8 @@ function backTeamButton() {
                 }
             }
         }
-        document.getElementById("allPlayers").style.color = 'green';
-        document.getElementById("totalPlayers").style.color = 'green';
+        document.getElementById("allPlayers").style.color = '#28b528';
+        document.getElementById("totalPlayers").style.color = '#28b528';
         document.getElementById("totalPlayers").innerHTML = '15';
         document.getElementById("remainPrice").innerHTML = localStorage.getItem('remainBugdet');
         localStorage.removeItem('firstLoad');

@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,47 +52,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Portland.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -102,8 +102,6 @@
             <!-- /.container -->
         </nav>
 
-
-        <div class="">
             <div class="container extraClass  ">
                 <ul class="nav nav-pills extraClassul">
                     <li class="nav-item"><a href="home.html">Home</a></li>
@@ -166,12 +164,12 @@
                                 </div>
                                 <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
                                     <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                        <button type="button" class="prevbutton btncustom col-sm-6 " style="padding: 4.5%; font-size: 15px; text-align: center;font-family: Century Gothic" onclick="autopick()">
+                                        <button type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
                                             Auto Pick 
                                         </button> 
                                     </div>
                                     <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                        <button type="button" class="prevbutton btncustom col-sm-6 " style="padding: 4.5%; font-size: 15px; text-align: center;float: right;font-family: Century Gothic" onclick="reset()">
+                                        <button type="button" class="resetbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5%;float: right" onclick="reset()">
                                             Reset 
                                         </button> 
                                     </div>
@@ -181,7 +179,7 @@
                                     </div>
                                     <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                         <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Money Remaining</h6>
-                                        <h4 id="dollar" style="text-align: center;font-weight:bold;color:green; font-size:20px;font-family: Century Gothic ">$<span id="remainPrice">100.0</span></h4>
+                                        <h4 id="dollar" style="text-align: center;font-weight:bold;color:#28b528; font-size:20px;font-family: Century Gothic ">$<span id="remainPrice">100.0</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +188,7 @@
                                 <h5  id="posError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
                                 <h5  id="enterError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none">Please complete your Team!</h5>
                             </div>
-                            <div class="col-md-12 col-xs-12" style="border: 1px solid green; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
+                            <div class="col-md-12 col-xs-12" style="border: 1px solid #28b528; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                                 <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
@@ -307,7 +305,7 @@
 
                                 </div>
                             </div>
-                            <a id="enterTeam"  class="enterteam btncustom col-md-12 " style="color: white;font-size: 15px;font-family: Century Gothic;width: 32%;margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
+                            <a id="enterTeam"  class="enterteam btncstm col-md-12 " style="color: white;font-size: 15px;font-family: Century Gothic;width: 32%;margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
                                 Enter Roster
                             </a>
                             <%
@@ -341,7 +339,7 @@
 
                             <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
                                 <h4 id="gameweekid" style="font-family: Century Gothic;font-weight: bold;font-size: 15px;text-align: center;padding-bottom: 1% "><%=posts.get(0) + " - " + date.get(0)%></h4>
-                                <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center;padding: 1%;font-family: Century Gothic;">
+                                <button id="prev" value="<%=posts.get(1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
                                     Previous
                                 </button>
                                 <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;left:6.5%; margin-top: -1%;margin-bottom: -2%" align="center">
@@ -352,7 +350,7 @@
                                         displaynext="";
                                     }
                                 %>
-                                <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="font-size: 14px; font-weight: bold; text-align: center; padding: 1%;font-family: Century Gothic;display: <%=displaynext%>">
+                                <button id="next" value="<%=posts.get(2)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%;float: right;display: <%=displaynext%>">
                                     Next
                                 </button>
 
@@ -1130,11 +1128,11 @@
                             </div>
                             <div>
                                 <table style="width:100%; background-color: #f9f5f5" id='gk'>
-                                    <tr>
-                                        <th style="background-color: yellow"></th>
-                                        <th style="background-color: yellow; font-family: Century Gothic">GOALKEEPERS</th> 
-                                        <th style="background-color: yellow; text-align: center; font-family: Century Gothic">$</th>
-                                        <th id="catGK" style="background-color: yellow; text-align: center; font-family: Century Gothic">TS</th>
+                                    <tr style="font-family: Century Gothic;color:#fff; background-color: #222427">
+                                        <th></th>
+                                        <th>GOALKEEPERS</th> 
+                                        <th style="text-align: center">$</th>
+                                        <th id="catGK" style="text-align: center">TS</th>
                                     </tr>
                                     <tr id='gk1' data-toggle="modal" style='cursor:pointer' onclick="openModalGK(1)">
                                         <%
@@ -1231,12 +1229,12 @@
                                     <%
                                     }%>
                                 </table>
-                                <table style="width:100%; background-color: #f9f5f5" id='def'>
-                                    <tr>
-                                        <th style="background-color:#00ff87 "></th>
-                                        <th style="background-color:#00ff87; font-family: Century Gothic; ">DEFENDERS</th> 
-                                        <th style="background-color:#00ff87; text-align: center; font-family: Century Gothic; ">$</th>
-                                        <th id="catDEF" style="background-color:#00ff87; text-align: center; font-family: Century Gothic; ">TS</th>
+                                <table style="width:100%; background-color: #f1f1f1" id='def'>
+                                    <tr style="font-family: Century Gothic;color: #fff;background-color: #383838">
+                                        <th></th>
+                                        <th>DEFENDERS</th> 
+                                        <th style="text-align: center">$</th>
+                                        <th id="catDEF" style="text-align: center">TS</th>
                                     </tr>
                                     <tr id="def1" style='cursor:pointer' onclick="openModalDEF(1)">
                                         <%
@@ -1449,11 +1447,11 @@
                                     }%>
                                 </table>
                                 <table style="width:100%; background-color: #f9f5f5" id='mid'>
-                                    <tr>
-                                        <th style="background-color:#04f5ff "></th>
-                                        <th style="background-color:#04f5ff; font-family: Century Gothic; ">MIDFIELDERS</th> 
-                                        <th style="background-color:#04f5ff; text-align: center; font-family: Century Gothic; ">$</th>
-                                        <th id="catMID" style="background-color:#04f5ff; text-align: center; font-family: Century Gothic; ">TS</th>
+                                    <tr style="font-family: Century Gothic;color: #fff;background-color: #484848">
+                                        <th></th>
+                                        <th>MIDFIELDERS</th> 
+                                        <th style="text-align: center">$</th>
+                                        <th id="catMID" style="text-align: center">TS</th>
                                     </tr>
                                     <tr id='mid1' style='cursor:pointer'  onclick="openModalMID(1)">
                                         <%
@@ -1607,11 +1605,11 @@
 
                                 </table>
                                 <table style="width:100%; background-color: #f9f5f5" id='fwd'>
-                                    <tr>
-                                        <th style="background-color:#e90052 "></th>
-                                        <th style="background-color:#e90052; font-family: Century Gothic; ">FORWARDS</th> 
-                                        <th style="background-color:#e90052; text-align: center; font-family: Century Gothic; ">$</th>
-                                        <th id="catFWD" style="background-color:#e90052; text-align: center; font-family: Century Gothic; ">TS</th>
+                                    <tr style="font-family: Century Gothic;color: #fff;background-color: #505050">
+                                        <th></th>
+                                        <th>FORWARDS</th> 
+                                        <th style="text-align: center">$</th>
+                                        <th id="catFWD" style="text-align: center">TS</th>
                                     </tr>
                                     <tr id="fwd1" style='cursor:pointer' onclick="openModalFWD(1)">
                                         <%
@@ -1763,11 +1761,11 @@
 
                                 </table>
                                 <table id="search" style="width:100%; background-color: #f9f5f5;display: none">
-                                    <tr>
-                                        <th style="background-color:#02509a "></th>
-                                        <th style="background-color:#02509a;font-family: Century Gothic;  font-family: arial; color: white">PLAYERS</th> 
-                                        <th style="background-color:#02509a;font-family: Century Gothic;  text-align: center; font-family: arial; color: white">$</th>
-                                        <th id="catsrch" style="background-color:#02509a; font-family: Century Gothic; text-align: center; font-family: arial; color: white">TS</th>
+                                    <tr style="font-family: Century Gothic;background-color:#1d3260 ">
+                                        <th ></th>
+                                        <th style="color: white">PLAYERS</th> 
+                                        <th style="text-align: center; color: white">$</th>
+                                        <th id="catsrch" style="text-align: center; color: white">TS</th>
                                     </tr>
                                     <%
                                         String srchimage = "srchimage";
@@ -1797,7 +1795,7 @@
                                             <div class='col-sm-10' style="width:80%;height: 30px;right: 15px;margin-top:-3px">
                                                 <span id="<%=srchname%>" style="font-family: Century Gothic; font-size: 15px"></span><hr style="border:none;margin-top: -17%">
                                                 <span id="<%=srchteam%>" style="font-family: Century Gothic; font-size: 12px; font-weight: lighter "></span>
-                                                <span id="<%=srchpos%>" style="font-family: Century Gothic; font-size: 12px;font-weight:lighter; padding-left: 10% "></span>
+                                                <span id="<%=srchpos%>" style="font-family: Century Gothic; font-size: 12px;font-weight:lighter; padding-left: 5% "></span>
                                             </div>
                                         </td>
                                         <td id="<%=srchprice%>" style=" font-family: Century Gothic; text-align: center ;font-size:14px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$</td>

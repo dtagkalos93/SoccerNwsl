@@ -172,7 +172,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -240,8 +240,8 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <h1 style="font-family: Century Gothic;font-weight: lighter;padding-bottom: 2%">NWSL Fantasy League</h1>
-                            <button type="button" class="loginbutton btncustom" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
-                            <a href="signUp.jsp" class="signupbutton btncustom" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%"  >Sign Up</a>
+                            <button type="button" class="loginbutton" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
+                            <a href="signUp.jsp" class="signupbutton" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%"  >Sign Up</a>
 
                         </div>
                     </div>

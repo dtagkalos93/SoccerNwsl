@@ -47,11 +47,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
@@ -104,19 +104,17 @@
             </div>
             <!-- /.container -->
         </nav>
-
         <!-- Header -->
         <div class="intro-header">
             <div class="container">
-
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="intro-message">
-                            <h2 style="font-family: Century Gothic; font-weight: lighter;color: #f8f8f8; text-align: left">Creating a new account</h2>
+                            <h2 style="font-family: Century Gothic;font-size: 32px; font-weight: lighter;color: #f8f8f8; text-align: left">Creating a new account</h2>
                         </div>
                     </div>
                 </div>
-                
+
                 <%
                     boolean errorfirst = false;
                     boolean errorLast = false;
@@ -124,7 +122,7 @@
                     boolean errorPWD = false;
                     boolean errorGender = false;
                     String emailStr = "";
-                    String emailmargin="";
+                    String emailmargin = "";
 
                     if (request.getAttribute("errorfirst") != null) {
                         errorfirst = true;
@@ -147,13 +145,13 @@
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
                     <div class="form-group"  style="padding-bottom: 5%;margin-top: 2%">
-                        <%if (!errorfirst) {  %>
-                        
+                        <%if (!errorfirst) {%>
+
                         <label class="col-md-4 col-xs-4" for="first" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >First Name
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" value="<%=request.getAttribute("firstname")%>" >
 
 
                         </div>
@@ -162,7 +160,7 @@
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" style=""> 
-                            <input type="text" class="form-control" name="firstname" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" >
                             <div class="z-fieldError">
                                 <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic" >This field is required.</span>
                             </div>
@@ -171,22 +169,24 @@
                         <%}%>
                     </div>
                     <div class="form-group"  style="padding-bottom: 5%">
-                        <%if (!errorLast) { emailmargin="-33.5";%>
-                        
+                        <%if (!errorLast) {
+                                emailmargin = "-33.5";%>
+
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-family: Century Gothic;font-size: 17px;padding:1%" >Last Name
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" value="<%=request.getAttribute("lastname")%>" >
 
                         </div>
-                        <%} else { emailmargin="0";%>
+                        <%} else {
+                            emailmargin = "0";%>
                         <label class="col-md-4 col-xs-4" for="last" align="right" style="font-family: Century Gothic;font-size: 17px;padding:1%; font-family: Century Gothic" >Last Name
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="text" class="form-control" name="lastname" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" >
                             <div class="z-fieldError">
                                 <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic">This field is required.</span>
                             </div>
@@ -199,20 +199,20 @@
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="email" class="form-control" name="email" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" >
                         </div>
                         <%} else { %>
                         <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding: 1%; font-family: Century Gothic   " >Email
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" style=""> 
-                            <input type="email" class="form-control" name="email" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" >
                             <div class="z-fieldError">
                                 <%if (emailStr.equals("email")) {%>
                                 <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic" >This field is required.</span>
                                 <%} else if (emailStr.equals("exist")) {%>
                                 <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic" >This email already exist.</span><%
-                                }%>
+                                    }%>
                             </div>
                         </div>  
                         <%}%>
@@ -223,17 +223,17 @@
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="password" class="form-control" name="pwd" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" >
                         </div>
-                        <%} else{%>
+                        <%} else {%>
                         <label class="col-md-4 col-xs-4" for="email" align="right" style="font-size: 17px;padding:1%; font-family: Century Gothic" >Password
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" style="padding-bottom: 1%"> 
-                            <input type="password" class="form-control" name="pwd" style="font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border:2px solid #ce3535;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" >
                             <div class="z-fieldError">
                                 <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic" >This field is required.</span>
-     
+
                             </div>
                         </div>
                         <%}%>
@@ -277,26 +277,19 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
-                        <button type="submit" value="Next" class="nextbuttonaccount btncustom  " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 21%; padding: 0.6%"> Next
-                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
+                        <button type="submit" value="Next" class="nextbuttonaccount btncustom" style="font-family: Century Gothic;font-weight: lighter;color: white; font-size: 15px;text-align: center; width: 19%; padding: 0.7%"> Next
+                            <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
                         </button>
                     </div>
                 </form>
-
-
             </div>
+        </div>
 
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-
-
-
-            <!-- jQuery -->
-            <script src="js/jquery.js"></script>
-
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
-
-
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
     </body>
 

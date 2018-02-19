@@ -51,7 +51,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -247,12 +247,12 @@
                                 <div>
                                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
                                         
-                                       <button type="submit" class=" prevbutton2 btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
+                                       <button type="submit" class=" backbutton btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
                                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
                                         
                                         </div>
                                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                                        <button type="submit" class="prevbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
+                                        <button type="submit" class="confirmationbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
                                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
                                     </div>
 

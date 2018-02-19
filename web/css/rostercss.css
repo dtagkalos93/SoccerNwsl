@@ -23,8 +23,9 @@ h6 {
 }
 
 .extraClass {
+    margin-top: 5.7%;
     width: 100%;
-    height: 130px; 
+    height: 50px; 
     position: relative;
     background-color: #ac0f1f;
 }
@@ -37,18 +38,19 @@ h6 {
 }
 
 .navbar-right{
-     float:right!important;
-     margin-top:17px;
+    float:right!important;
+    margin-top:23px;
 }
 
 .nav-pills>li>a{
-    margin-right: 3px;
-    line-height: 1.42857143;
-    border: 1px solid #476eb500;
-    border-radius: 3px 3px 0 0;
+    line-height: 1.3;
     color: #ffffff;
     font-family: Century Gothic;
     font-size: 15px;
+    border-radius: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 16px;
 }
 
 .nav-pills>li>a:hover{
@@ -57,15 +59,29 @@ h6 {
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-    color: #fff;
-    background-color: #c8373b;
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+    font-family: Century Gothic;
+    font-size: 15px;
 }
-    
+
+.nav-tabs>li.active>a {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    font-family: Century Gothic;
+    font-size: 15px;
+}
+
 .intro-header2 {
-/*    padding-top: 7%;
-    background: url(../img/banner2.png) no-repeat center center;
-    margin-top: 5%; 
-    background-size: cover;*/
+    /*    padding-top: 7%;
+        background: url(../img/banner2.png) no-repeat center center;
+        margin-top: 5%; 
+        background-size: cover;*/
 
 }
 
@@ -73,10 +89,9 @@ h6 {
     margin-top: 2%;
 }
 
-.btncustom:hover{
-    background-color: #c8373b;
-    color: #fff;
-    text-decoration: none;
+.btncstm:focus {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
 }
 
 .enterteam:hover{
@@ -85,43 +100,74 @@ h6 {
     text-decoration: none;
 }
 
-.prevbutton{
-    background-color: #ecebeb; 
-    border: none;
-    vertical-align: middle;
-    text-align: center;
+.autopickbtn{
+    background-color:#fff;
+    color: #ac0f1f;
     text-decoration: none;
+    display: inline-block;
     cursor: pointer;
-    width:140px;
+    border: 1px solid #ac0f1f;
+    border-radius: 1px;
+    width:85%;
 }
 
-.nextbtn{
-    background-color: #ecebeb; 
+.autopickbtn:hover{
+    background-color: #ac0f1f;
+    color: #fff;
+    text-decoration: none;
+}
+
+.resetbtn{
+    background-color:#fff;
+    color: #303663;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #303663;
+    border-radius: 1px;
+    width:85%;
+}
+
+.resetbtn:hover{
+    background-color: #303663;
+    color: #fff;
+    text-decoration: none;
+}
+
+.fixturebtn{
+    background-color: #696969; 
+    color: #fff;
     border: none;
-    color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 13px;
-    float:right;
     cursor: pointer;
+    border: 1px solid #696969;
+    border-radius: 1px;
     width:140px;
+}
+
+.fixturebtn:hover{
+    background-color: #fff;
+    color: #696969;
+    text-decoration: none;
 }
 
 .enterteam{
     background-color: #ac0f1f; 
     border: none;
-    color: black;
     vertical-align: middle;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 1px;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
 }
 
 .bc-img{
-    background:url(../img/pitch2.jpg) no-repeat  ;
+    background:url(../img/pitch2.jpg) no-repeat;
+    background-size: 100% 100%;
     padding-bottom: 7%;
 }
 
@@ -172,24 +218,24 @@ h6 {
 }
 
 .image-player{
-        width: 26%;
-        position: relative;
-        left: 15px;
+    width: 26%;
+    position: relative;
+    left: 15px;
 }
 
 .image-player-cb{
-        width: 93%;
-        position: relative;
-        left: 17px;
+    width: 93%;
+    position: relative;
+    left: 17px;
 }
 
 .image-player-for{
-        width: 40%;
-        position: relative;
-        left: 17px;
+    width: 40%;
+    position: relative;
+    left: 17px;
 }
 
- .teambox{
+.teambox{
     margin-top: 10%;;
     width: 100%;
     height:50px; 
@@ -207,9 +253,7 @@ h6 {
     left:8.05%;
     background-color:#1d3260;
     border-radius: 3pt 3pt;
-
 }
-
 
 .row2{
     display: flex;
@@ -235,49 +279,56 @@ h6 {
     font-weight: lighter;
     color: #5a5858;
     border-radius: 0px;
-    border: 1px solid #aba8a8;
+    border: 1px solid #000000;
     border-bottom: 1px solid #ac1f23;
     color: #000000;
     font-family: Century Gothic;
 }
 
+
+.form-control:focus {
+    border-color: #000000;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
+}
+
 .btn-circle {
-  border: 1px solid #E8E8E8;
-  background-color: white;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 100%;
+    border: 1px solid #E8E8E8;
+    background-color: white;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 100%;
 }
 
 .smallbtn:hover {
-    
+
     background-color: #ecebeb;
 }
 
 .smallbtn:disabled{
-     background-color: white;
+    background-color: white;
 }
 
 .btn-circle.btn-lg {
-  border: 1px solid #E8E8E8;
-  background-color: white;
-  height: 4rem;
-  padding: 8px 10px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 100%;
+    border: 1px solid #E8E8E8;
+    background-color: white;
+    height: 4rem;
+    padding: 8px 10px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 100%;
 }
 
 
 .lgbtn:hover {
-    
+
     background-color: #ecebeb;
 }
 
 .lgbtn:disabled{
-     background-color: white;
+    background-color: white;
 }
 
 .underline:hover {
@@ -291,14 +342,14 @@ h6 {
 }
 
 .modal-dialog{
-   position: absolute;
-   left: 50%;
-   /* now you must set a margin left under zero - value is a half width your window */
-   margin-left: -348px;
-   /* this same situation is with height - example */
-   height: 500px;
-   top: 60%;
-   margin-top: -250px;
+    position: absolute;
+    left: 50%;
+    /* now you must set a margin left under zero - value is a half width your window */
+    margin-left: -348px;
+    /* this same situation is with height - example */
+    height: 500px;
+    top: 60%;
+    margin-top: -250px;
 } 
 
 .addbutton{
@@ -332,12 +383,12 @@ h6 {
 
 .infobutton:hover{
     background-color: #a5a4a4;
-     color:white;
+    color:white;
 }
 
 .search {
-  width: 100%;
-  position: relative
+    width: 100%;
+    position: relative
 }
 
 .searchTerm {
@@ -352,27 +403,36 @@ h6 {
 }
 
 .searchTerm:focus{
-   background-color: white
+    background-color: white;
+    border-color: #1d3260;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
 }
 
 .searchButton {
-  position: absolute;  
-  margin-top: -11%;
-  right: -36px;
-  width: 34px;
-  height: 32px;
-  border: 0px solid #1d3260;
-  background: #1d3260;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-  font-size: 17px;
+    position: absolute;  
+    margin-top: -11%;
+    right: -36px;
+    width: 34px;
+    height: 32px;
+    border: 0px solid #1d3260;
+    background: #1d3260;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.searchButton:focus{
+    border-color: #1d3260;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
 }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 80%;
-  margin-left: 5%;
+    width: 80%;
+    margin-left: 5%;
 }
 
 .ol, ul{

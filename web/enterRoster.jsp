@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,47 +52,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Portland.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -823,20 +823,20 @@
                 </div>
 
                 <form class="col-md-12 col-xs-12" style="margin-top: 2%" >
-                    <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
+                    <div class="form-group"  style="padding-bottom: 6%;margin-top: 2%">
                         <label class="col-md-4 col-xs-4" for="first"  style="font-family:Century Gothic;font-size: 17px;padding:1%;text-align: right" >Enter Team Name
                         </label>
-                        <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input id="teamName" type="text" class="form-control" name="team" style="font-family:Century Gothic;font-size:17px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                        <div class="col-md-6 col-xs-6" align="middle">  
+                            <input id="teamName" type="text" class="form-control" name="team" style="padding: 3.5%">
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                        <button onClick="history.go(-1); return false;" type="back" class=" prevbutton2 btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center;padding: 1.5%;width:34%" >
+                        <button onClick="history.go(-1); return false;" type="back" class=" rosterprevbtn btncstm" style="font-family:Century Gothic;font-size: 15px; font-weight: lighter; text-align: center;padding: 1.6%;width:38%">
                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back
                         </button>
                     </div>
                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                        <a onClick="localStorage.removeItem('firstLoad');" id="confirmation" type="submit" class="prevbutton btncustom" style="font-family:Century Gothic;font-size: 13px; font-weight: lighter; text-align: center; padding: 1.5%;width:34%" >
+                        <a onClick="localStorage.removeItem('firstLoad');" id="confirmation" type="submit" class="rosterconfirmbtn btncstm" style="font-family:Century Gothic;font-size: 15px; font-weight: lighter; text-align: center; padding: 1.6%;width:38%">
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation
                         </a>
                     </div>

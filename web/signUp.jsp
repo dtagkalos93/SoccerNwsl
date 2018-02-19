@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 0" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                 <div  id="ajaxLoginResponse" style="color: red;"></div>
+                <div  id="ajaxLoginResponse" style="color: red;"></div>
 
                 <form method="POST" action="sign" class="col-md-12 col-xs-12" style="border-bottom: 1px solid #d6d5d5;border-top: 1px solid #d6d5d5" >
                     <div class="form-group"  style="padding-bottom: 4%;margin-top: 2%">
@@ -126,7 +126,7 @@
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="firstname" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="firstname" >
                         </div>
                     </div>
                     <div class="form-group"  style="padding-bottom: 4%">
@@ -135,7 +135,7 @@
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
 
-                            <input type="text" class="form-control" name="lastname" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="text" class="form-control" name="lastname" >
 
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle"> 
-                            <input type="email" class="form-control" name="email" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="email" class="form-control" name="email" >
                         </div>
                     </div>
                     <div class="form-group" style=" padding-bottom: 4%">
@@ -152,7 +152,7 @@
                             <span style="font-size: 17px"> *</span>
                         </label>
                         <div class="col-md-6 col-xs-6" align="middle" > 
-                            <input type="password" class="form-control" name="pwd" style="; font-family: Century Gothic;font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                            <input type="password" class="form-control" name="pwd" >
                         </div>
 
                     </div>
@@ -182,21 +182,21 @@
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
 
-                        <button type="submit" value="Next" class="nextbuttonaccount btncustom  " style="font-family: Century Gothic;color: white; font-size: 15px;text-align: center; width: 20%; padding: 0.7%"> 
+                        <button type="submit" value="Next" class="nextbuttonaccount btncustom" style="font-family: Century Gothic;font-weight: lighter;color: white; font-size: 15px;text-align: center; width: 19%; padding: 0.8%"> 
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Next
                         </button>
                     </div>
                 </form>
             </div>
-</div>
-        
-                        <!-- /.container -->
+        </div>
 
-            <!-- jQuery -->
-            <script src="js/jquery.js"></script>
+        <!-- /.container -->
 
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+    
     </body>
-
 </html>
