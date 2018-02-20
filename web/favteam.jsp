@@ -173,21 +173,21 @@
                         <div class="row">
                             <div class="col-md-3" style="margin-left: 24%">
                                 <div class="list-group" >
-                                    <a  value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%;" id="fanteam1" onclick="fanTeam(1)">
+                                    <a  value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%" id="fanteam1" onclick="fanTeam(1)">
                                         <h4 style="margin-left: 5%">Chicago Red Stars 
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/ChicagoRedStars1.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%;" id="fanteam2" onclick="fanTeam(2)">
+                                    <a  value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%" id="fanteam2" onclick="fanTeam(2)">
                                         <h4 style="margin-left: 5%">Houston Dash
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/Houston_Dash2.png"/>
                                             </span>
                                         </h4>
                                     </a>
-                                    <a  value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%;" id="fanteam3" onclick="fanTeam(3)">
+                                    <a  value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%" id="fanteam3" onclick="fanTeam(3)">
                                         <h4 style="margin-left: 5%">North Caroline Courage
                                             <span>
                                                 <img style="float: right; margin-top: -4%" src="img/North_Carolina_Courage1.png"/>
@@ -247,12 +247,12 @@
                                 <div>
                                     <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
                                         
-                                       <button type="submit" class=" backbutton btncustom   " style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
+                                       <button type="submit" class=" backbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
                                             <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
                                         
                                         </div>
                                     <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                                        <button type="submit" class="confirmationbutton btncustom" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
+                                        <button type="submit" class="confirmationbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
                                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
                                     </div>
 

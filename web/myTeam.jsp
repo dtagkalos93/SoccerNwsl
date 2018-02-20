@@ -43,9 +43,6 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-
-
     </head>
     <body onload="goalkeeper('<%=goalkeeper%>');
             defence('<%=defence%>', '<%=defenceNO%>');
@@ -64,7 +61,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" ></img>
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" >
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -296,7 +293,6 @@
                                 <p class="cbname">8</p>
                                 <p class="cbname">3</p>
                             </div>
-
                         </div>
 
                         <%
@@ -1003,7 +999,7 @@
                     </div>
                     <div style="border-bottom: 1px solid #9e9fa5;border-left: 1px solid #9e9fa5;border-right: 1px solid #9e9fa5">
                         <div class="">
-                            <h4 style="color: white;border-top:3px solid #1b2046;background-image: url(img/banner.png);background-size: 100% 100%; font-family: Century Gothic;text-align: center;padding: 10px;"><%=session.getAttribute("teamName").toString()%></h4>
+                            <h4 style="color: white;border-top:3px solid #1b2046;background-image: url(img/bannerred.png);background-size: 100% 100%; font-family: Century Gothic;text-align: center;padding: 10px;font-size: 16px"><%=session.getAttribute("teamName").toString()%></h4>
                         </div>
                         <div>
                             <h5 style="margin-left:5%;font-family: Century Gothic; font-weight: bold;font-size: 15px">Favorite NWSL Team</h5>
@@ -1121,36 +1117,36 @@
                                 </tr>
                             </table>
                         </div>
-                        
+
                         <div style="font-family: Century Gothic;margin-left:5%;margin-top:0.5% ">
-                             <a href="#" style="font-size:14px">View transfer history
-                                 <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
-                         </div>
-                         <div style="width: 100% ">
-                             <h5 style="font-family: Century Gothic; font-weight: bold;font-size: 15px;margin-top: 5%;margin-bottom: 1%;padding: 3%;padding-left: 5%;color: white;background-color: #050424;">Admin</h5>
-                         </div>
-                         <div style="font-family: Century Gothic;margin-left:5%;margin-top:0.5%">
-                             <a href="#" style="padding-left: 10px;font-size:14px">User profile
-                                 <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
-                         </div>
-                         <div style="font-family: Century Gothic;margin-left:5%;margin-top:0.5%">
-                             <a href="#" style="padding-left: 10px;font-size:14px">Team details
-                                 <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
-                         </div>
-                     </div>
+                            <a href="#" style="font-size:14px">View transfer history
+                                <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
+                        </div>
+                        <div style="width: 100% ">
+                            <h5 style="font-family: Century Gothic; font-weight: bold;font-size: 15px;margin-top: 5%;margin-bottom: 1%;padding: 3%;padding-left: 5%;color: white;background-color: #050424;">Admin</h5>
+                        </div>
+                        <div style="font-family: Century Gothic;margin-left:5%;margin-top:0.5%">
+                            <a href="#" style="padding-left: 10px;font-size:14px">User profile
+                                <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
+                        </div>
+                        <div style="font-family: Century Gothic;margin-left:5%;margin-top:0.5%">
+                            <a href="#" style="padding-left: 10px;font-size:14px">Team details
+                                <image src="img/arrow_right.png" style="height: 10px;margin-left: 5px"/></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/jquery.js"></script>
+    </div>
+    <script src="js/jquery.js"></script>
 
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>                      
-        <script src="js/myTeamjs.js" >
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>                      
+    <script src="js/myTeamjs.js" >
 
 
-        </script>
-    </body>
+    </script>
+</body>
 
 </html>

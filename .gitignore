@@ -27,3 +27,4 @@ web/enterRoster.jsp
 web/favteam.jsp
 nbproject/ant-deploy.xml
 *.properties
+*.xml

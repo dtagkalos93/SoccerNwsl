@@ -190,11 +190,8 @@ h6 {
 .fixturebtn{
     background-color: #696969; 
     color: #fff;
-    border: none;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 13px;
     cursor: pointer;
     border: 1px solid #696969;
     border-radius: 1px;
@@ -218,7 +215,6 @@ h6 {
     left:8.05%;
     background-color:#1d3260;
     border-radius: 3pt 3pt;
-
 }
 
 .teambox{

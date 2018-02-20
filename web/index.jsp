@@ -240,8 +240,8 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <h1 style="font-family: Century Gothic;font-weight: lighter;padding-bottom: 2%">NWSL Fantasy League</h1>
-                            <button type="button" class="loginbutton" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login   </button>
-                            <a href="signUp.jsp" class="signupbutton" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%"  >Sign Up</a>
+                            <button type="button" class="loginbtn" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%" data-toggle="modal" data-target="#loginBtn" data-backdrop="static" data-keyboard="false">Login</button>
+                            <a href="signUp.jsp" class="signupbtn" style="font-family: Century Gothic;font-size: 17px;text-align: center;width: 19%;padding:0.7%"  >Sign Up</a>
 
                         </div>
                     </div>
@@ -440,7 +440,7 @@
                     <label style="font-family: Century Gothic"><input type="checkbox" name="checkbox" > Remember me</label>
                 </div>
                 <div align="center" style="margin-bottom: 8%">
-                    <button type="submit" class="submitbutton btncustom" style="font-size: 18px;text-align: center; width: 35%;padding:1.5%" >Submit</button>
+                    <button type="submit" class="submitbtn btncustom" style="font-size: 18px;text-align: center; width: 35%;padding:1.5%" >Submit</button>
                 </div>
             </form>
         </div>

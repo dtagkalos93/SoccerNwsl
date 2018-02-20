@@ -69,7 +69,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" >
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" >
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,47 +77,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Portland.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -126,45 +126,37 @@
             </div>
             <!-- /.container -->
         </nav>
-
-
-        <div class="intro-header2">
-            <div class="container extraClass  ">
-
-                <ul class="nav nav-tabs extraClassul">
-                    <li  ><a href="status.html">Status</a></li>
-                    <li ><a href="points.jsp">Points</a></li>
-                    <li  class="hidden-xs active"><a href="transfers.html">Transfers</a></li>
-                    <li  class="hidden-xs"><a href="leagues.html">Leagues</a></li>
-                    <li  class="hidden-xs"><a href="fixture">Fixtures</a></li>
-                    <li  class="hidden-xs"><a href="statistics.html">Statistics</a></li>
-                    <li class="hidden-xs"><a href="help.html">Help</a></li>
-                    <li class="hidden-xs"><a href="#">Sign Out</a></li>
-                    <li class="dropdown hidden-sm hidden-md hidden-lg">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Transfers</a></li>
-                            <li><a href="#">Leagues</a></li>
-                            <li><a href="#">Statistics</a></li> 
-                            <li><a href="#">Help</a></li> 
-                            <li><a href="#">Sign Out</a></li> 
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- /.container -->
-
+        <div class="container extraClass  ">
+            <ul class="nav nav-pills extraClassul">
+                <li class="nav-item"><a href="status.html">Status</a></li>
+                <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
+                <li class="nav-item"><a href="points.jsp">Points</a></li>
+                <li class="nav-item active"><a href="transfers.jsp">Transfers</a></li>
+                <li class="nav-item"><a href="leagues.html">Leagues</a></li>
+                <li class="nav-item"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="statistics.html">Statistics</a></li>
+                <li class="nav-item"><a href="help.html">Help</a></li>
+                <li class="nav-item"><a href="signout">Sign Out</a></li>
+                <li class="dropdown hidden-sm hidden-md hidden-lg">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Transfers</a></li>
+                        <li><a href="#">Leagues</a></li>
+                        <li><a href="#">Statistics</a></li> 
+                        <li><a href="#">Help</a></li> 
+                        <li><a href="#">Sign Out</a></li> 
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <!-- /.intro-header -->
 
         <div class="container">
-            <div class="row">
+            <div class="side-gap">
 
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8 test">
+                <div class="col-md-8 top-gap">
                     <div class="row ">
                         <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Transfers</h3>
                         <h5 class="col-md-12 col-xs-12" style="font-size: 14px; font-weight:lighter;font-family: Century Gothic " >

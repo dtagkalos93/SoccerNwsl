@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="http://www.nwslsoccer.com" target="_blank">
-                        <img class="navbar-brand topnav"  src="img/Logonwsl.png" style="width: auto; height: -webkit-fill-available; padding: 0" >
+                        <img class="navbar-brand topnav"  src="img/nwsl-topnav.png" style="width: auto; height: -webkit-fill-available; padding: 1px" >
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,47 +53,47 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/ChicagoRedStars.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Houston_Dash.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/OrlandoPride.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Portland.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/SeattleReignFC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img  src="img/UtahRoyals.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                         <li>
                             <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
+                                <img src="img/Washington_Spirit.png" style="width: auto;height:31px;margin-left: 15%" />
                             </a>
                         </li>
                     </ul>
@@ -102,243 +102,226 @@
             </div>
             <!-- /.container -->
         </nav>
-
-
-        <div class="intro-header2">
-            <div class="container extraClass  ">
-
-                <ul class="nav nav-tabs extraClassul">
-                    <li  ><a href="status.html">Status</a></li>
-                    <li ><a href="points.jsp">Points</a></li>
-                    <li class="hidden-xs"><a href="transfers.html">Transfers</a></li>
-                    <li class="hidden-xs"><a href="leagues.html">Leagues</a></li>
-                    <li class="hidden-xs active"><a href="fixture">Fixtures</a></li>
-                    <li class="hidden-xs"><a href="statistics.html">Statistics</a></li>
-                    <li class="hidden-xs"><a href="help.html">Help</a></li>
-                    <li class="hidden-xs"><a href="#">Sign Out</a></li>
-                    <li class="dropdown hidden-sm hidden-md hidden-lg">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Transfers</a></li>
-                            <li><a href="#">Leagues</a></li>
-                            <li><a href="#">Statistics</a></li> 
-                            <li><a href="#">Help</a></li> 
-                            <li><a href="#">Sign Out</a></li> 
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- /.container -->
-
+        <div class="container extraClass  ">
+            <ul class="nav nav-pills extraClassul">
+                <li class="nav-item"><a href="status.html">Status</a></li>
+                <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
+                <li class="nav-item"><a href="points.jsp">Points</a></li>
+                <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
+                <li class="nav-item"><a href="leagues.html">Leagues</a></li>
+                <li class="nav-item active"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="statistics.html">Statistics</a></li>
+                <li class="nav-item"><a href="help.html">Help</a></li>
+                <li class="nav-item"><a href="signout">Sign Out</a></li>
+                <li class="dropdown hidden-sm hidden-md hidden-lg">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Transfers</a></li>
+                        <li><a href="#">Leagues</a></li>
+                        <li><a href="#">Statistics</a></li> 
+                        <li><a href="#">Help</a></li> 
+                        <li><a href="#">Sign Out</a></li> 
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <!-- /.intro-header -->
 
-        <div class="container" style="margin-bottom:5%">
-            <div class="row">
-                <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Fixtures </h3>
-
-                <%
-                    ArrayList<String> posts = (ArrayList<String>) request.getAttribute("data");
-                    ArrayList<String> date = (ArrayList<String>) request.getAttribute("date");
-                    ArrayList<String> home = (ArrayList<String>) request.getAttribute("home");
-                    ArrayList<String> homebadge = (ArrayList<String>) request.getAttribute("homebadge");
-                    ArrayList<String> time = (ArrayList<String>) request.getAttribute("time");
-                    ArrayList<String> away = (ArrayList<String>) request.getAttribute("away");
-                    ArrayList<String> awaybadge = (ArrayList<String>) request.getAttribute("awaybadge");
-                    ArrayList<String> homegoal = (ArrayList<String>) request.getAttribute("homegoal");
-                    ArrayList<String> awaygoal = (ArrayList<String>) request.getAttribute("awaygoal");
-                    ArrayList<String> homeassist = (ArrayList<String>) request.getAttribute("homeassist");
-                    ArrayList<String> awayassist = (ArrayList<String>) request.getAttribute("awayassist");
-                    ArrayList<String> homeyellow = (ArrayList<String>) request.getAttribute("homeyellow");
-                    ArrayList<String> awayyellow = (ArrayList<String>) request.getAttribute("awayyellow");
-                    ArrayList<String> homered = (ArrayList<String>) request.getAttribute("homered");
-                    ArrayList<String> awayred = (ArrayList<String>) request.getAttribute("awayred");
-                    ArrayList<String> homesave = (ArrayList<String>) request.getAttribute("homesave");
-                    ArrayList<String> awaysave = (ArrayList<String>) request.getAttribute("awaysave");
-                    String dateSTR = null;
-
-                %>
+        <div class="container">
+            <div class="side-gap">
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8" style="margin-top: 10px">
-                    <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
-                        <h4 style="font-family: Century Gothic;font-weight: bold;font-size: 15px;text-align: center;padding-bottom: 1% "><%=posts.get(0) + " - " + date.get(0)%></h4>
-                        <button id="prev" value="<%=posts.get(1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 15px; font-weight: bold; text-align: center;padding: 1%">
-                            Previous
-                        </button>
-                        <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;left:6.5%; margin-top: -1%;margin-bottom: -2%" align="center">
-                            <img src="img/nwsllogo.png" style="width: 31%;padding-right: 0.5%" >Fixtures
-                        </h5>
-                        <%
-                            if (!posts.get(2).equals("Gameweek 23")) {
-                        %>
-                        <button id="next" value="<%=posts.get(2)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%">
-                            Next
-                        </button>
+                <div class="top-gap">
+                    <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Fixtures </h3>
 
-                        <%
-                            }
-                            for (int i = 0; i < date.size(); i++) {
-                                String game = "game" + i;
+                    <%
+                        ArrayList<String> posts = (ArrayList<String>) request.getAttribute("data");
+                        ArrayList<String> date = (ArrayList<String>) request.getAttribute("date");
+                        ArrayList<String> home = (ArrayList<String>) request.getAttribute("home");
+                        ArrayList<String> homebadge = (ArrayList<String>) request.getAttribute("homebadge");
+                        ArrayList<String> time = (ArrayList<String>) request.getAttribute("time");
+                        ArrayList<String> away = (ArrayList<String>) request.getAttribute("away");
+                        ArrayList<String> awaybadge = (ArrayList<String>) request.getAttribute("awaybadge");
+                        ArrayList<String> homegoal = (ArrayList<String>) request.getAttribute("homegoal");
+                        ArrayList<String> awaygoal = (ArrayList<String>) request.getAttribute("awaygoal");
+                        ArrayList<String> homeassist = (ArrayList<String>) request.getAttribute("homeassist");
+                        ArrayList<String> awayassist = (ArrayList<String>) request.getAttribute("awayassist");
+                        ArrayList<String> homeyellow = (ArrayList<String>) request.getAttribute("homeyellow");
+                        ArrayList<String> awayyellow = (ArrayList<String>) request.getAttribute("awayyellow");
+                        ArrayList<String> homered = (ArrayList<String>) request.getAttribute("homered");
+                        ArrayList<String> awayred = (ArrayList<String>) request.getAttribute("awayred");
+                        ArrayList<String> homesave = (ArrayList<String>) request.getAttribute("homesave");
+                        ArrayList<String> awaysave = (ArrayList<String>) request.getAttribute("awaysave");
+                        String dateSTR = null;
 
-                                if (!date.get(i).equals(dateSTR)) {
+                    %>
+
+                    <!-- Blog Entries Column -->
+                    <div class="col-md-8" style="margin-top: 10px">
+                        <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
+                            <h4 style="font-family: Century Gothic;font-weight: bold;font-size: 15px;text-align: center;padding-bottom: 1% "><%=posts.get(0) + " - " + date.get(0)%></h4>
+                            <button id="prev" value="<%=posts.get(1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
+                                Previous
+                            </button>
+                            <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;left:6.5%; margin-top: -1%;margin-bottom: -2%" align="center">
+                                <img src="img/nwsllogo.png" style="width: 31%;padding-right: 0.5%" >Fixtures
+                            </h5>
+                            <%
+                                if (!posts.get(2).equals("Gameweek 23")) {
+                            %>
+                            <button id="next" value="<%=posts.get(2)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%;float: right">
+                                Next
+                            </button>
+
+                            <%
+                                }
+                                for (int i = 0; i < date.size(); i++) {
+                                    String game = "game" + i;
+
+                                    if (!date.get(i).equals(dateSTR)) {
 
 
-                        %>
-                        <h6 class="col-sm-12" style="font-family: Century Gothic;font-weight: lighter;font-size: 15px;text-align: center;margin-bottom: 0%;margin-top:2.5%;padding-bottom: 1%;border-bottom: 1px solid #e8e4e4; "><%=date.get(i)%></h6>
-                        <%
-                                dateSTR = date.get(i);
+                            %>
+                            <h6 class="col-sm-12" style="font-family: Century Gothic;font-weight: lighter;font-size: 15px;text-align: center;margin-bottom: 0%;margin-top:2.5%;padding-bottom: 1%;border-bottom: 1px solid #e8e4e4; "><%=date.get(i)%></h6>
+                            <%
+                                    dateSTR = date.get(i);
 
-                            }
-                        %>
-                        <a data-toggle="collapse" href="#<%=game%>" style="color:black">
-                            <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
-                                <div class="row" style="">
-                                    <div class="col-md-4  col-xs-4 " style="left: 5.9%">
-                                        <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
+                                }
+                            %>
+                            <a data-toggle="collapse" href="#<%=game%>" style="color:black">
+                                <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
+                                    <div class="row" style="">
+                                        <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1 ">
+                                            <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                        </div>
+                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
+                                            <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                        </div>
+                                        <div class="col-md-1 col-xs-1 ">
+                                            <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                        </div>
+                                        <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
+                                            <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
+                                        </div>
                                     </div>
-                                    <div class="col-md-1 col-xs-1 ">
-                                        <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                </div>
+                            </a>
+                            <div id="<%=game%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260">
+                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
+                                </div>
+                                <div class="row2" style="width: 100%" >
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
                                     </div>
-                                    <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                        <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
-                                    </div>
-                                    <div class="col-md-1 col-xs-1 ">
-                                        <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
-                                    </div>
-                                    <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
-                                        <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        <div id="<%=game%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
-                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260">
-                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
-                            </div>
-                            <div class="row2" style="width: 100%" >
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Assists</h6>
                                 </div>
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
+                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Yellow cards</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%"
+                                     <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Red cards</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;" >
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
+                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35%" >Saves</h6>
+                                </div>
+                                <div class="row2" style="width: 100%" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--<div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
+                                    <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Bonus</h6>
+                                </div>
+                                <div class="row2" style="width: 100%;margin-bottom: 2%" >
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;float:right">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                            <li>Milk</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                        <ul style="list-style: none;margin-left: -12.6%">
+                                            <li>Coffee</li>
+                                            <li>Tea</li>
+                                        </ul>
+                                    </div>
+                                </div>-->
                             </div>
-                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Assists</h6>
-                            </div>
-                            <div class="row2" style="width: 100%;" >
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
-                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Yellow cards</h6>
-                            </div>
-                            <div class="row2" style="width: 100%;" >
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%"
-                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Red cards</h6>
-                            </div>
-                            <div class="row2" style="width: 100%;" >
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
-                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35%" >Saves</h6>
-                            </div>
-                            <div class="row2" style="width: 100%" >
-                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--<div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Bonus</h6>
-                            </div>
-                            <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;float:right">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                        <li>Milk</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                    <ul style="list-style: none;margin-left: -12.6%">
-                                        <li>Coffee</li>
-                                        <li>Tea</li>
-                                    </ul>
-                                </div>
-                            </div>-->
+                            <% }%>
                         </div>
-                        <% }%>
-
                     </div>
-                </div>
-
-
-
-
-
-
-
-
-
-                <div class="col-md-4 sidebar" style=" ">
-
                 </div>
             </div>
         </div>
@@ -349,11 +332,11 @@
                 $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
                     $("#somediv").html("");
                     var $h4 = $("<h4>");
-                    $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center", "padding-bottom": "1%","font-family": "Century Gothic"});
+                    $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center", "padding-bottom": "1%", "font-family": "Century Gothic"});
                     $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
                     var $buttonprev = $("<button>");
-                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-                    $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%","font-family": "Century Gothic"});
+                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
+                    $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "font-family": "Century Gothic", "float":"left"});
                     $buttonprev.text("Previous").insertAfter($h4);
                     if (responseText[1] == "Gameweek 0") {
                         $buttonprev.css('visibility', 'hidden');
@@ -361,15 +344,15 @@
 
                     var $h5 = $("<h5>");
                     $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-                    $h5.css({'text-align': "center", 'font-weight': "bold","font-family": "Century Gothic" ,'font-size': "18px", "left": "6.5%", 'margin-top': "-1%", 'margin-bottom': "-2%"});
+                    $h5.css({'text-align': "center", 'font-weight': "bold", "font-family": "Century Gothic", 'font-size': "18px", "left": "6.5%", 'margin-top': "-1%", 'margin-bottom': "-2%"});
                     $h5.text("Fixtures").insertAfter($buttonprev);
                     var $img = $("<img>");
                     $img.attr({src: "img/nwsllogo.png"});
                     $img.css({"width": " 31%", "padding-right": " 0.5%"});
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
-                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"font-size": "14px","font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%"});
+                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
+                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"right"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
@@ -378,7 +361,7 @@
 
                         var $h6 = $("<h6>");
                         $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center","font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
+                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
                         $h6.text(responseText[i]).insertAfter($buttonnext);
                         if (i + 6 > 0) {
                             if (responseText[i] == responseText[i - 6]) {
@@ -398,7 +381,7 @@
                         $divh6.appendTo($divrow);
                         var $h6home = $("<h6>");
                         $h6home.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6home.css({"font-size": "17px","font-family": "Century Gothic", "width": "100%", "text-align": "right"});
+                        $h6home.css({"font-size": "17px", "font-family": "Century Gothic", "width": "100%", "text-align": "right"});
                         $h6home.text(responseText[i + 1]).appendTo($divh6);
                         var $imghome = $("<img>");
                         $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
@@ -409,7 +392,7 @@
                         $divtime.css({"letter-spacing": "0.5px", "width": "11%", "right": "2.5%", "background-color": "#1d3260", "border-radius": " 3pt", "border": "1px solid #1d3260"});
                         $divtime.appendTo($divrow);
                         var $time = $("<h6>");
-                        $time.css({"width": "100%","font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
+                        $time.css({"width": "100%", "font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
                         $time.text(responseText[i + 3]).appendTo($divtime);
                         var $imgaway = $("<img>");
                         $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
@@ -421,7 +404,7 @@
                         $divh6a.appendTo($divrow);
                         var $h6away = $("<h6>");
                         $h6away.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6away.css({"font-size": "17px","font-family": "Century Gothic", "width": "110%"});
+                        $h6away.css({"font-size": "17px", "font-family": "Century Gothic", "width": "110%"});
                         $h6away.text(responseText[i + 4]).appendTo($divh6a);
                         if (i >= responseText.length) {
                             $divrow.css({"display": "none"});
@@ -441,11 +424,11 @@
                 $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
                     $("#somediv").html("");
                     var $h4 = $("<h4>");
-                    $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center", "padding-bottom": "1%","font-family": "Century Gothic"});
+                    $h4.css({"font-weight": "bold", "font-size": "15px", "text-align": "center", "padding-bottom": "1%", "font-family": "Century Gothic"});
                     $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
                     var $buttonprev = $("<button>");
-                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-                    $buttonprev.css({"font-size": "14px","font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%"});
+                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
+                    $buttonprev.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"left" });
                     $buttonprev.text("Previous").insertAfter($h4);
                     if (responseText[1] == "Gameweek 0") {
                         $buttonprev.css('visibility', 'hidden');
@@ -453,15 +436,15 @@
 
                     var $h5 = $("<h5>");
                     $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-                    $h5.css({'text-align': "center","font-family": "Century Gothic", 'font-weight': "bold", 'font-size': "18px", "left": "6.5%", 'margin-top': "-1%", 'margin-bottom': "-2%"});
+                    $h5.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "bold", 'font-size': "18px", "left": "6.5%", 'margin-top': "-1%", 'margin-bottom': "-2%"});
                     $h5.text("Fixtures").insertAfter($buttonprev);
                     var $img = $("<img>");
                     $img.attr({src: "img/nwsllogo.png"});
                     $img.css({"width": " 31%", "padding-right": " 0.5%"});
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
-                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"font-size": "14px","font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%"});
+                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
+                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"right"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
@@ -470,7 +453,7 @@
 
                         var $h6 = $("<h6>");
                         $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center","font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
+                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
                         $h6.text(responseText[i]).insertAfter($buttonnext);
                         if (i + 6 > 0) {
                             if (responseText[i] == responseText[i - 6]) {
@@ -490,7 +473,7 @@
                         $divh6.appendTo($divrow);
                         var $h6home = $("<h6>");
                         $h6home.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6home.css({"font-size": "17px","font-family": "Century Gothic", "width": "100%", "text-align": "right"});
+                        $h6home.css({"font-size": "17px", "font-family": "Century Gothic", "width": "100%", "text-align": "right"});
                         $h6home.text(responseText[i + 1]).appendTo($divh6);
                         var $imghome = $("<img>");
                         $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
@@ -501,7 +484,7 @@
                         $divtime.css({"letter-spacing": "0.5px", "width": "11%", "right": "2.5%", "background-color": "#1d3260", "border-radius": " 3pt", "border": "1px solid #1d3260"});
                         $divtime.appendTo($divrow);
                         var $time = $("<h6>");
-                        $time.css({"width": "100%","font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
+                        $time.css({"width": "100%", "font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
                         $time.text(responseText[i + 3]).appendTo($divtime);
                         var $imgaway = $("<img>");
                         $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
@@ -513,7 +496,7 @@
                         $divh6a.appendTo($divrow);
                         var $h6away = $("<h6>");
                         $h6away.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6away.css({"font-size": "17px","font-family": "Century Gothic", "width": "110%"});
+                        $h6away.css({"font-size": "17px", "font-family": "Century Gothic", "width": "110%"});
                         $h6away.text(responseText[i + 4]).appendTo($divh6a);
                         if (i >= responseText.length) {
                             $divrow.css({"display": "none"});

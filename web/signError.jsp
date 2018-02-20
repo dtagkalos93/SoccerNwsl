@@ -277,7 +277,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-xs-12" align="center" style="margin-top:2.5%;margin-bottom: 3%">
-                        <button type="submit" value="Next" class="nextbuttonaccount btncustom" style="font-family: Century Gothic;font-weight: lighter;color: white; font-size: 15px;text-align: center; width: 19%; padding: 0.7%"> Next
+                        <button type="submit" value="Next" class="nextbtnaccount btncustom" style="font-family: Century Gothic;font-weight: lighter;color: white; font-size: 15px;text-align: center; width: 19%; padding: 0.7%"> Next
                             <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>
                         </button>
                     </div>

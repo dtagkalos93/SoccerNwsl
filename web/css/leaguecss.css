@@ -16,196 +16,142 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px;
-}
-
-.nav-tabs>li>a{
-    margin-right: 3px;
-    line-height: 1.42857143;
-    border: 1px solid #476eb500;
-    border-radius: 3px 3px 0 0;
-    background-color: #c8373b;
-    color: #ffffff;
-}
-
-.nav-tabs>li>a:hover{
-    
-    border-color: #9e2e31;
-    background-color: #9e2e31;
-}
-
-.intro-header {
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../img/banner.png) no-repeat;
-    background-size: contain;
-}
-
-.intro-message {
-    position: relative;
-    padding-top: 12%;
-    margin-bottom: 8%;
+    background-color: #222427;
+    border: none;
+    height: 75px;
 }
 
 .extraClass {
-    height: 130px; 
+    margin-top: 5.7%;
+    width: 100%;
+    height: 50px; 
     position: relative;
+    background-color: #ac0f1f;
 }
 
 .extraClassul {
     position: absolute;
     bottom: 0;
-    font-family: arial;
+    font-family: Century Gothic;
+    padding-left: 50px;
 }
 
-.test{
-    margin-top: 3%;
+.navbar-right{
+    float:right!important;
+    margin-top:23px;
 }
 
-
-.btncustom:hover{
-    background-color: #92111e;
-    color: #fff;
+.nav-pills>li>a{
+    line-height: 1.3;
+    color: #ffffff;
+    font-family: Century Gothic;
+    font-size: 15px;
+    border-radius: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 16px;
 }
 
-.btnrenew{
-    background-color:#1d3260;
-    color:white  ;
-    height: 40px;
+.nav-pills>li>a:hover{
+    border-color: #c8373b;
+    background-color: #c8373b;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+    font-family: Century Gothic;
+    font-size: 15px;
+}
+
+.nav-tabs>li.active>a {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    font-family: Century Gothic;
+    font-size: 15px;
+}
+
+.side-gap{
+    margin-left: -15px;
+}
+
+.top-gap{
+    margin-top: 2%;
+}
+
+.btncstm:focus {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
+}
+
+.joinbtn{
+    font-family: Century Gothic;
+    background-color:#ac0f1f;
+    color:white;
     font-weight: lighter; 
     text-align: center;
     width: 100%;
-    border: 1px solid #1d3260;
-    border-radius: 3px;
+    border: none;
+    border-radius: 1px;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.btnrenew:hover{
+.joinbtn:hover{
+    background-color: #84111c;
+    text-decoration: none;
+}
+
+.renewbtn{
+    font-family: Century Gothic;
+    background-color:#1d3260;
+    color:white;
+    font-weight: lighter; 
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 1px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.renewbtn:hover{
     background-color:#050424;
-    color: #fff;
+    text-decoration: none
 }
 
 .league-header{
     width:100%;
-    font-family: arial;
     font-weight: bold;
     font-size: 15px;
     background-color: #e8e8e8;
-    height:35px;
-    padding-top: 9.5px;
+    padding: 1%;
 }
 
-
-tr.border_bottom td {
-    border-bottom:1px solid #ebebe4;
-    text-align: center;
-}
-
-tr.border_bottom th {
-    border-bottom:1px solid #ebebe4;
-    text-align: center;
-}
-
-tr.border_bottom .tb-name{
-    text-align: left;
-    font-size:13px;
-    font-weight:bold;
-    padding-left: 2.05%
-}
-
-tr.border_bottom .tb-name-ls{
-    font-weight:lighter;
-    padding-left: 2.05%;
-    font-size:15px;
-    text-align: left;
-    color:#d3292e;
-    margin-right:-50%;
-    width:50%;
-
-}
-
-tr.border_bottom .tb-rank{
-
-    font-size:13px;
-    font-weight:bold;
-
-}
-tr.border_bottom .tb-rank-ls{
-    font-size: 15px;
-    text-align: center;
-    width:15%;
-
-    font-weight:normal;
-
-
-}
-
-
-
-tr.border_bottom .tb-rank2{
-
-    font-size:13px;
-    font-weight:bold;
-
-}
-tr.border_bottom .tb-rank2-ls{
-    font-size: 15px;
-    text-align: center;
-    width:15%;
-    font-weight:normal;
-
-}
-
-tr.border_bottom .options{
-    text-align: left;
+.tb-name{
     font-size: 14px;
+    padding: 0.5%;
+    padding-left: 1%;
+    width: 30%;
 }
 
-tr.border_bottom .options i{
-    font-size:14px;
-    width:10%;
-    margin-left:15%;
-    margin-right: 5%
-}
-
-tr.border_bottom .options span{
+.tb-arrow{
+    text-align: center;
+    width: 5%;
     font-size: 14px;
-    color: #d3292e;
-    font-weight: lighter
+    padding: 0.5%;
+    text-align: center;
 }
 
-@media(min-width:792px) {
-    .btn1{
-        width: 60%;
-    }
-
-    .btn1 button{
-        background-color:#ac0f1f;
-        color:white   ;
-        height: 40px;
-        font-weight: lighter;
-        text-align: center;
-        width: 100%;
-        border: 1px solid #ac0f1f;
-        border-radius: 3px;
-
-
-        }
-        .btn1 button:hover{
-            background-color: #84111c;
-
-        }
-
-        .btn2{
-            width: 10%
-        }
-    }
-
-    @media(max-width:792px) {
-        .btn1,.btn2{width: 100%}
-        .btn1 button:hover{
-            background-color: black;
-        }
-       
-    }
-    
-
+.tb-rank{
+    font-size: 14px;
+    width: 20%;
+    font-size: 14px;
+    padding: 0.5%;
+    text-align: center;
+}

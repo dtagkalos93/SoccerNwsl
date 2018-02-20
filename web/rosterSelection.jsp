@@ -101,7 +101,6 @@
             </div>
             <!-- /.container -->
         </nav>
-
             <div class="container extraClass  ">
                 <ul class="nav nav-pills extraClassul">
                     <li class="nav-item"><a href="home.html">Home</a></li>
@@ -109,7 +108,6 @@
                     <li class="nav-item"><a href="fixture">Fixtures</a></li>
                     <li class="nav-item"><a href="help.html">Help</a></li>
                     <li class="nav-item"><a href="playersData">Sign Out</a></li>
-                    <li class="nav-item"><a href="help.html">Help</a></li>
                     <li class="dropdown hidden-sm hidden-md hidden-lg">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
                             <span class="caret"></span></a>
@@ -120,29 +118,8 @@
                         </ul>
                     </li>
                 </ul>
-
-                <!--  <ul class="nav nav-tabs extraClassul">
-                      <li  ><a href="home.html">Home</a></li>
-                      <li  class="hidden-xs active"><a href="">Roster Selection</a></li>
-                      <li  class="hidden-xs"><a href="fixture">Fixtures</a></li>
-                      <li class="hidden-xs"><a href="help.html">Help</a></li>
-                      <li class="hidden-xs"><a href="playersData">Sign Out</a></li>
-                      <li class="dropdown hidden-sm hidden-md hidden-lg">
-                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
-                              <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                              <li><a href="#">Fixtures</a></li>
-                              <li><a href="#">Help</a></li>
-                              <li><a href="#">Sign Out</a></li> 
-                          </ul>
-                      </li>
-                  </ul>
-  
-              </div>
-                <!-- /.container -->
-
+                </div>
             </div>
-            <!-- /.intro-header -->
 
             <div class="container">
                 <div class="row">
