@@ -226,7 +226,7 @@
                                                 </span>
                                             </h4>
                                         </a>
-                                        <a  value="kansas" data-class="kansas" class="list-group-item kansas" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
+                                        <a  value="kansas" data-class="royals" class="list-group-item royals" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
                                             <h4 style="margin-left: 5%">Utah Royals FC
                                                 <span>
                                                     <img style="float: right; margin-top: -4%" src="img/UtahRoyals2.png"/>

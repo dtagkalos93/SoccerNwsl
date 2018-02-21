@@ -690,10 +690,10 @@
                                 } else if (team.equals("sky")) {
                                     badge = "Sky_Blue_FC.png";
                                 } else if (team.equals("kansas")) {
-                                    badge = "kansasCity.png";
+                                    badge = "Utah_Royals.png";
                                 }
                             %>
-                            <img style="margin:auto; display:block; width:150px; height:150px" src="img/<%=badge%>"/>
+                            <img style="margin:auto; display:block; height:150px" src="img/<%=badge%>"/>
                         </div>
 
                         <div class="ranking">

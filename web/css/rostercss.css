@@ -77,14 +77,6 @@ h6 {
     font-size: 15px;
 }
 
-.intro-header2 {
-    /*    padding-top: 7%;
-        background: url(../img/banner2.png) no-repeat center center;
-        margin-top: 5%; 
-        background-size: cover;*/
-
-}
-
 .top-gap{
     margin-top: 2%;
 }
@@ -188,6 +180,21 @@ h6 {
     white-space: nowrap;
 }
 
+.cbname2{
+    width:120px;
+    border: 1px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    height: 21px;
+    padding-top: 0px;
+    font-family: arial;
+    font-size: 14px;
+    opacity: 0.9;
+    filter: alpha(opacity=30);
+}
 
 .gkpoint,.cbpoint{
     font-family: Century Gothic;
@@ -206,6 +213,24 @@ h6 {
     border-bottom-right-radius:3pt 3pt;
 }
 
+.image-player{
+        width: 23.5%;
+        position: relative;
+        left: 15px;
+}
+
+.image-player-cb{
+        width: 85%;
+        position: relative;
+        left: 17px;
+}
+
+.image-player-for{
+        width: 37.5%;
+        position: relative;
+        left: 17px;
+}
+
 .fixtures{
     width: 100%;
     margin-bottom: 5%;
@@ -215,31 +240,6 @@ h6 {
     border-right: 1px solid #e8e4e4;
     padding-left: 0;
     padding-right: 0;
-}
-
-.image-player{
-    width: 26%;
-    position: relative;
-    left: 15px;
-}
-
-.image-player-cb{
-    width: 93%;
-    position: relative;
-    left: 17px;
-}
-
-.image-player-for{
-    width: 40%;
-    position: relative;
-    left: 17px;
-}
-
-.teambox{
-    margin-top: 10%;;
-    width: 100%;
-    height:50px; 
-    border-top:4px solid #050424;
 }
 
 .match:hover{
@@ -260,7 +260,6 @@ h6 {
     background-color: #e8e8e8;
 }
 
-
 .skorlogol{
     width: 2%; 
     left: 1.55%
@@ -271,10 +270,19 @@ h6 {
     left:6%
 }
 
+.teambox{
+    margin-top: 10%;;
+    width: 100%;
+    height:50px; 
+    border-top:4px solid #050424;
+}
+
 .form-control{
     width: 90%;
     margin-left: 5%;
-    padding: 5px 12px;
+    padding: 0;
+    padding-left: 5px;
+    height: 27px;
     font-size: 14px;
     font-weight: lighter;
     color: #5a5858;
@@ -393,9 +401,11 @@ h6 {
 
 .searchTerm {
     font-family: Century Gothic;
-    width: 112%;
+    width: 98%;
     border: 1px solid #1d3260;
-    padding: 5px 16px;
+    padding: 0;
+    padding-left: 9px;
+    height: 27px;
     color: #555;
     background-color: #ecebeb;
     font-size: 14px;
@@ -410,12 +420,10 @@ h6 {
 }
 
 .searchButton {
-    position: absolute;  
-    margin-top: -11%;
-    right: -36px;
-    width: 34px;
-    height: 32px;
-    border: 0px solid #1d3260;
+    position: absolute;
+    width: 28px;
+    height: 27px;
+    border: none;
     background: #1d3260;
     text-align: center;
     color: #fff;

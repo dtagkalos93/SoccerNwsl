@@ -151,10 +151,66 @@
                     <div class="row ">
                         <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">My Team</h3>
                         <div  class="col-md-12">
-                            <div class="col-md-12" style="margin-top: 2%;margin-bottom: 2%;width: 100%;background-color:#050424">
+                            <div class="col-md-12" style="margin-top: 2%;width: 100%;background-color:#050424">
                                 <h6 style="color:white;font-size:14px;text-align:center; font-weight:lighter;margin-top: 8px;margin-bottom: 8px;font-family: Century Gothic" >Gameweek 3 Deadline:
                                     <strong style="color:#d21e25; font-size:19px;font-family: Century Gothic" >17 Jun 02:30PM ET </strong>
                                 </h6>
+                            </div>
+                            <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 2%;padding-left: 0;padding-right: 0" >
+                                <div class="col-md-3  col-xs-3" style="width: 30%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Captain</h6>
+                                    <div>
+                                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                            <option value="score">Total score</option>
+                                            <option value="gw">Round score</option> 
+                                            <option value="price">Price</option>
+                                            <option>Teams selected by %</option>
+                                            <option value="minutes">Minutes played</option>
+                                            <option value="goalScored">Goal scored</option>
+                                            <option value="assist">Assists</option>
+                                            <option value="cleanSheet">Clean sheets</option>
+                                            <option value="ownGoal">Own goals</option>
+                                            <option value="goalConceded">Goals conceded</option>
+                                            <option value="penaltySaved">Penalties saved</option>
+                                            <option value="penaltyMissed">Penalties missed</option>
+                                            <option value="yellowCard">Yellow cards</option>
+                                            <option value="redCard">Red cards</option>
+                                            <option>Bonus</option> 
+                                            <option value="saves">Saves</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3  col-xs-3" style="width: 30%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Vice Captain</h6>
+                                    <div>
+                                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                            <option value="score">Total score</option>
+                                            <option value="gw">Round score</option> 
+                                            <option value="price">Price</option>
+                                            <option>Teams selected by %</option>
+                                            <option value="minutes">Minutes played</option>
+                                            <option value="goalScored">Goal scored</option>
+                                            <option value="assist">Assists</option>
+                                            <option value="cleanSheet">Clean sheets</option>
+                                            <option value="ownGoal">Own goals</option>
+                                            <option value="goalConceded">Goals conceded</option>
+                                            <option value="penaltySaved">Penalties saved</option>
+                                            <option value="penaltyMissed">Penalties missed</option>
+                                            <option value="yellowCard">Yellow cards</option>
+                                            <option value="redCard">Red cards</option>
+                                            <option>Bonus</option> 
+                                            <option value="saves">Saves</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3  col-xs-3" style="width: 20%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Team Value</h6>
+                                    <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#d21e25;font-family: Century Gothic;">$<span id="totalPlayers">90.0</span></h4>
+                                </div>
+                                <div class="col-md-3  col-xs-3" style="width: 20%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Available Transfers</h6>
+                                    <h4 id="dollar" style="text-align: center;font-weight:bold;color:#28b528; font-size:20px;font-family: Century Gothic "><span id="remainPrice">2</span></h4>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
@@ -991,7 +1047,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 sidebar top-gap" style="padding-right: 0 ">
+                <div class="col-md-3 sidebar top-gap" style="padding-right: 0">
                     <div class="threadbox" >
                         <h1 style="font-family:Century Gothic;font-weight:bold;font-size: 20px">
                             <%=session.getAttribute("fullname").toString()%>
@@ -1022,11 +1078,11 @@
                                     badge = "SeattleReignFC.png";
                                 } else if (team.equals("sky")) {
                                     badge = "Sky_Blue_FC.png";
-                                } else if (team.equals("kansas")) {
-                                    badge = "kansasCity.png";
+                                } else if (team.equals("royals")) {
+                                    badge = "Utah_Royals.png";
                                 }
                             %>
-                            <img style="margin:auto; display:block; width:150px; height:150px" src="img/<%=badge%>"/>
+                            <img style="margin:auto; display:block; height:150px" src="img/<%=badge%>"/>
                         </div>
 
                         <div class="ranking">
