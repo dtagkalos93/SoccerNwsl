@@ -169,116 +169,101 @@
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                         <hr style="border:none;margin-top: 6.5%"/>
-                        <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
+                        <div id="selGK1" class="col-md-6 col-xs-6" style="padding-left: 28%" onclick="changeGK()">
                             <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
                             <p class="gkname" id="namegk1" >Goalkeeper</p>
                             <p style="display: none" id="team1"></p>
                             <p style="display: none" id="pricegk1"></p>
-
                         </div>
-                        <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 2.3%" onclick="changeGK()">
+                        <div id="selGK2" class="col-md-6 col-xs-6" style="padding-right: 28%;" onclick="changeGK()">
                             <img class="image-player" id="imagegk2" src="img/subsgk.png" />
                             <p class="gkname" id="namegk2" >Goalkeeper</p>
                             <p style="display: none" id="team2"></p>
                             <p style="display: none" id="pricegk2"></p>
-
                         </div>
 
                         <hr style="border:none;margin-top: 21%">
-                        <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" onclick="changeDEF()">
+                        <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                             <p id="defname1" class="cbname" >Defender</p>
                             <p style="display: none" id="team3"></p>
                             <p style="display: none" id="defprice1"></p>
-
                         </div>
-                        <div id="selDEF2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeDEF()">
+                        <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage2" src="img/subs.png" />
                             <p id="defname2" class="cbname" >Defender</p>
                             <p style="display: none" id="team4"></p>
                             <p style="display: none" id="defprice2"></p>
-
                         </div>
-                        <div id="selDEF3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeDEF()">
+                        <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
                             <p id="defname3" class="cbname" >Defender</p>
                             <p style="display: none" id="team5"></p>
                             <p style="display: none" id="defprice3"></p>
-
                         </div>
-                        <div id="selDEF4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeDEF()">
+                        <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
                             <p id="defname4" class="cbname" >Defender</p>
                             <p style="display: none" id="team6"></p>
                             <p style="display: none" id="defprice4"></p>
-
                         </div>
-                        <div id="selDEF5" class="col-md-2 col-xs-2" style="left:4.7%" onclick="changeDEF()" >
+                        <div id="selDEF5" class="col-md-2 col-xs-2" onclick="changeDEF()" >
                             <img class="image-player-cb" id="defimage5" src="img/subs.png" />
                             <p id="defname5" class="cbname" >Defender</p>
                             <p style="display: none" id="team7"></p>
                             <p style="display: none" id="defprice5"></p>
-
                         </div>
 
                         <hr style="border:none;margin-top: 21%">                          
-                        <div id="selMID1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
+                        <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 34px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                             <p id="midname1" class="cbname" >Midfielder</p>
                             <p style="display: none" id="team8"></p>
                             <p style="display: none" id="midprice1"></p>
-
                         </div>                            
-                        <div id="selMID2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeMID()">
+                        <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                             <p id="midname2" class="cbname" >Midfielder</p>
                             <p style="display: none" id="team9"></p>
                             <p style="display: none" id="midprice2"></p>
-
                         </div>
-                        <div id="selMID3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeMID()">
+                        <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                             <p id="midname3" class="cbname" >Midfielder</p>
                             <p style="display: none" id="team10"></p>
                             <p style="display: none" id="midprice3"></p>
-
                         </div>
-                        <div id="selMID4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeMID()">
+                        <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 34px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                             <p id="midname4" class="cbname" >Midfielder</p>
                             <p style="display: none" id="team11"></p>
                             <p style="display: none" id="midprice4"></p>
-
                         </div>
-                        <div id="selMID5" class="col-md-2 col-xs-2" style="left: 5%" onclick="changeMID()">
+                        <div id="selMID5" class="col-md-2 col-xs-2" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
                             <p id="midname5" class="cbname" >Midfielder</p>
                             <p style="display: none" id="team12"></p>
                             <p style="display: none" id="midprice5"></p>
-
                         </div>                            
 
                         <hr style="border:none;margin-top: 21%">                          
-                        <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
+                        <div id="selFWD1" class="col-md-4  col-xs-4" onclick="changeFWD()">
                             <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
                             <p id="fwdname1" class="gkname" >Forward</p>
                             <p style="display: none" id="team13"></p>
                             <p style="display: none" id="fwdprice1"></p>
-
                         </div>
-                        <div id="selFWD2" class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
+                        <div id="selFWD2" class="col-md-4  col-xs-4" onclick="changeFWD()">
                             <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
                             <p id="fwdname2" class="gkname" >Forward</p>
                             <p style="display: none" id="team14"></p>
                             <p style="display: none" id="fwdprice2"></p>
-
                         </div>
-                        <div id="selFWD3" class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
+                        <div id="selFWD3" class="col-md-4  col-xs-4" onclick="changeFWD()">
                             <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                             <p id="fwdname3" class="gkname" >Forward</p>
                             <p style="display: none" id="team15"></p>
                             <p style="display: none" id="fwdprice3"></p>
-
                         </div>
                     </div>
                     <a id="enterTeam"  class="enterteam btncstm col-md-12 " style="color: white;font-size: 15px;font-family: Century Gothic;width: 32%;margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
@@ -318,8 +303,8 @@
                         <button id="prev" value="<%=posts.get(1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
                             Previous
                         </button>
-                        <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;left:6.5%; margin-top: -1%;margin-bottom: -2%" align="center">
-                            <img src="img/nwsllogo.png" style="width: 31%;padding-right: 0.5%" >Fixtures
+                        <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;width: 68%;margin-top: -1%;margin-bottom: -2%" align="center">
+                            <img src="img/nwsllogo.png" style="width: 23%;padding-right: 0.5%" >Fixtures
                         </h5>
                         <%  String displaynext = "none";
                             if (!posts.get(2).equals("Gameweek 23")) {
@@ -1006,7 +991,7 @@
                 ArrayList<String> fwdinjury = (ArrayList<String>) request.getAttribute("injuryfwd");
             %>            
 
-            <div class="col-md-3 sidebar">
+            <div class="col-md-3 sidebar" style="padding-right: 0">
                 <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                     <div class="teambox">
                         <h3 style="font-family: Century Gothic;font-size: 19px; margin-left:5%; margin-top: 8%; line-height: 10px; font-weight: bold">Player Selection</h3>
@@ -1091,7 +1076,7 @@
                         </div>
                     </div>
                     <div>
-                        <h6 class="text-center" style="font-family: Century Gothic;font-size: 15px; line-height: 10px; font-weight:lighter; margin-top: 7%"><strong style="font-family: Century Gothic;color:#d4213c;font-size: 16px" id ="total"><%=request.getAttribute("total")%></strong> players shown</h6>
+                        <h6 class="text-center" style="font-family: Century Gothic;font-size: 14px; line-height: 10px; font-weight:lighter; margin-top: 7%"><strong style="font-family: Century Gothic;color:#d4213c;font-size: 15px" id ="total"><%=request.getAttribute("total")%></strong> players shown</h6>
                     </div>
                     <div>
                         <table style="width:100%; background-color: #f9f5f5" id='gk'>
@@ -1119,7 +1104,7 @@
                                         <img id="gkimage1" src="img/<%=gk.get(0)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="gkname1" style="font-family: Century Gothic;font-size: 14px " ><%=gkname.get(0)%></span>
+                                        <span class='underline' id="gkname1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=gkname.get(0)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="gkteam1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=gkteam.get(0)%></span>
                                     </div>
@@ -1143,7 +1128,7 @@
                                         <img id="gkimage2" src="img/<%=gk.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="gkname2" style="font-family: Century Gothic;font-size: 14px " ><%=gkname.get(1)%></span>
+                                        <span class='underline' id="gkname2" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=gkname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="gkteam2" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=gkteam.get(1)%></span>
                                     </div>
@@ -1186,7 +1171,7 @@
                                         <img id="<%=gkimagestr%>" src="img/<%=gk.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=gknamestr%>" style="font-family: Century Gothic;font-size: 14px " ><%=gkname.get(1)%></span>
+                                        <span class='underline' id="<%=gknamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=gkname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="<%=gkteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=gkteam.get(1)%></span>
                                     </div>
@@ -1218,7 +1203,7 @@
                                         <img id="imagedef1" src="img/<%=def.get(0)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(0)%></span>
+                                        <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(0)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(0)%></span>
                                     </div>
@@ -1240,7 +1225,7 @@
                                         <img id="imagedef2" src="img/<%=def.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef2" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(1)%></span>
+                                        <span class='underline' id="namedef2" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef2" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(1)%></span>
                                     </div>
@@ -1262,7 +1247,7 @@
                                         <img id="imagedef3" src="img/<%=def.get(2)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef3" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(2)%></span>
+                                        <span class='underline' id="namedef3" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(2)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef3" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(2)%></span>
                                     </div>
@@ -1284,7 +1269,7 @@
                                         <img id="imagedef4" src="img/<%=def.get(3)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef4" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(3)%></span>
+                                        <span class='underline' id="namedef4" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(3)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef4" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(3)%></span>
                                     </div>
@@ -1306,7 +1291,7 @@
                                         <img id="imagedef5" src="img/<%=def.get(4)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef5" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(4)%></span>
+                                        <span class='underline' id="namedef5" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(4)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef5" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(4)%></span>
                                     </div>
@@ -1328,7 +1313,7 @@
                                         <img id="imagedef6" src="img/<%=def.get(5)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef6" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(5)%></span>
+                                        <span class='underline' id="namedef6" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(5)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef6" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(5)%></span>
                                     </div>
@@ -1350,7 +1335,7 @@
                                         <img id="imagedef7" src="img/<%=def.get(6)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef7" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(6)%></span>
+                                        <span class='underline' id="namedef7" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(6)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef7" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(6)%></span>
                                     </div>
@@ -1372,7 +1357,7 @@
                                         <img id="imagedef8" src="img/<%=def.get(7)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef8" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(7)%></span>
+                                        <span class='underline' id="namedef8" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(7)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamdef8" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(7)%></span>
                                     </div>
@@ -1411,7 +1396,7 @@
                                         <img id="<%=defimagestr%>" src="img/<%=def.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=defnamestr%>" style="font-family: Century Gothic;font-size: 14px " ><%=defname.get(1)%></span>
+                                        <span class='underline' id="<%=defnamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="<%=defteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(1)%></span>
                                     </div>
@@ -1443,7 +1428,7 @@
                                         <img id="imagemid1" src="img/<%=mid.get(0)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(0)%></span>
+                                        <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(0)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teammid1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(0)%></span>
                                     </div>
@@ -1465,7 +1450,7 @@
                                         <img id="imagemid2" src="img/<%=mid.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namemid2" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(1)%></span>
+                                        <span class='underline' id="namemid2" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teammid2" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(1)%></span>
                                     </div>
@@ -1487,7 +1472,7 @@
                                         <img id="imagemid3" src="img/<%=mid.get(2)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namemid3" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(2)%></span>
+                                        <span class='underline' id="namemid3" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(2)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teammid3" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(2)%></span>
                                     </div>
@@ -1509,7 +1494,7 @@
                                         <img id="imagemid4" src="img/<%=mid.get(3)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namemid4" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(3)%></span>
+                                        <span class='underline' id="namemid4" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(3)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teammid4" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(3)%></span>
                                     </div>
@@ -1531,7 +1516,7 @@
                                         <img id="imagemid5" src="img/<%=mid.get(4)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namemid5" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(4)%></span>
+                                        <span class='underline' id="namemid5" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(4)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teammid5" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(4)%></span>
                                     </div>
@@ -1572,7 +1557,7 @@
                                         <img id="<%=midimagestr%>" src="img/<%=mid.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=midnamestr%>" style="font-family: Century Gothic;font-size: 14px " ><%=midname.get(1)%></span>
+                                        <span class='underline' id="<%=midnamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="<%=midteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(1)%></span>
                                     </div>
@@ -1604,7 +1589,7 @@
                                         <img id="imagefwd1" src="img/<%=fwd.get(0)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(0)%></span>
+                                        <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(0)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamfwd1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(0)%></span>
                                     </div>
@@ -1626,7 +1611,7 @@
                                         <img id="imagefwd2" src="img/<%=fwd.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namefwd2" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(1)%></span>
+                                        <span class='underline' id="namefwd2" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamfwd2" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                     </div>
@@ -1648,7 +1633,7 @@
                                         <img id="imagefwd3" src="img/<%=fwd.get(2)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namefwd3" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(2)%></span>
+                                        <span class='underline' id="namefwd3" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(2)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamfwd3" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(2)%></span>
                                     </div>
@@ -1670,7 +1655,7 @@
                                         <img id="imagefwd4" src="img/<%=fwd.get(3)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namefwd4" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(3)%></span>
+                                        <span class='underline' id="namefwd4" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(3)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamfwd4" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(3)%></span>
                                     </div>
@@ -1692,7 +1677,7 @@
                                         <img id="imagefwd5" src="img/<%=fwd.get(4)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namefwd5" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(4)%></span>
+                                        <span class='underline' id="namefwd5" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(4)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="teamfwd5" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(4)%></span>
                                     </div>
@@ -1732,7 +1717,7 @@
                                         <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=fwdnamestr%>" style="font-family: Century Gothic;font-size: 14px " ><%=fwdname.get(1)%></span>
+                                        <span class='underline' id="<%=fwdnamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(1)%></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="<%=fwdteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(1)%></span>
                                     </div>
@@ -1778,7 +1763,7 @@
                                         <img id="<%=srchimage%>" style="height:30px" />
                                     </div>                                    
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=srchname%>" style="font-family: Century Gothic;font-size: 14px"></span>
+                                        <span class='underline' id="<%=srchname%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap;"></span>
                                         <hr style="border:none;margin-top: -28%">
                                         <span id="<%=srchteam%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "></span>
                                         <span id="<%=srchpos%>" style="font-family: Century Gothic; font-size: 11px;font-weight:lighter; padding-left: 5% "></span>

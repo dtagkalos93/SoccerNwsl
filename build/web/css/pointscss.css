@@ -111,7 +111,6 @@ h6 {
     padding: 0.8%;
 }
 
-
 .nextbtn{
     background-color: #696969; 
     color: #fff;
@@ -149,7 +148,46 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
+
+.benname{
+    font-family: Century Gothic;
+    width:120px;
+    border: 2px solid #02509a;
+    margin: 0;
+    text-align: center;
+    background-color: #02509a;
+    color: white;
+    font-weight: bold;
+    padding-top: 0px;
+    font-size: 14px;
+    opacity: 0.9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.benpos{
+    font-family: Century Gothic;
+    width:120px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-top: 3px;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}    
 
 .cbname2{
     width:120px;
@@ -161,7 +199,7 @@ h6 {
     font-weight: bold;
     height: 21px;
     padding-top: 0px;
-    font-family: Century Gothic;
+    font-family: arial;
     font-size: 14px;
     opacity: 0.9;
     filter: alpha(opacity=30);
@@ -178,28 +216,44 @@ h6 {
     background-color: #57a3f9;
     height: 17px;
     padding-bottom: 5px;
-    font-family: Century Gothic;
+    font-family: arial;
     margin-bottom: 10px;
     border-bottom-left-radius:3pt 3pt;
     border-bottom-right-radius:3pt 3pt;
 }
 
 .image-player{
-        width: 23.5%;
-        position: relative;
-        left: 15px;
+    height: 96px;
+    width: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .image-player-cb{
-        width: 85%;
-        position: relative;
-        left: 17px;
+    height: 96px;
+    width: auto;
+    position: relative;
+    margin-left: 12px;
 }
 
 .image-player-for{
-        width: 37.5%;
-        position: relative;
-        left: 17px;
+    height: 96px;
+    width: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.image-player-bench{
+    height: 96px;
+    width: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .pit-img{

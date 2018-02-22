@@ -215,139 +215,129 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%"  >
+                            <div id="selGK1" class="col-md-6 col-xs-6" style="padding-left: 28%;"  >
                                 <img class="image-player" id="gkimage" src="img/subsgk.png"/>
                                 <p class="gkname" id="gkname" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
                                 <p style="display: none" id="pricegk1"></p>
-
                             </div>
-
-
+                            <div id="selGK2" class="col-md-6 col-xs-6" style="padding-right: 28%;"  >
+                                <img class="image-player" id="gkimage2" src="img/subsgk.png"/>
+                                <p class="gkname" id="gkname2" >Goalkeeper</p>
+                                <p style="display: none" id="team2"></p>
+                                <p style="display: none" id="pricegk2"></p>
+                            </div>
+                            
                             <hr style="border:none;margin-top: 21%">
-                            <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" >
+                            <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 34px" >
                                 <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                                 <p id="defname1" class="cbname" >Defender</p>
                                 <p style="display: none" id="team3"></p>
                                 <p style="display: none" id="defprice1"></p>
-
                             </div>
-                            <div id="selDEF2" class="col-md-2 col-xs-2" style="right:4.65%" >
+                            <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 34px" >
                                 <img class="image-player-cb" id="defimage2" src="img/subs.png" />
                                 <p id="defname2" class="cbname" >Defender</p>
                                 <p style="display: none" id="team4"></p>
                                 <p style="display: none" id="defprice2"></p>
-
                             </div>
-                            <div id="selDEF3" class="col-md-2 col-xs-2" style="right:1.5%" >
+                            <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 34px" >
                                 <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
                                 <p id="defname3" class="cbname" >Defender</p>
                                 <p style="display: none" id="team5"></p>
                                 <p style="display: none" id="defprice3"></p>
-
                             </div>
-                            <div id="selDEF4" class="col-md-2 col-xs-2" style="left:1.65%" >
+                            <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 34px" >
                                 <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
                                 <p id="defname4" class="cbname" >Defender</p>
                                 <p style="display: none" id="team6"></p>
                                 <p style="display: none" id="defprice4"></p>
-
                             </div>
-                            <div id="selDEF5" class="col-md-2 col-xs-2" style="left:4.7%" >
+                            <div id="selDEF5" class="col-md-2 col-xs-2">
                                 <img class="image-player-cb" id="defimage5" src="img/subs.png" />
                                 <p id="defname5" class="cbname" >Defender</p>
                                 <p style="display: none" id="team7"></p>
                                 <p style="display: none" id="defprice5"></p>
-
                             </div>
 
                             <hr style="border:none;margin-top: 21%">                          
-                            <div id="selMID1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" >
+                            <div id="selMID1" class="col-md-2 col-xs-2" style="margin-right: 34px" >
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                                 <p id="midname1" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team8"></p>
                                 <p style="display: none" id="midprice1"></p>
-
                             </div>                            
-                            <div id="selMID2" class="col-md-2 col-xs-2" style="right:4.65%" >
+                            <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                                 <p id="midname2" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team9"></p>
                                 <p style="display: none" id="midprice2"></p>
-
                             </div>
-                            <div id="selMID3" class="col-md-2 col-xs-2" style="right:1.5%" >
+                            <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                                 <p id="midname3" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team10"></p>
                                 <p style="display: none" id="midprice3"></p>
-
                             </div>
-                            <div id="selMID4" class="col-md-2 col-xs-2" style="left:1.65%" >
+                            <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                                 <p id="midname4" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team11"></p>
                                 <p style="display: none" id="midprice4"></p>
-
                             </div>
-                            <div id="selMID5" class="col-md-2 col-xs-2" style="left: 5%" >
+                            <div id="selMID5" class="col-md-2 col-xs-2">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
                                 <p id="midname5" class="cbname" >Midfielder</p>
                                 <p style="display: none" id="team12"></p>
                                 <p style="display: none" id="midprice5"></p>
-
                             </div>                            
 
                             <hr style="border:none;margin-top: 21%">                          
-                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:10%" >
+                            <div id="selFWD1" class="col-md-4  col-xs-4" >
                                 <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
                                 <p id="fwdname1" class="gkname" >Forward</p>
                                 <p style="display: none" id="team13"></p>
                                 <p style="display: none" id="fwdprice1"></p>
-
                             </div>
-                            <div id="selFWD2" class="col-md-4  col-xs-4   " style="left:6.9%">
+                            <div id="selFWD2" class="col-md-4  col-xs-4">
                                 <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
                                 <p id="fwdname2" class="gkname" >Forward</p>
                                 <p style="display: none" id="team14"></p>
                                 <p style="display: none" id="fwdprice2"></p>
-
                             </div>
-                            <div id="selFWD3" class="col-md-4  col-xs-4   " style="left:3% " >
+                            <div id="selFWD3" class="col-md-4  col-xs-4" >
                                 <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
                                 <p id="fwdname3" class="gkname" >Forward</p>
                                 <p style="display: none" id="team15"></p>
                                 <p style="display: none" id="fwdprice3  "></p>
-
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 pit-img">
-                            <hr style="border:none;margin-top: 3.5%"/>
-
-                            <div class="col-md-3  col-xs-3   " style="left:4%" data-toggle="modal" data-target="#players">
-                                <img id="benimage1" class="image-player-for" src="img/couragegk.png"  />
-                                <p id="benname1"  class="cbname" >D'Angelo</p>
-                                <p class="cbname">8</p>
-                                <p class="cbname">GK</p>
+                            <hr style="border:none;margin-top: 0"/>
+                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
+                                <img id="benimage1" class="image-player-bench" src="img/couragegk.png"  />
+                                <p id="benname1"  class="benname" >D'Angelo</p>
+                                <p class="benname">8</p>
+                                <p class="benpos">GK</p>
                             </div>
-                            <div class="col-md-3  col-xs-3   " style="left:3%" data-toggle="modal" data-target="#players">
-                                <img id="benimage2" class="image-player-for" src="img/breakers1.png"  />
-                                <p id="benname2"  class="cbname" >Westphal</p>
-                                <p class="cbname">8</p>
-                                <p class="cbname">1</p>
+                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
+                                <img id="benimage2" class="image-player-bench" src="img/breakers1.png"  />
+                                <p id="benname2"  class="benname" >Westphal</p>
+                                <p class="benname">8</p>
+                                <p class="benpos">1</p>
                             </div>
-                            <div class="col-md-3  col-xs-3   " style="left:2.25%" data-toggle="modal" data-target="#players">
-                                <img id="benimage3" class="image-player-for" src="img/pride1.png"  />
-                                <p id="benname3"  class="cbname" >Weatherholt</p>
-                                <p class="cbname">8</p>
-                                <p class="cbname">2</p>
+                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
+                                <img id="benimage3" class="image-player-bench" src="img/pride1.png"  />
+                                <p id="benname3"  class="benname" >Weatherholt</p>
+                                <p class="benname">8</p>
+                                <p class="benpos">2</p>
                             </div>
-                            <div class="col-md-3  col-xs-3   " style="left:1.2%" data-toggle="modal" data-target="#players">
-                                <img id="benimage4" class="image-player-for" src="img/thorns1.png"  />
-                                <p id="benname4"  class="cbname" >Henry</p>
-                                <p class="cbname">8</p>
-                                <p class="cbname">3</p>
+                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
+                                <img id="benimage4" class="image-player-bench" src="img/thorns1.png"  />
+                                <p id="benname4"  class="benname" >Henry</p>
+                                <p class="benname">8</p>
+                                <p class="benpos">3</p>
                             </div>
                         </div>
 
@@ -387,8 +377,8 @@
                             <button id="prev" value="<%=posts.get(1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
                                 Previous
                             </button>
-                            <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;left:6.5%; margin-top: -1%;margin-bottom: -2%" align="center">
-                                <img src="img/nwsllogo.png" style="width: 31%;padding-right: 0.5%" >Fixtures
+                            <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;;width: 68%; margin-top: -1%;margin-bottom: -2%" align="center">
+                                <img src="img/nwsllogo.png" style="width: 23%;padding-right: 0.5%" >Fixtures
                             </h5>
                             <%  String displaynext = "none";
                                 if (!posts.get(2).equals("Gameweek 23")) {
