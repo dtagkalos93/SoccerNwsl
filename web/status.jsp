@@ -134,7 +134,7 @@
                 <!-- Blog Entries Column -->
                 <div class="col-md-12 top-gap">
                     <h5 class="col-md-12 col-xs-12" style="font-family: Century Gothic;font-size: 15px; font-weight: lighter">You are logged in as 
-                        <span style="font-weight: bold">Dimitris Tagkalos</h5>
+                        <span style="font-weight: bold"><%=session.getAttribute("fullname")%></h5>
 
                     <h4 class="col-md-12 col-xs-12" style="font-family: Century Gothic; font-size: 20px;" >
                         Gameweek 9 Status

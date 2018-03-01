@@ -73,7 +73,9 @@ public class login extends HttpServlet {
         String dbName = "fantasy";
         String userId = "root";
         String password = "";
-
+        HttpSession session;
+        session = request.getSession();
+                   
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -96,17 +98,22 @@ public class login extends HttpServlet {
 
             if (resultSet.next()) {
                 String passwordSQL=resultSet.getString("password");
+                
                 if(passwordSQL.equals(pwd)){
                     if(rember==null){
+                         String fullnamestr= resultSet.getString("firstname")+" "+ resultSet.getString("lastname");
+                                                session.setAttribute("fullname", fullnamestr);
+
                         resultSet.close();
                         s.close();
-                        RequestDispatcher rd = request.getRequestDispatcher("points.jsp");
+                       
+                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                         rd.forward(request, response);
                     }
                     else{
-                        HttpSession session;
-                        session = request.getSession();
+                        String fullnamestr= resultSet.getString("firstname")+" "+ resultSet.getString("lastname");
                         session.setAttribute("email", email);
+                        session.setAttribute("fullname", fullnamestr);
                         session.setMaxInactiveInterval(60 * 60);
                         Cookie emailName = new Cookie("email", email);
                         emailName.setMaxAge(24 * 60 * 60);
@@ -114,7 +121,7 @@ public class login extends HttpServlet {
                         int cookieID = 0;
                         obj.addProperty("email", email);
                         pw.write(obj.toString());
-                        RequestDispatcher rd = request.getRequestDispatcher("points.jsp");
+                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                         rd.forward(request, response);
                     }
                     

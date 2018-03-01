@@ -135,7 +135,7 @@ h6 {
 
 .gkname,.cbname{
     font-family: Century Gothic;
-    width:120px;
+    width:130px;
     border: 2px solid #02509a;
     margin: 0;
     text-align: center;
@@ -155,7 +155,7 @@ h6 {
 
 .benname{
     font-family: Century Gothic;
-    width:120px;
+    width:130px;
     border: 2px solid #02509a;
     margin: 0;
     text-align: center;
@@ -175,7 +175,7 @@ h6 {
 
 .benpos{
     font-family: Century Gothic;
-    width:120px;
+    width:130px;
     margin: 0;
     text-align: center;
     color: white;
@@ -189,26 +189,10 @@ h6 {
     display: block;
 }    
 
-.cbname2{
-    width:120px;
-    border: 1px solid #02509a;
-    margin: 0;
-    text-align: center;
-    background-color: #02509a;
-    color: white;
-    font-weight: bold;
-    height: 21px;
-    padding-top: 0px;
-    font-family: arial;
-    font-size: 14px;
-    opacity: 0.9;
-    filter: alpha(opacity=30);
-}
-
 .gkpoint,.cbpoint{
     font-family: Century Gothic;
     padding: 0px;
-    width:120px;
+    width:130px;
     margin: 0;
     text-align:center;
     font-weight: bold;
@@ -216,10 +200,31 @@ h6 {
     background-color: #57a3f9;
     height: 17px;
     padding-bottom: 5px;
-    font-family: arial;
     margin-bottom: 10px;
     border-bottom-left-radius:3pt 3pt;
     border-bottom-right-radius:3pt 3pt;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.benpoint{
+    font-family: Century Gothic;
+    padding: 0px;
+    width:130px;
+    margin: 0;
+    text-align:center;
+    font-weight: bold;
+    border: 0px solid #57a3f9;
+    background-color: #57a3f9;
+    height: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom-left-radius:3pt 3pt;
+    border-bottom-right-radius:3pt 3pt;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .image-player{

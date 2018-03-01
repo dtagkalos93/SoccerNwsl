@@ -128,7 +128,7 @@
         </nav>
         <div class="container extraClass  ">
             <ul class="nav nav-pills extraClassul">
-                <li class="nav-item"><a href="status.html">Status</a></li>
+                <li class="nav-item"><a href="status.jsp">Status</a></li>
                 <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
                 <li class="nav-item"><a href="points.jsp">Points</a></li>
                 <li class="nav-item active"><a href="transfers.jsp">Transfers</a></li>
@@ -185,7 +185,7 @@
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Money Remaining</h6>
-                                    <h4 style="text-align: center;font-weight:bold;color:#28b528; font-size:20px;font-family: Century Gothic ">$<span id="remainPrice">100.0</span></h4>
+                                    <h4 style="text-align: center;font-weight:bold;color:#0ea331; font-size:20px;font-family: Century Gothic ">$<span id="remainPrice">100.0</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                             <h5  id="posError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
                             <h5  id="enterError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none">Please complete your Team!</h5>
                         </div>
-                        <div class="col-md-12 col-xs-12" style="border: 1px solid #28b528; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
+                        <div class="col-md-12 col-xs-12" style="border: 1px solid #0ea331; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                             <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >

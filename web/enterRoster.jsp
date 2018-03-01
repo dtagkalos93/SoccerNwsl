@@ -128,8 +128,8 @@
                     ArrayList<String> fwdjersey = (ArrayList<String>) request.getAttribute("jerseyfwd");
                     ArrayList<String> fwdprice = (ArrayList<String>) request.getAttribute("pricefwd");
                     String remain = (String) request.getAttribute("remain");
-                    String value = (String) request.getAttribute("value");                    
-
+                    String value = (String) request.getAttribute("value");   
+                    session.setAttribute("value", value);
                 %>   
 
                 <div class="row">
@@ -384,7 +384,7 @@
                            
                             <td style='font-size: 16px; font-weight: lighter;text-align: center; width: 50%;padding: 1%;'>Roster Value</td>
                             
-                            <td style="font-size: 15px; text-align: center;width: 17%">$<%=value%> </td>
+                            <td  style="font-size: 15px; text-align: center;width: 17%">$<%=value%> </td>
                         </tr>
                         <tr style='font-family: Century Gothic;border-bottom: 1px solid #e8e8e8'>
                             

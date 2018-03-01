@@ -7,7 +7,6 @@ package com.fantasy;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -19,11 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Mitsos
- */
-public class findPosition extends HttpServlet {
+public class GetInformation extends HttpServlet {
 
     private List<String> list;
 
@@ -39,47 +34,72 @@ public class findPosition extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find Position");
+        System.out.println("Find INFORMATION");
         String name = request.getParameter("name");
+        String gameweek = request.getParameter("gameweekid");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
         String password = "";
-        list=new ArrayList<>();
+        list = new ArrayList<>();
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
+        System.out.println(gameweek);
+        String gwNo = gameweek.split("-")[0].split(" ")[1];
         try {
 
             // Load the database driver
             Class.forName("com.mysql.jdbc.Driver");
-            String sql="";
+            String sql = "";
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            if(name.contains("'")){
-                String[] nameSTR=name.split("'");
-                
-                 sql = "SELECT position,fullname,price FROM players where name='" + nameSTR[0]+"\\'"+nameSTR[1] + "'";
-            }
-            else{
-                 sql = "SELECT position,fullname,price FROM players where name='" + name + "'";
+            if (name.contains("'")) {
+                String[] nameSTR = name.split("'");
+
+                sql = "SELECT * FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+            } else {
+                sql = "SELECT * FROM players where name='" + name + "'";
             }
             int i = 1;
             //Select the data from the database
-            
+
             System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
- 
+
             resultSet = s.getResultSet();
-             while (resultSet.next ()){
-                 list.add(resultSet.getString("fullname"));
-                 list.add(resultSet.getString("position"));
-                 list.add(resultSet.getString("price"));
-                 
-             }
-            
+            while (resultSet.next()) {
+                list.add(resultSet.getString("fullname"));
+                list.add(resultSet.getString("position"));
+                list.add(resultSet.getString("team"));
+                //list.add(resultSet.getString("image"));
+                int total = 0;
+                for (int j = 1; j <= 22; j++) {
+                    //total=total+Integer.parseInt();
+                    String gw = resultSet.getString("GW" + j);
+
+                    if (gw.equals("") || gw.equals("-")) {
+                        total = total + 0;
+                    } else {
+                        total = total + Integer.parseInt(gw);
+                    }
+                    if (gwNo.equals(j+"")) {
+                        
+                        list.add(gw);
+                        break;
+                    }
+                }
+                list.add(total + "");
+                list.add(resultSet.getString("price"));
+                list.add(resultSet.getString("birthday"));
+                list.add(resultSet.getString("country"));
+                list.add(resultSet.getString("height"));
+                list.add(resultSet.getString("college"));
+                list.add(resultSet.getString("formerClub"));
+
+            }
+
             resultSet.close();
 
             s.close();

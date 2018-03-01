@@ -8,12 +8,10 @@ $(document).on("click", "#confirmation", function () {
         var roster= document.getElementById("playersAtt").textContent;
         
     
-        window.location = "confirmationTeam?team="+team+"&roster="+roster ;
+        window.location = "confirmationTeam?team=" +team+"&roster="+roster ;
 //        $.get("enterTeam", {gk1:enterTeam}, function (){
 //             window.location ="enterRoster.html";
 //        });
     
-
-
 });
 

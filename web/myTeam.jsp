@@ -12,6 +12,7 @@
     String midfielderNO = players.getMidfielderNO();
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
+    String value = players.getValue();
 
 %>
 
@@ -48,7 +49,8 @@
             defence('<%=defence%>', '<%=defenceNO%>');
             midfielder('<%=midfielder%>', '<%=midfielderNO%>');
             forward('<%=forward%>', '<%=forwardNO%>');
-            bench('<%=bench%>');">
+            bench('<%=bench%>');
+            captain('<%=defence%>', '<%=midfielder%>', '<%=forward%>')">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
@@ -121,7 +123,7 @@
 
         <div class="container extraClass  ">
             <ul class="nav nav-pills extraClassul">
-                <li  ><a href="status.html">Status</a></li>
+                <li  ><a href="status.jsp">Status</a></li>
                 <li class="nav-item active"><a href="myTeam.jsp">My Team</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
@@ -144,7 +146,7 @@
         </div>
 
         <div class="container">
-            <div class="row">
+            <div class="side-gap">
 
                 <!-- Blog Entries Column -->
                 <div class="col-md-9 top-gap">
@@ -161,22 +163,15 @@
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Captain</h6>
                                     <div>
                                         <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
-                                            <option value="score">Total score</option>
-                                            <option value="gw">Round score</option> 
-                                            <option value="price">Price</option>
-                                            <option>Teams selected by %</option>
-                                            <option value="minutes">Minutes played</option>
-                                            <option value="goalScored">Goal scored</option>
-                                            <option value="assist">Assists</option>
-                                            <option value="cleanSheet">Clean sheets</option>
-                                            <option value="ownGoal">Own goals</option>
-                                            <option value="goalConceded">Goals conceded</option>
-                                            <option value="penaltySaved">Penalties saved</option>
-                                            <option value="penaltyMissed">Penalties missed</option>
-                                            <option value="yellowCard">Yellow cards</option>
-                                            <option value="redCard">Red cards</option>
-                                            <option>Bonus</option> 
-                                            <option value="saves">Saves</option>
+                                            <option selected disabled>Select</option>
+                                            <%
+                                                for (int i = 1; i <= 11; i++) {
+                                            %>
+                                            <option id="captain<%=i%>" >Total score</option>
+                                            <%}
+                                            %>
+
+
                                         </select>
                                     </div>
                                 </div>
@@ -184,159 +179,163 @@
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Vice Captain</h6>
                                     <div>
                                         <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
-                                            <option value="score">Total score</option>
-                                            <option value="gw">Round score</option> 
-                                            <option value="price">Price</option>
-                                            <option>Teams selected by %</option>
-                                            <option value="minutes">Minutes played</option>
-                                            <option value="goalScored">Goal scored</option>
-                                            <option value="assist">Assists</option>
-                                            <option value="cleanSheet">Clean sheets</option>
-                                            <option value="ownGoal">Own goals</option>
-                                            <option value="goalConceded">Goals conceded</option>
-                                            <option value="penaltySaved">Penalties saved</option>
-                                            <option value="penaltyMissed">Penalties missed</option>
-                                            <option value="yellowCard">Yellow cards</option>
-                                            <option value="redCard">Red cards</option>
-                                            <option>Bonus</option> 
-                                            <option value="saves">Saves</option>
+                                            <option selected disabled>Select</option>
+
+                                            <%
+                                                for (int i = 1; i <= 11; i++) {
+                                            %>
+                                            <option id="viceCaptain<%=i%>" >Total score</option>
+                                            <%}
+                                            %>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 20%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Team Value</h6>
-                                    <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#d21e25;font-family: Century Gothic;">$<span id="totalPlayers">90.0</span></h4>
+                                    <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#d21e25;font-family: Century Gothic;">$<span id="totalPlayers"><%=value%></span></h4>
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="width: 20%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Available Transfers</h6>
-                                    <h4 id="dollar" style="text-align: center;font-weight:bold;color:#28b528; font-size:20px;font-family: Century Gothic "><span id="remainPrice">2</span></h4>
+                                    <h4 id="dollar" style="text-align: center;font-weight:bold;color:#0ea331; font-size:20px;font-family: Century Gothic "><span id="remainPrice">2</span></h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
+                        <div class="col-md-12 col-sm-12 col-xs-12 bc-img"  >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div id="selGK1" class="col-md-6 col-xs-6" style="padding-left: 28%;"  >
+                            <div id="selGK1" class="col-md-12 col-xs-6" onclick="openModalGK('1')"   >
                                 <img class="image-player" id="gkimage" src="img/subsgk.png"/>
-                                <p class="gkname" id="gkname" >Goalkeeper</p>
+                                <p class="name" id="gkname" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
+                                <p class="opponent" id="oppgk1"></p>
                                 <p style="display: none" id="pricegk1"></p>
                             </div>
-                            <div id="selGK2" class="col-md-6 col-xs-6" style="padding-right: 28%;"  >
-                                <img class="image-player" id="gkimage2" src="img/subsgk.png"/>
-                                <p class="gkname" id="gkname2" >Goalkeeper</p>
-                                <p style="display: none" id="team2"></p>
-                                <p style="display: none" id="pricegk2"></p>
-                            </div>
-                            
+
                             <hr style="border:none;margin-top: 21%">
-                            <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 34px" >
-                                <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
-                                <p id="defname1" class="cbname" >Defender</p>
+                            <div id="selDEF1" class="col-md-2 col-xs-2" onclick="openModalDEF('1')"   >
+                                <img class="image-player" id="defimage1" src="img/subs.png"  />
+                                <p class="name" id="defname1" >Defender</p>
                                 <p style="display: none" id="team3"></p>
+                                <p class="opponent" id="oppdef1"></p>
                                 <p style="display: none" id="defprice1"></p>
                             </div>
-                            <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 34px" >
-                                <img class="image-player-cb" id="defimage2" src="img/subs.png" />
-                                <p id="defname2" class="cbname" >Defender</p>
+                            <div id="selDEF2" class="col-md-2 col-xs-2" onclick="openModalDEF('2')"   >
+                                <img class="image-player" id="defimage2" src="img/subs.png" />
+                                <p class="name" id="defname2" >Defender</p>
                                 <p style="display: none" id="team4"></p>
+                                <p class="opponent" id="oppdef2"></p>
                                 <p style="display: none" id="defprice2"></p>
                             </div>
-                            <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 34px" >
-                                <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
-                                <p id="defname3" class="cbname" >Defender</p>
+                            <div id="selDEF3" class="col-md-2 col-xs-2" onclick="openModalDEF('3')"  >
+                                <img class="image-player" id="defimage3" src="img/subs.png"  />
+                                <p class="name" id="defname3" >Defender</p>
                                 <p style="display: none" id="team5"></p>
+                                <p class="opponent" id="oppdef3"></p>
                                 <p style="display: none" id="defprice3"></p>
                             </div>
-                            <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 34px" >
-                                <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
-                                <p id="defname4" class="cbname" >Defender</p>
+                            <div id="selDEF4" class="col-md-2 col-xs-2" onclick="openModalDEF('4')"   >
+                                <img class="image-player" id="defimage4" src="img/subs.png"  />
+                                <p class="name" id="defname4" >Defender</p>
                                 <p style="display: none" id="team6"></p>
+                                <p class="opponent" id="oppdef4"></p>
                                 <p style="display: none" id="defprice4"></p>
                             </div>
-                            <div id="selDEF5" class="col-md-2 col-xs-2">
-                                <img class="image-player-cb" id="defimage5" src="img/subs.png" />
-                                <p id="defname5" class="cbname" >Defender</p>
+                            <div id="selDEF5" class="col-md-2 col-xs-2" onclick="openModalDEF('5')" >
+                                <img class="image-player" id="defimage5" src="img/subs.png" />
+                                <p class="name" id="defname5" >Defender</p>
                                 <p style="display: none" id="team7"></p>
+                                <p class="opponent" id="oppdef5"></p>
                                 <p style="display: none" id="defprice5"></p>
                             </div>
 
-                            <hr style="border:none;margin-top: 21%">                          
-                            <div id="selMID1" class="col-md-2 col-xs-2" style="margin-right: 34px" >
-                                <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
-                                <p id="midname1" class="cbname" >Midfielder</p>
+                            <hr style="border:none;margin-top: 21%" >
+                            <div id="selMID1" class="col-md-2 col-xs-2" onclick="openModalMID('1')" >
+                                <img class="image-player" src="img/subs.png"  id="midimage1" />
+                                <p id="midname1" class="name" >Midfielder</p>
                                 <p style="display: none" id="team8"></p>
+                                <p class="opponent" id="oppmid1"></p>
                                 <p style="display: none" id="midprice1"></p>
-                            </div>                            
-                            <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
-                                <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
-                                <p id="midname2" class="cbname" >Midfielder</p>
+                            </div>
+                            <div id="selMID2" class="col-md-2 col-xs-2" onclick="openModalMID('2')" >
+                                <img class="image-player" src="img/subs.png"  id="midimage2" />
+                                <p id="midname2" class="name" >Midfielder</p>
                                 <p style="display: none" id="team9"></p>
+                                <p class="opponent" id="oppmid2"></p>
                                 <p style="display: none" id="midprice2"></p>
                             </div>
-                            <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
-                                <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
-                                <p id="midname3" class="cbname" >Midfielder</p>
+                            <div id="selMID3" class="col-md-2 col-xs-2" onclick="openModalMID('3')" >
+                                <img class="image-player" src="img/subs.png"  id="midimage3" />
+                                <p id="midname3" class="name" >Midfielder</p>
                                 <p style="display: none" id="team10"></p>
+                                <p class="opponent" id="oppmid3"></p>
                                 <p style="display: none" id="midprice3"></p>
                             </div>
-                            <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 34px;" >
-                                <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
-                                <p id="midname4" class="cbname" >Midfielder</p>
+                            <div id="selMID4" class="col-md-2 col-xs-2"  onclick="openModalMID('4')">
+                                <img class="image-player" src="img/subs.png"  id="midimage4" />
+                                <p id="midname4" class="name" >Midfielder</p>
                                 <p style="display: none" id="team11"></p>
+                                <p class="opponent" id="oppmid4"></p>
                                 <p style="display: none" id="midprice4"></p>
                             </div>
-                            <div id="selMID5" class="col-md-2 col-xs-2">
-                                <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
-                                <p id="midname5" class="cbname" >Midfielder</p>
+                            <div id="selMID5" class="col-md-2 col-xs-2"  onclick="openModalMID('5')">
+                                <img class="image-player" src="img/subs.png"  id="midimage5" />
+                                <p id="midname5" class="name" >Midfielder</p>
                                 <p style="display: none" id="team12"></p>
+                                <p class="opponent" id="oppmid5"></p>
                                 <p style="display: none" id="midprice5"></p>
-                            </div>                            
+                            </div>
 
-                            <hr style="border:none;margin-top: 21%">                          
-                            <div id="selFWD1" class="col-md-4  col-xs-4" >
-                                <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
-                                <p id="fwdname1" class="gkname" >Forward</p>
+                            <hr style="border:none;margin-top: 21%">
+                            <div id="selFWD1" class="col-md-4  col-xs-4"  onclick="openModalFWD('1')">
+                                <img class="image-player" id="fwdimage1"  />
+                                <p id="fwdname1" class="name" >Forward</p>
                                 <p style="display: none" id="team13"></p>
+                                <p class="opponent" id="oppfwd1"></p>
                                 <p style="display: none" id="fwdprice1"></p>
                             </div>
-                            <div id="selFWD2" class="col-md-4  col-xs-4">
-                                <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
-                                <p id="fwdname2" class="gkname" >Forward</p>
+                            <div id="selFWD2" class="col-md-4  col-xs-4" onclick="openModalFWD('2')">
+                                <img class="image-player" id="fwdimage2"  />
+                                <p id="fwdname2" class="name" >Forward</p>
                                 <p style="display: none" id="team14"></p>
+                                <p class="opponent" id="oppfwd2"></p>
                                 <p style="display: none" id="fwdprice2"></p>
                             </div>
-                            <div id="selFWD3" class="col-md-4  col-xs-4" >
-                                <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
-                                <p id="fwdname3" class="gkname" >Forward</p>
+                            <div id="selFWD3" class="col-md-4  col-xs-4" onclick="openModalFWD('3')" >
+                                <img class="image-player" id="fwdimage3"   />
+                                <p id="fwdname3" class="name" >Forward</p>
                                 <p style="display: none" id="team15"></p>
+                                <p class="opponent" id="oppfwd3"></p>
                                 <p style="display: none" id="fwdprice3  "></p>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 pit-img">
                             <hr style="border:none;margin-top: 0"/>
-                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
-                                <img id="benimage1" class="image-player-bench" src="img/couragegk.png"  />
-                                <p id="benname1"  class="benname" >D'Angelo</p>
-                                <p class="benname">8</p>
+                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('1')" >
+                                <img id="benimage1" class="image-player" src="img/couragegk.png"  />
+                                <p id="benname1"  class="name" >D'Angelo</p>
+                                <p class="opponent" id="oppben1"></p>
+                                <p style="display: none" id="benprice1"></p>
                                 <p class="benpos">GK</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
-                                <img id="benimage2" class="image-player-bench" src="img/breakers1.png"  />
-                                <p id="benname2"  class="benname" >Westphal</p>
-                                <p class="benname">8</p>
+                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('2')">
+                                <img id="benimage2" class="image-player" src="img/breakers1.png"  />
+                                <p id="benname2"  class="name" >Westphal</p>
+                                <p class="opponent" id="oppben2"></p>
+                                <p style="display: none" id="benprice2  "></p>
                                 <p class="benpos">1</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
-                                <img id="benimage3" class="image-player-bench" src="img/pride1.png"  />
-                                <p id="benname3"  class="benname" >Weatherholt</p>
-                                <p class="benname">8</p>
+                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('3')">
+                                <img id="benimage3" class="image-player" src="img/pride1.png"  />
+                                <p id="benname3"  class="name" >Weatherholt</p>
+                                <p class="opponent" id="oppben3"></p>
+                                <p style="display: none" id="benprice3  "></p>
                                 <p class="benpos">2</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" data-toggle="modal" data-target="#players">
-                                <img id="benimage4" class="image-player-bench" src="img/thorns1.png"  />
-                                <p id="benname4"  class="benname" >Henry</p>
-                                <p class="benname">8</p>
+                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('4')">
+                                <img id="benimage4" class="image-player" src="img/thorns1.png"  />
+                                <p id="benname4"  class="name" >Henry</p>
+                                <p class="opponent" id="oppben4"></p>
+                                <p style="display: none" id="benprice4  "></p>
                                 <p class="benpos">3</p>
                             </div>
                         </div>
@@ -458,7 +457,7 @@
                                                     while (!awaygoal.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awaygoal.get(j)%></li> 
+                                                <li><%=awaygoal.get(j)%></li>
                                                     <%
                                                             awaygoal.remove(j);
                                                         }
@@ -483,7 +482,7 @@
                                                     while (!homeown.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homeown.get(j)%></li> 
+                                                <li><%=homeown.get(j)%></li>
                                                     <%
                                                             homeown.remove(j);
                                                         }
@@ -497,7 +496,7 @@
                                                     while (!awayown.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awayown.get(j)%></li> 
+                                                <li><%=awayown.get(j)%></li>
                                                     <%
                                                             awayown.remove(j);
                                                         }
@@ -522,7 +521,7 @@
                                                     while (!homeassist.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homeassist.get(j)%></li> 
+                                                <li><%=homeassist.get(j)%></li>
                                                     <%
                                                             homeassist.remove(j);
                                                         }
@@ -536,7 +535,7 @@
                                                     while (!awayassist.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awayassist.get(j)%></li> 
+                                                <li><%=awayassist.get(j)%></li>
                                                     <%
                                                             awayassist.remove(j);
                                                         }
@@ -561,7 +560,7 @@
                                                     while (!homeyellow.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homeyellow.get(j)%></li> 
+                                                <li><%=homeyellow.get(j)%></li>
                                                     <%
                                                             homeyellow.remove(j);
                                                         }
@@ -575,7 +574,7 @@
                                                     while (!awayyellow.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awayyellow.get(j)%></li> 
+                                                <li><%=awayyellow.get(j)%></li>
                                                     <%
                                                             awayyellow.remove(j);
                                                         }
@@ -600,7 +599,7 @@
                                                     while (!homered.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homered.get(j)%></li> 
+                                                <li><%=homered.get(j)%></li>
                                                     <%
                                                             homered.remove(j);
                                                         }
@@ -614,7 +613,7 @@
                                                     while (!awayred.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awayred.get(j)%></li> 
+                                                <li><%=awayred.get(j)%></li>
                                                     <%
                                                             awayred.remove(j);
                                                         }
@@ -639,7 +638,7 @@
                                                     while (!homepkmissed.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homepkmissed.get(j)%></li> 
+                                                <li><%=homepkmissed.get(j)%></li>
                                                     <%
                                                             homepkmissed.remove(j);
                                                         }
@@ -653,7 +652,7 @@
                                                     while (!awaypkmissed.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awaypkmissed.get(j)%></li> 
+                                                <li><%=awaypkmissed.get(j)%></li>
                                                     <%
                                                             awaypkmissed.remove(j);
                                                         }
@@ -678,7 +677,7 @@
                                                     while (!homepksaved.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homepksaved.get(j)%></li> 
+                                                <li><%=homepksaved.get(j)%></li>
                                                     <%
                                                             homepksaved.remove(j);
                                                         }
@@ -693,7 +692,7 @@
                                                     while (!awaypksaved.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awaypksaved.get(j)%></li> 
+                                                <li><%=awaypksaved.get(j)%></li>
                                                     <%
                                                             awaypksaved.remove(j);
                                                         }
@@ -718,7 +717,7 @@
                                                     while (!homesave.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=homesave.get(j)%></li> 
+                                                <li><%=homesave.get(j)%></li>
                                                     <%
                                                             homesave.remove(j);
                                                         }
@@ -732,7 +731,7 @@
                                                     while (!awaysave.get(j).equals("new")) {
                                                 %>
 
-                                                <li><%=awaysave.get(j)%></li> 
+                                                <li><%=awaysave.get(j)%></li>
                                                     <%
                                                             awaysave.remove(j);
                                                         }
@@ -746,7 +745,7 @@
                             </div>
                             <div id="last" style="display:none">
                                 <div id="monday">
-                                    <h6 id="mondaytitle" class="col-sm-12" style="font-family: Century Gothic;font-weight: lighter;font-size: 15px;text-align: center;margin-bottom: 0%;margin-top:2.5%;padding-bottom: 1%;border-bottom: 1px solid #e8e4e4; "></h6> 
+                                    <h6 id="mondaytitle" class="col-sm-12" style="font-family: Century Gothic;font-weight: lighter;font-size: 15px;text-align: center;margin-bottom: 0%;margin-top:2.5%;padding-bottom: 1%;border-bottom: 1px solid #e8e4e4; "></h6>
                                     <%
                                         String mondaygame;
                                         String mondayhome;
@@ -1069,7 +1068,7 @@
                                 } else if (team.equals("sky")) {
                                     badge = "Sky_Blue_FC.png";
                                 } else if (team.equals("royals")) {
-                                    badge = "Utah_Royals.png";
+                                    badge = "Utah_Royals.PNG";
                                 }
                             %>
                             <img style="margin:auto; display:block; height:150px" src="img/<%=badge%>"/>
@@ -1184,11 +1183,251 @@
             </div>
         </div>
     </div>
+
+
+    <!--players modal -->
+    <div id="players" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog" style="width: 450px">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="font-family:Century Gothic; color: white; font-size: 16px; padding: 0.5%;padding-left: 2%">
+                        <span id="modalTitle"></span></h4>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body">
+                    <p style="display:none" id="playersName"></p>
+                    <p style="display:none" id="playerImage"></p>
+                    <p style="display:none" id="playerPrice"></p>
+                    <p style="display:none" id="playerNo"></p>
+                    <p style="display:none" id="playerPosition"></p>
+                    <p style="display:none" id="playerTeam"></p>
+                    <button id="substitute" type="button" class="addbutton   " >
+                        Substitute
+                    </button>
+
+                    <button type="button" class="infobutton " id="info" >
+                        View Information
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="information" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header-info">
+                    <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
+                    <h4 class="modal-title" style="color:#f8f8fa;font-size: 17px;padding: 0.5%;padding-left: 1.5%;">Player Info</h4>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body" style="height: 280px;padding: 0">
+                    <div class="col-md-12" style="background-color: #f8f8fa">
+                        <div class="col-md-3" style="padding-left: 0">
+                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                        </div>
+                        <div class="col-md-8">
+                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
+                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
+                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                        </div>
+                        <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
+                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                        </div>
+                    </div>
+                    <div >
+                        <table  class="col-md-12" style="background-color: #deb8c2;font-family: Century Gothic">
+                            <tr>
+                                <th id="currgwinfo" class="col-md-4" style="text-align:center;font-size: 14px;padding: 1%">GW 22 </th>
+                                <th class="col-md-4" style="text-align:center;font-size: 14px;padding: 1%">Total </th>
+                                <th class="col-md-4" style="text-align:center;font-size: 14px;padding: 1%">Price </th>
+                            </tr>
+                            <tr style="text-align:center;font-size: 13px">
+                                <td id="currgwpointinfo" class="col-md-4" style="padding: 1%;padding-top: 0;">5pts </td>
+                                <td id="totalpointinfo"  class="col-md-4" style="padding: 1%;padding-top: 0;">80pts</td>
+                                <td id="priceinfo" class="col-md-4" style="padding: 1%;padding-top: 0;">$7.5 </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div >
+                        <table  class="col-md-12" style="background-color: #93a8e4;font-family: Century Gothic">
+                            <tr>
+                                <th class="col-md-1" style="text-align:center;font-size: 14px;padding: 1%">Birthday </th>
+                                <th class="col-md-2" style="text-align:center;font-size: 14px;padding: 1%">Country </th>
+                                <th class="col-md-2" style="text-align:center;font-size: 14px;padding: 1%">Height </th>
+                                <th class="col-md-4" style="text-align:center;font-size: 14px;padding: 1%">College </th>
+                                <th class="col-md-3" style="text-align:center;font-size: 14px;padding: 1%">Former Club </th>
+                            </tr>
+                            <tr style="text-align:center;font-size: 13px;margin-bottom: 0.5%;">
+                                <td id="birthinfo" class="col-md-1" style="padding: 1%;padding-top: 0;"></td>
+                                <td id="countryinfo" class="col-md-2" style="padding: 1%;padding-top: 0;"></td>
+                                <td id="heightinfo" class="col-md-2" style="padding: 0;padding-bottom: 1%"></td>
+                                <td id="collegeinfo" class="col-md-4" style="padding: 1%;padding-top: 0;"></td>
+                                <td id="formerinfo" class="col-md-3" style="padding: 1%;padding-top: 0;"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="buttonsSelection" class="col-md-12" style="margin-top:3%">
+                        <div class="col-md-6  col-xs-6">
+                            <button id="statistics" type="button" class="statsbtn" style="float:right">
+                                Statistics
+                            </button>
+                        </div>
+                        <div class="col-md-6  col-xs-6">
+                            <button  id="fixture" type="button" class="statsbtn">
+                                Fixtures
+                            </button>
+                        </div>
+                    </div>
+                    <div id="fixSel" class="col-md-12" style="display:none;    overflow: scroll;">
+                        <table>
+                            <%
+                                System.out.println("gere");
+                                for (int i = 1; i <= 22; i++) {
+                            %>
+                            <tr style="text-align:center;font-size: 13px;margin-bottom: 0.5%;">
+                                <td id="fixture+<%=i%>"  class="col-md-2" style="padding: 1%;padding-top: 0;">Gameweek 1 </td>
+                                <td id="date+<%=i%>" class="col-md-2" style="padding: 1%;padding-top: 0;">3/4/1993</td>
+                                <td id="opponent+<%=i%>" class="col-md-2" style="padding: 1%;padding-top: 0;">vs Orlando Pride</td>
+                                <td id="result+<%=i%>" class="col-md-2" style="padding: 1%;padding-top: 0;">1-0 </td>
+                            </tr>
+                            <%
+                                }%>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="fixtureModal" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header-info">
+                    <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
+                    <p id="backButton" class="modal-title" style="font-size: 17px;padding: 0.5%;padding-left: 1.5%;color:white">
+                        <span class="glyphicon glyphicon-arrow-left"></span></p>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body" style="height: -webkit-fill-available;padding: 0;overflow-y: scroll;">
+                    <div class="col-md-12" style="background-color: #f8f8fa">
+                        <div class="col-md-3" style="padding-left: 0">
+                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                        </div>
+                        <div class="col-md-8">
+                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
+                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
+                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                        </div>
+                        <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
+                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                        </div>
+                    </div>
+                    <table style="width: 100%">
+                        <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
+                            <th id="date" style="padding: 1%;text-align: center">Date</th>
+                            <th id="fixture" style="padding: 1%;text-align: center">GW</th>
+                            <th id="opponent" style="padding: 1%;text-align: center">Opponent</th>
+                            <th id="opponent" style="padding: 1%;text-align: center">MP</th>
+                        </tr>
+                        <%
+                            for (int i = 1; i <= 22; i++) {
+                        %>
+                        <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                            <td id="fixture<%=i%>"  class="col-md-2" style="padding: 1%">Gameweek 1 </td>
+                            <td id="date<%=i%>" class="col-md-2" style="padding: 1%">3/4/1993</td>
+                            <td id="opponent<%=i%>" class="col-md-2" style="padding: 1%">vs Orlando Pride</td>
+                            <td id="result<%=i%>" class="col-md-2" style="padding: 1%">1-0 </td>
+                        </tr>
+                        <%
+                            }%>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="statisticsModal" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header-info">
+                    <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
+                    <p id="backButton" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
+                        <span class="glyphicon glyphicon-arrow-left"></span></p>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body" style="height: -webkit-fill-available;padding: 0;overflow-y: scroll;">
+                    <div class="col-md-12" style="background-color: #f8f8fa">
+                        <div class="col-md-3" style="padding-left: 0">
+                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                        </div>
+                        <div class="col-md-8">
+                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
+                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
+                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                        </div>
+                        <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
+                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                        </div>
+                    </div>
+                    <table style="width: 100%">
+                        <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
+                            <th id="date" style="width:6.5%;padding: 1%;text-align: center">GW</th>
+                            <th id="fixture" style="width: 15%;padding: 1%;text-align: center">OPP</th>
+                            <th id="date" style="width:6.5%;padding: 1%;text-align: center">Pts</th>
+                            <th id="opponent" style="width:6.5%;padding: 1%;text-align: center">MP</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">GS</th>
+                            <th id="fixture"  style="width:6.5%;padding: 1%;text-align: center">A</th>
+                            <th id="date" style="width:6.5%;padding: 1%;text-align: center">CS</th>
+                            <th id="opponent" style="width:6.5%;padding: 1%;text-align: center">OG</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">GC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PS</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PM</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">YC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">RC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">S</th>
+                        </tr>
+                        <%
+                            for (int i = 1; i <= 22; i++) {
+                        %>
+                        <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="fixture+<%=i%>"  style="width: 15%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
+                            <td id="date+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="opponent+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">90</td>
+                            <td id="result+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1 </td>
+                            <td id="fixture"  style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="opponent" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                        </tr>
+                        <%
+                            }%>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.js"></script>
 
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>                      
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/myTeamjs.js" >
 
 

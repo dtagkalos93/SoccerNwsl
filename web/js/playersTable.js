@@ -2867,6 +2867,7 @@ function openModalGK(i) {
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
 
             document.getElementById("playerTeam").innerHTML = team;
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
     };
@@ -2901,6 +2902,7 @@ function openModalDEF(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
     };
@@ -2935,6 +2937,7 @@ function openModalMID(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
     };
@@ -2950,11 +2953,6 @@ function openModalFWD(i) {
     var team = document.getElementById("teamfwd" + i).textContent;
     image = image.split("/")[5];
 
-
-
-
-
-
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2969,6 +2967,7 @@ function openModalFWD(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
     };
@@ -2984,7 +2983,7 @@ function addPlayer() {
     var remainPrice = document.getElementById("remainPrice").textContent;
     document.getElementById("checkbox").style.display = "";
     document.getElementById("checkbox").style.backgroundColor = "#92c992";
-    document.getElementById("checkbox").style.border = "1px solid #28b528";
+    document.getElementById("checkbox").style.border = "1px solid #0ea331";
     document.getElementById("playername").innerHTML = document.getElementById("playersName").textContent;
     document.getElementById("message").innerHTML = " has been added to your squad."
     document.getElementById("errorbox").style.display = 'none';
@@ -3014,8 +3013,8 @@ function addPlayer() {
     }
     if (document.getElementById("totalPlayers").innerHTML == '15') {
 
-        document.getElementById("allPlayers").style.color = '#28b528';
-        document.getElementById("totalPlayers").style.color = '#28b528';
+        document.getElementById("allPlayers").style.color = '#0ea331';
+        document.getElementById("totalPlayers").style.color = '#0ea331';
     }
     if (document.getElementById("playerPosition").textContent == 'Goalkeeper') {
         var name = document.getElementById("playersName").textContent;
@@ -3504,8 +3503,8 @@ function removePlayer() {
 
     if (document.getElementById("remainPrice").textContent > 0.0) {
         console.log("I am here!");
-        document.getElementById("remainPrice").style.color = '#28b528';
-        document.getElementById("dollar").style.color = '#28b528';
+        document.getElementById("remainPrice").style.color = '#0ea331';
+        document.getElementById("dollar").style.color = '#0ea331';
     }
     document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
     var counter = 0;
@@ -3620,7 +3619,7 @@ function removePlayer() {
         document.getElementById("fwdname" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 12)).innerHTML = ' ';
         document.getElementById("selFWD" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeFWD()');
-        var playerPrice = document.getElementById("fwdorice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        var playerPrice = document.getElementById("fwdprice" + document.getElementById("rmvplayerNo").textContent).textContent;
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
@@ -3713,8 +3712,8 @@ function autopick() {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var k = 1;
-            document.getElementById("allPlayers").style.color = '#28b528';
-            document.getElementById("totalPlayers").style.color = '#28b528';
+            document.getElementById("allPlayers").style.color = '#0ea331';
+            document.getElementById("totalPlayers").style.color = '#0ea331';
             document.getElementById("totalPlayers").innerHTML = '15';
             for (i = 0; i < 6; i = i + 3) {
                 document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i + 1];
@@ -3967,17 +3966,12 @@ function backTeamButton() {
                 }
             }
         }
-        document.getElementById("allPlayers").style.color = '#28b528';
-        document.getElementById("totalPlayers").style.color = '#28b528';
+        document.getElementById("allPlayers").style.color = '#0ea331';
+        document.getElementById("totalPlayers").style.color = '#0ea331';
         document.getElementById("totalPlayers").innerHTML = '15';
         document.getElementById("remainPrice").innerHTML = localStorage.getItem('remainBugdet');
         localStorage.removeItem('firstLoad');
-
     }
-
-
-
-
 }
 
 function backTeam() {
@@ -4016,4 +4010,106 @@ function backTeam() {
     }
     localStorage.setItem('remainBugdet', document.getElementById("remainPrice").textContent);
     localStorage.setItem('firstLoad', true);
+}
+
+function openInfo(name) {
+    var gameweek = document.getElementById("gameweekid").textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            document.getElementById("nameinfo").innerHTML = jsonResponse[0];
+            document.getElementById("posinfo").innerHTML = jsonResponse[1];
+            document.getElementById("teaminfo").innerHTML = jsonResponse[2];
+            var team = jsonResponse[2];
+            if (team == 'Boston Breakers') {
+                var image = "Boston_Breakers.png";
+            } else if (team == 'Chicago Red Stars') {
+                var image = "ChicagoRedStars.png";
+            } else if (team == 'Houston Dash') {
+                var image = "Houston_Dash.png";
+            } else if (team == 'North Carolina Courage') {
+                var image = "North_Carolina_Courage.png";
+            } else if (team == 'Orlando Pride') {
+                var image = "OrlandoPride.png";
+            } else if (team == 'Portland Thorns FC') {
+                var image = "Portland.png";
+            } else if (team == 'Seattle Reign FC') {
+                var image = "SeattleReignFC.png";
+            } else if (team == 'Sky Blue FC') {
+                var image = "Sky_Blue_FC.png";
+            } else if (team == 'Washington Spirit') {
+                var image = "Washington_Spirit.png";
+            } else if (team == 'FC Kansas City') {
+                var image = "kansasCity.png";
+            }
+            document.getElementById("badgeinfo").src = "img/" + image;
+            document.getElementById("currgwinfo").innerHTML = "GW" + gameweek.split("-")[0].split(" ")[1];
+            document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
+            document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
+            document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];
+            document.getElementById("birthinfo").innerHTML = jsonResponse[6];
+            document.getElementById("countryinfo").innerHTML = jsonResponse[7];
+            document.getElementById("heightinfo").innerHTML = jsonResponse[8];
+            document.getElementById("collegeinfo").innerHTML = jsonResponse[9];
+            document.getElementById("formerinfo").innerHTML = jsonResponse[10];
+            document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
+            document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
+            $('#players').modal('hide');
+            $('#fixtureModal').modal('hide');
+            $('#statisticsModal').modal('hide');
+            $('#information').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
+    xhttp.send();
+
+
+}
+
+function changePlayer(playerID) {
+    if (playerID == 'gkname') {
+
+    }
+}
+
+function openFixture(name, team) {
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            var i = 1;
+            console.log(jsonResponse.length);
+            for (j = 0; j < jsonResponse.length; j = j + 4) {
+                if (j > 0 && jsonResponse[j] == jsonResponse[j + 4]) {
+                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j] + "," + jsonResponse[j + 4];
+                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
+                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
+                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
+                    j=eval(j)+4;
+                } else {
+                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
+                    document.getElementById("date" + i).innerHTML = jsonResponse[j+1];
+                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j+2];
+                    document.getElementById("result" + i).innerHTML = jsonResponse[j+3];
+                }
+                i = eval(i) + 1;
+            }
+            document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#information').modal('hide');
+            $('#fixtureModal').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "getFixture?team=" + team, true);
+    xhttp.send();
+}
+
+function openStatistic(name) {
+    document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
+    $('#information').modal('hide');
+    $('#statisticsModal').modal({show: 'true'});
 }

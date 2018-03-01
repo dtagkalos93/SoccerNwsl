@@ -28,13 +28,14 @@ public class rosterPlayer {
     private String defenceNo;
     private String midfielderNo;
     private String forwardNo;
+    private String value;
 
     public  rosterPlayer(String email) throws SQLException {
         System.out.println("rosterPlayers");
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
             String dbName = "fantasy";
-            String userId = "root";
+                String userId = "root";
             String password = "";
 
             Connection connection = null;
@@ -58,7 +59,7 @@ public class rosterPlayer {
                 forward = resultSet.getString("fwd");
                 bench = resultSet.getString("bench");
                 formation = resultSet.getString("formation");
-
+                value=resultSet.getString("value");
             }
             resultSet.close();
 
@@ -103,5 +104,9 @@ public class rosterPlayer {
     
     public String getbench(){
         return bench;
+    }
+    
+    public String getValue(){
+        return value;
     }
 }

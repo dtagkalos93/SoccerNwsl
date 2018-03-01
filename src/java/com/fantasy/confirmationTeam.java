@@ -40,11 +40,17 @@ public class confirmationTeam extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("Here I am! ");
         HttpSession session = request.getSession(true);
         String email = session.getAttribute("email").toString();
+        
         String roster = request.getParameter("roster");
         String team = request.getParameter("team");
+        boolean exist = teamExist(team);
         session.setAttribute("teamName", team);
+        String value=session.getAttribute("value").toString();
+        System.out.println("->>>"+value);
         String[] playersArray = roster.split(",");
         
 
@@ -62,8 +68,8 @@ public class confirmationTeam extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(connectionUrl, userId, password);
 
-            String sql = " insert into teams (email, nameTeam, gk,def,mid,fwd,bench,formation)"
-                    + " values (?, ?, ?, ?, ?,?, ?,? )";
+            String sql = " insert into teams (email, nameTeam, gk,def,mid,fwd,bench,formation,value,captain,viceCaptain)"
+                    + " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
             PreparedStatement preparedStmt = connection.prepareStatement(sql);
             preparedStmt.setString(1, email);
             preparedStmt.setString(2, team);
@@ -91,6 +97,9 @@ public class confirmationTeam extends HttpServlet {
             bench = bench + playersArray[14] + "-Forward,";
             preparedStmt.setString(7, bench);
             preparedStmt.setString(8, "4-4-2");
+            preparedStmt.setString(9, value);
+            preparedStmt.setString(10, "");
+            preparedStmt.setString(11, "");
 
             // execute the preparedstatement
             preparedStmt.execute();
@@ -106,6 +115,50 @@ public class confirmationTeam extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("myTeam.jsp");
         rd.forward(request, response);
 
+    }
+    
+    
+    public boolean teamExist(String team){
+        String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+        String dbName = "fantasy";
+        String userId = "root";
+        String password = "";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        boolean exist=false;
+        try {
+
+            // Load the database driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Get a Connection to the database
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+                String sql = "SELECT * FROM teams where nameTeam='" + team + "'";
+            Statement s = connection.createStatement();
+
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+            
+            if( resultSet.next()){
+                exist= true;
+            }
+            else{
+                exist= false;
+            }
+            
+                        resultSet.close();
+
+            s.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Exception is ;" + e);
+
+        }
+        return exist;
     }
 
 }

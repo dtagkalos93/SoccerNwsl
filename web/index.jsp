@@ -38,7 +38,9 @@
 
                         resultSet = s.getResultSet();
                         if (resultSet.next()) {
-                            RequestDispatcher rd = request.getRequestDispatcher("points.jsp");
+                            session.setAttribute("fullname", resultSet.getString("firstname")+ " " + resultSet.getString("lastname"));
+                            
+                            RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                             rd.forward(request, response);
                         }
                     }
