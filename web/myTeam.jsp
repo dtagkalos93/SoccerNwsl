@@ -50,7 +50,8 @@
             midfielder('<%=midfielder%>', '<%=midfielderNO%>');
             forward('<%=forward%>', '<%=forwardNO%>');
             bench('<%=bench%>');
-            captain('<%=defence%>', '<%=midfielder%>', '<%=forward%>')">
+            captain('<%=defence%>', '<%=midfielder%>', '<%=forward%>');
+            opponent('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>', '<%=bench%>')">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
@@ -202,11 +203,11 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img"  >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div id="selGK1" class="col-md-12 col-xs-6" onclick="openModalGK('1')"   >
+                            <div id="selGK" class="col-md-12 col-xs-6" onclick="openModalGK('1')"   >
                                 <img class="image-player" id="gkimage" src="img/subsgk.png"/>
                                 <p class="name" id="gkname" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
-                                <p class="opponent" id="oppgk1"></p>
+                                <p class="opponent" id="oppgk"></p>
                                 <p style="display: none" id="pricegk1"></p>
                             </div>
 
@@ -310,32 +311,32 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12 pit-img">
                             <hr style="border:none;margin-top: 0"/>
-                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('1')" >
+                            <div id="ben1" class="col-md-3  col-xs-3" onclick="openModalBEN('1')" >
                                 <img id="benimage1" class="image-player" src="img/couragegk.png"  />
                                 <p id="benname1"  class="name" >D'Angelo</p>
                                 <p class="opponent" id="oppben1"></p>
-                                <p style="display: none" id="benprice1"></p>
+                                <p style="display: none" id="benpos1"></p>
                                 <p class="benpos">GK</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('2')">
+                            <div id="ben2" class="col-md-3  col-xs-3" onclick="openModalBEN('2')">
                                 <img id="benimage2" class="image-player" src="img/breakers1.png"  />
                                 <p id="benname2"  class="name" >Westphal</p>
                                 <p class="opponent" id="oppben2"></p>
-                                <p style="display: none" id="benprice2  "></p>
+                                <p style="display: none" id="benpos2"></p>
                                 <p class="benpos">1</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('3')">
+                            <div id="ben3" class="col-md-3  col-xs-3" onclick="openModalBEN('3')">
                                 <img id="benimage3" class="image-player" src="img/pride1.png"  />
                                 <p id="benname3"  class="name" >Weatherholt</p>
                                 <p class="opponent" id="oppben3"></p>
-                                <p style="display: none" id="benprice3  "></p>
+                                <p style="display: none" id="benpos3"></p>
                                 <p class="benpos">2</p>
                             </div>
-                            <div class="col-md-3  col-xs-3" onclick="openModalBEN('4')">
+                            <div id="ben4" class="col-md-3  col-xs-3" onclick="openModalBEN('4')">
                                 <img id="benimage4" class="image-player" src="img/thorns1.png"  />
                                 <p id="benname4"  class="name" >Henry</p>
                                 <p class="opponent" id="oppben4"></p>
-                                <p style="display: none" id="benprice4  "></p>
+                                <p style="display: none" id="benpos4"></p>
                                 <p class="benpos">3</p>
                             </div>
                         </div>
@@ -1216,6 +1217,64 @@
         </div>
     </div>
 
+    <div id="playersCancel" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog" style="width: 450px">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="font-family:Century Gothic; color: white; font-size: 16px; padding: 0.5%;padding-left: 2%">
+                        <span id="modalTitleSub"></span></h4>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body">
+                    <p style="display:none" id="playersName"></p>
+                    <p style="display:none" id="playerImage"></p>
+                    <p style="display:none" id="playerPrice"></p>
+                    <p style="display:none" id="playerNo"></p>
+                    <p style="display:none" id="playerPosition"></p>
+                    <p style="display:none" id="playerTeam"></p>
+                    <button id="substitutecancel" type="button" class="addbutton   " >
+                        Cancel Substitute
+                    </button>
+
+                    <button type="button" class="infobutton " id="info" >
+                        View Information
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="playersInfo" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
+        <div class="modal-dialog" style="width: 450px">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="font-family:Century Gothic; color: white; font-size: 16px; padding: 0.5%;padding-left: 2%">
+                        <span id="modalTitleInfo"></span></h4>
+                </div>
+                <!-- Modal content-->
+                <div class="modal-body">
+                    <p style="display:none" id="playersName"></p>
+                    <p style="display:none" id="playerImage"></p>
+                    <p style="display:none" id="playerPrice"></p>
+                    <p style="display:none" id="playerNo"></p>
+                    <p style="display:none" id="playerPosition"></p>
+                    <p style="display:none" id="playerTeam"></p>
+
+
+                    <button type="button" class="infobutton " id="info" >
+                        View Information
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="information" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
         <div class="modal-dialog">
 
@@ -1323,12 +1382,12 @@
                             <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
-                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                            <h3 id="nameinfoFix" style="font-family: Century Gothic">Julie Ertz</h3>
+                            <h5 id="posinfoFix" style="font-family: Century Gothic">Defender</h5>
+                            <h6 id="teaminfoFix" style="font-family: Century Gothic">Chicago Red Stars</h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfoFix" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
                     <table style="width: 100%">
@@ -1362,7 +1421,7 @@
             <div class="modal-content">
                 <div class="modal-header-info">
                     <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                    <p id="backButton" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
+                    <p id="backStats" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
                         <span class="glyphicon glyphicon-arrow-left"></span></p>
                 </div>
                 <!-- Modal content-->
@@ -1372,12 +1431,12 @@
                             <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
-                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                            <h3 id="nameinfoStats" style="font-family: Century Gothic">Julie Ertz</h3>
+                            <h5 id="posinfoStats" style="font-family: Century Gothic">Defender</h5>
+                            <h6 id="teaminfoStats" style="font-family: Century Gothic">Chicago Red Stars</h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfoStats" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
                     <table style="width: 100%">
@@ -1428,10 +1487,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/myTeamjs.js" >
+    <script src="js/myTeamjs.js" ></script>
+    <script src="js/openModal.js" ></script>
+    <script src="js/substitute.js" ></script>
 
 
-    </script>
 </body>
 
 </html>

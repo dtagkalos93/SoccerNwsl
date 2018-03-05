@@ -68,6 +68,14 @@
         <servlet-name>getFixture</servlet-name>
         <servlet-class>com.fantasy.getFixture</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>findOpponent</servlet-name>
+        <servlet-class>com.fantasy.findOpponent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>findOpp</servlet-name>
+        <servlet-class>com.fantasy.findOpp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -135,6 +143,14 @@
     <servlet-mapping>
         <servlet-name>getFixture</servlet-name>
         <url-pattern>/getFixture</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findOpponent</servlet-name>
+        <url-pattern>/findOpponent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findOpp</servlet-name>
+        <url-pattern>/findOpp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

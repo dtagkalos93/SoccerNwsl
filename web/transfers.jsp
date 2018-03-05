@@ -156,7 +156,7 @@
 
 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8 top-gap">
+                <div class="col-md-9 top-gap">
                     <div class="row ">
                         <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Transfers</h3>
                         <h5 class="col-md-12 col-xs-12" style="font-size: 14px; font-weight:lighter;font-family: Century Gothic " >
@@ -170,17 +170,17 @@
                             </div>
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
                                 <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="padding: 4.5%; font-size: 15px; text-align: center;font-family: Century Gothic" onclick="autopick()">
+                                    <button type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
                                         Auto Pick 
                                     </button> 
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                    <button type="button" class="prevbutton btncustom col-sm-6 " style="padding: 4.5%; font-size: 15px; text-align: center;float: right;font-family: Century Gothic" onclick="reset()">
+                                    <button type="button" class="resetbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5%;float: right" onclick="reset()">
                                         Reset 
                                     </button> 
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
-                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Player Selected</h6>
+                                    <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Players Selected</h6>
                                     <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#d4213c;font-family: Century Gothic;"><span id="totalPlayers">0</span>/15</h4>
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
@@ -199,92 +199,107 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
                             <hr style="border:none;margin-top: 6.5%"/>
-                            <div id="selGK1" class="col-md-6 col-xs-6" style="left:29%" onclick="changeGK()">
+                            <div id="selGK1" class="col-md-6 col-xs-6" style="padding-left: 28%" onclick="changeGK()">
                                 <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
-                                <p class="gkname" id="namegk1" >Goalkeeper</p>
+                                <p class="name" id="namegk1" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
+                                <p class="price" id="pricegk1"></p>
                             </div>
-                            <div id="selGK2" class="col-md-6 col-xs-6" style="float: left;left: 2.3%" onclick="changeGK()">
+                            <div id="selGK2" class="col-md-6 col-xs-6" style="padding-right: 28%;" onclick="changeGK()">
                                 <img class="image-player" id="imagegk2" src="img/subsgk.png" />
-                                <p class="gkname" id="namegk2" >Goalkeeper</p>
+                                <p class="name" id="namegk2" >Goalkeeper</p>
                                 <p style="display: none" id="team2"></p>
+                                <p class="price" id="pricegk2"></p>
                             </div>
 
                             <hr style="border:none;margin-top: 21%">
-                            <div id="selDEF1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1" style="right:8%" onclick="changeDEF()">
+                            <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
-                                <p id="defname1" class="cbname" >Defender</p>
+                                <p class="name" id="defname1" >Defender</p>
                                 <p style="display: none" id="team3"></p>
+                                <p class="price" id="defprice1"></p>
                             </div>
-                            <div id="selDEF2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeDEF()">
+                            <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage2" src="img/subs.png" />
-                                <p id="defname2" class="cbname" >Defender</p>
+                                <p class="name" id="defname2" >Defender</p>
                                 <p style="display: none" id="team4"></p>
+                                <p class="price" id="defprice2"></p>
                             </div>
-                            <div id="selDEF3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeDEF()">
+                            <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
-                                <p id="defname3" class="cbname" >Defender</p>
+                                <p class="name" id="defname3" >Defender</p>
                                 <p style="display: none" id="team5"></p>
+                                <p class="price" id="defprice3"></p>
                             </div>
-                            <div id="selDEF4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeDEF()">
+                            <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
                                 <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
-                                <p id="defname4" class="cbname" >Defender</p>
+                                <p class="name" id="defname4" >Defender</p>
                                 <p style="display: none" id="team6"></p>
+                                <p class="price" id="defprice4"></p>
                             </div>
-                            <div id="selDEF5" class="col-md-2 col-xs-2" style="left:4.7%" onclick="changeDEF()" >
+                            <div id="selDEF5" class="col-md-2 col-xs-2" onclick="changeDEF()" >
                                 <img class="image-player-cb" id="defimage5" src="img/subs.png" />
-                                <p id="defname5" class="cbname" >Defender</p>
+                                <p class="name" id="defname5" >Defender</p>
                                 <p style="display: none" id="team7"></p>
+                                <p class="price" id="defprice5"></p>
                             </div>
 
                             <hr style="border:none;margin-top: 21%">                          
-                            <div id="selMID1" class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1  " style="right: 8%" onclick="changeMID()">
+                            <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 32.5px" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
-                                <p id="midname1" class="cbname" >Midfielder</p>
+                                <p class="name" id="midname1" >Midfielder</p>
                                 <p style="display: none" id="team8"></p>
+                                <p class="price" id="midprice1"></p>
                             </div>                            
-                            <div id="selMID2" class="col-md-2 col-xs-2" style="right:4.65%" onclick="changeMID()">
+                            <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
-                                <p id="midname2" class="cbname" >Midfielder</p>
+                                <p class="name" id="midname2" >Midfielder</p>
                                 <p style="display: none" id="team9"></p>
+                                <p class="price" id="midprice2"></p>
                             </div>
-                            <div id="selMID3" class="col-md-2 col-xs-2" style="right:1.5%" onclick="changeMID()">
+                            <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
-                                <p id="midname3" class="cbname" >Midfielder</p>
+                                <p class="name" id="midname3" >Midfielder</p>
                                 <p style="display: none" id="team10"></p>
+                                <p class="price" id="midprice3"></p>
                             </div>
-                            <div id="selMID4" class="col-md-2 col-xs-2" style="left:1.65%" onclick="changeMID()">
+                            <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
-                                <p id="midname4" class="cbname" >Midfielder</p>
+                                <p class="name" id="midname4" >Midfielder</p>
                                 <p style="display: none" id="team11"></p>
+                                <p class="price" id="midprice4"></p>
                             </div>
-                            <div id="selMID5" class="col-md-2 col-xs-2" style="left: 5%" onclick="changeMID()">
+                            <div id="selMID5" class="col-md-2 col-xs-2" onclick="changeMID()">
                                 <img class="image-player-cb" src="img/subs.png"  id="midimage5" />
-                                <p id="midname5" class="cbname" >Midfielder</p>
+                                <p class="name" id="midname5" >Midfielder</p>
                                 <p style="display: none" id="team12"></p>
-                            </div>                            
+                                <p class="price" id="midprice5"></p>
+                            </div>                        
 
                             <hr style="border:none;margin-top: 21%">                          
-                            <div id="selFWD1" class="col-md-4  col-xs-4   " style="left:10%" onclick="changeFWD()">
-                                <img class="image-player-for" id="fwdimage1" src="img/subs.png"  />
-                                <p id="fwdname1" class="gkname" >Forward</p>
+                            <div id="selFWD1" class="col-md-4  col-xs-4" onclick="changeFWD()">
+                                <img class="image-player" id="fwdimage1" src="img/subs.png"  />
+                                <p class="name" id="fwdname1">Forward</p>
                                 <p style="display: none" id="team13"></p>
+                                <p class="price" id="fwdprice1"></p>
                             </div>
-                            <div id="selFWD2" class="col-md-4  col-xs-4   " style="left:6.9%" onclick="changeFWD()">
-                                <img class="image-player-for" id="fwdimage2" src="img/subs.png"  />
-                                <p id="fwdname2" class="gkname" >Forward</p>
+                            <div id="selFWD2" class="col-md-4  col-xs-4" onclick="changeFWD()">
+                                <img class="image-player" id="fwdimage2" src="img/subs.png"  />
+                                <p class="name" id="fwdname2">Forward</p>
                                 <p style="display: none" id="team14"></p>
+                                <p class="price" id="fwdprice2"></p>
                             </div>
-                            <div id="selFWD3" class="col-md-4  col-xs-4   " style="left:3% " onclick="changeFWD()">
-                                <img class="image-player-for" id="fwdimage3" src="img/subs.png"  />
-                                <p id="fwdname3" class="gkname" >Forward</p>
+                            <div id="selFWD3" class="col-md-4  col-xs-4" onclick="changeFWD()">
+                                <img class="image-player" id="fwdimage3" src="img/subs.png"  />
+                                <p class="name" id="fwdname3">Forward</p>
                                 <p style="display: none" id="team15"></p>
+                                <p class="price" id="fwdprice3"></p>
                             </div>
                         </div>
-                        <a id="enterTeam"  class="prevbutton btncustom col-md-12 " style="margin-left: 25%; font-size: 15px;text-align: center; width: 50%;margin-bottom: 2%;margin-top: 2%;padding: 1%;text-decoration: none;" >
+                        <a id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
                             Enter Roster
                         </a>                        
-                            <%
+                        <%
                             try {
                                 String strThatDay = "2017/04/11";
                                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
@@ -322,14 +337,14 @@
                         %>
 
                         <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
-                            <h4 style="font-family: Century Gothic; font-weight: bold;font-size: 13px;text-align: center; ">Gameweek <%=weeks %> </h4>
-                            <button id="prev" value="<%="Gameweek " + (weeks - 1)%>" type="button" class="prevbutton btncustom col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:Century Gothic;margin-left: -2%;padding-top: 0.7%">
+                            <h4 style="font-family: Century Gothic; font-weight: bold;font-size: 13px;text-align: center; ">Gameweek <%=weeks%> </h4>
+                            <button id="prev" value="<%="Gameweek " + (weeks - 1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
                                 Previous
                             </button>
-                            <h5 class="col-sm-6 hidden-xs" style="text-align: center;font-weight: lighter; font-family:Century Gothic;font-size:17px;left:7.35%; margin-top: -0.5%" align="center">
-                                <img src="img/nwsllogo.png" style="height: 29%;width: 29%;padding-right: 0.5%" >Fixtures
+                            <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;width: 68%;margin-top: -1%;margin-bottom: -2%" align="center">
+                                <img src="img/nwsllogo.png" style="width: 23%;padding-right: 0.5%" >Fixtures
                             </h5>
-                            <button id="next" value="<%="Gameweek " + (weeks + 1)%>" type="button" class="btncustom nextbtn col-sm-3 hidden-xs" style="height: 33px; font-size: 13px; font-weight: bold; text-align: center; font-family:Century Gothic;margin-right:-2.1%;padding-top: 0.7%">
+                            <button id="next" value="<%="Gameweek " + (weeks + 1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%;float: right">
                                 Next
                             </button>
                             <% while (resultSet.next()) {
@@ -532,93 +547,84 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 sidebar" >
+                <div class="col-md-3 sidebar" style="padding-right: 0">
                     <div style="border-bottom:1px solid #ebebe4;border-left:1px solid #ebebe4;border-right:1px solid #ebebe4;margin-bottom: 5% ">
                         <div class="teambox">
                             <h3 style="font-family: Century Gothic;font-size: 19px; margin-left:5%; margin-top: 8%; line-height: 10px; font-weight: bold">Player Selection</h3>
                         </div>
-                        <div>
-                            <h5 style="font-family: Century Gothic;font-size: 14px; margin-left:5%; margin-top: 5%">View</h5>
-                            <div>
-                                <select class="form-control"  data-size="5" id ="selectPlayers"  data-size="5" onchange="showPlayers()">
-                                    <optgroup label="Global">
-                                        <option value="all">All players</option>
-                                        <option>Watchlist</option>
-                                    </optgroup>
-                                    <optgroup label="By Position">
-                                        <option value="Goalkeeper">Goalkeepers</option>
-                                        <option value="Defender">Defenders</option>
-                                        <option value="Midfielder">Midfielders</option>
-                                        <option value="Forward">Forwards</option>
-                                    </optgroup>
-                                    <optgroup label="By Team">
-                                        <option value="Boston Breakers">Boston Breakers</option>
-                                        <option value="Chicago Red Stars" >Chicago Red Stars</option>
-                                        <option value="FC Kansas City">FC Kansas City</option>
-                                        <option value="Houston Dash">Houston Dash</option>
-                                        <option value="North Carolina Courage">North Carolina Courage</option>
-                                        <option value="Orlando Pride">Orlando Pride</option>
-                                        <option value="Portland Thorns FC">Portland Thorns FC</option>
-                                        <option value="Seattle Reign FC">Seattle Reign FC</option>
-                                        <option value="Sky Blue FC">Sky Blue FC</option> 
-                                        <option value="Washington Spirit">Washington Spirit</option> 
+                        <div style="margin-top:6%">
+                            <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">View</label>
+                            <select class="form-control" id ="selectPlayers"  data-size="5" onchange="showPlayers()">
+                                <optgroup label="Global">
+                                    <option value="all">All players</option>
+                                    <option>Watchlist</option>
+                                </optgroup>
+                                <optgroup label="By Position">
+                                    <option value="Goalkeeper">Goalkeepers</option>
+                                    <option value="Defender">Defenders</option>
+                                    <option value="Midfielder">Midfielders</option>
+                                    <option value="Forward">Forwards</option>
+                                </optgroup>
+                                <optgroup label="By Team">
+                                    <option value="Boston Breakers">Boston Breakers</option>
+                                    <option value="Chicago Red Stars" >Chicago Red Stars</option>
+                                    <option value="FC Kansas City">FC Kansas City</option>
+                                    <option value="Houston Dash">Houston Dash</option>
+                                    <option value="North Carolina Courage">North Carolina Courage</option>
+                                    <option value="Orlando Pride">Orlando Pride</option>
+                                    <option value="Portland Thorns FC">Portland Thorns FC</option>
+                                    <option value="Seattle Reign FC">Seattle Reign FC</option>
+                                    <option value="Sky Blue FC">Sky Blue FC</option> 
+                                    <option value="Washington Spirit">Washington Spirit</option> 
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div style="margin-top:6%">
+                            <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%"">Sorted by</label>
+                            <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                <option value="score">Total score</option>
+                                <option value="gw">Round score</option> 
+                                <option value="price">Price</option>
+                                <option>Teams selected by %</option>
+                                <option value="minutes">Minutes played</option>
+                                <option value="goalScored">Goal scored</option>
+                                <option value="assist">Assists</option>
+                                <option value="cleanSheet">Clean sheets</option>
+                                <option value="ownGoal">Own goals</option>
+                                <option value="goalConceded">Goals conceded</option>
+                                <option value="penaltySaved">Penalties saved</option>
+                                <option value="penaltyMissed">Penalties missed</option>
+                                <option value="yellowCard">Yellow cards</option>
+                                <option value="redCard">Red cards</option>
+                                <option>Bonus</option> 
+                                <option value="saves">Saves</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:6%">
+                            <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%"">Maximum price</label>
+                            <select class="form-control"  data-size="5">
+                                <option>Unlimited</option>
+                                <option>$11.0</option>
+                                <option>$10.5</option>
+                                <option>$10.0</option>
+                                <option>$9.5</option>
+                                <option>$9.0</option>
+                                <option>$8.5</option>
+                                <option>$8.0</option>
+                                <option>$7.5</option>
+                                <option>$7.0</option>
+                                <option>$6.5</option>
+                                <option>$6.0</option>
+                                <option>$5.5</option> 
+                                <option>$5.0</option>
+                                <option>$4.5</option>
+                                <option>$4.0</option>
+                            </select>
+                        </div> 
 
-                                    </optgroup>
-                                </select>
-
-                            </div>
-                        </div>
-                        <div>
-                            <h5 style="font-family: Century Gothic;font-size: 14px; margin-left:5%; margin-top:5%">Sorted by</h5>
-                            <div>
-                                <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
-                                    <option value="score">Total score</option>
-                                    <option value="gw">Round score</option> 
-                                    <option value="price">Price</option>
-                                    <option>Teams selected by %</option>
-                                    <option value="minutes">Minutes played</option>
-                                    <option value="goalScored">Goal scored</option>
-                                    <option value="assist">Assists</option>
-                                    <option value="cleanSheet">Clean sheets</option>
-                                    <option value="ownGoal">Own goals</option>
-                                    <option value="goalConceded">Goals conceded</option>
-                                    <option value="penaltySaved">Penalties saved</option>
-                                    <option value="penaltyMissed">Penalties missed</option>
-                                    <option value="yellowCard">Yellow cards</option>
-                                    <option value="redCard">Red cards</option>
-                                    <option>Bonus</option> 
-                                    <option value="saves">Saves</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <h5 style="font-family: Century Gothic;font-size: 14px; margin-left:5%; margin-top: 5%">Maximum price</h5>
-                            <div>
-                                <select class="form-control"  data-size="5">
-                                    <option>Unlimited</option>
-                                    <option>$11.0</option>
-                                    <option>$10.5</option>
-                                    <option>$10.0</option>
-                                    <option>$9.5</option>
-                                    <option>$9.0</option>
-                                    <option>$8.5</option>
-                                    <option>$8.0</option>
-                                    <option>$7.5</option>
-                                    <option>$7.0</option>
-                                    <option>$6.5</option>
-                                    <option>$6.0</option>
-                                    <option>$5.5</option> 
-                                    <option>$5.0</option>
-                                    <option>$4.5</option>
-                                    <option>$4.0</option>
-                                </select>
-                            </div>
-                        </div>   
-                        <div>
-                            <h5 style="font-family: Century Gothic;font-size: 14px; margin-left:5%; margin-top: 5%">Search Player List</h5>
-                        </div>
-                        <div class="wrap">
+                        <div class="wrap" style="margin-top:6%">
                             <div class="search">
+                                <label style="font-family: Century Gothic;font-size: 14px" for="sel1">Search Player List</label>
                                 <input type="text" class="searchTerm" id="searchBOX" placeholder="Search">
                                 <button type="submit" class="searchButton" onclick="search()">
                                     <i class="fa fa-search" ></i>
@@ -626,486 +632,368 @@
                             </div>
                         </div>
                         <div>
-                            <h6 class="text-center" style="font-family: Century Gothic;font-size: 15px; line-height: 10px; font-weight:lighter; margin-top: 6%"><strong style="font-family: Century Gothic;color:#d4213c;font-size: 16px" id ="total"><%=request.getAttribute("total")%></strong> players shown</h6>
+                            <h6 class="text-center" style="font-family: Century Gothic;font-size: 14px; line-height: 10px; font-weight:lighter; margin-top: 7%"><strong style="font-family: Century Gothic;color:#d4213c;font-size: 15px" id ="total"><%=request.getAttribute("total")%></strong> players shown</h6>
                         </div>
                         <div>
-                            <table style="width:100%; background-color: #f9f5f5" id='gk'>
-                                <tr>
-                                    <th style="background-color: yellow"></th>
-                                    <th style="background-color: yellow; font-family: Century Gothic">GOALKEEPERS</th> 
-                                    <th style="background-color: yellow; text-align: center; font-family: Century Gothic">$</th>
-                                    <th id="catGK" style="background-color: yellow; text-align: center; font-family: Century Gothic">TS</th>
+                            <table style="width:100%; background-color: #f1f1f1" id='gk'>
+                                <tr style="font-family: Century Gothic;color:#fff; background-color: #222427">
+                                    <th></th>
+                                    <th style="padding-left: 5px">GOALKEEPERS</th> 
+                                    <th style="text-align: center">$</th>
+                                    <th id="catGK" style="text-align: center">TS</th>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div>
+                                            <img src="img/orlandogk.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Harris</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="gkname1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap ">Harris</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">150</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">150</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/orlandogk.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div>
+                                            <img src="img/orlandogk.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Harris</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="gkname1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap ">Harris</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">150</td>
-                                </tr>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">150</td>
+                                </tr>                                
                             </table>
-                            <table style="width:100%; background-color: #f9f5f5">
-                                <tr>
-                                    <th style="background-color:#00ff87 "></th>
-                                    <th style="background-color:#00ff87">DEFENDERS</th> 
-                                    <th style="background-color:#00ff87">$</th>
-                                    <th style="background-color:#00ff87">TS</th>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                            </table>
-                            <table style="width:100%; background-color: #f9f5f5">
-                                <tr>
-                                    <th style="background-color:#04f5ff "></th>
-                                    <th style="background-color:#04f5ff">MIDFIELDERS</th> 
-                                    <th style="background-color:#04f5ff">$</th>
-                                    <th style="background-color:#04f5ff">TS</th>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td> 
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
-                                </tr>
 
-                                <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
-                                        </div>
-                                    </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                            <table style="width:100%; background-color: #f1f1f1">
+                                <tr style="font-family: Century Gothic;color: #fff;background-color: #383838">
+                                    <th></th>
+                                    <th>DEFENDERS</th> 
+                                    <th style="text-align: center">$</th>
+                                    <th style="text-align: center">TS</th>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
-
+                                <tr>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
                             </table>
-                            <table style="width:100%; background-color: #f9f5f5">
-                                <tr>
-                                    <th style="background-color:#e90052 "></th>
-                                    <th style="background-color:#e90052">FORWARDS</th> 
-                                    <th style="background-color:#e90052">$</th>
-                                    <th style="background-color:#e90052">TS</th>
+
+                            <table style="width:100%; background-color: #f1f1f1">
+                                <tr style="font-family: Century Gothic;color: #fff;background-color: #484848">
+                                    <th></th>
+                                    <th style="padding-left:5px">MIDFIELDERS</th> 
+                                    <th style="text-align: center">$</th>
+                                    <th style="text-align: center">TS</th>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weigh:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight: lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>                              
+                            </table>
+
+                            <table style="width:100%; background-color: #f1f1f1">
+                                <tr style="font-family: Century Gothic;color: #fff;background-color: #505050">
+                                    <th></th>
+                                    <th style="padding-left:5px">FORWARDS</th> 
+                                    <th style="text-align: center">$</th>
+                                    <th id="catFWD" style="text-align: center">TS</th>
                                 </tr>
                                 <tr>
-                                    <td style='font-family: Century Gothic; font-size: 14px;padding-left: 5px; padding:5px; border-bottom:1px solid white;width: 10% '><span class="glyphicon glyphicon-info-sign"></span></td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white; padding: 5px;width: 65% ">
-                                        <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
                                         </div>
-                                        <div class='col-sm-10' style="width:100px;height: 30px;right: 15px;margin-top:-3px; ">
-                                            <span style="font-size: 14px;font-family: Century Gothic; ">Krieger</span><hr style="border:none;margin-top: -34%">
-                                            <span style="font-size: 14px;font-family: Century Gothic; font-weight: lighter ">ORL</span>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
                                         </div>
                                     </td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%  ">$6.2</td>
-                                    <td style="font-family: Century Gothic; font-weight:lighter ;text-align: left ;font-size:14px; font-weight: bold; border-bottom:1px solid white;width: 12.5%     ">200</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
+                                </tr>
+                                <tr>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span class="glyphicon glyphicon-info-sign"></span></td>
+                                    <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
+                                        <div>
+                                            <img src="img/pride1.png" style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
+                                            <span class='underline' id="namefwd1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap">Krieger</span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span style="font-family: Century Gothic;font-size: 11px; font-weight: lighter">ORL</span>
+                                        </div>
+                                    </td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$6.2</td>
+                                    <td style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">200</td>
                                 </tr>
                             </table>
                         </div>
-                        <div class="col-md-12" style="width:100%">
-                            <button type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:5%;margin-right:2% "><i class="glyphicon glyphicon-backward"></i></button>
-                            <button type="button" class="btn btn-default btn-circle btn-lg  col-md-2 col-xs-2" style="width:4rem"><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                            <h6 class="col-md-6 col-xs-6" style="width: 40%;font-family: Century Gothic;font-weight: lighter;left:10%;margin-top: 7%">Page <span style="font-weight: lighter" >1</span> of 3  </h6>
-                            <button type="button" class="btn btn-default btn-circle btn-lg col-md-2 col-xs-2" style="width:4rem;left:10%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                            <button type="button" class="btn btn-default btn-circle col-md-1 col-xs-1" style="width:10%;margin-top:5%;margin-right:2%;float: right"><i class="glyphicon glyphicon-forward"></i></button>
-                        </div>
+                        <div class="col-md-12" style="width:100%; margin-bottom: 2%">
+                            <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
+                                <i class="glyphicon glyphicon-backward"></i></button>
+                            <button id="prevPlayers" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
+                                <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
+                            <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
+                                <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
+                            <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
+                                <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
+                            <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
+                                <i class="glyphicon glyphicon-forward"></i></button>
 
+                            <button id="startSelect" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
+                                <i class="glyphicon glyphicon-backward"></i></button>           
+                            <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
+                                <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>                        
+                            <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;display:none;">Page 
+                                <span id="pageNo" style="font-family: Century Gothic; font-weight: bold" >1</span> of <span id="totalPage">11</span> </h6>                        
+                            <button  id="nextPlayersSelect" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
+                                <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>                                               
+                            <button id="endSelect"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">
+                                <i class="glyphicon glyphicon-forward"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1117,98 +1005,98 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-        
-         <script>
-            $(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-                var prev = $('#prev').val();
-                $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-                    $("#somediv").html("");
-                    var $h4 = $("<h4>");
-                    $h4.css({"font-family": "Century Gothic", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
-                    $h4.text(responseText[0]+"-"+responseText[3]).appendTo("#somediv");
 
-                    var $buttonprev = $("<button>");
-                    $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
-                    $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "Century Gothic", "margin-left": "-2%", "padding-top": "0.6%"});
-                    $buttonprev.text("Previous").insertAfter($h4);
-                    if (responseText[1] == "Gameweek 0") {
-                        $buttonprev.css('visibility', 'hidden');
-                    }
+        <script>
+                                    $(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+                                        var prev = $('#prev').val();
+                                        $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
+                                            $("#somediv").html("");
+                                            var $h4 = $("<h4>");
+                                            $h4.css({"font-family": "Century Gothic", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
+                                            $h4.text(responseText[0] + "-" + responseText[3]).appendTo("#somediv");
 
-                    var $h5 = $("<h5>");
-                    $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
-                    $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
-                    $h5.text("Fixtures").insertAfter($buttonprev);
-                    var $img = $("<img>");
-                    $img.attr({src: "img/nwsllogo.png"});
-                    $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
-                    $img.prependTo($h5);
-                    var $buttonnext = $("<button>");
-                    $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
-                    $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "Century Gothic", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
-                    $buttonnext.text("Next").insertAfter($h5);
-                    if (responseText[2] == "Gameweek 23") {
-                        $buttonnext.css('visibility', 'hidden');
-                    }
-                   for (i =responseText.length ; i >=3; i = i - 6) {
+                                            var $buttonprev = $("<button>");
+                                            $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
+                                            $buttonprev.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "Century Gothic", "margin-left": "-2%", "padding-top": "0.6%"});
+                                            $buttonprev.text("Previous").insertAfter($h4);
+                                            if (responseText[1] == "Gameweek 0") {
+                                                $buttonprev.css('visibility', 'hidden');
+                                            }
 
-                        var $h6 = $("<h6>");
-                        $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "14px", "width": "104%", "left":"-2.05%","margin-bottom": "1%","margin-top": "2.5%"});
-                        $h6.text(responseText[i]).insertAfter($buttonnext);
-                        if(i+6>0){
-                            if(responseText[i]==responseText[i-6]){
-                                $h6.css({"display":"none"});
-                            }
-                        }
-                        var $div = $("<div>");
-                        $div.attr({'class': "match col-sm-12"});
-                        $div.css({"width": "104.3%", "left": "-2.1%"});
-                        $div.insertAfter($h6);
-                        var $divrow = $("<div>");
-                        $divrow.attr({'class': "row"});
-                        $divrow.appendTo($div);
-                        var $divh6 = $("<div>");
-                        $divh6.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $divh6.css({"left": "3.7%"});
-                        $divh6.appendTo($divrow);
-                        var $h6home = $("<h6>");
-                        $h6home.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $h6home.css({"margin-left":"2.5%","font-size":"17px","width": "230px","text-align":"right"});
-                        $h6home.text(responseText[i+1]).appendTo($divh6);
-                        var $imghome = $("<img>");
-                        $imghome.attr({src: "img/"+responseText[i+2],'class':"col-md-1 col-xs-1"});
-                        $imghome.css({ "width": "initial ","margin-left": "-1%","margin-right": "2%"});
-                        $imghome.appendTo($divrow);
-                        var $divtime=$("<div>");
-                        $divtime.attr({"class":"col-md-2  col-xs-2  skor "});
-                        $divtime.css({"letter-spacing": "0.5px","width": "15%","left":"-4.3%","background-color":"#1d3260","border-radius":" 3pt"});
-                        $divtime.appendTo($divrow);
-                        var $time=$("<h6>");
-                        $time.css({"width": "100%","text-align": "center","color":"white","font-family": "Century Gothic", "font-size": "16px", "font-weight":"lighter"});
-                        $time.text(responseText[i+3]).appendTo($divtime);
-                        var $imgaway = $("<img>");
-                        $imgaway.attr({src: "img/"+responseText[i+5],'class':"col-md-1 col-xs-1"});
-                        $imgaway.css({ "width": "initial ","margin-left": "-7%"});
-                        $imgaway.appendTo($divrow);
-                        var $divh6a = $("<div>");
-                        $divh6a.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $divh6a.css({"left": "-7%","width":"30%"});
-                        $divh6a.appendTo($divrow);
-                        var $h6away = $("<h6>");
-                        $h6away.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $h6away.css({"font-size":"17px","width": "230px"});
-                        $h6away.text(responseText[i+4]).appendTo($divh6a);
-                        
-                        if(i>=responseText.length){
-                            $divrow.css({"display":"none"});
-                            $h6.css({"display":"none"});
-                        }
-                        
-                    }
+                                            var $h5 = $("<h5>");
+                                            $h5.attr({class: "col-sm-6 hidden-xs", 'align': "center"});
+                                            $h5.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "17px", "left": "7.35%", 'margin-top': "-0.5%", 'margin-bottom': "-2%"});
+                                            $h5.text("Fixtures").insertAfter($buttonprev);
+                                            var $img = $("<img>");
+                                            $img.attr({src: "img/nwsllogo.png"});
+                                            $img.css({'height': "29%", "width": " 29%", "padding-right": " 0.5%"});
+                                            $img.prependTo($h5);
+                                            var $buttonnext = $("<button>");
+                                            $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "btncustom nextbtn col-sm-3 hidden-xs"});
+                                            $buttonnext.css({"height": "33px", "font-size": "13px", "font-weight": "bold", "text-align": "center", "font-family": "Century Gothic", "margin-left": "-2.1%", "padding-top": "0.6%", "left": "2.1%"});
+                                            $buttonnext.text("Next").insertAfter($h5);
+                                            if (responseText[2] == "Gameweek 23") {
+                                                $buttonnext.css('visibility', 'hidden');
+                                            }
+                                            for (i = responseText.length; i >= 3; i = i - 6) {
 
-                });
-            });
+                                                var $h6 = $("<h6>");
+                                                $h6.attr({class: "col-sm-12"});
+                                                $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
+                                                $h6.text(responseText[i]).insertAfter($buttonnext);
+                                                if (i + 6 > 0) {
+                                                    if (responseText[i] == responseText[i - 6]) {
+                                                        $h6.css({"display": "none"});
+                                                    }
+                                                }
+                                                var $div = $("<div>");
+                                                $div.attr({'class': "match col-sm-12"});
+                                                $div.css({"width": "104.3%", "left": "-2.1%"});
+                                                $div.insertAfter($h6);
+                                                var $divrow = $("<div>");
+                                                $divrow.attr({'class': "row"});
+                                                $divrow.appendTo($div);
+                                                var $divh6 = $("<div>");
+                                                $divh6.attr({'class': "col-md-4  col-xs-4 match  "});
+                                                $divh6.css({"left": "3.7%"});
+                                                $divh6.appendTo($divrow);
+                                                var $h6home = $("<h6>");
+                                                $h6home.attr({'class': "col-md-4  col-xs-4 match  "});
+                                                $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
+                                                $h6home.text(responseText[i + 1]).appendTo($divh6);
+                                                var $imghome = $("<img>");
+                                                $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
+                                                $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
+                                                $imghome.appendTo($divrow);
+                                                var $divtime = $("<div>");
+                                                $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
+                                                $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
+                                                $divtime.appendTo($divrow);
+                                                var $time = $("<h6>");
+                                                $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "Century Gothic", "font-size": "16px", "font-weight": "lighter"});
+                                                $time.text(responseText[i + 3]).appendTo($divtime);
+                                                var $imgaway = $("<img>");
+                                                $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
+                                                $imgaway.css({"width": "initial ", "margin-left": "-7%"});
+                                                $imgaway.appendTo($divrow);
+                                                var $divh6a = $("<div>");
+                                                $divh6a.attr({'class': "col-md-4  col-xs-4 match  "});
+                                                $divh6a.css({"left": "-7%", "width": "30%"});
+                                                $divh6a.appendTo($divrow);
+                                                var $h6away = $("<h6>");
+                                                $h6away.attr({'class': "col-md-4  col-xs-4 match  "});
+                                                $h6away.css({"font-size": "17px", "width": "230px"});
+                                                $h6away.text(responseText[i + 4]).appendTo($divh6a);
+
+                                                if (i >= responseText.length) {
+                                                    $divrow.css({"display": "none"});
+                                                    $h6.css({"display": "none"});
+                                                }
+
+                                            }
+
+                                        });
+                                    });
         </script>
 
         <script>
@@ -1218,7 +1106,7 @@
                     $("#somediv").html("");
                     var $h4 = $("<h4>");
                     $h4.css({"font-family": "Century Gothic", "font-weight": "bold", "font-size": "13px", "text-align": "center"});
-                    $h4.text(responseText[0]+"-"+responseText[3]).appendTo("#somediv");
+                    $h4.text(responseText[0] + "-" + responseText[3]).appendTo("#somediv");
 
                     var $buttonprev = $("<button>");
                     $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "prevbutton btncustom col-sm-3 hidden-xs"});
@@ -1243,15 +1131,15 @@
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
                     }
-                   for (i =responseText.length ; i >=3; i = i - 6) {
+                    for (i = responseText.length; i >= 3; i = i - 6) {
 
                         var $h6 = $("<h6>");
                         $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "14px", "width": "104%", "left":"-2.05%","margin-bottom": "1%","margin-top": "2.5%"});
+                        $h6.css({'text-align': "center", 'font-weight': "lighter", 'font-family': "Century Gothic", 'font-size': "14px", "width": "104%", "left": "-2.05%", "margin-bottom": "1%", "margin-top": "2.5%"});
                         $h6.text(responseText[i]).insertAfter($buttonnext);
-                        if(i+6>0){
-                            if(responseText[i]==responseText[i-6]){
-                                $h6.css({"display":"none"});
+                        if (i + 6 > 0) {
+                            if (responseText[i] == responseText[i - 6]) {
+                                $h6.css({"display": "none"});
                             }
                         }
                         var $div = $("<div>");
@@ -1267,37 +1155,37 @@
                         $divh6.appendTo($divrow);
                         var $h6home = $("<h6>");
                         $h6home.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $h6home.css({"margin-left":"2.5%","font-size":"17px","width": "230px","text-align":"right"});
-                        $h6home.text(responseText[i+1]).appendTo($divh6);
+                        $h6home.css({"margin-left": "2.5%", "font-size": "17px", "width": "230px", "text-align": "right"});
+                        $h6home.text(responseText[i + 1]).appendTo($divh6);
                         var $imghome = $("<img>");
-                        $imghome.attr({src: "img/"+responseText[i+2],'class':"col-md-1 col-xs-1"});
-                        $imghome.css({ "width": "initial ","margin-left": "-1%","margin-right": "2%"});
+                        $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
+                        $imghome.css({"width": "initial ", "margin-left": "-1%", "margin-right": "2%"});
                         $imghome.appendTo($divrow);
-                        var $divtime=$("<div>");
-                        $divtime.attr({"class":"col-md-2  col-xs-2  skor "});
-                        $divtime.css({"letter-spacing": "0.5px","width": "15%","left":"-4.3%","background-color":"#1d3260","border-radius":" 3pt"});
+                        var $divtime = $("<div>");
+                        $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
+                        $divtime.css({"letter-spacing": "0.5px", "width": "15%", "left": "-4.3%", "background-color": "#1d3260", "border-radius": " 3pt"});
                         $divtime.appendTo($divrow);
-                        var $time=$("<h6>");
-                        $time.css({"width": "100%","text-align": "center","color":"white","font-family": "Century Gothic", "font-size": "16px", "font-weight":"lighter"});
-                        $time.text(responseText[i+3]).appendTo($divtime);
+                        var $time = $("<h6>");
+                        $time.css({"width": "100%", "text-align": "center", "color": "white", "font-family": "Century Gothic", "font-size": "16px", "font-weight": "lighter"});
+                        $time.text(responseText[i + 3]).appendTo($divtime);
                         var $imgaway = $("<img>");
-                        $imgaway.attr({src: "img/"+responseText[i+5],'class':"col-md-1 col-xs-1"});
-                        $imgaway.css({ "width": "initial ","margin-left": "-7%"});
+                        $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
+                        $imgaway.css({"width": "initial ", "margin-left": "-7%"});
                         $imgaway.appendTo($divrow);
                         var $divh6a = $("<div>");
                         $divh6a.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $divh6a.css({"left": "-7%","width":"30%"});
+                        $divh6a.css({"left": "-7%", "width": "30%"});
                         $divh6a.appendTo($divrow);
                         var $h6away = $("<h6>");
                         $h6away.attr({'class': "col-md-4  col-xs-4 match  "});
-                        $h6away.css({"font-size":"17px","width": "230px"});
-                        $h6away.text(responseText[i+4]).appendTo($divh6a);
-                        
-                        if(i>=responseText.length){
-                            $divrow.css({"display":"none"});
-                            $h6.css({"display":"none"});
+                        $h6away.css({"font-size": "17px", "width": "230px"});
+                        $h6away.text(responseText[i + 4]).appendTo($divh6a);
+
+                        if (i >= responseText.length) {
+                            $divrow.css({"display": "none"});
+                            $h6.css({"display": "none"});
                         }
-                        
+
                     }
 
                 });

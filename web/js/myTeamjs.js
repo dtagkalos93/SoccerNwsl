@@ -4,29 +4,50 @@ function goalkeeper(gk) {
     document.getElementById("gkname").innerHTML = name;
     document.getElementById("captain1").innerHTML = name + " -GK";
     document.getElementById("viceCaptain1").innerHTML = name + " -GK";
+
     if (team == 'BOS') {
+        var teamName = 'Boston Breakers';
         var image = "breakersgk.png";
     } else if (team == 'CHI') {
+        var teamName = 'Chicago Red Stars';
+
         var image = "chicagogk.png";
     } else if (team == 'HOU') {
+        var teamName = 'Houston Dash';
+
         var image = "houstongk.png";
     } else if (team == 'NC') {
+        var teamName = 'North Carolina Courage';
+
         var image = "couragegk.png";
     } else if (team == 'ORL') {
+        var teamName = 'Orlando Pride';
+
         var image = "orlandogk.png";
     } else if (team == 'POR') {
+        var teamName = 'Portland Thorns FC';
+
         var image = "thornsgk.png";
     } else if (team == 'SEA') {
+        var teamName = 'Seattle Reign FC';
+
         var image = "seattlegk.png";
     } else if (team == 'NJ') {
+        var teamName = 'Sky Blue FC';
+
         var image = "skybluegk.png";
     } else if (team == 'WAS') {
+        var teamName = 'Washington Spirit';
+
         var image = "spiritgk.png";
     } else if (team == 'KC') {
+        var teamName = 'FC Kansas City';
+
         var image = "kansasgk.png";
     }
 
     document.getElementById("gkimage").src = "img/" + image;
+
 }
 
 function defence(def, defNo) {
@@ -48,6 +69,8 @@ function defence(def, defNo) {
 
 
         var defPlayer = def.split(",");
+
+
         var i = 1;
         for (j = 0; j < 4; j++) {
             if (i == 3) {
@@ -58,30 +81,46 @@ function defence(def, defNo) {
             document.getElementById("defname" + i).innerHTML = name;
 
             if (team == 'BOS') {
+                var teamName = 'Boston Breakers';
                 var image = "breakers1.png";
             } else if (team == 'CHI') {
+                var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
             } else if (team == 'HOU') {
+                var teamName = 'Houston Dash';
+
                 var image = "dash1.png";
             } else if (team == 'NC') {
+                var teamName = 'North Carolina Courage';
                 var image = "courage.png";
             } else if (team == 'ORL') {
+                var teamName = 'Orlando Pride';
+
                 var image = "pride1.png";
             } else if (team == 'POR') {
+                var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
             } else if (team == 'SEA') {
+                var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
             } else if (team == 'NJ') {
+                var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'KC') {
+                var teamName = 'FC Kansas City';
                 var image = "kansas1.png";
             }
 
             document.getElementById("defimage" + i).src = "img/" + image;
+
             i = i + 1;
+
         }
+
+
+
     } else if (defNo == '5') {
         document.getElementById("selDEF1").style = "";
         document.getElementById("selDEF2").style = "";
@@ -129,6 +168,7 @@ function defence(def, defNo) {
             } else if (team == 'NJ') {
                 var image = "skyblue1.png";
             } else if (team == 'WAS') {
+                var teamName = 'Washington Spirit';
                 var image = "spirit1.png";
             } else if (team == 'KC') {
                 var image = "kansas1.png";
@@ -419,6 +459,7 @@ function forward(fwd, fwdNo) {
             var team = fwdPlayer[j].split("-")[1];
             document.getElementById("fwdname" + i).innerHTML = name;
             if (team == 'BOS') {
+                var teamName = 'Boston Breakers';
                 var image = "breakers1.png";
             } else if (team == 'CHI') {
                 var image = "stars1.png";
@@ -525,7 +566,7 @@ function bench(ben) {
     document.getElementById("benimage" + 1).src = "img/" + image;
     var i = 2;
     for (j = 1; j < 4; j++) {
-
+        
         var name = benPlayer[j].split("-")[0];
         var team = benPlayer[j].split("-")[1];
         document.getElementById("benname" + i).innerHTML = name;
@@ -551,6 +592,7 @@ function bench(ben) {
             var image = "kansas1.png";
         }
         document.getElementById("benimage" + i).src = "img/" + image;
+        document.getElementById("benpos" + i).innerHTML=benPlayer[j].split("-")[2];
         i = i + 1;
     }
 }
@@ -577,7 +619,6 @@ function captain(defence, midfielder, forward) {
     }
     player = forward.split(",");
     cptNO = eval(cptNO) - 1;
-    console.log(player);
     i = 0;
     while (i < (player.length - 1)) {
 
@@ -589,106 +630,19 @@ function captain(defence, midfielder, forward) {
 }
 
 
-function openModalGK(i) {
-
-    var name = document.getElementById("gkname").textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-
-            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-
-            document.getElementById("substitute").onclick = "changePlayer('" + gkname + "')";
-            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
-            $('#players').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "findPosition?name=" + name, true);
-    xhttp.send();
-}
-
-function openModalDEF(i) {
-
-    var name = document.getElementById("defname" + i).textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-
-            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
-            $('#players').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "findPosition?name=" + name, true);
-    xhttp.send();
-}
-
-function openModalMID(i) {
-
-    var name = document.getElementById("midname" + i).textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-
-            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-
-            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
-
-            $('#players').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "findPosition?name=" + name, true);
-    xhttp.send();
-}
 
 
-function openModalFWD(i) {
 
-    var name = document.getElementById("fwdname" + i).textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
 
-            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
-//            document.getElementById("playerTeam").innerHTML = team;
-            $('#players').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "findPosition?name=" + name, true);
-    xhttp.send();
-}
 
-function openModalBEN(i) {
 
-    var name = document.getElementById("benname" + i).textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
 
-            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
-            $('#players').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "findPosition?name=" + name, true);
-    xhttp.send();
-}
+
+
+
+
+
+
 
 function openInfo(name) {
     var gameweek = document.getElementById("gameweekid").textContent;
@@ -737,7 +691,7 @@ function openInfo(name) {
             document.getElementById("formerinfo").innerHTML = jsonResponse[10];
             document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
             document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
-
+            $('#playersInfo').modal('hide');
             $('#players').modal('hide');
             $('#fixtureModal').modal('hide');
             $('#statisticsModal').modal('hide');
@@ -750,14 +704,14 @@ function openInfo(name) {
 
 }
 
-function changePlayer(playerID) {
-    if (playerID == 'gkname') {
 
-    }
-}
+
+
+
+
 
 function openFixture(name, team) {
-
+    setInfo(name, "Fix");
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -772,13 +726,13 @@ function openFixture(name, team) {
                     document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
                     document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
                     document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
-                    j=eval(j)+4;
+                    j = eval(j) + 4;
 
                 } else {
                     document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j+1];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j+2];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j+3];
+                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
+                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
+                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
                 }
 
 
@@ -796,8 +750,54 @@ function openFixture(name, team) {
 
 }
 
+function setInfo(name, prefix) {
+    var gameweek = document.getElementById("gameweekid").textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+
+            document.getElementById("nameinfo" + prefix).innerHTML = jsonResponse[0];
+            document.getElementById("posinfo" + prefix).innerHTML = jsonResponse[1];
+            document.getElementById("teaminfo" + prefix).innerHTML = jsonResponse[2];
+            var team = jsonResponse[2];
+            if (team == 'Boston Breakers') {
+                var image = "Boston_Breakers.png";
+            } else if (team == 'Chicago Red Stars') {
+                var image = "ChicagoRedStars.png";
+            } else if (team == 'Houston Dash') {
+                var image = "Houston_Dash.png";
+            } else if (team == 'North Carolina Courage') {
+                var image = "North_Carolina_Courage.png";
+            } else if (team == 'Orlando Pride') {
+                var image = "OrlandoPride.png";
+            } else if (team == 'Portland Thorns FC') {
+                var image = "Portland.png";
+            } else if (team == 'Seattle Reign FC') {
+                var image = "SeattleReignFC.png";
+            } else if (team == 'Sky Blue FC') {
+                var image = "Sky_Blue_FC.png";
+            } else if (team == 'Washington Spirit') {
+                var image = "Washington_Spirit.png";
+            } else if (team == 'FC Kansas City') {
+                var image = "kansasCity.png";
+            }
+            document.getElementById("badgeinfo" + prefix).src = "img/" + image;
+
+
+        }
+    };
+    xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
+    xhttp.send();
+
+}
+
 function openStatistic(name) {
-    document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
+    setInfo(name, "Stats");
+    document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
     $('#information').modal('hide');
     $('#statisticsModal').modal({show: 'true'});
 }
@@ -943,3 +943,96 @@ $(document).on("click", "#next", function () { // When HTML DOM "click" event is
         }
     });
 });
+
+
+function opponent(gk, def, mid, fwd, ben) {
+
+
+    var gameweek = document.getElementById("gameweekid").textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            document.getElementById("oppgk").innerHTML = jsonResponse["gk"][0];
+            var defTeam = jsonResponse["def"];
+            if (defTeam.length == 4) {
+                var j = 0;
+                for (i = 1; i <= 5; i++) {
+                    if (i == 3) {
+                        i = 4;
+                    }
+                    document.getElementById("oppdef" + i).innerHTML = defTeam[j];
+                    j = eval(j) + 1;
+                }
+            } else if (defTeam.length == 5) {
+                var j = 0;
+                for (i = 1; i <= 5; i++) {
+
+                    document.getElementById("oppdef" + i).innerHTML = defTeam[j];
+                    j = eval(j) + 1;
+                }
+            } else if (defTeam.length == 3) {
+                var j = 0;
+                for (i = 2; i <= 4; i++) {
+                    document.getElementById("oppdef" + i).innerHTML = defTeam[j];
+                    j = eval(j) + 1;
+                }
+            }
+            var midTeam = jsonResponse["mid"];
+            if (midTeam.length == 4) {
+                var j = 0;
+                for (i = 1; i <= 5; i++) {
+                    if (i == 3) {
+                        i = 4;
+                    }
+                    document.getElementById("oppmid" + i).innerHTML = midTeam[j];
+                    j = eval(j) + 1;
+                }
+            } else if (midTeam.length == 5) {
+                var j = 0;
+                for (i = 1; i <= 5; i++) {
+
+                    document.getElementById("oppmid" + i).innerHTML = midTeam[j];
+                    j = eval(j) + 1;
+                }
+            } else if (midTeam.length == 3) {
+                var j = 0;
+                for (i = 2; i <= 4; i++) {
+                    document.getElementById("oppmid" + i).innerHTML = midTeam[j];
+                    j = eval(j) + 1;
+                }
+            }
+            var fwdTeam = jsonResponse["fwd"];
+            if (fwdTeam.length == 2) {
+                var j = 0;
+                for (i = 1; i <= 3; i++) {
+                    if (i == 2)
+                        i = 3;
+                    document.getElementById("oppfwd" + i).innerHTML = fwdTeam[j];
+                    j = eval(j) + 1;
+                }
+            } else if (fwdTeam.length == 1) {
+                document.getElementById("oppfwd2").innerHTML = fwdTeam[0];
+            } else if (fwdTeam.length == 3) {
+                var j = 0;
+                for (i = 1; i <= 3; i++) {
+                    document.getElementById("oppfwd" + i).innerHTML = fwdTeam[j];
+                    j = eval(j) + 1;
+                }
+            }
+            var benTeam = jsonResponse["ben"];
+            var j = 0;
+            for (i = 1; i <= 4; i++) {
+                document.getElementById("oppben" + i).innerHTML = benTeam[j];
+                j = eval(j) + 1;
+            }
+
+
+
+        }
+    };
+    xhttp.open("GET", "findOpp?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd + "&ben=" + ben + "&gameweekid=" + gameweek, true);
+    xhttp.send();
+}

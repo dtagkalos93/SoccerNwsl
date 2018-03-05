@@ -122,7 +122,7 @@
     </div>
 
     <div class="container">
-            <div class="side-gap">
+        <div class="side-gap">
 
             <!-- Blog Entries Column -->
             <div class="col-md-9 top-gap">
@@ -1079,7 +1079,7 @@
                         <h6 class="text-center" style="font-family: Century Gothic;font-size: 14px; line-height: 10px; font-weight:lighter; margin-top: 7%"><strong style="font-family: Century Gothic;color:#d4213c;font-size: 15px" id ="total"><%=request.getAttribute("total")%></strong> players shown</h6>
                     </div>
                     <div>
-                        <table style="width:100%; background-color: #f9f5f5" id='gk'>
+                        <table style="width:100%; background-color: #f1f1f1" id='gk'>
                             <tr style="font-family: Century Gothic;color:#fff; background-color: #222427">
                                 <th></th>
                                 <th style="padding-left: 5px">GOALKEEPERS</th> 
@@ -1098,15 +1098,15 @@
                                         color = "#c0020d";
                                     }
                                 %>
-                                <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="gkinjury1"  class="<%=classSTR%>" style="color:<%=color%>"></span></td>
+                                <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span id="gkinjury1"  class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                     <div>
                                         <img id="gkimage1" src="img/<%=gk.get(0)%> " style="height:30px" />
                                     </div>
-                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
                                         <span class='underline' id="gkname1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=gkname.get(0)%></span>
                                         <hr style="border:none;margin-top: -22%">
-                                        <span id="gkteam1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=gkteam.get(0)%></span>
+                                        <span id="gkteam1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter"><%=gkteam.get(0)%></span>
                                     </div>
                                 </td>
                                 <td id="gkprice1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= gkprice.get(0)%></td>
@@ -1198,14 +1198,14 @@
                                 <td style="font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center "><span id="definjury1" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
                                     <% }
                                     %>
-                                <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
                                     <div>
                                         <img id="imagedef1" src="img/<%=def.get(0)%> " style="height:30px" />
                                     </div>
-                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
                                         <span class='underline' id="namedef1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(0)%></span>
                                         <hr style="border:none;margin-top: -22%">
-                                        <span id="teamdef1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(0)%></span>
+                                        <span id="teamdef1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter"><%=defteam.get(0)%></span>
                                     </div>
                                 </td>
                                 <td id="pricedef1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(0)%></td>
@@ -1407,7 +1407,7 @@
                             <%
                                 }%>
                         </table>
-                        <table style="width:100%; background-color: #f9f5f5" id='mid'>
+                        <table style="width:100%; background-color: #f1f1f1" id='mid'>
                             <tr style="font-family: Century Gothic;color: #fff;background-color: #484848">
                                 <th></th>
                                 <th style="padding-left:5px">MIDFIELDERS</th> 
@@ -1427,10 +1427,10 @@
                                     <div>
                                         <img id="imagemid1" src="img/<%=mid.get(0)%> " style="height:30px" />
                                     </div>
-                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px">
                                         <span class='underline' id="namemid1" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(0)%></span>
                                         <hr style="border:none;margin-top: -22%">
-                                        <span id="teammid1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(0)%></span>
+                                        <span id="teammid1" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter"><%=midteam.get(0)%></span>
                                     </div>
                                 </td>
                                 <td id="pricemid1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(0)%></td>
@@ -1568,7 +1568,7 @@
                             <%
                                 }%>
                         </table>
-                        <table style="width:100%; background-color: #f9f5f5" id='fwd'>
+                        <table style="width:100%; background-color: #f1f1f1" id='fwd'>
                             <tr style="font-family: Century Gothic;color: #fff;background-color: #505050">
                                 <th></th>
                                 <th style="padding-left:5px">FORWARDS</th> 
@@ -1779,20 +1779,20 @@
                     <div class="col-md-12" style="width:100%; margin-bottom: 2%">
                         <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
                             <i class="glyphicon glyphicon-backward"></i></button>
-                        
+
                         <button id="prevPlayers" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
                             <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                        
+
                         <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
                             <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
-                        
+
                         <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
                             <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                        
+
                         <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
                             <i class="glyphicon glyphicon-forward"></i></button>
-                        
-                            
+
+
                         <button id="startSelect" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
                             <i class="glyphicon glyphicon-backward"></i></button>           
                         <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
@@ -2016,7 +2016,7 @@
             <div class="modal-content">
                 <div class="modal-header-info">
                     <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                    <p id="backButton" class="modal-title" style="padding: 0.3%;padding-left: 1.5%;color:white">
+                    <p id="backStats" class="modal-title" style="padding: 0.3%;padding-left: 1.5%;color:white">
                         <span class="glyphicon glyphicon-arrow-left"></span></p>
                 </div>
                 <!-- Modal content-->
