@@ -72,7 +72,7 @@ public class getFixture extends HttpServlet {
                 String date = resultSet.getString("date");
                 list.add(date.split(",")[1]);
                 if (resultSet.getString("home").equals(team)) {
-                    String awayTeam=resultSet.getString("away");
+                    String awayTeam = resultSet.getString("away");
                     if (awayTeam.equals("Houston Dash")) {
                         list.add("vs HOU");
 
@@ -95,9 +95,9 @@ public class getFixture extends HttpServlet {
                     } else if (awayTeam.equals("Boston Breakers")) {
                         list.add("vs BOS");
                     }
-                }else {
-                    
-                    String homeTeam=resultSet.getString("home");
+                } else {
+
+                    String homeTeam = resultSet.getString("home");
                     if (homeTeam.equals("Houston Dash")) {
                         list.add("@ HOU");
 
@@ -128,6 +128,7 @@ public class getFixture extends HttpServlet {
             resultSet.close();
 
             s.close();
+            connection.close();
 
         } catch (Exception e) {
 

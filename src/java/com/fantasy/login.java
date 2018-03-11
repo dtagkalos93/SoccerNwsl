@@ -75,13 +75,13 @@ public class login extends HttpServlet {
         String password = "";
         HttpSession session;
         session = request.getSession();
-                   
+
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
         PrintWriter pw = response.getWriter();
 
-        JsonObject  obj = new JsonObject ();
+        JsonObject obj = new JsonObject();
         try {
 
             // Load the database driver
@@ -97,21 +97,20 @@ public class login extends HttpServlet {
             resultSet = s.getResultSet();
 
             if (resultSet.next()) {
-                String passwordSQL=resultSet.getString("password");
-                
-                if(passwordSQL.equals(pwd)){
-                    if(rember==null){
-                         String fullnamestr= resultSet.getString("firstname")+" "+ resultSet.getString("lastname");
-                                                session.setAttribute("fullname", fullnamestr);
+                String passwordSQL = resultSet.getString("password");
+
+                if (passwordSQL.equals(pwd)) {
+                    if (rember == null) {
+                        String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
+                        session.setAttribute("fullname", fullnamestr);
 
                         resultSet.close();
                         s.close();
-                       
+
                         RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                         rd.forward(request, response);
-                    }
-                    else{
-                        String fullnamestr= resultSet.getString("firstname")+" "+ resultSet.getString("lastname");
+                    } else {
+                        String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
                         session.setMaxInactiveInterval(60 * 60);
@@ -124,17 +123,20 @@ public class login extends HttpServlet {
                         RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                         rd.forward(request, response);
                     }
-                    
-                }
-                else{
+
+                } else {
                     resultSet.close();
                     s.close();
+                    connection.close();
+
                     RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                     rd.forward(request, response);
                 }
             } else {
                 resultSet.close();
                 s.close();
+                connection.close();
+
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 rd.forward(request, response);
             }

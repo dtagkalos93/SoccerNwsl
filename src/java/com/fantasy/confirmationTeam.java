@@ -103,6 +103,9 @@ public class confirmationTeam extends HttpServlet {
 
             // execute the preparedstatement
             preparedStmt.execute();
+            
+            preparedStmt.close();
+                        connection.close();
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(enterTeam.class.getName()).log(Level.SEVERE, null, ex);
@@ -152,6 +155,7 @@ public class confirmationTeam extends HttpServlet {
                         resultSet.close();
 
             s.close();
+                        connection.close();
 
         } catch (Exception e) {
 

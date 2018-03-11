@@ -266,9 +266,11 @@
                             <p class="price" id="fwdprice3"></p>
                         </div>
                     </div>
-                    <a id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
-                        Enter Roster
+                    
+                    <a id="enterTeam" class="enterteam btncstm col-md-12" style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%">
+                        Enter Team
                     </a>
+                    
                     <%
                         ArrayList<String> posts = (ArrayList<String>) request.getAttribute("data");
                         ArrayList<String> date = (ArrayList<String>) request.getAttribute("date");

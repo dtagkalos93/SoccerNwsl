@@ -77,6 +77,11 @@ h6 {
     font-size: 15px;
 }
 
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: #c8373b;
+}
+
 .wrap{
     width: 80%;
     margin-left: 5%;
@@ -246,6 +251,16 @@ h6 {
     display: block;
 }
 
+.captainImg{
+    height: 37px;
+    width: auto;
+    /* position: relative; */
+    /* margin-top: -14.5%; */
+    /* margin-left: 27%; */
+    /* margin-right: auto; */
+    display: block;
+}
+
 .benpos{
     font-family: Century Gothic;
     width:130px;
@@ -265,12 +280,45 @@ h6 {
 .pit-img{
     background:url(../img/bench0.jpg) no-repeat  ;
     background-size: 100% 100%;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.btncstm:focus {
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(173, 175, 177, 0.34);
+}
+
+.saveteam{
+    font-family: Century Gothic;
+    font-size: 15px;
+    width: 32%;
+    color: white;
+    background-color: #1d3260; 
+    border: 1px solid #1d3260;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.saveteam:hover{
+    background-color: #fff;
+    color: #1d3260;
+    text-decoration: none;
+}
+
+.saveteam:disabled{
+    background-color: #d6d1d1;
+    border: 1px solid #d6d1d1;
+    color:white;
 }
 
 .fixtures{
     width: 100%;
     margin-bottom: 5%;
-    margin-top: 5%;
     border-top:3px solid #1d3260;
     border-bottom:1px solid #e8e4e4;
     border-left: 1px solid #e8e4e4;
@@ -380,23 +428,23 @@ h6 {
 }
 
 .modal {
-  text-align: center;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) { 
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
 }
 
 .modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-  height: 500px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    height: 500px;
 }
 
 .glyphicon-arrow-left{
@@ -405,7 +453,7 @@ h6 {
 }
 
 button.close{
-    font-size: 17px;    
+    font-size: 17px;
     font-weight: lighter;
     background-color: #908f9c;
     line-height: 1.3;

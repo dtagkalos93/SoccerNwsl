@@ -42,15 +42,15 @@ public class fixtureData {
     private List redawayList = new ArrayList();
     private List savehomeList = new ArrayList();
     private List saveawayList = new ArrayList();
-     private List ownhomeList = new ArrayList();
+    private List ownhomeList = new ArrayList();
     private List ownawayList = new ArrayList();
-     private List pkmissedhomeList = new ArrayList();
+    private List pkmissedhomeList = new ArrayList();
     private List pkmissedawayList = new ArrayList();
-     private List pksavedhomeList = new ArrayList();
+    private List pksavedhomeList = new ArrayList();
     private List pksavedawayList = new ArrayList();
 
     public void fixture() {
-        
+
         System.out.println("fixtureData");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -87,20 +87,18 @@ public class fixtureData {
             long days = diff / (24 * 60 * 60 * 1000);
             int weeks = ((int) days) / 7;
 
-            if(weeks==10){
-                weeks=9;
-            }
-            else if(weeks==16 || weeks == 17){
-                weeks=15;
-            }
-            else if(weeks==23 || weeks ==24 ){
+            if (weeks == 10) {
+                weeks = 9;
+            } else if (weeks == 16 || weeks == 17) {
+                weeks = 15;
+            } else if (weeks == 23 || weeks == 24) {
                 weeks = 21;
+            } else if (weeks > 10) {
+                weeks = weeks - 1;
             }
-            else if(weeks>10){
-                weeks=weeks-1;
-            }
-            if (weeks >= 22 )
+            if (weeks >= 22) {
                 weeks = 22;
+            }
 
             //Select the data from the database
             String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
@@ -120,49 +118,49 @@ public class fixtureData {
 
                 homeList.add(resultSet.getString("home"));
                 if (resultSet.getString("home").equals("Houston Dash")) {
-                    badge = "Houston_Dash2.png";
+                    badge = "Houston_Dash.png";
                 } else if (resultSet.getString("home").equals("Chicago Red Stars")) {
-                    badge = "ChicagoRedStars1.png";
+                    badge = "ChicagoRedStars.png";
                 } else if (resultSet.getString("home").equals("Portland Thorns FC")) {
-                    badge = "Portland1.png";
+                    badge = "Portland.png";
                 } else if (resultSet.getString("home").equals("Orlando Pride")) {
-                    badge = "OrlandoPride2.png";
+                    badge = "OrlandoPride.png";
                 } else if (resultSet.getString("home").equals("Washington Spirit")) {
-                    badge = "spirit.png";
+                    badge = "Washington_Spirit.png";
                 } else if (resultSet.getString("home").equals("North Carolina Courage")) {
-                    badge = "North_Carolina_Courage1.png";
+                    badge = "North_Carolina_Courage.png";
                 } else if (resultSet.getString("home").equals("Seattle Reign FC")) {
-                    badge = "SeattleReignFC2.png";
+                    badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("home").equals("Sky Blue FC")) {
-                    badge = "Sky_Blue_FC1.png";
+                    badge = "Sky_Blue_FC.png";
                 } else if (resultSet.getString("home").equals("FC Kansas City")) {
-                    badge = "kansasCity2.png";
+                    badge = "kansasCity.png";
                 } else if (resultSet.getString("home").equals("Boston Breakers")) {
-                    badge = "Boston_Breakers1.png";
+                    badge = "Boston_Breakers.png";
                 }
                 homebadgeList.add(badge);
                 timeList.add(resultSet.getString("time"));
                 awayList.add(resultSet.getString("away"));
                 if (resultSet.getString("away").equals("Houston Dash")) {
-                    badge = "Houston_Dash2.png";
+                    badge = "Houston_Dash.png";
                 } else if (resultSet.getString("away").equals("Chicago Red Stars")) {
-                    badge = "ChicagoRedStars1.png";
+                    badge = "ChicagoRedStars.png";
                 } else if (resultSet.getString("away").equals("Portland Thorns FC")) {
-                    badge = "Portland1.png";
+                    badge = "Portland.png";
                 } else if (resultSet.getString("away").equals("Orlando Pride")) {
-                    badge = "OrlandoPride2.png";
+                    badge = "OrlandoPride.png";
                 } else if (resultSet.getString("away").equals("Washington Spirit")) {
-                    badge = "spirit.png";
+                    badge = "Washington_Spirit.png";
                 } else if (resultSet.getString("away").equals("North Carolina Courage")) {
-                    badge = "North_Carolina_Courage1.png";
+                    badge = "North_Carolina_Courage.png";
                 } else if (resultSet.getString("away").equals("Seattle Reign FC")) {
-                    badge = "SeattleReignFC2.png";
+                    badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("away").equals("Sky Blue FC")) {
-                    badge = "Sky_Blue_FC1.png";
+                    badge = "Sky_Blue_FC.png";
                 } else if (resultSet.getString("away").equals("FC Kansas City")) {
-                    badge = "kansasCity2.png";
+                    badge = "kansasCity.png";
                 } else if (resultSet.getString("away").equals("Boston Breakers")) {
-                    badge = "Boston_Breakers1.png";
+                    badge = "Boston_Breakers.png";
                 }
                 awaybadgeList.add(badge);
 
@@ -170,43 +168,50 @@ public class fixtureData {
             resultSet.close();
 
             s.close();
-            fixtureDetails(weeks,connection);
+            fixtureDetails(weeks, connection);
+            connection.close();
 
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
 
         }
-        
+
     }
 
-    public List getdataList (){
+    public List getdataList() {
         return dataList;
     }
-    public List getdateList () {
+
+    public List getdateList() {
         return dateList;
     }
-    public List gethomeList (){
+
+    public List gethomeList() {
         return homeList;
     }
-    public List gethomebadgeList(){
+
+    public List gethomebadgeList() {
         return homebadgeList;
     }
-    public List gettimeList (){
+
+    public List gettimeList() {
         return timeList;
     }
-    public List getawayList (){
+
+    public List getawayList() {
         return awayList;
     }
-    public List getawaybadgeList (){
+
+    public List getawaybadgeList() {
         return awaybadgeList;
     }
-    
-    public void fixtureDetails(int weeks,Connection connection){
+
+    public void fixtureDetails(int weeks, Connection connection) {
         List fixture = new ArrayList();
         try {
-            String sql = "SELECT * FROM  gw"+weeks;
-            
+            String sql = "SELECT * FROM  gw" + weeks;
+
             Statement s = connection.createStatement();
 
             s.executeQuery(sql);
@@ -219,35 +224,35 @@ public class fixtureData {
             resultSet.close();
 
             s.close();
-            for(int i=0;i<fixture.size();i++){
-            sql = "SELECT * FROM  "+fixture.get(i);
-            s = connection.createStatement();
+            for (int i = 0; i < fixture.size(); i++) {
+                sql = "SELECT * FROM  " + fixture.get(i);
+                s = connection.createStatement();
 
-            s.executeQuery(sql);
+                s.executeQuery(sql);
 
-            resultSet = s.getResultSet();
+                resultSet = s.getResultSet();
 
-            while (resultSet.next()) {
-               goalhomeList.add(resultSet.getString("homegoal"));
-               goalawayList.add(resultSet.getString("awaygoal"));
-               assisthomeList.add(resultSet.getString("homeassist"));
-                assistawayList.add(resultSet.getString("awayassist"));
-                yellowhomeList.add(resultSet.getString("homeyellow"));
-                yellowawayList.add(resultSet.getString("awayyellow"));
-                redhomeList.add(resultSet.getString("homered"));
-                redawayList.add(resultSet.getString("homered"));
-                savehomeList.add(resultSet.getString("homesave"));
-                saveawayList.add(resultSet.getString("awaysave"));
-                ownhomeList.add(resultSet.getString("homeown"));
-                ownawayList.add(resultSet.getString("awayown"));
-                pkmissedhomeList.add(resultSet.getString("homepkmissed"));
-                pkmissedawayList.add(resultSet.getString("awaypkmissed"));
-                pksavedhomeList.add(resultSet.getString("homepksaved"));
-                pksavedawayList.add(resultSet.getString("awaypksaved"));
-            }
-            goalhomeList.add("new");
-               goalawayList.add("new");
-               assisthomeList.add("new");
+                while (resultSet.next()) {
+                    goalhomeList.add(resultSet.getString("homegoal"));
+                    goalawayList.add(resultSet.getString("awaygoal"));
+                    assisthomeList.add(resultSet.getString("homeassist"));
+                    assistawayList.add(resultSet.getString("awayassist"));
+                    yellowhomeList.add(resultSet.getString("homeyellow"));
+                    yellowawayList.add(resultSet.getString("awayyellow"));
+                    redhomeList.add(resultSet.getString("homered"));
+                    redawayList.add(resultSet.getString("homered"));
+                    savehomeList.add(resultSet.getString("homesave"));
+                    saveawayList.add(resultSet.getString("awaysave"));
+                    ownhomeList.add(resultSet.getString("homeown"));
+                    ownawayList.add(resultSet.getString("awayown"));
+                    pkmissedhomeList.add(resultSet.getString("homepkmissed"));
+                    pkmissedawayList.add(resultSet.getString("awaypkmissed"));
+                    pksavedhomeList.add(resultSet.getString("homepksaved"));
+                    pksavedawayList.add(resultSet.getString("awaypksaved"));
+                }
+                goalhomeList.add("new");
+                goalawayList.add("new");
+                assisthomeList.add("new");
                 assistawayList.add("new");
                 yellowhomeList.add("new");
                 yellowawayList.add("new");
@@ -269,57 +274,68 @@ public class fixtureData {
             Logger.getLogger(fixtureData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    public List getgoalhomeList (){
+
+    public List getgoalhomeList() {
         return goalhomeList;
     }
-    public List getgoalawayList () {
+
+    public List getgoalawayList() {
         return goalawayList;
     }
-    public List getassisthomeList (){
+
+    public List getassisthomeList() {
         return assisthomeList;
     }
-    public List getassistawayList(){
+
+    public List getassistawayList() {
         return assistawayList;
     }
-    public List getyellowhomeList (){
+
+    public List getyellowhomeList() {
         return yellowhomeList;
     }
-    public List getyellowawayList (){
+
+    public List getyellowawayList() {
         return yellowawayList;
     }
-    public List getredhomeList (){
+
+    public List getredhomeList() {
         return redhomeList;
     }
-    public List getredawayList (){
+
+    public List getredawayList() {
         return redawayList;
     }
-    public List getsavehomeList (){
+
+    public List getsavehomeList() {
         return savehomeList;
     }
-    public List getsaveawayList (){
+
+    public List getsaveawayList() {
         return saveawayList;
     }
-    
-    public List getownhomeList (){
+
+    public List getownhomeList() {
         return ownhomeList;
     }
-    public List getownawayList (){
+
+    public List getownawayList() {
         return ownawayList;
     }
-    
-    public List getpkmissedhomeList (){
+
+    public List getpkmissedhomeList() {
         return pkmissedhomeList;
     }
-    public List getpkmissedawayList (){
+
+    public List getpkmissedawayList() {
         return pkmissedawayList;
     }
-    
-    public List getpksavedhomeList (){
+
+    public List getpksavedhomeList() {
         return pksavedhomeList;
     }
-    public List getpksavedawayList (){
+
+    public List getpksavedawayList() {
         return pksavedawayList;
     }
 }

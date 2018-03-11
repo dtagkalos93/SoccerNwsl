@@ -115,6 +115,7 @@ public class playersData extends HttpServlet {
             injurylist = new ArrayList<>();
 
             forwards(connection, fixNo, category);
+                        connection.close();
 
         } catch (Exception e) {
 

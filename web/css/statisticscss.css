@@ -76,6 +76,11 @@ h6 {
     font-size: 15px;
 }
 
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: #c8373b;
+}
+
 .form-control{
     width: 90%;
     margin-left: 5%;

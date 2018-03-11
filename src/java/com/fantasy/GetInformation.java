@@ -103,6 +103,7 @@ public class GetInformation extends HttpServlet {
             resultSet.close();
 
             s.close();
+            connection.close();
 
         } catch (Exception e) {
 

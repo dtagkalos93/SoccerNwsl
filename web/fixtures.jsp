@@ -157,7 +157,7 @@
                     %>
 
                     <!-- Blog Entries Column -->
-                    <div class="col-md-8" style="margin-top: 10px">
+                    <div class="col-md-9" style="margin-top: 10px">
                         <div class="col-md-12 col-sm-6 col-xs-12 fixtures" id="somediv">
                             <h4 style="font-family: Century Gothic;font-weight: bold;font-size: 15px;text-align: center;padding-bottom: 1% "><%=posts.get(0) + " - " + date.get(0)%></h4>
                             <button id="prev" value="<%=posts.get(1)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center;padding: 1%; float: left">
@@ -182,7 +182,7 @@
 
 
                             %>
-                            <h6 class="col-sm-12" style="font-family: Century Gothic;font-weight: lighter;font-size: 15px;text-align: center;margin-bottom: 0%;margin-top:2.5%;padding-bottom: 1%;border-bottom: 1px solid #e8e4e4; "><%=date.get(i)%></h6>
+                            <h6 class="col-sm-12" style="background-color:#050424;color:white;font-family: Century Gothic;font-weight: lighter;font-size: 17px;text-align: center;padding-bottom: 1%;padding-top: 1%;border-bottom: 1px solid #e8e4e4;margin-bottom: 0"><%=date.get(i)%></h6>
                             <%
                                     dateSTR = date.get(i);
 
@@ -191,20 +191,16 @@
                             <a data-toggle="collapse" href="#<%=game%>" style="color:black">
                                 <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                     <div class="row" style="">
-                                        <div class="col-md-4  col-xs-4 " style="left: 5.9%">
-                                            <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
+                                        <div class="col-md-4  col-xs-4" style="text-align:center;padding-bottom: 0.5%;padding-top: 1.5%">
+                                            <img style="height: 75px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <h6 style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=home.get(i)%></h6>                                      
                                         </div>
-                                        <div class="col-md-1 col-xs-1 ">
-                                            <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                        <div class="col-md-4  col-xs-4 time" style="letter-spacing: 0.5px;padding-top: 37px">
+                                            <h6 style="font-family: Century Gothic;text-align: center;font-size: 21px"><%=time.get(i)%></h6>
                                         </div>
-                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                            <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
-                                        </div>
-                                        <div class="col-md-1 col-xs-1 ">
-                                            <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
-                                        </div>
-                                        <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
-                                            <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
+                                        <div class="col-md-4 col-xs-4 " style="text-align:center;padding-bottom: 0.5%;padding-top: 1.5%">
+                                            <img style="height: 75px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <h6 style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=away.get(i)%></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -336,7 +332,7 @@
                     $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
                     var $buttonprev = $("<button>");
                     $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
-                    $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "font-family": "Century Gothic", "float":"left"});
+                    $buttonprev.css({"font-size": "14px", "font-weight": "bold", "text-align": "center", "padding": "1%", "font-family": "Century Gothic", "float": "left"});
                     $buttonprev.text("Previous").insertAfter($h4);
                     if (responseText[1] == "Gameweek 0") {
                         $buttonprev.css('visibility', 'hidden');
@@ -352,7 +348,7 @@
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
                     $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
-                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"right"});
+                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float": "right"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
@@ -361,7 +357,7 @@
 
                         var $h6 = $("<h6>");
                         $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
+                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "17px", "margin-bottom": "0%", "padding-bottom": "1%","padding-top": "1%", "background-color":"#050424", "color":"white", "border-bottom": "1px solid #e8e4e4" });
                         $h6.text(responseText[i]).insertAfter($buttonnext);
                         if (i + 6 > 0) {
                             if (responseText[i] == responseText[i - 6]) {
@@ -377,34 +373,34 @@
                         $divrow.appendTo($div);
                         var $divh6 = $("<div>");
                         $divh6.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6.css({"left": "7.9%"});
+                        $divh6.css({});
                         $divh6.appendTo($divrow);
                         var $h6home = $("<h6>");
                         $h6home.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6home.css({"font-size": "17px", "font-family": "Century Gothic", "width": "100%", "text-align": "right"});
+                        $h6home.css({"font-size": "15px", "font-family": "Century Gothic", "font-weight": "lighter", "margin-bottom": "0"});
                         $h6home.text(responseText[i + 1]).appendTo($divh6);
                         var $imghome = $("<img>");
                         $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
-                        $imghome.css({"width": "initial ", "margin-left": "1.2%"});
+                        $imghome.css({"height": "75px", "width": "auto"});
                         $imghome.appendTo($divrow);
                         var $divtime = $("<div>");
-                        $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
-                        $divtime.css({"letter-spacing": "0.5px", "width": "11%", "right": "2.5%", "background-color": "#1d3260", "border-radius": " 3pt", "border": "1px solid #1d3260"});
+                        $divtime.attr({"class": "col-md-4  col-xs-4  skor "});
+                        $divtime.css({"letter-spacing": "0.5px", "padding-top": "37px"});
                         $divtime.appendTo($divrow);
                         var $time = $("<h6>");
-                        $time.css({"width": "100%", "font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
+                        $time.css({"font-family": "Century Gothic", "text-align": "center", "font-size": "21px"});
                         $time.text(responseText[i + 3]).appendTo($divtime);
                         var $imgaway = $("<img>");
                         $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
-                        $imgaway.css({"width": "initial ", "margin-left": "-5.3%"});
+                        $imgaway.css({"height": "75px", "width": "auto"});
                         $imgaway.appendTo($divrow);
                         var $divh6a = $("<div>");
                         $divh6a.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6a.css({"left": "-6.8%"});
+                        $divh6a.css({});
                         $divh6a.appendTo($divrow);
                         var $h6away = $("<h6>");
                         $h6away.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6away.css({"font-size": "17px", "font-family": "Century Gothic", "width": "110%"});
+                        $h6away.css({"font-size": "15px", "font-family": "Century Gothic", "font-weight": "lighter", "margin-bottom": "0"});
                         $h6away.text(responseText[i + 4]).appendTo($divh6a);
                         if (i >= responseText.length) {
                             $divrow.css({"display": "none"});
@@ -428,7 +424,7 @@
                     $h4.text(responseText[0] + " - " + responseText[3]).appendTo("#somediv");
                     var $buttonprev = $("<button>");
                     $buttonprev.attr({'id': "prev", 'value': responseText[1], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
-                    $buttonprev.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"left" });
+                    $buttonprev.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float": "left"});
                     $buttonprev.text("Previous").insertAfter($h4);
                     if (responseText[1] == "Gameweek 0") {
                         $buttonprev.css('visibility', 'hidden');
@@ -444,7 +440,7 @@
                     $img.prependTo($h5);
                     var $buttonnext = $("<button>");
                     $buttonnext.attr({'id': "next", 'value': responseText[2], 'type': "button", 'class': "fixturebtn btncstm col-sm-3 hidden-xs"});
-                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float":"right"});
+                    $buttonnext.css({"font-size": "14px", "font-family": "Century Gothic", "font-weight": "bold", "text-align": "center", "padding": "1%", "float": "right"});
                     $buttonnext.text("Next").insertAfter($h5);
                     if (responseText[2] == "Gameweek 23") {
                         $buttonnext.css('visibility', 'hidden');
@@ -453,7 +449,7 @@
 
                         var $h6 = $("<h6>");
                         $h6.attr({class: "col-sm-12"});
-                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "15px", "margin-bottom": "0%", "margin-top": "2.5%", "padding-bottom": "1%", "border-bottom": "1px solid #e8e4e4"});
+                        $h6.css({'text-align': "center", "font-family": "Century Gothic", 'font-weight': "lighter", 'font-size': "17px", "margin-bottom": "0%", "padding-bottom": "1%","padding-top": "1%", "background-color":"#050424", "color":"white", "border-bottom": "1px solid #e8e4e4" });
                         $h6.text(responseText[i]).insertAfter($buttonnext);
                         if (i + 6 > 0) {
                             if (responseText[i] == responseText[i - 6]) {
@@ -469,34 +465,34 @@
                         $divrow.appendTo($div);
                         var $divh6 = $("<div>");
                         $divh6.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6.css({"left": "7.9%"});
+                        $divh6.css({});
                         $divh6.appendTo($divrow);
                         var $h6home = $("<h6>");
                         $h6home.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6home.css({"font-size": "17px", "font-family": "Century Gothic", "width": "100%", "text-align": "right"});
+                        $h6home.css({"font-size": "15px", "font-family": "Century Gothic", "font-weight": "lighter", "margin-bottom": "0"});
                         $h6home.text(responseText[i + 1]).appendTo($divh6);
                         var $imghome = $("<img>");
                         $imghome.attr({src: "img/" + responseText[i + 2], 'class': "col-md-1 col-xs-1"});
-                        $imghome.css({"width": "initial ", "margin-left": "1.2%"});
+                        $imghome.css({"height": "75px", "width": "auto"});
                         $imghome.appendTo($divrow);
                         var $divtime = $("<div>");
-                        $divtime.attr({"class": "col-md-2  col-xs-2  skor "});
-                        $divtime.css({"letter-spacing": "0.5px", "width": "11%", "right": "2.5%", "background-color": "#1d3260", "border-radius": " 3pt", "border": "1px solid #1d3260"});
+                        $divtime.attr({"class": "col-md-4  col-xs-4  skor "});
+                        $divtime.css({"letter-spacing": "0.5px", "padding-top": "37px"});
                         $divtime.appendTo($divrow);
                         var $time = $("<h6>");
-                        $time.css({"width": "100%", "font-family": "Century Gothic", "text-align": "center", "color": "white", "font-size": "16px", "font-weight": "lighter"});
+                        $time.css({"font-family": "Century Gothic", "text-align": "center", "font-size": "21px"});
                         $time.text(responseText[i + 3]).appendTo($divtime);
                         var $imgaway = $("<img>");
                         $imgaway.attr({src: "img/" + responseText[i + 5], 'class': "col-md-1 col-xs-1"});
-                        $imgaway.css({"width": "initial ", "margin-left": "-5.3%"});
+                        $imgaway.css({"height": "75px", "width": "auto"});
                         $imgaway.appendTo($divrow);
                         var $divh6a = $("<div>");
                         $divh6a.attr({'class': "col-md-4  col-xs-4   "});
-                        $divh6a.css({"left": "-6.8%"});
+                        $divh6a.css({});
                         $divh6a.appendTo($divrow);
                         var $h6away = $("<h6>");
                         $h6away.attr({'class': "col-md-4  col-xs-4   "});
-                        $h6away.css({"font-size": "17px", "font-family": "Century Gothic", "width": "110%"});
+                        $h6away.css({"font-size": "15px", "font-family": "Century Gothic", "font-weight": "lighter", "margin-bottom": "0"});
                         $h6away.text(responseText[i + 4]).appendTo($divh6a);
                         if (i >= responseText.length) {
                             $divrow.css({"display": "none"});

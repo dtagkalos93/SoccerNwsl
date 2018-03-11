@@ -24,7 +24,6 @@ public class players {
     private List pointList;
     private List jerseyList;
     private List injuryList;
-    
 
     public void players(String pos, String category) {
 
@@ -33,7 +32,7 @@ public class players {
         priceList = new ArrayList();
         pointList = new ArrayList();
         jerseyList = new ArrayList();
-        injuryList = new ArrayList ();
+        injuryList = new ArrayList();
         System.out.println("players");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -169,21 +168,17 @@ public class players {
                     pointList.add(total + "");
 
                 } else {
-                    String point=resultSet.getString(category);
-                    
-                    if (point.equals("")|| point.equals("-")){
-                        point="0";
-                        pointList.add(point);
-                    }
-                    else{
-                        pointList.add(point);
-                    }
-                        
+                    String point = resultSet.getString(category);
 
-                    
+                    if (point.equals("") || point.equals("-")) {
+                        point = "0";
+                        pointList.add(point);
+                    } else {
+                        pointList.add(point);
+                    }
+
                 }
-                
-                
+
                 i++;
 
             }
@@ -191,6 +186,7 @@ public class players {
             resultSet.close();
 
             s.close();
+            connection.close();
 
         } catch (Exception e) {
 
@@ -219,6 +215,7 @@ public class players {
     public List getjerseyList() {
         return jerseyList;
     }
+
     public List getinjuryList() {
         return injuryList;
     }

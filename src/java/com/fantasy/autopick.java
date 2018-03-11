@@ -80,6 +80,7 @@ public class autopick extends HttpServlet {
             jerseyList = new ArrayList<>();
 
             forwards(connection);
+                        connection.close();
 
         } catch (Exception e) {
 

@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.fantasy.rosterPlayer"%>
 <%@page import="com.fantasy.fixtureData"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,6 +14,8 @@
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
     String value = players.getValue();
+    String totalScore = players.getTotalScore();
+        String totalUsers = players.getTotalUsers();
 
 %>
 
@@ -160,10 +163,10 @@
                                 </h6>
                             </div>
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 2%;padding-left: 0;padding-right: 0" >
-                                <div class="col-md-3  col-xs-3" style="width: 30%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
+                                <div class="col-md-3  col-xs-3" style="width: 30%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Captain</h6>
                                     <div>
-                                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                        <select class="form-control"  data-size="5" id="captainSel" onchange="selectCaptain()">
                                             <option selected disabled>Select</option>
                                             <%
                                                 for (int i = 1; i <= 11; i++) {
@@ -179,7 +182,7 @@
                                 <div class="col-md-3  col-xs-3" style="width: 30%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Select Vice Captain</h6>
                                     <div>
-                                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                                        <select class="form-control"  data-size="5" id="vcaptainSel" onchange="selectVCaptain()">
                                             <option selected disabled>Select</option>
 
                                             <%
@@ -204,7 +207,11 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 bc-img"  >
                             <hr style="border:none;margin-top: 6.5%"/>
                             <div id="selGK" class="col-md-12 col-xs-6" onclick="openModalGK('1')"   >
-                                <img class="image-player" id="gkimage" src="img/subsgk.png"/>
+                                        <img  class="image-player " id="gkimage"  src="img/subsgk.png" /> 
+                                        <img  class="captainImg col-md-1" id="gkcptimage"  src="img/captain.png" style="display: none;padding-left: 53.5%;margin-top: -4.8%; " />   
+
+                                    <img  class="captainImg" id="gkvcptimage"  src="img/vcaptain.png" style="display: none;padding-left: 53.5%;margin-top: -4.8%;" />  
+                                
                                 <p class="name" id="gkname" >Goalkeeper</p>
                                 <p style="display: none" id="team1"></p>
                                 <p class="opponent" id="oppgk"></p>
@@ -213,7 +220,14 @@
 
                             <hr style="border:none;margin-top: 21%">
                             <div id="selDEF1" class="col-md-2 col-xs-2" onclick="openModalDEF('1')"   >
-                                <img class="image-player" id="defimage1" src="img/subs.png"  />
+                                
+                                
+                                        <img  class="image-player " id="defimage1"  src="img/subsgk.png" />  
+                                    
+                                        <img  class="captainImg " id="defcptimage1"  src="img/captain.png" style="display: none;padding-left: 65%;margin-top: -21% " /> 
+                                        
+                                        <img  class="captainImg" id="defvcptimage1"  src="img/vcaptain.png" style="display: none" />    
+                                    
                                 <p class="name" id="defname1" >Defender</p>
                                 <p style="display: none" id="team3"></p>
                                 <p class="opponent" id="oppdef1"></p>
@@ -221,6 +235,8 @@
                             </div>
                             <div id="selDEF2" class="col-md-2 col-xs-2" onclick="openModalDEF('2')"   >
                                 <img class="image-player" id="defimage2" src="img/subs.png" />
+                                <img  class="captainImg" id="defcptimage2"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="defvcptimage2"  src="img/vcaptain.png" style="display: none" /> 
                                 <p class="name" id="defname2" >Defender</p>
                                 <p style="display: none" id="team4"></p>
                                 <p class="opponent" id="oppdef2"></p>
@@ -228,6 +244,8 @@
                             </div>
                             <div id="selDEF3" class="col-md-2 col-xs-2" onclick="openModalDEF('3')"  >
                                 <img class="image-player" id="defimage3" src="img/subs.png"  />
+                                <img  class="captainImg" id="defcptimage3"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="defvcptimage3"  src="img/vcaptain.png" style="display: none" /> 
                                 <p class="name" id="defname3" >Defender</p>
                                 <p style="display: none" id="team5"></p>
                                 <p class="opponent" id="oppdef3"></p>
@@ -235,6 +253,8 @@
                             </div>
                             <div id="selDEF4" class="col-md-2 col-xs-2" onclick="openModalDEF('4')"   >
                                 <img class="image-player" id="defimage4" src="img/subs.png"  />
+                                <img  class="captainImg" id="defcptimage4"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="defvcptimage4"  src="img/vcaptain.png" style="display: none" /> 
                                 <p class="name" id="defname4" >Defender</p>
                                 <p style="display: none" id="team6"></p>
                                 <p class="opponent" id="oppdef4"></p>
@@ -242,6 +262,8 @@
                             </div>
                             <div id="selDEF5" class="col-md-2 col-xs-2" onclick="openModalDEF('5')" >
                                 <img class="image-player" id="defimage5" src="img/subs.png" />
+                                <img  class="captainImg" id="defcptimage5"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="defvcptimage5"  src="img/vcaptain.png" style="display: none" /> 
                                 <p class="name" id="defname5" >Defender</p>
                                 <p style="display: none" id="team7"></p>
                                 <p class="opponent" id="oppdef5"></p>
@@ -251,6 +273,8 @@
                             <hr style="border:none;margin-top: 21%" >
                             <div id="selMID1" class="col-md-2 col-xs-2" onclick="openModalMID('1')" >
                                 <img class="image-player" src="img/subs.png"  id="midimage1" />
+                                <img  class="captainImg" id="midcptimage1"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="midvcptimage1"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="midname1" class="name" >Midfielder</p>
                                 <p style="display: none" id="team8"></p>
                                 <p class="opponent" id="oppmid1"></p>
@@ -258,6 +282,8 @@
                             </div>
                             <div id="selMID2" class="col-md-2 col-xs-2" onclick="openModalMID('2')" >
                                 <img class="image-player" src="img/subs.png"  id="midimage2" />
+                                <img  class="captainImg" id="midcptimage2"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="midvcptimage2"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="midname2" class="name" >Midfielder</p>
                                 <p style="display: none" id="team9"></p>
                                 <p class="opponent" id="oppmid2"></p>
@@ -265,6 +291,8 @@
                             </div>
                             <div id="selMID3" class="col-md-2 col-xs-2" onclick="openModalMID('3')" >
                                 <img class="image-player" src="img/subs.png"  id="midimage3" />
+                                <img  class="captainImg" id="midcptimage3"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="midvcptimage3"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="midname3" class="name" >Midfielder</p>
                                 <p style="display: none" id="team10"></p>
                                 <p class="opponent" id="oppmid3"></p>
@@ -272,6 +300,8 @@
                             </div>
                             <div id="selMID4" class="col-md-2 col-xs-2"  onclick="openModalMID('4')">
                                 <img class="image-player" src="img/subs.png"  id="midimage4" />
+                                <img  class="captainImg" id="midcptimage4"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="midvcptimage4"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="midname4" class="name" >Midfielder</p>
                                 <p style="display: none" id="team11"></p>
                                 <p class="opponent" id="oppmid4"></p>
@@ -279,6 +309,8 @@
                             </div>
                             <div id="selMID5" class="col-md-2 col-xs-2"  onclick="openModalMID('5')">
                                 <img class="image-player" src="img/subs.png"  id="midimage5" />
+                                <img  class="captainImg" id="midcptimage5"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="midvcptimage5"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="midname5" class="name" >Midfielder</p>
                                 <p style="display: none" id="team12"></p>
                                 <p class="opponent" id="oppmid5"></p>
@@ -288,6 +320,8 @@
                             <hr style="border:none;margin-top: 21%">
                             <div id="selFWD1" class="col-md-4  col-xs-4"  onclick="openModalFWD('1')">
                                 <img class="image-player" id="fwdimage1"  />
+                                <img  class="captainImg" id="fwdcptimage1"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="fwdvcptimage1"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="fwdname1" class="name" >Forward</p>
                                 <p style="display: none" id="team13"></p>
                                 <p class="opponent" id="oppfwd1"></p>
@@ -295,6 +329,8 @@
                             </div>
                             <div id="selFWD2" class="col-md-4  col-xs-4" onclick="openModalFWD('2')">
                                 <img class="image-player" id="fwdimage2"  />
+                                <img  class="captainImg" id="fwdcptimage2"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="fwdvcptimage2"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="fwdname2" class="name" >Forward</p>
                                 <p style="display: none" id="team14"></p>
                                 <p class="opponent" id="oppfwd2"></p>
@@ -302,6 +338,8 @@
                             </div>
                             <div id="selFWD3" class="col-md-4  col-xs-4" onclick="openModalFWD('3')" >
                                 <img class="image-player" id="fwdimage3"   />
+                                <img  class="captainImg" id="fwdcptimage3"  src="img/captain.png" style="display: none" />  
+                                <img  class="captainImg" id="fwdvcptimage3"  src="img/vcaptain.png" style="display: none" /> 
                                 <p id="fwdname3" class="name" >Forward</p>
                                 <p style="display: none" id="team15"></p>
                                 <p class="opponent" id="oppfwd3"></p>
@@ -311,7 +349,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12 pit-img">
                             <hr style="border:none;margin-top: 0"/>
-                            <div id="ben1" class="col-md-3  col-xs-3" onclick="openModalBEN('1')" >
+                            <div id="ben1" class="col-md-3  col-xs-3" style="border-right: 1px solid #565555" onclick="openModalBEN('1')" >
                                 <img id="benimage1" class="image-player" src="img/couragegk.png"  />
                                 <p id="benname1"  class="name" >D'Angelo</p>
                                 <p class="opponent" id="oppben1"></p>
@@ -341,6 +379,9 @@
                             </div>
                         </div>
 
+                        <button id="saveTeam"  class="saveteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" onclick="saveTeam();" disabled>
+                            Save Team
+                        </button>
                         <%
                             fixtureData fixture = new fixtureData();
                             fixture.fixture();
@@ -380,12 +421,12 @@
                             <h5 class="col-sm-6 hidden-xs" style="font-family: Century Gothic;text-align: center;font-weight: bold; font-size:18px;;width: 68%; margin-top: -1%;margin-bottom: -2%" align="center">
                                 <img src="img/nwsllogo.png" style="width: 23%;padding-right: 0.5%" >Fixtures
                             </h5>
-                            <%  String displaynext = "none";
+                            <%  String displaynext = "disabled";
                                 if (!posts.get(2).equals("Gameweek 23")) {
                                     displaynext = "";
                                 }
                             %>
-                            <button id="next" value="<%=posts.get(2)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%;float: right;display: <%=displaynext%>">
+                            <button id="next" value="<%=posts.get(2)%>" type="button" class="fixturebtn btncstm col-sm-3 hidden-xs" style="font-family: Century Gothic;font-size: 14px; font-weight: bold; text-align: center; padding: 1%;float: right;" <%=displaynext%>>
                                 Next
                             </button>
 
@@ -412,13 +453,13 @@
                                                 <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img style="margin-left:27%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
                                                 <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img class="" style="margin-left:0%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -1080,19 +1121,19 @@
                             <table style="font-family: Century Gothic;width:90%;margin-left:5%; background-color: #f9f5f5; border: 1px solid #ebebe4">
                                 <tr style="border-bottom:1px solid white">
                                     <td style='font-size: 14px; padding:5px; font-weight: lighter'>Gameweek Points:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px ">250</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px "><%=totalScore%> </td>
                                 </tr>
                                 <tr style="border-bottom:1px solid white">
                                     <td style='font-size: 14px;padding-left: 5px; padding:5px;font-weight: lighter '>Overall Points:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px ">1,254</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px "></td>
                                 </tr>
                                 <tr style="border-bottom:1px solid white">
                                     <td style='font-size: 14px;padding-left: 5px; padding:5px; font-weight: lighter '>Overall Rank:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px ">320,154</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px "></td>
                                 </tr>
                                 <tr style="border-bottom:1px solid white">
                                     <td style='font-size: 14px; padding:5px; font-weight: lighter'>Total Players:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px ">254,999</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  padding: 5px "><%=totalUsers %></td>
                                 </tr>
                             </table>
                         </div>
@@ -1147,19 +1188,22 @@
                             <table style="font-family: Century Gothic;width:90%;margin-left:5%; background-color: #f9f5f5; border: 1px solid #ebebe4">
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px;padding-left: 5px; padding:5px;font-weight: lighter">Gameweek transfers:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">3</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  "></td>
                                 </tr>
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px;padding-left: 5px; padding:5px;;font-weight: lighter">Total transfers:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">41</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  "></td>
                                 </tr>
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px; padding:5px;;font-weight: lighter">Team value:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$102.1</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$<%=value%></td>
                                 </tr>
+                                
+                                <% double remain=100.0-Double.parseDouble(value);
+                                DecimalFormat df = new DecimalFormat("####0.0");%>
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px; padding:5px;;font-weight: lighter">In the bank:</td>
-                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$1.1</td>
+                                    <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$<%=df.format(remain)%></td>
                                 </tr>
                             </table>
                         </div>
@@ -1246,7 +1290,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="playersInfo" class="modal" role="dialog" data-keyboard="false" data-backdrop="static" >
         <div class="modal-dialog" style="width: 450px">
 
@@ -1372,7 +1416,7 @@
             <div class="modal-content">
                 <div class="modal-header-info">
                     <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                    <p id="backButton" class="modal-title" style="font-size: 17px;padding: 0.5%;padding-left: 1.5%;color:white">
+                    <p id="backButton" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
                         <span class="glyphicon glyphicon-arrow-left"></span></p>
                 </div>
                 <!-- Modal content-->

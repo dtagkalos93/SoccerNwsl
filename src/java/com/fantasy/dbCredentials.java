@@ -46,10 +46,11 @@ public class dbCredentials {
             else{
                 exist= false;
             }
-            
+
                         resultSet.close();
 
             s.close();
+                        connection.close();
 
         } catch (Exception e) {
 

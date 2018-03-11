@@ -87,49 +87,49 @@ public class fixtureprev extends HttpServlet {
 
                 list.add(resultSet.getString("home"));
                 if (resultSet.getString("home").equals("Houston Dash")) {
-                    badge = "Houston_Dash2.png";
+                    badge = "Houston_Dash.png";
                 } else if (resultSet.getString("home").equals("Chicago Red Stars")) {
-                    badge = "ChicagoRedStars1.png";
+                    badge = "ChicagoRedStars.png";
                 } else if (resultSet.getString("home").equals("Portland Thorns FC")) {
-                    badge = "Portland1.png";
+                    badge = "Portland.png";
                 } else if (resultSet.getString("home").equals("Orlando Pride")) {
-                    badge = "OrlandoPride2.png";
+                    badge = "OrlandoPride.png";
                 } else if (resultSet.getString("home").equals("Washington Spirit")) {
-                    badge = "spirit.png";
+                    badge = "Washington_Spirit.png";
                 } else if (resultSet.getString("home").equals("North Carolina Courage")) {
-                    badge = "North_Carolina_Courage1.png";
+                    badge = "North_Carolina_Courage.png";
                 } else if (resultSet.getString("home").equals("Seattle Reign FC")) {
-                    badge = "SeattleReignFC2.png";
+                    badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("home").equals("Sky Blue FC")) {
-                    badge = "Sky_Blue_FC1.png";
+                    badge = "Sky_Blue_FC.png";
                 } else if (resultSet.getString("home").equals("FC Kansas City")) {
-                    badge = "kansasCity2.png";
+                    badge = "kansasCity.png";
                 } else if (resultSet.getString("home").equals("Boston Breakers")) {
-                    badge = "Boston_Breakers1.png";
+                    badge = "Boston_Breakers.png";
                 }
                 list.add(badge);
                 list.add(resultSet.getString("time"));
                 list.add(resultSet.getString("away"));
                 if (resultSet.getString("away").equals("Houston Dash")) {
-                    badge = "Houston_Dash2.png";
+                    badge = "Houston_Dash.png";
                 } else if (resultSet.getString("away").equals("Chicago Red Stars")) {
-                    badge = "ChicagoRedStars1.png";
+                    badge = "ChicagoRedStars.png";
                 } else if (resultSet.getString("away").equals("Portland Thorns FC")) {
-                    badge = "Portland1.png";
+                    badge = "Portland.png";
                 } else if (resultSet.getString("away").equals("Orlando Pride")) {
-                    badge = "OrlandoPride2.png";
+                    badge = "OrlandoPride.png";
                 } else if (resultSet.getString("away").equals("Washington Spirit")) {
-                    badge = "spirit.png";
+                    badge = "Washington_Spirit.png";
                 } else if (resultSet.getString("away").equals("North Carolina Courage")) {
-                    badge = "North_Carolina_Courage1.png";
+                    badge = "North_Carolina_Courage.png";
                 } else if (resultSet.getString("away").equals("Seattle Reign FC")) {
-                    badge = "SeattleReignFC2.png";
+                    badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("away").equals("Sky Blue FC")) {
-                    badge = "Sky_Blue_FC1.png";
+                    badge = "Sky_Blue_FC.png";
                 } else if (resultSet.getString("away").equals("FC Kansas City")) {
-                    badge = "kansasCity2.png";
+                    badge = "kansasCity.png";
                 } else if (resultSet.getString("away").equals("Boston Breakers")) {
-                    badge = "Boston_Breakers1.png";
+                    badge = "Boston_Breakers.png";
                 }
                 list.add(badge);
                 

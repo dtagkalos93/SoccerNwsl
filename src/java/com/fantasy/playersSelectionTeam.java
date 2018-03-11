@@ -122,6 +122,7 @@ public class playersSelectionTeam extends HttpServlet {
             findMax("def", defnameList.size(),category);
             findMax("mid", midnameList.size(),category);
             findMax("fwd", fwdnameList.size(),category);
+            connection.close();
 
         } catch (Exception e) {
 

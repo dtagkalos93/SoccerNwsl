@@ -112,7 +112,7 @@ public class findOpp extends HttpServlet {
         midlist = new ArrayList<>();
         fwdlist = new ArrayList<>();
         benlist = new ArrayList<>();
-
+        System.out.println("^^^111"+ben);
         goalkeeper(gk, fix);
         list.put("gk", gklist);
         defender(def, fix);
@@ -238,6 +238,7 @@ public class findOpp extends HttpServlet {
             resultSet.close();
 
             s.close();
+            connection.close();
 
         } catch (Exception e) {
 
@@ -355,6 +356,7 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
+            connection.close();
 
             } catch (Exception e) {
 
@@ -473,6 +475,7 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
+            connection.close();
 
             } catch (Exception e) {
 
@@ -591,6 +594,7 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
+            connection.close();
 
             } catch (Exception e) {
 
@@ -656,7 +660,7 @@ public class findOpp extends HttpServlet {
                     if (resultSet.getString("home").equals(benTeam)) {
                         String awayTeam = resultSet.getString("away");
                         if (awayTeam.equals("Houston Dash")) {
-                            midlist.add("vs HOU");
+                            benlist.add("vs HOU");
 
                         } else if (awayTeam.equals("Chicago Red Stars")) {
                             benlist.add("vs CHI");
@@ -698,6 +702,7 @@ public class findOpp extends HttpServlet {
                         } else if (homeTeam.equals("Sky Blue FC")) {
                             benlist.add("@ NJ");
                         } else if (homeTeam.equals("FC Kansas City")) {
+                            System.out.println("!__here");
                             benlist.add("@ KC");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             benlist.add("@ BOS");
@@ -709,13 +714,13 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
+            connection.close();
 
             } catch (Exception e) {
 
                 System.out.println("Exception is ;" + e);
 
             }
-            System.out.println("!!!" + benlist.get(i).toString());
         }
     }
 }

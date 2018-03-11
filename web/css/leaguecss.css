@@ -76,6 +76,11 @@ h6 {
     font-size: 15px;
 }
 
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: #c8373b;
+}
+
 .side-gap{
     margin-left: -15px;
 }

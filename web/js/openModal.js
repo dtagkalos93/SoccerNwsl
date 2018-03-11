@@ -139,9 +139,32 @@ function openModalFWD(i) {
             var jsonResponse = JSON.parse(data);
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+            document.getElementById("substitute").setAttribute('onclick', "changePlayer('fwdname" + i + "')");
+
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function openModalCancelFWD(i) {
+
+    var name = document.getElementById("fwdname" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('fwdname" + i + "')");
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersCancel').modal({show: 'true'});
         }
     };
     xhttp.open("GET", "findPosition?name=" + name, true);
@@ -159,9 +182,8 @@ function openModalBEN(i) {
             var jsonResponse = JSON.parse(data);
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            if (i == '1')
-                document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben1')");
-
+            document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben"+i+"')");
+            
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -223,6 +245,16 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
         var name = document.getElementById("gkname").textContent;
     } else if (playersIDafter == 'ben2' || playersIDafter == 'ben3' || playersIDafter == 'ben4') {
         var name = document.getElementById("benname" + playersIDafter.split('ben')[1]).textContent;
+        console.log(name);
+    }
+    else if (playersIDafter.indexOf("selDEF") != -1){
+        var name = document.getElementById("defname" + playersIDafter.split('selDEF')[1]).textContent;
+    }
+    else if (playersIDafter.indexOf("selMID") != -1){
+        var name = document.getElementById("midname" + playersIDafter.split('selMID')[1]).textContent;
+    }
+    else if (playersIDafter.indexOf("selFWD") != -1){
+        var name = document.getElementById("fwdname" + playersIDafter.split('selFWD')[1]).textContent;
     }
     var xhttp;
     xhttp = new XMLHttpRequest();
@@ -234,7 +266,7 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "finalChange('" + playersIDsub + "','" + playersIDafter + "')");
-            
+
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
