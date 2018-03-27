@@ -17,6 +17,7 @@
 
         <!-- Custom CSS -->
         <link href="css/rostercss.css" rel="stylesheet">
+        <link href="css/field.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -128,7 +129,7 @@
             <div class="col-md-9 top-gap">
                 <div class="row ">
                     <h3 class="col-md-12 col-xs-12"  style="font-family: Century Gothic">Roster Selection</h3>
-
+                     
                     <h5 class="col-md-12 col-xs-12" style="font-size: 14px; font-weight:lighter;font-family: Century Gothic " >
                         Select a maximum of 4 players from a single team or 'Auto Pick' if you're short of time.
                     </h5>
@@ -183,25 +184,25 @@
                         </div>
 
                         <hr style="border:none;margin-top: 21%">
-                        <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
+                        <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                             <p class="name" id="defname1" >Defender</p>
                             <p style="display: none" id="team3"></p>
                             <p class="price" id="defprice1"></p>
                         </div>
-                        <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
+                        <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage2" src="img/subs.png" />
                             <p class="name" id="defname2" >Defender</p>
                             <p style="display: none" id="team4"></p>
                             <p class="price" id="defprice2"></p>
                         </div>
-                        <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
+                        <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
                             <p class="name" id="defname3" >Defender</p>
                             <p style="display: none" id="team5"></p>
                             <p class="price" id="defprice3"></p>
                         </div>
-                        <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeDEF()">
+                        <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
                             <p class="name" id="defname4" >Defender</p>
                             <p style="display: none" id="team6"></p>
@@ -215,25 +216,25 @@
                         </div>
 
                         <hr style="border:none;margin-top: 21%">                          
-                        <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 32.5px" onclick="changeMID()">
+                        <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 29.5px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                             <p class="name" id="midname1" >Midfielder</p>
                             <p style="display: none" id="team8"></p>
                             <p class="price" id="midprice1"></p>
                         </div>                            
-                        <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
+                        <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                             <p class="name" id="midname2" >Midfielder</p>
                             <p style="display: none" id="team9"></p>
                             <p class="price" id="midprice2"></p>
                         </div>
-                        <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
+                        <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                             <p class="name" id="midname3" >Midfielder</p>
                             <p style="display: none" id="team10"></p>
                             <p class="price" id="midprice3"></p>
                         </div>
-                        <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 32.5px" onclick="changeMID()">
+                        <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                             <p class="name" id="midname4" >Midfielder</p>
                             <p style="display: none" id="team11"></p>
@@ -266,11 +267,11 @@
                             <p class="price" id="fwdprice3"></p>
                         </div>
                     </div>
-                    
-                    <a id="enterTeam" class="enterteam btncstm col-md-12" style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%">
+
+                    <button id="enterTeam" class="enterteam btncstm col-md-12" style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%">
                         Enter Team
-                    </a>
-                    
+                    </button>
+
                     <%
                         ArrayList<String> posts = (ArrayList<String>) request.getAttribute("data");
                         ArrayList<String> date = (ArrayList<String>) request.getAttribute("date");
@@ -279,22 +280,22 @@
                         ArrayList<String> time = (ArrayList<String>) request.getAttribute("time");
                         ArrayList<String> away = (ArrayList<String>) request.getAttribute("away");
                         ArrayList<String> awaybadge = (ArrayList<String>) request.getAttribute("awaybadge");
-                        ArrayList<String> homegoal = (ArrayList<String>) request.getAttribute("homegoal");
-                        ArrayList<String> awaygoal = (ArrayList<String>) request.getAttribute("awaygoal");
-                        ArrayList<String> homeassist = (ArrayList<String>) request.getAttribute("homeassist");
-                        ArrayList<String> awayassist = (ArrayList<String>) request.getAttribute("awayassist");
-                        ArrayList<String> homeyellow = (ArrayList<String>) request.getAttribute("homeyellow");
-                        ArrayList<String> awayyellow = (ArrayList<String>) request.getAttribute("awayyellow");
-                        ArrayList<String> homered = (ArrayList<String>) request.getAttribute("homered");
-                        ArrayList<String> awayred = (ArrayList<String>) request.getAttribute("awayred");
-                        ArrayList<String> homesave = (ArrayList<String>) request.getAttribute("homesave");
-                        ArrayList<String> awaysave = (ArrayList<String>) request.getAttribute("awaysave");
-                        ArrayList<String> homeown = (ArrayList<String>) request.getAttribute("homeown");
-                        ArrayList<String> awayown = (ArrayList<String>) request.getAttribute("awayown");
-                        ArrayList<String> homepkmissed = (ArrayList<String>) request.getAttribute("homepkmissed");
-                        ArrayList<String> awaypkmissed = (ArrayList<String>) request.getAttribute("awaypkmissed");
-                        ArrayList<String> homepksaved = (ArrayList<String>) request.getAttribute("homepksaved");
-                        ArrayList<String> awaypksaved = (ArrayList<String>) request.getAttribute("awaypksaved");
+//                        ArrayList<String> homegoal = (ArrayList<String>) request.getAttribute("homegoal");
+//                        ArrayList<String> awaygoal = (ArrayList<String>) request.getAttribute("awaygoal");
+//                        ArrayList<String> homeassist = (ArrayList<String>) request.getAttribute("homeassist");
+//                        ArrayList<String> awayassist = (ArrayList<String>) request.getAttribute("awayassist");
+//                        ArrayList<String> homeyellow = (ArrayList<String>) request.getAttribute("homeyellow");
+//                        ArrayList<String> awayyellow = (ArrayList<String>) request.getAttribute("awayyellow");
+//                        ArrayList<String> homered = (ArrayList<String>) request.getAttribute("homered");
+//                        ArrayList<String> awayred = (ArrayList<String>) request.getAttribute("awayred");
+//                        ArrayList<String> homesave = (ArrayList<String>) request.getAttribute("homesave");
+//                        ArrayList<String> awaysave = (ArrayList<String>) request.getAttribute("awaysave");
+//                        ArrayList<String> homeown = (ArrayList<String>) request.getAttribute("homeown");
+//                        ArrayList<String> awayown = (ArrayList<String>) request.getAttribute("awayown");
+//                        ArrayList<String> homepkmissed = (ArrayList<String>) request.getAttribute("homepkmissed");
+//                        ArrayList<String> awaypkmissed = (ArrayList<String>) request.getAttribute("awaypkmissed");
+//                        ArrayList<String> homepksaved = (ArrayList<String>) request.getAttribute("homepksaved");
+//                        ArrayList<String> awaypksaved = (ArrayList<String>) request.getAttribute("awaypksaved");
 
                         String dateSTR = null;
 
@@ -340,13 +341,13 @@
                                             <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                         </div>
                                         <div class="col-md-1 col-xs-1 ">
-                                            <img style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                            <img style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                         </div>
-                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                            <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                        <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                            <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                         </div>
                                         <div class="col-md-1 col-xs-1 ">
-                                            <img class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                            <img class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                         </div>
                                         <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                             <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -354,322 +355,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <div id="<%=game%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
-                                <% String display;
-                                    if (homegoal.get(0).equals(awaygoal.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; <%=display%> ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%> " >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                int j = 0;
-                                                while (!homegoal.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homegoal.get(j)%></li>
-                                                <%
-                                                        homegoal.remove(j);
-                                                    }
-                                                    homegoal.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaygoal.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaygoal.get(j)%></li> 
-                                                <%
-                                                        awaygoal.remove(j);
-                                                    }
-                                                    awaygoal.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeown.get(0).equals(awayown.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homeown.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homeown.get(j)%></li> 
-                                                <%
-                                                        homeown.remove(j);
-                                                    }
-                                                    homeown.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayown.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awayown.get(j)%></li> 
-                                                <%
-                                                        awayown.remove(j);
-                                                    }
-                                                    awayown.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeassist.get(0).equals(awayassist.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homeassist.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homeassist.get(j)%></li> 
-                                                <%
-                                                        homeassist.remove(j);
-                                                    }
-                                                    homeassist.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayassist.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awayassist.get(j)%></li> 
-                                                <%
-                                                        awayassist.remove(j);
-                                                    }
-                                                    awayassist.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homeyellow.get(0).equals(awayyellow.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homeyellow.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homeyellow.get(j)%></li> 
-                                                <%
-                                                        homeyellow.remove(j);
-                                                    }
-                                                    homeyellow.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayyellow.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awayyellow.get(j)%></li> 
-                                                <%
-                                                        awayyellow.remove(j);
-                                                    }
-                                                    awayyellow.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homered.get(0).equals(awayred.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%>  ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%> " >
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homered.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homered.get(j)%></li> 
-                                                <%
-                                                        homered.remove(j);
-                                                    }
-                                                    homered.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awayred.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awayred.get(j)%></li> 
-                                                <%
-                                                        awayred.remove(j);
-                                                    }
-                                                    awayred.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homepkmissed.get(0).equals(awaypkmissed.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homepkmissed.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homepkmissed.get(j)%></li> 
-                                                <%
-                                                        homepkmissed.remove(j);
-                                                    }
-                                                    homepkmissed.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaypkmissed.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaypkmissed.get(j)%></li> 
-                                                <%
-                                                        awaypkmissed.remove(j);
-                                                    }
-                                                    awaypkmissed.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homepksaved.get(0).equals(awaypksaved.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;float:right;text-align: right">
-                                            <%
-                                                while (!homepksaved.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homepksaved.get(j)%></li> 
-                                                <%
-                                                        homepksaved.remove(j);
-                                                    }
-                                                    homepksaved.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaypksaved.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaypksaved.get(j)%></li> 
-                                                <%
-                                                        awaypksaved.remove(j);
-                                                    }
-                                                    awaypksaved.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <%
-                                    if (homesave.get(0).equals(awaysave.get(0))) {
-                                        display = "display:none";
-                                    } else {
-                                        display = "";
-                                    }%>
-                                <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;<%=display%> ">
-                                    <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
-                                </div>
-                                <div class="row2" style="width: 100%;<%=display%>" >
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;float:right">
-                                            <%
-                                                while (!homesave.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=homesave.get(j)%></li> 
-                                                <%
-                                                        homesave.remove(j);
-                                                    }
-                                                    homesave.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                        <ul style="list-style: none;margin-left: -12.6%">
-                                            <%
-                                                while (!awaysave.get(j).equals("new")) {
-                                            %>
-
-                                            <li><%=awaysave.get(j)%></li> 
-                                                <%
-                                                        awaysave.remove(j);
-                                                    }
-                                                    awaysave.remove(0);
-                                                %>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                        
                             <% }%>
                         </div>
                         <div id="last" style="display:none">
@@ -683,7 +369,7 @@
                                     String mondayaway;
                                     String mondayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         mondaygame = "mondaygame" + i;
                                         mondayhome = "mondayhome" + i;
                                         mondayhomebadge = "mondayhomebadge" + i;
@@ -698,13 +384,13 @@
                                                 <h6 id="<%=mondayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=mondayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%=mondayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%=mondayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%=mondayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=mondayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%=mondayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=mondayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -725,7 +411,7 @@
                                     String tuesdayaway;
                                     String tuesdayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         tuesdaygame = "tuesdaygame" + i;
                                         tuesdayhome = "tuesdayhome" + i;
                                         tuesdayhomebadge = "tuesdayhomebadge" + i;
@@ -740,13 +426,13 @@
                                                 <h6 id="<%= tuesdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= tuesdayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%= tuesdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%= tuesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%= tuesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= tuesdayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%= tuesdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= tuesdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -766,7 +452,7 @@
                                     String wednesdayaway;
                                     String wednesdayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         wednesdaygame = "wednesdaygame" + i;
                                         wednesdayhome = "wednesdayhome" + i;
                                         wednesdayhomebadge = "wednesdayhomebadge" + i;
@@ -781,13 +467,13 @@
                                                 <h6 id="<%= wednesdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= wednesdayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%= wednesdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%= wednesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%= wednesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= wednesdayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%= wednesdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= wednesdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -807,7 +493,7 @@
                                     String thursdayaway;
                                     String thursdayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         thursdaygame = "thursdaygame" + i;
                                         thursdayhome = "thursdayhome" + i;
                                         thursdayhomebadge = "thursdayhomebadge" + i;
@@ -822,13 +508,13 @@
                                                 <h6 id="<%= thursdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= thursdayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%= thursdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%= thursdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%= thursdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= thursdayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%= thursdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= thursdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -848,7 +534,7 @@
                                     String fridayaway;
                                     String fridayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         fridaygame = "fridaygame" + i;
                                         fridayhome = "fridayhome" + i;
                                         fridayhomebadge = "fridayhomebadge" + i;
@@ -863,13 +549,13 @@
                                                 <h6 id="<%= fridayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= fridayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%= fridayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%= fridayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%= fridayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= fridayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%= fridayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= fridayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -889,7 +575,7 @@
                                     String saturdayaway;
                                     String saturdayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         saturdaygame = "saturdaygame" + i;
                                         saturdayhome = "saturdayhome" + i;
                                         saturdayhomebadge = "saturdayhomebadge" + i;
@@ -904,13 +590,13 @@
                                                 <h6 id="<%=saturdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=saturdayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%=saturdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%=saturdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%=saturdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=saturdayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%=saturdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=saturdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -929,7 +615,7 @@
                                     String sundayaway;
                                     String sundayawaybadge;
 
-                                    for (int i = 0; i < 5; i++) {
+                                    for (int i = 0; i < 4; i++) {
                                         sundaygame = "sundaygame" + i;
                                         sundayhome = "sundayhome" + i;
                                         sundayhomebadge = "sundayhomebadge" + i;
@@ -944,13 +630,13 @@
                                                 <h6 id="<%=sundayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=sundayhomebadge%>" style="margin-left:27%" src="img/<%=homebadge.get(i)%>">
+                                                <img id="<%=sundayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
                                             </div>
-                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 11%;left: 2.8%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260">
-                                                <h6 id="<%=sundayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 16px; font-weight:lighter"><%=time.get(i)%></h6>
+                                            <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
+                                                <h6 id="<%=sundayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
                                             <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=sundayawaybadge%>" class="" style="margin-left:0%" src="img/<%=awaybadge.get(i)%>">
+                                                <img id="<%=sundayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=sundayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -1014,7 +700,7 @@
                             <optgroup label="By Team">
                                 <option value="Boston Breakers">Boston Breakers</option>
                                 <option value="Chicago Red Stars" >Chicago Red Stars</option>
-                                <option value="FC Kansas City">FC Kansas City</option>
+                                <option value="Utah Royals FC">Utah Royals FC</option>
                                 <option value="Houston Dash">Houston Dash</option>
                                 <option value="North Carolina Courage">North Carolina Courage</option>
                                 <option value="Orlando Pride">Orlando Pride</option>
@@ -1885,7 +1571,7 @@
                 <div class="modal-body" style="height: 280px;padding: 0">
                     <div class="col-md-12" style="background-color: #f8f8fa">
                         <div class="col-md-3" style="padding-left: 0">
-                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                            <image id="nameimage" src="img/players/ertz.png" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
                             <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
@@ -1943,7 +1629,6 @@
                     <div id="fixSel" class="col-md-12" style="display:none;    overflow: scroll;">
                         <table>
                             <%
-                                System.out.println("gere");
                                 for (int i = 1; i <= 22; i++) {
                             %>
                             <tr style="text-align:center;font-size: 13px;margin-bottom: 0.5%;font-weight: lighter">
@@ -2085,8 +1770,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
     <script src="js/playersTable.js"></script>
+    <script src="js/fixturejs.js"></script>
+
 </body>
 
 </html>

@@ -61,10 +61,10 @@ public class players {
             s.executeQuery(sql);
 
             resultSet = s.getResultSet();
-
             while (resultSet.next()) {
                 nameList.add(resultSet.getString("name"));
                 injuryList.add(resultSet.getString("injury"));
+
                 if (resultSet.getString("team").equals("Houston Dash")) {
                     teamList.add("HOU");
                     if (pos.equals("Goalkeeper")) {
@@ -72,7 +72,6 @@ public class players {
                     } else {
                         jerseyList.add("dash1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Chicago Red Stars")) {
                     teamList.add("CHI");
                     if (pos.equals("Goalkeeper")) {
@@ -80,7 +79,6 @@ public class players {
                     } else {
                         jerseyList.add("stars1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Portland Thorns FC")) {
                     teamList.add("POR");
                     if (pos.equals("Goalkeeper")) {
@@ -88,7 +86,6 @@ public class players {
                     } else {
                         jerseyList.add("thorns1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Orlando Pride")) {
                     teamList.add("ORL");
                     if (pos.equals("Goalkeeper")) {
@@ -96,7 +93,6 @@ public class players {
                     } else {
                         jerseyList.add("pride1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Washington Spirit")) {
                     teamList.add("WAS");
                     if (pos.equals("Goalkeeper")) {
@@ -104,7 +100,6 @@ public class players {
                     } else {
                         jerseyList.add("spirit1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("North Carolina Courage")) {
                     teamList.add("NC");
                     if (pos.equals("Goalkeeper")) {
@@ -112,7 +107,6 @@ public class players {
                     } else {
                         jerseyList.add("courage.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Seattle Reign FC")) {
                     teamList.add("SEA");
                     if (pos.equals("Goalkeeper")) {
@@ -120,7 +114,6 @@ public class players {
                     } else {
                         jerseyList.add("reign1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Sky Blue FC")) {
                     teamList.add("NJ");
                     if (pos.equals("Goalkeeper")) {
@@ -128,15 +121,13 @@ public class players {
                     } else {
                         jerseyList.add("skyblue1.png");
                     }
-
-                } else if (resultSet.getString("team").equals("FC Kansas City")) {
-                    teamList.add("KC");
+                } else if (resultSet.getString("team").equals("Utah Royals FC")) {
+                    teamList.add("UTA");
                     if (pos.equals("Goalkeeper")) {
                         jerseyList.add("kansasgk.png");
                     } else {
                         jerseyList.add("kansas1.png");
                     }
-
                 } else if (resultSet.getString("team").equals("Boston Breakers")) {
                     teamList.add("BOS");
                     if (pos.equals("Goalkeeper")) {
@@ -144,7 +135,6 @@ public class players {
                     } else {
                         jerseyList.add("breakers1.png");
                     }
-
                 }
                 String price = resultSet.getString("price");
                 if (price == null) {
@@ -178,9 +168,10 @@ public class players {
                     }
 
                 }
-
+                
+                 
                 i++;
-
+                
             }
 
             resultSet.close();

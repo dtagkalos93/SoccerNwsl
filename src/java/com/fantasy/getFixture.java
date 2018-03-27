@@ -90,8 +90,8 @@ public class getFixture extends HttpServlet {
                         list.add("vs SEA");
                     } else if (awayTeam.equals("Sky Blue FC")) {
                         list.add("vs NJ");
-                    } else if (awayTeam.equals("FC Kansas City")) {
-                        list.add("vs KC");
+                    } else if (awayTeam.equals("Utah Royals FC")) {
+                        list.add("vs UTA");
                     } else if (awayTeam.equals("Boston Breakers")) {
                         list.add("vs BOS");
                     }
@@ -115,8 +115,8 @@ public class getFixture extends HttpServlet {
                         list.add("@ SEA");
                     } else if (homeTeam.equals("Sky Blue FC")) {
                         list.add("@ NJ");
-                    } else if (homeTeam.equals("FC Kansas City")) {
-                        list.add("@ KC");
+                    } else if (homeTeam.equals("Utah Royals FC")) {
+                        list.add("@ UTA");
                     } else if (homeTeam.equals("Boston Breakers")) {
                         list.add("@ BOS");
                     }
@@ -137,7 +137,6 @@ public class getFixture extends HttpServlet {
         }
 
         String json = new Gson().toJson(list);
-        System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);

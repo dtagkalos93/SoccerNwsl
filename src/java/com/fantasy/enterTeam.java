@@ -54,10 +54,10 @@ public class enterTeam extends HttpServlet {
     private List chijerseyList;
     private List chiposList;
     private List chipriceList;
-    private List kcnameList;
-    private List kcjerseyList;
-    private List kcposList;
-    private List kcpriceList;
+    private List UTAnameList;
+    private List UTAjerseyList;
+    private List UTAposList;
+    private List UTApriceList;
     private List hounameList;
     private List houjerseyList;
     private List houposList;
@@ -123,10 +123,10 @@ public class enterTeam extends HttpServlet {
         chijerseyList = new ArrayList();
         chiposList = new ArrayList();
         chipriceList = new ArrayList();
-        kcnameList = new ArrayList();
-        kcjerseyList = new ArrayList();
-        kcposList = new ArrayList();
-        kcpriceList = new ArrayList();
+        UTAnameList = new ArrayList();
+        UTAjerseyList = new ArrayList();
+        UTAposList = new ArrayList();
+        UTApriceList = new ArrayList();
         hounameList = new ArrayList();
         houjerseyList = new ArrayList();
         houposList = new ArrayList();
@@ -221,11 +221,11 @@ public class enterTeam extends HttpServlet {
                     njpriceList.add(price[i]);
                     gkjerseyList.add("skybluegk.png");
 
-                } else if (playersTeam[1].equals("KC")) {
-                    kcnameList.add(playersTeam[0]);
-                    kcjerseyList.add("kansasgk.png");
-                    kcposList.add("GK");
-                    kcpriceList.add(price[i]);
+                } else if (playersTeam[1].equals("UTA")) {
+                    UTAnameList.add(playersTeam[0]);
+                    UTAjerseyList.add("kansasgk.png");
+                    UTAposList.add("GK");
+                    UTApriceList.add(price[i]);
                     gkjerseyList.add("kansasgk.png");
 
                 } else if (playersTeam[1].equals("BOS")) {
@@ -257,11 +257,11 @@ public class enterTeam extends HttpServlet {
                     chipriceList.add(price[i]);
                     defjerseyList.add("stars1.png");
 
-                } else if (playersTeam[1].equals("KC")) {
-                    kcnameList.add(playersTeam[0]);
-                    kcjerseyList.add("kansas1.png");
-                    kcposList.add("DEF");
-                    kcpriceList.add(price[i]);
+                } else if (playersTeam[1].equals("UTA")) {
+                    UTAnameList.add(playersTeam[0]);
+                    UTAjerseyList.add("kansas1.png");
+                    UTAposList.add("DEF");
+                    UTApriceList.add(price[i]);
                     defjerseyList.add("kansas1.png");
 
                 } else if (playersTeam[1].equals("HOU")) {
@@ -335,11 +335,11 @@ public class enterTeam extends HttpServlet {
                     chipriceList.add(price[i]);
                     midjerseyList.add("stars1.png");
 
-                } else if (playersTeam[1].equals("KC")) {
-                    kcnameList.add(playersTeam[0]);
-                    kcjerseyList.add("kansas1.png");
-                    kcposList.add("MID");
-                    kcpriceList.add(price[i]);
+                } else if (playersTeam[1].equals("UTA")) {
+                    UTAnameList.add(playersTeam[0]);
+                    UTAjerseyList.add("kansas1.png");
+                    UTAposList.add("MID");
+                    UTApriceList.add(price[i]);
                     midjerseyList.add("kansas1.png");
 
                 } else if (playersTeam[1].equals("HOU")) {
@@ -461,11 +461,11 @@ public class enterTeam extends HttpServlet {
                     njpriceList.add(price[i]);
                     fwdjerseyList.add("skyblue1.png");
 
-                } else if (playersTeam[1].equals("KC")) {
-                    kcnameList.add(playersTeam[0]);
-                    kcjerseyList.add("kansas1.png");
-                    kcposList.add("FWD");
-                    kcpriceList.add(price[i]);
+                } else if (playersTeam[1].equals("UTA")) {
+                    UTAnameList.add(playersTeam[0]);
+                    UTAjerseyList.add("kansas1.png");
+                    UTAposList.add("FWD");
+                    UTApriceList.add(price[i]);
                     fwdjerseyList.add("kansas1.png");
 
                 }
@@ -513,10 +513,10 @@ public class enterTeam extends HttpServlet {
         request.setAttribute("jerseychi", chijerseyList);
         request.setAttribute("poschi", chiposList);
         request.setAttribute("pricechi", chipriceList);
-        request.setAttribute("namekc", kcnameList);
-        request.setAttribute("jerseykc", kcjerseyList);
-        request.setAttribute("poskc", kcposList);
-        request.setAttribute("pricekc", kcpriceList);
+        request.setAttribute("nameUTA", UTAnameList);
+        request.setAttribute("jerseyUTA", UTAjerseyList);
+        request.setAttribute("posUTA", UTAposList);
+        request.setAttribute("priceUTA", UTApriceList);
         request.setAttribute("namehou", hounameList);
         request.setAttribute("jerseyhou", houjerseyList);
         request.setAttribute("poshou", houposList);

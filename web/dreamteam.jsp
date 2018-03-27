@@ -86,7 +86,7 @@
                         </li>
                         <li>
                             <a href="https://www.fckansascity.com/"  target="_blank">
-                                <img  src="img/kansasCity.png" style="width:57.8px;height:45px;margin-right:-8px" />
+                                <img  src="img/Utah_Royals.PNG" style="width:57.8px;height:45px;margin-right:-8px" />
                             </a>
                         </li>
                         <li>
@@ -482,7 +482,7 @@
                                                 badge = "SeattleReignFC2.png";
                                             } else if (resultSet.getString("home").equals("Sky Blue FC")) {
                                                 badge = "Sky_Blue_FC1.png";
-                                            } else if (resultSet.getString("home").equals("FC Kansas City")) {
+                                            } else if (resultSet.getString("home").equals("Utah Royals FC")) {
                                                 badge = "kansasCity2.png";
                                             } else if (resultSet.getString("home").equals("Boston Breakers")) {
                                                 badge = "Boston_Breakers1.png";
@@ -515,7 +515,7 @@
                                                 badge = "SeattleReignFC2.png";
                                             } else if (resultSet.getString("away").equals("Sky Blue FC")) {
                                                 badge = "Sky_Blue_FC1.png";
-                                            } else if (resultSet.getString("away").equals("FC Kansas City")) {
+                                            } else if (resultSet.getString("away").equals("Utah Royals FC")) {
                                                 badge = "kansasCity2.png";
                                             } else if (resultSet.getString("away").equals("Boston Breakers")) {
                                                 badge = "Boston_Breakers1.png";

@@ -33,12 +33,19 @@ public class rosterPlayer {
     private String midfielderNo;
     private String forwardNo;
     private String value;
+    private String captain;
+    private String viceCaptain;
     private int totalScore;
     private int totalUsers;
+    private int totalPlayer;
+
+    private String goalkeeperUnion;
+    private String defenceUnion;
+    private String midfielderUnion;
+    private String forwardUnion;
 
     public rosterPlayer(String email) throws SQLException {
         totalScore = 0;
-        System.out.println("rosterPlayers");
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
             String dbName = "fantasy";
@@ -53,7 +60,6 @@ public class rosterPlayer {
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String sql = "SELECT * FROM teams where email='" + email + "'";
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -61,12 +67,34 @@ public class rosterPlayer {
 
             if (resultSet.next()) {
                 goalkeeper = resultSet.getString("gk");
+                if (goalkeeper.contains("'")) {
+
+                    goalkeeper = goalkeeper.split("'")[0] + "\\'" + goalkeeper.split("'")[1];
+                }
                 defence = resultSet.getString("def");
+                if (defence.contains("'")) {
+
+                    defence = defence.split("'")[0] + "\\'" + defence.split("'")[1];
+                }
                 midfielder = resultSet.getString("mid");
+                if (midfielder.contains("'")) {
+
+                    midfielder = midfielder.split("'")[0] + "\\'" + midfielder.split("'")[1];
+                }
                 forward = resultSet.getString("fwd");
+                if (forward.contains("'")) {
+
+                    forward = forward.split("'")[0] + "\\'" + forward.split("'")[1];
+                }
                 bench = resultSet.getString("bench");
+                if (bench.contains("'")) {
+
+                    bench = bench.split("'")[0] + "\\'" + bench.split("'")[1];
+                }
                 formation = resultSet.getString("formation");
                 value = resultSet.getString("value");
+                captain = resultSet.getString("captain");
+                viceCaptain = resultSet.getString("viceCaptain");
             }
             resultSet.close();
 
@@ -83,6 +111,15 @@ public class rosterPlayer {
 
         getScore();
         TotalUsers();
+        TotalPlayers();
+    }
+
+    public String getCaptain() {
+        return captain;
+    }
+
+    public String getVicecaptain() {
+        return viceCaptain;
     }
 
     public void getScore() {
@@ -128,13 +165,18 @@ public class rosterPlayer {
                 weeks = 22;
             }
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-
             String gk = goalkeeper.split("-")[0];
             String[] def = defence.split(",");
             String[] mid = midfielder.split(",");
             String[] fwd = forward.split(",");
-            String sql = "SELECT GW" + weeks + " FROM players where name='" + gk + "'";
-            System.out.println(sql);
+            String sql = "";
+            if (gk.contains("'")) {
+                String[] nameSTR = gk.split("'");
+                sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+            } else {
+                sql = "SELECT GW" + weeks + " FROM players where name='" + gk + "'";
+
+            }
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -145,7 +187,15 @@ public class rosterPlayer {
             }
 
             for (int i = 0; i < def.length; i++) {
-                sql = "SELECT GW" + weeks + " FROM players where name='" + def[i].split("-")[0] + "'";
+                String defStr = def[i].split("-")[0];
+                sql = "";
+                if (defStr.contains("'")) {
+                    String[] nameSTR = defStr.split("'");
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+                } else {
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + defStr + "'";
+
+                }
 
                 s.executeQuery(sql);
 
@@ -157,25 +207,40 @@ public class rosterPlayer {
             }
 
             for (int i = 0; i < mid.length; i++) {
-                sql = "SELECT GW" + weeks + " FROM players where name='" + mid[i].split("-")[0] + "'";
+                String midSTR = mid[i].split("-")[0];
+                sql = "";
+                if (midSTR.contains("'")) {
+                    String[] nameSTR = midSTR.split("'");
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+                } else {
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + midSTR + "'";
+
+                }
 
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
 
                 if (resultSet.next()) {
-                    if(resultSet.getString("GW" + weeks).equals("-")){
+                    if (resultSet.getString("GW" + weeks).equals("-")) {
                         totalScore = totalScore + 0;
-                    }
-                    else{
+                    } else {
                         totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
                     }
-                    
+
                 }
             }
 
             for (int i = 0; i < fwd.length; i++) {
-                sql = "SELECT GW" + weeks + " FROM players where name='" + fwd[i].split("-")[0] + "'";
+                String fwdSTR = fwd[i].split("-")[0];
+                sql = "";
+                if (fwdSTR.contains("'")) {
+                    String[] nameSTR = fwdSTR.split("'");
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+                } else {
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + fwdSTR + "'";
+
+                }
 
                 s.executeQuery(sql);
 
@@ -209,7 +274,6 @@ public class rosterPlayer {
             connection = DriverManager.getConnection(connectionUrl, userId, password);
 
             String sql = "SELECT COUNT(*) AS total FROM user";
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -223,11 +287,42 @@ public class rosterPlayer {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     public String getTotalUsers() {
-        return totalUsers + "";
+
+    public void TotalPlayers() {
+        try {
+            String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+            String dbName = "fantasy";
+            String userId = "root";
+            String password = "";
+
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+
+            String sql = "SELECT COUNT(*) AS total FROM players";
+            Statement s = connection.createStatement();
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+            if (resultSet.next()) {
+                totalPlayer = resultSet.getInt("total");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public String getTotalPlayers() {
+        return totalPlayer + "";
     }
 
+    public String getTotalUsers() {
+        return totalUsers + "";
+    }
 
     public String getTotalScore() {
         return totalScore + "";
@@ -267,5 +362,47 @@ public class rosterPlayer {
 
     public String getValue() {
         return value;
+    }
+
+    public void unionPlayers(String gk, String def, String mid, String fwd, String ben) {
+        String[] benPlayers = ben.split(",");
+        goalkeeperUnion = "";
+        defenceUnion = "";
+        midfielderUnion = "";
+        forwardUnion = "";
+
+        for (int i = 0; i < benPlayers.length; i++) {
+            String pos = benPlayers[i].split("-")[2];
+            if (pos.equals("Goalkeeper")) {
+                gk = gk + "," + benPlayers[i];
+            } else if (pos.equals("Defence")) {
+                def = def + benPlayers[i] + ",";
+            } else if (pos.equals("Midfielder")) {
+                mid = mid + benPlayers[i] + ",";
+            } else if (pos.equals("Forward")) {
+                fwd = fwd + benPlayers[i] + ",";
+            }
+        }
+        goalkeeperUnion = gk;
+        defenceUnion = def;
+        midfielderUnion = mid;
+        forwardUnion = fwd;
+
+    }
+
+    public String getGoalkeeperUnion() {
+        return goalkeeperUnion;
+    }
+
+    public String getDefenceUnion() {
+        return defenceUnion;
+    }
+
+    public String getMidfielderUnion() {
+        return midfielderUnion;
+    }
+
+    public String getForwardUnion() {
+        return forwardUnion;
     }
 }

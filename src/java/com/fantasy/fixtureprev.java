@@ -81,7 +81,8 @@ public class fixtureprev extends HttpServlet {
             resultSet = s.getResultSet();
 
             while (resultSet.next()) {
-
+                if(resultSet.getString("date").equals("-"))
+                    continue;
                 //Add records into data list
                 list.add(resultSet.getString("date"));
 
@@ -102,8 +103,8 @@ public class fixtureprev extends HttpServlet {
                     badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("home").equals("Sky Blue FC")) {
                     badge = "Sky_Blue_FC.png";
-                } else if (resultSet.getString("home").equals("FC Kansas City")) {
-                    badge = "kansasCity.png";
+                } else if (resultSet.getString("home").equals("Utah Royals FC")) {
+                    badge = "Utah_Royals.PNG";
                 } else if (resultSet.getString("home").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }
@@ -126,8 +127,8 @@ public class fixtureprev extends HttpServlet {
                     badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("away").equals("Sky Blue FC")) {
                     badge = "Sky_Blue_FC.png";
-                } else if (resultSet.getString("away").equals("FC Kansas City")) {
-                    badge = "kansasCity.png";
+                } else if (resultSet.getString("away").equals("Utah Royals FC")) {
+                    badge = "Utah_Royals.PNG";
                 } else if (resultSet.getString("away").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }
@@ -139,7 +140,7 @@ public class fixtureprev extends HttpServlet {
             resultSet.close();
 
             s.close();
-
+            System.out.println(list.size()+"!!!");
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
@@ -147,7 +148,6 @@ public class fixtureprev extends HttpServlet {
         }
 
      String json = new Gson().toJson(list);
-     System.out.println(json);
     response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
     response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
     response.getWriter().write(json); 

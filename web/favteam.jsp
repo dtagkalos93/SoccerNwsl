@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<%
+    
+    String display="none";
+    if(request.getAttribute("teamSelect")==null){
+         display="none";
+    }
+    else{
+         display="";
+    }
+%>
 <html lang="en">
 
     <head>
@@ -168,100 +178,78 @@
                             <% }%>
                         </div>
                     </div>
+                    <div class="z-fieldError col-md-12" style="display:<%=display %>">
 
-                    <div class="container">
+                        <span style="font-weight: bold; font-size: 13px; font-family: Century Gothic" >This field is required.</span>
+
+                    </div>
+                    <div class="col-md-12 container">
                         <div class="row">
-                            <div class="col-md-3" style="margin-left: 24%">
+                            <div class="col-md-2" style="margin-left: 25%;margin-right: -13px;">
                                 <div class="list-group" >
-                                    <a  value="chicago" data-class="chicago" class="list-group-item chicago" style="padding: 1%;width: 105%" id="fanteam1" onclick="fanTeam(1)">
-                                        <h4 style="margin-left: 5%">Chicago Red Stars 
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/ChicagoRedStars1.png"/>
-                                            </span>
-                                        </h4>
+                                    <a  value="chicago" data-class="chicago" class="list-group-item" style="width: 175px;height: 117px" id="fanteam1" onclick="fanTeam(1)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/ChicagoRedStars.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Chicago Red Stars</h5>                                                                                                        
                                     </a>
-                                    <a  value="houston" data-class="houston" class="list-group-item houston" style="padding: 1%;width: 105%" id="fanteam2" onclick="fanTeam(2)">
-                                        <h4 style="margin-left: 5%">Houston Dash
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/Houston_Dash2.png"/>
-                                            </span>
-                                        </h4>
+                                    <a  value="houston" data-class="houston" class="list-group-item" style="width: 175px;height: 117px" id="fanteam2" onclick="fanTeam(2)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/Houston_Dash.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Houston Dash</h5>
                                     </a>
-                                    <a  value="courage" data-class="courage" class="list-group-item courage" style="padding: 1%;width: 105%" id="fanteam3" onclick="fanTeam(3)">
-                                        <h4 style="margin-left: 5%">North Caroline Courage
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/North_Carolina_Courage1.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                    <a  value="orlando" data-class="orlando" class="list-group-item orlando" style="padding: 1%;width: 105%" id="fanteam4" onclick="fanTeam(4)">
-                                        <h4 style="margin-left: 5%">Orlando Pride
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/OrlandoPride2.png"/>
-                                            </span>
-                                        </h4>
-                                    </a>
-                                    <a  value="portland" data-class="portland" class="list-group-item portland" style="padding: 1%;width: 105%" id="fanteam5" onclick="fanTeam(5)">
-                                        <h4 style="margin-left: 5%">Portland Thorns FC
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/Portland1.png"/>
-                                            </span>
-                                        </h4>
+                                    <a  value="courage" data-class="courage" class="list-group-item" style="width: 175px;height: 117px" id="fanteam3" onclick="fanTeam(3)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/North_Carolina_Courage.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">North Caroline Courage</h5>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-3" style="padding: 2%">
-                                    <div class="list-group">
-                                        <a  value="seattle" data-class="seattle" class="list-group-item seattle" style="padding: 1%;width: 105%" id="fanteam6" onclick="fanTeam(6)">
-                                            <h4 style="margin-left: 5%">Seattle Reign FC
-                                            <span>
-                                                <img style="float: right; margin-top: -4%" src="img/SeattleReignFC2.png"/>
-                                            </span>
-                                            </h4>
-                                        </a>
-                                        <a value="sky" data-class="sky" class="list-group-item sky" style="padding: 1%;width: 105%" id="fanteam7" onclick="fanTeam(7)">
-                                            <h4 style="margin-left: 5%">Sky Blue FC
-                                                <span>
-                                                    <img style="float: right; margin-top: -4%" src="img/Sky_Blue_FC1.png"/>
-                                                </span>
-                                            </h4>
-                                        </a>
-                                        <a  value="royals" data-class="royals" class="list-group-item royals" style="padding: 1%;width: 105%;" id="fanteam8" onclick="fanTeam(8)">
-                                            <h4 style="margin-left: 5%">Utah Royals FC
-                                                <span>
-                                                    <img style="float: right; margin-top: -4%" src="img/UtahRoyals2.png"/>
-                                                </span>
-                                            </h4>
-                                        </a>
-                                        <a value="spirit" data-class="spirit" class="list-group-item spirit" style="padding: 1%;width: 105%" id="fanteam9" onclick="fanTeam(9)">
-                                            <h4 style="margin-left: 5%">Washington Spirit
-                                                <span>
-                                                    <img style="float: right; margin-top: -4%" src="img/spirit.png"/>
-                                                </span>
-                                            </h4>
-                                        </a>
-                                    </div>
+                            <div class="col-md-2" style="padding-right: 0px;">
+                                <div class="list-group" >
+                                    <a  value="orlando" data-class="orlando" class="list-group-item" style="width: 175px;height: 117px" id="fanteam4" onclick="fanTeam(4)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/OrlandoPride.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Orlando Pride</h5>
+                                    </a>
+                                    <a  value="portland" data-class="portland" class="list-group-item" style="width: 175px;height: 117px" id="fanteam5" onclick="fanTeam(5)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/Portland.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Portland Thorns FC</h5>
+                                    </a>
+                                    <a  value="seattle" data-class="seattle" class="list-group-item" style="width: 175px;height: 117px" id="fanteam6" onclick="fanTeam(6)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/SeattleReignFC.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Seattle Reign FC</h5>
+                                    </a>
                                 </div>
-                                <input name="country" value="<%=request.getAttribute("country")%>"  class="form-control"  style="display:none">
-                                <input name="team" id='favteam'   class="form-control"  style="display:none">
-                                <div>
-                                    <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px">
-                                        
-                                       <button type="submit" class=" backbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
-                                            <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back</button>
-                                        
-                                        </div>
-                                    <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px">
-                                        <button type="submit" class="confirmationbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
-                                            <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation</button>
-                                    </div>
+                            </div>
+                            <div class="col-md-2" style="padding-left: 0px;">
+                                <div class="list-group">
+                                    <a value="sky" data-class="sky" class="list-group-item" style="width: 175px;height: 117px" id="fanteam7" onclick="fanTeam(7)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/Sky_Blue_FC.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Sky Blue FC</h5>
+                                    </a>
+                                    <a  value="royals" data-class="royals" class="list-group-item" style="width: 175px;height: 117px" id="fanteam8" onclick="fanTeam(8)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/Utah_Royals.PNG"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Utah Royals FC</h5>
+                                    </a>
+                                    <a value="spirit" data-class="spirit" class="list-group-item" style="width: 175px;height: 117px" id="fanteam9" onclick="fanTeam(9)">
+                                        <img style="height: 45px;width: auto;margin-left: auto;margin-right: auto;display: block;" src="img/Washington_Spirit.png"/>
+                                        <h5 style="font-family: century gothic;font-weight: lighter;text-align: center">Washington Spirit</h5>
+                                    </a>
+                                </div>
+                            </div>
 
+
+                            <input name="country" value="<%=request.getAttribute("country")%>"  class="form-control"  style="display:none">
+                            <input name="team" id='favteam'   class="form-control"  style="display:none">
+                            <div class="col-md-12">
+                                <div class="col-md-6 col-xs-6" align="right" style="margin-bottom: 50px;margin-top: 25px">
+                                    <button type="submit" class=" backbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" onClick="history.go(-1); return false;" >
+                                        <i class="glyphicon glyphicon-arrow-left" style="float:left; margin-top: 0.5%;"></i>Back
+                                    </button>
                                 </div>
+                                <div class="col-md-6 col-xs-6" align="left" style="margin-bottom: 50px;margin-top: 25px">
+                                    <button type="submit" class="confirmationbtn btncstm" style="color: white; font-size: 15px; font-weight: lighter; text-align: center; width: 35%; padding: 1.5%" >
+                                        <i class="glyphicon glyphicon-arrow-right" style="float:right; margin-top: 0.5%;"></i>Confirmation
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-
-
-
-
 
                         <!-- jQuery -->
                         <script src="js/jquery.js"></script>
@@ -310,25 +298,24 @@
 
                         <script>
                             function fanTeam(i) {
-                                
-                                for(k=1;k<=10;k++){
-                                    if(k!=i){
-                                        
-                                        document.getElementById("fanteam"+k).style.color="#555";
-                                        document.getElementById("fanteam"+k).style.backgroundColor="#fff";
-                                    }
-                                    else{
-                                        
-                                        
-                                        document.getElementById("fanteam"+k).style.backgroundColor="#1d3260";
-                                        document.getElementById("fanteam"+k).style.color="white";
-                                        document.getElementById("favteam").value=document.getElementById("fanteam"+k).getAttribute('value');
-                                       
-                                        
-                                       
+
+                                for (k = 1; k <= 10; k++) {
+                                    if (k != i) {
+
+                                        document.getElementById("fanteam" + k).style.color = "#555";
+                                        document.getElementById("fanteam" + k).style.backgroundColor = "#fff";
+                                    } else {
+
+
+                                        document.getElementById("fanteam" + k).style.backgroundColor = "#1d3260";
+                                        document.getElementById("fanteam" + k).style.color = "white";
+                                        document.getElementById("favteam").value = document.getElementById("fanteam" + k).getAttribute('value');
+
+
+
                                     }
                                 }
-    }
+                            }
                         </script>
 
 

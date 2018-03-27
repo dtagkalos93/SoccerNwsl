@@ -204,7 +204,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>GK</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/orlandogk.png" style="width:31px;height:30px" />
+                                        <img src="img/orlandogk.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Harris </span>
@@ -218,7 +218,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/breakers1.png" style="width:31px;height:30px" />
+                                        <img src="img/breakers1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Westphal</span>
@@ -232,7 +232,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/stars1.png" style="width:31px;height:30px" />
+                                        <img src="img/stars1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Ertz </span>
@@ -246,7 +246,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/pride1.png" style="width:31px;height:30px" />
+                                        <img src="img/pride1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Krieger</span>
@@ -260,13 +260,13 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/kansas1.png" style="width:31px;height:30px" />
+                                        <img src="img/kansas1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Sauerbrunn</span>
                                     </div>
                                 </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">KC</td>
+                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">UTA</td>
                                 <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">15</td>
                             </tr>
                             <tr style="border-bottom: 1px solid #e8e8e8">
@@ -274,7 +274,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/courage.png" style="width:31px;height:30px" />
+                                        <img src="img/courage.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">S. Mewis </span>
@@ -288,7 +288,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/reign1.png" style="width:31px;height:30px" />
+                                        <img src="img/reign1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Rapinoe </span>
@@ -302,7 +302,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/skyblue1.png" style="width:31px;height:30px" />
+                                        <img src="img/skyblue1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Killion </span>
@@ -316,7 +316,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/thorns1.png" style="width:31px;height:30px" />
+                                        <img src="img/thorns1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Horan </span>
@@ -330,7 +330,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>FWD</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/stars1.png" style="width:31px;height:30px" />
+                                        <img src="img/stars1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Press</span>
@@ -344,7 +344,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>FWD</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/pride1.png" style="width:31px;height:30px" />
+                                        <img src="img/pride1.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Marta </span>
@@ -631,7 +631,7 @@
                                 <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/orlandogk.png" style="width:29px;height:28px; margin-top: 1px" />
+                                        <img src="img/orlandogk.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
                                         <span style="font-size: 14px ">Harris</span><hr style="border:none;margin-top: -34%">
@@ -644,7 +644,7 @@
                                 <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/pride1.png" style="width:29px;height:28px; margin-top: 1px" />
+                                        <img src="img/pride1.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
                                         <span style="font-size: 14px ">Marta</span><hr style="border:none;margin-top: -34%">
@@ -657,7 +657,7 @@
                                 <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakers1.png" style="width:29px;height:28px; margin-top: 1px" />
+                                        <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
                                         <span style="font-size: 14px ">Lavelle</span><hr style="border:none;margin-top: -34%">
@@ -670,7 +670,7 @@
                                 <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakersgk.png" style="width:29px;height:28px; margin-top: 1px" />
+                                        <img src="img/breakersgk.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
                                         <span style="font-size: 14px ">Smith</span><hr style="border:none;margin-top: -34%">
@@ -683,7 +683,7 @@
                                 <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakers1.png" style="width:29px;height:28px; margin-top: 1px" />
+                                        <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
                                         <span style="font-size: 14px ">Chapman</span><hr style="border:none;margin-top: -34%">
@@ -843,7 +843,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Morgan</span>
@@ -859,7 +859,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Marta </span>
@@ -874,7 +874,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/reign1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Rapinoe </span>
@@ -889,7 +889,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/dash1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Lloyd </span>
@@ -905,7 +905,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/stars1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Press </span>
@@ -944,7 +944,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Morgan</span>
@@ -960,7 +960,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Marta </span>
@@ -975,7 +975,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/reign1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Rapinoe </span>
@@ -990,7 +990,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/dash1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Lloyd </span>
@@ -1006,7 +1006,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/stars1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Press </span>
@@ -1045,7 +1045,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>1</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Morgan</span>
@@ -1061,7 +1061,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>2</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/pride1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/pride1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Marta </span>
@@ -1076,7 +1076,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>3</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/reign1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/reign1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Rapinoe </span>
@@ -1091,7 +1091,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>4</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/dash1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/dash1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Lloyd </span>
@@ -1107,7 +1107,7 @@
                                     <td style=' font-size: 13px; border-bottom: 1px solid #e8e8e8;text-align: center'>5</td>
                                     <td style=" font-weight: lighter ;font-size:15px; border-bottom:1px solid #e8e8e8; padding:5px;width: 50%;padding-left: 5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/stars1.png" style="width:31px;height:30px;float:right" />
+                                            <img src="img/stars1.png" style="width:25px;height:30px;float:right" />
                                         </div>
                                         <div class='col-sm-10' style="width:100px;height: 30px;right: 15px; padding-top: 2%">
                                             <span style="font-size: 15px; margin-left: -15%">Press </span>

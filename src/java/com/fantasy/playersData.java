@@ -172,8 +172,8 @@ public class playersData extends HttpServlet {
             } else if (team.equals("Sky Blue FC")) {
                 teamlist.add("NJ");
                 jerseylist.add("skybluegk.png");
-            } else if (team.equals("FC Kansas City")) {
-                teamlist.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                teamlist.add("UTA");
                 jerseylist.add("kansasgk.png");
             } else if (team.equals("Boston Breakers")) {
                 teamlist.add("BOS");
@@ -255,8 +255,8 @@ public class playersData extends HttpServlet {
             } else if (team.equals("Sky Blue FC")) {
                 teamlist.add("NJ");
                 jerseylist.add("skyblue1.png");
-            } else if (team.equals("FC Kansas City")) {
-                teamlist.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                teamlist.add("UTA");
                 jerseylist.add("kansas1.png");
             } else if (team.equals("Boston Breakers")) {
                 teamlist.add("BOS");
@@ -349,8 +349,8 @@ public class playersData extends HttpServlet {
             } else if (team.equals("Sky Blue FC")) {
                 teamlist.add("NJ");
                 jerseylist.add("skyblue1.png");
-            } else if (team.equals("FC Kansas City")) {
-                teamlist.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                teamlist.add("UTA");
                 jerseylist.add("kansas1.png");
             } else if (team.equals("Boston Breakers")) {
                 teamlist.add("BOS");
@@ -441,8 +441,8 @@ public class playersData extends HttpServlet {
             } else if (team.equals("Sky Blue FC")) {
                 teamlist.add("NJ");
                 jerseylist.add("skyblue1.png");
-            } else if (team.equals("FC Kansas City")) {
-                teamlist.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                teamlist.add("UTA");
                 jerseylist.add("kansas1.png");
             } else if (team.equals("Boston Breakers")) {
                 teamlist.add("BOS");

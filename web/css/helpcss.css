@@ -81,6 +81,14 @@ h6 {
     background-color: #c8373b;
 }
 
+.top-gap{
+    margin-top: 2%;
+}
+
+.side-gap{
+    margin-left: -15px;
+}
+
 .rules{
     background-color: #e8e8e8;
     color: black;

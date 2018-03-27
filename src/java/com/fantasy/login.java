@@ -102,8 +102,9 @@ public class login extends HttpServlet {
                 if (passwordSQL.equals(pwd)) {
                     if (rember == null) {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
+                        session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
-
+                        session.setAttribute("teamBadge",resultSet.getString("team"));
                         resultSet.close();
                         s.close();
 
@@ -113,6 +114,7 @@ public class login extends HttpServlet {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
+                        session.setAttribute("teamBadge",resultSet.getString("team"));
                         session.setMaxInactiveInterval(60 * 60);
                         Cookie emailName = new Cookie("email", email);
                         emailName.setMaxAge(24 * 60 * 60);

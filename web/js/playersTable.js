@@ -1601,7 +1601,7 @@ function showPlayers() {
         };
         xhttp.open("GET", "playersSelection?pos=" + selectionPl + "-" + 1 + "&cat=" + selectCat, true);
         xhttp.send();
-    } else if (selectionPl == "Boston Breakers" || selectionPl == "Chicago Red Stars" || selectionPl == "FC Kansas City" || selectionPl == "Houston Dash" ||
+    } else if (selectionPl == "Boston Breakers" || selectionPl == "Chicago Red Stars" || selectionPl == "Utah Royals FC" || selectionPl == "Houston Dash" ||
             selectionPl == "North Carolina Courage" || selectionPl == "Orlando Pride" || selectionPl == "Portland Thorns FC" || selectionPl == "Seattle Reign FC" ||
             selectionPl == "Sky Blue FC" || selectionPl == "Washington Spirit") {
         xhttp = new XMLHttpRequest();
@@ -2990,9 +2990,11 @@ function addPlayer() {
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
     if (document.getElementById("remainPrice").textContent < 0.0) {
-        console.log("I am here!");
+        console.log("!!!I am here!");
         document.getElementById("remainPrice").style.color = '#d4213c';
         document.getElementById("dollar").style.color = '#d4213c';
+        document.getElementById("enterTeam").disabled = true;
+        console.log(document.getElementById("enterTeam").disabled);
     }
     document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
     var counter = 1;
@@ -3038,7 +3040,7 @@ function addPlayer() {
                 document.getElementById("namegk" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("namegk" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent;
+            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
             document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
 
@@ -3501,10 +3503,12 @@ function removePlayer() {
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("teamError").style.display = 'none';
 
-    if (document.getElementById("remainPrice").textContent > 0.0) {
-        console.log("I am here!");
+    if (document.getElementById("remainPrice").textContent.indexOf('-') != -1) {
+        console.log("@@@I am here!");
         document.getElementById("remainPrice").style.color = '#0ea331';
         document.getElementById("dollar").style.color = '#0ea331';
+        document.getElementById("enterTeam").disabled = false;
+
     }
     document.getElementById("totalPlayers").innerHTML = eval(players) - 1;
     var counter = 0;
@@ -3555,9 +3559,11 @@ function removePlayer() {
         document.getElementById("team" + (document.getElementById("rmvplayerNo").textContent)).innerHTML = ' ';
         document.getElementById("selGK" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeGK()');
         var playerPrice = document.getElementById("pricegk" + document.getElementById("rmvplayerNo").textContent).textContent;
+        document.getElementById("pricegk" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
-        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
+        var price = playerPrice.split("$")[1].split("m")[0];
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
 
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Defender') {
@@ -3578,6 +3584,7 @@ function removePlayer() {
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 2)).innerHTML = ' ';
         document.getElementById("selDEF" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeDEF()');
         var playerPrice = document.getElementById("defprice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        document.getElementById("defprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
@@ -3599,6 +3606,7 @@ function removePlayer() {
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 7)).innerHTML = ' ';
         document.getElementById("selMID" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeMID()');
         var playerPrice = document.getElementById("midprice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        document.getElementById("midprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
@@ -3619,7 +3627,9 @@ function removePlayer() {
         document.getElementById("fwdname" + document.getElementById("rmvplayerNo").textContent).style.border = "2px solid #02509a";
         document.getElementById("team" + (eval(document.getElementById("rmvplayerNo").textContent) + 12)).innerHTML = ' ';
         document.getElementById("selFWD" + document.getElementById("rmvplayerNo").textContent).setAttribute('onclick', 'changeFWD()');
+
         var playerPrice = document.getElementById("fwdprice" + document.getElementById("rmvplayerNo").textContent).textContent;
+        document.getElementById("fwdprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
@@ -3705,6 +3715,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
 });
 
 function autopick() {
+    
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -3712,34 +3723,47 @@ function autopick() {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var k = 1;
+            console.log(jsonResponse.length);
             document.getElementById("allPlayers").style.color = '#0ea331';
             document.getElementById("totalPlayers").style.color = '#0ea331';
             document.getElementById("totalPlayers").innerHTML = '15';
-            for (i = 0; i < 6; i = i + 3) {
+            for (i = 0; i < 8; i = i + 4) {
                 document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("namegk" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + k).innerHTML = jsonResponse[i + 2];
+                document.getElementById("pricegk" + k).innerHTML ="$"+ jsonResponse[i + 3]+"m";
+                var remainPrice = document.getElementById("remainPrice").textContent;
+                document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
             }
             var k = 1;
-            for (i = 6; i < 21; i = i + 3) {
+            for (i = 8; i < 28; i = i + 4) {
                 document.getElementById("defimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("defname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 2)).innerHTML = jsonResponse[i + 2];
+                document.getElementById("defprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                var remainPrice = document.getElementById("remainPrice").textContent;
+                document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
             }
             var k = 1;
-            for (i = 21; i < 36; i = i + 3) {
+            for (i = 28; i < 48; i = i + 4) {
                 document.getElementById("midimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("midname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 7)).innerHTML = jsonResponse[i + 2];
+                document.getElementById("midprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                var remainPrice = document.getElementById("remainPrice").textContent;
+                document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
             }
             var k = 1;
-            for (i = 36; i < 45; i = i + 3) {
+            for (i = 48; i < 60; i = i + 4) {
                 document.getElementById("fwdimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("fwdname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 12)).innerHTML = jsonResponse[i + 2];
+                document.getElementById("fwdprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                var remainPrice = document.getElementById("remainPrice").textContent;
+                document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
             }
 
@@ -3751,162 +3775,22 @@ function autopick() {
 
 
 
-$(document).on("click", "#prev", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-    var prev = $('#prev').val();
-    $.get("fixtureprev", {previous: prev}, function (responseText) {
-        document.getElementById("first").style.display = "none";
-        document.getElementById("last").style.display = "";
-
-        document.getElementById("prev").value = responseText[1];
-        if (responseText[1] == "Gameweek 0") {
-            document.getElementById("prev").style.display = "none";
-        } else {
-            document.getElementById("prev").style.display = "";
-        }
-        document.getElementById("next").value = responseText[2];
-        if (responseText[2] == "Gameweek 23") {
-            document.getElementById("next").style.display = "none";
-        } else {
-            document.getElementById("next").style.display = "";
-        }
-
-        document.getElementById("gameweekid").innerHTML = responseText[0] + " - " + responseText[3];
-        console.log(responseText[0] + " - " + responseText[3]);
-        document.getElementById("monday").style.display = "none";
-        document.getElementById("tuesday").style.display = "none";
-        document.getElementById("wednesday").style.display = "none";
-        document.getElementById("thursday").style.display = "none";
-        document.getElementById("friday").style.display = "none";
-        document.getElementById("saturday").style.display = "none";
-        document.getElementById("sunday").style.display = "none";
-        var i = 0;
-        var j = 3;
-        var day = "";
-        for (j; j < responseText.length; j = j + 6) {
-            var daystr = responseText[j].split(",");
-            console.log(daystr[0] + " " + day);
-            if (day != daystr[0].toLowerCase()) {
-                console.log("here");
-                if (day != "") {
-                    for (i; i < 5; i++) {
-                        document.getElementById(day + "game" + i + "id").style.display = "none";
-                    }
-                    day = daystr[0].toLowerCase();
-                    i = 0;
-                    document.getElementById(day).style.display = "";
-                    document.getElementById(day + "title").innerHTML = responseText[j];
-                } else {
-                    day = daystr[0].toLowerCase();
-                    document.getElementById(day).style.display = "";
-                    document.getElementById(day + "title").innerHTML = responseText[j];
-
-                }
-
-
-
-            }
-            document.getElementById(day + "home" + i).innerHTML = responseText[j + 1];
-            document.getElementById(day + "homebadge" + i).src = "img/" + responseText[j + 2];
-            document.getElementById(day + "score" + i).innerHTML = responseText[j + 3];
-            document.getElementById(day + "awaybadge" + i).src = "img/" + responseText[j + 5];
-            document.getElementById(day + "away" + i).innerHTML = responseText[j + 4];
-            document.getElementById(day + "game" + i + "id").style.display = "";
-            i = i + 1;
-        }
-        console.log(i);
-
-        for (i; i < 5; i++) {
-            document.getElementById(day + "game" + i + "id").style.display = "none";
-        }
-
-    });
-});
-
-$(document).on("click", "#next", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-    var prev = $('#next').val();
-    $.get("fixtureprev", {previous: prev}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-        document.getElementById("first").style.display = "none";
-        document.getElementById("last").style.display = "";
-
-        document.getElementById("prev").value = responseText[1];
-        if (responseText[1] == "Gameweek 0") {
-            document.getElementById("prev").style.display = "none";
-        } else {
-            document.getElementById("prev").style.display = "";
-        }
-        document.getElementById("next").value = responseText[2];
-        if (responseText[2] == "Gameweek 23") {
-            document.getElementById("next").style.display = "none";
-        } else {
-            document.getElementById("next").style.display = "";
-        }
-
-        document.getElementById("gameweekid").innerHTML = responseText[0] + " - " + responseText[3];
-        console.log(responseText[0] + " - " + responseText[3]);
-        document.getElementById("monday").style.display = "none";
-        document.getElementById("tuesday").style.display = "none";
-        document.getElementById("wednesday").style.display = "none";
-        document.getElementById("thursday").style.display = "none";
-        document.getElementById("friday").style.display = "none";
-        document.getElementById("saturday").style.display = "none";
-        document.getElementById("sunday").style.display = "none";
-        var i = 0;
-        var j = 3;
-        var day = "";
-        for (j; j < responseText.length; j = j + 6) {
-            var daystr = responseText[j].split(",");
-            console.log(daystr[0] + " " + day);
-            if (day != daystr[0].toLowerCase()) {
-                console.log("here");
-                if (day != "") {
-                    for (i; i < 5; i++) {
-                        document.getElementById(day + "game" + i + "id").style.display = "none";
-                    }
-                    day = daystr[0].toLowerCase();
-                    i = 0;
-                    document.getElementById(day).style.display = "";
-                    document.getElementById(day + "title").innerHTML = responseText[j];
-                } else {
-                    day = daystr[0].toLowerCase();
-                    document.getElementById(day).style.display = "";
-                    document.getElementById(day + "title").innerHTML = responseText[j];
-
-                }
-
-
-
-            }
-            document.getElementById(day + "home" + i).innerHTML = responseText[j + 1];
-            document.getElementById(day + "homebadge" + i).src = "img/" + responseText[j + 2];
-            document.getElementById(day + "score" + i).innerHTML = responseText[j + 3];
-            document.getElementById(day + "awaybadge" + i).src = "img/" + responseText[j + 5];
-            document.getElementById(day + "away" + i).innerHTML = responseText[j + 4];
-            document.getElementById(day + "game" + i + "id").style.display = "";
-            i = i + 1;
-        }
-        console.log(i);
-
-        for (i; i < 5; i++) {
-            document.getElementById(day + "game" + i + "id").style.display = "none";
-        }
-    });
-});
 
 function backTeamButton() {
     if (localStorage.getItem('firstLoad')) {
         for (i = 1; i <= 2; i++) {
             document.getElementById("namegk" + i).innerHTML = localStorage.getItem('namegk' + i);
-            document.getElementById("pricegk" + i).innerHTML = localStorage.getItem('pricegk' + i);
+            document.getElementById("pricegk" + i).innerHTML = localStorage.getItem('pricegk' + i) ;
             document.getElementById("team" + i).innerHTML = localStorage.getItem('team' + i);
             var color = localStorage.getItem('colorgk' + i);
             if (color == "rgb(192, 2, 13)") {
                 document.getElementById("namegk" + i).style.backgroundColor = color;
-                document.getElementById("namegk" + i).style.border =localStorage.getItem('bordergk' + i) ;
+                document.getElementById("namegk" + i).style.border = localStorage.getItem('bordergk' + i);
             }
             document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
             document.getElementById("imagegk" + i).src = "img/" + localStorage.getItem('imagegk' + i);
-            for(j=1;j<=2;j++){
-                if(document.getElementById("namegk" + i).textContent==document.getElementById("gkname" + j).textContent){
+            for (j = 1; j <= 2; j++) {
+                if (document.getElementById("namegk" + i).textContent == document.getElementById("gkname" + j).textContent) {
                     document.getElementById("gk" + j).style.opacity = '0.6';
                     document.getElementById("gk" + j).style.pointerEvents = 'none';
                 }
@@ -3915,16 +3799,16 @@ function backTeamButton() {
         for (i = 1; i <= 5; i++) {
             document.getElementById("defname" + i).innerHTML = localStorage.getItem('defname' + i);
             document.getElementById("defprice" + i).innerHTML = localStorage.getItem('defprice' + i);
-            document.getElementById("team" + (i+2)).innerHTML = localStorage.getItem('team' + (i+2));
+            document.getElementById("team" + (i + 2)).innerHTML = localStorage.getItem('team' + (i + 2));
             var color = localStorage.getItem('defcolor' + i);
             if (color == "rgb(192, 2, 13)") {
                 document.getElementById("defname" + i).style.backgroundColor = color;
-                document.getElementById("defname" + i).style.border =localStorage.getItem('defborder' + i) ;
+                document.getElementById("defname" + i).style.border = localStorage.getItem('defborder' + i);
             }
             document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
             document.getElementById("defimage" + i).src = "img/" + localStorage.getItem('defimage' + i);
-            for(j=1;j<=8;j++){
-                if(document.getElementById("defname" + i).textContent==document.getElementById("namedef" + j).textContent){
+            for (j = 1; j <= 8; j++) {
+                if (document.getElementById("defname" + i).textContent == document.getElementById("namedef" + j).textContent) {
                     document.getElementById("def" + j).style.opacity = '0.6';
                     document.getElementById("def" + j).style.pointerEvents = 'none';
                 }
@@ -3933,16 +3817,16 @@ function backTeamButton() {
         for (i = 1; i <= 5; i++) {
             document.getElementById("midname" + i).innerHTML = localStorage.getItem('midname' + i);
             document.getElementById("midprice" + i).innerHTML = localStorage.getItem('midprice' + i);
-            document.getElementById("team" + (i+7)).innerHTML = localStorage.getItem('team' + (i+7));
+            document.getElementById("team" + (i + 7)).innerHTML = localStorage.getItem('team' + (i + 7));
             var color = localStorage.getItem('midcolor' + i);
             if (color == "rgb(192, 2, 13)") {
                 document.getElementById("midname" + i).style.backgroundColor = color;
-                document.getElementById("midname" + i).style.border =localStorage.getItem('midborder' + i) ;
+                document.getElementById("midname" + i).style.border = localStorage.getItem('midborder' + i);
             }
             document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
             document.getElementById("midimage" + i).src = "img/" + localStorage.getItem('midimage' + i);
-            for(j=1;j<=5;j++){
-                if(document.getElementById("midname" + i).textContent==document.getElementById("namemid" + j).textContent){
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("midname" + i).textContent == document.getElementById("namemid" + j).textContent) {
                     document.getElementById("mid" + j).style.opacity = '0.6';
                     document.getElementById("mid" + j).style.pointerEvents = 'none';
                 }
@@ -3951,16 +3835,16 @@ function backTeamButton() {
         for (i = 1; i <= 3; i++) {
             document.getElementById("fwdname" + i).innerHTML = localStorage.getItem('fwdname' + i);
             document.getElementById("fwdprice" + i).innerHTML = localStorage.getItem('fwdprice' + i);
-            document.getElementById("team" + (i+12)).innerHTML = localStorage.getItem('team' + (i+12));
+            document.getElementById("team" + (i + 12)).innerHTML = localStorage.getItem('team' + (i + 12));
             var color = localStorage.getItem('fwdcolor' + i);
             if (color == "rgb(192, 2, 13)") {
                 document.getElementById("fwdname" + i).style.backgroundColor = color;
-                document.getElementById("fwdname" + i).style.border =localStorage.getItem('fwdborder' + i) ;
+                document.getElementById("fwdname" + i).style.border = localStorage.getItem('fwdborder' + i);
             }
             document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
             document.getElementById("fwdimage" + i).src = "img/" + localStorage.getItem('fwdimage' + i);
-            for(j=1;j<=5;j++){
-                if(document.getElementById("fwdname" + i).textContent==document.getElementById("namefwd" + j).textContent){
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("fwdname" + i).textContent == document.getElementById("namefwd" + j).textContent) {
                     document.getElementById("fwd" + j).style.opacity = '0.6';
                     document.getElementById("fwd" + j).style.pointerEvents = 'none';
                 }
@@ -3986,7 +3870,7 @@ function backTeam() {
     for (i = 1; i <= 5; i++) {
         localStorage.setItem('defname' + i, document.getElementById("defname" + i).textContent);
         localStorage.setItem('defprice' + i, document.getElementById("defprice" + i).textContent);
-        localStorage.setItem('team' + (i+2), document.getElementById("team" + (i+2)).textContent);
+        localStorage.setItem('team' + (i + 2), document.getElementById("team" + (i + 2)).textContent);
         localStorage.setItem('defcolor' + i, document.getElementById("defname" + i).style.backgroundColor);
         localStorage.setItem('defborder' + i, document.getElementById("defname" + i).style.border);
         localStorage.setItem('defimage' + i, document.getElementById("defimage" + i).src.split("/")[5]);
@@ -3994,16 +3878,16 @@ function backTeam() {
     for (i = 1; i <= 5; i++) {
         localStorage.setItem('midname' + i, document.getElementById("midname" + i).textContent);
         localStorage.setItem('midprice' + i, document.getElementById("midprice" + i).textContent);
-        localStorage.setItem('team' + (i+7), document.getElementById("team" + (i+7)).textContent);
+        localStorage.setItem('team' + (i + 7), document.getElementById("team" + (i + 7)).textContent);
         localStorage.setItem('midcolor' + i, document.getElementById("midname" + i).style.backgroundColor);
         localStorage.setItem('midborder' + i, document.getElementById("midname" + i).style.border);
         localStorage.setItem('midimage' + i, document.getElementById("midimage" + i).src.split("/")[5]);
     }
     for (i = 1; i <= 3; i++) {
-        console.log(i+ " 0??00 " +  document.getElementById("fwdprice" + i).textContent);
+        console.log(i + " 0??00 " + document.getElementById("fwdprice" + i).textContent);
         localStorage.setItem('fwdname' + i, document.getElementById("fwdname" + i).textContent);
         localStorage.setItem('fwdprice' + i, document.getElementById("fwdprice" + i).textContent);
-        localStorage.setItem('team' + (i+12), document.getElementById("team" + (i+12)).textContent);
+        localStorage.setItem('team' + (i + 12), document.getElementById("team" + (i + 12)).textContent);
         localStorage.setItem('fwdcolor' + i, document.getElementById("fwdname" + i).style.backgroundColor);
         localStorage.setItem('fwdborder' + i, document.getElementById("fwdname" + i).style.border);
         localStorage.setItem('fwdimage' + i, document.getElementById("fwdimage" + i).src.split("/")[5]);
@@ -4013,6 +3897,7 @@ function backTeam() {
 }
 
 function openInfo(name) {
+    console.log('HEREEE!!!!');
     var gameweek = document.getElementById("gameweekid").textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
@@ -4020,6 +3905,8 @@ function openInfo(name) {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
+            console.log(document.getElementById("nameimage"));
+            document.getElementById("nameimage").src = "img/players/" + name.toLowerCase() + ".png";
             document.getElementById("nameinfo").innerHTML = jsonResponse[0];
             document.getElementById("posinfo").innerHTML = jsonResponse[1];
             document.getElementById("teaminfo").innerHTML = jsonResponse[2];
@@ -4042,8 +3929,8 @@ function openInfo(name) {
                 var image = "Sky_Blue_FC.png";
             } else if (team == 'Washington Spirit') {
                 var image = "Washington_Spirit.png";
-            } else if (team == 'FC Kansas City') {
-                var image = "kansasCity.png";
+            } else if (team == 'Utah Royals FC') {
+                var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo").src = "img/" + image;
             document.getElementById("currgwinfo").innerHTML = "GW" + gameweek.split("-")[0].split(" ")[1];
@@ -4076,6 +3963,7 @@ function changePlayer(playerID) {
 }
 
 function openFixture(name, team) {
+    setInfo(name, "Fix");
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -4090,15 +3978,20 @@ function openFixture(name, team) {
                     document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
                     document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
                     document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
-                    j=eval(j)+4;
+                    j = eval(j) + 4;
+
                 } else {
                     document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j+1];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j+2];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j+3];
+                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
+                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
+                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
                 }
+
+
                 i = eval(i) + 1;
+
             }
+
             document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
             $('#information').modal('hide');
             $('#fixtureModal').modal({show: 'true'});
@@ -4108,8 +4001,51 @@ function openFixture(name, team) {
     xhttp.send();
 }
 
+function setInfo(name, prefix) {
+    var gameweek = document.getElementById("gameweekid").textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            document.getElementById("nameimage" + prefix).src = "img/players/" + name.toLowerCase() + ".png";
+            document.getElementById("nameinfo" + prefix).innerHTML = jsonResponse[0];
+            document.getElementById("posinfo" + prefix).innerHTML = jsonResponse[1];
+            document.getElementById("teaminfo" + prefix).innerHTML = jsonResponse[2];
+            var team = jsonResponse[2];
+            if (team == 'Boston Breakers') {
+                var image = "Boston_Breakers.png";
+            } else if (team == 'Chicago Red Stars') {
+                var image = "ChicagoRedStars.png";
+            } else if (team == 'Houston Dash') {
+                var image = "Houston_Dash.png";
+            } else if (team == 'North Carolina Courage') {
+                var image = "North_Carolina_Courage.png";
+            } else if (team == 'Orlando Pride') {
+                var image = "OrlandoPride.png";
+            } else if (team == 'Portland Thorns FC') {
+                var image = "Portland.png";
+            } else if (team == 'Seattle Reign FC') {
+                var image = "SeattleReignFC.png";
+            } else if (team == 'Sky Blue FC') {
+                var image = "Sky_Blue_FC.png";
+            } else if (team == 'Washington Spirit') {
+                var image = "Washington_Spirit.png";
+            } else if (team == 'Utah Royals FC') {
+                var image = "Utah_Royals.PNG";
+            }
+            document.getElementById("badgeinfo" + prefix).src = "img/" + image;
+        }
+    };
+    xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
+    xhttp.send();
+
+}
+
 function openStatistic(name) {
-    document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
+    setInfo(name, "Stats");
+    document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
     $('#information').modal('hide');
     $('#statisticsModal').modal({show: 'true'});
 }

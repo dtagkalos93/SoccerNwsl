@@ -69,7 +69,6 @@ public class allPlayers extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("allPlayers");
         String category = request.getParameter("cat");
         list=new ArrayList<>();
         gknameList = new ArrayList<>();
@@ -140,7 +139,6 @@ public class allPlayers extends HttpServlet {
         findmax( 5, "fwd",category);
         list.add(totalPlayers+"");
         String json = new Gson().toJson(list);
-        System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);

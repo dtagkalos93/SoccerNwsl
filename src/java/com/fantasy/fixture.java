@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -70,7 +70,7 @@ public class fixture extends HttpServlet {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            String strThatDay = "2017/04/10";
+            String strThatDay = "2018/03/17";
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
             Date d = null;
             try {
@@ -135,8 +135,8 @@ public class fixture extends HttpServlet {
                     badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("home").equals("Sky Blue FC")) {
                     badge = "Sky_Blue_FC.png";
-                } else if (resultSet.getString("home").equals("FC Kansas City")) {
-                    badge = "kansasCity.png";
+                } else if (resultSet.getString("home").equals("Utah Royals FC")) {
+                    badge = "Utah_Royals.PNG";
                 } else if (resultSet.getString("home").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }
@@ -159,8 +159,8 @@ public class fixture extends HttpServlet {
                     badge = "SeattleReignFC.png";
                 } else if (resultSet.getString("away").equals("Sky Blue FC")) {
                     badge = "Sky_Blue_FC.png";
-                } else if (resultSet.getString("away").equals("FC Kansas City")) {
-                    badge = "kansasCity.png";
+                } else if (resultSet.getString("away").equals("Utah Royals FC")) {
+                    badge = "Utah_Royals.PNG";
                 } else if (resultSet.getString("away").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }

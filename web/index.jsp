@@ -39,7 +39,7 @@
                         resultSet = s.getResultSet();
                         if (resultSet.next()) {
                             session.setAttribute("fullname", resultSet.getString("firstname")+ " " + resultSet.getString("lastname"));
-                            
+                            session.setAttribute("teamBadge",resultSet.getString("team"));
                             RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                             rd.forward(request, response);
                         }
@@ -496,7 +496,7 @@
                         <option style="" value="" data-class="selectteam">Select your Team </option>
                         <option class="team" value="boston" data-class="boston" >Boston Breakers</option>
                         <option class="team" value="chicago" data-class="chicago"  >Chicago Red Stars</option>
-                        <option class="team" value="kansas" data-class="kansas" >FC Kansas City</option>
+                        <option class="team" value="kansas" data-class="kansas" >Utah Royals FC</option>
                         <option class="team" value="houston" data-class="houston" >Houston Dash</option>
                         <option class="team" value="courage" data-class="courage" >North Carolina Courage</option>
                         <option class="team" value="orlando" data-class="orlando"  >Orlando Pride</option>

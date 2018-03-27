@@ -104,7 +104,7 @@ public class confirmation extends HttpServlet {
         String gender = request.getParameter("gender");
         String country = request.getParameter("country");
         String team = request.getParameter("team");
-        System.out.println(team);
+        System.out.println("!!!"+team);
         if (team.equals("")) {
             request.setAttribute("firstname", firstName);
             request.setAttribute("lastname", lastName);
@@ -112,6 +112,7 @@ public class confirmation extends HttpServlet {
             request.setAttribute("password", password);
             request.setAttribute("gender", gender);
             request.setAttribute("country", country);
+            request.setAttribute("teamSelect","false");
             RequestDispatcher rd = request.getRequestDispatcher("favteam.jsp");
             rd.forward(request, response);
         } else {
@@ -134,22 +135,25 @@ public class confirmation extends HttpServlet {
             request.setAttribute("away", fixture.getawayList());
             request.setAttribute("awaybadge", fixture.getawaybadgeList());
             
-             request.setAttribute("homegoal", fixture.getgoalhomeList());
-            request.setAttribute("awaygoal", fixture.getgoalawayList());
-            request.setAttribute("homeassist", fixture.getassisthomeList());
-            request.setAttribute("awayassist", fixture.getassistawayList());
-            request.setAttribute("homeyellow", fixture.getyellowhomeList());
-            request.setAttribute("awayyellow", fixture.getyellowawayList());
-            request.setAttribute("homered", fixture.getredhomeList());
-            request.setAttribute("awayred", fixture.getredawayList());
-            request.setAttribute("homesave", fixture.getsavehomeList());
-            request.setAttribute("awaysave", fixture.getsaveawayList());
-            request.setAttribute("homeown", fixture.getownhomeList());
-            request.setAttribute("awayown", fixture.getownawayList());
-            request.setAttribute("homepkmissed", fixture.getpkmissedhomeList());
-            request.setAttribute("awaypkmissed", fixture.getpkmissedawayList());
-            request.setAttribute("homepksaved", fixture.getpksavedhomeList());
-            request.setAttribute("awaypksaved", fixture.getpksavedawayList());
+            
+            
+            
+//             request.setAttribute("homegoal", fixture.getgoalhomeList());
+//            request.setAttribute("awaygoal", fixture.getgoalawayList());
+//            request.setAttribute("homeassist", fixture.getassisthomeList());
+//            request.setAttribute("awayassist", fixture.getassistawayList());
+//            request.setAttribute("homeyellow", fixture.getyellowhomeList());
+//            request.setAttribute("awayyellow", fixture.getyellowawayList());
+//            request.setAttribute("homered", fixture.getredhomeList());
+//            request.setAttribute("awayred", fixture.getredawayList());
+//            request.setAttribute("homesave", fixture.getsavehomeList());
+//            request.setAttribute("awaysave", fixture.getsaveawayList());
+//            request.setAttribute("homeown", fixture.getownhomeList());
+//            request.setAttribute("awayown", fixture.getownawayList());
+//            request.setAttribute("homepkmissed", fixture.getpkmissedhomeList());
+//            request.setAttribute("awaypkmissed", fixture.getpkmissedawayList());
+//            request.setAttribute("homepksaved", fixture.getpksavedhomeList());
+//            request.setAttribute("awaypksaved", fixture.getpksavedawayList());
             
             players gk = new players();
             gk.players("Goalkeeper","score");
@@ -160,6 +164,7 @@ public class confirmation extends HttpServlet {
             gkpriceList = gk.getpriceList();
             gkscoreList = gk.getpointList();
             gkinjuryList = gk.getinjuryList();
+
             findmax(request, 2, "gk");
             players def = new players();
             def.players("Defender","score");
@@ -170,6 +175,7 @@ public class confirmation extends HttpServlet {
             defpriceList = def.getpriceList();
             defscoreList = def.getpointList();
             definjuryList = def.getinjuryList();
+           
             findmax(request, 8, "def");
             players mid = new players();
             mid.players("Midfielder","score");

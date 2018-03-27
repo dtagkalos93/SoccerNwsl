@@ -81,6 +81,14 @@ h6 {
     background-color: #c8373b;
 }
 
+.top-gap{
+    margin-top: 2%;
+}
+
+.side-gap{
+    margin-left: -15px;
+}
+
 .form-control{
     width: 90%;
     margin-left: 5%;

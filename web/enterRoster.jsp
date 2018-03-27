@@ -405,10 +405,10 @@
                     ArrayList<String> chijersey = (ArrayList<String>) request.getAttribute("jerseychi");
                     ArrayList<String> chiprice = (ArrayList<String>) request.getAttribute("pricechi");
 
-                    ArrayList<String> kcname = (ArrayList<String>) request.getAttribute("namekc");
-                    ArrayList<String> kcpos = (ArrayList<String>) request.getAttribute("poskc");
-                    ArrayList<String> kcjersey = (ArrayList<String>) request.getAttribute("jerseykc");
-                    ArrayList<String> kcprice = (ArrayList<String>) request.getAttribute("pricekc");
+                    ArrayList<String> UTAname = (ArrayList<String>) request.getAttribute("nameUTA");
+                    ArrayList<String> UTApos = (ArrayList<String>) request.getAttribute("posUTA");
+                    ArrayList<String> UTAjersey = (ArrayList<String>) request.getAttribute("jerseyUTA");
+                    ArrayList<String> UTAprice = (ArrayList<String>) request.getAttribute("priceUTA");
 
                     ArrayList<String> houname = (ArrayList<String>) request.getAttribute("namehou");
                     ArrayList<String> houpos = (ArrayList<String>) request.getAttribute("poshou");
@@ -526,12 +526,12 @@
                         </div>
                     </div>
                     <div  class="col-md-12 col-xs-12 border-rule" style="margin-top: 4%">
-                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#kc" style="font-family:Century Gothic;color:black " >
-                            <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>FC Kansas City (<%=kcname.size()%>/15)
+                        <a class="cola2 collapsed col-md-12 col-xs-12   rules " data-toggle="collapse" href="#UTA" style="font-family:Century Gothic;color:black " >
+                            <span ><img src="img/kansasCity2.png" style="width:42px;height:25px" /></span>Utah Royals FC (<%=UTAname.size()%>/15)
                         </a>
-                        <div id="kc" class="panel-collapse collapse">
+                        <div id="UTA" class="panel-collapse collapse">
                             <%
-                                if (kcname.size() != 0) {
+                                if (UTAname.size() != 0) {
                             %>
                             <table class="col-md-12 col-xs-12" style="font-family:Century Gothic;width:100%;width: 100%">
                                 <tr style='background-color: #242043'>
@@ -540,19 +540,19 @@
                                     <th style="font-size: 13px;; width: 14%;color: white;text-align: center">Price</th>
                                 </tr>
                                 <%
-                                    for (int i = 0; i < kcname.size(); i++) {
+                                    for (int i = 0; i < UTAname.size(); i++) {
                                 %>
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=kcjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=UTAjersey.get(i)%>" style="width:31px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
-                                            <span style="font-size: 14px"><%=kcname.get(i)%></span>
+                                            <span style="font-size: 14px"><%=UTAname.get(i)%></span>
                                         </div>
                                     </td>
-                                    <td style="font-weight:lighter ;text-align: center;font-size: 13px;padding: 0.5%"><%=kcpos.get(i)%></td>
-                                    <td style="font-weight:lighter ;text-align: center;font-size: 13px;padding: 0.5%">$<%=kcprice.get(i)%> </td>
+                                    <td style="font-weight:lighter ;text-align: center;font-size: 13px;padding: 0.5%"><%=UTApos.get(i)%></td>
+                                    <td style="font-weight:lighter ;text-align: center;font-size: 13px;padding: 0.5%">$<%=UTAprice.get(i)%> </td>
                                 </tr>
                                 <%  }
                                 %>

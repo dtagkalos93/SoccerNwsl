@@ -34,7 +34,6 @@ public class GetInformation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find INFORMATION");
         String name = request.getParameter("name");
         String gameweek = request.getParameter("gameweekid");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
@@ -45,7 +44,6 @@ public class GetInformation extends HttpServlet {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        System.out.println(gameweek);
         String gwNo = gameweek.split("-")[0].split(" ")[1];
         try {
 
@@ -64,7 +62,6 @@ public class GetInformation extends HttpServlet {
             int i = 1;
             //Select the data from the database
 
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -112,7 +109,6 @@ public class GetInformation extends HttpServlet {
         }
 
         String json = new Gson().toJson(list);
-        System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);

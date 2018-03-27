@@ -64,7 +64,6 @@ public class playersSelectionTeam extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Selection-By team!");
         list = new ArrayList<>();
         gknameList = new ArrayList<>();
         gkjerseyList = new ArrayList<>();
@@ -142,7 +141,6 @@ public class playersSelectionTeam extends HttpServlet {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Goalkeeper'";
-        System.out.println(sql);
         Statement s = connection.createStatement();
         s.executeQuery(sql);
         resultSet = s.getResultSet();
@@ -188,8 +186,8 @@ public class playersSelectionTeam extends HttpServlet {
 
                 gkjerseyList.add("skybluegk.png");
 
-            } else if (team.equals("FC Kansas City")) {
-                gkteamList.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                gkteamList.add("UTA");
 
                 gkjerseyList.add("kansasgk.png");
 
@@ -295,8 +293,8 @@ public class playersSelectionTeam extends HttpServlet {
 
                 defjerseyList.add("skyblue1.png");
 
-            } else if (team.equals("FC Kansas City")) {
-                defteamList.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                defteamList.add("UTA");
 
                 defjerseyList.add("kansas1.png");
 
@@ -343,7 +341,6 @@ public class playersSelectionTeam extends HttpServlet {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Midfielder'";
-        System.out.println(sql);
         Statement s = connection.createStatement();
         s.executeQuery(sql);
         resultSet = s.getResultSet();
@@ -389,8 +386,8 @@ public class playersSelectionTeam extends HttpServlet {
 
                 midjerseyList.add("skyblue1.png");
 
-            } else if (team.equals("FC Kansas City")) {
-                midteamList.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                midteamList.add("UTA");
 
                 midjerseyList.add("kansas1.png");
 
@@ -437,7 +434,6 @@ public class playersSelectionTeam extends HttpServlet {
         int total;
         ResultSet resultSet = null;
         String sql = "SELECT * FROM players where team='" + team + "' AND position='Forward'";
-        System.out.println(sql);
         Statement s = connection.createStatement();
         s.executeQuery(sql);
         resultSet = s.getResultSet();
@@ -483,8 +479,8 @@ public class playersSelectionTeam extends HttpServlet {
 
                 fwdjerseyList.add("skyblue1.png");
 
-            } else if (team.equals("FC Kansas City")) {
-                fwdteamList.add("KC");
+            } else if (team.equals("Utah Royals FC")) {
+                fwdteamList.add("UTA");
 
                 fwdjerseyList.add("kansas1.png");
 

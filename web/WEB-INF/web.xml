@@ -80,6 +80,14 @@
         <servlet-name>saveTeam</servlet-name>
         <servlet-class>com.fantasy.saveTeam</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>findPoint</servlet-name>
+        <servlet-class>com.fantasy.findPoint</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>findPrice</servlet-name>
+        <servlet-class>com.fantasy.findPrice</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -159,6 +167,14 @@
     <servlet-mapping>
         <servlet-name>saveTeam</servlet-name>
         <url-pattern>/saveTeam</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findPoint</servlet-name>
+        <url-pattern>/findPoint</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findPrice</servlet-name>
+        <url-pattern>/findPrice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

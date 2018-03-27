@@ -60,7 +60,6 @@ public class playersSelection extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Selection");
         list = new ArrayList<>();
         namelist = new ArrayList<>();
         teamlist = new ArrayList<>();
@@ -139,8 +138,8 @@ public class playersSelection extends HttpServlet {
                     } else if (team.equals("Sky Blue FC")) {
                         teamlist.add("NJ");
                         jerseylist.add("skybluegk.png");
-                    } else if (team.equals("FC Kansas City")) {
-                        teamlist.add("KC");
+                    } else if (team.equals("Utah Royals FC")) {
+                        teamlist.add("UTA");
                         jerseylist.add("kansasgk.png");
                     } else if (team.equals("Boston Breakers")) {
                         teamlist.add("BOS");
@@ -171,8 +170,8 @@ public class playersSelection extends HttpServlet {
                 } else if (team.equals("Sky Blue FC")) {
                     teamlist.add("NJ");
                     jerseylist.add("skyblue1.png");
-                } else if (team.equals("FC Kansas City")) {
-                    teamlist.add("KC");
+                } else if (team.equals("Utah Royals FC")) {
+                    teamlist.add("UTA");
                     jerseylist.add("kansas1.png");
                 } else if (team.equals("Boston Breakers")) {
                     teamlist.add("BOS");

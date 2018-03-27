@@ -51,7 +51,6 @@ public class saveTeam extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        System.out.println("Save Team");
         String email = session.getAttribute("email").toString();
         String gk = request.getParameter("gk");
         String def = request.getParameter("def");
@@ -61,7 +60,6 @@ public class saveTeam extends HttpServlet {
         String formation = request.getParameter("formation");
         String captain = request.getParameter("captain");
         String vcaptain = request.getParameter("vcaptain");   
-        System.out.println(captain+"!!!");
 
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";

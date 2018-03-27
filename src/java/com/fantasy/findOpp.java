@@ -67,12 +67,7 @@ public class findOpp extends HttpServlet {
         String ben = request.getParameter("ben");
         list = new HashMap<>();
 
-        System.out.println("GK " + gk + " Def " + def + "MID " + mid + "FWD " + fwd + "Ben " + ben);
-
-//        String[] teamNames = team.split("-");
-//        System.out.println("!!!" + teamNames.length);
-//        System.out.println("Ginde" + team);
-        String strThatDay = "2017/04/10";
+        String strThatDay = "2018/03/17";
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
         Date d = null;
         try {
@@ -112,10 +107,10 @@ public class findOpp extends HttpServlet {
         midlist = new ArrayList<>();
         fwdlist = new ArrayList<>();
         benlist = new ArrayList<>();
-        System.out.println("^^^111"+ben);
         goalkeeper(gk, fix);
         list.put("gk", gklist);
         defender(def, fix);
+        System.out.println("!@#"+def);
         list.put("def", deflist);
         midfielder(mid, fix);
         list.put("mid", midlist);
@@ -158,9 +153,9 @@ public class findOpp extends HttpServlet {
             gkTeam = ("Seattle Reign FC");
         } else if (gkTeam.equals("NJ")) {
             gkTeam = ("Sky Blue FC");
-        } else if (gkTeam.equals("KC")) {
-            gkTeam = ("FC Kansas City");
-
+        } else if (gkTeam.equals("UTA")) {
+            gkTeam = ("Utah Royals FC");
+            //gkTeam = "FC Kansas City";
         } else if (gkTeam.equals("BOS")) {
             gkTeam = ("Boston Breakers");
         }
@@ -175,7 +170,6 @@ public class findOpp extends HttpServlet {
             sql = "SELECT * FROM fixture where  fixture='" + fixture + "'&& (home='" + gkTeam + "' || away='" + gkTeam + "')";
             //Select the data from the database
 
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -201,11 +195,16 @@ public class findOpp extends HttpServlet {
                         gklist.add("vs SEA");
                     } else if (awayTeam.equals("Sky Blue FC")) {
                         gklist.add("vs NJ");
-                    } else if (awayTeam.equals("FC Kansas City")) {
-                        gklist.add("vs KC");
+                    } else if (awayTeam.equals("Utah Royals FC")) {
+                        gklist.add("vs UTA");
                     } else if (awayTeam.equals("Boston Breakers")) {
                         gklist.add("vs BOS");
+                    } else if (awayTeam.equals("FC Kansas City")) {
+                        gklist.add("vs UTA");
                     }
+                    else if(awayTeam.equals("-")){
+                            gklist.add("-");
+                        }
                 } else {
 
                     String homeTeam = resultSet.getString("home");
@@ -226,10 +225,12 @@ public class findOpp extends HttpServlet {
                         gklist.add("@ SEA");
                     } else if (homeTeam.equals("Sky Blue FC")) {
                         gklist.add("@ NJ");
-                    } else if (homeTeam.equals("FC Kansas City")) {
-                        gklist.add("@ KC");
+                    } else if (homeTeam.equals("Utah Royals FC")) {
+                        gklist.add("@ UTA");
                     } else if (homeTeam.equals("Boston Breakers")) {
                         gklist.add("@ BOS");
+                    } else if (homeTeam.equals("FC Kansas City")) {
+                        gklist.add("@ UTA");
                     }
                 }
 
@@ -245,7 +246,6 @@ public class findOpp extends HttpServlet {
             System.out.println("Exception is ;" + e);
 
         }
-        System.out.println("!!!" + gklist.get(0).toString());
     }
 
     private void defender(String def, String fixture) {
@@ -259,6 +259,7 @@ public class findOpp extends HttpServlet {
         String[] defTeamArray = def.split(",");
         for (int i = 0; i < defTeamArray.length; i++) {
             String defTeam = defTeamArray[i].split("-")[1];
+            System.out.println(defTeam);
             if (defTeam.equals("HOU")) {
                 defTeam = "Houston Dash";
 
@@ -276,9 +277,8 @@ public class findOpp extends HttpServlet {
                 defTeam = ("Seattle Reign FC");
             } else if (defTeam.equals("NJ")) {
                 defTeam = ("Sky Blue FC");
-            } else if (defTeam.equals("KC")) {
-                defTeam = ("FC Kansas City");
-
+            } else if (defTeam.equals("UTA")) {
+                defTeam = ("Utah Royals FC");
             } else if (defTeam.equals("BOS")) {
                 defTeam = ("Boston Breakers");
             }
@@ -293,7 +293,6 @@ public class findOpp extends HttpServlet {
                 sql = "SELECT * FROM fixture where  fixture='" + fixture + "'&& (home='" + defTeam + "' || away='" + defTeam + "')";
                 //Select the data from the database
 
-                System.out.println(sql);
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
@@ -319,10 +318,12 @@ public class findOpp extends HttpServlet {
                             deflist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
                             deflist.add("vs NJ");
-                        } else if (awayTeam.equals("FC Kansas City")) {
-                            deflist.add("vs KC");
+                        } else if (awayTeam.equals("Utah Royals FC")) {
+                            deflist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             deflist.add("vs BOS");
+                        }else if(awayTeam.equals("-")){
+                            deflist.add("-");
                         }
                     } else {
 
@@ -344,8 +345,8 @@ public class findOpp extends HttpServlet {
                             deflist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
                             deflist.add("@ NJ");
-                        } else if (homeTeam.equals("FC Kansas City")) {
-                            deflist.add("@ KC");
+                        } else if (homeTeam.equals("Utah Royals FC")) {
+                            deflist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             deflist.add("@ BOS");
                         }
@@ -356,14 +357,13 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
-            connection.close();
+                connection.close();
 
             } catch (Exception e) {
 
                 System.out.println("Exception is ;" + e);
 
             }
-            System.out.println("!!!" + deflist.get(i).toString());
         }
     }
 
@@ -395,9 +395,8 @@ public class findOpp extends HttpServlet {
                 midTeam = ("Seattle Reign FC");
             } else if (midTeam.equals("NJ")) {
                 midTeam = ("Sky Blue FC");
-            } else if (midTeam.equals("KC")) {
-                midTeam = ("FC Kansas City");
-
+            } else if (midTeam.equals("UTA")) {
+                midTeam = ("Utah Royals FC");
             } else if (midTeam.equals("BOS")) {
                 midTeam = ("Boston Breakers");
             }
@@ -412,7 +411,6 @@ public class findOpp extends HttpServlet {
                 sql = "SELECT * FROM fixture where  fixture='" + fixture + "'&& (home='" + midTeam + "' || away='" + midTeam + "')";
                 //Select the data from the database
 
-                System.out.println(sql);
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
@@ -438,11 +436,15 @@ public class findOpp extends HttpServlet {
                             midlist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
                             midlist.add("vs NJ");
-                        } else if (awayTeam.equals("FC Kansas City")) {
-                            midlist.add("vs KC");
+                        } else if (awayTeam.equals("Utah Royals FC")) {
+                            midlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             midlist.add("vs BOS");
+                        } 
+                        else if(awayTeam.equals("-")){
+                            midlist.add("-");
                         }
+
                     } else {
 
                         String homeTeam = resultSet.getString("home");
@@ -463,11 +465,11 @@ public class findOpp extends HttpServlet {
                             midlist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
                             midlist.add("@ NJ");
-                        } else if (homeTeam.equals("FC Kansas City")) {
-                            midlist.add("@ KC");
+                        } else if (homeTeam.equals("Utah Royals FC")) {
+                            midlist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             midlist.add("@ BOS");
-                        }
+                        } 
                     }
 
                 }
@@ -475,14 +477,13 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
-            connection.close();
+                connection.close();
 
             } catch (Exception e) {
 
                 System.out.println("Exception is ;" + e);
 
             }
-            System.out.println("!!!" + midlist.get(i).toString());
         }
     }
 
@@ -514,9 +515,9 @@ public class findOpp extends HttpServlet {
                 fwdTeam = ("Seattle Reign FC");
             } else if (fwdTeam.equals("NJ")) {
                 fwdTeam = ("Sky Blue FC");
-            } else if (fwdTeam.equals("KC")) {
-                fwdTeam = ("FC Kansas City");
-
+            } else if (fwdTeam.equals("UTA")) {
+                fwdTeam = ("Utah Royals FC");
+                //fwdTeam="FC Kansas City";
             } else if (fwdTeam.equals("BOS")) {
                 fwdTeam = ("Boston Breakers");
             }
@@ -531,7 +532,6 @@ public class findOpp extends HttpServlet {
                 sql = "SELECT * FROM fixture where  fixture='" + fixture + "'&& (home='" + fwdTeam + "' || away='" + fwdTeam + "')";
                 //Select the data from the database
 
-                System.out.println(sql);
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
@@ -557,10 +557,12 @@ public class findOpp extends HttpServlet {
                             fwdlist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
                             fwdlist.add("vs NJ");
-                        } else if (awayTeam.equals("FC Kansas City")) {
-                            fwdlist.add("vs KC");
+                        } else if (awayTeam.equals("Utah Royals FC")) {
+                            fwdlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             fwdlist.add("vs BOS");
+                        }else if(awayTeam.equals("-")){
+                            fwdlist.add("-");
                         }
                     } else {
 
@@ -582,8 +584,8 @@ public class findOpp extends HttpServlet {
                             fwdlist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
                             fwdlist.add("@ NJ");
-                        } else if (homeTeam.equals("FC Kansas City")) {
-                            fwdlist.add("@ KC");
+                        } else if (homeTeam.equals("Utah Royals FC")) {
+                            fwdlist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             fwdlist.add("@ BOS");
                         }
@@ -594,14 +596,13 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
-            connection.close();
+                connection.close();
 
             } catch (Exception e) {
 
                 System.out.println("Exception is ;" + e);
 
             }
-            System.out.println("!!!" + fwdlist.get(i).toString());
         }
     }
 
@@ -633,8 +634,8 @@ public class findOpp extends HttpServlet {
                 benTeam = ("Seattle Reign FC");
             } else if (benTeam.equals("NJ")) {
                 benTeam = ("Sky Blue FC");
-            } else if (benTeam.equals("KC")) {
-                benTeam = ("FC Kansas City");
+            } else if (benTeam.equals("UTA")) {
+                benTeam = ("Utah Royals FC");
 
             } else if (benTeam.equals("BOS")) {
                 benTeam = ("Boston Breakers");
@@ -650,7 +651,6 @@ public class findOpp extends HttpServlet {
                 sql = "SELECT * FROM fixture where  fixture='" + fixture + "'&& (home='" + benTeam + "' || away='" + benTeam + "')";
                 //Select the data from the database
 
-                System.out.println(sql);
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
@@ -676,10 +676,12 @@ public class findOpp extends HttpServlet {
                             benlist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
                             benlist.add("vs NJ");
-                        } else if (awayTeam.equals("FC Kansas City")) {
-                            benlist.add("vs KC");
+                        } else if (awayTeam.equals("Utah Royals FC")) {
+                            benlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             benlist.add("vs BOS");
+                        }else if(awayTeam.equals("-")){
+                            benlist.add("-");
                         }
                     } else {
 
@@ -701,9 +703,8 @@ public class findOpp extends HttpServlet {
                             benlist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
                             benlist.add("@ NJ");
-                        } else if (homeTeam.equals("FC Kansas City")) {
-                            System.out.println("!__here");
-                            benlist.add("@ KC");
+                        } else if (homeTeam.equals("Utah Royals FC")) {
+                            benlist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             benlist.add("@ BOS");
                         }
@@ -714,7 +715,7 @@ public class findOpp extends HttpServlet {
                 resultSet.close();
 
                 s.close();
-            connection.close();
+                connection.close();
 
             } catch (Exception e) {
 

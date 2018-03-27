@@ -53,8 +53,7 @@ public class searchBox extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find Position");
-        String name = request.getParameter("name");
+       String name = request.getParameter("name");
         String category = request.getParameter("cat");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -95,7 +94,6 @@ public class searchBox extends HttpServlet {
             }
             //Select the data from the database
 
-            System.out.println(sql);
             Statement s = connection.createStatement();
             s.executeQuery(sql);
 
@@ -180,8 +178,8 @@ public class searchBox extends HttpServlet {
                         jerseylist.add("skyblue1.png");
                     }
 
-                } else if (resultSet.getString("team").equals("FC Kansas City")) {
-                    teamlist.add("KC");
+                } else if (resultSet.getString("team").equals("Utah Royals FC")) {
+                    teamlist.add("UTA");
                     if (pos.equals("Goalkeeper")) {
                         jerseylist.add("kansasgk.png");
                     } else {
