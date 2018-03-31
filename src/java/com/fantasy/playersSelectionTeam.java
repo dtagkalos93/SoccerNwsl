@@ -296,7 +296,7 @@ public class playersSelectionTeam extends HttpServlet {
             } else if (team.equals("Utah Royals FC")) {
                 defteamList.add("UTA");
 
-                defjerseyList.add("kansas1.png");
+                defjerseyList.add("utahjr.png");
 
             } else if (team.equals("Boston Breakers")) {
                 defteamList.add("BOS");
@@ -389,7 +389,7 @@ public class playersSelectionTeam extends HttpServlet {
             } else if (team.equals("Utah Royals FC")) {
                 midteamList.add("UTA");
 
-                midjerseyList.add("kansas1.png");
+                midjerseyList.add("utahjr.png");
 
             } else if (team.equals("Boston Breakers")) {
                 midteamList.add("BOS");
@@ -482,7 +482,7 @@ public class playersSelectionTeam extends HttpServlet {
             } else if (team.equals("Utah Royals FC")) {
                 fwdteamList.add("UTA");
 
-                fwdjerseyList.add("kansas1.png");
+                fwdjerseyList.add("utahjr.png");
 
             } else if (team.equals("Boston Breakers")) {
                 fwdteamList.add("BOS");

@@ -126,7 +126,7 @@ public class players {
                     if (pos.equals("Goalkeeper")) {
                         jerseyList.add("kansasgk.png");
                     } else {
-                        jerseyList.add("kansas1.png");
+                        jerseyList.add("utahjr.png");
                     }
                 } else if (resultSet.getString("team").equals("Boston Breakers")) {
                     teamList.add("BOS");

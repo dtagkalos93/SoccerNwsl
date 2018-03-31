@@ -28,3 +28,5 @@ web/favteam.jsp
 nbproject/ant-deploy.xml
 *.properties
 *.xml
+web/favteam.jsp
+build/web/css/bootstrap.min.css

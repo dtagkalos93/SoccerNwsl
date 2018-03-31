@@ -3040,7 +3040,7 @@ function addPlayer() {
                 document.getElementById("namegk" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("namegk" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
+            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
             document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
 
@@ -3084,8 +3084,7 @@ function addPlayer() {
                 document.getElementById("defname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("defname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("defprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
-
+            document.getElementById("defprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
             document.getElementById("team" + (i + 2)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
         } else {
@@ -3126,8 +3125,7 @@ function addPlayer() {
                 document.getElementById("midname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("midname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("midprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
-
+            document.getElementById("midprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
             document.getElementById("team" + (i + 7)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
         } else {
@@ -3168,8 +3166,7 @@ function addPlayer() {
                 document.getElementById("fwdname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("fwdname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("fwdprice" + i).innerHTML = document.getElementById("playerPrice").textContent;
-
+            document.getElementById("fwdprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
             document.getElementById("team" + (i + 12)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
 
@@ -3214,6 +3211,7 @@ function reset() {
         document.getElementById("namegk" + i).style.border = "2px solid #02509a";
         document.getElementById("team" + i).innerHTML = ' ';
         document.getElementById("selGK" + i).setAttribute('onclick', 'changeGK()');
+        document.getElementById("pricegk" + i).innerHTML = '';
 
     }
     for (i = 1; i <= 20; i++) {
@@ -3228,6 +3226,7 @@ function reset() {
         document.getElementById("defname" + i).style.border = "2px solid #02509a";
         document.getElementById("team" + (i + 2)).innerHTML = ' ';
         document.getElementById("selDEF" + i).setAttribute('onclick', 'changeDEF()');
+        document.getElementById("defprice" + i).innerHTML = '';
     }
     for (i = 1; i <= 20; i++) {
 
@@ -3241,6 +3240,7 @@ function reset() {
         document.getElementById("midname" + i).style.border = "2px solid #02509a";
         document.getElementById("team" + (i + 7)).innerHTML = ' ';
         document.getElementById("selMID" + i).setAttribute('onclick', 'changeMID()');
+        document.getElementById("midprice" + i).innerHTML = '';
     }
     for (i = 1; i <= 20; i++) {
 
@@ -3254,6 +3254,7 @@ function reset() {
         document.getElementById("fwdname" + i).style.border = "2px solid #02509a";
         document.getElementById("team" + (i + 12)).innerHTML = ' ';
         document.getElementById("selFWD" + i).setAttribute('onclick', 'changeFWD()');
+        document.getElementById("fwdprice" + i).innerHTML = '';
     }
     for (i = 1; i <= 20; i++) {
 

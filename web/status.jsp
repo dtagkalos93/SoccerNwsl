@@ -260,7 +260,7 @@
                                 <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/kansas1.png" style="width:25px;height:30px" />
+                                        <img src="img/utahjr.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
                                         <span style="font-size: 15px;font-family: Century Gothic">Sauerbrunn</span>
@@ -735,7 +735,7 @@
                                 <p class="gkpoint1">GW5-8pts</p>
                             </div>
                             <div >
-                                <img class="image-player" src="img/kansas1.png"  />
+                                <img class="image-player" src="img/utahjr.png"  />
                                 <p class="gkname1" >Sauerbrunn</p>
                                 <p class="gkpoint1">GW5-8pts</p>
                             </div>

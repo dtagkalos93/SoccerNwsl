@@ -323,7 +323,7 @@ public class autopick extends HttpServlet {
                 jerseyList.add("skyblue1.png");
             } else if (team.equals("Utah Royals FC")) {
                 teamList.add("UTA");
-                jerseyList.add("kansas1.png");
+                jerseyList.add("utahjr.png");
             } else if (team.equals("Boston Breakers")) {
                 teamList.add("BOS");
                 jerseyList.add("breakers1.png");
@@ -497,7 +497,7 @@ public class autopick extends HttpServlet {
                 jerseyList.add("skyblue1.png");
             } else if (team.equals("Utah Royals FC")) {
                 teamList.add("UTA");
-                jerseyList.add("kansas1.png");
+                jerseyList.add("utahjr.png");
             } else if (team.equals("Boston Breakers")) {
                 teamList.add("BOS");
                 jerseyList.add("breakers1.png");
@@ -671,7 +671,7 @@ public class autopick extends HttpServlet {
                 jerseyList.add("skyblue1.png");
             } else if (team.equals("Utah Royals FC")) {
                 teamList.add("UTA");
-                jerseyList.add("kansas1.png");
+                jerseyList.add("utahjr.png");
             } else if (team.equals("Boston Breakers")) {
                 teamList.add("BOS");
                 jerseyList.add("breakers1.png");

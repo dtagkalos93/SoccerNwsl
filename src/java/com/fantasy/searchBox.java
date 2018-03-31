@@ -183,7 +183,7 @@ public class searchBox extends HttpServlet {
                     if (pos.equals("Goalkeeper")) {
                         jerseylist.add("kansasgk.png");
                     } else {
-                        jerseylist.add("kansas1.png");
+                        jerseylist.add("utahjr.png");
                     }
 
                 } else if (resultSet.getString("team").equals("Boston Breakers")) {

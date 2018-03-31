@@ -114,7 +114,7 @@ function defence(def, defNo) {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
                 var teamName = 'Utah Royals FC';
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
 
             document.getElementById("defimage" + i).src = "img/" + image;
@@ -180,7 +180,7 @@ function defence(def, defNo) {
                 
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("defimage" + i).src = "img/" + image;
             i = i + 1;
@@ -238,7 +238,7 @@ function defence(def, defNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("defimage" + i).src = "img/" + image;
             i = i + 1;
@@ -299,7 +299,7 @@ function midfielder(mid, midNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
 
             document.getElementById("midimage" + i).src = "img/" + image;
@@ -358,7 +358,7 @@ function midfielder(mid, midNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("midimage" + i).src = "img/" + image;
             i = i + 1;
@@ -412,7 +412,7 @@ function midfielder(mid, midNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("midimage" + i).src = "img/" + image;
             i = i + 1;
@@ -468,7 +468,7 @@ function forward(fwd, fwdNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
 
             document.getElementById("fwdimage" + i).src = "img/" + image;
@@ -528,7 +528,7 @@ function forward(fwd, fwdNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("fwdimage" + i).src = "img/" + image;
             i = i + 1;
@@ -588,7 +588,7 @@ function forward(fwd, fwdNo) {
             } else if (team == 'WAS') {
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
-                var image = "kansas1.png";
+                var image = "utahjr.png";
             }
             document.getElementById("fwdimage" + i).src = "img/" + image;
             i = i + 1;
@@ -648,7 +648,7 @@ function bench(ben) {
         } else if (team == 'WAS') {
             var image = "spirit1.png";
         } else if (team == 'UTA') {
-            var image = "kansas1.png";
+            var image = "utahjr.png";
         }
         document.getElementById("benimage" + i).src = "img/" + image;
         document.getElementById("benpos" + i).innerHTML = benPlayer[j].split("-")[2];
@@ -870,7 +870,7 @@ function setPlayers(gk, def, mid, fwd) {
         } else if (defTeam == 'WAS') {
             var image = "spirit1.png";
         } else if (defTeam == 'UTA') {
-            var image = "kansas1.png";
+            var image = "utahjr.png";
         }
         document.getElementById("defimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;
@@ -902,7 +902,7 @@ function setPlayers(gk, def, mid, fwd) {
         } else if (midTeam == 'WAS') {
             var image = "spirit1.png";
         } else if (midTeam == 'UTA') {
-            var image = "kansas1.png";
+            var image = "utahjr.png";
         }
         document.getElementById("midimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;
@@ -934,7 +934,7 @@ function setPlayers(gk, def, mid, fwd) {
         } else if (fwdTeam == 'WAS') {
             var image = "spirit1.png";
         } else if (fwdTeam == 'UTA') {
-            var image = "kansas1.png";
+            var image = "utahjr.png";
         }
         document.getElementById("fwdimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;

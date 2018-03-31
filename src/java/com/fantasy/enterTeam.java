@@ -259,10 +259,10 @@ public class enterTeam extends HttpServlet {
 
                 } else if (playersTeam[1].equals("UTA")) {
                     UTAnameList.add(playersTeam[0]);
-                    UTAjerseyList.add("kansas1.png");
+                    UTAjerseyList.add("utahjr.png");
                     UTAposList.add("DEF");
                     UTApriceList.add(price[i]);
-                    defjerseyList.add("kansas1.png");
+                    defjerseyList.add("utahjr.png");
 
                 } else if (playersTeam[1].equals("HOU")) {
                     hounameList.add(playersTeam[0]);
@@ -337,10 +337,10 @@ public class enterTeam extends HttpServlet {
 
                 } else if (playersTeam[1].equals("UTA")) {
                     UTAnameList.add(playersTeam[0]);
-                    UTAjerseyList.add("kansas1.png");
+                    UTAjerseyList.add("utahjr.png");
                     UTAposList.add("MID");
                     UTApriceList.add(price[i]);
-                    midjerseyList.add("kansas1.png");
+                    midjerseyList.add("utahjr.png");
 
                 } else if (playersTeam[1].equals("HOU")) {
                     hounameList.add(playersTeam[0]);
@@ -463,10 +463,10 @@ public class enterTeam extends HttpServlet {
 
                 } else if (playersTeam[1].equals("UTA")) {
                     UTAnameList.add(playersTeam[0]);
-                    UTAjerseyList.add("kansas1.png");
+                    UTAjerseyList.add("utahjr.png");
                     UTAposList.add("FWD");
                     UTApriceList.add(price[i]);
-                    fwdjerseyList.add("kansas1.png");
+                    fwdjerseyList.add("utahjr.png");
 
                 }
                 fwdpriceList.add(price[i]);

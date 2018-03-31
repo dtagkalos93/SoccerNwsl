@@ -5,7 +5,7 @@
 <%@page import="java.util.ArrayList"%>
 <%
     String teamemail = session.getAttribute("email").toString();
-    rosterPlayer players = new rosterPlayer(teamemail);
+    rosterPlayer players = new rosterPlayer(teamemail); 
     String goalkeeper = players.getGoalkeeper();
     String defence = players.getDefence();
     String midfielder = players.getMidfielder();
@@ -1068,7 +1068,7 @@
                     <div id="fixSel" class="col-md-12" style="display:none;    overflow: scroll;">
                         <table>
                             <%
-                                for (int i = 1; i <= 22; i++) {
+                                for (int i = 1; i <= 24; i++) {
                             %>
                             <tr style="text-align:center;font-size: 13px;margin-bottom: 0.5%;">
                                 <td id="fixture+<%=i%>"  class="col-md-2" style="padding: 1%;padding-top: 0;">Gameweek 1 </td>
@@ -1119,7 +1119,7 @@
                             <th id="opponent" style="padding: 1%;text-align: center">MP</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 22; i++) {
+                            for (int i = 1; i <= 24; i++) {
                         %>
                         <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="fixture<%=i%>"  class="col-md-2" style="padding: 1%">Gameweek 1 </td>
@@ -1152,7 +1152,7 @@
                             <image id="nameimageStats" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfoStats" style="font-family: Century Gothic">J</h3>
+                            <h3 id="nameinfoStats" style="font-family: Century Gothic"></h3>
                             <h5 id="posinfoStats" style="font-family: Century Gothic"></h5>
                             <h6 id="teaminfoStats" style="font-family: Century Gothic"></h6>
                         </div>

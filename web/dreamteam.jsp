@@ -226,7 +226,7 @@
                             
                         </div>
                         <div class="col-xs-6 hidden-sm hidden-md hidden-lg" style="border:  18px solid #f9f5f5;;background-color: #f9f5f5;margin-top:-45px;" >
-                            <img class="image-player-for " src="img/kansas1.png"  />
+                            <img class="image-player-for " src="img/utahjr.png"  />
                                 <p class="gkname" >Sauerbrunn</p>
                                 <p class="gkpoint">8</p>
                         </div>
@@ -288,7 +288,7 @@
                                 <p class="cbpoint2">8</p>
                             </div>
                             <div class="col-md-4 col-xs-4" style="left:10%;display: none" data-toggle="modal" data-target="#players">
-                                <img class="image-player-for " src="img/kansas1.png"  />
+                                <img class="image-player-for " src="img/utahjr.png"  />
                                 <p class="gkname" >Sauerbrunn</p>
                                 <p class="gkpoint">8</p>
                             </div>

@@ -172,7 +172,7 @@ public class playersSelection extends HttpServlet {
                     jerseylist.add("skyblue1.png");
                 } else if (team.equals("Utah Royals FC")) {
                     teamlist.add("UTA");
-                    jerseylist.add("kansas1.png");
+                    jerseylist.add("utahjr.png");
                 } else if (team.equals("Boston Breakers")) {
                     teamlist.add("BOS");
                     jerseylist.add("breakers1.png");

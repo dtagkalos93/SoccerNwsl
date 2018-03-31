@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12  " class="col-md-12 col-xs-12" style="border: 1px solid #d4213c; background-color:#ea344f; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none " id='errorbox'> 
+                    <div class="col-sm-12  " class="col-md-12 col-xs-12" style="padding-right: 15px;padding-left: 15px; display: none " id='errorbox'> 
                         <h5  id="teamError" style="text-align: center; font-size: 14px;font-family: Century Gothic">More than 4 players selected from <span id="team"></span>.</h5>
                         <h5  id="posError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
                         <h5  id="enterError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none">Please complete your Team!</h5>
@@ -337,17 +337,17 @@
                             <a data-toggle="collapse" href="#<%=game%>" style="color:black">
                                 <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                     <div class="row" style="">
-                                        <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                        <div class="col-md-4  col-xs-4 " style="left: 5%">
                                             <h6 style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                         </div>
-                                        <div class="col-md-1 col-xs-1 ">
-                                            <img style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                        <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                            <img style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                         </div>
                                         <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                             <h6 style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                         </div>
-                                        <div class="col-md-1 col-xs-1 ">
-                                            <img class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                        <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                            <img class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                         </div>
                                         <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                             <h6 style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -380,17 +380,17 @@
                                 <a id="<%=mondaygame + "id"%>" data-toggle="collapse" href="#<%=mondaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%=mondayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=mondayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%=mondayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%=mondayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=mondayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%=mondayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=mondayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -422,17 +422,17 @@
                                 <a id="<%= tuesdaygame + "id"%>" data-toggle="collapse" href="#<%= tuesdaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%= tuesdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= tuesdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%= tuesdayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%= tuesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= tuesdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%= tuesdayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= tuesdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -463,17 +463,17 @@
                                 <a id="<%= wednesdaygame + "id"%>" data-toggle="collapse" href="#<%= wednesdaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%= wednesdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= wednesdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%= wednesdayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%= wednesdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= wednesdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%= wednesdayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= wednesdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -504,17 +504,17 @@
                                 <a id="<%= thursdaygame + "id"%>" data-toggle="collapse" href="#<%= thursdaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%= thursdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= thursdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%= thursdayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%= thursdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= thursdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%= thursdayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= thursdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -545,17 +545,17 @@
                                 <a id="<%= fridaygame + "id"%>" data-toggle="collapse" href="#<%= fridaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%= fridayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= fridayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%= fridayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%= fridayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%= fridayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%= fridayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%= fridayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -586,17 +586,17 @@
                                 <a id="<%=saturdaygame + "id"%>" data-toggle="collapse" href="#<%=saturdaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%=saturdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=saturdayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%=saturdayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%=saturdayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=saturdayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%=saturdayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=saturdayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -626,17 +626,17 @@
                                 <a id="<%=sundaygame + "id"%>" data-toggle="collapse" href="#<%=sundaygame%>" style="color:black">
                                     <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                         <div class="row" style="">
-                                            <div class="col-md-4  col-xs-4 " style="left: 5.9%">
+                                            <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                 <h6 id="<%=sundayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"><%=home.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=sundayhomebadge%>" style="margin-top: 9%;margin-left:79%;height: 30px;width: auto" src="img/<%=homebadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 2.7%">
+                                                <img id="<%=sundayhomebadge%>" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=homebadge.get(i)%>">
                                             </div>
                                             <div class="col-md-2  col-xs-2 time" style="letter-spacing: 0.5px;width: 13%;left: 2.2%; background-color: #1d3260;border-radius: 3pt; border: 1px solid #1d3260;padding-right: 10px;padding-left: 10px">
                                                 <h6 id="<%=sundayscore%>" style="font-family: Century Gothic;text-align: center;color:white;font-size: 15px; font-weight:lighter"><%=time.get(i)%></h6>
                                             </div>
-                                            <div class="col-md-1 col-xs-1 ">
-                                                <img id="<%=sundayawaybadge%>" class="" style="margin-top: 9%;margin-left:49%;height: 30px;width: auto" src="img/<%=awaybadge.get(i)%>">
+                                            <div class="col-md-1 col-xs-1 " style="left: 1.7%">
+                                                <img id="<%=sundayawaybadge%>" class="" style="margin-top: 9%;height: 30px;width: auto;margin-left: auto;margin-right: auto;display: block" src="img/<%=awaybadge.get(i)%>">
                                             </div>
                                             <div class="col-md-4  col-xs-4   " style="margin-left: -0.7%">
                                                 <h6 id="<%=sundayaway%>" style="font-family: Century Gothic;font-size: 17px"><%=away.get(i)%></h6>
@@ -1545,8 +1545,6 @@
                     <p style="display:none" id="rmvplayerNo"></p>
                     <p style="display:none" id="rmvplayerPosition"></p>
                     <p style="display:none" id="rmvplayerTeam"></p>
-
-
                     <button onclick="removePlayer()" type="button" class="addbutton   " >
                         Remove Player
                     </button> 
@@ -1571,15 +1569,15 @@
                 <div class="modal-body" style="height: 280px;padding: 0">
                     <div class="col-md-12" style="background-color: #f8f8fa">
                         <div class="col-md-3" style="padding-left: 0">
-                            <image id="nameimage" src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                            <image id="nameimage" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
-                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                            <h3 id="nameinfo" style="font-family: Century Gothic"></h3>
+                            <h5 id="posinfo" style="font-family: Century Gothic"></h5>
+                            <h6 id="teaminfo" style="font-family: Century Gothic"></h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfo" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
                     <div >
@@ -1629,7 +1627,7 @@
                     <div id="fixSel" class="col-md-12" style="display:none;    overflow: scroll;">
                         <table>
                             <%
-                                for (int i = 1; i <= 22; i++) {
+                                for (int i = 1; i <= 24; i++) {
                             %>
                             <tr style="text-align:center;font-size: 13px;margin-bottom: 0.5%;font-weight: lighter">
                                 <td id="fixture+<%=i%>"  class="col-md-2" style="padding: 1%;padding-top: 0;">Gameweek 1 </td>
@@ -1661,15 +1659,15 @@
                 <div class="modal-body" style="height: -webkit-fill-available;padding: 0;overflow-y: scroll;">
                     <div class="col-md-12" style="background-color: #f8f8fa">
                         <div class="col-md-3" style="padding-left: 0">
-                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                            <image id="nameimageFix" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
-                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                            <h3 id="nameinfoFix" style="font-family: Century Gothic"></h3>
+                            <h5 id="posinfoFix" style="font-family: Century Gothic"></h5>
+                            <h6 id="teaminfoFix" style="font-family: Century Gothic"></h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfoFix" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
                     <table style="width: 100%">
@@ -1677,16 +1675,16 @@
                             <th id="date" style="padding: 1%;text-align: center">Date</th>
                             <th id="fixture" style="padding: 1%;text-align: center">GW</th>
                             <th id="opponent" style="padding: 1%;text-align: center">Opponent</th>
-                            <th id="opponent" style="padding: 1%;text-align: center">MP</th>
+                            <th id="result" style="padding: 1%;text-align: center">MP</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 22; i++) {
+                            for (int i = 1; i <= 24; i++) {
                         %>
-                        <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded;font-weight: lighter">
-                            <td id="date<%=i%>" class="col-md-3" style="padding: 1%"></td>
-                            <td id="fixture<%=i%>"  class="col-md-3" style="padding: 1%"></td>
-                            <td id="opponent<%=i%>" class="col-md-3" style="padding: 1%"></td>
-                            <td id="result<%=i%>" class="col-md-3" style="padding: 1%"></td>
+                        <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 12px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                            <td id="date<%=i%>" class="col-md-2" style="padding: 1%"></td>
+                            <td id="fixture<%=i%>"  class="col-md-2" style="padding: 1%"></td>
+                            <td id="opponent<%=i%>" class="col-md-2" style="padding: 1%"></td>
+                            <td id="result<%=i%>" class="col-md-2" style="padding: 1%"></td>
                         </tr>
                         <%
                             }%>
@@ -1710,15 +1708,15 @@
                 <div class="modal-body" style="height: -webkit-fill-available;padding: 0;overflow-y: scroll;">
                     <div class="col-md-12" style="background-color: #f8f8fa">
                         <div class="col-md-3" style="padding-left: 0">
-                            <image src="img/players/ertz.png" style="height: 100px;width: auto;"/>
+                            <image id="nameimageStats" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic">Julie Ertz</h3>
-                            <h5 id="posinfo" style="font-family: Century Gothic">Defender</h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic">Chicago Red Stars</h6>
+                            <h3 id="nameinfoStats" style="font-family: Century Gothic"></h3>
+                            <h5 id="posinfoStats" style="font-family: Century Gothic"></h5>
+                            <h6 id="teaminfoStats" style="font-family: Century Gothic"></h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" src="img/ChicagoRedStars.png" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfoStats" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
                     <table style="width: 100%">
@@ -1739,7 +1737,7 @@
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">S</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 22; i++) {
+                            for (int i = 1; i <= 24; i++) {
                         %>
                         <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
@@ -1772,6 +1770,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/playersTable.js"></script>
     <script src="js/fixturejs.js"></script>
+    
 
 </body>
 
