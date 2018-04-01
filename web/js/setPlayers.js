@@ -177,7 +177,7 @@ function defence(def, defNo) {
             } else if (team == 'NJ') {
                 var image = "skyblue1.png";
             } else if (team == 'WAS') {
-                
+
                 var image = "spirit1.png";
             } else if (team == 'UTA') {
                 var image = "utahjr.png";
@@ -248,7 +248,7 @@ function defence(def, defNo) {
 
 
 function midfielder(mid, midNo) {
-    console.log(mid+" !!!");
+    console.log(mid + " !!!");
     if (midNo == '4') {
         document.getElementById("selMID1").style = "";
         document.getElementById("selMID2").style = "";
@@ -816,10 +816,13 @@ function captains(cpt, vice) {
 function setPlayers(gk, def, mid, fwd) {
     var gkPlayers = gk.split(",");
     var pl = 1;
+    disableSide();
     for (i = 0; i < gkPlayers.length; i++) {
         var gkName = gkPlayers[i].split("-")[0];
         var gkTeam = gkPlayers[i].split("-")[1];
         document.getElementById("namegk" + pl).innerHTML = gkName;
+
+       
         if (gkTeam == 'BOS') {
             var image = "breakersgk.png";
         } else if (gkTeam == 'CHI') {
@@ -847,10 +850,11 @@ function setPlayers(gk, def, mid, fwd) {
     var defPlayers = def.split(",");
 
     pl = 1;
-    for (i = 0; i < defPlayers.length-1; i++) {
+    for (i = 0; i < defPlayers.length - 1; i++) {
         var defName = defPlayers[i].split("-")[0];
         var defTeam = defPlayers[i].split("-")[1];
         document.getElementById("defname" + pl).innerHTML = defName;
+        
         if (defTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (defTeam == 'CHI') {
@@ -875,14 +879,15 @@ function setPlayers(gk, def, mid, fwd) {
         document.getElementById("defimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;
     }
-    
+
     var midPlayers = mid.split(",");
 
     pl = 1;
-    for (i = 0; i < midPlayers.length-1; i++) {
+    for (i = 0; i < midPlayers.length - 1; i++) {
         var midName = midPlayers[i].split("-")[0];
         var midTeam = midPlayers[i].split("-")[1];
         document.getElementById("midname" + pl).innerHTML = midName;
+        
         if (midTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (midTeam == 'CHI') {
@@ -907,14 +912,15 @@ function setPlayers(gk, def, mid, fwd) {
         document.getElementById("midimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;
     }
-    
+
     var fwdPlayers = fwd.split(",");
 
     pl = 1;
-    for (i = 0; i < fwdPlayers.length-1; i++) {
+    for (i = 0; i < fwdPlayers.length - 1; i++) {
         var fwdName = fwdPlayers[i].split("-")[0];
         var fwdTeam = fwdPlayers[i].split("-")[1];
         document.getElementById("fwdname" + pl).innerHTML = fwdName;
+        
         if (fwdTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (fwdTeam == 'CHI') {
@@ -941,7 +947,7 @@ function setPlayers(gk, def, mid, fwd) {
     }
 }
 
-function setPrice(gk,def,mid,fwd){
+function setPrice(gk, def, mid, fwd) {
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -949,34 +955,34 @@ function setPrice(gk,def,mid,fwd){
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var gkTeam = jsonResponse["gk"];
-            pl=1;
-            for(i=0;i<gkTeam.length;i++){
-                document.getElementById("pricegk"+pl).innerHTML = "$"+gkTeam[i]+"m";
-                pl=eval(pl)+1;
+            pl = 1;
+            for (i = 0; i < gkTeam.length; i++) {
+                document.getElementById("pricegk" + pl).innerHTML = "$" + gkTeam[i] + "m";
+                pl = eval(pl) + 1;
             }
-            
+
             var defTeam = jsonResponse["def"];
-            
-            pl=1;
-            for(i=0;i<defTeam.length;i++){
-                document.getElementById("defprice"+pl).innerHTML = "$"+defTeam[i];
-                pl=eval(pl)+1;
+
+            pl = 1;
+            for (i = 0; i < defTeam.length; i++) {
+                document.getElementById("defprice" + pl).innerHTML = "$" + defTeam[i] + "m";
+                pl = eval(pl) + 1;
             }
-            
+
             var midTeam = jsonResponse["mid"];
-            
-             pl=1;
-            for(i=0;i<midTeam.length;i++){
-                document.getElementById("midprice"+pl).innerHTML = "$"+midTeam[i];
-                pl=eval(pl)+1;
+
+            pl = 1;
+            for (i = 0; i < midTeam.length; i++) {
+                document.getElementById("midprice" + pl).innerHTML = "$" + midTeam[i] + "m";
+                pl = eval(pl) + 1;
             }
-            
+
             var fwdTeam = jsonResponse["fwd"];
-            
-             pl=1;
-            for(i=0;i<fwdTeam.length;i++){
-                document.getElementById("fwdprice"+pl).innerHTML = "$"+fwdTeam[i];
-                pl=eval(pl)+1;
+
+            pl = 1;
+            for (i = 0; i < fwdTeam.length; i++) {
+                document.getElementById("fwdprice" + pl).innerHTML = "$" + fwdTeam[i] + "m";
+                pl = eval(pl) + 1;
             }
 
 
@@ -985,4 +991,36 @@ function setPrice(gk,def,mid,fwd){
     };
     xhttp.open("GET", "findPrice?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd, true);
     xhttp.send();
+}
+
+
+function disableSide(){
+    for (j = 1; j <= 20; j++) {
+
+
+        document.getElementById("gk" + j).style.pointerEvents = 'none';
+        document.getElementById("gk" + j).style.opacity = '0.6';
+
+    }
+    for (j = 1; j <= 20; j++) {
+
+
+        document.getElementById("def" + j).style.pointerEvents = 'none';
+        document.getElementById("def" + j).style.opacity = '0.6';
+
+    }
+    for (j = 1; j <= 20; j++) {
+
+
+        document.getElementById("mid" + j).style.pointerEvents = 'none';
+        document.getElementById("mid" + j).style.opacity = '0.6';
+
+    }
+    for (j = 1; j <= 20; j++) {
+
+
+        document.getElementById("fwd" + j).style.pointerEvents = 'none';
+        document.getElementById("fwd" + j).style.opacity = '0.6';
+
+    }
 }

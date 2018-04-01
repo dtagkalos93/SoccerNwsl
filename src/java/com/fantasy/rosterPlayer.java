@@ -211,12 +211,11 @@ public class rosterPlayer {
                 sql = "";
                 if (midSTR.contains("'")) {
                     String[] nameSTR = midSTR.split("'");
-                    sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\\'" + nameSTR[1] + "'";
+                    sql = "SELECT GW" + weeks + " FROM players where name='" + nameSTR[0] + "\'" + nameSTR[1] + "'";
                 } else {
                     sql = "SELECT GW" + weeks + " FROM players where name='" + midSTR + "'";
 
                 }
-
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();

@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormatSymbols"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.fantasy.deadLIne"%>
@@ -188,7 +189,11 @@
                                     <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#0ea331;font-family: Century Gothic;"><span id="totalPlayers">15</span>/15</h4>
                                 </div>
                                 <% double remain = 100.0 - Double.parseDouble(value);
-                                    DecimalFormat df = new DecimalFormat("####0.0");%>
+                                    DecimalFormat df = new DecimalFormat("#####.##");
+                                    DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();
+                                    sym.setDecimalSeparator('.');
+                                    df.setDecimalFormatSymbols(sym);
+                                %>
 
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Money Remaining</h6>
@@ -303,9 +308,9 @@
                                 <p class="price" id="fwdprice3"></p>
                             </div>
                         </div>
-                        <a id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" >
+                        <button id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" disabled >
                             Make Transfers
-                        </a>                        
+                        </button>                        
                         <%
                             fixtureData fixture = new fixtureData();
                             fixture.fixture();
@@ -721,7 +726,7 @@
                         </div>
                         <div style="margin-top:6%">                                
                             <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">View</label>
-                            <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers()" >
+                            <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers('trans')" >
                                 <optgroup label="Global">
                                     <option value="all">All players</option>
                                     <option>Watchlist</option>
@@ -748,7 +753,7 @@
                         </div>
                         <div style="margin-top:6%">
                             <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">Sorted by</label>
-                            <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                            <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers('trans')">
                                 <option value="score">Total score</option>
                                 <option value="gw">Round score</option> 
                                 <option value="price">Price</option>
@@ -1500,31 +1505,31 @@
                             </table>        
                         </div>
                         <div class="col-md-12" style="width:100%; margin-bottom: 2%">
-                            <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
+                            <button id="startTrans" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
                                 <i class="glyphicon glyphicon-backward"></i></button>
 
-                            <button id="prevPlayers" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
+                            <button id="prevPlayersTrans" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
 
                             <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
                                 <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
 
-                            <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
+                            <button  id="nextPlayersTrans" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
 
-                            <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
+                            <button id="endTrans" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
                                 <i class="glyphicon glyphicon-forward"></i></button>
 
 
-                            <button id="startSelect" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
+                            <button id="startSelectTrans" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
                                 <i class="glyphicon glyphicon-backward"></i></button>           
-                            <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
+                            <button id="prevPlayersSelectTrans" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>                        
                             <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;display:none;">Page 
                                 <span id="pageNo" style="font-family: Century Gothic; font-weight: bold" >1</span> of <span id="totalPage">11</span> </h6>                        
-                            <button  id="nextPlayersSelect" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
+                            <button  id="nextPlayersSelectTrans" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>                                               
-                            <button id="endSelect"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">
+                            <button id="endSelectTrans"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">
                                 <i class="glyphicon glyphicon-forward"></i></button>
                         </div>
                     </div>

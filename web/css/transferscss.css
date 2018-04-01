@@ -156,6 +156,12 @@ h6 {
     text-decoration: none;
 }
 
+.enterteam:disabled{
+    background-color: #d6d1d1;
+    border: 1px solid #d6d1d1;
+    color:white;
+}
+
 .fixturebtn{
     background-color: #696969; 
     color: #fff;

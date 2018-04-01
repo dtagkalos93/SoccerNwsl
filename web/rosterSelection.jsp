@@ -686,7 +686,7 @@
                     </div>
                     <div style="margin-top:6%">                                
                         <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">View</label>
-                        <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers()" >
+                        <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers('')" >
                             <optgroup label="Global">
                                 <option value="all">All players</option>
                                 <option>Watchlist</option>
@@ -713,7 +713,7 @@
                     </div>
                     <div style="margin-top:6%">
                         <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">Sorted by</label>
-                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
+                        <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers('')">
                             <option value="score">Total score</option>
                             <option value="gw">Round score</option> 
                             <option value="price">Price</option>

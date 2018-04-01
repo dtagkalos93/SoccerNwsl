@@ -961,7 +961,9 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
 
 
-function showPlayers() {
+function showPlayers(from) {
+
+
     var xhttp;
     var selectionPl = document.getElementById('selectPlayers').value;
     var selectCat = document.getElementById('categorySelection').value;
@@ -980,7 +982,6 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "TS";
                     document.getElementById("catMID").innerHTML = "TS";
                     document.getElementById("catFWD").innerHTML = "TS";
-
                 } else if (selectCat == 'minutes') {
                     document.getElementById("catGK").innerHTML = "MP";
                     document.getElementById("catDEF").innerHTML = "MP";
@@ -1079,22 +1080,41 @@ function showPlayers() {
                         document.getElementById("fwd" + i).style.display = "none";
                     }
                 }
-                document.getElementById("start").style.display = "";
-                document.getElementById("start").disabled = true;
-                document.getElementById("prevPlayers").style.display = "";
-                document.getElementById("prevPlayers").disabled = true;
-                document.getElementById("nextPlayers").style.display = "";
-                document.getElementById("nextPlayers").disabled = false;
-                document.getElementById("nextPlayers").value = 2;
-                document.getElementById("end").style.display = "";
-                document.getElementById("end").disabled = false;
-                document.getElementById("pageTitle").style.display = "";
-                document.getElementById("page").innerHTML = 1;
-                document.getElementById("pageSelect").style.display = "none";
-                document.getElementById("startSelect").style.display = "none";
-                document.getElementById("prevPlayersSelect").style.display = "none";
-                document.getElementById("nextPlayersSelect").style.display = "none";
-                document.getElementById("endSelect").style.display = "none";
+                if (from == 'trans') {
+                    document.getElementById("startTrans").style.display = "";
+                    document.getElementById("startTrans").disabled = true;
+                    document.getElementById("prevPlayersTrans").style.display = "";
+                    document.getElementById("prevPlayersTrans").disabled = true;
+                    document.getElementById("nextPlayersTrans").style.display = "";
+                    document.getElementById("nextPlayersTrans").disabled = false;
+                    document.getElementById("nextPlayersTrans").value = 2;
+                    document.getElementById("endTrans").style.display = "";
+                    document.getElementById("endTrans").disabled = false;
+                    document.getElementById("pageTitle").style.display = "";
+                    document.getElementById("page").innerHTML = 1;
+                    document.getElementById("pageSelect").style.display = "none";
+                    document.getElementById("startSelectTrans").style.display = "none";
+                    document.getElementById("prevPlayersSelectTrans").style.display = "none";
+                    document.getElementById("nextPlayersSelectTrans").style.display = "none";
+                    document.getElementById("endSelectTrans").style.display = "none";
+                } else {
+                    document.getElementById("start").style.display = "";
+                    document.getElementById("start").disabled = true;
+                    document.getElementById("prevPlayers").style.display = "";
+                    document.getElementById("prevPlayers").disabled = true;
+                    document.getElementById("nextPlayers").style.display = "";
+                    document.getElementById("nextPlayers").disabled = false;
+                    document.getElementById("nextPlayers").value = 2;
+                    document.getElementById("end").style.display = "";
+                    document.getElementById("end").disabled = false;
+                    document.getElementById("pageTitle").style.display = "";
+                    document.getElementById("page").innerHTML = 1;
+                    document.getElementById("pageSelect").style.display = "none";
+                    document.getElementById("startSelect").style.display = "none";
+                    document.getElementById("prevPlayersSelect").style.display = "none";
+                    document.getElementById("nextPlayersSelect").style.display = "none";
+                    document.getElementById("endSelect").style.display = "none";
+                }
 
 
                 for (i = 1; i < 21; i++) {
@@ -1106,18 +1126,15 @@ function showPlayers() {
 
                         document.getElementById("mid" + i).style.display = "none";
                         document.getElementById("fwd" + i).style.display = "none";
-
                     }
                     if (i >= 9) {
                         document.getElementById("def" + i).style.display = "none";
-
                     }
                 }
                 var gk = 1;
                 var def = 1;
                 var mid = 1;
                 var fwd = 1;
-
                 for (k = 0; k < jsonResponse.length - 1; k = k + 6) {
                     if (k <= 6) {
 
@@ -1126,7 +1143,6 @@ function showPlayers() {
                         document.getElementById("gkteam" + gk).innerHTML = jsonResponse[k + 2];
                         document.getElementById("gkprice" + gk).innerHTML = "$" + jsonResponse[k + 3];
                         document.getElementById("gkscore" + gk).innerHTML = jsonResponse[k + 4];
-
                         if (jsonResponse[k + 5] == "OUT") {
 
                             document.getElementById("gkinjury" + gk).classList = '';
@@ -1134,14 +1150,11 @@ function showPlayers() {
                             document.getElementById("gkinjury" + gk).classList.add('glyphicon-alert');
                             document.getElementById("gkinjury" + gk).classList.add('fa-lg');
                             document.getElementById("gkinjury" + gk).style.color = '#c0020d';
-
                         } else {
                             document.getElementById("gkinjury" + gk).classList = '';
                             document.getElementById("gkinjury" + gk).classList.add('glyphicon');
                             document.getElementById("gkinjury" + gk).classList.add('glyphicon-info-sign');
                             document.getElementById("gkinjury" + gk).style.color = '';
-
-
                         }
                         for (j = 1; j <= 2; j++) {
                             if (document.getElementById("gkname" + gk).innerHTML == document.getElementById("namegk" + j).innerHTML) {
@@ -1154,7 +1167,6 @@ function showPlayers() {
                             }
                         }
                         gk++;
-
                     } else if (k <= 54) {
 
                         document.getElementById("namedef" + def).innerHTML = jsonResponse[k];
@@ -1169,14 +1181,11 @@ function showPlayers() {
                             document.getElementById("definjury" + def).classList.add('glyphicon-alert');
                             document.getElementById("definjury" + def).classList.add('fa-lg');
                             document.getElementById("definjury" + def).style.color = '#c0020d';
-
                         } else {
                             document.getElementById("definjury" + def).classList = '';
                             document.getElementById("definjury" + def).classList.add('glyphicon');
                             document.getElementById("definjury" + def).classList.add('glyphicon-info-sign');
                             document.getElementById("definjury" + def).style.color = '';
-
-
                         }
                         for (j = 1; j <= 5; j++) {
                             if (document.getElementById("namedef" + def).innerHTML == document.getElementById("defname" + j).innerHTML) {
@@ -1203,14 +1212,11 @@ function showPlayers() {
                             document.getElementById("midinjury" + mid).classList.add('glyphicon-alert');
                             document.getElementById("midinjury" + mid).classList.add('fa-lg');
                             document.getElementById("midinjury" + mid).style.color = '#c0020d';
-
                         } else {
                             document.getElementById("midinjury" + mid).classList = '';
                             document.getElementById("midinjury" + mid).classList.add('glyphicon');
                             document.getElementById("midinjury" + mid).classList.add('glyphicon-info-sign');
                             document.getElementById("midinjury" + mid).style.color = '';
-
-
                         }
                         for (j = 1; j <= 5; j++) {
                             if (document.getElementById("namemid" + mid).innerHTML == document.getElementById("midname" + j).innerHTML) {
@@ -1237,14 +1243,11 @@ function showPlayers() {
                             document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-alert');
                             document.getElementById("fwdinjury" + fwd).classList.add('fa-lg');
                             document.getElementById("fwdinjury" + fwd).style.color = '#c0020d';
-
                         } else {
                             document.getElementById("fwdinjury" + fwd).classList = '';
                             document.getElementById("fwdinjury" + fwd).classList.add('glyphicon');
                             document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-info-sign');
                             document.getElementById("fwdinjury" + fwd).style.color = '';
-
-
                         }
                         for (j = 1; j <= 3; j++) {
                             if (document.getElementById("namefwd" + fwd).innerHTML == document.getElementById("fwdname" + j).innerHTML) {
@@ -1260,6 +1263,10 @@ function showPlayers() {
                     }
 
 
+                }
+                if (from == 'trans') {
+                    console.log("disable");
+                    disableSide();
                 }
             }
         };
@@ -1338,27 +1345,52 @@ function showPlayers() {
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "none";
                     document.getElementById("fwd").style.display = "none";
-                    document.getElementById("start").style.display = "none";
-                    document.getElementById("prevPlayers").style.display = "none";
-                    document.getElementById("nextPlayers").style.display = "none";
-                    document.getElementById("end").style.display = "none";
-                    document.getElementById("pageTitle").style.display = "none";
-                    document.getElementById("pageSelect").style.display = "";
-                    document.getElementById("startSelect").style.display = "";
-                    document.getElementById("startSelect").value = "Goalkeeper-1";
-                    document.getElementById("prevPlayersSelect").style.display = "";
-                    document.getElementById("prevPlayersSelect").value = "Goalkeeper-" + jsonResponse[0];
-                    document.getElementById("nextPlayersSelect").style.display = "";
-                    document.getElementById("nextPlayersSelect").value = "Goalkeeper-" + jsonResponse[1];
-                    document.getElementById("endSelect").style.display = "";
-                    document.getElementById("endSelect").value = "Goalkeeper-" + jsonResponse[2];
-                    document.getElementById("total").innerHTML = jsonResponse[3];
-                    document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
-                    document.getElementById("totalPage").innerHTML = jsonResponse[1];
-                    document.getElementById("nextPlayersSelect").disabled = false;
-                    document.getElementById("endSelect").disabled = false;
-                    document.getElementById("prevPlayersSelect").disabled = true;
-                    document.getElementById("startSelect").disabled = true;
+                    if (from == 'trans') {
+                        document.getElementById("startTrans").style.display = "none";
+                        document.getElementById("prevPlayersTrans").style.display = "none";
+                        document.getElementById("nextPlayersTrans").style.display = "none";
+                        document.getElementById("endTrans").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelectTrans").style.display = "";
+                        document.getElementById("startSelectTrans").value = "Goalkeeper-1";
+                        document.getElementById("prevPlayersSelectTrans").style.display = "";
+                        document.getElementById("prevPlayersSelectTrans").value = "Goalkeeper-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelectTrans").style.display = "";
+                        document.getElementById("nextPlayersSelectTrans").value = "Goalkeeper-" + jsonResponse[1];
+                        document.getElementById("endSelectTrans").style.display = "";
+                        document.getElementById("endSelectTrans").value = "Goalkeeper-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[1];
+                        document.getElementById("nextPlayersSelectTrans").disabled = false;
+                        document.getElementById("endSelectTrans").disabled = false;
+                        document.getElementById("prevPlayersSelectTrans").disabled = true;
+                        document.getElementById("startSelectTrans").disabled = true;
+                    } else {
+                        document.getElementById("start").style.display = "none";
+                        document.getElementById("prevPlayers").style.display = "none";
+                        document.getElementById("nextPlayers").style.display = "none";
+                        document.getElementById("end").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelect").style.display = "";
+                        document.getElementById("startSelect").value = "Goalkeeper-1";
+                        document.getElementById("prevPlayersSelect").style.display = "";
+                        document.getElementById("prevPlayersSelect").value = "Goalkeeper-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelect").style.display = "";
+                        document.getElementById("nextPlayersSelect").value = "Goalkeeper-" + jsonResponse[1];
+                        document.getElementById("endSelect").style.display = "";
+                        document.getElementById("endSelect").value = "Goalkeeper-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[1];
+                        document.getElementById("nextPlayersSelect").disabled = false;
+                        document.getElementById("endSelect").disabled = false;
+                        document.getElementById("prevPlayersSelect").disabled = true;
+                        document.getElementById("startSelect").disabled = true;
+                    }
+
                     var k = 1;
                     for (i = 4; i < jsonResponse.length; i = i + 6) {
 
@@ -1375,14 +1407,11 @@ function showPlayers() {
                             document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
                             document.getElementById("gkinjury" + k).classList.add('fa-lg');
                             document.getElementById("gkinjury" + k).style.color = '#c0020d';
-
                         } else {
                             document.getElementById("gkinjury" + k).classList = '';
                             document.getElementById("gkinjury" + k).classList.add('glyphicon');
                             document.getElementById("gkinjury" + k).classList.add('glyphicon-info-sign');
                             document.getElementById("gkinjury" + k).style.color = '';
-
-
                         }
                         for (j = 1; j <= 2; j++) {
                             if (document.getElementById("gkname" + k).innerHTML == document.getElementById("namegk" + j).innerHTML) {
@@ -1403,27 +1432,52 @@ function showPlayers() {
                     document.getElementById("def").style.display = "";
                     document.getElementById("mid").style.display = "none";
                     document.getElementById("fwd").style.display = "none";
-                    document.getElementById("start").style.display = "none";
-                    document.getElementById("prevPlayers").style.display = "none";
-                    document.getElementById("nextPlayers").style.display = "none";
-                    document.getElementById("end").style.display = "none";
-                    document.getElementById("pageTitle").style.display = "none";
-                    document.getElementById("pageSelect").style.display = "";
-                    document.getElementById("startSelect").style.display = "";
-                    document.getElementById("startSelect").value = "Defender-1";
-                    document.getElementById("prevPlayersSelect").style.display = "";
-                    document.getElementById("prevPlayersSelect").value = "Defender-" + jsonResponse[0];
-                    document.getElementById("nextPlayersSelect").style.display = "";
-                    document.getElementById("nextPlayersSelect").value = "Defender-" + jsonResponse[1];
-                    document.getElementById("endSelect").style.display = "";
-                    document.getElementById("endSelect").value = "Defender-" + jsonResponse[2];
-                    document.getElementById("total").innerHTML = jsonResponse[3];
-                    document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
-                    document.getElementById("totalPage").innerHTML = jsonResponse[2];
-                    document.getElementById("nextPlayersSelect").disabled = false;
-                    document.getElementById("endSelect").disabled = false;
-                    document.getElementById("prevPlayersSelect").disabled = true;
-                    document.getElementById("startSelect").disabled = true;
+                    if (from == 'trans') {
+                        document.getElementById("startTrans").style.display = "none";
+                        document.getElementById("prevPlayersTrans").style.display = "none";
+                        document.getElementById("nextPlayersTrans").style.display = "none";
+                        document.getElementById("endTrans").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelectTrans").style.display = "";
+                        document.getElementById("startSelectTrans").value = "Defender-1";
+                        document.getElementById("prevPlayersSelectTrans").style.display = "";
+                        document.getElementById("prevPlayersSelectTrans").value = "Defender-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelectTrans").style.display = "";
+                        document.getElementById("nextPlayersSelectTrans").value = "Defender-" + jsonResponse[1];
+                        document.getElementById("endSelectTrans").style.display = "";
+                        document.getElementById("endSelectTrans").value = "Defender-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelectTrans").disabled = false;
+                        document.getElementById("endSelectTrans").disabled = false;
+                        document.getElementById("prevPlayersSelectTrans").disabled = true;
+                        document.getElementById("startSelectTrans").disabled = true;
+                    } else {
+                        document.getElementById("start").style.display = "none";
+                        document.getElementById("prevPlayers").style.display = "none";
+                        document.getElementById("nextPlayers").style.display = "none";
+                        document.getElementById("end").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelect").style.display = "";
+                        document.getElementById("startSelect").value = "Defender-1";
+                        document.getElementById("prevPlayersSelect").style.display = "";
+                        document.getElementById("prevPlayersSelect").value = "Defender-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelect").style.display = "";
+                        document.getElementById("nextPlayersSelect").value = "Defender-" + jsonResponse[1];
+                        document.getElementById("endSelect").style.display = "";
+                        document.getElementById("endSelect").value = "Defender-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelect").disabled = false;
+                        document.getElementById("endSelect").disabled = false;
+                        document.getElementById("prevPlayersSelect").disabled = true;
+                        document.getElementById("startSelect").disabled = true;
+                    }
+
                     var k = 1;
                     for (i = 4; i < jsonResponse.length; i = i + 6) {
 
@@ -1469,27 +1523,53 @@ function showPlayers() {
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "";
                     document.getElementById("fwd").style.display = "none";
-                    document.getElementById("start").style.display = "none";
-                    document.getElementById("prevPlayers").style.display = "none";
-                    document.getElementById("nextPlayers").style.display = "none";
-                    document.getElementById("end").style.display = "none";
-                    document.getElementById("pageTitle").style.display = "none";
-                    document.getElementById("pageSelect").style.display = "";
-                    document.getElementById("startSelect").style.display = "";
-                    document.getElementById("startSelect").value = "Midfielder-1";
-                    document.getElementById("prevPlayersSelect").style.display = "";
-                    document.getElementById("prevPlayersSelect").value = "Midfielder-" + jsonResponse[0];
-                    document.getElementById("nextPlayersSelect").style.display = "";
-                    document.getElementById("nextPlayersSelect").value = "Midfielder-" + jsonResponse[1];
-                    document.getElementById("endSelect").style.display = "";
-                    document.getElementById("endSelect").value = "Midfielder-" + jsonResponse[2];
-                    document.getElementById("total").innerHTML = jsonResponse[3];
-                    document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
-                    document.getElementById("totalPage").innerHTML = jsonResponse[2];
-                    document.getElementById("nextPlayersSelect").disabled = false;
-                    document.getElementById("endSelect").disabled = false;
-                    document.getElementById("prevPlayersSelect").disabled = true;
-                    document.getElementById("startSelect").disabled = true;
+
+                    if (from == 'trans') {
+                        document.getElementById("startTrans").style.display = "none";
+                        document.getElementById("prevPlayersTrans").style.display = "none";
+                        document.getElementById("nextPlayersTrans").style.display = "none";
+                        document.getElementById("endTrans").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelectTrans").style.display = "";
+                        document.getElementById("startSelectTrans").value = "Midfielder-1";
+                        document.getElementById("prevPlayersSelectTrans").style.display = "";
+                        document.getElementById("prevPlayersSelectTrans").value = "Midfielder-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelectTrans").style.display = "";
+                        document.getElementById("nextPlayersSelectTrans").value = "Midfielder-" + jsonResponse[1];
+                        document.getElementById("endSelectTrans").style.display = "";
+                        document.getElementById("endSelectTrans").value = "Midfielder-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelectTrans").disabled = false;
+                        document.getElementById("endSelectTrans").disabled = false;
+                        document.getElementById("prevPlayersSelectTrans").disabled = true;
+                        document.getElementById("startSelectTrans").disabled = true;
+                    } else {
+                        document.getElementById("start").style.display = "none";
+                        document.getElementById("prevPlayers").style.display = "none";
+                        document.getElementById("nextPlayers").style.display = "none";
+                        document.getElementById("end").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelect").style.display = "";
+                        document.getElementById("startSelect").value = "Midfielder-1";
+                        document.getElementById("prevPlayersSelect").style.display = "";
+                        document.getElementById("prevPlayersSelect").value = "Midfielder-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelect").style.display = "";
+                        document.getElementById("nextPlayersSelect").value = "Midfielder-" + jsonResponse[1];
+                        document.getElementById("endSelect").style.display = "";
+                        document.getElementById("endSelect").value = "Midfielder-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelect").disabled = false;
+                        document.getElementById("endSelect").disabled = false;
+                        document.getElementById("prevPlayersSelect").disabled = true;
+                        document.getElementById("startSelect").disabled = true;
+                    }
+
                     var k = 1;
                     for (i = 4; i < jsonResponse.length; i = i + 6) {
 
@@ -1535,27 +1615,53 @@ function showPlayers() {
                     document.getElementById("def").style.display = "none";
                     document.getElementById("mid").style.display = "none";
                     document.getElementById("fwd").style.display = "";
-                    document.getElementById("start").style.display = "none";
-                    document.getElementById("prevPlayers").style.display = "none";
-                    document.getElementById("nextPlayers").style.display = "none";
-                    document.getElementById("end").style.display = "none";
-                    document.getElementById("pageTitle").style.display = "none";
-                    document.getElementById("pageSelect").style.display = "";
-                    document.getElementById("startSelect").style.display = "";
-                    document.getElementById("startSelect").value = "Forward-1";
-                    document.getElementById("prevPlayersSelect").style.display = "";
-                    document.getElementById("prevPlayersSelect").value = "Forward-" + jsonResponse[0];
-                    document.getElementById("nextPlayersSelect").style.display = "";
-                    document.getElementById("nextPlayersSelect").value = "Forward-" + jsonResponse[1];
-                    document.getElementById("endSelect").style.display = "";
-                    document.getElementById("endSelect").value = "Forward-" + jsonResponse[2];
-                    document.getElementById("total").innerHTML = jsonResponse[3];
-                    document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
-                    document.getElementById("totalPage").innerHTML = jsonResponse[2];
-                    document.getElementById("nextPlayersSelect").disabled = false;
-                    document.getElementById("endSelect").disabled = false;
-                    document.getElementById("prevPlayersSelect").disabled = true;
-                    document.getElementById("startSelect").disabled = true;
+
+                    if (from == 'trans') {
+                        document.getElementById("startTrans").style.display = "none";
+                        document.getElementById("prevPlayersTrans").style.display = "none";
+                        document.getElementById("nextPlayersTrans").style.display = "none";
+                        document.getElementById("endTrans").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelectTrans").style.display = "";
+                        document.getElementById("startSelectTrans").value = "Forward-1";
+                        document.getElementById("prevPlayersSelectTrans").style.display = "";
+                        document.getElementById("prevPlayersSelectTrans").value = "Forward-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelectTrans").style.display = "";
+                        document.getElementById("nextPlayersSelectTrans").value = "Forward-" + jsonResponse[1];
+                        document.getElementById("endSelectTrans").style.display = "";
+                        document.getElementById("endSelectTrans").value = "Forward-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelectTrans").disabled = false;
+                        document.getElementById("endSelectTrans").disabled = false;
+                        document.getElementById("prevPlayersSelectTrans").disabled = true;
+                        document.getElementById("startSelectTrans").disabled = true;
+                    } else {
+                        document.getElementById("start").style.display = "none";
+                        document.getElementById("prevPlayers").style.display = "none";
+                        document.getElementById("nextPlayers").style.display = "none";
+                        document.getElementById("end").style.display = "none";
+                        document.getElementById("pageTitle").style.display = "none";
+                        document.getElementById("pageSelect").style.display = "";
+                        document.getElementById("startSelect").style.display = "";
+                        document.getElementById("startSelect").value = "Forward-1";
+                        document.getElementById("prevPlayersSelect").style.display = "";
+                        document.getElementById("prevPlayersSelect").value = "Forward-" + jsonResponse[0];
+                        document.getElementById("nextPlayersSelect").style.display = "";
+                        document.getElementById("nextPlayersSelect").value = "Forward-" + jsonResponse[1];
+                        document.getElementById("endSelect").style.display = "";
+                        document.getElementById("endSelect").value = "Forward-" + jsonResponse[2];
+                        document.getElementById("total").innerHTML = jsonResponse[3];
+                        document.getElementById("pageNo").innerHTML = jsonResponse[1] - 1;
+                        document.getElementById("totalPage").innerHTML = jsonResponse[2];
+                        document.getElementById("nextPlayersSelect").disabled = false;
+                        document.getElementById("endSelect").disabled = false;
+                        document.getElementById("prevPlayersSelect").disabled = true;
+                        document.getElementById("startSelect").disabled = true;
+                    }
+
                     var k = 1;
                     for (i = 4; i < jsonResponse.length; i = i + 6) {
 
@@ -1597,13 +1703,18 @@ function showPlayers() {
                         k = k + 1;
                     }
                 }
+                if (from == 'trans') {
+                    console.log("disable");
+                    disableSide();
+                }
             }
         };
         xhttp.open("GET", "playersSelection?pos=" + selectionPl + "-" + 1 + "&cat=" + selectCat, true);
         xhttp.send();
     } else if (selectionPl == "Boston Breakers" || selectionPl == "Chicago Red Stars" || selectionPl == "Utah Royals FC" || selectionPl == "Houston Dash" ||
             selectionPl == "North Carolina Courage" || selectionPl == "Orlando Pride" || selectionPl == "Portland Thorns FC" || selectionPl == "Seattle Reign FC" ||
-            selectionPl == "Sky Blue FC" || selectionPl == "Washington Spirit") {
+            selectionPl == "Sky Blue FC" || selectionPl == "Washington Spirit"
+            ) {
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -1675,16 +1786,30 @@ function showPlayers() {
                 document.getElementById("def").style.display = "";
                 document.getElementById("mid").style.display = "";
                 document.getElementById("fwd").style.display = "";
-                document.getElementById("start").style.display = "none";
-                document.getElementById("prevPlayers").style.display = "none";
-                document.getElementById("nextPlayers").style.display = "none";
-                document.getElementById("end").style.display = "none";
-                document.getElementById("pageTitle").style.display = "none";
-                document.getElementById("pageSelect").style.display = "none";
-                document.getElementById("startSelect").style.display = "none";
-                document.getElementById("prevPlayersSelect").style.display = "none";
-                document.getElementById("nextPlayersSelect").style.display = "none";
-                document.getElementById("endSelect").style.display = "none";
+                if (from = 'trans') {
+                    document.getElementById("startTrans").style.display = "none";
+                    document.getElementById("prevPlayersTrans").style.display = "none";
+                    document.getElementById("nextPlayersTrans").style.display = "none";
+                    document.getElementById("endTrans").style.display = "none";
+                    document.getElementById("pageTitle").style.display = "none";
+                    document.getElementById("pageSelect").style.display = "none";
+                    document.getElementById("startSelectTrans").style.display = "none";
+                    document.getElementById("prevPlayersSelectTrans").style.display = "none";
+                    document.getElementById("nextPlayersSelectTrans").style.display = "none";
+                    document.getElementById("endSelectTrans").style.display = "none";
+                } else {
+                    document.getElementById("start").style.display = "none";
+                    document.getElementById("prevPlayers").style.display = "none";
+                    document.getElementById("nextPlayers").style.display = "none";
+                    document.getElementById("end").style.display = "none";
+                    document.getElementById("pageTitle").style.display = "none";
+                    document.getElementById("pageSelect").style.display = "none";
+                    document.getElementById("startSelect").style.display = "none";
+                    document.getElementById("prevPlayersSelect").style.display = "none";
+                    document.getElementById("nextPlayersSelect").style.display = "none";
+                    document.getElementById("endSelect").style.display = "none";
+                }
+
                 document.getElementById("total").innerHTML = +jsonResponse[0] + +jsonResponse[1] + +jsonResponse[2] + +jsonResponse[3];
                 var k = 1;
                 for (i = 4; i < (jsonResponse[0] * 6) + 4; i = i + 6) {
@@ -1854,10 +1979,16 @@ function showPlayers() {
                     document.getElementById("fwd" + k).style.display = "none";
                 }
             }
+            if (from == 'trans') {
+                console.log("disable");
+                disableSide();
+            }
+
         };
         xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl + "&cat=" + selectCat, true);
         xhttp.send();
     }
+
 }
 
 
@@ -3040,7 +3171,7 @@ function addPlayer() {
                 document.getElementById("namegk" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("namegk" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
+            document.getElementById("pricegk" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
             document.getElementById("team" + i).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selGK" + i).setAttribute('onclick', 'removeModalGK(' + i + ')');
 
@@ -3084,7 +3215,7 @@ function addPlayer() {
                 document.getElementById("defname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("defname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("defprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
+            document.getElementById("defprice" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
             document.getElementById("team" + (i + 2)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
         } else {
@@ -3125,7 +3256,7 @@ function addPlayer() {
                 document.getElementById("midname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("midname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("midprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
+            document.getElementById("midprice" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
             document.getElementById("team" + (i + 7)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
         } else {
@@ -3166,7 +3297,7 @@ function addPlayer() {
                 document.getElementById("fwdname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("fwdname" + i).style.border = "2px solid #c0020d";
             }
-            document.getElementById("fwdprice" + i).innerHTML = document.getElementById("playerPrice").textContent +'m';
+            document.getElementById("fwdprice" + i).innerHTML = document.getElementById("playerPrice").textContent + 'm';
             document.getElementById("team" + (i + 12)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
 
@@ -3716,7 +3847,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
 });
 
 function autopick() {
-    
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -3732,7 +3863,7 @@ function autopick() {
                 document.getElementById("imagegk" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("namegk" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + k).innerHTML = jsonResponse[i + 2];
-                document.getElementById("pricegk" + k).innerHTML ="$"+ jsonResponse[i + 3]+"m";
+                document.getElementById("pricegk" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
@@ -3742,7 +3873,7 @@ function autopick() {
                 document.getElementById("defimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("defname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 2)).innerHTML = jsonResponse[i + 2];
-                document.getElementById("defprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                document.getElementById("defprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
@@ -3752,7 +3883,7 @@ function autopick() {
                 document.getElementById("midimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("midname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 7)).innerHTML = jsonResponse[i + 2];
-                document.getElementById("midprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                document.getElementById("midprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
@@ -3762,7 +3893,7 @@ function autopick() {
                 document.getElementById("fwdimage" + k).src = "img/" + jsonResponse[i + 1];
                 document.getElementById("fwdname" + k).innerHTML = jsonResponse[i];
                 document.getElementById("team" + (k + 12)).innerHTML = jsonResponse[i + 2];
-                document.getElementById("fwdprice" + k).innerHTML = "$"+ jsonResponse[i + 3]+"m";
+                document.getElementById("fwdprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
                 k++;
@@ -3781,7 +3912,7 @@ function backTeamButton() {
     if (localStorage.getItem('firstLoad')) {
         for (i = 1; i <= 2; i++) {
             document.getElementById("namegk" + i).innerHTML = localStorage.getItem('namegk' + i);
-            document.getElementById("pricegk" + i).innerHTML = localStorage.getItem('pricegk' + i) ;
+            document.getElementById("pricegk" + i).innerHTML = localStorage.getItem('pricegk' + i);
             document.getElementById("team" + i).innerHTML = localStorage.getItem('team' + i);
             var color = localStorage.getItem('colorgk' + i);
             if (color == "rgb(192, 2, 13)") {
@@ -4037,7 +4168,9 @@ function setInfo(name, prefix) {
                 var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo" + prefix).src = "img/" + image;
+
         }
+
     };
     xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
     xhttp.send();
