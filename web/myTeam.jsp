@@ -14,7 +14,7 @@
     String midfielderNO = players.getMidfielderNO();
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
-    String value = players.getValue();
+    double value = players.getValue(); 
     String totalScore = players.getTotalScore();
     String totalUsers = players.getTotalUsers();
     deadLIne line=new deadLIne(); 
@@ -880,7 +880,7 @@
                                     <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$<%=value%></td>
                                 </tr>
 
-                                <% double remain = 100.0 - Double.parseDouble(value);
+                                <% double remain = 100.0 - value;
                                     DecimalFormat df = new DecimalFormat("####0.0");%>
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px; padding:5px;;font-weight: lighter">In the bank:</td>

@@ -726,7 +726,7 @@
                         </div>
                         <div style="margin-top:6%">                                
                             <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">View</label>
-                            <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers('trans')" >
+                            <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers()" >
                                 <optgroup label="Global">
                                     <option value="all">All players</option>
                                     <option>Watchlist</option>
@@ -753,7 +753,7 @@
                         </div>
                         <div style="margin-top:6%">
                             <label style="font-family: Century Gothic;font-size: 14px; margin-left:5%" for="sel1">Sorted by</label>
-                            <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers('trans')">
+                            <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers()">
                                 <option value="score">Total score</option>
                                 <option value="gw">Round score</option> 
                                 <option value="price">Price</option>
@@ -1505,31 +1505,31 @@
                             </table>        
                         </div>
                         <div class="col-md-12" style="width:100%; margin-bottom: 2%">
-                            <button id="startTrans" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
+                            <button id="start" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;" disabled>
                                 <i class="glyphicon glyphicon-backward"></i></button>
 
-                            <button id="prevPlayersTrans" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
+                            <button id="prevPlayers" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn" style="margin-left: 4px;" disabled>
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
 
                             <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
                                 <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
 
-                            <button  id="nextPlayersTrans" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
+                            <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
 
                             <button id="endTrans" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
                                 <i class="glyphicon glyphicon-forward"></i></button>
 
 
-                            <button id="startSelectTrans" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
+                            <button id="startSelect" value="1" type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn backwbtn" style="margin-top: 15px;display:none " disabled>
                                 <i class="glyphicon glyphicon-backward"></i></button>           
-                            <button id="prevPlayersSelectTrans" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
+                            <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>                        
                             <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;display:none;">Page 
                                 <span id="pageNo" style="font-family: Century Gothic; font-weight: bold" >1</span> of <span id="totalPage">11</span> </h6>                        
-                            <button  id="nextPlayersSelectTrans" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
+                            <button  id="nextPlayersSelect" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>                                               
-                            <button id="endSelectTrans"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">
+                            <button id="endSelect"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">
                                 <i class="glyphicon glyphicon-forward"></i></button>
                         </div>
                     </div>

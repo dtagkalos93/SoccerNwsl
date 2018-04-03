@@ -359,8 +359,8 @@ public class rosterPlayer {
         return bench;
     }
 
-    public String getValue() {
-        return value;
+    public double getValue() {
+        return Double.parseDouble(value);
     }
 
     public void unionPlayers(String gk, String def, String mid, String fwd, String ben) {

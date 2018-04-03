@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -156,10 +157,10 @@ public class enterTeam extends HttpServlet {
         wasposList = new ArrayList();
         waspriceList = new ArrayList();
         String players = request.getParameter("name");
-        String playersAtt=players;
+        String playersAtt = players;
         String[] playersArray = players.split(",");
         String[] playersTeam;
-        String [] price=new String[15];
+        String[] price = new String[15];
         String jersey;
         for (int i = 0; i < playersArray.length; i++) {
 
@@ -474,18 +475,23 @@ public class enterTeam extends HttpServlet {
                 fwdteamList.add(playersTeam[1]);
             }
         }
-        double remain=100.0;
-        double value=0.0;
-        for(int i=0;i<15;i++){
-            remain=remain-Double.parseDouble(price[i]);
-            value=value+Double.parseDouble(price[i]);
+        double remain = 100.0;
+        double value = 0.0;
+        for (int i = 0; i < 15; i++) {
+            if (price[i].equals(" ")) {
+                price[i] = 0.0 + "";
+            }
+            remain = remain - Double.parseDouble(price[i]);
+            value = value + Double.parseDouble(price[i]);
         }
-        NumberFormat formatter = new DecimalFormat("#0.0");     
+        DecimalFormat df = new DecimalFormat("#####.##");
+        DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();
+        sym.setDecimalSeparator('.');
+        df.setDecimalFormatSymbols(sym);
         request.setAttribute("players", playersAtt);
-        request.setAttribute("remain", formatter.format(remain));
-        request.setAttribute("value", formatter.format(value));
-        
-        
+        request.setAttribute("remain", df.format(remain));
+        request.setAttribute("value", df.format(value));
+
         request.setAttribute("namedef", defnameList);
         request.setAttribute("teamdef", defteamList);
         request.setAttribute("jerseydef", defjerseyList);
@@ -563,11 +569,11 @@ public class enterTeam extends HttpServlet {
             // Load the database driver
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            if(name.contains("'")){
-                String [] nameArray=name.split("'");
-                name=nameArray[0]+"\\'"+nameArray[1];
+            if (name.contains("'")) {
+                String[] nameArray = name.split("'");
+                name = nameArray[0] + "\\'" + nameArray[1];
             }
-                
+
             String sql = "SELECT price FROM players where name='" + name + "'";
             Statement s = connection.createStatement();
             s.executeQuery(sql);
@@ -576,8 +582,7 @@ public class enterTeam extends HttpServlet {
 
             if (resultSet.next()) {
                 return resultSet.getString("price");
-            }
-            else{
+            } else {
                 return "0.0";
             }
 
