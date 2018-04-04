@@ -68,41 +68,44 @@ public class fixtureData {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            String strThatDay = "2018/03/17";
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-            Date d = null;
-            try {
-                d = formatter.parse(strThatDay);//catch exception
-            } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+//            String strThatDay = "2018/03/17";
+//            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+//            Date d = null;
+//            try {
+//                d = formatter.parse(strThatDay);//catch exception
+//            } catch (ParseException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//
+//            Calendar thatDay = Calendar.getInstance();
+//            thatDay.setTime(d);
+//            Calendar today = Calendar.getInstance();
+//            today.getTime();
+//            long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
+//            long days = diff / (24 * 60 * 60 * 1000);
+//            int weeks = ((int) days) / 7;
+//            if(days%7 !=0){
+//                weeks++;
+//            }
+//            if (weeks == 10) {
+//                weeks = 9;
+//            } else if (weeks == 16 || weeks == 17) {
+//                weeks = 15;
+//            } else if (weeks == 23 || weeks == 24) {
+//                weeks = 21;
+//            } else if (weeks > 10) {
+//                weeks = weeks - 1;
+//            }
+//            if (weeks >= 22) {
+//                weeks = 22;
+//            }
 
-            Calendar thatDay = Calendar.getInstance();
-            thatDay.setTime(d);
-            Calendar today = Calendar.getInstance();
-            today.getTime();
-            long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-            long days = diff / (24 * 60 * 60 * 1000);
-            int weeks = ((int) days) / 7;
-            if(days%7 !=0){
-                weeks++;
-            }
-            if (weeks == 10) {
-                weeks = 9;
-            } else if (weeks == 16 || weeks == 17) {
-                weeks = 15;
-            } else if (weeks == 23 || weeks == 24) {
-                weeks = 21;
-            } else if (weeks > 10) {
-                weeks = weeks - 1;
-            }
-            if (weeks >= 22) {
-                weeks = 22;
-            }
-
+            deadLIne line=new deadLIne();
+            String gw=line.getGameweek();
+            int weeks=Integer.parseInt(gw.split(" ")[1]); 
             //Select the data from the database
-            String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
+            String sql = "SELECT * FROM fixture where fixture='" + gw + "'";
             dataList.add("Gameweek " + weeks);
             dataList.add("Gameweek " + (weeks - 1));
             dataList.add("Gameweek " + (weeks + 1));
@@ -117,7 +120,6 @@ public class fixtureData {
                     continue;
                 }
                 
-                System.out.println("!!__"+resultSet.getString("date"));
                 //Add records into data list
                 dateList.add(resultSet.getString("date"));
                 

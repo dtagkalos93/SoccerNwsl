@@ -64,6 +64,37 @@ function transModalGK(i) {
     xhttp.send();
 }
 
+function transBarModalGK(i) {
+
+    var name = document.getElementById("gkname"+i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for(j=1;j<=2;j++){
+                if(document.getElementById("imagegk"+j).src.split("/")[5]=="subsgk.png"){
+                    document.getElementById("add").disabled=false;
+                    break;
+                }
+                else{
+                    document.getElementById("add").disabled=true;
+                }
+            }
+            
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('gk"+j+"')");
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
 //Defender
 function openModalDEF(i) {
 
@@ -106,6 +137,40 @@ function transModalDEF(i) {
     xhttp.open("GET", "findPosition?name=" + name, true);
     xhttp.send();
 }
+
+function transBarModalDEF(i) {
+
+    var name = document.getElementById("namedef"+i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            
+            for(j=1;j<=5;j++){
+                if(document.getElementById("defimage"+j).src.split("/")[5]=="subs.png"){
+                    console.log("here");
+                    document.getElementById("add").disabled=false;
+                    break;
+                }
+                else{
+                    document.getElementById("add").disabled=true;
+                }
+            }
+            
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('def"+i+"')");
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
 
 function openModalCancelDEF(i) {
 
@@ -166,6 +231,39 @@ function transModalMID(i) {
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function transBarModalMID(i) {
+
+    var name = document.getElementById("namemid"+i).textContent;
+    console.log(name);
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for(j=1;j<=5;j++){
+                console.log(document.getElementById("midimage"+j).src.split("/")[5]);
+                if(document.getElementById("midimage"+j).src.split("/")[5]=="subs.png"){
+                    document.getElementById("add").disabled=false;
+                    break
+                }
+                else{
+                    document.getElementById("add").disabled=true;
+                }
+            }
+            
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('mid"+i+"')");
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
         }
     };
     xhttp.open("GET", "findPosition?name=" + name, true);
@@ -235,6 +333,38 @@ function transModalFWD(i) {
     xhttp.open("GET", "findPosition?name=" + name, true);
     xhttp.send();
 }
+
+function transBarModalFWD(i) {
+
+    var name = document.getElementById("namefwd"+i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for(j=1;j<=3;j++){
+                if(document.getElementById("fwdimage"+j).src.split("/")[5]=="subs.png"){
+                    document.getElementById("add").disabled=false;
+                    break
+                }
+                else{
+                    document.getElementById("add").disabled=true;
+                }
+            }
+            
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('fwd"+i+"')");
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
 
 function openModalCancelFWD(i) {
 
@@ -399,7 +529,7 @@ function openInfo(name) {
                 var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo").src = "img/" + image;
-            document.getElementById("currgwinfo").innerHTML = "GW" + gameweek.split("-")[0].split(" ")[1];
+            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1])-1);
             document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
             document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
             document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];

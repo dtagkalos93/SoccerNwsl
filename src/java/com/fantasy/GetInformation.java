@@ -44,7 +44,7 @@ public class GetInformation extends HttpServlet {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        String gwNo = gameweek.split("-")[0].split(" ")[1];
+        String gwNo = (Integer.parseInt(gameweek.split("-")[0].split(" ")[1])-1)+"";
         try {
 
             // Load the database driver

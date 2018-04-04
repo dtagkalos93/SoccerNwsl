@@ -141,7 +141,7 @@
                         </div>
                         <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
                             <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                <button type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
+                                <button id="autopick" type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
                                     Auto Pick 
                                 </button> 
                             </div>

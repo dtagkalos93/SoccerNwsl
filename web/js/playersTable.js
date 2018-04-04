@@ -3121,7 +3121,6 @@ function addPlayer() {
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
     if (document.getElementById("remainPrice").textContent < 0.0) {
-        console.log("!!!I am here!");
         document.getElementById("remainPrice").style.color = '#d4213c';
         document.getElementById("dollar").style.color = '#d4213c';
         document.getElementById("enterTeam").disabled = true;
@@ -3325,6 +3324,8 @@ function addPlayer() {
 
 
 function reset() {
+    document.getElementById("autopick").disabled = false;
+
     document.getElementById("totalPlayers").innerHTML = '0';
     document.getElementById("allPlayers").style.color = '#d4213c';
     document.getElementById("totalPlayers").style.color = '#d4213c';
@@ -3847,7 +3848,7 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
 });
 
 function autopick() {
-
+    document.getElementById("autopick").disabled = true;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -4065,7 +4066,7 @@ function openInfo(name) {
                 var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo").src = "img/" + image;
-            document.getElementById("currgwinfo").innerHTML = "GW" + gameweek.split("-")[0].split(" ")[1];
+            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1]) - 1);
             document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
             document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
             document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];

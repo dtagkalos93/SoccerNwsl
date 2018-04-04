@@ -1,5 +1,4 @@
 function goalkeeper(gk) {
-    console.log("Here!");
     var name = gk.split("-")[0];
     var team = gk.split("-")[1];
     document.getElementById("gkname").innerHTML = name;
@@ -816,13 +815,18 @@ function captains(cpt, vice) {
 function setPlayers(gk, def, mid, fwd) {
     var gkPlayers = gk.split(",");
     var pl = 1;
-    disableSide();
     for (i = 0; i < gkPlayers.length; i++) {
         var gkName = gkPlayers[i].split("-")[0];
         var gkTeam = gkPlayers[i].split("-")[1];
         document.getElementById("namegk" + pl).innerHTML = gkName;
 
-       
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname" + j).textContent == gkName) { 
+                console.log("Here!");
+                document.getElementById("gk" + j).style.pointerEvents = 'none';
+                document.getElementById("gk" + j).style.opacity = '0.6';
+            }
+        }
         if (gkTeam == 'BOS') {
             var image = "breakersgk.png";
         } else if (gkTeam == 'CHI') {
@@ -854,7 +858,13 @@ function setPlayers(gk, def, mid, fwd) {
         var defName = defPlayers[i].split("-")[0];
         var defTeam = defPlayers[i].split("-")[1];
         document.getElementById("defname" + pl).innerHTML = defName;
+        for (j = 1; j <= 8; j++) {
         
+            if (document.getElementById("namedef" + j).textContent == defName) { 
+                document.getElementById("def" + j).style.pointerEvents = 'none';
+                document.getElementById("def" + j).style.opacity = '0.6';
+            }
+        }
         if (defTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (defTeam == 'CHI') {
@@ -887,7 +897,13 @@ function setPlayers(gk, def, mid, fwd) {
         var midName = midPlayers[i].split("-")[0];
         var midTeam = midPlayers[i].split("-")[1];
         document.getElementById("midname" + pl).innerHTML = midName;
+        for (j = 1; j <= 5; j++) {
         
+            if (document.getElementById("namemid" + j).textContent == midName) { 
+                document.getElementById("mid" + j).style.pointerEvents = 'none';
+                document.getElementById("mid" + j).style.opacity = '0.6';
+            }
+        }
         if (midTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (midTeam == 'CHI') {
@@ -920,7 +936,13 @@ function setPlayers(gk, def, mid, fwd) {
         var fwdName = fwdPlayers[i].split("-")[0];
         var fwdTeam = fwdPlayers[i].split("-")[1];
         document.getElementById("fwdname" + pl).innerHTML = fwdName;
+        for (j = 1; j <= 5; j++) {
         
+            if (document.getElementById("namefwd" + j).textContent == fwdName) { 
+                document.getElementById("fwd" + j).style.pointerEvents = 'none';
+                document.getElementById("fwd" + j).style.opacity = '0.6';
+            }
+        }
         if (fwdTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (fwdTeam == 'CHI') {
@@ -994,33 +1016,3 @@ function setPrice(gk, def, mid, fwd) {
 }
 
 
-function disableSide(){
-    for (j = 1; j <= 20; j++) {
-
-
-        document.getElementById("gk" + j).style.pointerEvents = 'none';
-        document.getElementById("gk" + j).style.opacity = '0.6';
-
-    }
-    for (j = 1; j <= 20; j++) {
-
-
-        document.getElementById("def" + j).style.pointerEvents = 'none';
-        document.getElementById("def" + j).style.opacity = '0.6';
-
-    }
-    for (j = 1; j <= 20; j++) {
-
-
-        document.getElementById("mid" + j).style.pointerEvents = 'none';
-        document.getElementById("mid" + j).style.opacity = '0.6';
-
-    }
-    for (j = 1; j <= 20; j++) {
-
-
-        document.getElementById("fwd" + j).style.pointerEvents = 'none';
-        document.getElementById("fwd" + j).style.opacity = '0.6';
-
-    }
-}
