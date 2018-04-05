@@ -30,3 +30,5 @@ nbproject/ant-deploy.xml
 *.xml
 web/favteam.jsp
 build/web/css/bootstrap.min.css
+nbproject/private/private.properties
+nbproject/private/private.properties

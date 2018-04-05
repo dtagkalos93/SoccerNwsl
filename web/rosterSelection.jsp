@@ -184,25 +184,25 @@
                         </div>
 
                         <hr style="border:none;margin-top: 21%">
-                        <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
+                        <div id="selDEF1" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage1" src="img/subs.png"  />
                             <p class="name" id="defname1" >Defender</p>
                             <p style="display: none" id="team3"></p>
                             <p class="price" id="defprice1"></p>
                         </div>
-                        <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
+                        <div id="selDEF2" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage2" src="img/subs.png" />
                             <p class="name" id="defname2" >Defender</p>
                             <p style="display: none" id="team4"></p>
                             <p class="price" id="defprice2"></p>
                         </div>
-                        <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
+                        <div id="selDEF3" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage3" src="img/subs.png"  />
                             <p class="name" id="defname3" >Defender</p>
                             <p style="display: none" id="team5"></p>
                             <p class="price" id="defprice3"></p>
                         </div>
-                        <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeDEF()">
+                        <div id="selDEF4" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeDEF()">
                             <img class="image-player-cb" id="defimage4" src="img/subs.png"  />
                             <p class="name" id="defname4" >Defender</p>
                             <p style="display: none" id="team6"></p>
@@ -216,25 +216,25 @@
                         </div>
 
                         <hr style="border:none;margin-top: 21%">                          
-                        <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 29.5px" onclick="changeMID()">
+                        <div id="selMID1" class="col-md-2 col-xs-2 " style="margin-right: 32px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage1" />
                             <p class="name" id="midname1" >Midfielder</p>
                             <p style="display: none" id="team8"></p>
                             <p class="price" id="midprice1"></p>
                         </div>                            
-                        <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
+                        <div id="selMID2" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage2" />
                             <p class="name" id="midname2" >Midfielder</p>
                             <p style="display: none" id="team9"></p>
                             <p class="price" id="midprice2"></p>
                         </div>
-                        <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
+                        <div id="selMID3" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage3" />
                             <p class="name" id="midname3" >Midfielder</p>
                             <p style="display: none" id="team10"></p>
                             <p class="price" id="midprice3"></p>
                         </div>
-                        <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 29.5px" onclick="changeMID()">
+                        <div id="selMID4" class="col-md-2 col-xs-2" style="margin-right: 32px" onclick="changeMID()">
                             <img class="image-player-cb" src="img/subs.png"  id="midimage4" />
                             <p class="name" id="midname4" >Midfielder</p>
                             <p style="display: none" id="team11"></p>
