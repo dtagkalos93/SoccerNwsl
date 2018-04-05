@@ -308,7 +308,7 @@
                                 <p class="price" id="fwdprice3"></p>
                             </div>
                         </div>
-                        <button id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" disabled >
+                        <button id="makeTrans"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" onclick="makeTransfer();" disabled >
                             Make Transfers
                         </button>                        
                         <%
@@ -738,16 +738,15 @@
                                     <option value="Forward">Forwards</option>
                                 </optgroup>
                                 <optgroup label="By Team">
-                                    <option value="Boston Breakers">Boston Breakers</option>
-                                    <option value="Chicago Red Stars" >Chicago Red Stars</option>
-                                    <option value="Utah Royals FC">Utah Royals FC</option>
-                                    <option value="Houston Dash">Houston Dash</option>
-                                    <option value="North Carolina Courage">North Carolina Courage</option>
-                                    <option value="Orlando Pride">Orlando Pride</option>
-                                    <option value="Portland Thorns FC">Portland Thorns FC</option>
-                                    <option value="Seattle Reign FC">Seattle Reign FC</option>
-                                    <option value="Sky Blue FC">Sky Blue FC</option> 
-                                    <option value="Washington Spirit">Washington Spirit</option> 
+                                    <option id="chi" value="Chicago Red Stars" >Chicago Red Stars</option>
+                                    <option id="hou" value="Houston Dash">Houston Dash</option>
+                                    <option id="nc" value="North Carolina Courage">North Carolina Courage</option>
+                                    <option id="orl" value="Orlando Pride">Orlando Pride</option>
+                                    <option id="por" value="Portland Thorns FC">Portland Thorns FC</option>
+                                    <option id="sea" value="Seattle Reign FC">Seattle Reign FC</option>
+                                    <option id="nj" value="Sky Blue FC">Sky Blue FC</option> 
+                                    <option id="uta" value="Utah Royals FC">Utah Royals FC</option>
+                                    <option id="was" value="Washington Spirit">Washington Spirit</option> 
                                 </optgroup>
                             </select>
                         </div>

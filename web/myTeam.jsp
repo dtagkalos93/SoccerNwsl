@@ -14,6 +14,7 @@
     String midfielderNO = players.getMidfielderNO();
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
+    String teamName=players.getteamName();
     double value = players.getValue();
     String totalScore = players.getTotalScore();
     String totalUsers = players.getTotalUsers();
@@ -766,11 +767,11 @@
                     </div>
                     <div style="border-bottom: 1px solid #9e9fa5;border-left: 1px solid #9e9fa5;border-right: 1px solid #9e9fa5">
                         <div class="">
-                            <h4 style="color: white;border-top:3px solid #1b2046;background-image: url(img/bannerred.png);background-size: 100% 100%; font-family: Century Gothic;text-align: center;padding: 10px;font-size: 16px"><%=session.getAttribute("teamName").toString()%></h4>
+                            <h4 style="color: white;border-top:3px solid #1b2046;background-image: url(img/bannerred.png);background-size: 100% 100%; font-family: Century Gothic;text-align: center;padding: 10px;font-size: 16px"><%=teamName %></h4>
                         </div>
                         <div>
                             <h5 style="margin-left:5%;font-family: Century Gothic; font-weight: bold;font-size: 15px">Favorite NWSL Team</h5>
-                            <%
+                            <% 
                                 String team = session.getAttribute("teamBadge").toString();
                                 String badge = null;
                                 if (team.equals("houston")) {

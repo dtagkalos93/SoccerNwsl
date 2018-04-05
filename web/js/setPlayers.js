@@ -819,9 +819,9 @@ function setPlayers(gk, def, mid, fwd) {
         var gkName = gkPlayers[i].split("-")[0];
         var gkTeam = gkPlayers[i].split("-")[1];
         document.getElementById("namegk" + pl).innerHTML = gkName;
-
+        document.getElementById("team" + pl).innerHTML = gkTeam;
         for (j = 1; j <= 2; j++) {
-            if (document.getElementById("gkname" + j).textContent == gkName) { 
+            if (document.getElementById("gkname" + j).textContent == gkName) {
                 console.log("Here!");
                 document.getElementById("gk" + j).style.pointerEvents = 'none';
                 document.getElementById("gk" + j).style.opacity = '0.6';
@@ -858,9 +858,11 @@ function setPlayers(gk, def, mid, fwd) {
         var defName = defPlayers[i].split("-")[0];
         var defTeam = defPlayers[i].split("-")[1];
         document.getElementById("defname" + pl).innerHTML = defName;
+        document.getElementById("team" + (pl + 2)).innerHTML = defTeam;
+
         for (j = 1; j <= 8; j++) {
-        
-            if (document.getElementById("namedef" + j).textContent == defName) { 
+
+            if (document.getElementById("namedef" + j).textContent == defName) {
                 document.getElementById("def" + j).style.pointerEvents = 'none';
                 document.getElementById("def" + j).style.opacity = '0.6';
             }
@@ -897,9 +899,11 @@ function setPlayers(gk, def, mid, fwd) {
         var midName = midPlayers[i].split("-")[0];
         var midTeam = midPlayers[i].split("-")[1];
         document.getElementById("midname" + pl).innerHTML = midName;
+        document.getElementById("team" + (pl + 7)).innerHTML = midTeam;
+
         for (j = 1; j <= 5; j++) {
-        
-            if (document.getElementById("namemid" + j).textContent == midName) { 
+
+            if (document.getElementById("namemid" + j).textContent == midName) {
                 document.getElementById("mid" + j).style.pointerEvents = 'none';
                 document.getElementById("mid" + j).style.opacity = '0.6';
             }
@@ -936,9 +940,10 @@ function setPlayers(gk, def, mid, fwd) {
         var fwdName = fwdPlayers[i].split("-")[0];
         var fwdTeam = fwdPlayers[i].split("-")[1];
         document.getElementById("fwdname" + pl).innerHTML = fwdName;
+        document.getElementById("team" + (pl + 12)).innerHTML = fwdTeam;
         for (j = 1; j <= 5; j++) {
-        
-            if (document.getElementById("namefwd" + j).textContent == fwdName) { 
+
+            if (document.getElementById("namefwd" + j).textContent == fwdName) {
                 document.getElementById("fwd" + j).style.pointerEvents = 'none';
                 document.getElementById("fwd" + j).style.opacity = '0.6';
             }
@@ -967,6 +972,9 @@ function setPlayers(gk, def, mid, fwd) {
         document.getElementById("fwdimage" + pl).src = "img/" + image;
         pl = eval(pl) + 1;
     }
+
+    setTeamNo();
+    checkNoDisableSide();
 }
 
 function setPrice(gk, def, mid, fwd) {
@@ -1016,3 +1024,459 @@ function setPrice(gk, def, mid, fwd) {
 }
 
 
+function setTeamNo() {
+    var chiNO = 0;
+    var houNO = 0;
+    var ncNO = 0;
+    var orlNO = 0;
+    var porNO = 0;
+    var seaNO = 0;
+    var njNO = 0;
+    var utaNO = 0;
+    var wasNO = 0;
+
+    for (i = 1; i <= 15; i++) {
+        if (document.getElementById("team" + i).textContent == "CHI") {
+            chiNO = eval(chiNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "HOU") {
+            houNO = eval(houNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "NC") {
+            ncNO = eval(ncNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "ORL") {
+            orlNO = eval(orlNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "POR") {
+            porNO = eval(porNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "SEA") {
+            seaNO = eval(seaNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "NJ") {
+            njNO = eval(njNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "UTA") {
+            utaNO = eval(utaNO) + 1;
+        }
+        if (document.getElementById("team" + i).textContent == "WAS") {
+            wasNO = eval(wasNO) + 1;
+        }
+    }
+    console.log("!!!"+utaNO);
+    sessionStorage.clear();
+    sessionStorage.setItem("chiNO", chiNO);
+    sessionStorage.setItem("houNO", houNO);
+    sessionStorage.setItem("ncNO", ncNO);
+    sessionStorage.setItem("orlNO", orlNO);
+    sessionStorage.setItem("porNO", porNO);
+    sessionStorage.setItem("seaNO", seaNO);
+    sessionStorage.setItem("njNO", njNO);
+    sessionStorage.setItem("utaNO", utaNO);
+    sessionStorage.setItem("wasNO", wasNO);
+}
+
+
+function checkNoDisableSide() {
+    if (sessionStorage.getItem("chiNO") == "4") {
+        document.getElementById("chi").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "CHI") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "CHI") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "CHI") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "CHI") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("chi").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "CHI") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "CHI") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "CHI") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "CHI") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+
+    if (sessionStorage.getItem("houNO") == "4") {
+        document.getElementById("hou").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "HOU") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "HOU") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "HOU") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "HOU") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("hou").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "HOU") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "HOU") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "HOU") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "HOU") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+
+    
+    if (sessionStorage.getItem("ncNO") == "4") {
+        document.getElementById("nc").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "NC") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "NC") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "NC") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "NC") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("nc").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "NC") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "NC") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "NC") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "NC") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+    if (sessionStorage.getItem("orlNO") == "4") {
+        document.getElementById("orl").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "ORL") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "ORL") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "ORL") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "ORL") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("orl").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "ORL") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "ORL") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "ORL") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "ORL") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+    if (sessionStorage.getItem("porNO") == "4") {
+        document.getElementById("por").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "POR") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "POR") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "POR") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "POR") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("por").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "POR") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "POR") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "POR") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "POR") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+        if (sessionStorage.getItem("seaNO") == "4") {
+        document.getElementById("sea").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "SEA") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "SEA") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "SEA") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "SEA") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("sea").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "SEA") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "SEA") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "SEA") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "SEA") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+    if (sessionStorage.getItem("njNO") == "4") {
+        document.getElementById("nj").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "NJ") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "NJ") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "NJ") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "NJ") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("nj").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "NJ") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "NJ") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "NJ") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "NJ") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+
+    if (sessionStorage.getItem("utaNO") == "4") {
+        document.getElementById("uta").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "UTA") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "UTA") {
+                            console.log("here uta!"+sessionStorage.getItem("utaNO"));
+
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "UTA") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i.textContent) == "UTA") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("uta").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "UTA") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "UTA") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "UTA") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "UTA") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+    
+    
+    if (sessionStorage.getItem("wasNO") == "4") {
+        document.getElementById("was").disabled = true;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "WAS") {
+                document.getElementById("gk" + i).style.pointerEvents = 'none';
+                document.getElementById("gk" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "WAS") {
+                document.getElementById("def" + i).style.pointerEvents = 'none';
+                document.getElementById("def" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teammid" + i).textContent == "WAS") {
+                document.getElementById("mid" + i).style.pointerEvents = 'none';
+                document.getElementById("mid" + i).style.opacity = '0.6';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "WAS") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'none';
+                document.getElementById("fwd" + i).style.opacity = '0.6';
+            }
+
+        }
+    } else {
+        document.getElementById("was").disabled = false;
+        for (i = 1; i <= 20; i++) {
+            if (document.getElementById("gkteam" + i).textContent == "WAS") {
+                document.getElementById("gk" + i).style.pointerEvents = 'auto';
+                document.getElementById("gk" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamdef" + i).textContent == "WAS") {
+                document.getElementById("def" + i).style.pointerEvents = 'auto';
+                document.getElementById("def" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teammid" + i).textContent == "WAS") {
+                document.getElementById("mid" + i).style.pointerEvents = 'auto';
+                document.getElementById("mid" + i).style.opacity = '1';
+            }
+            if (document.getElementById("teamfwd" + i).textContent == "WAS") {
+                document.getElementById("fwd" + i).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + i).style.opacity = '1';
+            }
+
+        }
+    }
+}

@@ -44,6 +44,10 @@ public class rosterPlayer {
     private String midfielderUnion;
     private String forwardUnion;
 
+    
+   private String teamName;
+   
+   
     public rosterPlayer(String email) throws SQLException {
         totalScore = 0;
         try {
@@ -66,6 +70,7 @@ public class rosterPlayer {
             resultSet = s.getResultSet();
 
             if (resultSet.next()) {
+                teamName=resultSet.getString("nameTeam");
                 goalkeeper = resultSet.getString("gk");
                 if (goalkeeper.contains("'")) {
 
@@ -334,6 +339,10 @@ public class rosterPlayer {
 
     public double getValue() {
         return Double.parseDouble(value);
+    }
+    
+    public String getteamName() {
+        return teamName;
     }
 
     public void unionPlayers(String gk, String def, String mid, String fwd, String ben) {

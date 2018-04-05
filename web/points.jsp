@@ -13,7 +13,8 @@
     String midfielderNO = players.getMidfielderNO();
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
-    String value = players.getValue();
+    String teamName=players.getteamName();
+    double value = players.getValue();
     String totalScore = players.getTotalScore();
     String totalUsers = players.getTotalUsers();
     String captain = players.getCaptain();
@@ -815,7 +816,7 @@
                     <div style="border-bottom: 1px solid #9e9fa5;border-left: 1px solid #9e9fa5;border-right: 1px solid #9e9fa5">
                         <div class="">
                             <h4 style="color: white;border-top:3px solid #1b2046;background-image: url(img/bannerred.png);background-size: 100% 100%; 
-                                font-family: Century Gothic;text-align: center;padding: 10px;font-size: 16px"><%= session.getAttribute("teamBadge").toString()%></h4>
+                                font-family: Century Gothic;text-align: center;padding: 10px;font-size: 16px"><%=teamName %></h4>
                             <!--Allagi se teamBadge suzitisi ama mpei mia vasi dedomenwn me mazemena ola ta stoixeia mazemena -->
 
                         </div>
@@ -938,7 +939,7 @@
                                     <td style="text-align: left ;font-size:14px; font-weight: bold;  ">$<%=value%></td>
                                 </tr>
 
-                                <% double remain = 100.0 - Double.parseDouble(value);
+                                <% double remain = 100.0 - value;
                                     DecimalFormat df = new DecimalFormat("####0.0");%>
                                 <tr style="border-bottom:1px solid white">
                                     <td style="font-size: 14px; padding:5px;;font-weight: lighter">In the bank:</td>
