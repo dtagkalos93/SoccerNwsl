@@ -341,7 +341,7 @@ function makeTransfer() {
     var def = "";
     var mid = "";
     var fwd = "";
-
+    var remain=document.getElementById("remainPrice").textContent;
     for (i = 1; i <= 2; i++) {
         gk = gk + document.getElementById("namegk" + i).textContent + "-" + document.getElementById("team" + (i)).textContent + "-Goalkeeper,";
     }
@@ -365,7 +365,7 @@ function makeTransfer() {
     }
 
 
-    window.location = "transfers?gk=" + gk+"&def="+def+"&mid="+mid+"&fwd="+fwd;
+    window.location = "transfers?gk=" + gk+"&def="+def+"&mid="+mid+"&fwd="+fwd+"&remain="+remain;
 
 
 }

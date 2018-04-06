@@ -1064,7 +1064,7 @@ function setTeamNo() {
             wasNO = eval(wasNO) + 1;
         }
     }
-    console.log("!!!"+utaNO);
+    console.log("!!!" + utaNO);
     sessionStorage.clear();
     sessionStorage.setItem("chiNO", chiNO);
     sessionStorage.setItem("houNO", houNO);
@@ -1166,9 +1166,9 @@ function checkNoDisableSide() {
 
         }
     }
-    
 
-    
+
+
     if (sessionStorage.getItem("ncNO") == "4") {
         document.getElementById("nc").disabled = true;
         for (i = 1; i <= 20; i++) {
@@ -1212,7 +1212,7 @@ function checkNoDisableSide() {
 
         }
     }
-    
+
     if (sessionStorage.getItem("orlNO") == "4") {
         document.getElementById("orl").disabled = true;
         for (i = 1; i <= 20; i++) {
@@ -1256,7 +1256,7 @@ function checkNoDisableSide() {
 
         }
     }
-    
+
     if (sessionStorage.getItem("porNO") == "4") {
         document.getElementById("por").disabled = true;
         for (i = 1; i <= 20; i++) {
@@ -1300,8 +1300,8 @@ function checkNoDisableSide() {
 
         }
     }
-    
-        if (sessionStorage.getItem("seaNO") == "4") {
+
+    if (sessionStorage.getItem("seaNO") == "4") {
         document.getElementById("sea").disabled = true;
         for (i = 1; i <= 20; i++) {
             if (document.getElementById("gkteam" + i).textContent == "SEA") {
@@ -1344,7 +1344,7 @@ function checkNoDisableSide() {
 
         }
     }
-    
+
     if (sessionStorage.getItem("njNO") == "4") {
         document.getElementById("nj").disabled = true;
         for (i = 1; i <= 20; i++) {
@@ -1397,7 +1397,7 @@ function checkNoDisableSide() {
                 document.getElementById("gk" + i).style.opacity = '0.6';
             }
             if (document.getElementById("teamdef" + i).textContent == "UTA") {
-                            console.log("here uta!"+sessionStorage.getItem("utaNO"));
+                console.log("here uta!" + sessionStorage.getItem("utaNO"));
 
                 document.getElementById("def" + i).style.pointerEvents = 'none';
                 document.getElementById("def" + i).style.opacity = '0.6';
@@ -1434,8 +1434,8 @@ function checkNoDisableSide() {
 
         }
     }
-    
-    
+
+
     if (sessionStorage.getItem("wasNO") == "4") {
         document.getElementById("was").disabled = true;
         for (i = 1; i <= 20; i++) {
@@ -1479,4 +1479,58 @@ function checkNoDisableSide() {
 
         }
     }
+}
+
+
+function setCaptain(captain, vice) {
+    var cptArray = captain.split("-");
+    var viceArray = vice.split("-");
+    if (cptArray[1] == 'GK')
+        document.getElementById("gkcptimage").style.display = "";
+    if (viceArray[1] == 'GK')
+        document.getElementById("gkvcptimage").style.display = "";
+
+    if (cptArray[1] == 'DEF') {
+        for (i = 1; i <= 5; i++) {
+            if (cptArray[0] == document.getElementById("defname" + i).textContent)
+                document.getElementById("defcptimage" + i).style.display = "";
+        }
+    }
+
+    if (cptArray[1] == 'MID') {
+        for (i = 1; i <= 5; i++) {
+            if (cptArray[0] == document.getElementById("midname" + i).textContent)
+                document.getElementById("midcptimage" + i).style.display = "";
+        }
+    }
+
+    if (cptArray[1] == 'FWD') {
+        for (i = 1; i <= 3; i++) {
+            if (cptArray[0] == document.getElementById("fwdname" + i).textContent)
+                document.getElementById("fwdcptimage" + i).style.display = "";
+        }
+    }
+
+
+    if (viceArray[1] == 'DEF') {
+        for (i = 1; i <= 5; i++) {
+            if (viceArray[0] == document.getElementById("defname" + i).textContent)
+                document.getElementById("defvcptimage" + i).style.display = "";
+        }
+    }
+
+    if (viceArray[1] == 'MID') {
+        for (i = 1; i <= 5; i++) {
+            if (viceArray[0] == document.getElementById("midname" + i).textContent)
+                document.getElementById("midvcptimage" + i).style.display = "";
+        }
+    }
+
+    if (viceArray[1] == 'FWD') {
+        for (i = 1; i <= 3; i++) {
+            if (viceArray[0] == document.getElementById("fwdname" + i).textContent)
+                document.getElementById("fwdvcptimage" + i).style.display = "";
+        }
+    }
+
 }

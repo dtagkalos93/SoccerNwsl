@@ -99,7 +99,15 @@ public class rosterPlayer {
                 formation = resultSet.getString("formation");
                 value = resultSet.getString("value");
                 captain = resultSet.getString("captain");
+                if (captain.contains("'")) {
+
+                    captain = captain.split("'")[0] + "\\'" + captain.split("'")[1];
+                }
                 viceCaptain = resultSet.getString("viceCaptain");
+                if (viceCaptain.contains("'")) {
+
+                    viceCaptain = viceCaptain.split("'")[0] + "\\'" + viceCaptain.split("'")[1];
+                }
             }
             resultSet.close();
 

@@ -104,17 +104,23 @@ public class login extends HttpServlet {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
-                        session.setAttribute("teamBadge",resultSet.getString("team"));
+                        session.setAttribute("teamBadge", resultSet.getString("team"));
                         resultSet.close();
                         s.close();
+                        if (teamExist(email)) {
+                            RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
+                            rd.forward(request, response);
 
-                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
-                        rd.forward(request, response);
+                        } else {
+                            RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
+                            rd.forward(request, response);
+                        }
+                        
                     } else {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
-                        session.setAttribute("teamBadge",resultSet.getString("team"));
+                        session.setAttribute("teamBadge", resultSet.getString("team"));
                         session.setMaxInactiveInterval(60 * 60);
                         Cookie emailName = new Cookie("email", email);
                         emailName.setMaxAge(24 * 60 * 60);
@@ -122,8 +128,14 @@ public class login extends HttpServlet {
                         int cookieID = 0;
                         obj.addProperty("email", email);
                         pw.write(obj.toString());
-                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
-                        rd.forward(request, response);
+                        if (teamExist(email)) {
+                            RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
+                            rd.forward(request, response);
+
+                        } else {
+                            RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
+                            rd.forward(request, response);
+                        }
                     }
 
                 } else {
@@ -160,4 +172,46 @@ public class login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    public boolean teamExist(String email) {
+        String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+        String dbName = "fantasy";
+        String userId = "root";
+        String password = "";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        boolean exist = false;
+        try {
+
+            // Load the database driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Get a Connection to the database
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+            String sql = "SELECT * FROM teams where email='" + email + "'";
+            Statement s = connection.createStatement();
+
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+
+            if (resultSet.next()) {
+                exist = true;
+            } else {
+                exist = false;
+            }
+
+            resultSet.close();
+
+            s.close();
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("Exception is ;" + e);
+
+        }
+        return exist;
+    }
 }

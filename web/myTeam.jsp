@@ -15,6 +15,8 @@
     String forwardNO = players.getForwardNO();
     String bench = players.getbench();
     String teamName=players.getteamName();
+    String captain=players.getCaptain();
+    String vcaptain=players.getVicecaptain();
     double value = players.getValue();
     String totalScore = players.getTotalScore();
     String totalUsers = players.getTotalUsers();
@@ -65,7 +67,8 @@
             forward('<%=forward%>', '<%=forwardNO%>');
             bench('<%=bench%>');
             captain('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>');
-            opponent('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>', '<%=bench%>');">
+            opponent('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>', '<%=bench%>');
+            setCaptain('<%=captain%>','<%=vcaptain%>');">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
