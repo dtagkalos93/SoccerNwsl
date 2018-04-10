@@ -1,7 +1,6 @@
 function topPlayers(top) {
     var top = top.replace('[', '');
     top = top.replace(']', '');
-
     top = top.split(",");
     var pl = 1;
     for (i = 0; i < top.length; i++) {
@@ -18,7 +17,7 @@ function topPlayers(top) {
             } else {
                 document.getElementById("topgwimage" + pl).src = "img/dash1.png";
             }
-        } else if (team = "Chicago Red Stars") {
+        } else if (team == "Chicago Red Stars") {
             if (pos == "Goalkeeper") {
                 document.getElementById("topgwimage" + pl).src = "img/chicagogk.png";
             } else {
@@ -78,13 +77,13 @@ function topPlayers(top) {
 
 
 function standings(team, badge, gp, wins, looses, draws, gd, pts) {
-    
+
     var team = team.replace('[', '');
     team = team.replace(']', '');
     team = team.split(",");
     var badge = badge.replace('[', '');
     badge = badge.replace(']', '');
-    badge = badge.replace(/\s/g,'');
+    badge = badge.replace(/\s/g, '');
     badge = badge.split(",");
     console.log(badge);
     var gp = gp.replace('[', '');
@@ -115,10 +114,140 @@ function standings(team, badge, gp, wins, looses, draws, gd, pts) {
         document.getElementById("standsdraws" + pl).innerHTML = draws[i];
         document.getElementById("standsgd" + pl).innerHTML = gd[i];
         document.getElementById("standspts" + pl).innerHTML = pts[i];
-        pl=eval(pl)+1;
+        pl = eval(pl) + 1;
     }
 
 
 
 
+}
+
+
+
+function dreamTeam (team, name, pos, pts) {
+    var team = team.replace('[', '');
+    team = team.replace(']', '');
+    team = team.replace(/\s/g, '');
+    team = team.split(",");
+    var name = name.replace('[', '');
+    name = name.replace(']', '');
+    name = name.replace(/\s/g, '');
+    name = name.split(",");
+    var pos = pos.replace('[', '');
+    pos = pos.replace(']', '');
+    pos = pos.replace(/\s/g, '');
+    pos = pos.split(",");
+    var pts = pts.replace('[', '');
+    pts = pts.replace(']', '');
+    pts = pts.replace(/\s/g, '');
+    pts = pts.split(",");
+    var pl = 1;
+    document.getElementById("dreamname" + pl).innerHTML = name[0];
+    document.getElementById("dreampoints" + pl).innerHTML = pts[0];
+    document.getElementById("dreampos" + pl).innerHTML = 'GK';
+    setDreamBadge(pl, pos[0], team[0]);
+    pl = eval(pl) + 1;
+    for (i = 1; i < pos.length; i++) {
+        
+        if (pos[i] == 'Defender') {
+            document.getElementById("dreamname" + pl).innerHTML = name[i];
+            document.getElementById("dreampoints" + pl).innerHTML = pts[i];
+            document.getElementById("dreampos" + pl).innerHTML = 'DEF';
+            setDreamBadge(pl, pos[i], team[i]);
+            pl = eval(pl) + 1;
+        }
+    }
+    for (i = 1; i < pos.length; i++) {
+        if (pos[i] == 'Midfielder') {
+            document.getElementById("dreamname" + pl).innerHTML = name[i];
+            document.getElementById("dreampoints" + pl).innerHTML = pts[i];
+            document.getElementById("dreampos" + pl).innerHTML = 'MID';
+            setDreamBadge(pl, pos[i], team[i]);
+            pl = eval(pl) + 1;
+        }
+    }
+    for (i = 1; i < pos.length; i++) {
+        if (pos[i] == 'Forward') {
+            document.getElementById("dreamname" + pl).innerHTML = name[i];
+            document.getElementById("dreampoints" + pl).innerHTML = pts[i];
+            document.getElementById("dreampos" + pl).innerHTML = 'FWD';
+            setDreamBadge(pl, pos[i], team[i]);
+            pl = eval(pl) + 1;
+        }
+    }
+
+}
+
+function setDreamBadge(pl, pos, team) {
+    if (team == "HoustonDash") {
+
+        document.getElementById("dreamteam" + pl).innerHTML = "HOU";
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/houstongk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/dash1.png";
+        }
+    } else if (team == "ChicagoRedStars") {
+
+        document.getElementById("dreamteam" + pl).innerHTML = "CHI";
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/chicagogk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/stars1.png";
+        }
+    } else if (team == "PortlandThornsFC") {
+        document.getElementById("dreamteam" + pl).innerHTML = "POR";
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/thornsgk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/thorns1.png";
+        }
+    } else if (team == "OrlandoPride") {
+        document.getElementById("dreamteam" + pl).innerHTML = "ORL";
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/orlandogk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/pride1.png";
+        }
+    } else if (team == "WashingtonSpirit") {
+        document.getElementById("dreamteam" + pl).innerHTML = "WAS";
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/spiritgk.png";
+        } else {
+
+            document.getElementById("dreamimage" + pl).src = "img/spirit1.png";
+        }
+    } else if (team == "NorthCarolinaCourage") {
+        
+        document.getElementById("dreamteam" + pl).innerHTML = "NC";
+        if (pos=="Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/couragegk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/courage.png";
+        }
+    } else if (team == "SeattleReignFC") {
+        document.getElementById("dreamteam" + pl).innerHTML = "SEA";
+
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/seattlegk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/reign1.png";
+        }
+    } else if (team == "SkyBlueFC") {
+        document.getElementById("dreamteam" + pl).innerHTML = "NJ";
+
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/skybluegk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/skyblue1.png";
+        }
+    } else if (team == "UtahRoyalsFC") {
+        document.getElementById("dreamteam" + pl).innerHTML = "UTA";
+
+        if (pos == "Goalkeeper") {
+            document.getElementById("dreamimage" + pl).src = "img/kansasgk.png";
+        } else {
+            document.getElementById("dreamimage" + pl).src = "img/utahjr.png";
+        }
+    }
 }
