@@ -44,10 +44,8 @@ public class rosterPlayer {
     private String midfielderUnion;
     private String forwardUnion;
 
-    
-   private String teamName;
-   
-   
+    private String teamName;
+
     public rosterPlayer(String email) throws SQLException {
         totalScore = 0;
         try {
@@ -70,7 +68,7 @@ public class rosterPlayer {
             resultSet = s.getResultSet();
 
             if (resultSet.next()) {
-                teamName=resultSet.getString("nameTeam");
+                teamName = resultSet.getString("nameTeam");
                 goalkeeper = resultSet.getString("gk");
                 if (goalkeeper.contains("'")) {
 
@@ -147,9 +145,9 @@ public class rosterPlayer {
             ResultSet resultSet = null;
             Class.forName("com.mysql.jdbc.Driver");
 
-            deadLIne line=new deadLIne();
-            String gw=line.getGameweek();
-            int weeks=Integer.parseInt(gw.split(" ")[1])-1; 
+            deadLIne line = new deadLIne();
+            String gw = line.getGameweek();
+            int weeks = Integer.parseInt(gw.split(" ")[1]) - 1;
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
             String[] def = defence.split(",");
@@ -169,7 +167,13 @@ public class rosterPlayer {
             resultSet = s.getResultSet();
 
             if (resultSet.next()) {
-                totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+
+                if (resultSet.getString("GW" + weeks).equals("") || resultSet.getString("GW" + weeks).equals("-")) {
+                    totalScore = totalScore + 0;
+                } else {
+                    totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+                }
+
             }
 
             for (int i = 0; i < def.length; i++) {
@@ -188,7 +192,11 @@ public class rosterPlayer {
                 resultSet = s.getResultSet();
 
                 if (resultSet.next()) {
-                    totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+                    if (resultSet.getString("GW" + weeks).equals("") || resultSet.getString("GW" + weeks).equals("-")) {
+                        totalScore = totalScore + 0;
+                    } else {
+                        totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+                    }
                 }
             }
 
@@ -207,7 +215,7 @@ public class rosterPlayer {
                 resultSet = s.getResultSet();
 
                 if (resultSet.next()) {
-                    if (resultSet.getString("GW" + weeks).equals("-")) {
+                    if (resultSet.getString("GW" + weeks).equals("") || resultSet.getString("GW" + weeks).equals("-")) {
                         totalScore = totalScore + 0;
                     } else {
                         totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
@@ -232,7 +240,12 @@ public class rosterPlayer {
                 resultSet = s.getResultSet();
 
                 if (resultSet.next()) {
-                    totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+                    if (resultSet.getString("GW" + weeks).equals("") || resultSet.getString("GW" + weeks).equals("-")) {
+                        totalScore = totalScore + 0;
+                    } else {
+                        totalScore = totalScore + Integer.parseInt(resultSet.getString("GW" + weeks));
+                    }
+
                 }
 
             }
@@ -301,6 +314,7 @@ public class rosterPlayer {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public String getTotalPlayers() {
         return totalPlayer + "";
     }
@@ -348,7 +362,7 @@ public class rosterPlayer {
     public double getValue() {
         return Double.parseDouble(value);
     }
-    
+
     public String getteamName() {
         return teamName;
     }

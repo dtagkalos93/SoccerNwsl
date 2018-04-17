@@ -514,7 +514,6 @@ public class autopick extends HttpServlet {
             randomNum = rand.nextInt(nameList.size());
             total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
             if (teamList.get(randomNum).equals("CHI")) {
-                System.out.println("!!!" + chi);
 
                 if (chi == 4) {
                     nameList.remove(randomNum);

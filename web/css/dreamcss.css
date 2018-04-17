@@ -82,52 +82,8 @@ h6 {
 }
 
 
-.bc-img{
-    background:url(../img/pitch2.jpg) no-repeat  ;
-    background-size:100% 100%;
-    display:contain;
 
-}
 
-.gkname,.cbname,.cbname2,.cbname3,.fwname,.benname,.gkname1{
-    width:120px;
-    border: 1px solid #02509a;
-    margin: 0;
-    text-align: center;
-    background-color: #02509a;
-    color: white;
-    font-weight: bold;
-    height: 21px;
-    padding-top: 0px;
-    font-family: arial;
-    font-size: 14px;
-    opacity: 0.9;
-    filter: alpha(opacity=30);
-
-}
-
-.gkpoint,.cbpoint,.cbpoint2,.cbpoint3,.fwpoint,.benpoint,.gkpoint1{
-    padding: 0px;
-    width:120px;
-    margin: 0;
-    text-align:center;
-    font-weight: bold;
-    border: 0px solid #57a3f9;
-    background-color: #57a3f9;
-    height: 17px;
-    padding-bottom: 5px;
-    font-family: arial;
-    margin-bottom: 10px;
-    border-bottom-left-radius:3pt 3pt;
-    border-bottom-right-radius:3pt 3pt;
-
-}
-
-.pit-img{
-    background:url(../img/bench2.jpg) no-repeat  ;
-    background-size:100% 100%;
-    display:contain; 
-}
 
 
 .tb-arrow{
@@ -157,57 +113,7 @@ h6 {
     font-weight: lighter;
 }
 
-.players{
-    border-bottom: 1px solid grey;
 
-}
-
-.fixtures{
-    width: 100%;
-    margin-bottom: 5%;
-    margin-top: 5%;
-    border-top:4px solid #1d3260;
-    border-bottom:1px solid grey;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey
-}
-
-.image-player{
-    height: 12%;
-    width: 12%;
-    position: relative;
-    left: 2.5%   ;
-}
-.image-player-for{
-    height: 40%;
-    width: 40%;
-    position: relative;
-    left: 16.5px;
-}
-.image-player-cb{
-    height: 93%;
-    width: 93%;
-    position: relative;
-    left: 14px;
-}
-.image-player-cb2{
-    height: 56%;
-    width: 56%;
-    position: relative;
-    left: 17px;
-}
-.image-player-fw{
-    height:26%;
-    width: 26%;
-    position: relative;
-    left: 16px;
-}
-.image-player-ben{
-    height: 56%;
-    width: 56%;
-    position: relative;
-    left: 14px;
-}
 
 .teambox{
     width: 100%;
@@ -247,8 +153,8 @@ h6 {
 }
 
 .image-player-top{
-    height: 80%;
-    width: 80%;
+    height: 25%;
+    width: 50%;
     position: relative;
     left: 55.5px;
     margin-bottom: 3%;

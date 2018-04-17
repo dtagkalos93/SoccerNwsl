@@ -46,7 +46,6 @@ public class deadLIne {
 
             while (resultSet.next()) {
                 String date =resultSet.getString("date");
-                System.out.println(date);
                 if (!new SimpleDateFormat("MM/dd/yyyy").parse(date).before(new Date())) {
                     if(resultSet.getString("fixture").equals("Gameweek 1")){
                         pointsStatus=false;
@@ -55,7 +54,6 @@ public class deadLIne {
                     fix=resultSet.getString("fixture")+" Deadline: ";
                     gameweek=resultSet.getString("fixture");
                     deadline= resultSet.getString("date") + " " + resultSet.getString("time");
-                    System.out.println(deadline);
                     break;
                 }
             }

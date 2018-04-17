@@ -231,7 +231,6 @@ public class findOpp extends HttpServlet {
         String[] defTeamArray = def.split(",");
         for (int i = 0; i < defTeamArray.length; i++) {
             String defTeam = defTeamArray[i].split("-")[1];
-            System.out.println(defTeam);
             if (defTeam.equals("HOU")) {
                 defTeam = "Houston Dash";
 

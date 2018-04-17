@@ -42,9 +42,7 @@ public class fixture extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Fixture");
         String text = request.getParameter("previous");
-        System.out.println(text);
 
         String[] parts = text.split(" ");
 
@@ -140,7 +138,6 @@ public class fixture extends HttpServlet {
             resultSet.close();
 
             s.close();
-            System.out.println(list.size() + "!!!");
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
