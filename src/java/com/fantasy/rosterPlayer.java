@@ -161,8 +161,8 @@ public class rosterPlayer {
             } else if (weeks > 10) {
                 weeks = weeks - 1;
             }
-            if (weeks >= 22) {
-                weeks = 22;
+            if (weeks >= 24) {
+                weeks = 24;
             }
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
