@@ -35,6 +35,11 @@ public class dreamTeam {
     private String bestPlayer="";
 
     public dreamTeam(int fixNo) {
+        System.out.println("Dream Team"+ fixNo);
+        nameList = new ArrayList<>();
+        teamList = new ArrayList<>();
+        posList = new ArrayList<>();
+        scoreList = new ArrayList<>();
         findPlayers(fixNo, "Goalkeeper");
         findMax(1, 0);
         nameList = new ArrayList<>();
@@ -116,7 +121,6 @@ public class dreamTeam {
                 if (scoreList.get(i).toString().equals("-") || scoreList.get(i).toString().equals("")) {
                     continue;
                 }
-                System.out.println("!!!"+scoreList.get(i).toString());
                 if (Integer.parseInt(scoreList.get(i).toString()) > max) {
 
                     max = Integer.parseInt(scoreList.get(i).toString());
@@ -220,7 +224,6 @@ public class dreamTeam {
                 if (scoreList.get(i).toString().equals("-") || scoreList.get(i).toString().equals("")) {
                     continue;
                 }
-                System.out.println("!!!"+scoreList.get(i).toString());
                 if (Integer.parseInt(scoreList.get(i).toString()) > max) {
 
                     max = Integer.parseInt(scoreList.get(i).toString());

@@ -37,6 +37,7 @@ public class findOpp extends HttpServlet {
     private List<String> midlist;
     private List<String> fwdlist;
     private List<String> benlist;
+    private List<String> templist;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -70,7 +71,7 @@ public class findOpp extends HttpServlet {
         deadLIne line = new deadLIne();
         String gw = line.getGameweek();
         int weeks = Integer.parseInt(gw.split(" ")[1]);
-
+        //int weeks = 4;
         String fix = "Gameweek " + weeks;
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -81,14 +82,19 @@ public class findOpp extends HttpServlet {
         midlist = new ArrayList<>();
         fwdlist = new ArrayList<>();
         benlist = new ArrayList<>();
+        templist = new ArrayList<>();
         goalkeeper(gk, fix);
         list.put("gk", gklist);
+        templist = new ArrayList<>();
         defender(def, fix);
         list.put("def", deflist);
+        templist = new ArrayList<>();
         midfielder(mid, fix);
         list.put("mid", midlist);
+        templist = new ArrayList<>();
         forward(fwd, fix);
         list.put("fwd", fwdlist);
+        templist = new ArrayList<>();
         bench(ben, fix);
         list.put("ben", benlist);
 
@@ -147,67 +153,75 @@ public class findOpp extends HttpServlet {
             s.executeQuery(sql);
 
             resultSet = s.getResultSet();
-            if (resultSet.next()) {
+            while (resultSet.next()) {
 
                 if (resultSet.getString("home").equals(gkTeam)) {
                     String awayTeam = resultSet.getString("away");
                     if (awayTeam.equals("Houston Dash")) {
-                        gklist.add("vs HOU");
+                        templist.add("vs HOU");
 
                     } else if (awayTeam.equals("Chicago Red Stars")) {
-                        gklist.add("vs CHI");
+                        templist.add("vs CHI");
                     } else if (awayTeam.equals("Portland Thorns FC")) {
-                        gklist.add("vs POR");
+                        templist.add("vs POR");
                     } else if (awayTeam.equals("Orlando Pride")) {
-                        gklist.add("vs ORL");
+                        templist.add("vs ORL");
                     } else if (awayTeam.equals("Washington Spirit")) {
-                        gklist.add("vs WAS");
+                        templist.add("vs WAS");
                     } else if (awayTeam.equals("North Carolina Courage")) {
-                        gklist.add("vs NC");
+                        templist.add("vs NC");
                     } else if (awayTeam.equals("Seattle Reign FC")) {
-                        gklist.add("vs SEA");
+                        templist.add("vs SEA");
                     } else if (awayTeam.equals("Sky Blue FC")) {
-                        gklist.add("vs NJ");
+                        templist.add("vs NJ");
                     } else if (awayTeam.equals("Utah Royals FC")) {
-                        gklist.add("vs UTA");
+                        templist.add("vs UTA");
                     } else if (awayTeam.equals("Boston Breakers")) {
-                        gklist.add("vs BOS");
+                        templist.add("vs BOS");
                     } else if (awayTeam.equals("FC Kansas City")) {
-                        gklist.add("vs UTA");
+                        templist.add("vs UTA");
                     } else if (awayTeam.equals("-")) {
-                        gklist.add("-");
+                        templist.add("-");
                     }
                 } else {
 
                     String homeTeam = resultSet.getString("home");
                     if (homeTeam.equals("Houston Dash")) {
-                        gklist.add("@ HOU");
+                        templist.add("@ HOU");
 
                     } else if (homeTeam.equals("Chicago Red Stars")) {
-                        gklist.add("@ CHI");
+                        templist.add("@ CHI");
                     } else if (homeTeam.equals("Portland Thorns FC")) {
-                        gklist.add("@ POR");
+                        templist.add("@ POR");
                     } else if (homeTeam.equals("Orlando Pride")) {
-                        gklist.add("@ ORL");
+                        templist.add("@ ORL");
                     } else if (homeTeam.equals("Washington Spirit")) {
-                        gklist.add("@ WAS");
+                        templist.add("@ WAS");
                     } else if (homeTeam.equals("North Carolina Courage")) {
-                        gklist.add("@ NC");
+                        templist.add("@ NC");
                     } else if (homeTeam.equals("Seattle Reign FC")) {
-                        gklist.add("@ SEA");
+                        templist.add("@ SEA");
                     } else if (homeTeam.equals("Sky Blue FC")) {
-                        gklist.add("@ NJ");
+                        templist.add("@ NJ");
                     } else if (homeTeam.equals("Utah Royals FC")) {
-                        gklist.add("@ UTA");
+                        templist.add("@ UTA");
                     } else if (homeTeam.equals("Boston Breakers")) {
-                        gklist.add("@ BOS");
+                        templist.add("@ BOS");
                     } else if (homeTeam.equals("FC Kansas City")) {
-                        gklist.add("@ UTA");
+                        templist.add("@ UTA");
                     }
                 }
 
             }
-
+            String temp = "";
+            for (int i = 0; i < templist.size(); i++) {
+                if (i == (templist.size() - 1)) {
+                    temp = temp + templist.get(i);
+                } else {
+                    temp = temp + templist.get(i) + ", ";
+                }
+            }
+            gklist.add(temp);
             resultSet.close();
 
             s.close();
@@ -268,62 +282,73 @@ public class findOpp extends HttpServlet {
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
-                if (resultSet.next()) {
+                while (resultSet.next()) {
 
                     if (resultSet.getString("home").equals(defTeam)) {
                         String awayTeam = resultSet.getString("away");
                         if (awayTeam.equals("Houston Dash")) {
-                            deflist.add("vs HOU");
+                            templist.add("vs HOU");
 
                         } else if (awayTeam.equals("Chicago Red Stars")) {
-                            deflist.add("vs CHI");
+                            templist.add("vs CHI");
                         } else if (awayTeam.equals("Portland Thorns FC")) {
-                            deflist.add("vs POR");
+                            templist.add("vs POR");
                         } else if (awayTeam.equals("Orlando Pride")) {
-                            deflist.add("vs ORL");
+                            templist.add("vs ORL");
                         } else if (awayTeam.equals("Washington Spirit")) {
-                            deflist.add("vs WAS");
+                            templist.add("vs WAS");
                         } else if (awayTeam.equals("North Carolina Courage")) {
-                            deflist.add("vs NC");
+                            templist.add("vs NC");
                         } else if (awayTeam.equals("Seattle Reign FC")) {
-                            deflist.add("vs SEA");
+                            templist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
-                            deflist.add("vs NJ");
+                            templist.add("vs NJ");
                         } else if (awayTeam.equals("Utah Royals FC")) {
-                            deflist.add("vs UTA");
+                            templist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
-                            deflist.add("vs BOS");
+                            templist.add("vs BOS");
                         } else if (awayTeam.equals("-")) {
-                            deflist.add("-");
+                            templist.add("-");
                         }
                     } else {
 
                         String homeTeam = resultSet.getString("home");
                         if (homeTeam.equals("Houston Dash")) {
-                            deflist.add("@ HOU");
+                            templist.add("@ HOU");
 
                         } else if (homeTeam.equals("Chicago Red Stars")) {
-                            deflist.add("@ CHI");
+                            templist.add("@ CHI");
                         } else if (homeTeam.equals("Portland Thorns FC")) {
-                            deflist.add("@ POR");
+                            templist.add("@ POR");
                         } else if (homeTeam.equals("Orlando Pride")) {
-                            deflist.add("@ ORL");
+                            templist.add("@ ORL");
                         } else if (homeTeam.equals("Washington Spirit")) {
-                            deflist.add("@ WAS");
+                            templist.add("@ WAS");
                         } else if (homeTeam.equals("North Carolina Courage")) {
-                            deflist.add("@ NC");
+                            templist.add("@ NC");
                         } else if (homeTeam.equals("Seattle Reign FC")) {
-                            deflist.add("@ SEA");
+                            templist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
-                            deflist.add("@ NJ");
+                            templist.add("@ NJ");
                         } else if (homeTeam.equals("Utah Royals FC")) {
-                            deflist.add("@ UTA");
+                            templist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
-                            deflist.add("@ BOS");
+                            templist.add("@ BOS");
                         }
                     }
 
                 }
+
+                String temp = "";
+                for (int j = 0; j < templist.size(); j++) {
+                    if (j == (templist.size() - 1)) {
+                        temp = temp + templist.get(j);
+                    } else {
+                        temp = temp + templist.get(j) + ", ";
+                    }
+                }
+                templist = new ArrayList<>();
+                deflist.add(temp);
 
                 resultSet.close();
 
@@ -386,64 +411,73 @@ public class findOpp extends HttpServlet {
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
-                if (resultSet.next()) {
+                while (resultSet.next()) {
 
                     if (resultSet.getString("home").equals(midTeam)) {
                         String awayTeam = resultSet.getString("away");
                         if (awayTeam.equals("Houston Dash")) {
-                            midlist.add("vs HOU");
+                            templist.add("vs HOU");
 
                         } else if (awayTeam.equals("Chicago Red Stars")) {
-                            midlist.add("vs CHI");
+                            templist.add("vs CHI");
                         } else if (awayTeam.equals("Portland Thorns FC")) {
-                            midlist.add("vs POR");
+                            templist.add("vs POR");
                         } else if (awayTeam.equals("Orlando Pride")) {
-                            midlist.add("vs ORL");
+                            templist.add("vs ORL");
                         } else if (awayTeam.equals("Washington Spirit")) {
-                            midlist.add("vs WAS");
+                            templist.add("vs WAS");
                         } else if (awayTeam.equals("North Carolina Courage")) {
-                            midlist.add("vs NC");
+                            templist.add("vs NC");
                         } else if (awayTeam.equals("Seattle Reign FC")) {
-                            midlist.add("vs SEA");
+                            templist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
-                            midlist.add("vs NJ");
+                            templist.add("vs NJ");
                         } else if (awayTeam.equals("Utah Royals FC")) {
-                            midlist.add("vs UTA");
+                            templist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
-                            midlist.add("vs BOS");
+                            templist.add("vs BOS");
                         } else if (awayTeam.equals("-")) {
-                            midlist.add("-");
+                            templist.add("-");
                         }
 
                     } else {
 
                         String homeTeam = resultSet.getString("home");
                         if (homeTeam.equals("Houston Dash")) {
-                            midlist.add("@ HOU");
+                            templist.add("@ HOU");
 
                         } else if (homeTeam.equals("Chicago Red Stars")) {
-                            midlist.add("@ CHI");
+                            templist.add("@ CHI");
                         } else if (homeTeam.equals("Portland Thorns FC")) {
-                            midlist.add("@ POR");
+                            templist.add("@ POR");
                         } else if (homeTeam.equals("Orlando Pride")) {
-                            midlist.add("@ ORL");
+                            templist.add("@ ORL");
                         } else if (homeTeam.equals("Washington Spirit")) {
-                            midlist.add("@ WAS");
+                            templist.add("@ WAS");
                         } else if (homeTeam.equals("North Carolina Courage")) {
-                            midlist.add("@ NC");
+                            templist.add("@ NC");
                         } else if (homeTeam.equals("Seattle Reign FC")) {
-                            midlist.add("@ SEA");
+                            templist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
-                            midlist.add("@ NJ");
+                            templist.add("@ NJ");
                         } else if (homeTeam.equals("Utah Royals FC")) {
-                            midlist.add("@ UTA");
+                            templist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
-                            midlist.add("@ BOS");
+                            templist.add("@ BOS");
                         }
                     }
 
                 }
-
+                String temp = "";
+                for (int j = 0; j < templist.size(); j++) {
+                    if (j == (templist.size() - 1)) {
+                        temp = temp + templist.get(j);
+                    } else {
+                        temp = temp + templist.get(j) + ", ";
+                    }
+                }
+                templist = new ArrayList<>();
+                midlist.add(temp);
                 resultSet.close();
 
                 s.close();
@@ -506,63 +540,72 @@ public class findOpp extends HttpServlet {
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
-                if (resultSet.next()) {
+                while (resultSet.next()) {
 
                     if (resultSet.getString("home").equals(fwdTeam)) {
                         String awayTeam = resultSet.getString("away");
                         if (awayTeam.equals("Houston Dash")) {
-                            fwdlist.add("vs HOU");
+                            templist.add("vs HOU");
 
                         } else if (awayTeam.equals("Chicago Red Stars")) {
-                            fwdlist.add("vs CHI");
+                            templist.add("vs CHI");
                         } else if (awayTeam.equals("Portland Thorns FC")) {
-                            fwdlist.add("vs POR");
+                            templist.add("vs POR");
                         } else if (awayTeam.equals("Orlando Pride")) {
-                            fwdlist.add("vs ORL");
+                            templist.add("vs ORL");
                         } else if (awayTeam.equals("Washington Spirit")) {
-                            fwdlist.add("vs WAS");
+                            templist.add("vs WAS");
                         } else if (awayTeam.equals("North Carolina Courage")) {
-                            fwdlist.add("vs NC");
+                            templist.add("vs NC");
                         } else if (awayTeam.equals("Seattle Reign FC")) {
-                            fwdlist.add("vs SEA");
+                            templist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
-                            fwdlist.add("vs NJ");
+                            templist.add("vs NJ");
                         } else if (awayTeam.equals("Utah Royals FC")) {
-                            fwdlist.add("vs UTA");
+                            templist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
-                            fwdlist.add("vs BOS");
+                            templist.add("vs BOS");
                         } else if (awayTeam.equals("-")) {
-                            fwdlist.add("-");
+                            templist.add("-");
                         }
                     } else {
 
                         String homeTeam = resultSet.getString("home");
                         if (homeTeam.equals("Houston Dash")) {
-                            fwdlist.add("@ HOU");
+                            templist.add("@ HOU");
 
                         } else if (homeTeam.equals("Chicago Red Stars")) {
-                            fwdlist.add("@ CHI");
+                            templist.add("@ CHI");
                         } else if (homeTeam.equals("Portland Thorns FC")) {
-                            fwdlist.add("@ POR");
+                            templist.add("@ POR");
                         } else if (homeTeam.equals("Orlando Pride")) {
-                            fwdlist.add("@ ORL");
+                            templist.add("@ ORL");
                         } else if (homeTeam.equals("Washington Spirit")) {
-                            fwdlist.add("@ WAS");
+                            templist.add("@ WAS");
                         } else if (homeTeam.equals("North Carolina Courage")) {
-                            fwdlist.add("@ NC");
+                            templist.add("@ NC");
                         } else if (homeTeam.equals("Seattle Reign FC")) {
-                            fwdlist.add("@ SEA");
+                            templist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
-                            fwdlist.add("@ NJ");
+                            templist.add("@ NJ");
                         } else if (homeTeam.equals("Utah Royals FC")) {
-                            fwdlist.add("@ UTA");
+                            templist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
-                            fwdlist.add("@ BOS");
+                            templist.add("@ BOS");
                         }
                     }
 
                 }
-
+                String temp = "";
+                for (int j = 0; j < templist.size(); j++) {
+                    if (j == (templist.size() - 1)) {
+                        temp = temp + templist.get(j);
+                    } else {
+                        temp = temp + templist.get(j) + ", ";
+                    }
+                }
+                templist = new ArrayList<>();
+                fwdlist.add(temp);
                 resultSet.close();
 
                 s.close();
@@ -625,63 +668,72 @@ public class findOpp extends HttpServlet {
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
-                if (resultSet.next()) {
+                while (resultSet.next()) {
 
                     if (resultSet.getString("home").equals(benTeam)) {
                         String awayTeam = resultSet.getString("away");
                         if (awayTeam.equals("Houston Dash")) {
-                            benlist.add("vs HOU");
+                            templist.add("vs HOU");
 
                         } else if (awayTeam.equals("Chicago Red Stars")) {
-                            benlist.add("vs CHI");
+                            templist.add("vs CHI");
                         } else if (awayTeam.equals("Portland Thorns FC")) {
-                            benlist.add("vs POR");
+                            templist.add("vs POR");
                         } else if (awayTeam.equals("Orlando Pride")) {
-                            benlist.add("vs ORL");
+                            templist.add("vs ORL");
                         } else if (awayTeam.equals("Washington Spirit")) {
-                            benlist.add("vs WAS");
+                            templist.add("vs WAS");
                         } else if (awayTeam.equals("North Carolina Courage")) {
-                            benlist.add("vs NC");
+                            templist.add("vs NC");
                         } else if (awayTeam.equals("Seattle Reign FC")) {
-                            benlist.add("vs SEA");
+                            templist.add("vs SEA");
                         } else if (awayTeam.equals("Sky Blue FC")) {
-                            benlist.add("vs NJ");
+                            templist.add("vs NJ");
                         } else if (awayTeam.equals("Utah Royals FC")) {
-                            benlist.add("vs UTA");
+                            templist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
-                            benlist.add("vs BOS");
+                            templist.add("vs BOS");
                         } else if (awayTeam.equals("-")) {
-                            benlist.add("-");
+                            templist.add("-");
                         }
                     } else {
 
                         String homeTeam = resultSet.getString("home");
                         if (homeTeam.equals("Houston Dash")) {
-                            benlist.add("@ HOU");
+                            templist.add("@ HOU");
 
                         } else if (homeTeam.equals("Chicago Red Stars")) {
-                            benlist.add("@ CHI");
+                            templist.add("@ CHI");
                         } else if (homeTeam.equals("Portland Thorns FC")) {
-                            benlist.add("@ POR");
+                            templist.add("@ POR");
                         } else if (homeTeam.equals("Orlando Pride")) {
-                            benlist.add("@ ORL");
+                            templist.add("@ ORL");
                         } else if (homeTeam.equals("Washington Spirit")) {
-                            benlist.add("@ WAS");
+                            templist.add("@ WAS");
                         } else if (homeTeam.equals("North Carolina Courage")) {
-                            benlist.add("@ NC");
+                            templist.add("@ NC");
                         } else if (homeTeam.equals("Seattle Reign FC")) {
-                            benlist.add("@ SEA");
+                            templist.add("@ SEA");
                         } else if (homeTeam.equals("Sky Blue FC")) {
-                            benlist.add("@ NJ");
+                            templist.add("@ NJ");
                         } else if (homeTeam.equals("Utah Royals FC")) {
-                            benlist.add("@ UTA");
+                            templist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
-                            benlist.add("@ BOS");
+                            templist.add("@ BOS");
                         }
                     }
 
                 }
-
+                String temp = "";
+                for (int j = 0; j < templist.size(); j++) {
+                    if (j == (templist.size() - 1)) {
+                        temp = temp + templist.get(j);
+                    } else {
+                        temp = temp + templist.get(j) + ", ";
+                    }
+                }
+                templist = new ArrayList<>();
+                benlist.add(temp);
                 resultSet.close();
 
                 s.close();

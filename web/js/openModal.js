@@ -2,6 +2,8 @@
 function openModalGK(i) {
 
     var name = document.getElementById("gkname").textContent;
+    console.log(name + "heresv!");
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -12,6 +14,11 @@ function openModalGK(i) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('gkname')");
+            if (name.contains("'")) {
+                console.log("Here");
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -34,6 +41,10 @@ function openModalCancelGK(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('gkname')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -44,7 +55,7 @@ function openModalCancelGK(i) {
 
 function transModalGK(i) {
 
-    var name = document.getElementById("namegk"+i).textContent;
+    var name = document.getElementById("namegk" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -54,8 +65,11 @@ function transModalGK(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("remove").setAttribute('onclick', "transOut('selGK"+i+"')");
-
+            document.getElementById("remove").setAttribute('onclick', "transOut('selGK" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -66,27 +80,29 @@ function transModalGK(i) {
 
 function transBarModalGK(i) {
 
-    var name = document.getElementById("gkname"+i).textContent;
+    var name = document.getElementById("gkname" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            for(j=1;j<=2;j++){
-                if(document.getElementById("imagegk"+j).src.split("/")[5]=="subsgk.png"){
-                    document.getElementById("add").disabled=false;
+            for (j = 1; j <= 2; j++) {
+                if (document.getElementById("imagegk" + j).src.split("/")[5] == "subsgk.png") {
+                    document.getElementById("add").disabled = false;
                     break;
-                }
-                else{
-                    document.getElementById("add").disabled=true;
+                } else {
+                    document.getElementById("add").disabled = true;
                 }
             }
-            
+
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("add").setAttribute('onclick', "addTransfer('gk"+j+"')");
-
+            document.getElementById("add").setAttribute('onclick', "addTransfer('gk" + j + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
         }
@@ -108,7 +124,10 @@ function openModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('defname" + i + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -129,7 +148,10 @@ function transModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selDEF" + i + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -140,28 +162,31 @@ function transModalDEF(i) {
 
 function transBarModalDEF(i) {
 
-    var name = document.getElementById("namedef"+i).textContent;
+    var name = document.getElementById("namedef" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            
-            for(j=1;j<=5;j++){
-                if(document.getElementById("defimage"+j).src.split("/")[5]=="subs.png"){
+
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("defimage" + j).src.split("/")[5] == "subs.png") {
                     console.log("here");
-                    document.getElementById("add").disabled=false;
+                    document.getElementById("add").disabled = false;
                     break;
-                }
-                else{
-                    document.getElementById("add").disabled=true;
+                } else {
+                    document.getElementById("add").disabled = true;
                 }
             }
-            
+
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("add").setAttribute('onclick', "addTransfer('def"+i+"')");
+            document.getElementById("add").setAttribute('onclick', "addTransfer('def" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
 
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
@@ -185,6 +210,10 @@ function openModalCancelDEF(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('defname" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -205,6 +234,10 @@ function openModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('midname" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
@@ -227,7 +260,10 @@ function transModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selMID" + i + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -239,7 +275,7 @@ function transModalMID(i) {
 
 function transBarModalMID(i) {
 
-    var name = document.getElementById("namemid"+i).textContent;
+    var name = document.getElementById("namemid" + i).textContent;
     console.log(name);
     var xhttp;
     xhttp = new XMLHttpRequest();
@@ -247,21 +283,23 @@ function transBarModalMID(i) {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            for(j=1;j<=5;j++){
-                console.log(document.getElementById("midimage"+j).src.split("/")[5]);
-                if(document.getElementById("midimage"+j).src.split("/")[5]=="subs.png"){
-                    document.getElementById("add").disabled=false;
+            for (j = 1; j <= 5; j++) {
+                console.log(document.getElementById("midimage" + j).src.split("/")[5]);
+                if (document.getElementById("midimage" + j).src.split("/")[5] == "subs.png") {
+                    document.getElementById("add").disabled = false;
                     break
-                }
-                else{
-                    document.getElementById("add").disabled=true;
+                } else {
+                    document.getElementById("add").disabled = true;
                 }
             }
-            
+
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("add").setAttribute('onclick', "addTransfer('mid"+i+"')");
-
+            document.getElementById("add").setAttribute('onclick', "addTransfer('mid" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
         }
@@ -283,6 +321,10 @@ function openModalCancelMID(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('midname" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -303,7 +345,10 @@ function openModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('fwdname" + i + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
@@ -324,7 +369,10 @@ function transModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selFWD" + i + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
@@ -336,26 +384,29 @@ function transModalFWD(i) {
 
 function transBarModalFWD(i) {
 
-    var name = document.getElementById("namefwd"+i).textContent;
+    var name = document.getElementById("namefwd" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            for(j=1;j<=3;j++){
-                if(document.getElementById("fwdimage"+j).src.split("/")[5]=="subs.png"){
-                    document.getElementById("add").disabled=false;
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("fwdimage" + j).src.split("/")[5] == "subs.png") {
+                    document.getElementById("add").disabled = false;
                     break
-                }
-                else{
-                    document.getElementById("add").disabled=true;
+                } else {
+                    document.getElementById("add").disabled = true;
                 }
             }
-            
+
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("add").setAttribute('onclick', "addTransfer('fwd"+i+"')");
+            document.getElementById("add").setAttribute('onclick', "addTransfer('fwd" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
 
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
@@ -379,6 +430,10 @@ function openModalCancelFWD(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('fwdname" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -398,8 +453,11 @@ function openModalBEN(i) {
             var jsonResponse = JSON.parse(data);
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben"+i+"')");
-            
+            document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -424,6 +482,10 @@ function openModalcancelBEN(i) {
 
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('ben" + i + "')");
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -462,14 +524,11 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
     } else if (playersIDafter == 'ben2' || playersIDafter == 'ben3' || playersIDafter == 'ben4') {
         var name = document.getElementById("benname" + playersIDafter.split('ben')[1]).textContent;
         console.log(name);
-    }
-    else if (playersIDafter.indexOf("selDEF") != -1){
+    } else if (playersIDafter.indexOf("selDEF") != -1) {
         var name = document.getElementById("defname" + playersIDafter.split('selDEF')[1]).textContent;
-    }
-    else if (playersIDafter.indexOf("selMID") != -1){
+    } else if (playersIDafter.indexOf("selMID") != -1) {
         var name = document.getElementById("midname" + playersIDafter.split('selMID')[1]).textContent;
-    }
-    else if (playersIDafter.indexOf("selFWD") != -1){
+    } else if (playersIDafter.indexOf("selFWD") != -1) {
         var name = document.getElementById("fwdname" + playersIDafter.split('selFWD')[1]).textContent;
     }
     var xhttp;
@@ -482,7 +541,10 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "finalChange('" + playersIDsub + "','" + playersIDafter + "')");
-
+            if (name.contains("'")) {
+                var nameArray = name.split("'");
+                name = nameArray[0] + "\'" + nameArray[1];
+            }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -502,7 +564,7 @@ function openInfo(name) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             console.log(document.getElementById("nameimage"));
-            document.getElementById("nameimage").src="img/players/"+name.toLowerCase()+".png";
+            document.getElementById("nameimage").src = "img/players/" + name.toLowerCase() + ".png";
             document.getElementById("nameinfo").innerHTML = jsonResponse[0];
             document.getElementById("posinfo").innerHTML = jsonResponse[1];
             document.getElementById("teaminfo").innerHTML = jsonResponse[2];
@@ -529,7 +591,7 @@ function openInfo(name) {
                 var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo").src = "img/" + image;
-            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1])-1);
+            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1]) - 1);
             document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
             document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
             document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];
@@ -598,7 +660,7 @@ function setInfo(name, prefix) {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            document.getElementById("nameimage" + prefix).src="img/players/"+name.toLowerCase()+".png";
+            document.getElementById("nameimage" + prefix).src = "img/players/" + name.toLowerCase() + ".png";
             document.getElementById("nameinfo" + prefix).innerHTML = jsonResponse[0];
             document.getElementById("posinfo" + prefix).innerHTML = jsonResponse[1];
             document.getElementById("teaminfo" + prefix).innerHTML = jsonResponse[2];
@@ -649,6 +711,7 @@ function opponent(gk, def, mid, fwd, ben) {
             var jsonResponse = JSON.parse(data);
             document.getElementById("oppgk").innerHTML = jsonResponse["gk"][0];
             var defTeam = jsonResponse["def"];
+            console.log(defTeam);
             if (defTeam.length == 4) {
                 var j = 0;
                 for (i = 1; i <= 5; i++) {

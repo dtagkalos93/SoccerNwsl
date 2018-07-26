@@ -2870,11 +2870,6 @@ function openModalGK(i) {
     var team = document.getElementById("gkteam" + i).textContent;
     image = image.split("/")[5];
 
-
-
-
-
-
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -2890,6 +2885,16 @@ function openModalGK(i) {
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
 
             document.getElementById("playerTeam").innerHTML = team;
+
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -2925,6 +2930,15 @@ function openModalDEF(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'")) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -2960,6 +2974,15 @@ function openModalMID(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'")) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -2990,6 +3013,15 @@ function openModalFWD(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'")) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -3612,7 +3644,9 @@ function removePlayer() {
         document.getElementById("defprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
-        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
+        var price = playerPrice.split("$")[1].split("m")[0];
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
+        
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Midfielder') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3634,7 +3668,10 @@ function removePlayer() {
         document.getElementById("midprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
-        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
+        var price = playerPrice.split("$")[1].split("m")[0];
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
+        
+        
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Forward') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3657,7 +3694,8 @@ function removePlayer() {
         document.getElementById("fwdprice" + document.getElementById("rmvplayerNo").textContent).innerHTML = "";
         console.log(playerPrice);
         var remainPrice = document.getElementById("remainPrice").textContent;
-        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
+        var price = playerPrice.split("$")[1].split("m")[0];
+        document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
     }
 
 
@@ -3677,9 +3715,18 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
             document.getElementById("posError").style.display = 'none';
             document.getElementById("enterError").style.display = '';
         } else {
+            var name = document.getElementById("namegk" + i).textContent;
 
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             counter = eval(counter) + 1;
-            enterTeam = enterTeam + document.getElementById("namegk" + i).textContent + "-" + document.getElementById("team" + (i)).textContent + ",";
+            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i)).textContent + ",";
 
 
 
@@ -3693,7 +3740,16 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
             document.getElementById("enterError").style.display = '';
         } else {
             counter = eval(counter) + 1;
-            enterTeam = enterTeam + document.getElementById("defname" + i).textContent + "-" + document.getElementById("team" + (i + 2)).textContent + ",";
+            var name = document.getElementById("defname" + i).textContent;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 2)).textContent + ",";
 
         }
     }
@@ -3705,7 +3761,16 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
             document.getElementById("enterError").style.display = '';
         } else {
             counter = eval(counter) + 1;
-            enterTeam = enterTeam + document.getElementById("midname" + i).textContent + "-" + document.getElementById("team" + (i + 7)).textContent + ",";
+            var name = document.getElementById("midname" + i).textContent;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 7)).textContent + ",";
 
         }
     }
@@ -3718,10 +3783,28 @@ $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" eve
         } else {
             if (i == 3) {
                 counter = eval(counter) + 1;
-                enterTeam = enterTeam + document.getElementById("fwdname" + i).textContent + "-" + document.getElementById("team" + (i + 12)).textContent;
+                var name = document.getElementById("fwdname" + i).textContent;
+                if (name.indexOf("'") == 1) {
+
+                    var nameArray = name.split("'");
+
+                    name = nameArray[0] + "\\'" + nameArray[1];
+                    console.log(name);
+
+                }
+                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent;
             } else {
                 counter = eval(counter) + 1;
-                enterTeam = enterTeam + document.getElementById("fwdname" + i).textContent + "-" + document.getElementById("team" + (i + 12)).textContent + ",";
+                var name = document.getElementById("fwdname" + i).textContent;
+                if (name.indexOf("'") == 1) {
+
+                    var nameArray = name.split("'");
+
+                    name = nameArray[0] + "\\'" + nameArray[1];
+                    console.log(name);
+
+                }
+                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent + ",";
             }
 
 
@@ -3967,6 +4050,15 @@ function openInfo(name) {
             document.getElementById("heightinfo").innerHTML = jsonResponse[8];
             document.getElementById("collegeinfo").innerHTML = jsonResponse[9];
             document.getElementById("formerinfo").innerHTML = jsonResponse[10];
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
             document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
             document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
             $('#players').modal('hide');
@@ -4012,6 +4104,14 @@ function openFixture(name, team) {
                 i = eval(i) + 1;
 
             }
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+
+            }
+
 
             document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
             $('#information').modal('hide');
@@ -4068,6 +4168,15 @@ function setInfo(name, prefix) {
 
 function openStatistic(name) {
     setInfo(name, "Stats");
+    if (name.indexOf("'") == 1) {
+
+        var nameArray = name.split("'");
+
+        name = nameArray[0] + "\\'" + nameArray[1];
+        console.log(name);
+
+    }
+
     document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
     $('#information').modal('hide');
     $('#statisticsModal').modal({show: 'true'});

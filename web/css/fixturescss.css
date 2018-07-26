@@ -95,8 +95,8 @@ h6 {
 }
 
 .fixturebtn{
-    background-color: #696969; 
-    color: #fff;
+    background-color: #fff; 
+    color: #696969;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
@@ -106,15 +106,21 @@ h6 {
 }
 
 .fixturebtn:hover{
-    background-color: #fff;
-    color: #696969;
+    background-color: #696969;
+    color: #fff;
     text-decoration: none;
+}
+
+.fixturebtn:disabled{
+    background-color: #d6d1d1;
+    border: 1px solid #d6d1d1;
+    color:white;    
 }
 
 .fixtures{
     width: 100%;
     margin-bottom: 5%;
-    border-top:3px solid #1d3260;
+    border-top:3px solid #050424;
     padding-right: 0px;
     padding-left: 0px;
 }

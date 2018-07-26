@@ -113,7 +113,7 @@ h6 {
     font-family: Century Gothic;
     font-size: 14px; 
     font-weight: bold;
-    padding: 0.8%;
+    padding: 9px;
 }
 
 .nextbtn{
@@ -129,7 +129,7 @@ h6 {
     font-family: Century Gothic;
     font-size: 14px; 
     font-weight: bold;
-    padding: 0.8%;
+    padding: 9px;
 }
 
 .out-head{
@@ -159,6 +159,12 @@ h6 {
     border-right: 1px solid #e8e4e4;
     padding-left: 0;
     padding-right: 0;
+}
+
+.fixturebtn:disabled{
+    background-color: #d6d1d1;
+    border: 1px solid #d6d1d1;
+    color:white;
 }
 
 .fixturebtn{

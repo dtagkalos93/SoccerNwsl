@@ -44,7 +44,7 @@ function topPlayers(top) {
                 document.getElementById("topgwimage" + pl).src = "img/spirit1.png";
             }
         } else if (team == "North Carolina Courage") {
-            if (pos.equals("Goalkeeper")) {
+            if ( pos=="Goalkeeper" ) {
                 document.getElementById("topgwimage" + pl).src = "img/couragegk.png";
             } else {
                 document.getElementById("topgwimage" + pl).src = "img/courage.png";

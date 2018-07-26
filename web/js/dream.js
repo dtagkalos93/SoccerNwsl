@@ -81,32 +81,32 @@ function defenceDream(def, defNo) {
 
             document.getElementById("defimage" + i).style.marginLeft = "";
 
-            if (team == ' Chicago Red Stars') {
-                var teamName = ' Chicago Red Stars';
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
+                var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
-                var teamName = ' Houston Dash';
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
+                var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == 'Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == 'Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -152,32 +152,32 @@ function defenceDream(def, defNo) {
             document.getElementById("ptsdef" + i).innerHTML = defPlayer[j].split("-")[2];
 
             document.getElementById("defimage" + i).style.marginLeft = "27px";
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -215,32 +215,32 @@ function defenceDream(def, defNo) {
             document.getElementById("ptsdef" + i).innerHTML = defPlayer[j].split("-")[2];
 
             document.getElementById("defimage" + i).style.marginLeft = "";
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -279,32 +279,32 @@ function midfielderDream(mid, midNo) {
 
             document.getElementById("midimage" + i).style.marginLeft = "";
 
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -343,32 +343,32 @@ function midfielderDream(mid, midNo) {
             document.getElementById("ptsmid" + i).innerHTML = midPlayer[j].split("-")[2];
 
             document.getElementById("midimage" + i).style.marginLeft = "27px";
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -402,32 +402,32 @@ function midfielderDream(mid, midNo) {
             document.getElementById("ptsmid" + i).innerHTML = midPlayer[j].split("-")[2];
 
             document.getElementById("midimage" + i).style.marginLeft = "";
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -466,32 +466,32 @@ function forwardDream(fwd, fwdNo) {
             var team = fwdPlayer[j].split("-")[1];
             document.getElementById("fwdname" + i).innerHTML = name;
             document.getElementById("ptsfwd" + i).innerHTML = fwdPlayer[j].split("-")[2];
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -530,32 +530,32 @@ function forwardDream(fwd, fwdNo) {
             document.getElementById("fwdname" + i).innerHTML = name;
             document.getElementById("ptsfwd" + i).innerHTML = fwdPlayer[j].split("-")[2];
 
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -596,32 +596,32 @@ function forwardDream(fwd, fwdNo) {
             document.getElementById("fwdname" + i).innerHTML = name;
             document.getElementById("ptsfwd" + i).innerHTML = fwdPlayer[j].split("-")[2];
 
-            if (team == ' Chicago Red Stars') {
+            if (team == ' Chicago Red Stars' || team == 'Chicago Red Stars') {
                 var teamName = 'Chicago Red Stars';
                 var image = "stars1.png";
-            } else if (team == ' Houston Dash') {
+            } else if (team == ' Houston Dash' || team == 'Houston Dash') {
                 var teamName = 'Houston Dash';
 
                 var image = "dash1.png";
-            } else if (team == ' North Carolina Courage') {
+            } else if (team == ' North Carolina Courage' || team == 'North Carolina Courage') {
                 var teamName = 'North Carolina Courage';
                 var image = "courage.png";
-            } else if (team == ' Orlando Pride') {
+            } else if (team == ' Orlando Pride' || team == 'Orlando Pride') {
                 var teamName = 'Orlando Pride';
 
                 var image = "pride1.png";
-            } else if (team == ' Portland Thorns FC') {
+            } else if (team == ' Portland Thorns FC' || team == 'Portland Thorns FC') {
                 var teamName = 'Portland Thorns FC';
                 var image = "thorns1.png";
-            } else if (team == ' Seattle Reign FC') {
+            } else if (team == ' Seattle Reign FC' || team == 'Seattle Reign FC') {
                 var teamName = 'Seattle Reign FC';
                 var image = "reign1.png";
-            } else if (team == ' Sky Blue FC') {
+            } else if (team == ' Sky Blue FC' || team == 'Sky Blue FC') {
                 var teamName = 'Sky Blue FC';
                 var image = "skyblue1.png";
-            } else if (team == ' Washington Spirit') {
+            } else if (team == ' Washington Spirit' || team == 'Washington Spirit') {
                 var image = "spirit1.png";
-            } else if (team == ' Utah Royals FC') {
+            } else if (team == ' Utah Royals FC' || team == 'Utah Royals FC') {
                 var teamName = 'Utah Royals FC';
                 var image = "utahjr.png";
             }
@@ -708,47 +708,47 @@ function bestPlayer(player) {
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/houstongk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/dash1.png";
+            document.getElementById("bestImage").src = "img/dash1.png";
         }
     } else if (team == "Chicago Red Stars") {
 
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/chicagogk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/stars1.png";
+            document.getElementById("bestImage").src = "img/stars1.png";
         }
     } else if (team == "Portland Thorns FC") {
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/thornsgk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/thorns1.png";
+            document.getElementById("bestImage").src = "img/thorns1.png";
         }
     } else if (team == "Orlando Pride") {
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/orlandogk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/pride1.png";
+            document.getElementById("bestImage").src = "img/pride1.png";
         }
     } else if (team == "Washington Spirit") {
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/spiritgk.png";
         } else {
 
-            document.getElementById("bestImage" ).src = "img/spirit1.png";
+            document.getElementById("bestImage").src = "img/spirit1.png";
         }
     } else if (team == "North Carolina Courage") {
 
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/couragegk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/courage.png";
+            document.getElementById("bestImage").src = "img/courage.png";
         }
     } else if (team == "Seattle Reign FC") {
 
         if (pos == "Goalkeeper") {
             document.getElementById("bestImage").src = "img/seattlegk.png";
         } else {
-            document.getElementById("bestImage" ).src = "img/reign1.png";
+            document.getElementById("bestImage").src = "img/reign1.png";
         }
     } else if (team == "Sky Blue FC") {
 
@@ -768,4 +768,111 @@ function bestPlayer(player) {
     document.getElementById("bestName").innerHTML = name;
     document.getElementById("bestteam").innerHTML = team;
     document.getElementById("bestpts").innerHTML = pts;
+}
+
+function dreamTeamBtn(team, name, pos, pts) {
+
+    var pl = 0;
+    document.getElementById("gkname").innerHTML = name[0];
+    document.getElementById("ptsgk").innerHTML = pts[0];
+    setDreamBadge(pl, pos[0], team[0]);
+    var tempPlayers = "";
+    for (i = 1; i < pos.length; i++) {
+
+        if (pos[i] == 'Defender') {
+            tempPlayers = tempPlayers + name[i] + "-" + team[i] + "-" + pts[i] + ",";
+            pl = eval(pl) + 1;
+        }
+    }
+    defenceDream(tempPlayers, pl);
+    pl = 0;
+    tempPlayers = "";
+    for (i = 1; i < pos.length; i++) {
+        if (pos[i] == 'Midfielder') {
+            tempPlayers = tempPlayers + name[i] + "-" + team[i] + "-" + pts[i] + ",";
+            pl = eval(pl) + 1;
+        }
+    }
+    midfielderDream(tempPlayers, pl);
+    pl = 0;
+    tempPlayers = "";
+    for (i = 1; i < pos.length; i++) {
+        if (pos[i] == 'Forward') {
+            tempPlayers = tempPlayers + name[i] + "-" + team[i] + "-" + pts[i] + ",";
+            pl = eval(pl) + 1;
+        }
+    }
+    forwardDream(tempPlayers, pl);
+}
+
+
+function prevDreamfun() {
+    var prev = document.getElementById("prevDream").value;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse);
+            dreamTeamBtn(jsonResponse["team"], jsonResponse["name"], jsonResponse["pos"], jsonResponse["score"]);
+            document.getElementById("gameweekDream").innerHTML = "Gameweek" + prev;
+            var other = jsonResponse["other"];
+            document.getElementById("totalScoreDream").innerHTML = other[4];
+            bestPlayer(other[3]);
+            document.getElementById("prevDream").value = other[0];
+            if (other[0] == "0") {
+                document.getElementById("prevDream").disabled = true;
+            }
+            else{
+                document.getElementById("prevDream").disabled = false;
+            }
+            document.getElementById("nextDream").value = other[1];
+            if (other[1] == other[2]) {
+                document.getElementById("nextDream").disabled = true;
+
+            } else {
+                document.getElementById("nextDream").disabled = false;
+
+            }
+        }
+    };
+    xhttp.open("GET", "dream?fixNo=" + prev, true);
+    xhttp.send();
+}
+
+
+function nextDreamfun() {
+    var prev = document.getElementById("nextDream").value;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            console.log(jsonResponse);
+            dreamTeamBtn(jsonResponse["team"], jsonResponse["name"], jsonResponse["pos"], jsonResponse["score"]);
+            document.getElementById("gameweekDream").innerHTML = "Gameweek" + prev;
+            var other = jsonResponse["other"];
+            document.getElementById("totalScoreDream").innerHTML = other[4];
+            bestPlayer(other[3]);
+            document.getElementById("prevDream").value = other[0];
+            if (other[0] == "0") {
+                document.getElementById("prevDream").disabled = true;
+            }
+            else{
+                document.getElementById("prevDream").disabled = false;
+            }
+            document.getElementById("nextDream").value = other[1];
+            if (other[1] == other[2]) {
+                document.getElementById("nextDream").disabled = true;
+
+            } else {
+                document.getElementById("nextDream").disabled = false;
+
+            }
+        }
+    };
+    xhttp.open("GET", "dream?fixNo=" + prev, true);
+    xhttp.send();
 }

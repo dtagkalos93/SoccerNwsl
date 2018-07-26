@@ -92,6 +92,10 @@
         <servlet-name>transfers</servlet-name>
         <servlet-class>com.fantasy.transfers</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>dream</servlet-name>
+        <servlet-class>com.fantasy.dream</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>transfers</servlet-name>
         <url-pattern>/transfers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dream</servlet-name>
+        <url-pattern>/dream</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
