@@ -67,8 +67,10 @@ public class dreamTeam {
         createDream();
         for (int i = 0; i < nameList.size(); i++) {
             
-            
+            if(scoreList.get(i).toString().equals(" "))
+                continue;
             totalScore=totalScore+Integer.parseInt(scoreList.get(i).toString());
+            
         }
         bestPlayer();
     }

@@ -14,10 +14,13 @@ function openModalGK(i) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('gkname')");
-            if (name.contains("'")) {
-                console.log("Here");
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
@@ -41,9 +44,13 @@ function openModalCancelGK(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('gkname')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
@@ -66,9 +73,13 @@ function transModalGK(i) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("remove").setAttribute('onclick', "transOut('selGK" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -99,9 +110,13 @@ function transBarModalGK(i) {
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("add").setAttribute('onclick', "addTransfer('gk" + j + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
@@ -124,9 +139,13 @@ function openModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('defname" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -148,9 +167,13 @@ function transModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selDEF" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -183,9 +206,13 @@ function transBarModalDEF(i) {
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("add").setAttribute('onclick', "addTransfer('def" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
 
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
@@ -210,9 +237,13 @@ function openModalCancelDEF(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('defname" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
@@ -234,11 +265,14 @@ function openModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('midname" + i + "')");
-            if (name.contains("'")) {
-                var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
-            }
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -260,9 +294,13 @@ function transModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selMID" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
@@ -296,9 +334,13 @@ function transBarModalMID(i) {
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("add").setAttribute('onclick', "addTransfer('mid" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersSide').modal({show: 'true'});
@@ -321,9 +363,13 @@ function openModalCancelMID(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('midname" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
@@ -345,9 +391,13 @@ function openModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('fwdname" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
@@ -369,9 +419,13 @@ function transModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selFWD" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
@@ -403,9 +457,13 @@ function transBarModalFWD(i) {
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("add").setAttribute('onclick', "addTransfer('fwd" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
 
             document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
@@ -430,9 +488,13 @@ function openModalCancelFWD(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('fwdname" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
@@ -454,9 +516,13 @@ function openModalBEN(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
@@ -482,9 +548,13 @@ function openModalcancelBEN(i) {
 
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('ben" + i + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
@@ -541,9 +611,13 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "finalChange('" + playersIDsub + "','" + playersIDafter + "')");
-            if (name.contains("'")) {
+            if (name.indexOf("'") == 1) {
+
                 var nameArray = name.split("'");
-                name = nameArray[0] + "\'" + nameArray[1];
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
             }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
@@ -602,10 +676,13 @@ function openInfo(name) {
             document.getElementById("formerinfo").innerHTML = jsonResponse[10];
             document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
             document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
+
             $('#playersInfo').modal('hide');
             $('#players').modal('hide');
             $('#fixtureModal').modal('hide');
             $('#statisticsModal').modal('hide');
+            $('#removePlayer').modal('hide'); 
+
             $('#information').modal({show: 'true'});
         }
     };
@@ -622,21 +699,14 @@ function openFixture(name, team) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var i = 1;
-            console.log(jsonResponse.length);
+            console.log(jsonResponse);
             for (j = 0; j < jsonResponse.length; j = j + 4) {
-                if (j > 0 && jsonResponse[j] == jsonResponse[j + 4]) {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j] + "," + jsonResponse[j + 4];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
-                    j = eval(j) + 4;
 
-                } else {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
-                }
+                document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
+                document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
+                document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
+                document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
+
 
 
                 i = eval(i) + 1;
@@ -696,9 +766,45 @@ function setInfo(name, prefix) {
 
 function openStatistic(name) {
     setInfo(name, "Stats");
-    document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
-    $('#information').modal('hide');
-    $('#statisticsModal').modal({show: 'true'});
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            var i = 1;
+            console.log(jsonResponse);
+            for (j = 0; j < jsonResponse.length; j = j + 15) {
+                document.getElementById("gw" + i).innerHTML = i;
+                document.getElementById("opp" + i).innerHTML = jsonResponse[j];
+                document.getElementById("pts" + i).innerHTML = jsonResponse[j + 1];
+                document.getElementById("min" + i).innerHTML = jsonResponse[j + 2];
+                document.getElementById("goal" + i).innerHTML = jsonResponse[j + 3];
+                document.getElementById("assist" + i).innerHTML = jsonResponse[j + 4];
+                document.getElementById("cleanSheet" + i).innerHTML = jsonResponse[j + 5];
+                document.getElementById("own" + i).innerHTML = jsonResponse[j + 6];
+                document.getElementById("goalCon" + i).innerHTML = jsonResponse[j + 7];
+                document.getElementById("pkCom" + i).innerHTML = jsonResponse[j + 8];
+                document.getElementById("pkEarn" + i).innerHTML = jsonResponse[j + 9];
+                document.getElementById("pkSave" + i).innerHTML = jsonResponse[j + 10];
+                document.getElementById("pkMiss" + i).innerHTML = jsonResponse[j + 11];
+                document.getElementById("yellow" + i).innerHTML = jsonResponse[j + 12];
+                document.getElementById("red" + i).innerHTML = jsonResponse[j + 13];
+                document.getElementById("save" + i).innerHTML = jsonResponse[j + 14];
+
+
+                i = eval(i) + 1;
+
+            }
+
+            document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#information').modal('hide');
+            $('#statisticsModal').modal({show: 'true'});
+
+        }
+    };
+    xhttp.open("GET", "findStatistic?name=" + name, true);
+    xhttp.send();
 }
 
 function opponent(gk, def, mid, fwd, ben) {

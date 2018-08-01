@@ -3,9 +3,10 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
     var selectCat = document.getElementById('categorySelection').value;
     $.get("playersData", {page: page, cat: selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
         document.getElementById("nextPlayers").value = responseText[1];
+        console.log(responseText);
         document.getElementById("prevPlayers").value = responseText[0];
         document.getElementById("page").innerHTML = responseText[1] - 1;
-        if (responseText[1] == 12) {
+        if (responseText[1] == 11) {
             document.getElementById("nextPlayers").disabled = true;
             document.getElementById("end").disabled = true;
         }
@@ -80,25 +81,15 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
                 document.getElementById("gk2").style.opacity = '1';
             }
         }
-        if (responseText[1] - 1 == 1) {
-            var length = 8;
-            document.getElementById("def6").style.display = "";
-            document.getElementById("def7").style.display = "";
-            document.getElementById("def8").style.display = "";
-        } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
-            var length = 7;
-            document.getElementById("def6").style.display = "";
-            document.getElementById("def7").style.display = "";
-            document.getElementById("def8").style.display = "none";
-        } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if ((responseText[1] - 1) <= 9) {
             var length = 6;
             document.getElementById("def6").style.display = "";
             document.getElementById("def7").style.display = "none";
             document.getElementById("def8").style.display = "none";
-        } else if (responseText[1] - 1 == 11) {
-            var length = 5;
-            document.getElementById("def6").style.display = "none";
-            document.getElementById("def7").style.display = "none";
+        } else {
+            var length = 7;
+            document.getElementById("def6").style.display = "";
+            document.getElementById("def7").style.display = "";
             document.getElementById("def8").style.display = "none";
         }
         var k = 1;
@@ -141,21 +132,15 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             k = k + 1;
         }
 
-        if (responseText[1] - 1 == 1) {
-            var length2 = 5;
-            document.getElementById("mid3").style.display = "";
-            document.getElementById("mid4").style.display = "";
-            document.getElementById("mid5").style.display = "";
-            document.getElementById("mid6").style.display = "none";
-        } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3 || responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if (responseText[1] - 1 <= 9) {
             var length2 = 6;
             document.getElementById("mid3").style.display = "";
             document.getElementById("mid4").style.display = "";
             document.getElementById("mid5").style.display = "";
             document.getElementById("mid6").style.display = "";
-        } else if (responseText[1] - 1 == 11) {
-            var length2 = 2;
-            document.getElementById("mid3").style.display = "none";
+        } else if (responseText[1] - 1 == 10) {
+            var length2 = 3;
+            document.getElementById("mid3").style.display = "";
             document.getElementById("mid4").style.display = "none";
             document.getElementById("mid5").style.display = "none";
             document.getElementById("mid6").style.display = "none";
@@ -200,24 +185,12 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             k = k + 1;
         }
 
-        if (responseText[1] - 1 == 1 || responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
-            var length3 = 5;
-            document.getElementById("fwd3").style.display = "";
-            document.getElementById("fwd4").style.display = "";
-            document.getElementById("fwd5").style.display = "";
-            document.getElementById("fwd6").style.display = "none";
-        } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if (responseText[1] - 1 <= 10) {
             var length3 = 6;
             document.getElementById("fwd3").style.display = "";
             document.getElementById("fwd4").style.display = "";
             document.getElementById("fwd5").style.display = "";
             document.getElementById("fwd6").style.display = "";
-        } else if (responseText[1] - 1 == 11) {
-            var length3 = 2;
-            document.getElementById("fwd3").style.display = "none";
-            document.getElementById("fwd4").style.display = "none";
-            document.getElementById("fwd5").style.display = "none";
-            document.getElementById("fwd6").style.display = "none";
         }
         var k = 1;
         for (i = (length * 6) + (length2 * 6) + 14; i < (length3 * 6) + (length2 * 6) + (length * 6) + 14; i = i + 6) {
@@ -258,8 +231,8 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
             }
             k = k + 1;
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+        //checkNoDisableSide();
     });
 });
 
@@ -268,11 +241,11 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
     var page = $('#end').val();
     var selectCat = document.getElementById('categorySelection').value;
     $.get("playersData", {page: page, cat: selectCat}, function (responseText) {   // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response text...
-        document.getElementById("page").innerHTML = 11;
-        if (responseText[1] == 12) {
+        document.getElementById("page").innerHTML = 10;
+        if (responseText[1] == 11) {
             document.getElementById("nextPlayers").disabled = true;
             document.getElementById("end").disabled = true;
-            document.getElementById("prevPlayers").value = 10;
+            document.getElementById("prevPlayers").value = 9;
             document.getElementById("prevPlayers").disabled = false;
             document.getElementById("start").disabled = false;
         }
@@ -345,11 +318,11 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             }
 
         }
-        document.getElementById("def6").style.display = "none";
-        document.getElementById("def7").style.display = "none";
+        document.getElementById("def6").style.display = "";
+        document.getElementById("def7").style.display = "";
         document.getElementById("def8").style.display = "none";
         var k = 1;
-        for (i = 14; i < (6 * 5) + 14; i = i + 6) {
+        for (i = 14; i < (6 * 7) + 14; i = i + 6) {
 
             document.getElementById("namedef" + k).innerHTML = responseText[i];
             document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
@@ -387,13 +360,13 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             }
             k = k + 1;
         }
-        var length2 = 2;
-        document.getElementById("mid3").style.display = "none";
+        var length2 = 3;
+        document.getElementById("mid3").style.display = "";
         document.getElementById("mid4").style.display = "none";
         document.getElementById("mid5").style.display = "none";
         document.getElementById("mid6").style.display = "none";
         var k = 1;
-        for (i = (6 * 5) + 14; i < (length2 * 6) + (6 * 5) + 14; i = i + 6) {
+        for (i = (6 * 7) + 14; i < (length2 * 6) + (6 * 7) + 14; i = i + 6) {
 
             document.getElementById("namemid" + k).innerHTML = responseText[i];
             document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
@@ -431,14 +404,14 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             }
             k = k + 1;
         }
-        var length3 = 2;
-        document.getElementById("fwd3").style.display = "none";
-        document.getElementById("fwd4").style.display = "none";
-        document.getElementById("fwd5").style.display = "none";
-        document.getElementById("fwd6").style.display = "none";
+        var length3 = 6;
+        document.getElementById("fwd3").style.display = "";
+        document.getElementById("fwd4").style.display = "";
+        document.getElementById("fwd5").style.display = "";
+        document.getElementById("fwd6").style.display = "";
         var k = 1;
         console.log("i" + responseText[68]);
-        for (i = (6 * 2) + (6 * 5) + 14; i < (length3 * 6) + (6 * 5) + (6 * 2) + 14; i = i + 6) {
+        for (i = (6 * 3) + (6 * 7) + 14; i < (length3 * 6) + (6 * 7) + (6 * 3) + 14; i = i + 6) {
 
             document.getElementById("namefwd" + k).innerHTML = responseText[i];
             document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
@@ -476,8 +449,8 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
             }
             k = k + 1;
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+        //checkNoDisableSide();
     });
 });
 
@@ -564,10 +537,10 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
         }
         document.getElementById("def6").style.display = "";
-        document.getElementById("def7").style.display = "";
-        document.getElementById("def8").style.display = "";
+        document.getElementById("def7").style.display = "none";
+        document.getElementById("def8").style.display = "none";
         var k = 1;
-        for (i = 14; i < (6 * 8) + 14; i = i + 6) {
+        for (i = 14; i < (6 * 6) + 14; i = i + 6) {
 
             document.getElementById("namedef" + k).innerHTML = responseText[i];
             document.getElementById("imagedef" + k).src = "img/" + responseText[i + 1];
@@ -605,13 +578,13 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             }
             k = k + 1;
         }
-        var length2 = 5;
+        var length2 = 6;
         document.getElementById("mid3").style.display = "";
         document.getElementById("mid4").style.display = "";
         document.getElementById("mid5").style.display = "";
-        document.getElementById("mid6").style.display = "none";
+        document.getElementById("mid6").style.display = "";
         var k = 1;
-        for (i = (6 * 8) + 14; i < (length2 * 6) + (6 * 8) + 14; i = i + 6) {
+        for (i = (6 * 6) + 14; i < (length2 * 6) + (6 * 6) + 14; i = i + 6) {
 
             document.getElementById("namemid" + k).innerHTML = responseText[i];
             document.getElementById("imagemid" + k).src = "img/" + responseText[i + 1];
@@ -649,13 +622,13 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             }
             k = k + 1;
         }
-        var length3 = 5;
+        var length3 = 6;
         document.getElementById("fwd3").style.display = "";
         document.getElementById("fwd4").style.display = "";
         document.getElementById("fwd5").style.display = "";
-        document.getElementById("fwd6").style.display = "none";
+        document.getElementById("fwd6").style.display = "";
         var k = 1;
-        for (i = (6 * 8) + (5 * 6) + 14; i < (length3 * 6) + (5 * 6) + (6 * 8) + 14; i = i + 6) {
+        for (i = (6 * 6) + (6 * 6) + 14; i < (length3 * 6) + (6 * 6) + (6 * 6) + 14; i = i + 6) {
 
             document.getElementById("namefwd" + k).innerHTML = responseText[i];
             document.getElementById("imagefwd" + k).src = "img/" + responseText[i + 1];
@@ -693,8 +666,8 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
             }
             k = k + 1;
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+        //checkNoDisableSide();
     });
 });
 
@@ -711,7 +684,7 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             document.getElementById("prevPlayers").disabled = true;
             document.getElementById("start").disabled = true;
         }
-        if (responseText[1] == 11) {
+        if (responseText[1] == 10) {
             document.getElementById("nextPlayers").disabled = false;
             document.getElementById("end").disabled = false;
         }
@@ -783,24 +756,9 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             }
 
         }
-        if (responseText[1] - 1 == 1) {
-            var length = 8;
-            document.getElementById("def6").style.display = "";
-            document.getElementById("def7").style.display = "";
-            document.getElementById("def8").style.display = "";
-        } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
-            var length = 7;
-            document.getElementById("def6").style.display = "";
-            document.getElementById("def7").style.display = "";
-            document.getElementById("def8").style.display = "none";
-        } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if (responseText[1] - 1 <= 10) {
             var length = 6;
             document.getElementById("def6").style.display = "";
-            document.getElementById("def7").style.display = "none";
-            document.getElementById("def8").style.display = "none";
-        } else if (responseText[1] - 1 == 11) {
-            var length = 5;
-            document.getElementById("def6").style.display = "none";
             document.getElementById("def7").style.display = "none";
             document.getElementById("def8").style.display = "none";
         }
@@ -844,21 +802,15 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             k = k + 1;
         }
 
-        if (responseText[1] - 1 == 1) {
-            var length2 = 5;
-            document.getElementById("mid3").style.display = "";
-            document.getElementById("mid4").style.display = "";
-            document.getElementById("mid5").style.display = "";
-            document.getElementById("mid6").style.display = "none";
-        } else if (responseText[1] - 1 == 2 || responseText[1] - 1 == 3 || responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if (responseText[1] - 1 < 10) {
             var length2 = 6;
             document.getElementById("mid3").style.display = "";
             document.getElementById("mid4").style.display = "";
             document.getElementById("mid5").style.display = "";
             document.getElementById("mid6").style.display = "";
-        } else if (responseText[1] - 1 == 11) {
-            var length2 = 2;
-            document.getElementById("mid3").style.display = "none";
+        } else if (responseText[1] - 1 == 10) {
+            var length2 = 3;
+            document.getElementById("mid3").style.display = "";
             document.getElementById("mid4").style.display = "none";
             document.getElementById("mid5").style.display = "none";
             document.getElementById("mid6").style.display = "none";
@@ -903,24 +855,12 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             k = k + 1;
         }
 
-        if (responseText[1] - 1 == 1 || responseText[1] - 1 == 2 || responseText[1] - 1 == 3) {
-            var length3 = 5;
-            document.getElementById("fwd3").style.display = "";
-            document.getElementById("fwd4").style.display = "";
-            document.getElementById("fwd5").style.display = "";
-            document.getElementById("fwd6").style.display = "none";
-        } else if (responseText[1] - 1 == 4 || responseText[1] - 1 == 5 || responseText[1] - 1 == 6 || responseText[1] - 1 == 7 || responseText[1] - 1 == 8 || responseText[1] - 1 == 9 || responseText[1] - 1 == 10) {
+        if (responseText[1] - 1 <= 10) {
             var length3 = 6;
             document.getElementById("fwd3").style.display = "";
             document.getElementById("fwd4").style.display = "";
             document.getElementById("fwd5").style.display = "";
             document.getElementById("fwd6").style.display = "";
-        } else if (responseText[1] - 1 == 11) {
-            var length3 = 2;
-            document.getElementById("fwd3").style.display = "none";
-            document.getElementById("fwd4").style.display = "none";
-            document.getElementById("fwd5").style.display = "none";
-            document.getElementById("fwd6").style.display = "none";
         }
         var k = 1;
         for (i = (length * 6) + (length2 * 6) + 14; i < (length3 * 6) + (length2 * 6) + (length * 6) + 14; i = i + 6) {
@@ -961,8 +901,8 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
             }
             k = k + 1;
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+                //checkNoDisableSide();
     });
 });
 
@@ -1254,8 +1194,8 @@ function showPlayers() {
 
 
                 }
-                setTeamNo();
-                checkNoDisableSide();
+
+                //checkNoDisableSide();
             }
         };
         xhttp.open("GET", "allPlayers?pos=" + selectionPl + "&cat=" + selectCat, true);
@@ -1602,8 +1542,8 @@ function showPlayers() {
                         k = k + 1;
                     }
                 }
-                setTeamNo();
-                checkNoDisableSide();
+
+                       //checkNoDisableSide();
             }
         };
         xhttp.open("GET", "playersSelection?pos=" + selectionPl + "-" + 1 + "&cat=" + selectCat, true);
@@ -1865,8 +1805,8 @@ function showPlayers() {
                     document.getElementById("fwd" + k).style.display = "none";
                 }
             }
-            setTeamNo();
-            checkNoDisableSide();
+
+                    // checkNoDisableSide();
 
         };
         xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl + "&cat=" + selectCat, true);
@@ -2105,8 +2045,8 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("fwd" + k).style.display = "none";
             }
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+       // checkNoDisableSide();
     });
 });
 
@@ -2344,8 +2284,8 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
                 document.getElementById("fwd" + k).style.display = "none";
             }
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+       // checkNoDisableSide();
     });
 });
 
@@ -2583,8 +2523,8 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
                 document.getElementById("fwd" + k).style.display = "none";
             }
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+       // checkNoDisableSide();
     });
 });
 
@@ -2824,8 +2764,8 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
                 document.getElementById("fwd" + k).style.display = "none";
             }
         }
-        setTeamNo();
-        checkNoDisableSide();
+
+       // checkNoDisableSide();
     });
 });
 
@@ -2930,8 +2870,7 @@ function openModalDEF(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
-            if (name.indexOf("'")) {
-
+            if (name.indexOf("'") == 1) {
                 var nameArray = name.split("'");
 
                 name = nameArray[0] + "\\'" + nameArray[1];
@@ -2974,8 +2913,7 @@ function openModalMID(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
-            if (name.indexOf("'")) {
-
+            if (name.indexOf("'") == 1) {
                 var nameArray = name.split("'");
 
                 name = nameArray[0] + "\\'" + nameArray[1];
@@ -3013,8 +2951,7 @@ function openModalFWD(i) {
             document.getElementById("playerImage").innerHTML = image;
             document.getElementById("playerPosition").innerHTML = jsonResponse[1];
             document.getElementById("playerTeam").innerHTML = team;
-            if (name.indexOf("'")) {
-
+            if (name.indexOf("'") == 1) {
                 var nameArray = name.split("'");
 
                 name = nameArray[0] + "\\'" + nameArray[1];
@@ -3042,6 +2979,8 @@ function addPlayer() {
     document.getElementById("playername").innerHTML = document.getElementById("playersName").textContent;
     document.getElementById("message").innerHTML = " has been added to your squad."
     document.getElementById("errorbox").style.display = 'none';
+    document.getElementById("errorbox").style.backgroundColor = "#ea344f";
+    document.getElementById("errorbox").style.border = "1px solid #d4213c";
     document.getElementById("enterError").style.display = 'none';
     document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(playerPrice.split("$")[1]) * 10)) / 10).toFixed(1);
     if (document.getElementById("remainPrice").textContent < 0.0) {
@@ -3050,7 +2989,7 @@ function addPlayer() {
         document.getElementById("enterTeam").disabled = true;
         console.log(document.getElementById("enterTeam").disabled);
     }
-    document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
+    var sum = eval(players) + 1;
     var counter = 1;
     for (i = 1; i <= 15; i++) {
         if (document.getElementById("playerTeam").textContent == document.getElementById("team" + i).textContent) {
@@ -3063,11 +3002,13 @@ function addPlayer() {
             document.getElementById("errorbox").style.display = '';
             document.getElementById("teamError").style.display = '';
             document.getElementById("posError").style.display = 'none';
+            document.getElementById("moneyError").style.display = 'none';
+
             document.getElementById("team").innerHTML = document.getElementById("playerTeam").textContent;
             break;
         }
     }
-    if (document.getElementById("totalPlayers").innerHTML == '15') {
+    if (sum == '15') {
 
         document.getElementById("allPlayers").style.color = '#0ea331';
         document.getElementById("totalPlayers").style.color = '#0ea331';
@@ -3086,6 +3027,8 @@ function addPlayer() {
             }
         }
         if (i <= 2) {
+            document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
+
             document.getElementById("gk" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("gk" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("imagegk" + i).src = "img/" + image;
@@ -3105,12 +3048,16 @@ function addPlayer() {
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("teamError").style.display = '';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Goalkeeper';
             } else {
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("teamError").style.display = 'none';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Goalkeeper';
             }
         }
@@ -3129,6 +3076,7 @@ function addPlayer() {
             }
         }
         if (i <= 5) {
+            document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
 
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
@@ -3142,17 +3090,22 @@ function addPlayer() {
             document.getElementById("team" + (i + 2)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selDEF" + i).setAttribute('onclick', 'removeModalDEF(' + i + ')');
         } else {
+
             if (counter > 4) {
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("teamError").style.display = '';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Defender';
             } else {
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("teamError").style.display = 'none';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Defender';
             }
         }
@@ -3171,6 +3124,8 @@ function addPlayer() {
             }
         }
         if (i <= 5) {
+            document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
+
             document.getElementById("mid" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("midimage" + i).src = "img/" + image;
@@ -3183,17 +3138,22 @@ function addPlayer() {
             document.getElementById("team" + (i + 7)).innerHTML = document.getElementById("playerTeam").textContent;
             document.getElementById("selMID" + i).setAttribute('onclick', 'removeModalMID(' + i + ')');
         } else {
+
             if (counter > 4) {
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("teamError").style.display = '';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Midfielder';
             } else {
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("teamError").style.display = 'none';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Midfielder';
             }
         }
@@ -3211,6 +3171,7 @@ function addPlayer() {
             }
         }
         if (i <= 3) {
+            document.getElementById("totalPlayers").innerHTML = eval(players) + 1;
 
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.pointerEvents = 'none';
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
@@ -3225,17 +3186,22 @@ function addPlayer() {
             document.getElementById("selFWD" + i).setAttribute('onclick', 'removeModalFWD(' + i + ')');
 
         } else {
+
             if (counter > 4) {
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("teamError").style.display = '';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Forward';
             } else {
                 document.getElementById("checkbox").style.display = 'none';
                 document.getElementById("errorbox").style.display = '';
                 document.getElementById("teamError").style.display = 'none';
                 document.getElementById("posError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
                 document.getElementById("pos").innerHTML = 'Forward';
             }
         }
@@ -3335,6 +3301,16 @@ function removeModalGK(i) {
             document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
             document.getElementById("rmvplayerNo").innerHTML = i;
             document.getElementById("rmvplayerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+
+            }
+
+
+            document.getElementById("infoButtonRM").setAttribute('onclick', "openInfo('" + name + "')");
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -3358,6 +3334,16 @@ function removeModalDEF(i) {
             document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
             document.getElementById("rmvplayerNo").innerHTML = i;
             document.getElementById("rmvplayerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+
+            }
+
+
+            document.getElementById("infoButtonRM").setAttribute('onclick', "openInfo('" + name + "')");
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -3381,6 +3367,16 @@ function removeModalMID(i) {
             document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
             document.getElementById("rmvplayerNo").innerHTML = i;
             document.getElementById("rmvplayerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+
+            }
+
+
+            document.getElementById("infoButtonRM").setAttribute('onclick', "openInfo('" + name + "')");
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -3404,6 +3400,16 @@ function removeModalFWD(i) {
             document.getElementById("rmvplayerPosition").innerHTML = jsonResponse[1];
             document.getElementById("rmvplayerNo").innerHTML = i;
             document.getElementById("rmvplayerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+
+            }
+
+
+            document.getElementById("infoButtonRM").setAttribute('onclick', "openInfo('" + name + "')");
             $('#removePlayer').modal({show: 'true'});
         }
     };
@@ -3585,10 +3591,13 @@ function removePlayer() {
 
         document.getElementById("errorbox").style.display = 'none';
         document.getElementById("posError").style.display = 'none';
+        document.getElementById("moneyError").style.display = 'none';
 
     } else {
         document.getElementById("errorbox").style.display = '';
         document.getElementById("posError").style.display = 'none';
+        document.getElementById("moneyError").style.display = 'none';
+
         document.getElementById("team").innerHTML = document.getElementById("playerTeam").textContent;
     }
 
@@ -3646,7 +3655,7 @@ function removePlayer() {
         var remainPrice = document.getElementById("remainPrice").textContent;
         var price = playerPrice.split("$")[1].split("m")[0];
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
-        
+
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Midfielder') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3670,8 +3679,8 @@ function removePlayer() {
         var remainPrice = document.getElementById("remainPrice").textContent;
         var price = playerPrice.split("$")[1].split("m")[0];
         document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) + (eval(price) * 10)) / 10).toFixed(1);
-        
-        
+
+
 
     } else if (document.getElementById("rmvplayerPosition").textContent == 'Forward') {
         var name = document.getElementById("rmvplayersName").textContent;
@@ -3708,122 +3717,143 @@ function removePlayer() {
 $(document).on("click", "#enterTeam", function () { // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
     var enterTeam = "";
     var counter = 0;
-    for (i = 1; i <= 2; i++) {
-        if (document.getElementById("namegk" + i).textContent == 'Goalkeeper') {
-            document.getElementById("errorbox").style.display = '';
-            document.getElementById("teamError").style.display = 'none';
-            document.getElementById("posError").style.display = 'none';
-            document.getElementById("enterError").style.display = '';
-        } else {
-            var name = document.getElementById("namegk" + i).textContent;
-
-            if (name.indexOf("'") == 1) {
-
-                var nameArray = name.split("'");
-
-                name = nameArray[0] + "\\'" + nameArray[1];
-                console.log(name);
-
-            }
-            counter = eval(counter) + 1;
-            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i)).textContent + ",";
+    console.log(document.getElementById("remainPrice").textContent);
+    if (document.getElementById("remainPrice").textContent < 0.0) {
+        document.getElementById("errorbox").style.backgroundColor = "#ea344f";
+        document.getElementById("errorbox").style.border = "1px solid #d4213c";
+        document.getElementById("errorbox").style.display = '';
+        document.getElementById("teamError").style.display = 'none';
+        document.getElementById("posError").style.display = 'none';
+        document.getElementById("enterError").style.display = 'none';
+        document.getElementById("moneyError").style.display = "";
+    } else {
 
 
+        for (i = 1; i <= 2; i++) {
+            if (document.getElementById("namegk" + i).textContent == 'Goalkeeper') {
+                document.getElementById("errorbox").style.display = '';
+                document.getElementById("teamError").style.display = 'none';
+                document.getElementById("posError").style.display = 'none';
+                document.getElementById("enterError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
 
-        }
-    }
-    for (i = 1; i <= 5; i++) {
-        if (document.getElementById("defname" + i).textContent == 'Defender') {
-            document.getElementById("errorbox").style.display = '';
-            document.getElementById("teamError").style.display = 'none';
-            document.getElementById("posError").style.display = 'none';
-            document.getElementById("enterError").style.display = '';
-        } else {
-            counter = eval(counter) + 1;
-            var name = document.getElementById("defname" + i).textContent;
-            if (name.indexOf("'") == 1) {
+            } else {
+                var name = document.getElementById("namegk" + i).textContent;
 
-                var nameArray = name.split("'");
-
-                name = nameArray[0] + "\\'" + nameArray[1];
-                console.log(name);
-
-            }
-            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 2)).textContent + ",";
-
-        }
-    }
-    for (i = 1; i <= 5; i++) {
-        if (document.getElementById("midname" + i).textContent == 'Midfielder') {
-            document.getElementById("errorbox").style.display = '';
-            document.getElementById("teamError").style.display = 'none';
-            document.getElementById("posError").style.display = 'none';
-            document.getElementById("enterError").style.display = '';
-        } else {
-            counter = eval(counter) + 1;
-            var name = document.getElementById("midname" + i).textContent;
-            if (name.indexOf("'") == 1) {
-
-                var nameArray = name.split("'");
-
-                name = nameArray[0] + "\\'" + nameArray[1];
-                console.log(name);
-
-            }
-            enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 7)).textContent + ",";
-
-        }
-    }
-    for (i = 1; i <= 3; i++) {
-        if (document.getElementById("fwdname" + i).textContent == 'Forward') {
-            document.getElementById("errorbox").style.display = '';
-            document.getElementById("teamError").style.display = 'none';
-            document.getElementById("posError").style.display = 'none';
-            document.getElementById("enterError").style.display = '';
-        } else {
-            if (i == 3) {
+//            if (name.indexOf("'") == 1) {
+//
+//                var nameArray = name.split("'");
+//
+//                name = nameArray[0] + "\\'" + nameArray[1];
+//                console.log(name);
+//
+//            }
                 counter = eval(counter) + 1;
-                var name = document.getElementById("fwdname" + i).textContent;
-                if (name.indexOf("'") == 1) {
+                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i)).textContent + ",";
 
-                    var nameArray = name.split("'");
 
-                    name = nameArray[0] + "\\'" + nameArray[1];
-                    console.log(name);
 
-                }
-                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent;
+            }
+        }
+        for (i = 1; i <= 5; i++) {
+            if (document.getElementById("defname" + i).textContent == 'Defender') {
+                document.getElementById("errorbox").style.display = '';
+                document.getElementById("teamError").style.display = 'none';
+                document.getElementById("posError").style.display = 'none';
+                document.getElementById("enterError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
             } else {
                 counter = eval(counter) + 1;
-                var name = document.getElementById("fwdname" + i).textContent;
-                if (name.indexOf("'") == 1) {
+                var name = document.getElementById("defname" + i).textContent;
+//            if (name.indexOf("'") == 1) {
+//
+//                var nameArray = name.split("'");
+//
+//                name = nameArray[0] + "\\'" + nameArray[1];
+//                console.log(name);
+//
+//            }
+                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 2)).textContent + ",";
 
-                    var nameArray = name.split("'");
-
-                    name = nameArray[0] + "\\'" + nameArray[1];
-                    console.log(name);
-
-                }
-                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent + ",";
             }
-
-
         }
-    }
-    console.log(enterTeam + "");
-    if (counter == 15) {
-        backTeam();
-        window.location = "enterTeam?name=" + enterTeam;
+        for (i = 1; i <= 5; i++) {
+            if (document.getElementById("midname" + i).textContent == 'Midfielder') {
+                document.getElementById("errorbox").style.display = '';
+                document.getElementById("teamError").style.display = 'none';
+                document.getElementById("posError").style.display = 'none';
+                document.getElementById("enterError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
+            } else {
+                counter = eval(counter) + 1;
+                var name = document.getElementById("midname" + i).textContent;
+//            if (name.indexOf("'") == 1) {
+//
+//                var nameArray = name.split("'");
+//
+//                name = nameArray[0] + "\\'" + nameArray[1];
+//                console.log(name);
+//
+//            }
+                enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 7)).textContent + ",";
+
+            }
+        }
+        for (i = 1; i <= 3; i++) {
+            if (document.getElementById("fwdname" + i).textContent == 'Forward') {
+                document.getElementById("errorbox").style.display = '';
+                document.getElementById("teamError").style.display = 'none';
+                document.getElementById("posError").style.display = 'none';
+                document.getElementById("enterError").style.display = '';
+                document.getElementById("moneyError").style.display = 'none';
+
+            } else {
+                if (i == 3) {
+                    counter = eval(counter) + 1;
+                    var name = document.getElementById("fwdname" + i).textContent;
+//                if (name.indexOf("'") == 1) {
+//
+//                    var nameArray = name.split("'");
+//
+//                    name = nameArray[0] + "\\'" + nameArray[1];
+//                    console.log(name);
+//
+//                }
+                    enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent;
+                } else {
+                    counter = eval(counter) + 1;
+                    var name = document.getElementById("fwdname" + i).textContent;
+//                if (name.indexOf("'") == 1) {
+//
+//                    var nameArray = name.split("'");
+//
+//                    name = nameArray[0] + "\\'" + nameArray[1];
+//                    console.log(name);
+//
+//                }
+                    enterTeam = enterTeam + name + "-" + document.getElementById("team" + (i + 12)).textContent + ",";
+                }
+
+
+            }
+        }
+        console.log(enterTeam + "");
+        if (counter == 15) {
+            backTeam();
+            window.location = "enterTeam?name=" + enterTeam;
 //        $.get("enterTeam", {gk1:enterTeam}, function (){
 //             window.location ="enterRoster.html";
 //        });
+        }
+
     }
-
-
 });
 
 function autopick() {
     document.getElementById("autopick").disabled = true;
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -3842,7 +3872,15 @@ function autopick() {
                 document.getElementById("pricegk" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
+                document.getElementById("selGK" + k).setAttribute('onclick', 'removeModalGK(' + k + ')');
+
                 k++;
+                for (j = 1; j <= 2; j = j + 1) {
+                    if (document.getElementById("gkname" + j).textContent == jsonResponse[i]) {
+                        document.getElementById("gk" + j).style.opacity = '0.6';
+                        document.getElementById("gk" + j).style.pointerEvents = 'none';
+                    }
+                }
             }
             var k = 1;
             for (i = 8; i < 28; i = i + 4) {
@@ -3852,7 +3890,15 @@ function autopick() {
                 document.getElementById("defprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
+                document.getElementById("selDEF" + k).setAttribute('onclick', 'removeModalDEF(' + k + ')');
+
                 k++;
+                for (j = 1; j <= 6; j = j + 1) {
+                    if (document.getElementById("namedef" + j).textContent == jsonResponse[i]) {
+                        document.getElementById("def" + j).style.opacity = '0.6';
+                        document.getElementById("def" + j).style.pointerEvents = 'none';
+                    }
+                }
             }
             var k = 1;
             for (i = 28; i < 48; i = i + 4) {
@@ -3862,7 +3908,15 @@ function autopick() {
                 document.getElementById("midprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
+                document.getElementById("selMID" + k).setAttribute('onclick', 'removeModalMID(' + k + ')');
+
                 k++;
+                for (j = 1; j <= 6; j = j + 1) {
+                    if (document.getElementById("namemid" + j).textContent == jsonResponse[i]) {
+                        document.getElementById("mid" + j).style.opacity = '0.6';
+                        document.getElementById("mid" + j).style.pointerEvents = 'none';
+                    }
+                }
             }
             var k = 1;
             for (i = 48; i < 60; i = i + 4) {
@@ -3872,7 +3926,15 @@ function autopick() {
                 document.getElementById("fwdprice" + k).innerHTML = "$" + jsonResponse[i + 3] + "m";
                 var remainPrice = document.getElementById("remainPrice").textContent;
                 document.getElementById("remainPrice").innerHTML = (((eval(remainPrice) * 10) - (eval(jsonResponse[i + 3]) * 10)) / 10).toFixed(1);
+                document.getElementById("selFWD" + k).setAttribute('onclick', 'removeModalFWD(' + k + ')');
+
                 k++;
+                for (j = 1; j <= 6; j = j + 1) {
+                    if (document.getElementById("namefwd" + j).textContent == jsonResponse[i]) {
+                        document.getElementById("fwd" + j).style.opacity = '0.6';
+                        document.getElementById("fwd" + j).style.pointerEvents = 'none';
+                    }
+                }
             }
 
         }
@@ -4004,180 +4066,3 @@ function backTeam() {
     localStorage.setItem('firstLoad', true);
 }
 
-function openInfo(name) {
-    console.log('HEREEE!!!!');
-    var gameweek = document.getElementById("gameweekid").textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-            console.log(document.getElementById("nameimage"));
-            document.getElementById("nameimage").src = "img/players/" + name.toLowerCase() + ".png";
-            document.getElementById("nameinfo").innerHTML = jsonResponse[0];
-            document.getElementById("posinfo").innerHTML = jsonResponse[1];
-            document.getElementById("teaminfo").innerHTML = jsonResponse[2];
-            var team = jsonResponse[2];
-            if (team == 'Boston Breakers') {
-                var image = "Boston_Breakers.png";
-            } else if (team == 'Chicago Red Stars') {
-                var image = "ChicagoRedStars.png";
-            } else if (team == 'Houston Dash') {
-                var image = "Houston_Dash.png";
-            } else if (team == 'North Carolina Courage') {
-                var image = "North_Carolina_Courage.png";
-            } else if (team == 'Orlando Pride') {
-                var image = "OrlandoPride.png";
-            } else if (team == 'Portland Thorns FC') {
-                var image = "Portland.png";
-            } else if (team == 'Seattle Reign FC') {
-                var image = "SeattleReignFC.png";
-            } else if (team == 'Sky Blue FC') {
-                var image = "Sky_Blue_FC.png";
-            } else if (team == 'Washington Spirit') {
-                var image = "Washington_Spirit.png";
-            } else if (team == 'Utah Royals FC') {
-                var image = "Utah_Royals.PNG";
-            }
-            document.getElementById("badgeinfo").src = "img/" + image;
-            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1]) - 1);
-            document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
-            document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
-            document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];
-            document.getElementById("birthinfo").innerHTML = jsonResponse[6];
-            document.getElementById("countryinfo").innerHTML = jsonResponse[7];
-            document.getElementById("heightinfo").innerHTML = jsonResponse[8];
-            document.getElementById("collegeinfo").innerHTML = jsonResponse[9];
-            document.getElementById("formerinfo").innerHTML = jsonResponse[10];
-            if (name.indexOf("'") == 1) {
-
-                var nameArray = name.split("'");
-
-                name = nameArray[0] + "\\'" + nameArray[1];
-                console.log(name);
-
-            }
-
-            document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
-            document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
-            $('#players').modal('hide');
-            $('#fixtureModal').modal('hide');
-            $('#statisticsModal').modal('hide');
-            $('#information').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
-    xhttp.send();
-
-
-}
-
-
-
-function openFixture(name, team) {
-    setInfo(name, "Fix");
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-            var i = 1;
-            console.log(jsonResponse.length);
-            for (j = 0; j < jsonResponse.length; j = j + 4) {
-                if (j > 0 && jsonResponse[j] == jsonResponse[j + 4]) {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j] + "," + jsonResponse[j + 4];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
-                    j = eval(j) + 4;
-
-                } else {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
-                }
-
-
-                i = eval(i) + 1;
-
-            }
-            if (name.indexOf("'") == 1) {
-
-                var nameArray = name.split("'");
-
-                name = nameArray[0] + "\\'" + nameArray[1];
-
-            }
-
-
-            document.getElementById("backButton").setAttribute('onclick', "openInfo('" + name + "')");
-            $('#information').modal('hide');
-            $('#fixtureModal').modal({show: 'true'});
-        }
-    };
-    xhttp.open("GET", "getFixture?team=" + team, true);
-    xhttp.send();
-}
-
-function setInfo(name, prefix) {
-    var gameweek = document.getElementById("gameweekid").textContent;
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = xhttp.responseText;
-            var jsonResponse = JSON.parse(data);
-            document.getElementById("nameimage" + prefix).src = "img/players/" + name.toLowerCase() + ".png";
-            document.getElementById("nameinfo" + prefix).innerHTML = jsonResponse[0];
-            document.getElementById("posinfo" + prefix).innerHTML = jsonResponse[1];
-            document.getElementById("teaminfo" + prefix).innerHTML = jsonResponse[2];
-            var team = jsonResponse[2];
-            if (team == 'Boston Breakers') {
-                var image = "Boston_Breakers.png";
-            } else if (team == 'Chicago Red Stars') {
-                var image = "ChicagoRedStars.png";
-            } else if (team == 'Houston Dash') {
-                var image = "Houston_Dash.png";
-            } else if (team == 'North Carolina Courage') {
-                var image = "North_Carolina_Courage.png";
-            } else if (team == 'Orlando Pride') {
-                var image = "OrlandoPride.png";
-            } else if (team == 'Portland Thorns FC') {
-                var image = "Portland.png";
-            } else if (team == 'Seattle Reign FC') {
-                var image = "SeattleReignFC.png";
-            } else if (team == 'Sky Blue FC') {
-                var image = "Sky_Blue_FC.png";
-            } else if (team == 'Washington Spirit') {
-                var image = "Washington_Spirit.png";
-            } else if (team == 'Utah Royals FC') {
-                var image = "Utah_Royals.PNG";
-            }
-            document.getElementById("badgeinfo" + prefix).src = "img/" + image;
-
-        }
-
-    };
-    xhttp.open("GET", "GetInformation?name=" + name + "&gameweekid=" + gameweek, true);
-    xhttp.send();
-
-}
-
-function openStatistic(name) {
-    setInfo(name, "Stats");
-    if (name.indexOf("'") == 1) {
-
-        var nameArray = name.split("'");
-
-        name = nameArray[0] + "\\'" + nameArray[1];
-        console.log(name);
-
-    }
-
-    document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
-    $('#information').modal('hide');
-    $('#statisticsModal').modal({show: 'true'});
-}

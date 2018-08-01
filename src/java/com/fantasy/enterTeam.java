@@ -484,7 +484,7 @@ public class enterTeam extends HttpServlet {
             remain = remain - Double.parseDouble(price[i]);
             value = value + Double.parseDouble(price[i]);
         }
-        DecimalFormat df = new DecimalFormat("#####.##");
+        DecimalFormat df = new DecimalFormat("#####.00");
         DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();
         sym.setDecimalSeparator('.');
         df.setDecimalFormatSymbols(sym);

@@ -22,7 +22,7 @@
     topPerformances top = new topPerformances();
 
     standings stands = new standings();
-    dreamTeam dream = new dreamTeam((fixNo-2));
+    dreamTeam dream = new dreamTeam((fixNo-1));
 
 %>
 <html lang="en">

@@ -1,3 +1,4 @@
+<%@page import="com.fantasy.deadLIne"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +103,11 @@
             </div>
             <!-- /.container -->
         </nav>
+
+        <%
+
+            deadLIne line = new deadLIne();
+        %>
         <div class="container extraClass  ">
             <ul class="nav nav-pills extraClassul">
                 <li class="nav-item"><a href="home.html">Home</a></li>
@@ -135,8 +141,8 @@
                     </h5>
                     <div  class="col-sm-12  ">
                         <div class="col-sm-12" style="width: 100%;background-color:#050424">
-                            <h6 style="color:white;font-size:14px;text-align:center; font-weight:lighter;margin-top: 8px;margin-bottom: 8px;font-family: Century Gothic" >Gameweek 3 Deadline:
-                                <strong style="color:#d21e25; font-size:19px;font-family: Century Gothic" >17 Jun 02:30PM ET </strong>
+                            <h6 style="color:white;font-size:14px;text-align:center; font-weight:lighter;margin-top: 8px;margin-bottom: 8px;font-family: Century Gothic" ><%=line.getGameweek()%> Deadline:
+                                <strong style="color:#d21e25; font-size:19px;font-family: Century Gothic" ><%=line.getdeadline()%></strong>
                             </h6>
                         </div>
                         <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
@@ -164,6 +170,8 @@
                         <h5  id="teamError" style="text-align: center; font-size: 14px;font-family: Century Gothic">More than 4 players selected from <span id="team"></span>.</h5>
                         <h5  id="posError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none"><span id="pos"></span> :Maximum players in this position!</h5>
                         <h5  id="enterError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none">Please complete your Team!</h5>
+                        <h5  id="moneyError" style="text-align: center; font-size: 14px;font-family: Century Gothic;display: none">Total Money Overload! </h5>
+
                     </div>
                     <div class="col-md-12 col-xs-12" style="border: 1px solid #0ea331; background-color:#92c992; padding-right: 15px;padding-left: 15px; margin-bottom: 1%; display: none"id='checkbox'> 
                         <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
@@ -1014,50 +1022,7 @@
                                 <td id="pricedef6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(5)%></td>
                                 <td id="scoredef6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(5)%></td>
                             </tr>
-                            <tr id="def7" style='cursor:pointer' onclick="openModalDEF(7)">
-                                <%
-                                    if (definjury.get(6).equals("NO")) { %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-info-sign"></span></td>
-                                    <% } else if (definjury.get(6).equals("OUT")) {
-                                    %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
-                                    <% }
-                                    %>
-                                <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                    <div>
-                                        <img id="imagedef7" src="img/<%=def.get(6)%> " style="height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef7" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(6)%></span>
-                                        <hr style="border:none;margin-top: -22%">
-                                        <span id="teamdef7" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(6)%></span>
-                                    </div>
-                                </td>
-                                <td id="pricedef7" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(6)%></td>
-                                <td id="scoredef7" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(6)%></td>
-                            </tr>
-                            <tr id="def8" style='cursor:pointer' onclick="openModalDEF(8)">
-                                <%
-                                    if (definjury.get(7).equals("NO")) { %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-info-sign"></span></td>
-                                    <% } else if (definjury.get(7).equals("OUT")) {
-                                    %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
-                                    <% }
-                                    %>
-                                <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                    <div>
-                                        <img id="imagedef8" src="img/<%=def.get(7)%> " style="height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="namedef8" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(7)%></span>
-                                        <hr style="border:none;margin-top: -22%">
-                                        <span id="teamdef8" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(7)%></span>
-                                    </div>
-                                </td>
-                                <td id="pricedef8" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(7)%></td>
-                                <td id="scoredef8" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(7)%></td>
-                            </tr>
+
                             <%
                                 String defstr;
                                 String defimagestr;
@@ -1066,7 +1031,7 @@
                                 String defpricestr;
                                 String defscorestr;
                                 String definjurystr;
-                                for (int i = 9; i <= 20; i++) {
+                                for (int i = 7; i <= 20; i++) {
                                     defstr = "def" + i;
                                     defimagestr = "imagedef" + i;
                                     defnamestr = "namedef" + i;
@@ -1217,7 +1182,28 @@
                                 <td id="pricemid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(4)%></td>
                                 <td id="scoremid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(4)%></td>
                             </tr>
-
+                            <tr id="mid6" style='cursor:pointer' onclick="openModalMID(6)">
+                                <%
+                                    if (midinjury.get(5).equals("NO")) { %>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-info-sign"></span></td>
+                                    <% } else if (midinjury.get(5).equals("OUT")) {
+                                    %>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                    <% }
+                                    %>
+                                <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <div>
+                                        <img id="imagemid6" src="img/<%=mid.get(5)%> " style="height:30px" />
+                                    </div>
+                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                        <span class='underline' id="namemid6" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(5)%></span>
+                                        <hr style="border:none;margin-top: -22%">
+                                        <span id="teammid6" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(5)%></span>
+                                    </div>
+                                </td>
+                                <td id="pricemid6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(5)%></td>
+                                <td id="scoremid6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(5)%></td>
+                            </tr>
                             <%
                                 String midstr;
                                 String midimagestr;
@@ -1226,7 +1212,7 @@
                                 String midpricestr;
                                 String midscorestr;
                                 String midinjurystr;
-                                for (int i = 6; i <= 20; i++) {
+                                for (int i = 7; i <= 20; i++) {
                                     midstr = "mid" + i;
                                     midimagestr = "imagemid" + i;
                                     midnamestr = "namemid" + i;
@@ -1378,7 +1364,28 @@
                                 <td id="pricefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(4)%></td>
                                 <td id="scorefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(4)%></td>
                             </tr>
-
+                            <tr id="fwd6" style='cursor:pointer' onclick="openModalFWD(6)">
+                                <%
+                                    if (fwdinjury.get(5).equals("NO")) { %>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-info-sign"></span></td>
+                                    <% } else if (fwdinjury.get(5).equals("OUT")) {
+                                    %>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                    <% }
+                                    %>
+                                <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                    <div>
+                                        <img id="imagefwd6" src="img/<%=fwd.get(5)%> " style="height:30px" />
+                                    </div>
+                                    <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                        <span class='underline' id="namefwd6" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(5)%></span>
+                                        <hr style="border:none;margin-top: -22%">
+                                        <span id="teamfwd6" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(5)%></span>
+                                    </div>
+                                </td>
+                                <td id="pricefwd6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(5)%></td>
+                                <td id="scorefwd6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(5)%></td>
+                            </tr>
                             <%
                                 String fwdstr;
                                 String fwdimagestr;
@@ -1387,7 +1394,7 @@
                                 String fwdpricestr;
                                 String fwdscorestr;
                                 String fwdinjurystr;
-                                for (int i = 6; i <= 20; i++) {
+                                for (int i = 7; i <= 20; i++) {
                                     fwdstr = "fwd" + i;
                                     fwdimagestr = "imagefwd" + i;
                                     fwdnamestr = "namefwd" + i;
@@ -1398,25 +1405,25 @@
                             %>
                             <tr id='<%=fwdstr%>' style='display:none;cursor:pointer' onclick="openModalFWD(<%=i%>)">
                                 <%
-                                    if (fwdinjury.get(0).equals("NO")) {%>
+                                    if (fwdinjury.get(5).equals("NO")) {%>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
-                                    <% } else if (fwdinjury.get(0).equals("OUT")) {
+                                    <% } else if (fwdinjury.get(5).equals("OUT")) {
                                     %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                     <div>
-                                        <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(1)%> " style="height:30px" />
+                                        <img id="<%=fwdimagestr%>" src="img/<%=fwd.get(5)%> " style="height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                        <span class='underline' id="<%=fwdnamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(1)%></span>
+                                        <span class='underline' id="<%=fwdnamestr%>" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(5)%></span>
                                         <hr style="border:none;margin-top: -22%">
-                                        <span id="<%=fwdteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(1)%></span>
+                                        <span id="<%=fwdteamstr%>" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(5)%></span>
                                     </div>
                                 </td>
-                                <td id="<%=fwdpricestr%>" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(1)%></td>
-                                <td id="<%=fwdscorestr%>" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(1)%></td>
+                                <td id="<%=fwdpricestr%>" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(5)%></td>
+                                <td id="<%=fwdscorestr%>" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(5)%></td>
                             </tr>
 
                             <%
@@ -1477,12 +1484,12 @@
                             <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
 
                         <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
-                            <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
+                            <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 10 </h6>
 
                         <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
                             <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
 
-                        <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
+                        <button id="end" value="10" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
                             <i class="glyphicon glyphicon-forward"></i></button>
 
 
@@ -1553,7 +1560,7 @@
                     <button onclick="removePlayer()" type="button" class="addbutton   " >
                         Remove Player
                     </button> 
-                    <button type="button" class="infobutton">
+                    <button type="button" class="infobutton" id="infoButtonRM">
                         View Information
                     </button>
                 </div>
@@ -1683,7 +1690,7 @@
                             <th id="result" style="padding: 1%;text-align: center">MP</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 24; i++) {
+                            for (int i = 1; i <= 28; i++) {
                         %>
                         <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 12px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="date<%=i%>" class="col-md-2" style="padding: 1%"></td>
@@ -1706,7 +1713,7 @@
             <div class="modal-content">
                 <div class="modal-header-info">
                     <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                    <p id="backStats" class="modal-title" style="padding: 0.3%;padding-left: 1.5%;color:white">
+                    <p id="backStats" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
                         <span class="glyphicon glyphicon-arrow-left"></span></p>
                 </div>
                 <!-- Modal content-->
@@ -1724,7 +1731,7 @@
                             <image id="badgeinfoStats" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
-                    <table style="width: 100%">
+                    <table style="width: 100%" class="scrollmenu">
                         <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
                             <th id="date" style="width:6.5%;padding: 1%;text-align: center">GW</th>
                             <th id="fixture" style="width: 15%;padding: 1%;text-align: center">OPP</th>
@@ -1735,32 +1742,34 @@
                             <th id="date" style="width:6.5%;padding: 1%;text-align: center">CS</th>
                             <th id="opponent" style="width:6.5%;padding: 1%;text-align: center">OG</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">GC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PE</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">PS</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">PM</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">YC</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">RC</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">S</th>
-                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">S</th>
-
                         </tr>
                         <%
-                            for (int i = 1; i <= 24; i++) {
+                            for (int i = 1; i <= 22; i++) {
                         %>
-                        <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
-                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
-                            <td id="fixture+<%=i%>"  style="width: 15%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
-                            <td id="date+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
-                            <td id="opponent+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">90</td>
-                            <td id="result+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1 </td>
-                            <td id="fixture"  style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="opponent" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                        <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                            <td id="gw<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="opp<%=i%>"  style="width: 25%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
+                            <td id="pts<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="min<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">90</td>
+                            <td id="goal<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1 </td>
+                            <td id="assist<%=i%>"  style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="cleanSheet<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="own<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="goalCon<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkCom<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkEarn<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkSave<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkMiss<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="yellow<%=i%>" style="width:7.5%;padding: 1%;text-align: center">0</td>
+                            <td id="red<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="save<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
                         </tr>
                         <%
                             }%>
@@ -1768,7 +1777,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -1777,6 +1786,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/playersTable.js"></script>
     <script src="js/fixturejs.js"></script>
+    <script src="js/openModal.js"></script>
 
 
 </body>

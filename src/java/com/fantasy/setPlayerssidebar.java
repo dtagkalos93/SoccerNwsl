@@ -87,7 +87,7 @@ public class setPlayerssidebar {
         defpriceList = def.getpriceList();
         defscoreList = def.getpointList();
         definjuryList = def.getinjuryList();
-        findmax( 8, "def");
+        findmax( 6, "def");
         players mid = new players();
         mid.players("Midfielder", "score");
         midnameList = mid.getnameList();
@@ -97,7 +97,7 @@ public class setPlayerssidebar {
         midpriceList = mid.getpriceList();
         midscoreList = mid.getpointList();
         midinjuryList = mid.getinjuryList();
-        findmax( 5, "mid");
+        findmax( 6, "mid");
         players fwd = new players();
         fwd.players("Forward", "score");
         fwdnameList = fwd.getnameList();
@@ -107,7 +107,7 @@ public class setPlayerssidebar {
         fwdpriceList = fwd.getpriceList();
         fwdscoreList = fwd.getpointList();
         fwdinjuryList = fwd.getinjuryList();
-        findmax( 5, "fwd");
+        findmax( 6, "fwd");
     }
 
     private void findmax( int no, String position) {

@@ -167,7 +167,7 @@ public class confirmation extends HttpServlet {
             defscoreList = def.getpointList();
             definjuryList = def.getinjuryList();
 
-            findmax(request, 8, "def");
+            findmax(request, 6, "def");
             players mid = new players();
             mid.players("Midfielder", "score");
             midnameList = mid.getnameList();
@@ -177,7 +177,7 @@ public class confirmation extends HttpServlet {
             midpriceList = mid.getpriceList();
             midscoreList = mid.getpointList();
             midinjuryList = mid.getinjuryList();
-            findmax(request, 5, "mid");
+            findmax(request, 6, "mid");
             players fwd = new players();
             fwd.players("Forward", "score");
             fwdnameList = fwd.getnameList();
@@ -187,7 +187,7 @@ public class confirmation extends HttpServlet {
             fwdpriceList = fwd.getpriceList();
             fwdscoreList = fwd.getpointList();
             fwdinjuryList = fwd.getinjuryList();
-            findmax(request, 5, "fwd");
+            findmax(request, 6, "fwd");
             request.setAttribute("total", totalPlayers + "");
             System.out.println("Here i AMA!!!");
 
