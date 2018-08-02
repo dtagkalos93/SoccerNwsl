@@ -24,6 +24,11 @@
     String mid = players.getMidfielderUnion();
     String fwd = players.getForwardUnion();
     double value = players.getValue();
+    double remain = 100.0 - value;
+    DecimalFormat df = new DecimalFormat("#####.##");
+    DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();
+    sym.setDecimalSeparator('.');
+    df.setDecimalFormatSymbols(sym);
 
     deadLIne line = new deadLIne();
 %>
@@ -175,12 +180,14 @@
                             </div>
                             <div class="col-sm-12" style="width: 100%;border: 1px solid #ebebe4;margin-bottom: 1%;padding-left: 0;padding-right: 0" >
                                 <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                    <button type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
+                                    <button id="autopick" type="button" class="autopickbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5% " onclick="autopick()">
                                         Auto Pick 
                                     </button> 
                                 </div>
                                 <div class="col-md-3  col-xs-3" style="margin-top: 3%">
-                                    <button type="button" class="resetbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5%;float: right" onclick="reset()">
+                                    <button type="button" class="resetbtn btncstm col-sm-6 " style="font-family: Century Gothic; font-size: 15px;text-align: center;padding: 4.5%;float: right" onclick="setPlayers('<%=gk%>', '<%=def%>', '<%=mid%>', '<%=fwd%>');
+                                            setPrice('<%=gk%>', '<%=def%>', '<%=mid%>', '<%=fwd%>');
+                                            resetValues('<%=df.format(remain)%> ')">
                                         Reset 
                                     </button> 
                                 </div>
@@ -188,11 +195,7 @@
                                     <h6 style="text-align: center;font-weight:bold; font-size:15px;font-family: Century Gothic ">Players Selected</h6>
                                     <h4 id="allPlayers" style="text-align: center;font-weight:bold; font-size:20px; color:#0ea331;font-family: Century Gothic;"><span id="totalPlayers">15</span>/15</h4>
                                 </div>
-                                <% double remain = 100.0 - value;
-                                    DecimalFormat df = new DecimalFormat("#####.##");
-                                    DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();
-                                    sym.setDecimalSeparator('.');
-                                    df.setDecimalFormatSymbols(sym);
+                                <%
                                 %>
 
                                 <div class="col-md-3  col-xs-3" style="flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;border-left: 1px solid #ebebe4">

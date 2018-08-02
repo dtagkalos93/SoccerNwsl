@@ -341,7 +341,7 @@ function makeTransfer() {
     var def = "";
     var mid = "";
     var fwd = "";
-    var remain=document.getElementById("remainPrice").textContent;
+    var remain = document.getElementById("remainPrice").textContent;
     for (i = 1; i <= 2; i++) {
         gk = gk + document.getElementById("namegk" + i).textContent + "-" + document.getElementById("team" + (i)).textContent + "-Goalkeeper,";
     }
@@ -365,7 +365,32 @@ function makeTransfer() {
     }
 
 
-    window.location = "transfers?gk=" + gk+"&def="+def+"&mid="+mid+"&fwd="+fwd+"&remain="+remain;
+    window.location = "transfers?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd + "&remain=" + remain;
 
 
+}
+
+
+function resetValues(value) {
+    for (i = 1; i <= 2; i++) {
+        document.getElementById("namegk" + i).style.opacity = "1.0";
+        document.getElementById("pricegk" + i).style.opacity = "1.0";
+    }
+    for (i = 1; i <= 5; i++) {
+        document.getElementById("defname" + i).style.opacity = "1.0";
+        document.getElementById("defprice" + i).style.opacity = "1.0";
+        document.getElementById("midname" + i).style.opacity = "1.0";
+        document.getElementById("midprice" + i).style.opacity = "1.0";
+    }
+    for (i = 1; i <= 3; i++) {
+        document.getElementById("fwdname" + i).style.opacity = "1.0";
+        document.getElementById("fwdprice" + i).style.opacity = "1.0";
+
+    }
+
+    document.getElementById("allPlayers").style.color = '#0ea331';
+    document.getElementById("totalPlayers").style.color = '#0ea331';
+    document.getElementById("totalPlayers").innerHTML = '15';
+    
+    document.getElementById("remainPrice").innerHTML=value;
 }

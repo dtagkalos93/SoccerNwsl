@@ -2802,7 +2802,7 @@ function changeFWD()
 
 }
 
-function openModalGK(i) {
+function addModalGK(i) {
 
     var name = document.getElementById("gkname" + i).textContent;
     var price = document.getElementById("gkprice" + i).textContent;
@@ -2843,7 +2843,7 @@ function openModalGK(i) {
     xhttp.send();
 }
 
-function openModalDEF(i) {
+function addModalDEF(i) {
 
     var name = document.getElementById("namedef" + i).textContent;
     var price = document.getElementById("pricedef" + i).textContent;
@@ -2886,7 +2886,7 @@ function openModalDEF(i) {
     xhttp.send();
 }
 
-function openModalMID(i) {
+function addModalMID(i) {
 
     var name = document.getElementById("namemid" + i).textContent;
     var price = document.getElementById("pricemid" + i).textContent;
@@ -2929,7 +2929,7 @@ function openModalMID(i) {
     xhttp.send();
 }
 
-function openModalFWD(i) {
+function addModalFWD(i) {
 
     var name = document.getElementById("namefwd" + i).textContent;
     var price = document.getElementById("pricefwd" + i).textContent;

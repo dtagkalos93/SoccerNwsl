@@ -286,7 +286,7 @@
                             </div>
 
                             <hr style="border:none;margin-top: 21%" >
-                            <div id="selMID1" class="col-md-2 col-xs-2" onclick="openModalMID('1')" >+
+                            <div id="selMID1" class="col-md-2 col-xs-2" onclick="openModalMID('1')" >
                                 <img class="image-player" src="img/subs.png"  id="midimage1" />
                                 <img  class="captainImg" id="midcptimage1"  src="img/captain.png" style="display: none" />  
                                 <img  class="captainImg" id="midvcptimage1"  src="img/vcaptain.png" style="display: none" /> 

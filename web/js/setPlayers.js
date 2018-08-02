@@ -820,13 +820,7 @@ function setPlayers(gk, def, mid, fwd) {
         var gkTeam = gkPlayers[i].split("-")[1];
         document.getElementById("namegk" + pl).innerHTML = gkName;
         document.getElementById("team" + pl).innerHTML = gkTeam;
-        for (j = 1; j <= 2; j++) {
-            if (document.getElementById("gkname" + j).textContent == gkName) {
-                console.log("Here!");
-                document.getElementById("gk" + j).style.pointerEvents = 'none';
-                document.getElementById("gk" + j).style.opacity = '0.6';
-            }
-        }
+
         if (gkTeam == 'BOS') {
             var image = "breakersgk.png";
         } else if (gkTeam == 'CHI') {
@@ -860,13 +854,7 @@ function setPlayers(gk, def, mid, fwd) {
         document.getElementById("defname" + pl).innerHTML = defName;
         document.getElementById("team" + (pl + 2)).innerHTML = defTeam;
 
-        for (j = 1; j <= 8; j++) {
 
-            if (document.getElementById("namedef" + j).textContent == defName) {
-                document.getElementById("def" + j).style.pointerEvents = 'none';
-                document.getElementById("def" + j).style.opacity = '0.6';
-            }
-        }
         if (defTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (defTeam == 'CHI') {
@@ -901,13 +889,7 @@ function setPlayers(gk, def, mid, fwd) {
         document.getElementById("midname" + pl).innerHTML = midName;
         document.getElementById("team" + (pl + 7)).innerHTML = midTeam;
 
-        for (j = 1; j <= 5; j++) {
 
-            if (document.getElementById("namemid" + j).textContent == midName) {
-                document.getElementById("mid" + j).style.pointerEvents = 'none';
-                document.getElementById("mid" + j).style.opacity = '0.6';
-            }
-        }
         if (midTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (midTeam == 'CHI') {
@@ -941,13 +923,7 @@ function setPlayers(gk, def, mid, fwd) {
         var fwdTeam = fwdPlayers[i].split("-")[1];
         document.getElementById("fwdname" + pl).innerHTML = fwdName;
         document.getElementById("team" + (pl + 12)).innerHTML = fwdTeam;
-        for (j = 1; j <= 5; j++) {
 
-            if (document.getElementById("namefwd" + j).textContent == fwdName) {
-                document.getElementById("fwd" + j).style.pointerEvents = 'none';
-                document.getElementById("fwd" + j).style.opacity = '0.6';
-            }
-        }
         if (fwdTeam == 'BOS') {
             var image = "breakers1.png";
         } else if (fwdTeam == 'CHI') {
@@ -975,6 +951,41 @@ function setPlayers(gk, def, mid, fwd) {
 
     setTeamNo();
     checkNoDisableSide();
+    for (k = 1; k <= 2; k++) {
+        for (j = 1; j <= 2; j++) {
+            if (document.getElementById("gkname" + j).textContent == document.getElementById("namegk" + k).textContent) {
+
+                document.getElementById("gk" + j).style.pointerEvents = 'none';
+                document.getElementById("gk" + j).style.opacity = '0.6';
+            }
+        }
+    }
+
+    for (k = 1; k <= 5; k++) {
+        for (j = 1; j <= 6; j++) {
+            if (document.getElementById("namedef" + j).textContent == document.getElementById("defname" + k).textContent) {
+                document.getElementById("def" + j).style.pointerEvents = 'none';
+                document.getElementById("def" + j).style.opacity = '0.6';
+            }
+        }
+    }
+    for (k = 1; k <= 5; k++) {
+        for (j = 1; j <= 6; j++) {
+            if (document.getElementById("namemid" + j).textContent == document.getElementById("midname" + k).textContent) {
+                document.getElementById("mid" + j).style.pointerEvents = 'none';
+                document.getElementById("mid" + j).style.opacity = '0.6';
+            }
+        }
+    }
+    for (k = 1; k <= 3; k++) {
+        for (j = 1; j <= 6; j++) {
+            if (document.getElementById("namefwd" + j).textContent == document.getElementById("fwdname" + k).textContent) {
+                document.getElementById("fwd" + j).style.pointerEvents = 'none';
+                document.getElementById("fwd" + j).style.opacity = '0.6';
+            }
+        }
+    }
+
 }
 
 function setPrice(gk, def, mid, fwd) {
@@ -1534,3 +1545,5 @@ function setCaptain(captain, vice) {
     }
 
 }
+
+
