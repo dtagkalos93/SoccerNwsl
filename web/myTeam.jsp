@@ -143,7 +143,7 @@
                 <li class="nav-item " style="display:<%=status%>"><a href="points.jsp">Points</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
-                <li class="nav-item"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="fixture.jsp">Fixtures</a></li>
                 <li class="nav-item"><a href="statistics.html">Statistics</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
