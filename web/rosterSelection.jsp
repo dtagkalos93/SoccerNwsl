@@ -169,7 +169,7 @@
                         <h5  style="text-align: center; font-size: 14px; font-weight: lighter;margin-top: 4px;margin-bottom: 4px"> <span id="playername" style="font-weight:bold"></span><span id='message'> has been added to your squad.</span></h5>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 bc-img" >
-                        <hr style="border:none;margin-top: 6.5%"/>
+                        <hr style="border:none;margin-top: 7.5%"/>
                         <div id="selGK1" class="col-md-6 col-xs-6" style="padding-left: 28%" onclick="changeGK()">
                             <img class="image-player" id="imagegk1" src="img/subsgk.png"/>
                             <p class="name" id="namegk1" >Goalkeeper</p>
