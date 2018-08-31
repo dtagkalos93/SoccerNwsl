@@ -67,36 +67,10 @@ public class findOpp extends HttpServlet {
         String ben = request.getParameter("ben");
         list = new HashMap<>();
 
-        String strThatDay = "2018/03/17";
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-        Date d = null;
-        try {
-            d = formatter.parse(strThatDay);//catch exception
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        deadLIne line = new deadLIne();
+        String gw = line.getGameweek();
+        int weeks = Integer.parseInt(gw.split(" ")[1]);
 
-        Calendar thatDay = Calendar.getInstance();
-        thatDay.setTime(d);
-        Calendar today = Calendar.getInstance();
-        today.getTime();
-        long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-        long days = diff / (24 * 60 * 60 * 1000);
-        int weeks = ((int) days) / 7;
-
-        if (weeks == 10) {
-            weeks = 9;
-        } else if (weeks == 16 || weeks == 17) {
-            weeks = 15;
-        } else if (weeks == 23 || weeks == 24) {
-            weeks = 21;
-        } else if (weeks > 10) {
-            weeks = weeks - 1;
-        }
-        if (weeks >= 22) {
-            weeks = 22;
-        }
         String fix = "Gameweek " + weeks;
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
@@ -110,7 +84,6 @@ public class findOpp extends HttpServlet {
         goalkeeper(gk, fix);
         list.put("gk", gklist);
         defender(def, fix);
-        System.out.println("!@#"+def);
         list.put("def", deflist);
         midfielder(mid, fix);
         list.put("mid", midlist);
@@ -201,10 +174,9 @@ public class findOpp extends HttpServlet {
                         gklist.add("vs BOS");
                     } else if (awayTeam.equals("FC Kansas City")) {
                         gklist.add("vs UTA");
+                    } else if (awayTeam.equals("-")) {
+                        gklist.add("-");
                     }
-                    else if(awayTeam.equals("-")){
-                            gklist.add("-");
-                        }
                 } else {
 
                     String homeTeam = resultSet.getString("home");
@@ -322,7 +294,7 @@ public class findOpp extends HttpServlet {
                             deflist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             deflist.add("vs BOS");
-                        }else if(awayTeam.equals("-")){
+                        } else if (awayTeam.equals("-")) {
                             deflist.add("-");
                         }
                     } else {
@@ -440,8 +412,7 @@ public class findOpp extends HttpServlet {
                             midlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             midlist.add("vs BOS");
-                        } 
-                        else if(awayTeam.equals("-")){
+                        } else if (awayTeam.equals("-")) {
                             midlist.add("-");
                         }
 
@@ -469,7 +440,7 @@ public class findOpp extends HttpServlet {
                             midlist.add("@ UTA");
                         } else if (homeTeam.equals("Boston Breakers")) {
                             midlist.add("@ BOS");
-                        } 
+                        }
                     }
 
                 }
@@ -561,7 +532,7 @@ public class findOpp extends HttpServlet {
                             fwdlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             fwdlist.add("vs BOS");
-                        }else if(awayTeam.equals("-")){
+                        } else if (awayTeam.equals("-")) {
                             fwdlist.add("-");
                         }
                     } else {
@@ -680,7 +651,7 @@ public class findOpp extends HttpServlet {
                             benlist.add("vs UTA");
                         } else if (awayTeam.equals("Boston Breakers")) {
                             benlist.add("vs BOS");
-                        }else if(awayTeam.equals("-")){
+                        } else if (awayTeam.equals("-")) {
                             benlist.add("-");
                         }
                     } else {

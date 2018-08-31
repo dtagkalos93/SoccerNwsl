@@ -1,4 +1,30 @@
+<%@page import="com.fantasy.dreamTeam"%>
+<%@page import="com.fantasy.standings"%>
+<%@page import="com.fantasy.topPerformances"%>
+<%@page import="com.fantasy.rosterPlayer"%>
+<%@page import="com.fantasy.deadLIne"%>
 <!DOCTYPE html>
+
+<%
+    String teamemail = session.getAttribute("email").toString();
+    rosterPlayer players = new rosterPlayer(teamemail);
+    String totalScore = players.getTotalScore();
+
+    deadLIne line = new deadLIne();
+    int fixNo = Integer.parseInt(line.getGameweek().split(" ")[1]);
+    String status;
+    if (line.getpointsStatus()) {
+        status = "";
+    } else {
+        status = "none";
+    }
+
+    topPerformances top = new topPerformances();
+
+    standings stands = new standings();
+    dreamTeam dream = new dreamTeam(17);
+
+%>
 <html lang="en">
 
     <head>
@@ -32,7 +58,9 @@
         <![endif]-->
 
     </head>
-    <body>
+    <body onLoad="topPlayers('<%=top.getTopPerfomance()%>');
+            standings('<%=stands.getTeam()%>', '<%=stands.getBadge()%>', '<%=stands.getGp()%>', '<%=stands.getWins()%>', '<%=stands.getLooses()%>', '<%=stands.getDraws()%>', '<%=stands.getGd()%>', '<%=stands.getPts()%>');
+            dreamTeam('<%=dream.getTeam()%>', '<%=dream.getName()%>', '<%=dream.getPos()%>', '<%=dream.getScore()%>')">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -110,7 +138,7 @@
                 <li class="nav-item"><a href="points.jsp">Points</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
-                <li class="nav-item"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
                 <li class="nav-item"><a href="statistics.html">Statistics</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
@@ -137,14 +165,14 @@
                         <span style="font-weight: bold"><%=session.getAttribute("fullname")%></h5>
 
                     <h4 class="col-md-12 col-xs-12" style="font-family: Century Gothic; font-size: 20px;" >
-                        Gameweek 9 Status
+                        <span id="gw"><%=line.getGameweek()%></span> Status
                     </h4>
                     <div class="col-md-12 col-xs-12 image-tables" >
                         <img src="img/nwsl-cover.png" style="visibility: hidden;" />
                         <div class="col-md-12 col-xs-12" style="width: 100%;margin-top: -25%"  >
                             <div class="col-md-3 col-xs-3" style="margin-top: -1%">
                                 <h6  style="font-family: Century Gothic; font-size: 40px;margin-top: 5%;text-align: center;right: 21%" >Points</h6> 
-                                <h5 style="font-family: Century Gothic; font-size: 50px;text-align: center;right: 21%" >50</h5> 
+                                <h5 style="font-family: Century Gothic; font-size: 50px;text-align: center;right: 21%" ><%=totalScore%></h5> 
                             </div>
                             <div class="col-md-4 col-xs-4" style="margin-top: 5%" >
                                 <a href="points.jsp"  class="prevbutton btncustom  " style="color:white  ;height: 40px; font-size: 13px; font-weight: bold; text-align: center; font-family:Century Gothic;width: 62%;padding:3.5%; appearance: button;text-decoration: none;" >
@@ -182,10 +210,10 @@
                     <div class="col-md-6 col-xs-6" >
                         <table class="table-header-dt col-md-12 col-xs-12" >
                             <tr>
-                                <th style="font-family:Century Gothic; color: white; font-size: 15px; padding: 2.2%"> Gameweek 9 Dream Team 
+                                <th style="font-family:Century Gothic; color: white; font-size: 15px; padding: 2.2%">Gameweek <%=(fixNo - 1)%> Dream Team 
                                     <span>
                                         <a href= "dreamteam.jsp" style="color: white; float: right"> 
-                                            135 points <i class="glyphicon glyphicon-arrow-right" style="color: white;padding-left: 5px;vertical-align: baseline"></i>
+                                            <%=dream.gettotalScore()%> points <i class="glyphicon glyphicon-arrow-right" style="color: white;padding-left: 5px;vertical-align: baseline"></i>
                                         </a>
                                     </span>
                                 </th>
@@ -199,160 +227,28 @@
                                 <th style="padding: 1.3%;text-align: center">Club</th>
                                 <th style="padding: 1.3%;text-align: center">Pts</th>
                             </tr>
+                            <%
+                                for (int i = 1; i <= 11; i++) {
+                            %>
                             <tr style="border-bottom: 1px solid #e8e8e8">
                                 <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>GK</td>
+                                <td id="dreampos<%=i%>" style=' font-size: 13px; text-align: center; width: 12%'>GK</td>
                                 <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
                                     <div class='col-sm-2'>
-                                        <img src="img/orlandogk.png" style="width:25px;height:30px" />
+                                        <img id="dreamimage<%=i%>" src="img/orlandogk.png" style="width:25px;height:30px" />
                                     </div>
                                     <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Harris </span>
+                                        <span id="dreamname<%=i%>" style="font-size: 15px;font-family: Century Gothic">Harris </span>
                                     </div>
                                 </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">ORL</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">10</td>
+                                <td id="dreamteam<%=i%>" style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">ORL</td>
+                                <td id="dreampoints<%=i%>" style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">10</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/breakers1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Westphal</span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">BOS</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">10</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/stars1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width: 230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Ertz </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">CHI</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">11</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/pride1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Krieger</span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">ORL</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">12</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>DEF</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/utahjr.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Sauerbrunn</span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">UTA</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">15</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/courage.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">S. Mewis </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">NC</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">13</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/reign1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Rapinoe </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">SEA</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">13</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/skyblue1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Killion </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">NJ</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">10</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>MID</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/thorns1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Horan </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">POR</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">15</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>FWD</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/stars1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Press</span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">CHI</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">13</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #e8e8e8">
-                                <td style=' font-size: 14px;padding-left: 5px; padding:5px; width: 7%; text-align: center; background-color: #f6f6f5'><span class="glyphicon glyphicon-info-sign"></span></td>
-                                <td style=' font-size: 13px; text-align: center; width: 12%'>FWD</td>
-                                <td style=" font-weight: lighter ;font-size:15px; padding:5px;width: 50%">
-                                    <div class='col-sm-2'>
-                                        <img src="img/pride1.png" style="width:25px;height:30px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top: 5px">
-                                        <span style="font-size: 15px;font-family: Century Gothic">Marta </span>
-                                    </div>
-                                </td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">ORL</td>
-                                <td style=" font-size:13px; font-weight: bold; text-align:center; width: 12.5%">13</td>
-                            </tr>
+
+                            <%
+                                }
+                            %>
+
                         </table>
                     </div>
 
@@ -373,159 +269,31 @@
                                 <th style="padding: 1.3%;text-align: center">GD</th>
                                 <th style="padding: 1.3%;text-align: center">Pts</th>
                             </tr>
+                            <%
+                                for (int i = 1; i <= 9; i++) {
+
+
+                            %>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>1</td>
+                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'><%=i%></td>
                                 <td style="width: 50%;font-size:15px;padding: 3px; ">
                                     <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/North_Carolina_Courage1.png" style="height:38px" />
+                                        <img id="standsimage<%=i%>" src="img/North_Carolina_Courage1.png" style="height:38px" />
                                     </div>
                                     <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">North Carolina Courage</span>
+                                        <span id="standsteam<%=i%>" style="font-size: 15px">North Carolina Courage</span>
                                     </div>
                                 </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>16</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">7</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">1</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">16</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">49</td>
+                                <td id="standsgp<%=i%>" style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
+                                <td id="standswins<%=i%>" style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>16</td>
+                                <td id="standslooses<%=i%>" style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">7</td>
+                                <td id="standsdraws<%=i%>" style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">1</td>
+                                <td id="standsgd<%=i%>" style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">16</td>
+                                <td id="standspts<%=i%>" style="width: 7%; text-align:center ;font-size:13px">49</td>
                             </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>2</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/Portland1.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Portland Thorns FC</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>14</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">5</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">5</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">17</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">47</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>3</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/OrlandoPride2.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Orlando Pride</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>11</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">6</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">7</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">14</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">40</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>4</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/ChicagoRedStars1.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Chicago Red Stars</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>11</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">7</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">6</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">3</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">39</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>5</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/SeattleReignFC2.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Seattle Reign FC</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>9</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">8</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">7</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">6</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">34</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>6</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/Sky_Blue_FC1.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Sky Blue FC</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>10</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">11</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">3</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">-9</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">33</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>7</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/Houston_Dash2.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Houston Dash</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>7</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">14</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">3</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">-16</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">24</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>8</td>
-                                <td style="width: 50%; font-size: 15px;padding: 3px">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/spirit.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Washington Spirit</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">24</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>5</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">15</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">4</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">-18</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">19</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='width: 5%; font-size: 14px; text-align: center; background-color: #f6f6f5'>9</td>
-                                <td style="width: 50%; font-size:15px;padding: 3px; ">
-                                    <div class='col-sm-2' style="padding-left: 0">
-                                        <img src="img/UtahRoyals2.png" style="height:38px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:230px;height: 30px;padding-top: 3%">
-                                        <span style="font-size: 15px">Utah Royal FC</span>
-                                    </div>
-                                </td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">0</td>
-                                <td style='width: 5%; text-align:center ;font-size:13px; font-weight: lighter'>0</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">0</td>
-                                <td style="width: 5%; text-align:center ;font-size:13px; font-weight: lighter">0</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px; font-weight: lighter">0</td>
-                                <td style="width: 7%; text-align:center ;font-size:13px">0</td>
-                            </tr>
+
+                            <%}%>
+
                         </table>
                     </div>
                 </div>
@@ -698,118 +466,27 @@
                 </div>
                 <div class="col-md-12 col-xs-12" style="margin-top: 4%; border: 1px solid #e8e8e8;border-top: 4px solid #ac0f1f;height:280px ">
                     <div style="margin-top: 1% " >
-                        <h4 style="font-size: 18px;font-family: Century Gothic">2017 Gameweek Top Players</h4>
+                        <h4 style="font-size: 18px;font-family: Century Gothic">2018 Gameweek Top Players</h4>
                     </div>
                     <div class="col-md-12 col-xs-12" style="margin-top:3%">
                         <button   type="button" class="prevbutton btncustom col-md-2 col-xs-2 hidden-xs prev" style="height: 165px;width:40px;left:-2.7%">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </button>
                         <div class="center slider col-md-8 col-xs-8" style="height:165px;width:92%;left: 0.1%; margin-top: 1%" align="middle" >
-                            <div >
-                                <img class="image-player " src="img/orlandogk.png" />
-                                <p class="gkname1" >Harris</p>
-                                <p class="gkpoint1">GW1-8pts</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/pride1.png"  />
-                                <p class="gkname1" >Kennedy</p>
-                                <p class="gkpoint1">GW2-8pts</p>
-                            </div>
-                            <div  >
-                                <img class="image-player " src="img/pride1.png"  />
-                                <p class="gkname1" >Krieger</p>
-                                <p class="gkpoint1">GW3-8</p></div>
-                            <div >
-                                <img class="image-player" src="img/spirit1.png"  />
-                                <p class="gkname1" >Zadorsky</p>
-                                <p class="gkpoint1">GW4-8pts</p>
-                            </div>
-                            <div  >
-                                <img class="image-player" src="img/pride1.png"  />
-                                <p class="gkname1" >Kennedy</p>
-                                <p class="gkpoint1">GW5-8pts</p>
-                            </div>
-                            <div >
-                                <img class="image-player" src="img/thorns1.png"  />
-                                <p class="gkname1" >Menges</p>
-                                <p class="gkpoint1">GW5-8pts</p>
-                            </div>
-                            <div >
-                                <img class="image-player" src="img/utahjr.png"  />
-                                <p class="gkname1" >Sauerbrunn</p>
-                                <p class="gkpoint1">GW5-8pts</p>
-                            </div>
-                            <div >
-                                <img class="image-player" src="img/pride1.png"  />
-                                <p class="gkname1" >Ertz</p>
-                                <p class="gkpoint1">GW5-8pts</p>
-                            </div>
-                            <div >
-                                <img class="image-player" src="img/stars1.png"  />
-                                <p class="gkname1" >Short</p>
-                                <p class="gkpoint1">GW5-8pts</p>
-                            </div>
+                            <%
+                                for (int i = 1; i <= 24; i++) {
 
-                            <div >
-                                <img class="image-player" src="img/dash1.png"  />
-                                <p class="gkname1" >Brian</p>
-                                <p class="gkpoint1">8</p>
+
+                            %>
+
+                            <div id="topgw<%=i%>">
+                                <img id="topgwimage<%=i%>" class="image-player " src="img/subs.png" />
+                                <p id="topgwname<%=i%>" class="gkname1" >-</p>
+                                <p id="topgwpoint<%=i%>" class="gkpoint1">GW <%=i%></p>
                             </div>
-                            <div >
-                                <img class="image-player" src="img/dash1.png"  />
-                                <p class="gkname1" >Lloyd</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player" src="img/spirit1.png"  />
-                                <p class="gkname1" >K. Mewis</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/reign1.png"  />
-                                <p class="gkname1" >Rapinoe</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/thorns1.png"  />
-                                <p class="gkname1" >Heath</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/courage.png"  />
-                                <p class="gkname1" >S. Mewis</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/pride1.png"  />
-                                <p class="gkname1" >Camila</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/pride1.png"  />
-                                <p class="gkname1" >Marta</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/skyblue1.png"  />
-                                <p class="gkname1" >Kerr</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/thorns1.png"  />
-                                <p class="gkname1" >Nadim</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/courage.png"  />
-                                <p class="gkname1" >Williams</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
-                            <div >
-                                <img class="image-player " src="img/dash1.png"  />
-                                <p class="gkname1" >Ohai</p>
-                                <p class="gkpoint1">8</p>
-                            </div>
+                            <%
+                                }%>
+
                         </div>
                         <button   type="button" class="prevbutton btncustom col-md-2 col-xs-2 hidden-xs next" style="height: 165px;width:40px; float: right;left: 2.8%;margin-top: 0">
                             <span class="glyphicon glyphicon-chevron-right"></span>
@@ -1135,18 +812,21 @@
         <script type="text/javascript" src="slick/slick.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('.center').slick({
-                    dots: false,
-                    infinite: false,
-                    centerMode: false,
-                    slidesToShow: 7,
-                    slidesToScroll: 1,
-                    prevArrow: $('.prev'),
-                    nextArrow: $('.next')
-                });
+        $(document).ready(function () {
+            $('.center').slick({
+                dots: false,
+                infinite: false,
+                centerMode: false,
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next')
             });
+        });
         </script>
+
+
+        <script src="js/topPerfomance.js"></script>
 
     </body>
 

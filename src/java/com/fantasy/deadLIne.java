@@ -21,6 +21,7 @@ public class deadLIne {
     private boolean pointsStatus;
     private String deadline;
     private String fix;
+    private String gameweek;
 
     public deadLIne() {
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
@@ -52,6 +53,7 @@ public class deadLIne {
                         
                     }
                     fix=resultSet.getString("fixture")+" Deadline: ";
+                    gameweek=resultSet.getString("fixture");
                     deadline= resultSet.getString("date") + " " + resultSet.getString("time");
                     System.out.println(deadline);
                     break;
@@ -78,6 +80,11 @@ public class deadLIne {
     public String getfix(){
         return fix;
     }
+    
+     public String getGameweek(){
+        return gameweek;
+    }
+    
     public boolean getpointsStatus(){
         return pointsStatus;
     }

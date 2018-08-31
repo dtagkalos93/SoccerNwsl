@@ -1,10 +1,11 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.fantasy;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -29,8 +30,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class fixture extends HttpServlet {
 
-
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -43,10 +42,19 @@ public class fixture extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Fixture");
+        String text = request.getParameter("previous");
+        System.out.println(text);
 
-        response.setContentType("text/html");
+        String[] parts = text.split(" ");
 
-        PrintWriter out = response.getWriter();
+        int fixNo = Integer.parseInt(parts[1]);
+        String prevBtnvalue = "Gameweek " + (fixNo - 1);
+        String nextBtnvalue = "Gameweek " + (fixNo + 1);
+        List<String> list = new ArrayList<>();
+        list.add(text);
+        list.add(prevBtnvalue);
+        list.add(nextBtnvalue);
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
@@ -55,13 +63,6 @@ public class fixture extends HttpServlet {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-        List dataList = new ArrayList();
-        List dateList = new ArrayList();
-        List homeList = new ArrayList();
-        List homebadgeList = new ArrayList();
-        List timeList = new ArrayList();
-        List awayList = new ArrayList();
-        List awaybadgeList = new ArrayList();
         String badge = null;
         try {
 
@@ -70,43 +71,9 @@ public class fixture extends HttpServlet {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
-            String strThatDay = "2018/03/17";
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-            Date d = null;
-            try {
-                d = formatter.parse(strThatDay);//catch exception
-            } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
 
-            Calendar thatDay = Calendar.getInstance();
-            thatDay.setTime(d);
-            Calendar today = Calendar.getInstance();
-            today.getTime();
-            long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-            long days = diff / (24 * 60 * 60 * 1000);
-            int weeks = ((int) days) / 7;
-
-            if(weeks==10){
-                weeks=9;
-            }
-            else if(weeks==16 || weeks == 17){
-                weeks=15;
-            }
-            else if(weeks==23 || weeks ==24 ){
-                weeks = 21;
-            }
-            else if(weeks>10){
-                weeks=weeks-1;
-            }
-            if (weeks >= 22 )
-                weeks = 22;
             //Select the data from the database
-            String sql = "SELECT * FROM fixture where fixture='Gameweek " + weeks + "'";
-            dataList.add("Gameweek " + weeks);
-            dataList.add("Gameweek " + (weeks - 1));
-            dataList.add("Gameweek " + (weeks + 1));
+            String sql = "SELECT * FROM fixture where fixture='" + text + "'";
             Statement s = connection.createStatement();
 
             s.executeQuery(sql);
@@ -114,11 +81,13 @@ public class fixture extends HttpServlet {
             resultSet = s.getResultSet();
 
             while (resultSet.next()) {
-
+                if (resultSet.getString("date").equals("-")) {
+                    continue;
+                }
                 //Add records into data list
-                dateList.add(resultSet.getString("date"));
+                list.add(resultSet.getString("date"));
 
-                homeList.add(resultSet.getString("home"));
+                list.add(resultSet.getString("home"));
                 if (resultSet.getString("home").equals("Houston Dash")) {
                     badge = "Houston_Dash.png";
                 } else if (resultSet.getString("home").equals("Chicago Red Stars")) {
@@ -140,9 +109,9 @@ public class fixture extends HttpServlet {
                 } else if (resultSet.getString("home").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }
-                homebadgeList.add(badge);
-                timeList.add(resultSet.getString("time"));
-                awayList.add(resultSet.getString("away"));
+                list.add(badge);
+                list.add(resultSet.getString("time"));
+                list.add(resultSet.getString("away"));
                 if (resultSet.getString("away").equals("Houston Dash")) {
                     badge = "Houston_Dash.png";
                 } else if (resultSet.getString("away").equals("Chicago Red Stars")) {
@@ -164,37 +133,24 @@ public class fixture extends HttpServlet {
                 } else if (resultSet.getString("away").equals("Boston Breakers")) {
                     badge = "Boston_Breakers.png";
                 }
-                awaybadgeList.add(badge);
-                
-
+                list.add(badge);
+                list.add(resultSet.getString("stadium"));
             }
 
             resultSet.close();
 
             s.close();
-            
-            connection.close();
-
+            System.out.println(list.size() + "!!!");
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);
 
         }
-        request.setAttribute("data", dataList);
-        request.setAttribute("date", dateList);
-        request.setAttribute("home", homeList);
-        request.setAttribute("homebadge", homebadgeList);
-        request.setAttribute("time", timeList);
-        request.setAttribute("away", awayList);
-        request.setAttribute("awaybadge", awaybadgeList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("fixtures.jsp");
 
-        if (dispatcher != null) {
-
-            dispatcher.forward(request, response);
-
-        }   
+        String json = new Gson().toJson(list);
+        response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
+        response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+        response.getWriter().write(json);
     }
-
 
 }

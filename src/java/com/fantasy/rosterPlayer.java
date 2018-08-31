@@ -35,6 +35,7 @@ public class rosterPlayer {
     private String value;
     private String captain;
     private String viceCaptain;
+    private String teamName;
     private int totalScore;
     private int totalUsers;
     private int totalPlayer;
@@ -46,6 +47,7 @@ public class rosterPlayer {
 
     public rosterPlayer(String email) throws SQLException {
         totalScore = 0;
+        teamName="";
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
             String dbName = "fantasy";
@@ -95,6 +97,7 @@ public class rosterPlayer {
                 value = resultSet.getString("value");
                 captain = resultSet.getString("captain");
                 viceCaptain = resultSet.getString("viceCaptain");
+                teamName=resultSet.getString("nameTeam");
             }
             resultSet.close();
 
@@ -121,6 +124,10 @@ public class rosterPlayer {
     public String getVicecaptain() {
         return viceCaptain;
     }
+    
+    public String getTeamName() {
+        return teamName;
+    }
 
     public void getScore() {
         try {
@@ -134,36 +141,9 @@ public class rosterPlayer {
             ResultSet resultSet = null;
             Class.forName("com.mysql.jdbc.Driver");
 
-            String strThatDay = "2017/04/10";
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-            Date d = null;
-            try {
-                d = formatter.parse(strThatDay);//catch exception
-            } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-            Calendar thatDay = Calendar.getInstance();
-            thatDay.setTime(d);
-            Calendar today = Calendar.getInstance();
-            today.getTime();
-            long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-            long days = diff / (24 * 60 * 60 * 1000);
-            int weeks = ((int) days) / 7;
-
-            if (weeks == 10) {
-                weeks = 9;
-            } else if (weeks == 16 || weeks == 17) {
-                weeks = 15;
-            } else if (weeks == 23 || weeks == 24) {
-                weeks = 21;
-            } else if (weeks > 10) {
-                weeks = weeks - 1;
-            }
-            if (weeks >= 24) {
-                weeks = 24;
-            }
+            deadLIne line=new deadLIne();
+            String gw=line.getGameweek();
+            int weeks=Integer.parseInt(gw.split(" ")[1])-1; 
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
             String[] def = defence.split(",");
@@ -359,8 +339,8 @@ public class rosterPlayer {
         return bench;
     }
 
-    public String getValue() {
-        return value;
+    public double getValue() {
+        return Double.parseDouble(value);
     }
 
     public void unionPlayers(String gk, String def, String mid, String fwd, String ben) {

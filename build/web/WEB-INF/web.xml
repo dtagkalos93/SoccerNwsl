@@ -88,6 +88,10 @@
         <servlet-name>findPrice</servlet-name>
         <servlet-class>com.fantasy.findPrice</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>transfers</servlet-name>
+        <servlet-class>com.fantasy.transfers</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -175,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>findPrice</servlet-name>
         <url-pattern>/findPrice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>transfers</servlet-name>
+        <url-pattern>/transfers</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -59,37 +59,10 @@ public class findPoint extends HttpServlet {
         String captain = request.getParameter("cpt");
         list = new HashMap<>();
 
-        String strThatDay = "2018/03/17";
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-        Date d = null;
-        try {
-            d = formatter.parse(strThatDay);//catch exception
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        Calendar thatDay = Calendar.getInstance();
-        thatDay.setTime(d);
-        Calendar today = Calendar.getInstance();
-        today.getTime();
-        long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-        long days = diff / (24 * 60 * 60 * 1000);
-        int weeks = ((int) days) / 7;
-
-        if (weeks == 10) {
-            weeks = 9;
-        } else if (weeks == 16 || weeks == 17) {
-            weeks = 15;
-        } else if (weeks == 23 || weeks == 24) {
-            weeks = 21;
-        } else if (weeks > 10) {
-            weeks = weeks - 1;
-        }
-        if (weeks >= 22) {
-            weeks = 22;
-        }
-        String fix = "GW" + weeks;
+        deadLIne line = new deadLIne();
+        String gw = line.getGameweek();
+        int weeks = Integer.parseInt(gw.split(" ")[1]);
+        String fix = "GW" + (weeks-1);
 
         gklist = new ArrayList<>();
         deflist = new ArrayList<>();
