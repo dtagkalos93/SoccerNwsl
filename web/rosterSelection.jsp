@@ -782,8 +782,8 @@
                                         classSTR = "glyphicon glyphicon-info-sign";
                                         color = "";
                                     } else {
-                                        classSTR = "glyphicon glyphicon-alert fa-lg";
-                                        color = "#c0020d";
+                                        classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                        color = "";
                                     }
                                 %>
                                 <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span id="gkinjury1"  class="<%=classSTR%>" style="color:<%=color%>"></span></td>
@@ -806,8 +806,8 @@
                                         classSTR = "glyphicon glyphicon-info-sign";
                                         color = "";
                                     } else {
-                                        classSTR = "glyphicon glyphicon-alert fa-lg";
-                                        color = "#c0020d";
+                                        classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                        color = "";
                                     }
                                 %>
                                 <td style=' font-family: Century Gothic;font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="gkinjury2" class="<%=classSTR%>" style="color:<%=color%>"</span></td>
@@ -849,8 +849,8 @@
                                         classSTR = "glyphicon glyphicon-info-sign";
                                         color = "";
                                     } else {
-                                        classSTR = "glyphicon glyphicon-alert fa-lg";
-                                        color = "#c0020d";
+                                        classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                        color = "";
                                     }%>
                                 <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="<%=gkinjurystr%>" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
 
@@ -883,7 +883,7 @@
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury1" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(0).equals("OUT")) {
                                     %>
-                                <td style="font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center "><span id="definjury1" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style="font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center "><span id="definjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
@@ -905,7 +905,7 @@
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span id="definjury2" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(1).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury2" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -927,7 +927,7 @@
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(2).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -949,7 +949,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(3).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -971,7 +971,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(4).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -993,7 +993,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(5).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1015,7 +1015,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(6).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1037,7 +1037,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(7).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1076,7 +1076,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=definjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (definjury.get(0).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=definjurystr%>" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=definjurystr%>" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1108,7 +1108,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(0).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1130,7 +1130,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(1).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1152,7 +1152,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(2).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1174,7 +1174,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(3).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1196,7 +1196,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(4).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1237,7 +1237,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=midinjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (midinjury.get(0).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=midinjurystr%>" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=midinjurystr%>" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1269,7 +1269,7 @@
                                 <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(0).equals("OUT")) {
                                     %>
-                                <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1291,7 +1291,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(1).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1313,7 +1313,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(2).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1335,7 +1335,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(3).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1357,7 +1357,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(4).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
@@ -1397,7 +1397,7 @@
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
                                     <% } else if (fwdinjury.get(0).equals("OUT")) {
                                     %>
-                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
                                     <% }
                                     %>
                                 <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">

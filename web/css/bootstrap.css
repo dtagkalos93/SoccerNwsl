@@ -897,7 +897,7 @@ th {
 .glyphicon-paste:before {
   content: "\e206";
 }
-.glyphicon-alert:before {
+.glyphicon-one-fine-red-dot:before {
   content: "\e209";
 }
 .glyphicon-equalizer:before {
