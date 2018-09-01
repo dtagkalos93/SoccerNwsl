@@ -69,13 +69,14 @@ public class login extends HttpServlet {
         String email = request.getParameter("email");
         String pwd = request.getParameter("pwd");
         String rember = request.getParameter("checkbox");
+        System.out.println("login");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";
         String password = "";
         HttpSession session;
         session = request.getSession();
-
+        String login = "";
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -104,17 +105,16 @@ public class login extends HttpServlet {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
-                        session.setAttribute("teamBadge",resultSet.getString("team"));
+                        session.setAttribute("teamBadge", resultSet.getString("team"));
                         resultSet.close();
                         s.close();
+                        login = "success";
 
-                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
-                        rd.forward(request, response);
                     } else {
                         String fullnamestr = resultSet.getString("firstname") + " " + resultSet.getString("lastname");
                         session.setAttribute("email", email);
                         session.setAttribute("fullname", fullnamestr);
-                        session.setAttribute("teamBadge",resultSet.getString("team"));
+                        session.setAttribute("teamBadge", resultSet.getString("team"));
                         session.setMaxInactiveInterval(60 * 60);
                         Cookie emailName = new Cookie("email", email);
                         emailName.setMaxAge(24 * 60 * 60);
@@ -122,25 +122,22 @@ public class login extends HttpServlet {
                         int cookieID = 0;
                         obj.addProperty("email", email);
                         pw.write(obj.toString());
-                        RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
-                        rd.forward(request, response);
+                        login = "success";
+
                     }
 
                 } else {
                     resultSet.close();
                     s.close();
                     connection.close();
+                    login = "fail";
 
-                    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                    rd.forward(request, response);
                 }
             } else {
                 resultSet.close();
                 s.close();
                 connection.close();
-
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                rd.forward(request, response);
+                login = "fail";
             }
 
         } catch (Exception e) {
@@ -148,6 +145,9 @@ public class login extends HttpServlet {
             System.out.println("Exception is ;" + e);
 
         }
+        response.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
+        response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+        response.getWriter().write(login);
     }
 
     /**

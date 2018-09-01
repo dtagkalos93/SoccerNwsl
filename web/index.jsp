@@ -5,51 +5,51 @@
 <%@page import="java.sql.Connection"%>
 
 <%
-            //allow access only if session exists
-            String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
-             String dbName = "fantasy";
-            String userId = "root";
-            String password = "";
-            String email = null;
-            Connection connection = null;
-            Statement statement = null;
-            ResultSet resultSet = null;
+    //allow access only if session exists
+    String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+    String dbName = "fantasy";
+    String userId = "root";
+    String password = "";
+    String email = null;
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
 //            if (session.getAttribute("user") == null) {
 //                response.sendRedirect("index.jsp");
 //            } else {
 //                user = (String) session.getAttribute("user");
 //            }
-            String emailName = null;
-            String sessionID = null;
-            Cookie[] cookies = request.getCookies();
-            if (cookies != null) {
-                for (Cookie cookie : cookies) {
-                    if (cookie.getName().equals("email")) {
-                        emailName = cookie.getValue();
-                        email = cookie.getValue();
-                        Class.forName("com.mysql.jdbc.Driver");
+    String emailName = null;
+    String sessionID = null;
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("email")) {
+                emailName = cookie.getValue();
+                email = cookie.getValue();
+                Class.forName("com.mysql.jdbc.Driver");
 
-            // Get a Connection to the database
-                         connection = DriverManager.getConnection(connectionUrl, userId, password);
-                        String sql = "SELECT * FROM user where email='" + email + "'";
-                        Statement s = connection.createStatement();
+                // Get a Connection to the database
+                connection = DriverManager.getConnection(connectionUrl, userId, password);
+                String sql = "SELECT * FROM user where email='" + email + "'";
+                Statement s = connection.createStatement();
 
-                        s.executeQuery(sql);
+                s.executeQuery(sql);
 
-                        resultSet = s.getResultSet();
-                        if (resultSet.next()) {
-                            session.setAttribute("fullname", resultSet.getString("firstname")+ " " + resultSet.getString("lastname"));
-                            session.setAttribute("teamBadge",resultSet.getString("team"));
-                            RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
-                            rd.forward(request, response);
-                        }
-                    }
-                    if (cookie.getName().equals("JSESSIONID")) {
-                        sessionID = cookie.getValue();
-                    }
+                resultSet = s.getResultSet();
+                if (resultSet.next()) {
+                    session.setAttribute("fullname", resultSet.getString("firstname") + " " + resultSet.getString("lastname"));
+                    session.setAttribute("teamBadge", resultSet.getString("team"));
+                    RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
+                    rd.forward(request, response);
                 }
             }
-        %>
+            if (cookie.getName().equals("JSESSIONID")) {
+                sessionID = cookie.getValue();
+            }
+        }
+    }
+%>
 
 <html lang="en">
 
@@ -141,6 +141,7 @@
             }
         </style>
 
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -178,55 +179,55 @@
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-              <!--  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="http://chicagoredstars.com/"  target="_blank">
-                                <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://houstondashsoccer.com/"  target="_blank">
-                                <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://nccourage.com/"  target="_blank">
-                                <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.orlando-pride.com/"  target="_blank">
-                                <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.timbers.com/thornsfc"  target="_blank">
-                                <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.reignfc.com/" target="_blank">
-                                <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.skybluefc.com/"  target="_blank">
-                                <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
-                                <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://washingtonspirit.com/"  target="_blank">
-                                <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <!--  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li>
+                              <a href="http://chicagoredstars.com/"  target="_blank">
+                                  <img  src="img/ChicagoRedStars.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://houstondashsoccer.com/"  target="_blank">
+                                  <img  src="img/Houston_Dash.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://nccourage.com/"  target="_blank">
+                                  <img  src="img/North_Carolina_Courage.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.orlando-pride.com/"  target="_blank">
+                                  <img  src="img/OrlandoPride.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.timbers.com/thornsfc"  target="_blank">
+                                  <img  src="img/Portland.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.reignfc.com/" target="_blank">
+                                  <img  src="img/SeattleReignFC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.skybluefc.com/"  target="_blank">
+                                  <img  src="img/Sky_Blue_FC.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://www.rsl.com/utahroyalsfc"  target="_blank">
+                                  <img  src="img/UtahRoyals.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://washingtonspirit.com/"  target="_blank">
+                                  <img src="img/Washington_Spirit.png" style="width: auto;height: 40px;margin-left: 15%" />
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
@@ -251,268 +252,207 @@
                 <div class="row">
                     <div class="col-lg-12" style="margin-top: -6%">
                         <div>
-                        <h4 style="color:white; font-family: Century Gothic; margin-top: 0;font-weight: lighter;margin-right: 1%;word-spacing: 2px">or Login with
-                        <!--<div class="fb-login-button" size="medium" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
-                        <!--<a class="btn btn-social-icon btn-facebook" style="background-color: #676d77; padding: 3px 13px; font-size: 23px; border-radius: 50%; margin-top: 0; margin-left: 0.5%;">
-                            <span class="fa fa-facebook" style="color:white"></span>
-                        </a>-->
-                        <a class="facebookBtn smGlobalBtn" href="#" ></a>
-                        <!--<a class="btn btn-social-icon btn-twitter" style="background-color: #676d77; padding: 3px 8px; font-size: 23px; border-radius: 50%; margin-top: 0;margin-left: 0.5%;">
-                            <span class="fa fa-twitter" style="color:white"></span>
-                        </a>-->
-                        <a class="twitterBtn smGlobalBtn" href="#" ></a>
-                        </h4>
+                            <h4 style="color:white; font-family: Century Gothic; margin-top: 0;font-weight: lighter;margin-right: 1%;word-spacing: 2px">or Login with
+                                <!--<div class="fb-login-button" size="medium" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+                                <!--<a class="btn btn-social-icon btn-facebook" style="background-color: #676d77; padding: 3px 13px; font-size: 23px; border-radius: 50%; margin-top: 0; margin-left: 0.5%;">
+                                    <span class="fa fa-facebook" style="color:white"></span>
+                                </a>-->
+                                <a class="facebookBtn smGlobalBtn" href="#" ></a>
+                                <!--<a class="btn btn-social-icon btn-twitter" style="background-color: #676d77; padding: 3px 8px; font-size: 23px; border-radius: 50%; margin-top: 0;margin-left: 0.5%;">
+                                    <span class="fa fa-twitter" style="color:white"></span>
+                                </a>-->
+                                <a class="twitterBtn smGlobalBtn" href="#" ></a>
+                            </h4>
 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+            <!-- /.intro-header -->
+
+            <!-- Page Content -->
+
+            <a  name="services"></a>
+            <div class="content-section-a">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Pick your roster<br></h2>
+                            <p class="lead" style="font-size: 15px;font-family: Century Gothic">Select your best IX and beat the best in order to be the best.</p>
+                            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                                <img class="img-responsive" src="img/indexroster.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin:0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Create and join leagues<br></h2>
+                            <p class="lead" style="font-size: 15px;font-family: Century Gothic">Join standard leagues or create your own to compete against your friends and family.</p>
+                            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                                <img class="img-responsive" src="img/indexroster.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading" style="font-size: 23px; font-weight: bold; font-family: Century Gothic">Roster Restrictions<br></h2>
+                            <p class="lead" style="font-size: 15px;font-family: Century Gothic">With $100 million budget and 2 additional free transfers every week you have the chance to create your own super team.</p>
+                            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                                <img class="img-responsive" src="img/indexroster.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /.content-section-a -->
+            <!--
+            <div class="content-section-b">
+        
+                <div class="container">
+        
+                    <div class="row">
+                        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading">Create and join leagues</h2>
+                            <p class="lead">Join standard leagues or create your own to compete against your friends. </p>
+                        </div>
+                        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                            <img class="img-responsive" src="img/dog.png" alt="">
+                        </div>
+                    </div>
+        
+                </div>
+            <!-- /.container -->
+
+            <!-- /.content-section-b -->
+            <!--
+            <div class="content-section-a">
+        
+                <div class="container">
+        
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading">Squad Restrictions</h2>
+                            <p class="lead">You get a $100 million budget to create your own team with 2 additional free transfers every week.</p>
+                        </div>
+                        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                            <img class="img-responsive" src="img/phones.png" alt="">
+                        </div>
+                    </div>
+        
+                </div> 
+            </div> -->
+            <!-- /.container -->
+
+            <!-- /.content-section-a -->
+            <!--
+            <a  name="contact"></a>
+            <div class="banner">
+        
+                <div class="container">
+        
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Connect to Start Bootstrap:</h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-inline banner-social-buttons">
+                                <li>
+                                    <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.banner -->
+
+        <!-- Footer -->
+        <!--
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#services">Services</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                     </div>
                 </div>
             </div>
+        </footer>
+        -->
+        <!-- Login Modal -->
 
-        </div>
-        <!-- /.container -->
+        <div id="loginBtn" class="modal fade" role="dialog" >
+            <div class="modal-dialog" style="width: 450px">
 
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
-    <a  name="services"></a>
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Pick your roster<br></h2>
-                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">Select your best IX and beat the best in order to be the best.</p>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login</h4>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin:0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold;font-family: Century Gothic">Create and join leagues<br></h2>
-                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">Join standard leagues or create your own to compete against your friends and family.</p>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                    <div id="ajaxLoginResponse" style="color: red;"></div>
+                    <div  class="form-group" style="margin-left: 20%" style="display:none">
+                        <h5 id='loginError' style="color:red;display:none" >Wrong email or password!</h5>
+
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6" style="background-color: #efefef; border-radius: 7px; margin: 0.5%; width: 32%; color: black; text-align: left;height: -webkit-fill-available">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading" style="font-size: 23px; font-weight: bold; font-family: Century Gothic">Roster Restrictions<br></h2>
-                    <p class="lead" style="font-size: 15px;font-family: Century Gothic">With $100 million budget and 2 additional free transfers every week you have the chance to create your own super team.</p>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/indexroster.png" alt="">
+                    <div class="form-group" style="margin-left: 20%">
+                        <label id='email' for="email" style="font-size: 16px;font-family: Century Gothic;">Email address:</label>
+                        <input id="emailLgn" type="email" class="form-control" name="email" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
                     </div>
-                </div>
-                
-            </div>
+                    <div class="form-group" style="margin-left: 20%">
+                        <label id='password' for="pwd" style="font-size: 16px;font-family: Century Gothic;">Password: </label>
+                        <input id="passwordLgn" type="password" class="form-control" name="pwd" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
+                    </div>
+                    <div class="checkbox" style="margin-left: 20%; margin-bottom: 6%">
+                        <label style="font-family: Century Gothic"><input  id='remberLgn' type="checkbox" name="checkbox" > Remember me</label>
+                    </div>
+                    <div align="center" style="margin-bottom: 8%">
+                        <button onclick='login();'  class="submitbtn btncustom" style="font-size: 18px;text-align: center; width: 35%;padding:1.5%" >Submit</button>
+                    </div>
 
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-    <!--
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Create and join leagues</h2>
-                    <p class="lead">Join standard leagues or create your own to compete against your friends. </p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
                 </div>
             </div>
-
         </div>
-        <!-- /.container -->
 
-    <!-- /.content-section-b -->
-    <!--
-    <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Squad Restrictions</h2>
-                    <p class="lead">You get a $100 million budget to create your own team with 2 additional free transfers every week.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
-                </div>
-            </div>
-
-        </div> 
-    </div> -->
-        <!-- /.container -->
-
-    <!-- /.content-section-a -->
-    <!--
-    <a  name="contact"></a>
-    <div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.banner -->
-
-<!-- Footer -->
-<!--
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li class="footer-menu-divider">&sdot;</li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
-</footer>
--->
-<!-- Login Modal -->
-
-<div id="loginBtn" class="modal fade" role="dialog" >
-    <div class="modal-dialog" style="width: 450px">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header" >
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Login</h4>
-            </div>
-            <div id="ajaxLoginResponse" style="color: red;"></div>
-            <form method="POST" action="login" style="margin-top: 8%;">
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="email" style="font-size: 16px;font-family: Century Gothic;">Email address:</label>
-                    <input type="email" class="form-control" name="email" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
-                </div>
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="pwd" style="font-size: 16px;font-family: Century Gothic;">Password: </label>
-                    <input type="password" class="form-control" name="pwd" style="font-size:15px;font-weight: lighter;width:75%;border-radius: 0; border-bottom:1px solid #1d3260;padding: 3.5%">
-                </div>
-                <div class="checkbox" style="margin-left: 20%; margin-bottom: 6%">
-                    <label style="font-family: Century Gothic"><input type="checkbox" name="checkbox" > Remember me</label>
-                </div>
-                <div align="center" style="margin-bottom: 8%">
-                    <button type="submit" class="submitbtn btncustom" style="font-size: 18px;text-align: center; width: 35%;padding:1.5%" >Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Sign Modal -->
-
-<div id="SignBtn" class="modal fade" role="dialog" >
-    <div class="modal-dialog" style="width: 450px">
-
-        <!-- Modal content-->
-        <div class="modal-content" >
-            <h1 align="center" style="margin-bottom: 50px">Sign Up</h1><br>
-            <div id="ajaxLoginResponse" style="color: red;"></div>
-
-            <form>
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="email" >First Name:</label>
-                    <input type="email" class="form-control" id="email" style="width:75%">
-                </div>
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="pwd" >Last Name:</label>
-                    <input type="password" class="form-control" id="pwd" style="width:75%">
-                </div>
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="pwd" >Email Address:</label>
-                    <input type="password" class="form-control" id="pwd" style="width:75%">
-                </div>
-                <div class="form-group" style="margin-left: 20%">
-                    <label for="pwd" >Password:</label>
-                    <input type="password" class="form-control" id="pwd" style="width:75%">
-                </div>
-                <div align="center" style="margin-left: 5%">
-                    <label for="gender"> Gender:</label>
-                    <input type="radio" name="gender" value="male" style="margin-right: 3px;margin-left: 10px"> Male
-                    <input type="radio" name="gender" value="female" style="margin-right: 3px;margin-left: 10px"> Female
-                    <input type="radio" name="gender" value="other" style="margin-right: 3px;margin-left: 10px"> Unspecified  
-                </div>
-                <div style="margin-left: 20%;margin-top: 20px">
-                    <input type="text" id="country">
-
-                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                    <script src="js/countrySelect.min.js"></script>
-                    <script>
-    $("#country").countrySelect();
-                    </script>
-                </div>
-                <div style="margin-left: 20%;margin-top: 20px;">
-                    <select name="team" id="filesB" style='position:relative;z-index:100'>
-                        <option style="" value="" data-class="selectteam">Select your Team </option>
-                        <option class="team" value="boston" data-class="boston" >Boston Breakers</option>
-                        <option class="team" value="chicago" data-class="chicago"  >Chicago Red Stars</option>
-                        <option class="team" value="kansas" data-class="kansas" >Utah Royals FC</option>
-                        <option class="team" value="houston" data-class="houston" >Houston Dash</option>
-                        <option class="team" value="courage" data-class="courage" >North Carolina Courage</option>
-                        <option class="team" value="orlando" data-class="orlando"  >Orlando Pride</option>
-                        <option class="team" value="portland" data-class="portland" >Portland Thorns FC</option>
-                        <option class="team" value="seattle" data-class="seattle"  >Seattle Reign</option>
-                        <option class="team" value="sky" data-class="sky" >Sky Blue FC</option>
-                        <option class="team" value="spirit" data-class="spirit" >Washington Spirit</option>
-                    </select>
-                </div>
-
-
-                <div align="center" style="margin-bottom: 50px">
-                    <button type="submit" class="btn btn-default" >Submit</button>
-                </div>
-        </div>
-        </form>
 
 
 
@@ -532,42 +472,43 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-    $(function () {
-        $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-            _renderItem: function (ul, item) {
-                var li = $("<li>"),
-                        wrapper = $("<div>", {text: item.label});
+            $(function () {
+                $.widget("custom.iconselectmenu", $.ui.selectmenu, {
+                    _renderItem: function (ul, item) {
+                        var li = $("<li>"),
+                                wrapper = $("<div>", {text: item.label});
 
-                if (item.disabled) {
-                    li.addClass("ui-state-disabled");
-                }
+                        if (item.disabled) {
+                            li.addClass("ui-state-disabled");
+                        }
 
-                $("<span>", {
-                    style: item.element.attr("data-style"),
-                    "class": "ui-icon " + item.element.attr("data-class")
-                })
-                        .appendTo(wrapper);
+                        $("<span>", {
+                            style: item.element.attr("data-style"),
+                            "class": "ui-icon " + item.element.attr("data-class")
+                        })
+                                .appendTo(wrapper);
 
-                return li.append(wrapper).appendTo(ul);
-            }
-        });
+                        return li.append(wrapper).appendTo(ul);
+                    }
+                });
 
-        $("#filesA")
-                .iconselectmenu()
-                .iconselectmenu("menuWidget")
-                .addClass("ui-menu-icons");
+                $("#filesA")
+                        .iconselectmenu()
+                        .iconselectmenu("menuWidget")
+                        .addClass("ui-menu-icons");
 
-        $("#filesB")
-                .iconselectmenu()
-                .iconselectmenu("menuWidget")
-                .addClass("ui-menu-icons customicons");
+                $("#filesB")
+                        .iconselectmenu()
+                        .iconselectmenu("menuWidget")
+                        .addClass("ui-menu-icons customicons");
 
-        $("#people")
-                .iconselectmenu()
-                .iconselectmenu("menuWidget")
-                .addClass("ui-menu-icons avatar");
-    });
+                $("#people")
+                        .iconselectmenu()
+                        .iconselectmenu("menuWidget")
+                        .addClass("ui-menu-icons avatar");
+            });
 </script>
+<script src="js/indexjs.js"></script>
 
 </body>
 
