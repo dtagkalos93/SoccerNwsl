@@ -69,6 +69,7 @@ public class findStatistic extends HttpServlet {
 
                 resultSet = s.getResultSet();
                 while (resultSet.next()) {
+
                     list.add(resultSet.getString("opponent"));
                     list.add(resultSet.getString("points"));
 
@@ -86,6 +87,8 @@ public class findStatistic extends HttpServlet {
                     list.add(resultSet.getString("yellow"));
                     list.add(resultSet.getString("red"));
                     list.add(resultSet.getString("saves"));
+                    list.add(i + "");
+
                 }
                 s.close();
 

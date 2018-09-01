@@ -774,8 +774,10 @@ function openStatistic(name) {
             var jsonResponse = JSON.parse(data);
             var i = 1;
             console.log(jsonResponse);
-            for (j = 0; j < jsonResponse.length; j = j + 15) {
-                document.getElementById("gw" + i).innerHTML = i;
+            for (j = 0; j < jsonResponse.length; j = j + 16) {
+                if(jsonResponse[j]=='-')
+                    continue;
+                document.getElementById("gw" + i).innerHTML = jsonResponse[j+15];
                 document.getElementById("opp" + i).innerHTML = jsonResponse[j];
                 document.getElementById("pts" + i).innerHTML = jsonResponse[j + 1];
                 document.getElementById("min" + i).innerHTML = jsonResponse[j + 2];

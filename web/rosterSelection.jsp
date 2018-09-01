@@ -1751,7 +1751,7 @@
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">S</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 22; i++) {
+                            for (int i = 1; i <= 28; i++) {
                         %>
                         <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="gw<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
