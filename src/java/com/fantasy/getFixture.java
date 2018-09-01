@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author Mitsos-Laptop
+ *
  */
 public class getFixture extends HttpServlet {
 
@@ -70,7 +71,12 @@ public class getFixture extends HttpServlet {
                 String gw = resultSet.getString("fixture");
                 list.add("GW" + gw.split(" ")[1]);
                 String date = resultSet.getString("date");
-                list.add(date.split(",")[1]);
+                if (date.equals("-")) {
+                    list.add("-");
+                } else {
+                    list.add(convertDate(date));
+                }
+
                 if (resultSet.getString("home").equals(team)) {
                     String awayTeam = resultSet.getString("away");
                     if (awayTeam.equals("Houston Dash")) {
@@ -93,7 +99,9 @@ public class getFixture extends HttpServlet {
                     } else if (awayTeam.equals("Utah Royals FC")) {
                         list.add("vs UTA");
                     } else if (awayTeam.equals("Boston Breakers")) {
-                        list.add("vs BOS");
+
+                    } else {
+                        list.add("-");
                     }
                 } else {
 
@@ -140,6 +148,57 @@ public class getFixture extends HttpServlet {
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
         response.getWriter().write(json);
+
+    }
+
+    String convertDate(String date) {
+        String[] dateArray = date.split(" ");
+        String month = dateArray[1];
+        System.out.println(month + "!!!");
+        int monthNo = 0;
+        String day;
+        day = dateArray[2].replace("th", "");
+        day = day.replace("nd", "");
+        day = day.replace("rd", "");
+        day = day.replace("st", "");
+
+        if (month.equals("January")) {
+            monthNo = 1;
+        }
+        if (month.equals("February")) {
+            monthNo = 2;
+        }
+        if (month.equals("March")) {
+            monthNo = 3;
+        }
+        if (month.equals("April")) {
+            monthNo = 4;
+        }
+        if (month.equals("May")) {
+            monthNo = 5;
+        }
+        if (month.equals("June")) {
+            monthNo = 6;
+        }
+        if (month.equals("July")) {
+            monthNo = 7;
+        }
+        if (month.equals("August")) {
+            monthNo = 8;
+        }
+        if (month.equals("September")) {
+            monthNo = 9;
+        }
+        if (month.equals("Octomber")) {
+            monthNo = 10;
+        }
+        if (month.equals("November")) {
+            monthNo = 11;
+        }
+        if (month.equals("December")) {
+            monthNo = 12;
+        }
+        return monthNo + "/" + day + "/" + dateArray[3];
 
     }
 }

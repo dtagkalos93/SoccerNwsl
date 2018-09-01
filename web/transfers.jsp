@@ -1048,50 +1048,7 @@
                                     <td id="pricedef6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(5)%></td>
                                     <td id="scoredef6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(5)%></td>
                                 </tr>
-                                <tr id="def7" style='cursor:pointer' onclick="transBarModalDEF(7)">
-                                    <%
-                                        if (definjury.get(6).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(6).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury7" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
-                                        <% }
-                                        %>
-                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                        <div>
-                                            <img id="imagedef7" src="img/<%=defbadge.get(6)%> " style="height:30px" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                            <span class='underline' id="namedef7" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(6)%></span>
-                                            <hr style="border:none;margin-top: -22%">
-                                            <span id="teamdef7" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(6)%></span>
-                                        </div>
-                                    </td>
-                                    <td id="pricedef7" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(6)%></td>
-                                    <td id="scoredef7" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(6)%></td>
-                                </tr>
-                                <tr id="def8" style='cursor:pointer' onclick="transBarModalDEF(8)">
-                                    <%
-                                        if (definjury.get(7).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(7).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury8" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
-                                        <% }
-                                        %>
-                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
-                                        <div>
-                                            <img id="imagedef8" src="img/<%=defbadge.get(7)%> " style="height:30px" />
-                                        </div>
-                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
-                                            <span class='underline' id="namedef8" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=defname.get(7)%></span>
-                                            <hr style="border:none;margin-top: -22%">
-                                            <span id="teamdef8" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=defteam.get(7)%></span>
-                                        </div>
-                                    </td>
-                                    <td id="pricedef8" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(7)%></td>
-                                    <td id="scoredef8" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(7)%></td>
-                                </tr>
+                                
                                 <%
                                     String defstr;
                                     String defimagestr;
@@ -1100,7 +1057,7 @@
                                     String defpricestr;
                                     String defscorestr;
                                     String definjurystr;
-                                    for (int i = 9; i <= 20; i++) {
+                                    for (int i = 7; i <= 20; i++) {
                                         defstr = "def" + i;
                                         defimagestr = "imagedef" + i;
                                         defnamestr = "namedef" + i;
@@ -1251,6 +1208,28 @@
                                     <td id="pricemid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(4)%></td>
                                     <td id="scoremid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(4)%></td>
                                 </tr>
+<tr id="mid6" style='cursor:pointer' onclick="transBarModalMID(6)">
+                                    <%
+                                        if (midinjury.get(5).equals("NO")) { %>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (midinjury.get(5).equals("OUT")) {
+                                        %>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
+                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div>
+                                            <img id="imagemid6" src="img/<%=midbadge.get(5)%> " style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                            <span class='underline' id="namemid6" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=midname.get(5)%></span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span id="teammid6" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=midteam.get(5)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricemid6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(5)%></td>
+                                    <td id="scoremid6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(5)%></td>
+                                </tr>
 
                                 <%
                                     String midstr;
@@ -1260,7 +1239,7 @@
                                     String midpricestr;
                                     String midscorestr;
                                     String midinjurystr;
-                                    for (int i = 6; i <= 20; i++) {
+                                    for (int i = 7; i <= 20; i++) { 
                                         midstr = "mid" + i;
                                         midimagestr = "imagemid" + i;
                                         midnamestr = "namemid" + i;
@@ -1412,7 +1391,28 @@
                                     <td id="pricefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(4)%></td>
                                     <td id="scorefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(4)%></td>
                                 </tr>
-
+<tr id="fwd6" style='cursor:pointer' onclick="transBarModalFWD(6)">
+                                    <%
+                                        if (fwdinjury.get(5).equals("NO")) { %>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-info-sign"></span></td>
+                                        <% } else if (fwdinjury.get(5).equals("OUT")) {
+                                        %>
+                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-alert fa-lg" style="color:#c0020d"></span></td>
+                                        <% }
+                                        %>
+                                    <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
+                                        <div>
+                                            <img id="imagefwd6" src="img/<%=fwdbadge.get(5)%> " style="height:30px" />
+                                        </div>
+                                        <div class='col-sm-10' style="width:80%;height: 30px;margin-top:-32px;left: 23px ">
+                                            <span class='underline' id="namefwd6" style="font-family: Century Gothic;font-size: 14px;text-overflow: ellipsis;white-space: nowrap " ><%=fwdname.get(5)%></span>
+                                            <hr style="border:none;margin-top: -22%">
+                                            <span id="teamfwd6" style="font-family: Century Gothic;font-size: 11px; font-weight: lighter "><%=fwdteam.get(5)%></span>
+                                        </div>
+                                    </td>
+                                    <td id="pricefwd6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(5)%></td>
+                                    <td id="scorefwd6" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(5)%></td>
+                                </tr>
                                 <%
                                     String fwdstr;
                                     String fwdimagestr;
@@ -1421,7 +1421,7 @@
                                     String fwdpricestr;
                                     String fwdscorestr;
                                     String fwdinjurystr;
-                                    for (int i = 6; i <= 20; i++) {
+                                    for (int i = 7; i <= 20; i++) {
                                         fwdstr = "fwd" + i;
                                         fwdimagestr = "imagefwd" + i;
                                         fwdnamestr = "namefwd" + i;
@@ -1511,12 +1511,12 @@
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
 
                             <h6 id="pageTitle" class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;">Page 
-                                <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 11  </h6>
+                                <span id="page" style="font-family: Century Gothic; font-weight: bold" >1</span> of 10  </h6>
 
                             <button  id="nextPlayers" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
 
-                            <button id="end" value="11" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
+                            <button id="end" value="10" type="button" class="btn btn- btn-circle col-md-1 col-xs-1 smallbtn forbtn" style="margin-top: 15px;">
                                 <i class="glyphicon glyphicon-forward"></i></button>
 
 
@@ -1525,7 +1525,7 @@
                             <button id="prevPlayersSelect" value="1" type="button" class="btn  btn-circle btn-lg  col-md-2 col-xs-2 lgbtn " style="margin-left: 4px;display:none;" disabled>
                                 <i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>                        
                             <h6 id="pageSelect"  class="col-md-6 col-xs-6" style="font-family: Century Gothic; width: 40%;text-align: center;font-weight: lighter;margin-top: 10%; font-size: 12px;padding-right: 9px;padding-left: 9px;display:none;">Page 
-                                <span id="pageNo" style="font-family: Century Gothic; font-weight: bold" >1</span> of <span id="totalPage">11</span> </h6>                        
+                                <span id="pageNo" style="font-family: Century Gothic; font-weight: bold" >1</span> of <span id="totalPage">10</span> </h6>                        
                             <button  id="nextPlayersSelect" value="2"  type="button" class="btn  btn-circle btn-lg col-md-2 col-xs-2 lgbtn" style="margin-right: 4px;display:none">
                                 <i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>                                               
                             <button id="endSelect"  type="button" class="btn btn-circle col-md-1 col-xs-1 smallbtn forbtn"style="margin-top: 15px;display:none;">

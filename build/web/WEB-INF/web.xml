@@ -92,6 +92,10 @@
         <servlet-name>transfers</servlet-name>
         <servlet-class>com.fantasy.transfers</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>findStatistic</servlet-name>
+        <servlet-class>com.fantasy.findStatistic</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>transfers</servlet-name>
         <url-pattern>/transfers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>findStatistic</servlet-name>
+        <url-pattern>/findStatistic</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

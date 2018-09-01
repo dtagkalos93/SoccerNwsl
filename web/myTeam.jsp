@@ -491,7 +491,7 @@
                                         String mondayaway;
                                         String mondayawaybadge;
 
-                                        for (int i = 0; i < 4; i++) {   
+                                        for (int i = 0; i < 4; i++) {
                                             mondaygame = "mondaygame" + i;
                                             mondayhome = "mondayhome" + i;
                                             mondayhomebadge = "mondayhomebadge" + i;
@@ -1127,13 +1127,13 @@
                     </div>
                     <table style="width: 100%">
                         <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
-                            <th id="date" style="padding: 1%;text-align: center">Date</th>
                             <th id="fixture" style="padding: 1%;text-align: center">GW</th>
+                            <th id="date" style="padding: 1%;text-align: center">Date</th>
                             <th id="opponent" style="padding: 1%;text-align: center">Opponent</th>
-                            <th id="opponent" style="padding: 1%;text-align: center">MP</th>
+                            <th id="opponent" style="padding: 1%;text-align: center">S</th>
                         </tr>
                         <%
-                            for (int i = 1; i <= 24; i++) {
+                            for (int i = 1; i <= 28; i++) {
                         %>
                         <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="fixture<%=i%>"  class="col-md-2" style="padding: 1%">Gameweek 1 </td>
@@ -1174,7 +1174,7 @@
                             <image id="badgeinfoStats" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
-                    <table style="width: 100%">
+                    <table style="width: 100%"  class="scrollmenu">
                         <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
                             <th id="date" style="width:6.5%;padding: 1%;text-align: center">GW</th>
                             <th id="fixture" style="width: 15%;padding: 1%;text-align: center">OPP</th>
@@ -1183,8 +1183,8 @@
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">GS</th>
                             <th id="fixture"  style="width:6.5%;padding: 1%;text-align: center">A</th>
                             <th id="date" style="width:6.5%;padding: 1%;text-align: center">CS</th>
-                            <th id="opponent" style="width:6.5%;padding: 1%;text-align: center">OG</th>
-                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">GC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PC</th>
+                            <th id="result" style="width:6.5%;padding: 1%;text-align: center">PE</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">PS</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">PM</th>
                             <th id="result" style="width:6.5%;padding: 1%;text-align: center">YC</th>
@@ -1195,20 +1195,22 @@
                             for (int i = 1; i <= 22; i++) {
                         %>
                         <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
-                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
-                            <td id="fixture+<%=i%>"  style="width: 15%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
-                            <td id="date+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
-                            <td id="opponent+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">90</td>
-                            <td id="result+<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1 </td>
-                            <td id="fixture"  style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="date" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="opponent" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
-                            <td id="result" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="gw<%=i%>" style="width:6.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="opp<%=i%>"  style="width: 25%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
+                            <td id="pts<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
+                            <td id="min<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">90</td>
+                            <td id="goal<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1 </td>
+                            <td id="assist<%=i%>"  style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="cleanSheet<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="own<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="goalCon<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkCom<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkEarn<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkSave<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="pkMiss<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="yellow<%=i%>" style="width:7.5%;padding: 1%;text-align: center">0</td>
+                            <td id="red<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
+                            <td id="save<%=i%>" style="width:7.5%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
                         </tr>
                         <%
                             }%>

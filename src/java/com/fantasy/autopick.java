@@ -29,21 +29,25 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class autopick extends HttpServlet {
 
-    private List<String> list = new ArrayList<>();
-    private List<String> nameList = new ArrayList();
-    private List<String> jerseyList = new ArrayList();
-    private List<String> teamList = new ArrayList();
-    private List<String> priceList = new ArrayList();
-    private int chi = 0;
-    private int hou = 0;
-    private int nc = 0;
-    private int orl = 0;
-    private int por = 0;
-    private int sea = 0;
-    private int nj = 0;
-    private int uta = 0;
-    private int was = 0;
-    private double total = 100.00;
+    private List<String> list;
+    private List<String> nameList;
+    private List<String> jerseyList;
+    private List<String> teamList;
+    private List<String> priceList;
+    private int chi;
+    private int hou;
+    private int nc;
+    private int orl;
+    private int por;
+    private int sea;
+    private int nj;
+    private int uta;
+    private int was;
+    private double gk;
+    private double def;
+    private double mid;
+    private double fwd;
+    private double total;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -61,7 +65,7 @@ public class autopick extends HttpServlet {
         String dbName = "fantasy";
         String userId = "root";
         String password = "";
-
+        System.out.println("FSDV!! auto");
         Connection connection = null;
         Statement statement = null;
         try {
@@ -71,6 +75,26 @@ public class autopick extends HttpServlet {
 
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
+            list = new ArrayList<>();
+            chi = 0;
+            hou = 0;
+            nc = 0;
+            orl = 0;
+            por = 0;
+            sea = 0;
+            nj = 0;
+            uta = 0;
+            was = 0;
+            gk = 10.00;
+            def = 32.00;
+            mid = 40.0;
+            fwd = 18.00;
+            total = 100.00;
+            nameList = new ArrayList<>();
+            teamList = new ArrayList<>();
+            jerseyList = new ArrayList<>();
+            priceList = new ArrayList<>();
+
             goalkeepers(connection);
 
             nameList = new ArrayList<>();
@@ -93,6 +117,7 @@ public class autopick extends HttpServlet {
             priceList = new ArrayList<>();
 
             forwards(connection);
+
             connection.close();
 
         } catch (Exception e) {
@@ -162,19 +187,32 @@ public class autopick extends HttpServlet {
         s.close();
         int randomNum;
         i = 1;
-        while (i <= 2) {
+        for (int j = 1; j <= 2; j++) {
             Random rand = new Random();
 
             randomNum = rand.nextInt((nameList.size()));
-            total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            gk = ((gk * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
 
+            System.out.println("!!GOALKEEPER" + gk);
+            if (gk < 0.0) {
+                gk = ((gk * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+                total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+
+                nameList.remove(randomNum);
+                jerseyList.remove(randomNum);
+                teamList.remove(randomNum);
+                priceList.remove(randomNum);
+                j--;
+                continue;
+            }
             if (teamList.get(randomNum).equals("CHI")) {
                 if (chi == 4) {
                     nameList.remove(randomNum);
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     chi++;
@@ -185,7 +223,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     hou++;
@@ -196,7 +234,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     nc++;
@@ -207,7 +245,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     orl++;
@@ -218,7 +256,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     por++;
@@ -229,7 +267,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     sea++;
@@ -240,7 +278,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     nj++;
@@ -251,7 +289,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     was++;
@@ -262,7 +300,7 @@ public class autopick extends HttpServlet {
                     jerseyList.remove(randomNum);
                     teamList.remove(randomNum);
                     priceList.remove(randomNum);
-                    i--;
+                    j--;
                     continue;
                 } else {
                     uta++;
@@ -339,7 +377,21 @@ public class autopick extends HttpServlet {
             Random rand = new Random();
 
             randomNum = rand.nextInt((nameList.size()));
-            total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            def = ((def * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+
+            System.out.println("!!Defend!!" + def);
+            if (def < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.50) {
+                def = ((def * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+                total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+
+                nameList.remove(randomNum);
+                jerseyList.remove(randomNum);
+                teamList.remove(randomNum);
+                priceList.remove(randomNum);
+                j--;
+                continue;
+            }
             if (teamList.get(randomNum).equals("CHI")) {
 
                 if (chi == 4) {
@@ -512,9 +564,24 @@ public class autopick extends HttpServlet {
             Random rand = new Random();
 
             randomNum = rand.nextInt(nameList.size());
-            total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            mid = ((mid * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+
+            System.out.println("!!MID" + mid);
+            if (mid < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.00) {
+
+                mid = ((mid * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+                total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+                System.out.println("!!MID ELSe" + mid);
+
+                nameList.remove(randomNum);
+                jerseyList.remove(randomNum);
+                teamList.remove(randomNum);
+                priceList.remove(randomNum);
+                j--;
+                continue;
+            }
             if (teamList.get(randomNum).equals("CHI")) {
-                System.out.println("!!!" + chi);
 
                 if (chi == 4) {
                     nameList.remove(randomNum);
@@ -687,9 +754,14 @@ public class autopick extends HttpServlet {
             Random rand = new Random();
 
             randomNum = rand.nextInt((nameList.size()));
-           total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
-            if (total < 0.0) {
+            fwd = ((fwd * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+            System.out.println("!!fwd" + fwd);
+
+            if (fwd < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.50) {
+                fwd = ((fwd * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
                 total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
+
                 nameList.remove(randomNum);
                 jerseyList.remove(randomNum);
                 teamList.remove(randomNum);

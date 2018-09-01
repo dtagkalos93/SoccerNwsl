@@ -2,6 +2,8 @@
 function openModalGK(i) {
 
     var name = document.getElementById("gkname").textContent;
+    console.log(name + "heresv!");
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -12,6 +14,14 @@ function openModalGK(i) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('gkname')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -34,6 +44,14 @@ function openModalCancelGK(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('gkname')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -44,7 +62,7 @@ function openModalCancelGK(i) {
 
 function transModalGK(i) {
 
-    var name = document.getElementById("namegk"+i).textContent;
+    var name = document.getElementById("namegk" + i).textContent;
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -54,10 +72,54 @@ function transModalGK(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("remove").setAttribute('onclick', "transOut('selGK"+i+"')");
+            document.getElementById("remove").setAttribute('onclick', "transOut('selGK" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function transBarModalGK(i) {
+
+    var name = document.getElementById("gkname" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for (j = 1; j <= 2; j++) {
+                if (document.getElementById("imagegk" + j).src.split("/")[5] == "subsgk.png") {
+                    document.getElementById("add").disabled = false;
+                    break;
+                } else {
+                    document.getElementById("add").disabled = true;
+                }
+            }
+
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('gk" + j + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
         }
     };
     xhttp.open("GET", "findPosition?name=" + name, true);
@@ -77,7 +139,14 @@ function openModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('defname" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -98,7 +167,14 @@ function transModalDEF(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selDEF" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
         }
@@ -106,6 +182,47 @@ function transModalDEF(i) {
     xhttp.open("GET", "findPosition?name=" + name, true);
     xhttp.send();
 }
+
+function transBarModalDEF(i) {
+
+    var name = document.getElementById("namedef" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            for (j = 1; j <= 5; j++) {
+                if (document.getElementById("defimage" + j).src.split("/")[5] == "subs.png") {
+                    console.log("here");
+                    document.getElementById("add").disabled = false;
+                    break;
+                } else {
+                    document.getElementById("add").disabled = true;
+                }
+            }
+
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('def" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
 
 function openModalCancelDEF(i) {
 
@@ -120,6 +237,14 @@ function openModalCancelDEF(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('defname" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -140,7 +265,14 @@ function openModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('midname" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -162,10 +294,56 @@ function transModalMID(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selMID" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function transBarModalMID(i) {
+
+    var name = document.getElementById("namemid" + i).textContent;
+    console.log(name);
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for (j = 1; j <= 5; j++) {
+                console.log(document.getElementById("midimage" + j).src.split("/")[5]);
+                if (document.getElementById("midimage" + j).src.split("/")[5] == "subs.png") {
+                    document.getElementById("add").disabled = false;
+                    break
+                } else {
+                    document.getElementById("add").disabled = true;
+                }
+            }
+
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('mid" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
         }
     };
     xhttp.open("GET", "findPosition?name=" + name, true);
@@ -185,6 +363,14 @@ function openModalCancelMID(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('midname" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -205,7 +391,14 @@ function openModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitute").setAttribute('onclick', "changePlayer('fwdname" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
@@ -226,7 +419,14 @@ function transModalFWD(i) {
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("remove").setAttribute('onclick', "transOut('selFWD" + i + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 //            document.getElementById("playerTeam").innerHTML = team;
             $('#players').modal({show: 'true'});
@@ -235,6 +435,45 @@ function transModalFWD(i) {
     xhttp.open("GET", "findPosition?name=" + name, true);
     xhttp.send();
 }
+
+function transBarModalFWD(i) {
+
+    var name = document.getElementById("namefwd" + i).textContent;
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            for (j = 1; j <= 3; j++) {
+                if (document.getElementById("fwdimage" + j).src.split("/")[5] == "subs.png") {
+                    document.getElementById("add").disabled = false;
+                    break
+                } else {
+                    document.getElementById("add").disabled = true;
+                }
+            }
+
+            document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
+
+            document.getElementById("add").setAttribute('onclick', "addTransfer('fwd" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("infoSide").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#playersSide').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
 
 function openModalCancelFWD(i) {
 
@@ -249,6 +488,14 @@ function openModalCancelFWD(i) {
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('fwdname" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -268,8 +515,15 @@ function openModalBEN(i) {
             var jsonResponse = JSON.parse(data);
 
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
-            document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben"+i+"')");
-            
+            document.getElementById("substitute").setAttribute('onclick', "changePlayer('ben" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
 
             $('#players').modal({show: 'true'});
@@ -294,6 +548,14 @@ function openModalcancelBEN(i) {
 
             document.getElementById("modalTitleSub").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
             document.getElementById("substitutecancel").setAttribute('onclick', "cancelPlayer('ben" + i + "')");
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#playersCancel').modal({show: 'true'});
         }
@@ -332,14 +594,11 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
     } else if (playersIDafter == 'ben2' || playersIDafter == 'ben3' || playersIDafter == 'ben4') {
         var name = document.getElementById("benname" + playersIDafter.split('ben')[1]).textContent;
         console.log(name);
-    }
-    else if (playersIDafter.indexOf("selDEF") != -1){
+    } else if (playersIDafter.indexOf("selDEF") != -1) {
         var name = document.getElementById("defname" + playersIDafter.split('selDEF')[1]).textContent;
-    }
-    else if (playersIDafter.indexOf("selMID") != -1){
+    } else if (playersIDafter.indexOf("selMID") != -1) {
         var name = document.getElementById("midname" + playersIDafter.split('selMID')[1]).textContent;
-    }
-    else if (playersIDafter.indexOf("selFWD") != -1){
+    } else if (playersIDafter.indexOf("selFWD") != -1) {
         var name = document.getElementById("fwdname" + playersIDafter.split('selFWD')[1]).textContent;
     }
     var xhttp;
@@ -352,7 +611,14 @@ function openModalSubstitute(playersIDsub, playersIDafter) {
             document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
             document.getElementById("substitute").setAttribute('onclick', "finalChange('" + playersIDsub + "','" + playersIDafter + "')");
+            if (name.indexOf("'") == 1) {
 
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
 
             document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
             $('#players').modal({show: 'true'});
@@ -372,7 +638,7 @@ function openInfo(name) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             console.log(document.getElementById("nameimage"));
-            document.getElementById("nameimage").src="img/players/"+name.toLowerCase()+".png";
+            document.getElementById("nameimage").src = "img/players/" + name.toLowerCase() + ".png";
             document.getElementById("nameinfo").innerHTML = jsonResponse[0];
             document.getElementById("posinfo").innerHTML = jsonResponse[1];
             document.getElementById("teaminfo").innerHTML = jsonResponse[2];
@@ -399,7 +665,7 @@ function openInfo(name) {
                 var image = "Utah_Royals.PNG";
             }
             document.getElementById("badgeinfo").src = "img/" + image;
-            document.getElementById("currgwinfo").innerHTML = "GW" + gameweek.split("-")[0].split(" ")[1];
+            document.getElementById("currgwinfo").innerHTML = "GW" + (eval(gameweek.split("-")[0].split(" ")[1]) - 1);
             document.getElementById("currgwpointinfo").innerHTML = jsonResponse[3] + " pts";
             document.getElementById("totalpointinfo").innerHTML = jsonResponse[4] + " pts";
             document.getElementById("priceinfo").innerHTML = "$" + jsonResponse[5];
@@ -410,10 +676,13 @@ function openInfo(name) {
             document.getElementById("formerinfo").innerHTML = jsonResponse[10];
             document.getElementById("fixture").setAttribute('onclick', "openFixture('" + name + "','" + team + "')");
             document.getElementById("statistics").setAttribute('onclick', "openStatistic('" + name + "')");
+
             $('#playersInfo').modal('hide');
             $('#players').modal('hide');
             $('#fixtureModal').modal('hide');
             $('#statisticsModal').modal('hide');
+            $('#removePlayer').modal('hide'); 
+
             $('#information').modal({show: 'true'});
         }
     };
@@ -430,21 +699,14 @@ function openFixture(name, team) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
             var i = 1;
-            console.log(jsonResponse.length);
+            console.log(jsonResponse);
             for (j = 0; j < jsonResponse.length; j = j + 4) {
-                if (j > 0 && jsonResponse[j] == jsonResponse[j + 4]) {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j] + "," + jsonResponse[j + 4];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1] + "," + jsonResponse[j + 5];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2] + "," + jsonResponse[j + 6];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3] + "," + jsonResponse[j + 7];
-                    j = eval(j) + 4;
 
-                } else {
-                    document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
-                    document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
-                    document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
-                    document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
-                }
+                document.getElementById("fixture" + i).innerHTML = jsonResponse[j];
+                document.getElementById("date" + i).innerHTML = jsonResponse[j + 1];
+                document.getElementById("opponent" + i).innerHTML = jsonResponse[j + 2];
+                document.getElementById("result" + i).innerHTML = jsonResponse[j + 3];
+
 
 
                 i = eval(i) + 1;
@@ -468,7 +730,7 @@ function setInfo(name, prefix) {
         if (this.readyState == 4 && this.status == 200) {
             var data = xhttp.responseText;
             var jsonResponse = JSON.parse(data);
-            document.getElementById("nameimage" + prefix).src="img/players/"+name.toLowerCase()+".png";
+            document.getElementById("nameimage" + prefix).src = "img/players/" + name.toLowerCase() + ".png";
             document.getElementById("nameinfo" + prefix).innerHTML = jsonResponse[0];
             document.getElementById("posinfo" + prefix).innerHTML = jsonResponse[1];
             document.getElementById("teaminfo" + prefix).innerHTML = jsonResponse[2];
@@ -504,9 +766,45 @@ function setInfo(name, prefix) {
 
 function openStatistic(name) {
     setInfo(name, "Stats");
-    document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
-    $('#information').modal('hide');
-    $('#statisticsModal').modal({show: 'true'});
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+            var i = 1;
+            console.log(jsonResponse);
+            for (j = 0; j < jsonResponse.length; j = j + 15) {
+                document.getElementById("gw" + i).innerHTML = i;
+                document.getElementById("opp" + i).innerHTML = jsonResponse[j];
+                document.getElementById("pts" + i).innerHTML = jsonResponse[j + 1];
+                document.getElementById("min" + i).innerHTML = jsonResponse[j + 2];
+                document.getElementById("goal" + i).innerHTML = jsonResponse[j + 3];
+                document.getElementById("assist" + i).innerHTML = jsonResponse[j + 4];
+                document.getElementById("cleanSheet" + i).innerHTML = jsonResponse[j + 5];
+                document.getElementById("own" + i).innerHTML = jsonResponse[j + 6];
+                document.getElementById("goalCon" + i).innerHTML = jsonResponse[j + 7];
+                document.getElementById("pkCom" + i).innerHTML = jsonResponse[j + 8];
+                document.getElementById("pkEarn" + i).innerHTML = jsonResponse[j + 9];
+                document.getElementById("pkSave" + i).innerHTML = jsonResponse[j + 10];
+                document.getElementById("pkMiss" + i).innerHTML = jsonResponse[j + 11];
+                document.getElementById("yellow" + i).innerHTML = jsonResponse[j + 12];
+                document.getElementById("red" + i).innerHTML = jsonResponse[j + 13];
+                document.getElementById("save" + i).innerHTML = jsonResponse[j + 14];
+
+
+                i = eval(i) + 1;
+
+            }
+
+            document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#information').modal('hide');
+            $('#statisticsModal').modal({show: 'true'});
+
+        }
+    };
+    xhttp.open("GET", "findStatistic?name=" + name, true);
+    xhttp.send();
 }
 
 function opponent(gk, def, mid, fwd, ben) {
@@ -519,6 +817,7 @@ function opponent(gk, def, mid, fwd, ben) {
             var jsonResponse = JSON.parse(data);
             document.getElementById("oppgk").innerHTML = jsonResponse["gk"][0];
             var defTeam = jsonResponse["def"];
+            console.log(defTeam);
             if (defTeam.length == 4) {
                 var j = 0;
                 for (i = 1; i <= 5; i++) {
@@ -598,5 +897,4 @@ function opponent(gk, def, mid, fwd, ben) {
     xhttp.open("GET", "findOpp?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd + "&ben=" + ben + "&gameweekid=" + gameweek, true);
     xhttp.send();
 }
-
 
