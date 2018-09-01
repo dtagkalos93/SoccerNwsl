@@ -787,7 +787,7 @@
                                 <th style="text-align: center">$</th>
                                 <th id="catGK" style="text-align: center">TS</th>
                             </tr>
-                            <tr id='gk1' data-toggle="modal" style='cursor:pointer' onclick="openModalGK(1)">
+                            <tr id='gk1' data-toggle="modal" style='cursor:pointer' onclick="openModalselectGK(1)">
                                 <%
                                     String classSTR;
                                     String color;
@@ -813,7 +813,7 @@
                                 <td id="gkprice1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= gkprice.get(0)%></td>
                                 <td id="gkscore1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= gkscore.get(0)%></td>
                             </tr>
-                            <tr id='gk2' style='cursor:pointer' onclick="openModalGK(2)">
+                            <tr id='gk2' style='cursor:pointer' onclick="openModalselectGK(2)">
                                 <%
                                     if (gkinjury.get(1).equals("NO")) {
                                         classSTR = "glyphicon glyphicon-info-sign";
@@ -856,7 +856,7 @@
                                     gkinjurystr = "gkinjury" + i;
 
                             %>
-                            <tr id='<%=gkstr%>' style='display:none;cursor:pointer' onclick="openModalGK(<%=i%>)">
+                            <tr id='<%=gkstr%>' style='display:none;cursor:pointer' onclick="openModalselectGK(<%=i%>)">
                                 <%
                                     if (gkinjury.get(1).equals("NO")) {
                                         classSTR = "glyphicon glyphicon-info-sign";
@@ -890,7 +890,7 @@
                                 <th style="text-align: center">$</th>
                                 <th id="catDEF" style="text-align: center">TS</th>
                             </tr>
-                            <tr id="def1" style='cursor:pointer' onclick="openModalDEF(1)">
+                            <tr id="def1" style='cursor:pointer' onclick="openModalselectDEF(1)">
                                 <%
                                     if (definjury.get(0).equals("NO")) { %>
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury1" class="glyphicon glyphicon-info-sign"></span></td>
@@ -912,7 +912,7 @@
                                 <td id="pricedef1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(0)%></td>
                                 <td id="scoredef1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(0)%></td>
                             </tr>
-                            <tr id="def2" style='cursor:pointer'onclick="openModalDEF(2)">
+                            <tr id="def2" style='cursor:pointer'onclick="openModalselectDEF(2)">
                                 <%
                                     if (definjury.get(1).equals("NO")) { %>
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span id="definjury2" class="glyphicon glyphicon-info-sign"></span></td>
@@ -934,7 +934,7 @@
                                 <td id="pricedef2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(1)%></td>
                                 <td id="scoredef2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(1)%></td>
                             </tr>
-                            <tr id="def3" style='cursor:pointer' onclick="openModalDEF(3)">
+                            <tr id="def3" style='cursor:pointer' onclick="openModalselectDEF(3)">
                                 <%
                                     if (definjury.get(2).equals("NO")) { %>
                                 <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-info-sign"></span></td>
@@ -956,7 +956,7 @@
                                 <td id="pricedef3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(2)%></td>
                                 <td id="scoredef3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(2)%></td>
                             </tr>
-                            <tr id="def4" style='cursor:pointer' onclick="openModalDEF(4)">
+                            <tr id="def4" style='cursor:pointer' onclick="openModalselectDEF(4)">
                                 <%
                                     if (definjury.get(3).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-info-sign"></span></td>
@@ -978,7 +978,7 @@
                                 <td id="pricedef4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(3)%></td>
                                 <td id="scoredef4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(3)%></td>
                             </tr>
-                            <tr id="def5" style='cursor:pointer' onclick="openModalDEF(5)">
+                            <tr id="def5" style='cursor:pointer' onclick="openModalselectDEF(5)">
                                 <%
                                     if (definjury.get(4).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1000,7 +1000,7 @@
                                 <td id="pricedef5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= defprice.get(4)%></td>
                                 <td id="scoredef5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= defscore.get(4)%></td>
                             </tr>
-                            <tr id="def6" style='cursor:pointer' onclick="openModalDEF(6)">
+                            <tr id="def6" style='cursor:pointer' onclick="openModalselectDEF(6)">
                                 <%
                                     if (definjury.get(5).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1040,7 +1040,7 @@
                                     defscorestr = "scoredef" + i;
                                     definjurystr = "definjury" + i;
                             %>
-                            <tr id='<%=defstr%>' style='display:none;cursor:pointer' onclick="openModalDEF(<%=i%>)">
+                            <tr id='<%=defstr%>' style='display:none;cursor:pointer' onclick="openModalselectDEF(<%=i%>)">
                                 <%
                                     if (definjury.get(0).equals("NO")) {%>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=definjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1072,7 +1072,7 @@
                                 <th style="text-align: center">$</th>
                                 <th id="catMID" style="text-align: center">TS</th>
                             </tr>
-                            <tr id='mid1' style='cursor:pointer'  onclick="openModalMID(1)">
+                            <tr id='mid1' style='cursor:pointer'  onclick="openModalselectMID(1)">
                                 <%
                                     if (midinjury.get(0).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1094,7 +1094,7 @@
                                 <td id="pricemid1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(0)%></td>
                                 <td id="scoremid1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(0)%></td>
                             </tr>                            
-                            <tr id='mid2' style='cursor:pointer' onclick="openModalMID(2)">
+                            <tr id='mid2' style='cursor:pointer' onclick="openModalselectMID(2)">
                                 <%
                                     if (midinjury.get(1).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1116,7 +1116,7 @@
                                 <td id="pricemid2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(1)%></td>
                                 <td id="scoremid2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(1)%></td>
                             </tr>
-                            <tr id="mid3" style='cursor:pointer' onclick="openModalMID(3)" >
+                            <tr id="mid3" style='cursor:pointer' onclick="openModalselectMID(3)" >
                                 <%
                                     if (midinjury.get(2).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1138,7 +1138,7 @@
                                 <td id="pricemid3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(2)%></td>
                                 <td id="scoremid3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(2)%></td>
                             </tr>
-                            <tr id="mid4" style='cursor:pointer' onclick="openModalMID(4)">
+                            <tr id="mid4" style='cursor:pointer' onclick="openModalselectMID(4)">
                                 <%
                                     if (midinjury.get(3).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1160,7 +1160,7 @@
                                 <td id="pricemid4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(3)%></td>
                                 <td id="scoremid4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(3)%></td>
                             </tr>
-                            <tr id="mid5" style='cursor:pointer' onclick="openModalMID(5)">
+                            <tr id="mid5" style='cursor:pointer' onclick="openModalselectMID(5)">
                                 <%
                                     if (midinjury.get(4).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1182,7 +1182,7 @@
                                 <td id="pricemid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= midprice.get(4)%></td>
                                 <td id="scoremid5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= midscore.get(4)%></td>
                             </tr>
-                            <tr id="mid6" style='cursor:pointer' onclick="openModalMID(6)">
+                            <tr id="mid6" style='cursor:pointer' onclick="openModalselectMID(6)">
                                 <%
                                     if (midinjury.get(5).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1222,7 +1222,7 @@
                                     midinjurystr = "midinjury" + i;
 
                             %>
-                            <tr id='<%=midstr%>' style='display:none;cursor:pointer' onclick="openModalMID(<%=i%>)">
+                            <tr id='<%=midstr%>' style='display:none;cursor:pointer' onclick="openModalselectMID(<%=i%>)">
                                 <%
                                     if (midinjury.get(0).equals("NO")) {%>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=midinjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1254,7 +1254,7 @@
                                 <th style="text-align: center">$</th>
                                 <th id="catFWD" style="text-align: center">TS</th>
                             </tr>
-                            <tr id="fwd1" style='cursor:pointer' onclick="openModalFWD(1)">
+                            <tr id="fwd1" style='cursor:pointer' onclick="openModalselectFWD(1)">
                                 <%
                                     if (fwdinjury.get(0).equals("NO")) { %>
                                 <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1276,7 +1276,7 @@
                                 <td id="pricefwd1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(0)%></td>
                                 <td id="scorefwd1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(0)%></td>
                             </tr>
-                            <tr id="fwd2" style='cursor:pointer' onclick="openModalFWD(2)">
+                            <tr id="fwd2" style='cursor:pointer' onclick="openModalselectFWD(2)">
                                 <%
                                     if (fwdinjury.get(1).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1298,7 +1298,7 @@
                                 <td id="pricefwd2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(1)%></td>
                                 <td id="scorefwd2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(1)%></td>
                             </tr>
-                            <tr id="fwd3" style='cursor:pointer' onclick="openModalFWD(3)">
+                            <tr id="fwd3" style='cursor:pointer' onclick="openModalselectFWD(3)">
                                 <%
                                     if (fwdinjury.get(2).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1320,7 +1320,7 @@
                                 <td id="pricefwd3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(2)%></td>
                                 <td id="scorefwd3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(2)%></td>
                             </tr>
-                            <tr id="fwd4" style='cursor:pointer' onclick="openModalFWD(4)">
+                            <tr id="fwd4" style='cursor:pointer' onclick="openModalselectFWD(4)">
                                 <%
                                     if (fwdinjury.get(3).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1342,7 +1342,7 @@
                                 <td id="pricefwd4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(3)%></td>
                                 <td id="scorefwd4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(3)%></td>
                             </tr>
-                            <tr id="fwd5" style='cursor:pointer' onclick="openModalFWD(5)">
+                            <tr id="fwd5" style='cursor:pointer' onclick="openModalselectFWD(5)">
                                 <%
                                     if (fwdinjury.get(4).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1364,7 +1364,7 @@
                                 <td id="pricefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%">$<%= fwdprice.get(4)%></td>
                                 <td id="scorefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(4)%></td>
                             </tr>
-                            <tr id="fwd6" style='cursor:pointer' onclick="openModalFWD(6)">
+                            <tr id="fwd6" style='cursor:pointer' onclick="openModalselectFWD(6)">
                                 <%
                                     if (fwdinjury.get(5).equals("NO")) { %>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1403,7 +1403,7 @@
                                     fwdscorestr = "scorefwd" + i;
                                     fwdinjurystr = "fwdinjury" + i;
                             %>
-                            <tr id='<%=fwdstr%>' style='display:none;cursor:pointer' onclick="openModalFWD(<%=i%>)">
+                            <tr id='<%=fwdstr%>' style='display:none;cursor:pointer' onclick="openModalselectFWD(<%=i%>)">
                                 <%
                                     if (fwdinjury.get(5).equals("NO")) {%>
                                 <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="<%=fwdinjurystr%>" class="glyphicon glyphicon-info-sign"></span></td>
@@ -1530,7 +1530,7 @@
                     <p style="display:none" id="playerNo"></p>
                     <p style="display:none" id="playerPosition"></p>
                     <p style="display:none" id="playerTeam"></p>
-                    <button onclick="addPlayer()" type="button" class="addbutton" >
+                    <button onclick="addPlayer()" type="button"  class="addbutton" >
                         Add Player 
                     </button> 
                     <button type="button" class="infobutton" id="info">

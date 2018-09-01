@@ -681,7 +681,7 @@ function openInfo(name) {
             $('#players').modal('hide');
             $('#fixtureModal').modal('hide');
             $('#statisticsModal').modal('hide');
-            $('#removePlayer').modal('hide'); 
+            $('#removePlayer').modal('hide');
 
             $('#information').modal({show: 'true'});
         }
@@ -775,11 +775,27 @@ function openStatistic(name) {
             var i = 1;
             console.log(jsonResponse);
             for (j = 0; j < jsonResponse.length; j = j + 16) {
-                if(jsonResponse[j]=='-')
-                    continue;
-                document.getElementById("gw" + i).innerHTML = jsonResponse[j+15];
+                if(jsonResponse[j + 15]==jsonResponse[j + 31] ){
+                    console.log(jsonResponse[j + 15] + " || " + jsonResponse[j + 31]);
+                    console.log(jsonResponse[j] +" !!!! "+ jsonResponse[j+16]);
+                    if(jsonResponse[j]=='-' && jsonResponse[j+16]!='-' )
+                        continue;
+                    
+                }
+                if( j>15 && jsonResponse[j -1]==jsonResponse[j + 15] ){
+                    
+                    if(jsonResponse[j-16]!='-' && jsonResponse[j]=='-' )
+                        continue;
+                    
+                }
+                document.getElementById("gw" + i).innerHTML = jsonResponse[j + 15];
                 document.getElementById("opp" + i).innerHTML = jsonResponse[j];
-                document.getElementById("pts" + i).innerHTML = jsonResponse[j + 1];
+                if (jsonResponse[j] == '-'){
+                    document.getElementById("pts" + i).innerHTML = '-';
+                }
+                else{
+                     document.getElementById("pts" + i).innerHTML = jsonResponse[j + 1];
+                }
                 document.getElementById("min" + i).innerHTML = jsonResponse[j + 2];
                 document.getElementById("goal" + i).innerHTML = jsonResponse[j + 3];
                 document.getElementById("assist" + i).innerHTML = jsonResponse[j + 4];
@@ -899,4 +915,170 @@ function opponent(gk, def, mid, fwd, ben) {
     xhttp.open("GET", "findOpp?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd + "&ben=" + ben + "&gameweekid=" + gameweek, true);
     xhttp.send();
 }
+//modal in rosterSelection
 
+
+function openModalselectGK(i) {
+
+    var name = document.getElementById("gkname" + i).textContent;
+    var price = document.getElementById("gkprice" + i).textContent;
+    var image = document.getElementById("gkimage" + i).src;
+    var team = document.getElementById("gkteam" + i).textContent;
+    image = image.split("/")[5];
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " " + price;
+            document.getElementById("playersName").innerHTML = name;
+            document.getElementById("playerNo").innerHTML = i;
+            document.getElementById("playerPrice").innerHTML = price;
+            document.getElementById("playerImage").innerHTML = image;
+            document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+
+            document.getElementById("playerTeam").innerHTML = team;
+
+            if (name.indexOf("'") == 1) {
+
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function openModalselectDEF(i) {
+
+    var name = document.getElementById("namedef" + i).textContent;
+    var price = document.getElementById("pricedef" + i).textContent;
+    var image = document.getElementById("imagedef" + i).src;
+    var team = document.getElementById("teamdef" + i).textContent;
+    image = image.split("/")[5];
+
+
+
+
+
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " " + price;
+            document.getElementById("playersName").innerHTML = name;
+            document.getElementById("playerNo").innerHTML = i;
+            document.getElementById("playerPrice").innerHTML = price;
+            document.getElementById("playerImage").innerHTML = image;
+            document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function openModalselectMID(i) {
+
+    var name = document.getElementById("namemid" + i).textContent;
+    var price = document.getElementById("pricemid" + i).textContent;
+    var image = document.getElementById("imagemid" + i).src;
+    var team = document.getElementById("teammid" + i).textContent;
+    image = image.split("/")[5];
+
+
+
+
+
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " " + price;
+            document.getElementById("playersName").innerHTML = name;
+            document.getElementById("playerNo").innerHTML = i;
+            document.getElementById("playerPrice").innerHTML = price;
+            document.getElementById("playerImage").innerHTML = image;
+            document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
+
+function openModalselectFWD(i) {
+
+    var name = document.getElementById("namefwd" + i).textContent;
+    var price = document.getElementById("pricefwd" + i).textContent;
+    var image = document.getElementById("imagefwd" + i).src;
+    var team = document.getElementById("teamfwd" + i).textContent;
+    image = image.split("/")[5];
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = xhttp.responseText;
+            var jsonResponse = JSON.parse(data);
+
+            document.getElementById("modalTitle").innerHTML = jsonResponse[0] + " " + price;
+            document.getElementById("playersName").innerHTML = name;
+            document.getElementById("playerNo").innerHTML = i;
+            document.getElementById("playerPrice").innerHTML = price;
+            document.getElementById("playerImage").innerHTML = image;
+            document.getElementById("playerPosition").innerHTML = jsonResponse[1];
+            document.getElementById("playerTeam").innerHTML = team;
+            if (name.indexOf("'") == 1) {
+                var nameArray = name.split("'");
+
+                name = nameArray[0] + "\\'" + nameArray[1];
+                console.log(name);
+
+            }
+
+            document.getElementById("info").setAttribute('onclick', "openInfo('" + name + "')");
+            $('#players').modal({show: 'true'});
+        }
+    };
+    xhttp.open("GET", "findPosition?name=" + name, true);
+    xhttp.send();
+}
