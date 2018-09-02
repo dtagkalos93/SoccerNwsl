@@ -9,8 +9,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  *
@@ -43,18 +47,22 @@ public class deadLIne {
             s.executeQuery(sql);
 
             resultSet = s.getResultSet();
+            TimeZone zone = TimeZone.getTimeZone("America/New_York");
+            DateFormat format = new SimpleDateFormat("HH:mm");
+            format.setTimeZone(zone);
+            DateFormat format2 = new SimpleDateFormat("HH:mm");
 
             while (resultSet.next()) {
-                String date =resultSet.getString("date");
-                System.out.println(date);
-                if (!new SimpleDateFormat("MM/dd/yyyy").parse(date).before(new Date())) {
-                    if(resultSet.getString("fixture").equals("Gameweek 1")){
-                        pointsStatus=false;
-                        
+                String date = resultSet.getString("date");
+                String time = resultSet.getString("time");
+                if (!new SimpleDateFormat("MM/dd/yyyy").parse(date).before(new Date()) && !new SimpleDateFormat("HH:mm").parse(time).before(format2.parse(format.format(new Date()))) ) {
+                    if (resultSet.getString("fixture").equals("Gameweek 1")) {
+                        pointsStatus = false;
+
                     }
-                    fix=resultSet.getString("fixture")+" Deadline: ";
-                    gameweek=resultSet.getString("fixture");
-                    deadline= resultSet.getString("date") + " " + resultSet.getString("time");
+                    fix = resultSet.getString("fixture") + " Deadline: ";
+                    gameweek = resultSet.getString("fixture");
+                    deadline = resultSet.getString("date") + " " + resultSet.getString("time");
                     System.out.println(deadline);
                     break;
                 }
@@ -72,20 +80,19 @@ public class deadLIne {
 
     }
 
-    
-    public String getdeadline(){
+    public String getdeadline() {
         return deadline;
     }
-    
-    public String getfix(){
+
+    public String getfix() {
         return fix;
     }
-    
-     public String getGameweek(){
+
+    public String getGameweek() {
         return gameweek;
     }
-    
-    public boolean getpointsStatus(){
+
+    public boolean getpointsStatus() {
         return pointsStatus;
     }
 }
