@@ -732,15 +732,15 @@
                             <option value="price">Price</option>
                             <option>Teams selected by %</option>
                             <option value="minutes">Minutes played</option>
-                            <option value="goalScored">Goal scored</option>
+                            <option value="Goal">Goal scored</option>
                             <option value="assist">Assists</option>
                             <option value="cleanSheet">Clean sheets</option>
                             <option value="ownGoal">Own goals</option>
                             <option value="goalConceded">Goals conceded</option>
-                            <option value="penaltySaved">Penalties saved</option>
-                            <option value="penaltyMissed">Penalties missed</option>
-                            <option value="yellowCard">Yellow cards</option>
-                            <option value="redCard">Red cards</option>
+                            <option value="pkSaved">Penalties saved</option>
+                            <option value="pkMissed">Penalties missed</option>
+                            <option value="yellow">Yellow cards</option>
+                            <option value="red">Red cards</option>
                             <option>Bonus</option> 
                             <option value="saves">Saves</option>
                         </select>

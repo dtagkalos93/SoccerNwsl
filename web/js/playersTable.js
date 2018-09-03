@@ -934,7 +934,7 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "MP";
                     document.getElementById("catMID").innerHTML = "MP";
                     document.getElementById("catFWD").innerHTML = "MP";
-                } else if (selectCat == 'goalScored') {
+                } else if (selectCat == 'Goal') {
                     document.getElementById("catGK").innerHTML = "GS";
                     document.getElementById("catDEF").innerHTML = "GS";
                     document.getElementById("catMID").innerHTML = "GS";
@@ -964,22 +964,22 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "GC";
                     document.getElementById("catMID").innerHTML = "GC";
                     document.getElementById("catFWD").innerHTML = "GC";
-                } else if (selectCat == 'penaltySaved') {
+                } else if (selectCat == 'pkSaved') {
                     document.getElementById("catGK").innerHTML = "PS";
                     document.getElementById("catDEF").innerHTML = "PS";
                     document.getElementById("catMID").innerHTML = "PS";
                     document.getElementById("catFWD").innerHTML = "PS";
-                } else if (selectCat == 'penaltyMissed') {
+                } else if (selectCat == 'pkMissed') {
                     document.getElementById("catGK").innerHTML = "PM";
                     document.getElementById("catDEF").innerHTML = "PM";
                     document.getElementById("catMID").innerHTML = "PM";
                     document.getElementById("catFWD").innerHTML = "PM";
-                } else if (selectCat == 'yellowCard') {
+                } else if (selectCat == 'yellow') {
                     document.getElementById("catGK").innerHTML = "YC";
                     document.getElementById("catDEF").innerHTML = "YC";
                     document.getElementById("catMID").innerHTML = "YC";
                     document.getElementById("catFWD").innerHTML = "YC";
-                } else if (selectCat == 'redCard') {
+                } else if (selectCat == 'red') {
                     document.getElementById("catGK").innerHTML = "RC";
                     document.getElementById("catDEF").innerHTML = "RC";
                     document.getElementById("catMID").innerHTML = "RC";
@@ -1216,7 +1216,7 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "MP";
                     document.getElementById("catMID").innerHTML = "MP";
                     document.getElementById("catFWD").innerHTML = "MP";
-                } else if (selectCat == 'goalScored') {
+                } else if (selectCat == 'Goal') {
                     document.getElementById("catGK").innerHTML = "GS";
                     document.getElementById("catDEF").innerHTML = "GS";
                     document.getElementById("catMID").innerHTML = "GS";
@@ -1241,22 +1241,22 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "GC";
                     document.getElementById("catMID").innerHTML = "GC";
                     document.getElementById("catFWD").innerHTML = "GC";
-                } else if (selectCat == 'penaltySaved') {
+                } else if (selectCat == 'pkSaved') {
                     document.getElementById("catGK").innerHTML = "PS";
                     document.getElementById("catDEF").innerHTML = "PS";
                     document.getElementById("catMID").innerHTML = "PS";
                     document.getElementById("catFWD").innerHTML = "PS";
-                } else if (selectCat == 'penaltyMissed') {
+                } else if (selectCat == 'pkMissed') {
                     document.getElementById("catGK").innerHTML = "PM";
                     document.getElementById("catDEF").innerHTML = "PM";
                     document.getElementById("catMID").innerHTML = "PM";
                     document.getElementById("catFWD").innerHTML = "PM";
-                } else if (selectCat == 'yellowCard') {
+                } else if (selectCat == 'yellow') {
                     document.getElementById("catGK").innerHTML = "YC";
                     document.getElementById("catDEF").innerHTML = "YC";
                     document.getElementById("catMID").innerHTML = "YC";
                     document.getElementById("catFWD").innerHTML = "YC";
-                } else if (selectCat == 'redCard') {
+                } else if (selectCat == 'red') {
                     document.getElementById("catGK").innerHTML = "RC";
                     document.getElementById("catDEF").innerHTML = "RC";
                     document.getElementById("catMID").innerHTML = "RC";
@@ -1567,7 +1567,7 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "MP";
                     document.getElementById("catMID").innerHTML = "MP";
                     document.getElementById("catFWD").innerHTML = "MP";
-                } else if (selectCat == 'goalScored') {
+                } else if (selectCat == 'Goal') {
                     document.getElementById("catGK").innerHTML = "GS";
                     document.getElementById("catDEF").innerHTML = "GS";
                     document.getElementById("catMID").innerHTML = "GS";
@@ -1592,22 +1592,22 @@ function showPlayers() {
                     document.getElementById("catDEF").innerHTML = "GC";
                     document.getElementById("catMID").innerHTML = "GC";
                     document.getElementById("catFWD").innerHTML = "GC";
-                } else if (selectCat == 'penaltySaved') {
+                } else if (selectCat == 'pkSaved') {
                     document.getElementById("catGK").innerHTML = "PS";
                     document.getElementById("catDEF").innerHTML = "PS";
                     document.getElementById("catMID").innerHTML = "PS";
                     document.getElementById("catFWD").innerHTML = "PS";
-                } else if (selectCat == 'penaltyMissed') {
+                } else if (selectCat == 'pkMissed') {
                     document.getElementById("catGK").innerHTML = "PM";
                     document.getElementById("catDEF").innerHTML = "PM";
                     document.getElementById("catMID").innerHTML = "PM";
                     document.getElementById("catFWD").innerHTML = "PM";
-                } else if (selectCat == 'yellowCard') {
+                } else if (selectCat == 'yellow') {
                     document.getElementById("catGK").innerHTML = "YC";
                     document.getElementById("catDEF").innerHTML = "YC";
                     document.getElementById("catMID").innerHTML = "YC";
                     document.getElementById("catFWD").innerHTML = "YC";
-                } else if (selectCat == 'redCard') {
+                } else if (selectCat == 'red') {
                     document.getElementById("catGK").innerHTML = "RC";
                     document.getElementById("catDEF").innerHTML = "RC";
                     document.getElementById("catMID").innerHTML = "RC";
@@ -3289,7 +3289,7 @@ function search() {
                     document.getElementById("catsrch").innerHTML = "TS";
                 } else if (selectCat == 'minutes') {
                     document.getElementById("catsrch").innerHTML = "MP";
-                } else if (selectCat == 'goalScored') {
+                } else if (selectCat == 'Goal') {
                     document.getElementById("catsrch").innerHTML = "GS";
                 } else if (selectCat == 'assist') {
                     document.getElementById("catsrch").innerHTML = "A";
@@ -3299,13 +3299,13 @@ function search() {
                     document.getElementById("catsrch").innerHTML = "OG";
                 } else if (selectCat == 'goalConceded') {
                     document.getElementById("catsrch").innerHTML = "GC";
-                } else if (selectCat == 'penaltySaved') {
+                } else if (selectCat == 'pkSaved') {
                     document.getElementById("catsrch").innerHTML = "PS";
-                } else if (selectCat == 'penaltyMissed') {
+                } else if (selectCat == 'pkMissed') {
                     document.getElementById("catsrch").innerHTML = "PM";
-                } else if (selectCat == 'yellowCard') {
+                } else if (selectCat == 'yellow') {
                     document.getElementById("catsrch").innerHTML = "YC";
-                } else if (selectCat == 'redCard') {
+                } else if (selectCat == 'red') {
                     document.getElementById("catsrch").innerHTML = "RC";
                 } else if (selectCat == 'saves') {
                     document.getElementById("catsrch").innerHTML = "S";
