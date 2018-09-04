@@ -189,7 +189,6 @@ public class confirmation extends HttpServlet {
             fwdinjuryList = fwd.getinjuryList();
             findmax(request, 6, "fwd");
             request.setAttribute("total", totalPlayers + "");
-            System.out.println("Here i AMA!!!");
 
             RequestDispatcher rd = request.getRequestDispatcher("rosterSelection.jsp");
             rd.forward(request, response);

@@ -50,7 +50,6 @@ public class findPoint extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find Points");
         String gk = request.getParameter("gk");
         String def = request.getParameter("def");
         String mid = request.getParameter("mid");

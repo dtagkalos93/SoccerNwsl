@@ -140,7 +140,6 @@ public class fixtureprev extends HttpServlet {
             resultSet.close();
 
             s.close();
-            System.out.println(list.size()+"!!!");
         } catch (Exception e) {
 
             System.out.println("Exception is ;" + e);

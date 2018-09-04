@@ -39,7 +39,6 @@ public class findStatistic extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find Statistics");
         String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
         String dbName = "fantasy";
         String userId = "root";

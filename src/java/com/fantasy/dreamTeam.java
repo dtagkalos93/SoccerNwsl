@@ -31,6 +31,8 @@ public class dreamTeam {
     private String[] pointsArray = new String[14];
     private String[] posArray = new String[14];
     private int totalScore=0;
+    
+    private String bestPlayer="";
 
     public dreamTeam(int fixNo) {
         findPlayers(fixNo, "Goalkeeper");
@@ -59,10 +61,11 @@ public class dreamTeam {
         scoreList = new ArrayList<>();
         createDream();
         for (int i = 0; i < nameList.size(); i++) {
+            
+            
             totalScore=totalScore+Integer.parseInt(scoreList.get(i).toString());
-            System.out.println(nameList.get(i).toString() + " - " + teamList.get(i).toString() + " - " + posList.get(i).toString() + " - " + scoreList.get(i).toString());
         }
-
+        bestPlayer();
     }
 
     public void findPlayers(int fixNo, String posSTR) {
@@ -106,10 +109,10 @@ public class dreamTeam {
 
         while (k <= no) {
 
-            int max = Integer.parseInt(scoreList.get(0).toString());
+            int max = -1;
             int pos = 0;
 
-            for (int i = 1; i < scoreList.size(); i++) {
+            for (int i = 0; i < scoreList.size(); i++) {
                 if (scoreList.get(i).toString().equals("-") || scoreList.get(i).toString().equals("")) {
                     continue;
                 }
@@ -207,6 +210,26 @@ public class dreamTeam {
             k++;
         }
     }
+    
+    public void bestPlayer() {
+            int max = -1;
+            int pos = 0;
+
+            for (int i = 0; i < scoreList.size(); i++) {
+                if (scoreList.get(i).toString().equals("-") || scoreList.get(i).toString().equals("")) {
+                    continue;
+                }
+                if (Integer.parseInt(scoreList.get(i).toString()) > max) {
+
+                    max = Integer.parseInt(scoreList.get(i).toString());
+                    pos = i;
+                }
+            }
+            bestPlayer=nameList.get(pos)+"-"+teamList.get(pos)+"-"+posList.get(pos)+"-"+scoreList.get(pos);
+            
+ 
+        
+    }
 
     
     public List getName(){
@@ -227,5 +250,9 @@ public class dreamTeam {
     
     public String gettotalScore(){
         return totalScore+"";
+    }
+    
+    public String getbestPlayer(){
+        return bestPlayer;
     }
 }

@@ -65,7 +65,6 @@ public class autopick extends HttpServlet {
         String dbName = "fantasy";
         String userId = "root";
         String password = "";
-        System.out.println("FSDV!! auto");
         Connection connection = null;
         Statement statement = null;
         try {
@@ -194,7 +193,6 @@ public class autopick extends HttpServlet {
             gk = ((gk * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
             total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
 
-            System.out.println("!!GOALKEEPER" + gk);
             if (gk < 0.0) {
                 gk = ((gk * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
                 total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
@@ -380,7 +378,6 @@ public class autopick extends HttpServlet {
             def = ((def * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
             total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
 
-            System.out.println("!!Defend!!" + def);
             if (def < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.50) {
                 def = ((def * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
                 total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
@@ -567,12 +564,10 @@ public class autopick extends HttpServlet {
             mid = ((mid * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
             total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
 
-            System.out.println("!!MID" + mid);
             if (mid < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.00) {
 
                 mid = ((mid * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
                 total = ((total * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
-                System.out.println("!!MID ELSe" + mid);
 
                 nameList.remove(randomNum);
                 jerseyList.remove(randomNum);
@@ -756,7 +751,6 @@ public class autopick extends HttpServlet {
             randomNum = rand.nextInt((nameList.size()));
             fwd = ((fwd * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
             total = ((total * 10) - (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;
-            System.out.println("!!fwd" + fwd);
 
             if (fwd < 0.00 || Double.parseDouble(priceList.get(randomNum)) > 6.50) {
                 fwd = ((fwd * 10) + (Double.parseDouble(priceList.get(randomNum)) * 10)) / 10;

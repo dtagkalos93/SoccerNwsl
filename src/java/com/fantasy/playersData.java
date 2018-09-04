@@ -306,12 +306,10 @@ public class playersData extends HttpServlet {
 //        }
         if (no == 10) {
             int number = ((no - 9) * 7) + 53;
-            System.out.println("NumberPLos" + number);
 
             findMaxdef(number, 7, category);
         } else {
             int number = no * 6;
-            System.out.println("Number" + number);
 
             findMaxdef(number, 6, category);
 
@@ -411,12 +409,10 @@ public class playersData extends HttpServlet {
 
         if (no == 10) {
             int number = ((no - 9) * 3) + 53;
-            System.out.println("NumberPLos" + number);
 
             findMaxmid(number, 3, category);
         } else {
             int number = no * 6;
-            System.out.println("Number" + number);
 
             findMaxmid(number, 6, category);
 
@@ -738,7 +734,6 @@ public class playersData extends HttpServlet {
     }
 
     public void findMaxmid(int no, int noperpage, String cat) {
-        System.out.println("Number " + noperpage);
 
         if (cat.equals("price")) {
             int k = 1;
@@ -756,12 +751,6 @@ public class playersData extends HttpServlet {
 
                 }
 
-                if (noperpage == 3) {
-                    System.out.println("lastpage");
-                } else {
-                    System.out.println("otherpage");
-                }
-                System.out.println("gerere " + noperpage);
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
 
                     list.add(namelist.get(pos));
@@ -911,7 +900,6 @@ public class playersData extends HttpServlet {
                     }
                 }
                 if (k == no || k == no - 1 || k == no - 2 || k == no - 3 || k == no - 4 || k == no - 5) {
-                    System.out.println("herer " + k + " vasv" + namelist.get(pos));
 
                     list.add(namelist.get(pos));
                     namelist.remove(pos);

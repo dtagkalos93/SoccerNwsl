@@ -59,7 +59,6 @@ public class findOpp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Find Opponent");
         String gk = request.getParameter("gk");
         String def = request.getParameter("def");
         String mid = request.getParameter("mid");
@@ -231,7 +230,6 @@ public class findOpp extends HttpServlet {
         String[] defTeamArray = def.split(",");
         for (int i = 0; i < defTeamArray.length; i++) {
             String defTeam = defTeamArray[i].split("-")[1];
-            System.out.println(defTeam);
             if (defTeam.equals("HOU")) {
                 defTeam = "Houston Dash";
 

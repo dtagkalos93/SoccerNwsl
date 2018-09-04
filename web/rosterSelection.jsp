@@ -664,7 +664,6 @@
             <%
 
                 ArrayList<String> gkname = (ArrayList<String>) request.getAttribute("namegk");
-                System.out.println(gkname.size() + " ");
 
                 ArrayList<String> gkteam = (ArrayList<String>) request.getAttribute("teamgk");
                 ArrayList<String> gkprice = (ArrayList<String>) request.getAttribute("pricegk");

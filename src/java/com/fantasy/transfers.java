@@ -58,7 +58,6 @@ public class transfers extends HttpServlet {
         String midTeam = request.getParameter("mid");
         String fwdTeam = request.getParameter("fwd");
         String remain = request.getParameter("remain");
-        System.out.println("!!!"+remain);
         double value = (100.0 - Double.parseDouble(remain)) ;
         DecimalFormat df = new DecimalFormat("#####.##");
         DecimalFormatSymbols sym = DecimalFormatSymbols.getInstance();

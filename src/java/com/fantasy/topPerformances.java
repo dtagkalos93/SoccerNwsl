@@ -20,7 +20,6 @@ public class topPerformances {
      private List<String> topPerformances = new ArrayList();
      public topPerformances() {
         deadLIne line = new deadLIne();
-        System.out.println(line.getGameweek().split(" ")[1]);
         String fix = line.getGameweek().split(" ")[1];
         int fixNo = Integer.parseInt(fix);
          bestPlayer(fixNo);
@@ -62,7 +61,6 @@ public class topPerformances {
         }
     }
      public void findMax(int i) {
-        System.out.println(i+" length"+scoreList.get(0).toString());
         int max = 0;
         String name ="";
         

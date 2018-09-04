@@ -1717,7 +1717,7 @@
                                 <th id="opponent" style="padding: 1%;text-align: center">MP</th>
                             </tr>
                             <%
-                                for (int i = 1; i <= 22; i++) {
+                                for (int i = 1; i <= 28; i++) {
                             %>
                             <tr style="font-family: Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded;font-weight: lighter">
                                 <td id="date<%=i%>" class="col-md-3" style="padding: 1%"></td>
