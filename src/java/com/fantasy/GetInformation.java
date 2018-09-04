@@ -72,7 +72,7 @@ public class GetInformation extends HttpServlet {
                 list.add(resultSet.getString("team"));
                 //list.add(resultSet.getString("image"));
                 int total = 0;
-                for (int j = 1; j <= 22; j++) {
+                for (int j = 1; j <= 24; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 

@@ -852,22 +852,22 @@
                             <h5 style="font-family: Century Gothic;font-weight: bold;font-size: 15px;margin-top: 5%;margin-bottom: 1%;padding: 3%;padding-left: 5%;color: white;background-color: #050424;">Standard Leagues</h5>
                             <table style="font-family: Century Gothic;width:90%;margin-left:5%">
                                 <tr style="border-bottom: 1px solid #e8e8e8">
-                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331"></i></td>
+                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331; margin-right: -5px"></i></td>
                                     <td class="tb-rank">52,661</td>
                                     <td class="tb-name">Orlando Pride</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e8e8e8">
-                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331"></i></td>
+                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331; margin-right: -5px"></i></td>
                                     <td class="tb-rank">5,465</td>
                                     <td class="tb-name">Greece</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e8e8e8">
-                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331"></i></td>
+                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331; margin-right: -5px"></i></td>
                                     <td class="tb-rank">5,465</td>
                                     <td class="tb-name">Open Weekend Challenge</td>
                                 </tr>
                                 <tr style="border-bottom: 1px solid #e8e8e8">
-                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331"></i></td>
+                                    <td class="tb-arrow"><i class="fa fa-caret-up" style="font-size:22px;color:#0ea331; margin-right: -5px"></i></td>
                                     <td class="tb-rank">453,587</td>
                                     <td class="tb-name">Overall</td>
                                 </tr>

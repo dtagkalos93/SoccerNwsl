@@ -158,7 +158,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2'style='padding: initial'>
-                                    <img src="img/<%=gkjersey.get(0)%>" style="width:31px;height:30px" /> 
+                                    <img src="img/<%=gkjersey.get(0)%>" style="width:25px;height:30px" /> 
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=gkname.get(0)%> </span>
@@ -173,7 +173,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%;border-bottom: 1px solid #ac0f1f'>GK</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%;border-bottom: 1px solid #ac0f1f">
                                 <div class='col-sm-2' style='padding: initial'>
-                                    <img src="img/<%=gkjersey.get(1)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=gkjersey.get(1)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=gkname.get(1)%> </span>
@@ -188,7 +188,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(0)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=defjersey.get(0)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(0)%></span>
@@ -203,7 +203,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(1)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=defjersey.get(1)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(1)%></span>
@@ -218,7 +218,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(2)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=defjersey.get(2)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(2)%></span>
@@ -233,7 +233,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(3)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=defjersey.get(3)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(3)%></span>
@@ -248,7 +248,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%;border-bottom: 1px solid #ac0f1f'>DEF</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%;border-bottom: 1px solid #ac0f1f">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=defjersey.get(4)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=defjersey.get(4)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=defname.get(4)%></span>
@@ -263,7 +263,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=midjersey.get(0)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=midjersey.get(0)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=midname.get(0)%> </span>
@@ -278,7 +278,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=midjersey.get(1)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=midjersey.get(1)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=midname.get(1)%> </span>
@@ -293,7 +293,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=midjersey.get(2)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=midjersey.get(2)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=midname.get(2)%> </span>
@@ -308,7 +308,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=midjersey.get(3)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=midjersey.get(3)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=midname.get(3)%> </span>
@@ -323,7 +323,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%;border-bottom: 1px solid #ac0f1f'>MID</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%;border-bottom: 1px solid #ac0f1f">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=midjersey.get(4)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=midjersey.get(4)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=midname.get(4)%> </span>
@@ -338,7 +338,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=fwdjersey.get(0)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=fwdjersey.get(0)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=fwdname.get(0)%> </span>
@@ -353,7 +353,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=fwdjersey.get(1)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=fwdjersey.get(1)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=fwdname.get(1)%> </span>
@@ -368,7 +368,7 @@
                             <td style='font-size: 13px; text-align: center; width: 12.5%'>FWD</td>
                             <td style="font-weight: lighter ;font-size:15px;padding: 5px;width: 50%">
                                 <div class='col-sm-2' style="padding: initial">
-                                    <img src="img/<%=fwdjersey.get(2)%>" style="width:31px;height:30px" />
+                                    <img src="img/<%=fwdjersey.get(2)%>" style="width:25px;height:30px" />
                                 </div>
                                 <div class='col-sm-10' style="width:83%;height: 30px;padding: inherit">
                                     <span><%=fwdname.get(2)%> </span>
@@ -471,7 +471,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=bosjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=bosjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=bosname.get(i)%></span>
@@ -508,7 +508,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=chijersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=chijersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=chiname.get(i)%></span>
@@ -545,7 +545,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=UTAjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=UTAjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=UTAname.get(i)%></span>
@@ -582,7 +582,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=houjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=houjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=houname.get(i)%></span>
@@ -619,7 +619,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=ncjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=ncjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=ncname.get(i)%></span>
@@ -656,7 +656,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=orljersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=orljersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=orlname.get(i)%></span>
@@ -692,7 +692,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=porjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=porjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=porname.get(i)%></span>
@@ -729,7 +729,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=seajersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=seajersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=seaname.get(i)%></span>
@@ -766,7 +766,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=njjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=njjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=njname.get(i)%></span>
@@ -803,7 +803,7 @@
                                 <tr style=' border-bottom:1px solid #e8e8e8;' >
                                     <td style="font-size: 15px;font-weight: lighter;padding: 0.5%">
                                         <div class='col-sm-2' style="width:37px;height: 30px">
-                                            <img src="img/<%=wasjersey.get(i)%>" style="width:31px;height:30px" />
+                                            <img src="img/<%=wasjersey.get(i)%>" style="width:25px;height:30px" />
                                         </div>
                                         <div class='col-sm-10' style="width:80%;padding-top: 2% ">
                                             <span style="font-size: 14px"><%=wasname.get(i)%></span>

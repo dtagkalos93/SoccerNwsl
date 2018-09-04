@@ -23,15 +23,14 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
             if (document.getElementById("gkinjury1").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury1").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury1").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.add('fa-lg');
+                document.getElementById("gkinjury1").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury1").style.paddingBottom = '10px';
                 document.getElementById("gkinjury1").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury1").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury1").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury1").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury1").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury1").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury1").style.color = '';
             }
@@ -56,15 +55,14 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
             if (document.getElementById("gkinjury2").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury2").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury2").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.add('fa-lg');
+                document.getElementById("gkinjury2").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury2").style.paddingBottom = '10px';
                 document.getElementById("gkinjury2").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury2").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury2").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury2").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury2").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury2").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury2").style.color = '';
             }
@@ -104,15 +102,14 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.add('fa-lg');
+                    document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("definjury" + k).style.paddingBottom = '10px';
                     document.getElementById("definjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                     document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("definjury" + k).style.color = '';
                 }
@@ -157,15 +154,14 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.add('fa-lg');
+                    document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("midinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');                  
                     document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("midinjury" + k).style.color = '';
                 }
@@ -204,15 +200,15 @@ $(document).on("click", "#nextPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                    
                     document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("fwdinjury" + k).style.color = '';
                 }
@@ -259,15 +255,14 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
             if (document.getElementById("gkinjury1").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury1").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury1").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.add('fa-lg');
+                document.getElementById("gkinjury1").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury1").style.paddingBottom = '10px';
                 document.getElementById("gkinjury1").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury1").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury1").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury1").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury1").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury1").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury1").style.color = '';
             }
@@ -293,15 +288,14 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
             if (document.getElementById("gkinjury2").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury2").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury2").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.add('fa-lg');
+                document.getElementById("gkinjury2").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury2").style.paddingBottom = '10px';
                 document.getElementById("gkinjury2").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury2").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury2").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury2").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury2").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury2").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury2").style.color = '';
             }
@@ -333,15 +327,14 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
                 if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.add('fa-lg');
+                    document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("definjury" + k).style.paddingBottom = '10px';
                     document.getElementById("definjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                     document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("definjury" + k).style.color = '';
                 }
@@ -377,15 +370,15 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
                 if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.add('fa-lg');
+                    document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("midinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                   
                     document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("midinjury" + k).style.color = '';
                 }
@@ -422,15 +415,14 @@ $(document).on("click", "#end", function () { // When HTML DOM "click" event is 
 
                 if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                     document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("fwdinjury" + k).style.color = '';
                 }
@@ -477,15 +469,14 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
             if (document.getElementById("gkinjury1").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury1").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury1").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.add('fa-lg');
+                document.getElementById("gkinjury1").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury1").style.paddingBottom = '10px';
                 document.getElementById("gkinjury1").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury1").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury1").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury1").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury1").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury1").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury1").style.color = '';
             }
@@ -511,15 +502,14 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
             if (document.getElementById("gkinjury2").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury2").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury2").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.add('fa-lg');
+                document.getElementById("gkinjury2").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury2").style.paddingBottom = '10px';
                 document.getElementById("gkinjury2").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury2").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury2").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury2").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury2").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury2").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury2").style.color = '';
             }
@@ -551,15 +541,14 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
                 if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.add('fa-lg');
+                    document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("definjury" + k).style.paddingBottom = '10px';
                     document.getElementById("definjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                     document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("definjury" + k).style.color = '';
                 }
@@ -595,15 +584,15 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
                 if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.add('fa-lg');
+                    document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("midinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                   
                     document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("midinjury" + k).style.color = '';
                 }
@@ -639,15 +628,15 @@ $(document).on("click", "#start", function () { // When HTML DOM "click" event i
 
                 if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                    
                     document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("fwdinjury" + k).style.color = '';
                 }
@@ -697,15 +686,14 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
             if (document.getElementById("gkinjury1").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury1").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury1").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.add('fa-lg');
+                document.getElementById("gkinjury1").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury1").style.paddingBottom = '10px';
                 document.getElementById("gkinjury1").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury1").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury1").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury1").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury1").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury1").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury1").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury1").style.color = '';
             }
@@ -731,15 +719,14 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
             if (document.getElementById("gkinjury2").classList.contains('glyphicon-info-sign')) {
                 document.getElementById("gkinjury2").classList.remove('glyphicon-info-sign');
-                document.getElementById("gkinjury2").classList.add('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.add('fa-lg');
+                document.getElementById("gkinjury2").classList.add('glyphicon-one-fine-red-dot');
+                document.getElementById("gkinjury2").style.paddingBottom = '10px';
                 document.getElementById("gkinjury2").style.color = '#c0020d';
             }
 
         } else {
-            if (document.getElementById("gkinjury2").classList.contains('glyphicon-alert')) {
-                document.getElementById("gkinjury2").classList.remove('glyphicon-alert');
-                document.getElementById("gkinjury2").classList.remove('fa-lg');
+            if (document.getElementById("gkinjury2").classList.contains('glyphicon-one-fine-red-dot')) {
+                document.getElementById("gkinjury2").classList.remove('glyphicon-one-fine-red-dot');
                 document.getElementById("gkinjury2").classList.add('glyphicon-info-sign');
                 document.getElementById("gkinjury2").style.color = '';
             }
@@ -774,15 +761,14 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.add('fa-lg');
+                    document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("definjury" + k).style.paddingBottom = '10px';
                     document.getElementById("definjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("definjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                     document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("definjury" + k).style.color = '';
                 }
@@ -827,15 +813,15 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.add('fa-lg');
+                    document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("midinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                   
                     document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("midinjury" + k).style.color = '';
                 }
@@ -874,15 +860,15 @@ $(document).on("click", "#prevPlayers", function () { // When HTML DOM "click" e
 
                 if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                     document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                    document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                 }
 
             } else {
-                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                    document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                    document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                    
                     document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                     document.getElementById("fwdinjury" + k).style.color = '';
                 }
@@ -1077,8 +1063,8 @@ function showPlayers() {
 
                             document.getElementById("gkinjury" + gk).classList = '';
                             document.getElementById("gkinjury" + gk).classList.add('glyphicon');
-                            document.getElementById("gkinjury" + gk).classList.add('glyphicon-alert');
-                            document.getElementById("gkinjury" + gk).classList.add('fa-lg');
+                            document.getElementById("gkinjury" + gk).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("gkinjury" + gk).style.paddingBottom = '10px';
                             document.getElementById("gkinjury" + gk).style.color = '#c0020d';
                         } else {
                             document.getElementById("gkinjury" + gk).classList = '';
@@ -1108,8 +1094,8 @@ function showPlayers() {
 
                             document.getElementById("definjury" + def).classList = '';
                             document.getElementById("definjury" + def).classList.add('glyphicon');
-                            document.getElementById("definjury" + def).classList.add('glyphicon-alert');
-                            document.getElementById("definjury" + def).classList.add('fa-lg');
+                            document.getElementById("definjury" + def).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("definjury" + def).style.paddingBottom = '10px';
                             document.getElementById("definjury" + def).style.color = '#c0020d';
                         } else {
                             document.getElementById("definjury" + def).classList = '';
@@ -1139,8 +1125,8 @@ function showPlayers() {
 
                             document.getElementById("midinjury" + mid).classList = '';
                             document.getElementById("midinjury" + mid).classList.add('glyphicon');
-                            document.getElementById("midinjury" + mid).classList.add('glyphicon-alert');
-                            document.getElementById("midinjury" + mid).classList.add('fa-lg');
+                            document.getElementById("midinjury" + mid).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("midinjury" + mid).style.paddingBottom = '10px';
                             document.getElementById("midinjury" + mid).style.color = '#c0020d';
                         } else {
                             document.getElementById("midinjury" + mid).classList = '';
@@ -1170,8 +1156,8 @@ function showPlayers() {
 
                             document.getElementById("fwdinjury" + fwd).classList = '';
                             document.getElementById("fwdinjury" + fwd).classList.add('glyphicon');
-                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-alert');
-                            document.getElementById("fwdinjury" + fwd).classList.add('fa-lg');
+                            document.getElementById("fwdinjury" + fwd).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("fwdinjury" + fwd).style.paddingBottom = '10px';
                             document.getElementById("fwdinjury" + fwd).style.color = '#c0020d';
                         } else {
                             document.getElementById("fwdinjury" + fwd).classList = '';
@@ -1310,8 +1296,8 @@ function showPlayers() {
 
                             document.getElementById("gkinjury" + k).classList = '';
                             document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                            document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                            document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                            document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                             document.getElementById("gkinjury" + k).style.color = '#c0020d';
                         } else {
                             document.getElementById("gkinjury" + k).classList = '';
@@ -1376,15 +1362,14 @@ function showPlayers() {
 
                             if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                                 document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                                document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                                document.getElementById("definjury" + k).classList.add('fa-lg');
+                                document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                                document.getElementById("definjury" + k).style.paddingBottom = '10px';
                                 document.getElementById("definjury" + k).style.color = '#c0020d';
                             }
 
                         } else {
-                            if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                                document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                                document.getElementById("definjury" + k).classList.remove('fa-lg');
+                            if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                                document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                                 document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                                 document.getElementById("definjury" + k).style.color = '';
                             }
@@ -1446,15 +1431,15 @@ function showPlayers() {
 
                             if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                                 document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                                document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                                document.getElementById("midinjury" + k).classList.add('fa-lg');
+                                document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                                document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                                 document.getElementById("midinjury" + k).style.color = '#c0020d';
                             }
 
                         } else {
-                            if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                                document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                                document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                            if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                                document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                               
                                 document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                                 document.getElementById("midinjury" + k).style.color = '';
                             }
@@ -1515,15 +1500,15 @@ function showPlayers() {
 
                             if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                                 document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                                document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                                document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                                document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                                document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                                 document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                             }
 
                         } else {
-                            if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                                document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                                document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                            if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                                document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                                
                                 document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                                 document.getElementById("fwdinjury" + k).style.color = '';
                             }
@@ -1650,8 +1635,8 @@ function showPlayers() {
 
                         document.getElementById("gkinjury" + k).classList = '';
                         document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                        document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                        document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("gkinjury" + k).style.color = '#c0020d';
 
                     } else {
@@ -1691,15 +1676,14 @@ function showPlayers() {
 
                         if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                             document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                            document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                            document.getElementById("definjury" + k).classList.add('fa-lg');
+                            document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("definjury" + k).style.paddingBottom = '10px';
                             document.getElementById("definjury" + k).style.color = '#c0020d';
                         }
 
                     } else {
-                        if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                            document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                            document.getElementById("definjury" + k).classList.remove('fa-lg');
+                        if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                            document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                             document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                             document.getElementById("definjury" + k).style.color = '';
                         }
@@ -1733,15 +1717,15 @@ function showPlayers() {
 
                         if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                             document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                            document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                            document.getElementById("midinjury" + k).classList.add('fa-lg');
+                            document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                             document.getElementById("midinjury" + k).style.color = '#c0020d';
                         }
 
                     } else {
-                        if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                            document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                            document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                        if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                            document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                           
                             document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                             document.getElementById("midinjury" + k).style.color = '';
                         }
@@ -1775,15 +1759,15 @@ function showPlayers() {
 
                         if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                             document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                            document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                            document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                            document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                             document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                         }
 
                     } else {
-                        if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                            document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                            document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                        if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                            document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                            
                             document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                             document.getElementById("fwdinjury" + k).style.color = '';
                         }
@@ -1849,8 +1833,8 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
 
                     document.getElementById("gkinjury" + k).classList = '';
                     document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                    document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                    document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("gkinjury" + k).style.color = '#c0020d';
 
                 } else {
@@ -1904,15 +1888,14 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.add('fa-lg');
+                        document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("definjury" + k).style.paddingBottom = '10px';
                         document.getElementById("definjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                         document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("definjury" + k).style.color = '';
                     }
@@ -1959,15 +1942,15 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.add('fa-lg');
+                        document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("midinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                       
                         document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("midinjury" + k).style.color = '';
                     }
@@ -2014,15 +1997,15 @@ $(document).on("click", "#nextPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                        
                         document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("fwdinjury" + k).style.color = '';
                     }
@@ -2091,8 +2074,8 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
 
                     document.getElementById("gkinjury" + k).classList = '';
                     document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                    document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                    document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("gkinjury" + k).style.color = '#c0020d';
 
                 } else {
@@ -2143,15 +2126,14 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
 
                     if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.add('fa-lg');
+                        document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("definjury" + k).style.paddingBottom = '10px';
                         document.getElementById("definjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                         document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("definjury" + k).style.color = '';
                     }
@@ -2198,15 +2180,15 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
 
                     if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.add('fa-lg');
+                        document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("midinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                       
                         document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("midinjury" + k).style.color = '';
                     }
@@ -2253,15 +2235,15 @@ $(document).on("click", "#endSelect", function () { // When HTML DOM "click" eve
 
                     if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                        
                         document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("fwdinjury" + k).style.color = '';
                     }
@@ -2330,8 +2312,8 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
 
                     document.getElementById("gkinjury" + k).classList = '';
                     document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                    document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                    document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("gkinjury" + k).style.color = '#c0020d';
 
                 } else {
@@ -2383,15 +2365,14 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
 
                     if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.add('fa-lg');
+                        document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("definjury" + k).style.paddingBottom = '10px';
                         document.getElementById("definjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                         document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("definjury" + k).style.color = '';
                     }
@@ -2438,15 +2419,15 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
 
                     if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.add('fa-lg');
+                        document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("midinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                       
                         document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("midinjury" + k).style.color = '';
                     }
@@ -2492,15 +2473,15 @@ $(document).on("click", "#startSelect", function () { // When HTML DOM "click" e
 
                     if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                        
                         document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("fwdinjury" + k).style.color = '';
                     }
@@ -2565,8 +2546,8 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
 
                     document.getElementById("gkinjury" + k).classList = '';
                     document.getElementById("gkinjury" + k).classList.add('glyphicon');
-                    document.getElementById("gkinjury" + k).classList.add('glyphicon-alert');
-                    document.getElementById("gkinjury" + k).classList.add('fa-lg');
+                    document.getElementById("gkinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                    document.getElementById("gkinjury" + k).style.paddingBottom = '10px';
                     document.getElementById("gkinjury" + k).style.color = '#c0020d';
 
                 } else {
@@ -2619,15 +2600,14 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("definjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("definjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("definjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.add('fa-lg');
+                        document.getElementById("definjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("definjury" + k).style.paddingBottom = '10px';
                         document.getElementById("definjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("definjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("definjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("definjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("definjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                         document.getElementById("definjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("definjury" + k).style.color = '';
                     }
@@ -2676,15 +2656,15 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("midinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("midinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("midinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.add('fa-lg');
+                        document.getElementById("midinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("midinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("midinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("midinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("midinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("midinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("midinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                       
                         document.getElementById("midinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("midinjury" + k).style.color = '';
                     }
@@ -2733,15 +2713,15 @@ $(document).on("click", "#prevPlayersSelect", function () { // When HTML DOM "cl
 
                     if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-info-sign')) {
                         document.getElementById("fwdinjury" + k).classList.remove('glyphicon-info-sign');
-                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.add('fa-lg');
+                        document.getElementById("fwdinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                        document.getElementById("fwdinjury" + k).style.paddingBottom = '10px';
                         document.getElementById("fwdinjury" + k).style.color = '#c0020d';
                     }
 
                 } else {
-                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-alert')) {
-                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-alert');
-                        document.getElementById("fwdinjury" + k).classList.remove('fa-lg');
+                    if (document.getElementById("fwdinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                        document.getElementById("fwdinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
+                        
                         document.getElementById("fwdinjury" + k).classList.add('glyphicon-info-sign');
                         document.getElementById("fwdinjury" + k).style.color = '';
                     }
@@ -2870,7 +2850,7 @@ function addPlayer() {
             document.getElementById("gk" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("imagegk" + i).src = "img/" + image;
             document.getElementById("namegk" + i).innerHTML = name;
-            if (document.getElementById("gkinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-alert")) {
+            if (document.getElementById("gkinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-one-fine-red-dot")) {
                 document.getElementById("namegk" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("namegk" + i).style.border = "2px solid #c0020d";
             }
@@ -2919,7 +2899,7 @@ function addPlayer() {
             document.getElementById("def" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("defimage" + i).src = "img/" + image;
             document.getElementById("defname" + i).innerHTML = name;
-            if (document.getElementById("definjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-alert")) {
+            if (document.getElementById("definjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-one-fine-red-dot")) {
                 document.getElementById("defname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("defname" + i).style.border = "2px solid #c0020d";
             }
@@ -2967,7 +2947,7 @@ function addPlayer() {
             document.getElementById("mid" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("midimage" + i).src = "img/" + image;
             document.getElementById("midname" + i).innerHTML = name;
-            if (document.getElementById("midinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-alert")) {
+            if (document.getElementById("midinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-one-fine-red-dot")) {
                 document.getElementById("midname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("midname" + i).style.border = "2px solid #c0020d";
             }
@@ -3014,7 +2994,7 @@ function addPlayer() {
             document.getElementById("fwd" + document.getElementById("playerNo").textContent).style.opacity = '0.6';
             document.getElementById("fwdimage" + i).src = "img/" + image;
             document.getElementById("fwdname" + i).innerHTML = name;
-            if (document.getElementById("fwdinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-alert")) {
+            if (document.getElementById("fwdinjury" + document.getElementById("playerNo").textContent).classList.contains("glyphicon-one-fine-red-dot")) {
                 document.getElementById("fwdname" + i).style.backgroundColor = "#c0020d";
                 document.getElementById("fwdname" + i).style.border = "2px solid #c0020d";
             }
@@ -3327,15 +3307,14 @@ function search() {
 
                         if (document.getElementById("srchinjury" + k).classList.contains('glyphicon-info-sign')) {
                             document.getElementById("srchinjury" + k).classList.remove('glyphicon-info-sign');
-                            document.getElementById("srchinjury" + k).classList.add('glyphicon-alert');
-                            document.getElementById("srchinjury" + k).classList.add('fa-lg');
+                            document.getElementById("srchinjury" + k).classList.add('glyphicon-one-fine-red-dot');
+                            document.getElementById("srchinjury" + k).style.paddingBottom = '10px';
                             document.getElementById("srchinjury" + k).style.color = '#c0020d';
                         }
 
                     } else {
-                        if (document.getElementById("srchinjury" + k).classList.contains('glyphicon-alert')) {
-                            document.getElementById("srchinjury" + k).classList.remove('glyphicon-alert');
-                            document.getElementById("srchinjury" + k).classList.remove('fa-lg');
+                        if (document.getElementById("srchinjury" + k).classList.contains('glyphicon-one-fine-red-dot')) {
+                            document.getElementById("srchinjury" + k).classList.remove('glyphicon-one-fine-red-dot');
                             document.getElementById("srchinjury" + k).classList.add('glyphicon-info-sign');
                             document.getElementById("srchinjury" + k).style.color = '';
                         }
