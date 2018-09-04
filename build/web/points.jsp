@@ -137,10 +137,10 @@
             <ul class="nav nav-pills extraClassul">
                 <li class="nav-item"><a href="status.jsp">Status</a></li>
                 <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
-                <li class="nav-item " ><a href="points.jsp">Points</a></li>
+                <li class="nav-item active" ><a href="points.jsp">Points</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
-                <li class="nav-item"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
                 <li class="nav-item"><a href="statistics.html">Statistics</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
@@ -1017,12 +1017,12 @@
                             <image id="nameimage" style="height: 100px;width: auto;"/>
                         </div>
                         <div class="col-md-8">
-                            <h3 id="nameinfo" style="font-family: Century Gothic"></h3>
+                            <h3 id="nameinfo" style="font-family: Century Gothic;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"></h3>
                             <h5 id="posinfo" style="font-family: Century Gothic"></h5>
-                            <h6 id="teaminfo" style="font-family: Century Gothic"></h6>
+                            <h6 id="teaminfo" style="font-family: lato"></h6>
                         </div>
                         <div class="col-md-1" style="height: 100px;display: block;padding-right: 0;">
-                            <image id="badgeinfo" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
+                            <image id="badgeinfo" style="height: 90px;width: auto;float: right;opacity: 0.2;margin-top: 7px;"/>
                         </div>
                     </div>
                     <div >

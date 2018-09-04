@@ -1067,7 +1067,7 @@ function defStyle() {
             document.getElementById("defcptimage" + i).style.marginTop = "-30.6%";
             document.getElementById("defvcptimage" + i).style.paddingLeft = "82%";
             document.getElementById("defvcptimage" + i).style.marginTop = "-30.6%";
-            document.getElementById("defimage" + i).style.marginLeft = "27px";
+            document.getElementById("defimage" + i).style.marginLeft = "31px";
             if (i == 5)
                 break;
             document.getElementById("selDEF" + i).style.marginRight = "32px";
@@ -1116,7 +1116,7 @@ function midStyle() {
             document.getElementById("midcptimage" + i).style.marginTop = "-30.7%";
             document.getElementById("midvcptimage" + i).style.paddingLeft = "82%";
             document.getElementById("midvcptimage" + i).style.marginTop = "-30.7%";
-            document.getElementById("midimage" + i).style.marginLeft = "27px";
+            document.getElementById("midimage" + i).style.marginLeft = "31px";
             if (i == 5)
                 break;
             document.getElementById("selMID" + i).style.marginRight = "32px";

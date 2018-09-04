@@ -6,7 +6,7 @@
 
 .image-player{
     height: 85px;
-    width: 70px;
+    width: auto;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -92,7 +92,7 @@
 }
 
 .price{
-    font-family: Century Gothic;
+    font-family: lato;
     font-size: 12px;
     padding: 0px;
     width:125px;
