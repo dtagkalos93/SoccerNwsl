@@ -396,7 +396,7 @@
                                 <th style="width: 12%; font-size: 13px;padding-bottom: 1%;padding-top:1%; text-align: center">Club</th>
                             </tr>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
+                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
                                         <img src="img/orlandogk.png" style="width:25px;height:28px; margin-top: 1px" />
@@ -409,7 +409,7 @@
                                 <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">ORL</td>
                             </tr>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
+                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
                                         <img src="img/pride1.png" style="width:25px;height:28px; margin-top: 1px" />
@@ -422,7 +422,7 @@
                                 <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">ORL</td>
                             </tr>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
+                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
                                         <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
@@ -435,7 +435,7 @@
                                 <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">BOS</td>
                             </tr>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
+                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
                                         <img src="img/breakersgk.png" style="width:25px;height:28px; margin-top: 1px" />
@@ -448,7 +448,7 @@
                                 <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">BOS</td>
                             </tr>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-plus" style="color:#c0020d; font-size: 15px"></span></td>
+                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
                                         <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
