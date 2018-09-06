@@ -1181,7 +1181,7 @@ function showPlayers() {
 
                 }
 
-                //checkNoDisableSide();
+                checkNoDisableSide();
             }
         };
         xhttp.open("GET", "allPlayers?pos=" + selectionPl + "&cat=" + selectCat, true);
@@ -1528,7 +1528,7 @@ function showPlayers() {
                     }
                 }
 
-                       //checkNoDisableSide();
+                       checkNoDisableSide();
             }
         };
         xhttp.open("GET", "playersSelection?pos=" + selectionPl + "-" + 1 + "&cat=" + selectCat, true);
@@ -1790,7 +1790,7 @@ function showPlayers() {
                 }
             }
 
-                    // checkNoDisableSide();
+                     checkNoDisableSide();
 
         };
         xhttp.open("GET", "playersSelectionTeam?team=" + selectionPl + "&cat=" + selectCat, true);

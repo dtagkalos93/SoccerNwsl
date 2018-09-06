@@ -140,7 +140,7 @@
                 <li class="nav-item active"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
                 <li class="nav-item"><a href="fixture">Fixtures</a></li>
-                <li class="nav-item"><a href="statistics.html">Statistics</a></li>
+                <li class="nav-item"><a href="statistics.jsp">Statistics</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
                 <li class="dropdown hidden-sm hidden-md hidden-lg">
@@ -1740,7 +1740,7 @@
                 <div class="modal-content">
                     <div class="modal-header-info">
                         <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                        <p id="backStats" class="modal-title" style="padding: 0.3%;padding-left: 1.5%;color:white">
+                        <p id="backStats" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
                             <span class="glyphicon glyphicon-arrow-left"></span></p>
                     </div>
                     <!-- Modal content-->
@@ -1778,9 +1778,9 @@
                                 <th id="result" style="width:5.3%;padding: 1%;text-align: center">S</th>
                             </tr>
                             <%
-                                for (int i = 1; i <= 22; i++) {
+                                for (int i = 1; i <= 28; i++) {
                             %>
-                            <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                            <tr id="gwstats<%=i%>"  style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                                 <td id="gw<%=i%>" style="width:5.3%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
                                 <td id="opp<%=i%>" style="width: 22%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
                                 <td id="pts<%=i%>" style="width:5.3%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>

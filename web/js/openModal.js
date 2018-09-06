@@ -814,7 +814,9 @@ function openStatistic(name) {
                 i = eval(i) + 1;
 
             }
-
+            for(i;i<=28;i++){
+                document.getElementById("gwstats"+i).style.display="none";
+            }
             document.getElementById("backStats").setAttribute('onclick', "openInfo('" + name + "')");
             $('#information').modal('hide');
             $('#statisticsModal').modal({show: 'true'});

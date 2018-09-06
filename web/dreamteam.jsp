@@ -148,7 +148,7 @@
                     <li class="hidden-xs"><a href="transfers.html">Transfers</a></li>
                     <li class="hidden-xs"><a href="leagues.html">Leagues</a></li>
                     <li class="hidden-xs"><a href="fixture">Fixtures</a></li>
-                    <li class="hidden-xs"><a href="statistics.html">Statistics</a></li>
+                    <li class="hidden-xs"><a href="statistics.jsp">Statistics</a></li>
                     <li class="hidden-xs"><a href="help.html">Help</a></li>
                     <li class="hidden-xs"><a href="#">Sign Out</a></li>
                     <li class="dropdown hidden-sm hidden-md hidden-lg">

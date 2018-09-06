@@ -11,25 +11,26 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 /**
  *
- * @author Mitsos-Laptop
+ * @author Mitsos
  */
-public class findPoint extends HttpServlet {
+public class btnPoints extends HttpServlet {
 
     private Map<String, List<String>> list;
     private List<String> gklist;
@@ -37,6 +38,8 @@ public class findPoint extends HttpServlet {
     private List<String> midlist;
     private List<String> fwdlist;
     private List<String> benlist;
+    private List<String> other;
+    private int total;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -50,42 +53,56 @@ public class findPoint extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String gk = request.getParameter("gk");
-        String def = request.getParameter("def");
-        String mid = request.getParameter("mid");
-        String fwd = request.getParameter("fwd");
-        String ben = request.getParameter("ben");
-        String captain = request.getParameter("cpt");
-        list = new HashMap<>();
+        try {
+            HttpSession session = request.getSession(true);
+            String teamemail = session.getAttribute("email").toString();
+            rosterPlayer players = new rosterPlayer(teamemail);
+            String gk = players.getGoalkeeper();
+            String def = players.getDefence();
+            String mid = players.getMidfielder();
+            String fwd = players.getForward();
+            
+            String ben = players.getbench();
+            
+            String captain = players.getCaptain().split("-")[0];
+            System.out.println(captain);
+            list = new HashMap<>();
+            total = 0;
+            int weeks = Integer.parseInt(request.getParameter("fix"));
+            String fix = "GW" + weeks;
+            deadLIne line = new deadLIne();
+            int gw = Integer.parseInt(line.getGameweek().split(" ")[1]);
+            other = new ArrayList<>();
+            gklist = new ArrayList<>();
+            deflist = new ArrayList<>();
+            midlist = new ArrayList<>();
+            fwdlist = new ArrayList<>();
+            benlist = new ArrayList<>();
+            other.add(weeks - 1 + "");
+            other.add((weeks + 1) + "");
+            other.add(gw + "");
+            goalkeeper(gk, fix, captain);
+            list.put("gk", gklist);
+            defender(def, fix, captain);
+            list.put("def", deflist);
+            midfielder(mid, fix, captain);
+            list.put("mid", midlist);
+            forward(fwd, fix, captain);
+            list.put("fwd", fwdlist);
+            bench(ben, fix);
+            list.put("ben", benlist);
+            other.add(total + "");
 
-        deadLIne line = new deadLIne();
-        String gw = line.getGameweek();
-        int weeks = Integer.parseInt(gw.split(" ")[1]);
-        String fix = "GW" + (weeks - 1);
+            list.put("other", other);
 
-        gklist = new ArrayList<>();
-        deflist = new ArrayList<>();
-        midlist = new ArrayList<>();
-        fwdlist = new ArrayList<>();
-        benlist = new ArrayList<>();
-
-        goalkeeper(gk, fix, captain);
-        list.put("gk", gklist);
-        defender(def, fix, captain);
-        list.put("def", deflist);
-        midfielder(mid, fix, captain);
-        System.out.println("here" + midlist.size());
-        list.put("mid", midlist);
-        forward(fwd, fix, captain);
-        list.put("fwd", fwdlist);
-        bench(ben, fix);
-        list.put("ben", benlist);
-
-        String json = new Gson().toJson(list);
-        System.out.println(json);
-        response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
-        response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-        response.getWriter().write(json);
+            String json = new Gson().toJson(list);
+            System.out.println(json);
+            response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
+            response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
+            response.getWriter().write(json);
+        } catch (SQLException ex) {
+            Logger.getLogger(btnPoints.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void goalkeeper(String gk, String fixture, String captain) {
@@ -124,9 +141,13 @@ public class findPoint extends HttpServlet {
             resultSet = s.getResultSet();
             if (resultSet.next()) {
                 if (cpt) {
+
                     gklist.add(Integer.parseInt(resultSet.getString(fixture)) * 2 + "");
+                    total = total + Integer.parseInt(resultSet.getString(fixture)) * 2;
                 } else {
                     gklist.add(resultSet.getString(fixture));
+                    total = total + Integer.parseInt(resultSet.getString(fixture));
+
                 }
 
             }
@@ -174,7 +195,7 @@ public class findPoint extends HttpServlet {
 
                 }
                 //Select the data from the database
-                System.out.println(sql);
+
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
@@ -182,8 +203,11 @@ public class findPoint extends HttpServlet {
                 if (resultSet.next()) {
                     if (cpt) {
                         deflist.add(Integer.parseInt(resultSet.getString(fixture)) * 2 + "");
+                        total = total + Integer.parseInt(resultSet.getString(fixture)) * 2;
+
                     } else {
                         deflist.add(resultSet.getString(fixture));
+                        total = total + Integer.parseInt(resultSet.getString(fixture));
 
                     }
                 }
@@ -232,27 +256,28 @@ public class findPoint extends HttpServlet {
 
                 }
                 //Select the data from the database
-                System.out.println(sql);
 
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
 
                 resultSet = s.getResultSet();
                 if (resultSet.next()) {
-
                     if (cpt) {
                         midlist.add(Integer.parseInt(resultSet.getString(fixture)) * 2 + "");
+                        total = total + Integer.parseInt(resultSet.getString(fixture)) * 2;
+
                     } else {
                         midlist.add(resultSet.getString(fixture));
+                        total = total + Integer.parseInt(resultSet.getString(fixture));
+
                     }
-                    System.out.println("Midlist" + midlist.get(i));
 
                 }
+
                 resultSet.close();
 
                 s.close();
                 connection.close();
-                System.out.println(i);
 
             } catch (Exception e) {
 
@@ -293,7 +318,6 @@ public class findPoint extends HttpServlet {
 
                 }
                 //Select the data from the database
-                System.out.println(sql);
 
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);
@@ -302,9 +326,11 @@ public class findPoint extends HttpServlet {
                 if (resultSet.next()) {
                     if (cpt) {
                         fwdlist.add(Integer.parseInt(resultSet.getString(fixture)) * 2 + "");
+                        total = total + Integer.parseInt(resultSet.getString(fixture)) * 2;
 
                     } else {
                         fwdlist.add(resultSet.getString(fixture));
+                        total = total + Integer.parseInt(resultSet.getString(fixture)) ;
 
                     }
 
@@ -349,7 +375,6 @@ public class findPoint extends HttpServlet {
 
                 }
                 //Select the data from the database
-                System.out.println(sql);
 
                 Statement s = connection.createStatement();
                 s.executeQuery(sql);

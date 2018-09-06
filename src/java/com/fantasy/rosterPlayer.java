@@ -47,7 +47,7 @@ public class rosterPlayer {
 
     public rosterPlayer(String email) throws SQLException {
         totalScore = 0;
-        teamName="";
+        teamName = "";
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
             String dbName = "fantasy";
@@ -97,7 +97,7 @@ public class rosterPlayer {
                 value = resultSet.getString("value");
                 captain = resultSet.getString("captain");
                 viceCaptain = resultSet.getString("viceCaptain");
-                teamName=resultSet.getString("nameTeam");
+                teamName = resultSet.getString("nameTeam");
             }
             resultSet.close();
 
@@ -124,7 +124,7 @@ public class rosterPlayer {
     public String getVicecaptain() {
         return viceCaptain;
     }
-    
+
     public String getTeamName() {
         return teamName;
     }
@@ -141,9 +141,9 @@ public class rosterPlayer {
             ResultSet resultSet = null;
             Class.forName("com.mysql.jdbc.Driver");
 
-            deadLIne line=new deadLIne();
-            String gw=line.getGameweek();
-            int weeks=Integer.parseInt(gw.split(" ")[1])-1; 
+            deadLIne line = new deadLIne();
+            String gw = line.getGameweek();
+            int weeks = Integer.parseInt(gw.split(" ")[1]) - 1;
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
             String[] def = defence.split(",");
@@ -295,6 +295,7 @@ public class rosterPlayer {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     public String getTotalPlayers() {
         return totalPlayer + "";
     }
@@ -367,6 +368,77 @@ public class rosterPlayer {
         midfielderUnion = mid;
         forwardUnion = fwd;
 
+    }
+
+    public String getInjury() {
+        String injuries = "";
+
+        try {
+            String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+            String dbName = "fantasy";
+            String userId = "root";
+            String password = "";
+
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+            String sql = "SELECT * FROM injuries";
+            Statement s = connection.createStatement();
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+            while (resultSet.next()) {
+                injuries = injuries + resultSet.getString("name") + "-";
+                injuries = injuries + resultSet.getString("position") + "-";
+                injuries = injuries + resultSet.getString("team") + "-";
+                injuries = injuries + resultSet.getString("availability") + ",";
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return injuries;
+    }
+    
+    public String getInjuryFull() {
+        String injuries = "";
+
+        try {
+            String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
+            String dbName = "fantasy";
+            String userId = "root";
+            String password = "";
+
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection(connectionUrl, userId, password);
+            String sql = "SELECT * FROM injuries";
+            Statement s = connection.createStatement();
+            s.executeQuery(sql);
+
+            resultSet = s.getResultSet();
+            while (resultSet.next()) {
+                injuries = injuries + resultSet.getString("name") + "-";
+                injuries = injuries + resultSet.getString("position") + "-";
+                injuries = injuries + resultSet.getString("team") + "-";
+                injuries = injuries + resultSet.getString("description") + "-";
+                injuries = injuries + resultSet.getString("availability") + ",";
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return injuries;
     }
 
     public String getGoalkeeperUnion() {

@@ -44,7 +44,7 @@ function topPlayers(top) {
                 document.getElementById("topgwimage" + pl).src = "img/spirit1.png";
             }
         } else if (team == "North Carolina Courage") {
-            if (pos=="Goalkeeper") {
+            if (pos == "Goalkeeper") {
                 document.getElementById("topgwimage" + pl).src = "img/couragegk.png";
             } else {
                 document.getElementById("topgwimage" + pl).src = "img/courage.png";
@@ -124,7 +124,7 @@ function standings(team, badge, gp, wins, looses, draws, gd, pts) {
 
 
 
-function dreamTeam (team, name, pos, pts) {
+function dreamTeam(team, name, pos, pts) {
     var team = team.replace('[', '');
     team = team.replace(']', '');
     team = team.replace(/\s/g, '');
@@ -148,7 +148,7 @@ function dreamTeam (team, name, pos, pts) {
     setDreamBadge(pl, pos[0], team[0]);
     pl = eval(pl) + 1;
     for (i = 1; i < pos.length; i++) {
-        
+
         if (pos[i] == 'Defender') {
             document.getElementById("dreamname" + pl).innerHTML = name[i];
             document.getElementById("dreampoints" + pl).innerHTML = pts[i];
@@ -218,9 +218,9 @@ function setDreamBadge(pl, pos, team) {
             document.getElementById("dreamimage" + pl).src = "img/spirit1.png";
         }
     } else if (team == "NorthCarolinaCourage") {
-        
+
         document.getElementById("dreamteam" + pl).innerHTML = "NC";
-        if (pos=="Goalkeeper") {
+        if (pos == "Goalkeeper") {
             document.getElementById("dreamimage" + pl).src = "img/couragegk.png";
         } else {
             document.getElementById("dreamimage" + pl).src = "img/courage.png";
@@ -249,5 +249,82 @@ function setDreamBadge(pl, pos, team) {
         } else {
             document.getElementById("dreamimage" + pl).src = "img/utahjr.png";
         }
+    }
+}
+
+function injury(injuryPlayers) {
+    var injuryArray = injuryPlayers.split(",");
+    console.log(injuryArray.length);
+    var j = 1;
+    for (i = 0; i < (injuryArray.length - 1); i++) {
+        var player = injuryArray[i].split("-");
+        document.getElementById("injuryname" + j).innerHTML = player[0];
+        document.getElementById("injurypos" + j).innerHTML = player[1];
+        document.getElementById("injuryteam" + j).innerHTML = player[2];
+        var team=player[2];
+        var pos=player[1];
+        if (team == "HOU") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/houstongk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/dash1.png";
+            }
+        } else if (team == "CHI") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/chicagogk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/stars1.png";
+            }
+        } else if (team == "POR") {
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/thornsgk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/thorns1.png";
+            }
+        } else if (team == "ORL") {
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/orlandogk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/pride1.png";
+            }
+        } else if (team == "WAS") {
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/spiritgk.png";
+            } else {
+
+                document.getElementById("injuryimg" + j).src = "img/spirit1.png";
+            }
+        } else if (team == "NC") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/couragegk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/courage.png";
+            }
+        } else if (team == "SEA") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/seattlegk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/reign1.png";
+            }
+        } else if (team == "NJ") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/skybluegk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/skyblue1.png";
+            }
+        } else if (team == "UTA") {
+
+            if (pos == "GK") {
+                document.getElementById("injuryimg" + j).src = "img/kansasgk.png";
+            } else {
+                document.getElementById("injuryimg" + j).src = "img/utahjr.png";
+            }
+        }
+        j=eval(j)+1;
     }
 }

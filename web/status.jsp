@@ -9,7 +9,7 @@
     String teamemail = session.getAttribute("email").toString();
     rosterPlayer players = new rosterPlayer(teamemail);
     String totalScore = players.getTotalScore();
-
+    String injuryPlayers = players.getInjury();
     deadLIne line = new deadLIne();
     int fixNo = Integer.parseInt(line.getGameweek().split(" ")[1]);
     String status;
@@ -60,7 +60,9 @@
     </head>
     <body onLoad="topPlayers('<%=top.getTopPerfomance()%>');
             standings('<%=stands.getTeam()%>', '<%=stands.getBadge()%>', '<%=stands.getGp()%>', '<%=stands.getWins()%>', '<%=stands.getLooses()%>', '<%=stands.getDraws()%>', '<%=stands.getGd()%>', '<%=stands.getPts()%>');
-            dreamTeam('<%=dream.getTeam()%>', '<%=dream.getName()%>', '<%=dream.getPos()%>', '<%=dream.getScore()%>')">
+            dreamTeam('<%=dream.getTeam()%>', '<%=dream.getName()%>', '<%=dream.getPos()%>', '<%=dream.getScore()%>');
+            injury('<%=injuryPlayers%>')" 
+          >
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -139,7 +141,7 @@
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
                 <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
-                <li class="nav-item"><a href="statistics.html">Statistics</a></li>
+                <li class="nav-item"><a href="statistics.jsp">Statistics</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
                 <li class="dropdown hidden-sm hidden-md hidden-lg">
@@ -165,7 +167,7 @@
                         <span style="font-weight: bold"><%=session.getAttribute("fullname")%></h5>
 
                     <h4 class="col-md-12 col-xs-12" style="font-family: Century Gothic; font-size: 20px;" >
-                        <span id="gw"><%=line.getGameweek()%></span> Status
+                        <span id="gw">Gameweek <%=(fixNo - 1)%> </span> Status
                     </h4>
                     <div class="col-md-12 col-xs-12 image-tables" >
                         <img src="img/nwsl-cover.png" style="visibility: hidden;" />
@@ -381,7 +383,7 @@
                             <tr>
                                 <th style="font-family:Century Gothic; color: white; font-size: 15px; padding: 2.2%"> Latest Injuries and Bans 
                                     <span>
-                                        <a href="injuries.html" style="color: white; float: right; font-size: 14px"> 
+                                        <a href="injuries.jsp" style="color: white; float: right; font-size: 14px"> 
                                             More <i class="glyphicon glyphicon-arrow-right" style="color: white;padding-left: 5px;vertical-align: baseline"></i>
                                         </a>
                                     </span>
@@ -395,71 +397,29 @@
                                 <th style="width: 12%; font-size: 13px;padding-bottom: 1%;padding-top:1%; text-align: center">Pos</th>
                                 <th style="width: 12%; font-size: 13px;padding-bottom: 1%;padding-top:1%; text-align: center">Club</th>
                             </tr>
+                            <%
+                                for (int i = 1; i <= 5; i++) {
+
+
+                            %>
                             <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
+                                <td id="injury<%=i%>" style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
                                 <td style="font-weight: lighter ; padding: 0.7%">
                                     <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/orlandogk.png" style="width:25px;height:28px; margin-top: 1px" />
+                                        <img id="injuryimg<%=i%>" src="img/orlandogk.png" style="width:25px;height:28px; margin-top: 1px" />
                                     </div>
                                     <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
-                                        <span style="font-size: 14px ">Harris</span><hr style="border:none;margin-top: -34%">
+                                        <span id="injuryname<%=i%>" style="font-size: 14px ">Harris</span><hr style="border:none;margin-top: -34%">
                                     </div>
                                 </td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">GK</td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">ORL</td>
+                                <td id="injurypos<%=i%>" style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">GK</td>
+                                <td id="injuryteam<%=i%>" style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">ORL</td>
                             </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
-                                <td style="font-weight: lighter ; padding: 0.7%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/pride1.png" style="width:25px;height:28px; margin-top: 1px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
-                                        <span style="font-size: 14px ">Marta</span><hr style="border:none;margin-top: -34%">
-                                    </div>
-                                </td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">FWD</td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">ORL</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
-                                <td style="font-weight: lighter ; padding: 0.7%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
-                                        <span style="font-size: 14px ">Lavelle</span><hr style="border:none;margin-top: -34%">
-                                    </div>
-                                </td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">MID</td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">BOS</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
-                                <td style="font-weight: lighter ; padding: 0.7%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakersgk.png" style="width:25px;height:28px; margin-top: 1px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
-                                        <span style="font-size: 14px ">Smith</span><hr style="border:none;margin-top: -34%">
-                                    </div>
-                                </td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">GK</td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">BOS</td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #e8e8e8">
-                                <td style='background-color: #f6f6f5' align="center"><span class="glyphicon glyphicon-one-fine-red-dot"></span></td>
-                                <td style="font-weight: lighter ; padding: 0.7%">
-                                    <div class='col-sm-2' style="width:37px;height: 30px">
-                                        <img src="img/breakers1.png" style="width:25px;height:28px; margin-top: 1px" />
-                                    </div>
-                                    <div class='col-sm-10' style="width:100px;height: 30px;padding-top:5px; ">
-                                        <span style="font-size: 14px ">Chapman</span><hr style="border:none;margin-top: -34%">
-                                    </div>
-                                </td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">MID</td>
-                                <td style="font-size:13px; padding: 0.5%; font-weight:bold;text-align: center">BOS</td>
-                            </tr>
+                            <%
+                                }
+                            %>
+
+
                         </table>
 
                     </div>

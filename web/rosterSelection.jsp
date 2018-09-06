@@ -701,7 +701,6 @@
                         <select class="form-control " id ="selectPlayers"  data-size="5" onchange="showPlayers('')" >
                             <optgroup label="Global">
                                 <option value="all">All players</option>
-                                <option>Watchlist</option>
                             </optgroup>
                             <optgroup label="By Position">
                                 <option value="Goalkeeper">Goalkeepers</option>
@@ -710,16 +709,17 @@
                                 <option value="Forward">Forwards</option>
                             </optgroup>
                             <optgroup label="By Team">
-                                <option value="Boston Breakers">Boston Breakers</option>
-                                <option value="Chicago Red Stars" >Chicago Red Stars</option>
-                                <option value="Utah Royals FC">Utah Royals FC</option>
-                                <option value="Houston Dash">Houston Dash</option>
-                                <option value="North Carolina Courage">North Carolina Courage</option>
-                                <option value="Orlando Pride">Orlando Pride</option>
-                                <option value="Portland Thorns FC">Portland Thorns FC</option>
-                                <option value="Seattle Reign FC">Seattle Reign FC</option>
-                                <option value="Sky Blue FC">Sky Blue FC</option> 
-                                <option value="Washington Spirit">Washington Spirit</option> 
+                               <optgroup label="By Team">
+                                    <option id="chi" value="Chicago Red Stars" >Chicago Red Stars</option>
+                                    <option id="hou" value="Houston Dash">Houston Dash</option>
+                                    <option id="nc" value="North Carolina Courage">North Carolina Courage</option>
+                                    <option id="orl" value="Orlando Pride">Orlando Pride</option>
+                                    <option id="por" value="Portland Thorns FC">Portland Thorns FC</option>
+                                    <option id="sea" value="Seattle Reign FC">Seattle Reign FC</option>
+                                    <option id="nj" value="Sky Blue FC">Sky Blue FC</option> 
+                                    <option id="uta" value="Utah Royals FC">Utah Royals FC</option>
+                                    <option id="was" value="Washington Spirit">Washington Spirit</option> 
+                                </optgroup>
                             </optgroup>
                         </select>
                     </div>
@@ -1712,7 +1712,7 @@
             <div class="modal-content">
                 <div class="modal-header-info">
                     <button type="button" class="close" data-dismiss="modal" style="" >&times;</button>
-                    <p id="backStats" class="modal-title" style="padding: 0.3%;padding-left: 1.5%;color:white">
+                    <p id="backStats" class="modal-title" style="padding: 0.85%;padding-left: 1.5%;color:white">
                         <span class="glyphicon glyphicon-arrow-left"></span></p>
                 </div>
                 <!-- Modal content-->
@@ -1730,7 +1730,7 @@
                             <image id="badgeinfoStats" style="height: 42px;width: auto;float: right;padding-right: 0;margin-top: 55px;"/>
                         </div>
                     </div>
-                    <table style="width: 100%" class="scrollmenu">
+                    <table style="width: 100%"  class="scrollmenu">
                         <tr style="font-family:Century Gothic;text-align:center;font-size: 13px;margin-bottom: 0.5%;background-color: #f1eded;">
                             <th id="date" style="width:5.3%;padding: 1%;text-align: center">GW</th>
                             <th id="fixture" style="width: 22%;padding: 1%;text-align: center">OPP</th>
@@ -1752,7 +1752,7 @@
                         <%
                             for (int i = 1; i <= 28; i++) {
                         %>
-                        <tr style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
+                        <tr id="gwstats<%=i%>"  style="font-family: Century Gothic;font-weight: lighter;text-align:center;font-size: 13px;margin-bottom: 0.5%;border-bottom: 1px solid #f1eded">
                             <td id="gw<%=i%>" style="width:5.3%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
                             <td id="opp<%=i%>" style="width: 22%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">vs ORL (1-1)</td>
                             <td id="pts<%=i%>" style="width:5.3%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">1</td>
@@ -1776,7 +1776,7 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div> 
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
