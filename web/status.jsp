@@ -7,6 +7,7 @@
 
 <%
     String teamemail = session.getAttribute("email").toString();
+    System.out.println(teamemail);
     rosterPlayer players = new rosterPlayer(teamemail);
     String totalScore = players.getTotalScore();
     String injuryPlayers = players.getInjury();

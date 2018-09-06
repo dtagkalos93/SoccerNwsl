@@ -65,6 +65,11 @@ public class deadLIne {
                     deadline = resultSet.getString("date") + " " + resultSet.getString("time");
                     break;
                 }
+                else{
+                    fix = resultSet.getString("fixture") + " Deadline: ";
+                    gameweek = resultSet.getString("fixture");
+                    deadline = resultSet.getString("date") + " " + resultSet.getString("time");
+                }
             }
             resultSet.close();
 

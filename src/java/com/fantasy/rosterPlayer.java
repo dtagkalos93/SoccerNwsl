@@ -46,6 +46,7 @@ public class rosterPlayer {
     private String forwardUnion;
 
     public rosterPlayer(String email) throws SQLException {
+        System.out.println(email);
         totalScore = 0;
         teamName = "";
         try {
@@ -66,7 +67,7 @@ public class rosterPlayer {
             s.executeQuery(sql);
 
             resultSet = s.getResultSet();
-
+            System.out.println(sql);
             if (resultSet.next()) {
                 goalkeeper = resultSet.getString("gk");
                 if (goalkeeper.contains("'")) {
@@ -143,6 +144,7 @@ public class rosterPlayer {
 
             deadLIne line = new deadLIne();
             String gw = line.getGameweek();
+            System.out.println(gw);
             int weeks = Integer.parseInt(gw.split(" ")[1]) - 1;
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
