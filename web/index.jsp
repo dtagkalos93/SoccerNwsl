@@ -22,6 +22,7 @@
     String emailName = null;
     String sessionID = null;
     Cookie[] cookies = request.getCookies();
+    System.out.println(cookies);
     if (cookies != null) {
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("email")) {
@@ -40,6 +41,8 @@
                 if (resultSet.next()) {
                     session.setAttribute("fullname", resultSet.getString("firstname") + " " + resultSet.getString("lastname"));
                     session.setAttribute("teamBadge", resultSet.getString("team"));
+                    session.setAttribute("email", resultSet.getString("email"));
+
                     RequestDispatcher rd = request.getRequestDispatcher("status.jsp");
                     rd.forward(request, response);
                 }
@@ -472,41 +475,41 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-            $(function () {
-                $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-                    _renderItem: function (ul, item) {
-                        var li = $("<li>"),
-                                wrapper = $("<div>", {text: item.label});
+                            $(function () {
+                                $.widget("custom.iconselectmenu", $.ui.selectmenu, {
+                                    _renderItem: function (ul, item) {
+                                        var li = $("<li>"),
+                                                wrapper = $("<div>", {text: item.label});
 
-                        if (item.disabled) {
-                            li.addClass("ui-state-disabled");
-                        }
+                                        if (item.disabled) {
+                                            li.addClass("ui-state-disabled");
+                                        }
 
-                        $("<span>", {
-                            style: item.element.attr("data-style"),
-                            "class": "ui-icon " + item.element.attr("data-class")
-                        })
-                                .appendTo(wrapper);
+                                        $("<span>", {
+                                            style: item.element.attr("data-style"),
+                                            "class": "ui-icon " + item.element.attr("data-class")
+                                        })
+                                                .appendTo(wrapper);
 
-                        return li.append(wrapper).appendTo(ul);
-                    }
-                });
+                                        return li.append(wrapper).appendTo(ul);
+                                    }
+                                });
 
-                $("#filesA")
-                        .iconselectmenu()
-                        .iconselectmenu("menuWidget")
-                        .addClass("ui-menu-icons");
+                                $("#filesA")
+                                        .iconselectmenu()
+                                        .iconselectmenu("menuWidget")
+                                        .addClass("ui-menu-icons");
 
-                $("#filesB")
-                        .iconselectmenu()
-                        .iconselectmenu("menuWidget")
-                        .addClass("ui-menu-icons customicons");
+                                $("#filesB")
+                                        .iconselectmenu()
+                                        .iconselectmenu("menuWidget")
+                                        .addClass("ui-menu-icons customicons");
 
-                $("#people")
-                        .iconselectmenu()
-                        .iconselectmenu("menuWidget")
-                        .addClass("ui-menu-icons avatar");
-            });
+                                $("#people")
+                                        .iconselectmenu()
+                                        .iconselectmenu("menuWidget")
+                                        .addClass("ui-menu-icons avatar");
+                            });
 </script>
 <script src="js/indexjs.js"></script>
 

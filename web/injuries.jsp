@@ -202,7 +202,7 @@
                     </td>
                     <td id="injpos<%=i%>" style="font-family: Century Gothic; font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:bold;text-align: center; border-bottom:1px solid #e8e8e8">GK</td>
                     <td id="injteam<%=i%>" style="font-family: Century Gothic; font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:bold;text-align: center; border-bottom:1px solid #e8e8e8">ORL</td>
-                    <td id="injdes<%=i%>" style="font-family: Century Gothic; font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:bold;text-align: center; border-bottom:1px solid #e8e8e8;    width: 70%;">Hamstring</td>
+                    <td id="injdes<%=i%>" style="font-family: Century Gothic; font-size:13px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-weight:bold;text-align: center; border-bottom:1px solid #e8e8e8;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 70%;">Hamstring</td>
                 </tr>
 
                 <%                    }

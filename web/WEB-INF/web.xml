@@ -112,6 +112,10 @@
         <servlet-name>showStats</servlet-name>
         <servlet-class>com.fantasy.showStats</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>changePages</servlet-name>
+        <servlet-class>com.fantasy.changePages</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -223,6 +227,10 @@
     <servlet-mapping>
         <servlet-name>showStats</servlet-name>
         <url-pattern>/showStats</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changePages</servlet-name>
+        <url-pattern>/changePages</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

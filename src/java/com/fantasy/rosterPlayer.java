@@ -12,8 +12,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,6 +46,15 @@ public class rosterPlayer {
     private String defenceUnion;
     private String midfielderUnion;
     private String forwardUnion;
+
+    private List nameInjury;
+    private List posInjury;
+    private List teamInjury;
+    private List dateInjury;
+    private List desInjury;
+    private List availInjury;
+
+    private String injuries;
 
     public rosterPlayer(String email) throws SQLException {
         System.out.println(email);
@@ -374,6 +385,12 @@ public class rosterPlayer {
 
     public String getInjury() {
         String injuries = "";
+        nameInjury = new ArrayList();
+        posInjury = new ArrayList();
+        teamInjury = new ArrayList();
+        dateInjury = new ArrayList();
+        desInjury = new ArrayList();
+        availInjury = new ArrayList();
 
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
@@ -393,10 +410,11 @@ public class rosterPlayer {
 
             resultSet = s.getResultSet();
             while (resultSet.next()) {
-                injuries = injuries + resultSet.getString("name") + "-";
-                injuries = injuries + resultSet.getString("position") + "-";
-                injuries = injuries + resultSet.getString("team") + "-";
-                injuries = injuries + resultSet.getString("availability") + ",";
+                nameInjury.add(resultSet.getString("name"));
+                posInjury.add(resultSet.getString("position"));
+                teamInjury.add(resultSet.getString("team"));
+                dateInjury.add(resultSet.getString("date"));
+                availInjury.add(resultSet.getString("availability"));
 
             }
         } catch (SQLException ex) {
@@ -404,12 +422,24 @@ public class rosterPlayer {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return injuries;
-    }
-    
-    public String getInjuryFull() {
-        String injuries = "";
+        try {
 
+            return findMaxIn();
+
+        } catch (ParseException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+
+    public String getInjuryFull() {
+        injuries = "";
+        nameInjury = new ArrayList();
+        posInjury = new ArrayList();
+        teamInjury = new ArrayList();
+        dateInjury = new ArrayList();
+        desInjury = new ArrayList();
+        availInjury = new ArrayList();
         try {
             String connectionUrl = "jdbc:mysql://localhost:3306/fantasy?zeroDateTimeBehavior=convertToNull";
             String dbName = "fantasy";
@@ -428,17 +458,88 @@ public class rosterPlayer {
 
             resultSet = s.getResultSet();
             while (resultSet.next()) {
-                injuries = injuries + resultSet.getString("name") + "-";
-                injuries = injuries + resultSet.getString("position") + "-";
-                injuries = injuries + resultSet.getString("team") + "-";
-                injuries = injuries + resultSet.getString("description") + "-";
-                injuries = injuries + resultSet.getString("availability") + ",";
+
+                nameInjury.add(resultSet.getString("name"));
+                posInjury.add(resultSet.getString("position"));
+                teamInjury.add(resultSet.getString("team"));
+                desInjury.add(resultSet.getString("description"));
+                dateInjury.add(resultSet.getString("date"));
+                availInjury.add(resultSet.getString("availability"));
 
             }
         } catch (SQLException ex) {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+
+            return findMaxFull();
+
+        } catch (ParseException ex) {
+            Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+
+    public String findMaxIn() throws ParseException {
+        int k = 1;
+        injuries = "";
+
+        while (k <= 5) {
+            Date max = new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(0).toString());
+            int pos = 0;
+            for (int i = 1; i < dateInjury.size(); i++) {
+
+                if (!new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(i).toString()).before(max)) {
+                    max = new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(i).toString());
+                    pos = i;
+                }
+
+            }
+
+            injuries = injuries + nameInjury.get(pos) + "_";
+            nameInjury.remove(pos);
+            injuries = injuries + posInjury.get(pos) + "_";
+            posInjury.remove(pos);
+            injuries = injuries + teamInjury.get(pos) + "_";
+            teamInjury.remove(pos);
+            injuries = injuries + availInjury.get(pos) + ",";
+            availInjury.remove(pos);
+            dateInjury.remove(pos);
+            k++;
+        }
+        return injuries;
+    }
+
+    public String findMaxFull() throws ParseException {
+        int k = 1;
+        injuries = "";
+
+        while (k <= 20) {
+            Date max = new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(0).toString());
+            int pos = 0;
+            for (int i = 1; i < dateInjury.size(); i++) {
+
+                if (!new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(i).toString()).before(max)) {
+                    max = new SimpleDateFormat("MM/dd/yyyy").parse(dateInjury.get(i).toString());
+                    pos = i;
+                }
+
+            }
+
+            injuries = injuries + nameInjury.get(pos) + "_";
+            nameInjury.remove(pos);
+            injuries = injuries + posInjury.get(pos) + "_";
+            posInjury.remove(pos);
+            injuries = injuries + teamInjury.get(pos) + "_";
+            teamInjury.remove(pos);
+            injuries = injuries + desInjury.get(pos) + "_";
+            desInjury.remove(pos);
+            injuries = injuries + availInjury.get(pos) + ",";
+            availInjury.remove(pos);
+            dateInjury.remove(pos);
+            k++;
         }
         return injuries;
     }

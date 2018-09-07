@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class Statistics {
 
     private String players = "";
+    private int pages=0;
     private List<String> nameList;
     private List<String> teamList;
     private List<String> posList;
@@ -93,12 +94,18 @@ public class Statistics {
     }
 
     public String getPlayers() {
+        pages = nameList.size() / 20;
+        if (nameList.size() % 20 != 0) {
+            pages++;
+        }
         findMax();
         return players;
     }
-
+    public int getPage(){
+        return pages;
+    }
     public void findMax() {
-        
+
         int k = 1;
         while (k <= 20) {
 
@@ -112,7 +119,7 @@ public class Statistics {
                     pos = i;
                 }
             }
-            
+
             players = players + nameList.get(pos) + "_";
             nameList.remove(pos);
             players = players + priceList.get(pos) + "_";

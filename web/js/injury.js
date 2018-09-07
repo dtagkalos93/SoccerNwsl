@@ -3,7 +3,7 @@ function injuryPlay(injuryPlayers) {
     console.log(injuryArray.length);
     var j = 1;
     for (i = 0; i < (injuryArray.length - 1); i++) {
-        var player = injuryArray[i].split("-");
+        var player = injuryArray[i].split("_");
         document.getElementById("injname" + j).innerHTML = player[0];
         document.getElementById("injpos" + j).innerHTML = player[1];
         document.getElementById("injteam" + j).innerHTML = player[2];
@@ -102,7 +102,7 @@ function showInjury() {
                 var injuryArray = data.split(",");
                 var j = 1;
                 for (i = 0; i < (injuryArray.length - 1); i++) {
-                    var player = injuryArray[i].split("-");
+                    var player = injuryArray[i].split("_");
                     document.getElementById("injname" + j).innerHTML = player[0];
                     document.getElementById("injpos" + j).innerHTML = player[1];
                     document.getElementById("injteam" + j).innerHTML = player[2];
@@ -195,7 +195,7 @@ function showInjury() {
                 var injuryArray = data.split(",");
                 var j = 1;
                 for (i = 0; i < (injuryArray.length - 1); i++) {
-                    var player = injuryArray[i].split("-");
+                    var player = injuryArray[i].split("_");
                     document.getElementById("injname" + j).innerHTML = player[0];
                     document.getElementById("injpos" + j).innerHTML = player[1];
                     document.getElementById("injteam" + j).innerHTML = player[2];
@@ -292,7 +292,7 @@ function showInjury() {
                 var injuryArray = data.split(",");
                 var j = 1;
                 for (i = 0; i < (injuryArray.length - 1); i++) {
-                    var player = injuryArray[i].split("-");
+                    var player = injuryArray[i].split("_");
                     document.getElementById("injname" + j).innerHTML = player[0];
                     document.getElementById("injpos" + j).innerHTML = player[1];
                     document.getElementById("injteam" + j).innerHTML = player[2];

@@ -5,6 +5,7 @@
  */
 package com.fantasy;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -13,7 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -25,9 +28,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mitsos
  */
-public class showStats extends HttpServlet {
+public class changePages extends HttpServlet {
 
-    private String players;
+    private Map<String, List<String>> list;
+
     private List<String> nameList;
     private List<String> teamList;
     private List<String> posList;
@@ -36,6 +40,15 @@ public class showStats extends HttpServlet {
     private List<String> gwpList;
     private List<String> totalpList;
     private List<String> injuryList;
+    private List<String> sortnameList;
+    private List<String> sortteamList;
+    private List<String> sortposList;
+    private List<String> sortpriceList;
+    private List<String> sortminList;
+    private List<String> sortgwpList;
+    private List<String> sorttotalpList;
+    private List<String> sortinjuryList;
+    private List<String> other;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -49,14 +62,15 @@ public class showStats extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("ShowStats");
-        players = "";
         String show = request.getParameter("pos");
 
         String cat = request.getParameter("cat");
 
         String cat2 = request.getParameter("cat2");
+        String pageNo = request.getParameter("page");
+        other = new ArrayList<>();
         try {
+            list = new HashMap<>();
 
             nameList = new ArrayList<>();
             teamList = new ArrayList<>();
@@ -66,6 +80,14 @@ public class showStats extends HttpServlet {
             gwpList = new ArrayList<>();
             totalpList = new ArrayList<>();
             injuryList = new ArrayList<>();
+            sortnameList = new ArrayList<>();
+            sortteamList = new ArrayList<>();
+            sortposList = new ArrayList<>();
+            sortpriceList = new ArrayList<>();
+            sortminList = new ArrayList<>();
+            sortgwpList = new ArrayList<>();
+            sorttotalpList = new ArrayList<>();
+            sortinjuryList = new ArrayList<>();
             deadLIne line = new deadLIne();
             String gw = line.getGameweek();
             int weeks = Integer.parseInt(gw.split(" ")[1]) - 1;
@@ -128,16 +150,75 @@ public class showStats extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(showStats.class.getName()).log(Level.SEVERE, null, ex);
         }
-        int pages=nameList.size()/20;
-        if(nameList.size()%20!=0){
+        int pages = nameList.size() / 20;
+        if (nameList.size() % 20 != 0) {
             pages++;
         }
+        int startPos = 0;
+        int finalPos = 0;
+        System.out.println("page" + pageNo);
+
+        if (pages == Integer.parseInt(pageNo)) {
+            int page = (Integer.parseInt(pageNo)) - 1;
+            if (page == 0) {
+                startPos = (page * 20);
+
+            } else {
+                startPos = (page * 20) - 1;
+
+            }
+            finalPos = totalpList.size() - 1;
+        } else {
+            int page = (Integer.parseInt(pageNo)) - 1;
+
+            if (page == 0) {
+                startPos = (page * 20);
+
+            } else {
+                startPos = (page * 20) - 1;
+
+            }
+            finalPos = startPos + 20;
+        }
+        System.out.println("start" + startPos + "final " + finalPos);
+
         findMax(cat2);
-        players=players+pages;
-        System.out.println(players);
+        nameList = new ArrayList<>();
+        teamList = new ArrayList<>();
+        posList = new ArrayList<>();
+        priceList = new ArrayList<>();
+        minList = new ArrayList<>();
+        gwpList = new ArrayList<>();
+        totalpList = new ArrayList<>();
+        injuryList = new ArrayList<>();
+        for (int i = startPos; i < finalPos; i++) {
+            nameList.add(sortnameList.get(i));
+            priceList.add(sortpriceList.get(i));
+            teamList.add(sortteamList.get(i));
+            posList.add(sortposList.get(i));
+            minList.add(sortminList.get(i));
+            gwpList.add(sortgwpList.get(i));
+            totalpList.add(sorttotalpList.get(i));
+            injuryList.add(sortinjuryList.get(i));
+        }
+        list.put("name", nameList);
+        list.put("price", priceList);
+        list.put("team", teamList);
+        list.put("pos", posList);
+        list.put("min", minList);
+        list.put("gwp", gwpList);
+        list.put("total", totalpList);
+        list.put("injury", injuryList);
+        int pageprev = Integer.parseInt(pageNo);
+        other.add((pageprev - 1) + "");
+        other.add((pageprev + 1) + "");
+        other.add((pages + 1) + "");
+        list.put("other", other);
+        String json = new Gson().toJson(list);
+        System.out.println(json);
         response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
         response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
-        response.getWriter().write(players);
+        response.getWriter().write(json);
 
     }
 
@@ -155,7 +236,7 @@ public class showStats extends HttpServlet {
         } else {
             tempList = minList;
         }
-        while (k <= 20) {
+        while (k <= length) {
             int pos = 0;
 
             if (cat2.equals("price")) {
@@ -181,21 +262,21 @@ public class showStats extends HttpServlet {
                 }
             }
 
-            players = players + nameList.get(pos) + "_";
+            sortnameList.add(nameList.get(pos));
             nameList.remove(pos);
-            players = players + priceList.get(pos) + "_";
+            sortpriceList.add(priceList.get(pos));
             priceList.remove(pos);
-            players = players + teamList.get(pos) + "_";
+            sortteamList.add(teamList.get(pos));
             teamList.remove(pos);
-            players = players + posList.get(pos) + "_";
+            sortposList.add(posList.get(pos));
             posList.remove(pos);
-            players = players + minList.get(pos) + "_";
+            sortminList.add(minList.get(pos));
             minList.remove(pos);
-            players = players + gwpList.get(pos) + "_";
+            sortgwpList.add(gwpList.get(pos));
             gwpList.remove(pos);
-            players = players + totalpList.get(pos) + "_";
+            sorttotalpList.add(totalpList.get(pos));
             totalpList.remove(pos);
-            players = players + injuryList.get(pos) + ",";
+            sortinjuryList.add(injuryList.get(pos));
             injuryList.remove(pos);
             k++;
             if (k > length) {
@@ -204,5 +285,4 @@ public class showStats extends HttpServlet {
         }
 
     }
-
 }

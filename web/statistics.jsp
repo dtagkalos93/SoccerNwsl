@@ -107,13 +107,15 @@
         </nav>
         <div class="container extraClass  ">
             <ul class="nav nav-pills extraClassul">
-                <li class="nav-item"><a href="status.jsp">Status</a></li>
+                <li class="nav-item "><a href="status.jsp">Status</a></li>
                 <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
                 <li class="nav-item"><a href="points.jsp">Points</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
-                <li class="nav-item"><a href="fixture">Fixtures</a></li>
+                <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
                 <li class="nav-item active"><a href="statistics.jsp">Statistics</a></li>
+                <li class="nav-item"><a href="injuries.jsp">Injuries</a></li>
+                <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
                 <li class="dropdown hidden-sm hidden-md hidden-lg">
@@ -164,14 +166,14 @@
                                             <option id="uta" value="Utah Royals FC">Utah Royals FC</option>
                                             <option id="was" value="Washington Spirit">Washington Spirit</option> 
                                         </optgroup>
-                                        
+
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-xs-2">
                                     <h5 style="font-size: 16px; padding-top: 2%; line-height: 10px; font-weight:bold;width: 50%; margin-left:10%">Sorted by</h5>
                                 </div>
                                 <div class="col-md-5 col-xs-5" style="width: 30%; margin-left:-7.5%">
-                                    <select class="form-control"  data-size="5" id="categorySelection" onchange="showPlayers('')">
+                                    <select class="form-control"  data-size="5" id="categorySelection" onchange="showStats()">
                                         <option value="score">Total score</option>
                                         <option value="gw">Round score</option> 
                                         <option value="price">Price</option>
@@ -186,7 +188,6 @@
                                         <option value="pkMissed">Penalties missed</option>
                                         <option value="yellow">Yellow cards</option>
                                         <option value="red">Red cards</option>
-                                        <option>Bonus</option> 
                                         <option value="saves">Saves</option>
                                     </select>
                                 </div>
@@ -195,12 +196,12 @@
 
                         <table class="col-md-9 col-xs-9" style="font-family: Century Gothic; border:1px solid #e8e8e8; margin-top: 2%; margin-bottom: 1%; border-top:2px solid #c8373b">
                             <tr style="font-size: 14px;background-color: #f1eded;">
-                                <th style="padding: 0.5%; width: 5%"></th>
-                                <th style="padding: 0.5%; padding-left: 6%; width: 35%">Player</th>
-                                <th style="padding: 0.5%; width: 11.7%">Price</th>
-                                <th style="padding: 0.5%; width: 11.7%">Min.</th>
-                                <th style="padding: 0.5%; width: 11.7%">Last GW Pts</th>
-                                <th style="padding: 0.5%; width: 11.7%">Total Pts</th>
+                                <th style="padding: 0.5%; width: 5%; "></th>
+                                <th style="padding: 0.5%; padding-left: 6%; width: 35%;">Player</th>
+                                <th id="statschange" style="padding: 0.5%; width: 11.7%;text-align: center ">Min.</th>
+                                <th style="padding: 0.5%; width: 11.7%;text-align: center ">Price</th>
+                                <th style="padding: 0.5%; width: 11.7%;text-align: center ">Round Score</th>
+                                <th style="padding: 0.5%; width: 11.7%;text-align: center ">Total Score</th>
                             </tr>
                             <% for (int i = 1; i <= 20; i++) {
                             %>
@@ -218,21 +219,21 @@
                                         <span id="statspos<%=i%>" style="font-size: 13px; padding-left: 3% ">GK</span>
                                     </div>
                                 </td>
-                                <td id="statsprice<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; ">$6.4</td>
-                                <td id="statsmin<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; ">23.3%</td>
-                                <td  id="statsgw<%=i%>"style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; ">9.0</td>
-                                <td id="statstotal<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%; ">170</td>
+                                <td id="statsmin<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%;text-align: center ">23.3%</td>
+                                <td id="statsprice<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%;text-align: center ">$6.4</td>
+                                <td  id="statsgw<%=i%>"style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%;text-align: center ">9.0</td>
+                                <td id="statstotal<%=i%>" style=" font-weight:lighter ;font-size:14px; padding-left:0.5%; padding-top: 0.5%; padding-bottom: 0.5%;text-align: center ">170</td>
                             </tr>
                             <% }
                             %>
                         </table>
-                        <div class="col-md-12 col-xs-12" style="width:80%; margin-bottom: 2%">
+                        <div id="btndiv" class="col-md-12 col-xs-12" style="width:80%; margin-bottom: 2%">
                             <div class="row">
-                                <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top: 0.1%;left:14%; padding-right: 0.4%"><i class="glyphicon glyphicon-backward"></i></button>
-                                <button type="button" class="btn  btn-circle btn-lg  col-md-1 col-xs-1" style="margin-top: -0.4%; padding-top: 0.8%; border-radius: 100pt 100pt;left: 21%"><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                                <h5 class="col-md-6 col-xs-6" style="left: 22%;width: 40%;font-weight: lighter; text-align: center; font-size: 17px">Page <span style="font-weight: bold; font-size: 17px" >1</span> of 7  </h5>
-                                <button type="button" class="btn  btn-circle btn-lg col-md-1 col-xs-1" style="margin-top: -0.4%;border-radius: 100pt 100pt;left: 23%; padding-top: 0.8%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                                <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top:0.1%;border-radius: 100pt 100pt;padding-top: 0.6%; padding-left: 0.5%;left: 30%"><i class="glyphicon glyphicon-forward"></i></button>
+                                <button id="startbtn" value="1" type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top: 0.1%;left:14%; padding-right: 0.4%" disabled onclick="changePage('start')"><i class="glyphicon glyphicon-backward"  ></i></button>
+                                <button id="prevbtn" type="button" class="btn  btn-circle btn-lg  col-md-1 col-xs-1" style="margin-top: -0.4%; padding-top: 0.8%; border-radius: 100pt 100pt;left: 21%" disabled  onclick="changePage('prev')"><i class="glyphicon glyphicon glyphicon-chevron-left" disabled> </i></button>
+                                <h5 class="col-md-6 col-xs-6" style="left: 22%;width: 40%;font-weight: lighter; text-align: center; font-size: 17px">Page <span id="pagestats" style="font-weight: bold; font-size: 17px" >1</span> of <span id="totalPagesstats"><%=players.getPage()%></span>  </h5>
+                                <button id="nextbtn"  value="2" type="button" class="btn  btn-circle btn-lg col-md-1 col-xs-1" style="margin-top: -0.4%;border-radius: 100pt 100pt;left: 23%; padding-top: 0.8%" onclick="changePage('next')"><i class="glyphicon glyphicon glyphicon-chevron-right" ></i></button>
+                                <button id="endbtn" value="<%=players.getPage()%>" type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top:0.1%;border-radius: 100pt 100pt;padding-top: 0.6%; padding-left: 0.5%;left: 30%" onclick="changePage('end')"><i class="glyphicon glyphicon-forward"></i></button>
                             </div>
                         </div>
                     </div>

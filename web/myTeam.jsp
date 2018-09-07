@@ -152,13 +152,14 @@
 
         <div class="container extraClass  ">
             <ul class="nav nav-pills extraClassul">
-                <li  ><a href="status.jsp">Status</a></li>
+                <li class="nav-item"><a href="status.jsp">Status</a></li>
                 <li class="nav-item active"><a href="myTeam.jsp">My Team</a></li>
-                <li class="nav-item " style="display:<%=status%>"><a href="points.jsp">Points</a></li>
+                <li class="nav-item"><a href="points.jsp">Points</a></li>
                 <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
                 <li class="nav-item"><a href="leagues.html">Leagues</a></li>
                 <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
                 <li class="nav-item"><a href="statistics.jsp">Statistics</a></li>
+                <li class="nav-item"><a href="injuries.jsp">Injuries</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
                 <li class="dropdown hidden-sm hidden-md hidden-lg">

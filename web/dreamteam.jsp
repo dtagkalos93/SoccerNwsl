@@ -143,13 +143,15 @@
             <div class="container extraClass  ">
 
                 <ul class="nav nav-tabs extraClassul">
-                    <li  ><a href="status.html">Status</a></li>
-                    <li class="active"><a href="points.jsp">Points</a></li>
-                    <li class="hidden-xs"><a href="transfers.html">Transfers</a></li>
-                    <li class="hidden-xs"><a href="leagues.html">Leagues</a></li>
-                    <li class="hidden-xs"><a href="fixture">Fixtures</a></li>
-                    <li class="hidden-xs"><a href="statistics.jsp">Statistics</a></li>
-                    <li class="hidden-xs"><a href="help.html">Help</a></li>
+                    <li class="nav-item "><a href="status.jsp">Status</a></li>
+                <li class="nav-item"><a href="myTeam.jsp">My Team</a></li>
+                <li class="nav-item active"><a href="points.jsp">Points</a></li>
+                <li class="nav-item"><a href="transfers.jsp">Transfers</a></li>
+                <li class="nav-item"><a href="leagues.html">Leagues</a></li>
+                <li class="nav-item"><a href="fixtures.jsp">Fixtures</a></li>
+                <li class="nav-item"><a href="statistics.jsp">Statistics</a></li>
+                <li class="nav-item"><a href="injuries.jsp">Injuries</a></li>
+                <li class="nav-item"><a href="help.html">Help</a></li>
                     <li class="hidden-xs"><a href="#">Sign Out</a></li>
                     <li class="dropdown hidden-sm hidden-md hidden-lg">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
