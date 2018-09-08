@@ -56,6 +56,8 @@ public class rosterPlayer {
 
     private String injuries;
 
+    private int injuryPage;
+
     public rosterPlayer(String email) throws SQLException {
         System.out.println(email);
         totalScore = 0;
@@ -473,7 +475,11 @@ public class rosterPlayer {
             Logger.getLogger(rosterPlayer.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-
+            if (nameInjury.size() % 20 != 0) {
+                injuryPage = (nameInjury.size() / 20) + 1;
+            } else {
+                injuryPage = (nameInjury.size() / 20) ;
+            }
             return findMaxFull();
 
         } catch (ParseException ex) {
@@ -558,5 +564,9 @@ public class rosterPlayer {
 
     public String getForwardUnion() {
         return forwardUnion;
+    }
+    
+    public int getInjuryPage(){
+        return injuryPage;
     }
 }

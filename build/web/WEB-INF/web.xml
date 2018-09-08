@@ -116,6 +116,10 @@
         <servlet-name>changePages</servlet-name>
         <servlet-class>com.fantasy.changePages</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>injPlayerPage</servlet-name>
+        <servlet-class>com.fantasy.injPlayerPage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -231,6 +235,10 @@
     <servlet-mapping>
         <servlet-name>changePages</servlet-name>
         <url-pattern>/changePages</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>injPlayerPage</servlet-name>
+        <url-pattern>/injPlayerPage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

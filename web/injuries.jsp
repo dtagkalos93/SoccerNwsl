@@ -212,11 +212,11 @@
             </table>
             <div id="btninj" class="col-md-12 col-xs-12" style="width:80%; margin-bottom: 2%">
                 <div class="row">
-                    <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top: 0.1%;left:14%; padding-right: 0.4%"><i class="glyphicon glyphicon-backward"></i></button>
-                    <button type="button" class="btn  btn-circle btn-lg  col-md-1 col-xs-1" style="margin-top: -0.4%; padding-top: 0.8%; border-radius: 100pt 100pt;left: 21%"><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
-                    <h5 class="col-md-6 col-xs-6" style="left: 22%;width: 40%;font-family: Century Gothic;font-weight: lighter; text-align: center; font-size: 17px">Page <span style="font-weight: bold; font-size: 17px" >1</span> of 7  </h5>
-                    <button type="button" class="btn  btn-circle btn-lg col-md-1 col-xs-1" style="margin-top: -0.4%;border-radius: 100pt 100pt;left: 23%; padding-top: 0.8%"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
-                    <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top:0.1%;border-radius: 100pt 100pt;padding-top: 0.6%; padding-left: 0.5%;left: 30%"><i class="glyphicon glyphicon-forward"></i></button>
+                    <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top: 0.1%;left:14%; padding-right: 0.4%" id="startinjbtn" value="1" disabled onclick="btninjury('start')"><i class="glyphicon glyphicon-backward"></i></button>
+                    <button type="button" class="btn  btn-circle btn-lg  col-md-1 col-xs-1" style="margin-top: -0.4%; padding-top: 0.8%; border-radius: 100pt 100pt;left: 21%" id="previnjbtn" value="1" disabled onclick="btninjury('prev')">><i class="glyphicon glyphicon glyphicon-chevron-left"></i></button>
+                    <h5 class="col-md-6 col-xs-6" style="left: 22%;width: 40%;font-family: Century Gothic;font-weight: lighter; text-align: center; font-size: 17px">Page <span style="font-weight: bold; font-size: 17px"  id="injpage">1</span> of <span id="injtotalpage"><%=players.getInjuryPage()%></span>  </h5>
+                    <button type="button" class="btn  btn-circle btn-lg col-md-1 col-xs-1" style="margin-top: -0.4%;border-radius: 100pt 100pt;left: 23%; padding-top: 0.8%" id="nextinjbtn" value="2"  onclick="btninjury('next')"><i class="glyphicon glyphicon glyphicon-chevron-right"></i></button>
+                    <button type="button" class="btn  btn-circle col-md-1 col-xs-1" style="margin-top:0.1%;border-radius: 100pt 100pt;padding-top: 0.6%; padding-left: 0.5%;left: 30%" id="endinjbtn" value="<%=players.getInjuryPage()%>"  onclick="btninjury('end')"><i class="glyphicon glyphicon-forward"></i></button>
                 </div>
             </div>
         </div>

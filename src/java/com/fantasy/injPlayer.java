@@ -84,10 +84,10 @@ public class injPlayer extends HttpServlet {
 
             resultSet = s.getResultSet();
             while (resultSet.next()) {
-                injuries = injuries + resultSet.getString("name") + "-";
-                injuries = injuries + resultSet.getString("position") + "-";
-                injuries = injuries + resultSet.getString("team") + "-";
-                injuries = injuries + resultSet.getString("description") + "-";
+                injuries = injuries + resultSet.getString("name") + "_";
+                injuries = injuries + resultSet.getString("position") + "_";
+                injuries = injuries + resultSet.getString("team") + "_";
+                injuries = injuries + resultSet.getString("description") + "_";
                 injuries = injuries + resultSet.getString("availability") + ",";
 
             }
