@@ -120,6 +120,10 @@
         <servlet-name>injPlayerPage</servlet-name>
         <servlet-class>com.fantasy.injPlayerPage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>fixtureStats</servlet-name>
+        <servlet-class>com.fantasy.fixtureStats</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>fixtureprev</servlet-name>
         <url-pattern>/fixtureprev</url-pattern>
@@ -239,6 +243,10 @@
     <servlet-mapping>
         <servlet-name>injPlayerPage</servlet-name>
         <url-pattern>/injPlayerPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>fixtureStats</servlet-name>
+        <url-pattern>/fixtureStats</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
