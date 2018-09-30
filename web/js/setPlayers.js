@@ -1064,7 +1064,7 @@ function setTeamNo() {
             wasNO = eval(wasNO) + 1;
         }
     }
-    console.log("!!!" + utaNO);
+    console.log("!!!" + chiNO);
     sessionStorage.clear();
     sessionStorage.setItem("chiNO", chiNO);
     sessionStorage.setItem("houNO", houNO);

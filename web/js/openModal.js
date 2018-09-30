@@ -109,7 +109,7 @@ function transBarModalGK(i) {
 
             document.getElementById("modalTitleSide").innerHTML = jsonResponse[0] + " $" + jsonResponse[2];
 
-            document.getElementById("add").setAttribute('onclick', "addTransfer('gk" + j + "')");
+            document.getElementById("add").setAttribute('onclick', "addTransfer('gk" + i + "')");
             if (name.indexOf("'") == 1) {
 
                 var nameArray = name.split("'");

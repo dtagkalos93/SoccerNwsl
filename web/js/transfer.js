@@ -7,6 +7,9 @@ function transOut(player) {
         document.getElementById("namegk" + pos).style.border = "2px solid #02509a";
         document.getElementById("namegk" + pos).style.opacity = "0.7";
         document.getElementById("pricegk" + pos).style.opacity = "0.7";
+
+        document.getElementById("team" + pos).innerHTML = "";
+
         var price = document.getElementById("pricegk" + pos).textContent.split("$")[1].split("m")[0];
         var remainPrice = document.getElementById("remainPrice").textContent;
         var playersNO = document.getElementById("totalPlayers").textContent;
@@ -24,6 +27,26 @@ function transOut(player) {
         document.getElementById("defname" + pos).style.border = "2px solid #02509a";
         document.getElementById("defname" + pos).style.opacity = "0.7";
         document.getElementById("defprice" + pos).style.opacity = "0.7";
+        var team = eval(pos) + 2;
+        for (k = 1; k <= 2; k++) {
+            if (document.getElementById("namegk" + pos).textContent == document.getElementById("gkname" + k).textContent) {
+                document.getElementById("gk" + k).style.pointerEvents = 'auto';
+                document.getElementById("gk" + k).style.opacity = '1';
+                break;
+            }
+
+        }
+        document.getElementById("selGK" + pos).setAttribute('onclick', 'changeGK()');
+        document.getElementById("team" + team).innerHTML = "";
+        for (k = 1; k <= 8; k++) {
+            if (document.getElementById("defname" + pos).textContent == document.getElementById("namedef" + k).textContent) {
+                document.getElementById("def" + k).style.pointerEvents = 'auto';
+                document.getElementById("def" + k).style.opacity = '1';
+                break;
+            }
+
+        }
+        document.getElementById("selDEF" + pos).setAttribute('onclick', 'changeDEF()');
         var price = document.getElementById("defprice" + pos).textContent.split("$")[1].split("m")[0];
         var remainPrice = document.getElementById("remainPrice").textContent;
         var playersNO = document.getElementById("totalPlayers").textContent;
@@ -40,6 +63,17 @@ function transOut(player) {
         document.getElementById("midname" + pos).style.border = "2px solid #02509a";
         document.getElementById("midname" + pos).style.opacity = "0.7";
         document.getElementById("midprice" + pos).style.opacity = "0.7";
+        var team = eval(pos) + 7;
+        document.getElementById("team" + team).innerHTML = "";
+        for (k = 1; k <= 5; k++) {
+            if (document.getElementById("midname" + pos).textContent == document.getElementById("namemid" + k).textContent) {
+                document.getElementById("mid" + k).style.pointerEvents = 'auto';
+                document.getElementById("mid" + k).style.opacity = '1';
+                break;
+            }
+
+        }
+        document.getElementById("selMID" + pos).setAttribute('onclick', 'changeMID()');
         var price = document.getElementById("midprice" + pos).textContent.split("$")[1].split("m")[0];
         var remainPrice = document.getElementById("remainPrice").textContent;
         var playersNO = document.getElementById("totalPlayers").textContent;
@@ -56,6 +90,18 @@ function transOut(player) {
         document.getElementById("fwdname" + pos).style.border = "2px solid #02509a";
         document.getElementById("fwdname" + pos).style.opacity = "0.7";
         document.getElementById("fwdprice" + pos).style.opacity = "0.7";
+        var team = eval(pos) + 12;
+
+        document.getElementById("team" + team).innerHTML = "";
+        for (k = 1; k <= 5; k++) {
+            if (document.getElementById("fwdname" + pos).textContent == document.getElementById("namefwd" + k).textContent) {
+                document.getElementById("fwd" + k).style.pointerEvents = 'auto';
+                document.getElementById("fwd" + k).style.opacity = '1';
+                break;
+            }
+
+        }
+        document.getElementById("selFWD" + pos).setAttribute('onclick', 'changeFWD()');
         var price = document.getElementById("fwdprice" + pos).textContent.split("$")[1].split("m")[0];
         var remainPrice = document.getElementById("remainPrice").textContent;
         var playersNO = document.getElementById("totalPlayers").textContent;
@@ -64,13 +110,16 @@ function transOut(player) {
         document.getElementById("allPlayers").style.color = '#d4213c';
         document.getElementById("totalPlayers").style.color = '#d4213c';
     }
+    checkTrans();
+    setTeamNo();
+    checkNoDisableSide();
     $('#players').modal('hide');
 }
 
 function addTransfer(player) {
+    console.log(player);
     if (player.indexOf("gk") != -1) {
         for (j = 1; j <= 2; j++) {
-            console.log(document.getElementById("imagegk" + j).src.split("/")[5]);
             if (document.getElementById("imagegk" + j).src.split("/")[5] == "subsgk.png") {
                 break;
             }
@@ -82,9 +131,10 @@ function addTransfer(player) {
         document.getElementById("pricegk" + j).innerHTML = document.getElementById("gkprice" + pos).textContent + "m";
         document.getElementById("team" + (j)).innerHTML = document.getElementById("gkteam" + pos).textContent;
 
-        if (document.getElementById("gkinjury" + pos).classList.contains("glyphicon-alert")) {
-            document.getElementById("namegk" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("namegk" + j).style.border = "2px solid #c0020d";
+        if (document.getElementById("gkinjury" + pos).classList.contains("glyphicon-one-fine-red-dot")) {
+            document.getElementById("namegk" + j).style.backgroundColor = document.getElementById("gkinjury" + pos).style.color;
+            document.getElementById("namegk" + j).style.border = "2px solid";
+            document.getElementById("namegk" + j).style.borderColor = document.getElementById("gkinjury" + pos).style.color;
         }
         document.getElementById("namegk" + j).style.opacity = "1";
         document.getElementById("pricegk" + j).style.opacity = "1";
@@ -106,7 +156,6 @@ function addTransfer(player) {
             document.getElementById("remainPrice").style.color = '#d4213c';
             document.getElementById("dollar").style.color = '#d4213c';
             document.getElementById("makeTrans").disabled = true;
-            console.log(document.getElementById("makeTrans").disabled);
         } else {
             document.getElementById("remainPrice").style.color = '#0ea331';
             document.getElementById("dollar").style.color = '#0ea331';
@@ -115,7 +164,6 @@ function addTransfer(player) {
 
     } else if (player.indexOf("def") != -1) {
         for (j = 1; j <= 5; j++) {
-            console.log(document.getElementById("defimage" + j).src.split("/")[5]);
             if (document.getElementById("defimage" + j).src.split("/")[5] == "subs.png") {
                 break;
             }
@@ -127,11 +175,10 @@ function addTransfer(player) {
         document.getElementById("defprice" + j).innerHTML = document.getElementById("pricedef" + pos).textContent + "m";
         document.getElementById("team" + (eval(j) + 2)).innerHTML = document.getElementById("teamdef" + pos).textContent;
 
-        if (document.getElementById("definjury" + pos).classList.contains("glyphicon-alert")) {
-            document.getElementById("defname" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("defname" + j).style.border = "2px solid #c0020d";
-            document.getElementById("defprice" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("defprice" + j).style.border = "2px solid #c0020d";
+        if (document.getElementById("definjury" + pos).classList.contains("glyphicon-one-fine-red-dot")) {
+            document.getElementById("defname" + j).style.backgroundColor = document.getElementById("definjury" + pos).style.color;
+            document.getElementById("defname" + j).style.border = "2px solid";
+            document.getElementById("defname" + j).style.borderColor = document.getElementById("definjury" + pos).style.color;
         }
         document.getElementById("defname" + j).style.opacity = "1";
         document.getElementById("defprice" + j).style.opacity = "1";
@@ -152,7 +199,6 @@ function addTransfer(player) {
             document.getElementById("remainPrice").style.color = '#d4213c';
             document.getElementById("dollar").style.color = '#d4213c';
             document.getElementById("makeTrans").disabled = true;
-            console.log(document.getElementById("makeTrans").disabled);
         } else {
             document.getElementById("remainPrice").style.color = '#0ea331';
             document.getElementById("dollar").style.color = '#0ea331';
@@ -161,7 +207,6 @@ function addTransfer(player) {
     } else if (player.indexOf("mid") != -1) {
 
         for (j = 1; j <= 5; j++) {
-            console.log(document.getElementById("midimage" + j).src.split("/")[5]);
             if (document.getElementById("midimage" + j).src.split("/")[5] == "subs.png") {
                 break;
             }
@@ -169,17 +214,16 @@ function addTransfer(player) {
         }
 
         var pos = player.split("mid")[1];
-
         document.getElementById("midimage" + j).src = "img/" + document.getElementById("imagemid" + pos).src.split("/")[5];
         document.getElementById("midname" + j).innerHTML = document.getElementById("namemid" + pos).textContent;
         document.getElementById("midprice" + j).innerHTML = document.getElementById("pricemid" + pos).textContent + "m";
         document.getElementById("team" + (eval(j) + 7)).innerHTML = document.getElementById("teammid" + pos).textContent;
-        if (document.getElementById("midinjury" + pos).classList.contains("glyphicon-alert")) {
-            document.getElementById("midname" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("midname" + j).style.border = "2px solid #c0020d";
-            document.getElementById("midprice" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("midprice" + j).style.border = "2px solid #c0020d";
+        if (document.getElementById("midinjury" + pos).classList.contains("glyphicon-one-fine-red-dot")) {
+            document.getElementById("midname" + j).style.backgroundColor = document.getElementById("midinjury" + pos).style.color;
+            document.getElementById("midname" + j).style.border = "2px solid";
+            document.getElementById("midname" + j).style.borderColor = document.getElementById("midinjury" + pos).style.color;
         }
+
         document.getElementById("midname" + j).style.opacity = "1";
         document.getElementById("midprice" + j).style.opacity = "1";
         document.getElementById("selMID" + j).setAttribute('onclick', "transModalMID('" + j + "')");
@@ -199,7 +243,6 @@ function addTransfer(player) {
             document.getElementById("remainPrice").style.color = '#d4213c';
             document.getElementById("dollar").style.color = '#d4213c';
             document.getElementById("makeTrans").disabled = true;
-            console.log(document.getElementById("makeTrans").disabled);
         } else {
             document.getElementById("remainPrice").style.color = '#0ea331';
             document.getElementById("dollar").style.color = '#0ea331';
@@ -207,7 +250,6 @@ function addTransfer(player) {
         }
     } else if (player.indexOf("fwd") != -1) {
         for (j = 1; j <= 3; j++) {
-            console.log(document.getElementById("fwdimage" + j).src.split("/")[5]);
             if (document.getElementById("fwdimage" + j).src.split("/")[5] == "subs.png") {
                 break;
             }
@@ -218,11 +260,10 @@ function addTransfer(player) {
         document.getElementById("fwdname" + j).innerHTML = document.getElementById("namefwd" + pos).textContent;
         document.getElementById("fwdprice" + j).innerHTML = document.getElementById("pricefwd" + pos).textContent + "m";
         document.getElementById("team" + (eval(j) + 12)).innerHTML = document.getElementById("teamfwd" + pos).textContent;
-        if (document.getElementById("fwdinjury" + pos).classList.contains("glyphicon-alert")) {
-            document.getElementById("fwdname" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("fwdname" + j).style.border = "2px solid #c0020d";
-            document.getElementById("fwdprice" + j).style.backgroundColor = "#c0020d";
-            document.getElementById("fwdprice" + j).style.border = "2px solid #c0020d";
+        if (document.getElementById("fwdinjury" + pos).classList.contains("glyphicon-one-fine-red-dot")) {
+            document.getElementById("fwdname" + j).style.backgroundColor = document.getElementById("fwdinjury" + pos).style.color;
+            document.getElementById("fwdname" + j).style.border = "2px solid";
+            document.getElementById("fwdname" + j).style.borderColor = document.getElementById("fwdinjury" + pos).style.color;
         }
         document.getElementById("fwdname" + j).style.opacity = "1";
         document.getElementById("fwdprice" + j).style.opacity = "1";
@@ -243,7 +284,6 @@ function addTransfer(player) {
             document.getElementById("remainPrice").style.color = '#d4213c';
             document.getElementById("dollar").style.color = '#d4213c';
             document.getElementById("makeTrans").disabled = true;
-            console.log(document.getElementById("makeTrans").disabled);
         } else {
             document.getElementById("remainPrice").style.color = '#0ea331';
             document.getElementById("dollar").style.color = '#0ea331';
@@ -299,7 +339,7 @@ function makeTransfer() {
     var def = "";
     var mid = "";
     var fwd = "";
-    var remain=document.getElementById("remainPrice").textContent;
+    var remain = document.getElementById("remainPrice").textContent;
     for (i = 1; i <= 2; i++) {
         gk = gk + document.getElementById("namegk" + i).textContent + "-" + document.getElementById("team" + (i)).textContent + "-Goalkeeper,";
     }
@@ -323,7 +363,7 @@ function makeTransfer() {
     }
 
 
-    window.location = "transfers?gk=" + gk+"&def="+def+"&mid="+mid+"&fwd="+fwd+"&remain="+remain;
+    window.location = "transfers?gk=" + gk + "&def=" + def + "&mid=" + mid + "&fwd=" + fwd + "&remain=" + remain;
 
 
 }
@@ -1480,7 +1520,6 @@ $(document).on("click", "#endTrans", function () { // When HTML DOM "click" even
         document.getElementById("fwd5").style.display = "none";
         document.getElementById("fwd6").style.display = "none";
         var k = 1;
-        console.log("i" + responseText[68]);
         for (i = (6 * 2) + (6 * 5) + 14; i < (length3 * 6) + (6 * 5) + (6 * 2) + 14; i = i + 6) {
 
             document.getElementById("namefwd" + k).innerHTML = responseText[i];
