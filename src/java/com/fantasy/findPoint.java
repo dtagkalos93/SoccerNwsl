@@ -61,7 +61,10 @@ public class findPoint extends HttpServlet {
         deadLIne line = new deadLIne();
         String gw = line.getGameweek();
         int weeks = Integer.parseInt(gw.split(" ")[1]);
-        String fix = "GW" + (weeks - 1);
+        if(weeks!=24){
+            weeks=weeks-1;
+        }
+        String fix = "GW" + (weeks );
 
         gklist = new ArrayList<>();
         deflist = new ArrayList<>();

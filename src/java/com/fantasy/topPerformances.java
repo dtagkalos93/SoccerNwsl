@@ -22,6 +22,9 @@ public class topPerformances {
         deadLIne line = new deadLIne();
         String fix = line.getGameweek().split(" ")[1];
         int fixNo = Integer.parseInt(fix);
+        if(fixNo!=24){
+            fixNo=fixNo-1;
+        }
          bestPlayer(fixNo);
      }
      public void bestPlayer(int fixNo) {
@@ -36,7 +39,9 @@ public class topPerformances {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(connectionUrl, userId, password);
              String sql = "";
-            for (int i = 1; i < fixNo; i++) {
+             
+             //fixNo Change
+            for (int i = 1; i <= fixNo; i++) {
                 
                 sql = "SELECT GW" + i + ",name,team,position FROM players ";
                 statement = connection.createStatement();

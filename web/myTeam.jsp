@@ -54,6 +54,8 @@
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         <script src="js/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 
 
         <!-- Bootstrap Core JavaScript -->
@@ -80,7 +82,7 @@
             captain('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>');
             opponent('<%=goalkeeper%>', '<%=defence%>', '<%=midfielder%>', '<%=forward%>', '<%=bench%>');
             setCaptain('<%=captain%>', '<%=vcaptain%>');
-                    ">
+          ">
 
         <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
             <div class="container topnav">
@@ -774,7 +776,7 @@
                                             mondayaway = "mondayaway" + i;
                                             mondayawaybadge = "mondayawaybadge" + i;
                                     %>
-                                    <a id="<%=mondaygame + "id"%>" data-toggle="collapse" href="#<%=mondaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','monday');">
+                                    <a id="<%=mondaygame + "id"%>" data-toggle="collapse" href="#<%=mondaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'monday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
@@ -1091,7 +1093,7 @@
                                             tuesdayawaybadge = "tuesdayawaybadge" + i;
                                     %>
                                     <a id="<%= tuesdaygame + "id"%>" data-toggle="collapse" href="#<%= tuesdaygame%>" style="color:black">
-                                        <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" onclick="fixturestatsbtn('<%=i%>','tuesday');">
+                                        <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" onclick="fixturestatsbtn('<%=i%>', 'tuesday');">
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
                                                     <h6 id="<%= tuesdayhome%>" style="font-family: Century Gothic;float: right;font-size:17px"> </h6>
@@ -1405,7 +1407,7 @@
                                             wednesdayaway = "wednesdayaway" + i;
                                             wednesdayawaybadge = "wednesdayawaybadge" + i;
                                     %>
-                                    <a id="<%= wednesdaygame + "id"%>" data-toggle="collapse" href="#<%= wednesdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','wednesday');">
+                                    <a id="<%= wednesdaygame + "id"%>" data-toggle="collapse" href="#<%= wednesdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'wednesday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
@@ -1722,7 +1724,7 @@
                                             thursdayaway = "thursdayaway" + i;
                                             thursdayawaybadge = "thursdayawaybadge" + i;
                                     %>
-                                    <a id="<%= thursdaygame + "id"%>" data-toggle="collapse" href="#<%= thursdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','thursday');">
+                                    <a id="<%= thursdaygame + "id"%>" data-toggle="collapse" href="#<%= thursdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'thursday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
@@ -2040,7 +2042,7 @@
                                             fridayaway = "fridayaway" + i;
                                             fridayawaybadge = "fridayawaybadge" + i;
                                     %>
-                                    <a id="<%= fridaygame + "id"%>" data-toggle="collapse" href="#<%= fridaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','friday');">
+                                    <a id="<%= fridaygame + "id"%>" data-toggle="collapse" href="#<%= fridaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'friday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
@@ -2355,7 +2357,7 @@
                                             saturdayaway = "saturdayaway" + i;
                                             saturdayawaybadge = "saturdayawaybadge" + i;
                                     %>
-                                    <a id="<%=saturdaygame + "id"%>" data-toggle="collapse" href="#<%=saturdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','saturday');">
+                                    <a id="<%=saturdaygame + "id"%>" data-toggle="collapse" href="#<%=saturdaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'saturday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">
@@ -2669,7 +2671,7 @@
                                             sundayaway = "sundayaway" + i;
                                             sundayawaybadge = "sundayawaybadge" + i;
                                     %>
-                                    <a id="<%=sundaygame + "id"%>" data-toggle="collapse" href="#<%=sundaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>','sunday');">
+                                    <a id="<%=sundaygame + "id"%>" data-toggle="collapse" href="#<%=sundaygame%>" style="color:black" onclick="fixturestatsbtn('<%=i%>', 'sunday');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4 " style="left: 5%">

@@ -817,9 +817,19 @@
                                     <%
                                         String classSTR;
                                         String color;
-                                        if (gkinjury.get(1).equals("NO")) {
+                                        if (gkinjury.get(0).equals("NO")) {
                                             classSTR = "glyphicon glyphicon-info-sign";
                                             color = "";
+                                        } else if (gkinjury.get(0).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (gkinjury.get(0).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
                                         } else {
                                             classSTR = "glyphicon glyphicon-one-fine-red-dot";
                                             color = "#c0020d";
@@ -844,6 +854,16 @@
                                         if (gkinjury.get(1).equals("NO")) {
                                             classSTR = "glyphicon glyphicon-info-sign";
                                             color = "";
+                                        } else if (gkinjury.get(1).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (gkinjury.get(1).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
                                         } else {
                                             classSTR = "glyphicon glyphicon-one-fine-red-dot";
                                             color = "#c0020d";
@@ -884,9 +904,19 @@
                                 %>
                                 <tr id='<%=gkstr%>' style='display:none;cursor:pointer' onclick="transBarModalGK(<%=i%>)">
                                     <%
-                                        if (gkinjury.get(1).equals("NO")) {
+                                        if (gkinjury.get(0).equals("NO")) {
                                             classSTR = "glyphicon glyphicon-info-sign";
                                             color = "";
+                                        } else if (gkinjury.get(0).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (gkinjury.get(0).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
                                         } else {
                                             classSTR = "glyphicon glyphicon-one-fine-red-dot";
                                             color = "#c0020d";
@@ -918,13 +948,24 @@
                                 </tr>
                                 <tr id="def1" style='cursor:pointer' onclick="transBarModalDEF(1)">
                                     <%
-                                        if (definjury.get(0).equals("NO")) { %>
-                                    <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury1" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(0).equals("OUT")) {
-                                        %>
-                                    <td style="font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center "><span id="definjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(0).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(0).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(0).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury1" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style="font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60%">
                                         <div>
                                             <img id="imagedef1" src="img/<%=defbadge.get(0)%> " style="height:30px" />
@@ -940,13 +981,24 @@
                                 </tr>
                                 <tr id="def2" style='cursor:pointer'onclick="transBarModalDEF(2)">
                                     <%
-                                        if (definjury.get(1).equals("NO")) { %>
-                                    <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center'><span id="definjury2" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(1).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(1).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(1).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(1).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury2" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagedef2" src="img/<%=defbadge.get(1)%> " style="height:30px" />
@@ -962,13 +1014,24 @@
                                 </tr>
                                 <tr id="def3" style='cursor:pointer' onclick="transBarModalDEF(3)">
                                     <%
-                                        if (definjury.get(2).equals("NO")) { %>
-                                    <td style=' font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(2).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(2).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(2).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(2).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury3" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagedef3" src="img/<%=defbadge.get(2)%> " style="height:30px" />
@@ -984,13 +1047,24 @@
                                 </tr>
                                 <tr id="def4" style='cursor:pointer' onclick="transBarModalDEF(4)">
                                     <%
-                                        if (definjury.get(3).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(3).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(3).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(3).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(3).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury4" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagedef4" src="img/<%=defbadge.get(3)%> " style="height:30px" />
@@ -1006,13 +1080,24 @@
                                 </tr>
                                 <tr id="def5" style='cursor:pointer' onclick="transBarModalDEF(5)">
                                     <%
-                                        if (definjury.get(4).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(4).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(4).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(4).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(4).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury5" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagedef5" src="img/<%=defbadge.get(4)%> " style="height:30px" />
@@ -1100,13 +1185,24 @@
                                 </tr>
                                 <tr id='mid1' style='cursor:pointer'  onclick="transBarModalMID(1)">
                                     <%
-                                        if (midinjury.get(0).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(0).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(0).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(0).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(0).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury1" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid1" src="img/<%=midbadge.get(0)%> " style="height:30px" />
@@ -1122,13 +1218,24 @@
                                 </tr>                            
                                 <tr id='mid2' style='cursor:pointer' onclick="transBarModalMID(2)">
                                     <%
-                                        if (midinjury.get(1).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(1).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(1).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(1).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(1).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury2" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid2" src="img/<%=midbadge.get(1)%> " style="height:30px" />
@@ -1144,13 +1251,24 @@
                                 </tr>
                                 <tr id="mid3" style='cursor:pointer' onclick="transBarModalMID(3)" >
                                     <%
-                                        if (midinjury.get(2).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(2).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(2).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(2).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(2).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury3" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid3" src="img/<%=midbadge.get(2)%> " style="height:30px" />
@@ -1166,13 +1284,24 @@
                                 </tr>
                                 <tr id="mid4" style='cursor:pointer' onclick="transBarModalMID(4)">
                                     <%
-                                        if (midinjury.get(3).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(3).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(3).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(3).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(3).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury4" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid4" src="img/<%=midbadge.get(3)%> " style="height:30px" />
@@ -1188,13 +1317,24 @@
                                 </tr>
                                 <tr id="mid5" style='cursor:pointer' onclick="transBarModalMID(5)">
                                     <%
-                                        if (midinjury.get(4).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(4).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(4).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(4).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(4).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury5" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid5" src="img/<%=midbadge.get(4)%> " style="height:30px" />
@@ -1210,13 +1350,24 @@
                                 </tr>
                                 <tr id="mid6" style='cursor:pointer' onclick="transBarModalMID(6)">
                                     <%
-                                        if (midinjury.get(5).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (midinjury.get(5).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="midinjury6" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (midinjury.get(4).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (midinjury.get(4).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (midinjury.get(4).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="midinjury6" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagemid6" src="img/<%=midbadge.get(5)%> " style="height:30px" />
@@ -1283,13 +1434,24 @@
                                 </tr>
                                 <tr id="fwd1" style='cursor:pointer' onclick="transBarModalFWD(1)">
                                     <%
-                                        if (fwdinjury.get(0).equals("NO")) { %>
-                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(0).equals("OUT")) {
-                                        %>
-                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury1" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (fwdinjury.get(0).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(0).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(0).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury1" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd1" src="img/<%=fwdbadge.get(0)%> " style="height:30px" />
@@ -1304,14 +1466,24 @@
                                     <td id="scorefwd1" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(0)%></td>
                                 </tr>
                                 <tr id="fwd2" style='cursor:pointer' onclick="transBarModalFWD(2)">
-                                    <%
-                                        if (fwdinjury.get(1).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(1).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury2" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                    <% if (fwdinjury.get(1).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(1).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(1).equals("QUEST")) { 
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury2" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd2" src="img/<%=fwdbadge.get(1)%> " style="height:30px" />
@@ -1326,14 +1498,24 @@
                                     <td id="scorefwd2" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(1)%></td>
                                 </tr>
                                 <tr id="fwd3" style='cursor:pointer' onclick="transBarModalFWD(3)">
-                                    <%
-                                        if (fwdinjury.get(2).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(2).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury3" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                    <% if (fwdinjury.get(2).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(2).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(2).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury3" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd3" src="img/<%=fwdbadge.get(2)%> " style="height:30px" />
@@ -1348,14 +1530,24 @@
                                     <td id="scorefwd3" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(2)%></td>
                                 </tr>
                                 <tr id="fwd4" style='cursor:pointer' onclick="transBarModalFWD(4)">
-                                    <%
-                                        if (fwdinjury.get(3).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(3).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury4" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                    <% if (fwdinjury.get(3).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(3).equals("INT")) { 
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(3).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury4" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd4" src="img/<%=fwdbadge.get(3)%> " style="height:30px" />
@@ -1370,14 +1562,24 @@
                                     <td id="scorefwd4" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(3)%></td>
                                 </tr>
                                 <tr id="fwd5" style='cursor:pointer' onclick="transBarModalFWD(5)">
-                                    <%
-                                        if (fwdinjury.get(4).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(4).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury5" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                    <% if (fwdinjury.get(4).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(4).equals("INT")) {  
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(4).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury5" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd5" src="img/<%=fwdbadge.get(4)%> " style="height:30px" />
@@ -1392,14 +1594,24 @@
                                     <td id="scorefwd5" style="font-family: Century Gothic;text-align: center ;font-size:13px; font-weight: lighter; border-bottom:1px solid white;width: 15.5%"><%= fwdscore.get(4)%></td>
                                 </tr>
                                 <tr id="fwd6" style='cursor:pointer' onclick="transBarModalFWD(6)">
-                                    <%
-                                        if (fwdinjury.get(5).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (fwdinjury.get(5).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="fwdinjury6" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                    <% if (fwdinjury.get(5).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (fwdinjury.get(5).equals("INT")) { 
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (fwdinjury.get(5).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="fwdinjury6" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagefwd6" src="img/<%=fwdbadge.get(5)%> " style="height:30px" />
@@ -1799,7 +2011,7 @@
                                 <td id="save<%=i%>" style="width:5.3%;padding: 1%;padding-bottom: 1.5%;padding-top: 1.5%;text-align: center">0</td>
                             </tr>
                             <%
-                            }%>
+                                }%>
                         </table>
                     </div>
                 </div>

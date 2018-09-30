@@ -29,7 +29,13 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+        <script src="js/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/fixturejs.js"></script>
 
     </head>
@@ -189,19 +195,19 @@
 
                                         }
                                     %>
-                                    <a data-toggle="collapse" href="#<%=game%>" style="color:black">
+                                    <a data-toggle="collapse" href="#<%=game%>" style="color:black" onclick="fixturestats('<%=i%>');">
                                         <div class="match col-sm-12 " style="display: block;box-sizing: border-box;padding: .5rem 2rem .5rem 2rem;border-bottom: 1px solid #e8e4e4" >
                                             <div class="row" style="">
                                                 <div class="col-md-4  col-xs-4" style="text-align:center;padding-bottom: 0.5%;padding-top: 1.5%">
                                                     <img style="height: 75px;width: auto" src="img/<%=homebadge.get(i)%>">
-                                                    <h6 style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=home.get(i)%></h6>                                      
+                                                    <h6 id="home<%=i%>" style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=home.get(i)%></h6>                                      
                                                 </div>
                                                 <div class="col-md-4  col-xs-4 time" style="letter-spacing: 0.5px;padding-top: 37px">
                                                     <h6 style="font-family: Century Gothic;text-align: center;font-size: 21px"><%=time.get(i)%></h6>
                                                 </div>
                                                 <div class="col-md-4 col-xs-4 " style="text-align:center;padding-bottom: 0.5%;padding-top: 1.5%">
                                                     <img style="height: 75px;width: auto" src="img/<%=awaybadge.get(i)%>">
-                                                    <h6 style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=away.get(i)%></h6>
+                                                    <h6 id="away<%=i%>" style="font-family: Century Gothic;font-size: 15px;font-weight: lighter;margin-bottom: 0"><%=away.get(i)%></h6>
                                                 </div>
                                             </div>
                                             <h6 class="col-sm-12" style="color:black;font-family: Century Gothic;font-weight: lighter;font-size: 17px;text-align: center;"><%=stadium.get(i)%></h6>
@@ -209,114 +215,278 @@
                                         </div>
                                     </a>
                                     <div id="<%=game%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
-                                        <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260">
+                                        <div id="goaltitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260;  ">
                                             <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
                                         </div>
-                                        <div class="row2" style="width: 100%" >
+                                        <div id="goalstat<%=i%>" class="row2" style="width: 100%; " >
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;float:right;text-align: right">
+                                                    <%
+                                                        int j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li id="homegoal<%=j%>-<%=i%>"></li>
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                <ul style="list-style: none;margin-left: -12.6%">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awaygoal<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div id="owntitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;">
+                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                        </div>
+                                        <div id="ownstat<%=i%>" class="row2" style="width: 100%;" >
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;float:right;text-align: right">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homeown<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;margin-left: -12.6%">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awayown<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div id="assisttitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                        </div>
+                                        <div id="assiststats<%=i%>" class="row2" style="width: 100%;" >
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homeassist<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awayassist<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Assists</h6>
+
+                                        <div id="yellowtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
                                         </div>
-                                        <div class="row2" style="width: 100%;" >
+                                        <div id="yellowstats<%=i%>" class="row2" style="width: 100%;" >
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homeyellow<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awayyellow<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
-                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Yellow cards</h6>
+
+                                        <div id="redtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;  ">
+                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
                                         </div>
-                                        <div class="row2" style="width: 100%;" >
+                                        <div id="redstats<%=i%>" class="row2" style="width: 100%; " >
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homered<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awayred<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%"
-                                             <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Red cards</h6>
+
+                                        <div id="pkmissedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                            <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
                                         </div>
-                                        <div class="row2" style="width: 100%;" >
+                                        <div id="pkmissedstats<%=i%>" class="row2" style="width: 100%;" >
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;float:right;text-align: right">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homepkmissed<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
+                                                <ul style="list-style: none;margin-left: -12.6%">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awaypkmissed<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div id="pksavedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                            <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                        </div>
+                                        <div id="pksavedstats<%=i%>" class="row2" style="width: 100%;" >
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;float:right;text-align: right">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homepksaved<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                <ul style="list-style: none;margin-left: -12.6%">
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awaypksaved<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div id="savetitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                        </div>
+                                        <div id="savestats<%=i%>" class="row2" style="width: 100%;" >
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="homesave<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
                                                 <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
+                                                    <%
+                                                        j = 0;
+                                                        while (j <= 10) {
+                                                    %>
+
+                                                    <li  id="awaysave<%=j%>-<%=i%>" ></li> 
+                                                        <%
+                                                                j++;
+                                                            }
+                                                        %>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%">
-                                            <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35%" >Saves</h6>
-                                        </div>
-                                        <div class="row2" style="width: 100%" >
-                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                                <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                                <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!--<div class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2% ">
-                                            <h6 style="color:white;font-size:13px;text-align: center;margin-top: 0.35%" >Bonus</h6>
-                                        </div>
-                                        <div class="row2" style="width: 100%;margin-bottom: 2%" >
-                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                                <ul style="list-style: none;float:right">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                    <li>Milk</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
-                                                <ul style="list-style: none;margin-left: -12.6%">
-                                                    <li>Coffee</li>
-                                                    <li>Tea</li>
-                                                </ul>
-                                            </div>
-                                        </div>-->
                                     </div>
                                     <% }%>
                                 </div>
@@ -362,6 +532,280 @@
 
                                             </div>
                                         </a>
+                                        <div id="<%= mondaygame%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
+                                            <div id="mondaygoaltitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
+                                            </div>
+                                            <div id="mondaygoalstat<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            int j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li id="mondayhomegoal<%=j%>-<%=i%>"></li>
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawaygoal<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondayowntitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                            </div>
+                                            <div id="mondayownstat<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomeown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawayown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondayassisttitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                            </div>
+                                            <div id="mondayassiststats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomeassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawayassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondayyellowtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
+                                            </div>
+                                            <div id="mondayyellowstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomeyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawayyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondayredtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
+                                            </div>
+                                            <div id="mondayredstats<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomered<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawayred<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondaypkmissedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
+                                            </div>
+                                            <div id="mondaypkmissedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomepkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawaypkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondaypksavedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                            </div>
+                                            <div id="mondaypksavedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomepksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawaypksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="mondaysavetitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                            </div>
+                                            <div id="mondaysavestats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayhomesave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="mondayawaysave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <%}%>
                                     </div>
 
@@ -402,6 +846,280 @@
 
                                             </div>
                                         </a>
+                                        <div id="<%= tuesdaygame%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
+                                            <div id="tuesdaygoaltitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
+                                            </div>
+                                            <div id="tuesdaygoalstat<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            int j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li id="tuesdayhomegoal<%=j%>-<%=i%>"></li>
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawaygoal<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdayowntitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                            </div>
+                                            <div id="tuesdayownstat<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomeown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawayown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdayassisttitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                            </div>
+                                            <div id="tuesdayassiststats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomeassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawayassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdayyellowtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
+                                            </div>
+                                            <div id="tuesdayyellowstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomeyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawayyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdayredtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
+                                            </div>
+                                            <div id="tuesdayredstats<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomered<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawayred<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdaypkmissedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
+                                            </div>
+                                            <div id="tuesdaypkmissedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomepkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawaypkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdaypksavedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                            </div>
+                                            <div id="tuesdaypksavedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomepksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawaypksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="tuesdaysavetitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                            </div>
+                                            <div id="tuesdaysavestats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayhomesave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="tuesdayawaysave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <%}%>
                                     </div>
                                     <div id="wednesday">
@@ -441,6 +1159,280 @@
 
                                             </div>
                                         </a>
+                                        <div id="<%= wednesdaygame%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
+                                            <div id="wednesdaygoaltitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
+                                            </div>
+                                            <div id="wednesdaygoalstat<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            int j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li id="wednesdayhomegoal<%=j%>-<%=i%>"></li>
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawaygoal<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdayowntitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                            </div>
+                                            <div id="wednesdayownstat<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomeown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawayown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdayassisttitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                            </div>
+                                            <div id="wednesdayassiststats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomeassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawayassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdayyellowtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
+                                            </div>
+                                            <div id="wednesdayyellowstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomeyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawayyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdayredtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
+                                            </div>
+                                            <div id="wednesdayredstats<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomered<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawayred<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdaypkmissedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
+                                            </div>
+                                            <div id="wednesdaypkmissedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomepkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawaypkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdaypksavedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                            </div>
+                                            <div id="wednesdaypksavedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomepksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawaypksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="wednesdaysavetitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                            </div>
+                                            <div id="wednesdaysavestats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayhomesave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="wednesdayawaysave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>     
                                         <%}%>
                                     </div>
                                     <div id="thursday">
@@ -480,6 +1472,281 @@
 
                                             </div>
                                         </a>
+
+                                        <div id="<%=thursdaygame%>" class="col-sm-12 collapse " style="border-bottom: 1px solid #e8e4e4;margin-top: 1%;padding-bottom: 1%">
+                                            <div id="thurdaygoaltitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Goal Scored</h6>
+                                            </div>
+                                            <div id="thursdaygoalstat<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            int j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li id="thursdayhomegoal<%=j%>-<%=i%>"></li>
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawaygoal<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdayowntitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.47% " >Own Goal</h6>
+                                            </div>
+                                            <div id="thursdayownstat<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomeown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawayown<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdayassisttitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Assists</h6>
+                                            </div>
+                                            <div id="thursdayassiststats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomeassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawayassist<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdayyellowtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Yellow cards</h6>
+                                            </div>
+                                            <div id="thursdayyellowstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomeyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawayyellow<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdayredtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%;  ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top: 0.35% " >Red cards</h6>
+                                            </div>
+                                            <div id="thursdayredstats<%=i%>" class="row2" style="width: 100%; " >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomered<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawayred<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdaypkmissedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Missed</h6>
+                                            </div>
+                                            <div id="thursdaypkmissedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomepkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 1%;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawaypkmissed<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdaypksavedtitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="color:white;font-family: Century Gothic;font-size:13px;text-align: center;margin-top: 0.47% " >Penalty Saved</h6>
+                                            </div>
+                                            <div id="thursdaypksavedstats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;border-right: 1px solid white;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right;text-align: right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomepksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-6  col-xs-6" style="width: 50%;flex: 1;margin-top: 1%;font-family: Century Gothic;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawaypksaved<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div id="thursdaysavetitle<%=i%>" class="col-sm-12" style="width: 100%;height:19px ;background-color:#1d3260; margin-top: 2%; ">
+                                                <h6 style="font-family: Century Gothic;color:white;font-size:13px;text-align: center;margin-top:0.35% " >Saves</h6>
+                                            </div>
+                                            <div id="thursdaysavestats<%=i%>" class="row2" style="width: 100%;" >
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;border-right: 1px solid white;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;float:right">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayhomesave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6  col-xs-6" style="font-family: Century Gothic;width: 50%;flex: 1;margin-top: 0.5%;margin-bottom: 0.5%;font-size: 14px;font-weight: lighter">
+                                                    <ul style="list-style: none;margin-left: -12.6%">
+                                                        <%
+                                                            j = 0;
+                                                            while (j <= 10) {
+                                                        %>
+
+                                                        <li  id="thursdayawaysave<%=j%>-<%=i%>" ></li> 
+                                                            <%
+                                                                    j++;
+                                                                }
+                                                            %>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>            
                                         <%}%>
                                     </div>
                                     <div id="friday">
@@ -609,12 +1876,6 @@
 
 
 
-
-            <!-- jQuery -->
-            <script src="js/jquery.js"></script>
-
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
 
     </body>
 

@@ -257,7 +257,7 @@ function injury(injuryPlayers) {
     console.log(injuryArray.length);
     var j = 1;
     for (i = 0; i < (injuryArray.length - 1); i++) {
-        var player = injuryArray[i].split("-");
+        var player = injuryArray[i].split("_");
         document.getElementById("injuryname" + j).innerHTML = player[0];
         document.getElementById("injurypos" + j).innerHTML = player[1];
         document.getElementById("injuryteam" + j).innerHTML = player[2];

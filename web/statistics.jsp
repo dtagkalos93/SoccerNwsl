@@ -116,7 +116,6 @@
                 <li class="nav-item active"><a href="statistics.jsp">Statistics</a></li>
                 <li class="nav-item"><a href="injuries.jsp">Injuries</a></li>
                 <li class="nav-item"><a href="help.html">Help</a></li>
-                <li class="nav-item"><a href="help.html">Help</a></li>
                 <li class="nav-item"><a href="signout">Sign Out</a></li>
                 <li class="dropdown hidden-sm hidden-md hidden-lg">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More

@@ -156,8 +156,8 @@ public class fixtureStats extends HttpServlet {
             // Get a Connection to the database
             connection = DriverManager.getConnection(connectionUrl, userId, password);
 
-            getHome(awayTeam, gwNo, connection);
-            getAway(homeTeam, gwNo, connection);
+            getHome(awayTeam,home, gwNo, connection);
+            getAway(homeTeam,away, gwNo, connection);
 
             connection.close();
 
@@ -200,10 +200,10 @@ public class fixtureStats extends HttpServlet {
 
     }
 
-    public void getHome(String away, String gw, Connection connection) {
+    public void getHome(String away,String home, String gw, Connection connection) {
         try {
 
-            String sql = "SELECT * FROM gw" + gw + "stats where opponent Like '" + away + "%'";
+            String sql = "SELECT * FROM gw" + gw + "stats where opponent Like '" + away + "%' AND team = '"+home+"'";
 
             System.out.println(sql);
 
@@ -244,10 +244,10 @@ public class fixtureStats extends HttpServlet {
         }
     }
 
-    public void getAway(String home, String gw, Connection connection) {
+    public void getAway(String home,String away, String gw, Connection connection) {
         try {
 
-            String sql = "SELECT * FROM gw" + gw + "stats where opponent Like '" + home + "%'";
+            String sql = "SELECT * FROM gw" + gw + "stats where opponent Like '" + home + "%' AND team = '"+away+"'";
 
             System.out.println(sql);
 

@@ -158,7 +158,11 @@ public class rosterPlayer {
             deadLIne line = new deadLIne();
             String gw = line.getGameweek();
             System.out.println(gw);
-            int weeks = Integer.parseInt(gw.split(" ")[1]) - 1;
+            
+            int weeks = Integer.parseInt(gw.split(" ")[1]);
+            if(weeks!=24){
+                weeks=weeks-1;
+            }
             connection = DriverManager.getConnection(connectionUrl, userId, password);
             String gk = goalkeeper.split("-")[0];
             String[] def = defence.split(",");
@@ -237,6 +241,7 @@ public class rosterPlayer {
                 }
 
                 s.executeQuery(sql);
+                System.out.println(sql);
 
                 resultSet = s.getResultSet();
 
@@ -478,7 +483,7 @@ public class rosterPlayer {
             if (nameInjury.size() % 20 != 0) {
                 injuryPage = (nameInjury.size() / 20) + 1;
             } else {
-                injuryPage = (nameInjury.size() / 20) ;
+                injuryPage = (nameInjury.size() / 20);
             }
             return findMaxFull();
 
@@ -565,8 +570,8 @@ public class rosterPlayer {
     public String getForwardUnion() {
         return forwardUnion;
     }
-    
-    public int getInjuryPage(){
+
+    public int getInjuryPage() {
         return injuryPage;
     }
 }

@@ -24,7 +24,12 @@
     topPerformances top = new topPerformances();
 
     standings stands = new standings();
-    dreamTeam dream = new dreamTeam(17);
+    dreamTeam dream;
+    if (fixNo == 24) {
+        dream = new dreamTeam(24);
+    } else {
+        dream = new dreamTeam(fixNo - 1);
+    }
 
 %>
 <html lang="en">
@@ -170,7 +175,17 @@
                         <span style="font-weight: bold"><%=session.getAttribute("fullname")%></h5>
 
                     <h4 class="col-md-12 col-xs-12" style="font-family: Century Gothic; font-size: 20px;" >
+                        <%if (fixNo == 24) {
+                        %>
+                        <span id="gw">Gameweek <%=(fixNo)%> </span> Status
+
+                        <%
+                        } else {
+                        %>
                         <span id="gw">Gameweek <%=(fixNo - 1)%> </span> Status
+                        <%
+                            }
+                        %>
                     </h4>
                     <div class="col-md-12 col-xs-12 image-tables" >
                         <img src="img/nwsl-cover.png" style="visibility: hidden;" />
@@ -215,7 +230,17 @@
                     <div class="col-md-6 col-xs-6" >
                         <table class="table-header-dt col-md-12 col-xs-12" >
                             <tr>
+                                <%if (fixNo == 24) {
+                                %>
+                                <th style="font-family:Century Gothic; color: white; font-size: 15px; padding: 2.2%">Gameweek <%=(fixNo)%> Dream Team 
+
+                                    <%
+                                    } else {
+                                    %>
                                 <th style="font-family:Century Gothic; color: white; font-size: 15px; padding: 2.2%">Gameweek <%=(fixNo - 1)%> Dream Team 
+                                    <%
+                                        }
+                                    %>
                                     <span>
                                         <a href= "dreamteam.jsp" style="color: white; float: right"> 
                                             <%=dream.gettotalScore()%> points <i class="glyphicon glyphicon-arrow-right" style="color: white;padding-left: 5px;vertical-align: baseline"></i>
