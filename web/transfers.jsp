@@ -58,6 +58,20 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/myTeamjs.js" ></script>
+        <script src="js/openModal.js" ></script>
+        <script src="js/substitute.js" ></script>
+        <script src="js/transfer.js" ></script>
+
+        <script src="js/fixturejs.js" ></script>
+        <script src="js/setPlayers.js" ></script>
+        <script src="js/playersTable.js"></script>
 
     </head>
     <body onload="setPlayers('<%=gk%>', '<%=def%>', '<%=mid%>', '<%=fwd%>');
@@ -308,9 +322,9 @@
                                 <p class="price" id="fwdprice3"></p>
                             </div>
                         </div>
-                        <button id="enterTeam"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" disabled >
+                         <button id="makeTrans"  class="enterteam btncstm col-md-12 " style="margin-left: 34%;margin-bottom: 2%;margin-top: 2%;padding: 1%" onclick="makeTransfer();" disabled >
                             Make Transfers
-                        </button>                        
+                        </button>                               
                         <%
                             fixtureData fixture = new fixtureData();
                             fixture.fixture();
@@ -321,22 +335,6 @@
                             ArrayList<String> time = (ArrayList<String>) fixture.gettimeList();
                             ArrayList<String> away = (ArrayList<String>) fixture.getawayList();
                             ArrayList<String> awaybadge = (ArrayList<String>) fixture.getawaybadgeList();
-//                            ArrayList<String> homegoal = (ArrayList<String>) fixture.getgoalhomeList();
-//                            ArrayList<String> awaygoal = (ArrayList<String>) fixture.getgoalawayList();
-//                            ArrayList<String> homeassist = (ArrayList<String>) fixture.getassisthomeList();
-//                            ArrayList<String> awayassist = (ArrayList<String>) fixture.getassistawayList();
-//                            ArrayList<String> homeyellow = (ArrayList<String>) fixture.getyellowhomeList();
-//                            ArrayList<String> awayyellow = (ArrayList<String>) fixture.getyellowawayList();
-//                            ArrayList<String> homered = (ArrayList<String>) fixture.getredhomeList();
-//                            ArrayList<String> awayred = (ArrayList<String>) fixture.getredawayList();
-//                            ArrayList<String> homesave = (ArrayList<String>) fixture.getsavehomeList();
-//                            ArrayList<String> awaysave = (ArrayList<String>) fixture.getsaveawayList();
-//                            ArrayList<String> homeown = (ArrayList<String>) fixture.getownhomeList();
-//                            ArrayList<String> awayown = (ArrayList<String>) fixture.getownawayList();
-//                            ArrayList<String> homepkmissed = (ArrayList<String>) fixture.getpkmissedhomeList();
-//                            ArrayList<String> awaypkmissed = (ArrayList<String>) fixture.getpkmissedawayList();
-//                            ArrayList<String> homepksaved = (ArrayList<String>) fixture.getpksavedhomeList();
-//                            ArrayList<String> awaypksaved = (ArrayList<String>) fixture.getpksavedawayList();
 
                             String dateSTR = null;
 
@@ -756,7 +754,6 @@
                                 <option value="score">Total score</option>
                                 <option value="gw">Round score</option> 
                                 <option value="price">Price</option>
-                                <option>Teams selected by %</option>
                                 <option value="minutes">Minutes played</option>
                                 <option value="Goal">Goal scored</option>
                                 <option value="assist">Assists</option>
@@ -767,7 +764,6 @@
                                 <option value="pkMissed">Penalties missed</option>
                                 <option value="yellow">Yellow cards</option>
                                 <option value="red">Red cards</option>
-                                <option>Bonus</option> 
                                 <option value="saves">Saves</option>
                             </select>
                         </div>
@@ -1113,13 +1109,24 @@
                                 </tr>
                                 <tr id="def6" style='cursor:pointer' onclick="transBarModalDEF(6)">
                                     <%
-                                        if (definjury.get(5).equals("NO")) { %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-info-sign"></span></td>
-                                        <% } else if (definjury.get(5).equals("OUT")) {
-                                        %>
-                                    <td style='font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center  '><span id="definjury6" class="glyphicon glyphicon-one-fine-red-dot" style="color:#c0020d;padding-bottom: 10px"></span></td>
-                                        <% }
-                                        %>
+                                        if (definjury.get(5).equals("NO")) {
+                                            classSTR = "glyphicon glyphicon-info-sign";
+                                            color = "";
+                                        } else if (definjury.get(5).equals("INT")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#8411d4";
+
+                                        } else if (definjury.get(5).equals("QUEST")) {
+
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#ffc100";
+
+                                        } else {
+                                            classSTR = "glyphicon glyphicon-one-fine-red-dot";
+                                            color = "#c0020d";
+                                        }%>
+                                    <td style='font-family: Century Gothic; font-size: 14px;border-bottom:1px solid white;width: 10%;text-align: center '><span id="definjury6" class="<%=classSTR%>" style="color:<%=color%>"></span></td>
                                     <td style=" font-family: Century Gothic;text-align: left;border-bottom:1px solid white; padding: 5px;width: 60% ">
                                         <div>
                                             <img id="imagedef6" src="img/<%=defbadge.get(5)%> " style="height:30px" />
@@ -2017,19 +2024,7 @@
                 </div>
             </div>
         </div>
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/myTeamjs.js" ></script>
-        <script src="js/openModal.js" ></script>
-        <script src="js/substitute.js" ></script>
-        <script src="js/transfer.js" ></script>
-
-        <script src="js/fixturejs.js" ></script>
-        <script src="js/setPlayers.js" ></script>
-        <script src="js/playersTable.js"></script>
+        
 
     </body>
 

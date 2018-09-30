@@ -182,7 +182,7 @@ public class playersData extends HttpServlet {
             pricelist.add(resultSet.getString("price"));
             if (category.equals("score") || category.equals("price")) {
                 total = 0;
-                for (int j = 1; j <= 22; j++) {
+                for (int j = 1; j <= 24; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
@@ -265,7 +265,7 @@ public class playersData extends HttpServlet {
             pricelist.add(resultSet.getString("price"));
             if (category.equals("score")) {
                 total = 0;
-                for (int j = 1; j <= 22; j++) {
+                for (int j = 1; j <= 24; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
@@ -369,7 +369,7 @@ public class playersData extends HttpServlet {
             pricelist.add(resultSet.getString("price"));
             if (category.equals("score")) {
                 total = 0;
-                for (int j = 1; j <= 22; j++) {
+                for (int j = 1; j <= 24; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
@@ -472,7 +472,7 @@ public class playersData extends HttpServlet {
             pricelist.add(resultSet.getString("price"));
             if (category.equals("score")) {
                 total = 0;
-                for (int j = 1; j <= 22; j++) {
+                for (int j = 1; j <= 24; j++) {
                     //total=total+Integer.parseInt();
                     String gw = resultSet.getString("GW" + j);
 
